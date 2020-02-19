@@ -1,4 +1,4 @@
-baseurl = "https://www.cloudwithchris.com/"
+baseurl = "//www.cloudwithchris.com/"
 languageCode = "en-us"
 title = "Cloud with Chris"
 theme = "castanet"
@@ -18,7 +18,7 @@ paginate = "9"
 [[Menu.Main]]
     name = "About Chris"
     identifier = "about"
-    url = "https://www.christianreddington.co.uk"
+    url = "www.christianreddington.co.uk"
 
 [[Menu.Main]]
     name = "Contact"
@@ -50,7 +50,7 @@ pocketcasts_subscribe = "http://pcasts.in/feed/feeds.soundcloud.com/users/soundc
 #mailchimp_subscribe = "//arresteddevops.us3.list-manage.com/subscribe/post?u=5e4cbcac996bb9df25f970a89&amp;id=154fa76bcc"
 #rss_subscribe = "http://feed.com/myfeed" #only set this if you don't want to use the built-in feed
 description = "Some description about CLoud with Chris here"
-#media_prefix = "https://media.blubrry.com/arresteddevops/content.blubrry.com/arresteddevops/"
+media_prefix = "https://podcasts.cloudwithchris.com/"
 disqusShortname = ""
 
   [params.feed]
