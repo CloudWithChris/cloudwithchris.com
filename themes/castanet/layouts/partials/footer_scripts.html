@@ -1,0 +1,41 @@
+<script src={{ "js/castanet-min.js" | absURL }}></script>
+<script>
+    $("#share").jsSocials({
+        shares: [
+      {
+        share: "facebook",
+        logo: "fab fa-facebook",
+      },
+      {
+        share: "twitter",           // name of share
+        label: "Tweet",             // share button text (optional)
+        logo: "fab fa-twitter",
+        {{ if (isset .Site.Params.social "twitter" )}}
+          via: "{{ .Site.Params.social.twitter }}",       // custom twitter sharing param 'via' (optional)
+        {{ end }}
+        url: "{{ .Permalink }}",
+        text: "{{ title .Title }}"
+      },
+      {
+        share: "linkedin",
+        logo: "fab fa-linkedin"
+      },
+      {
+        share: "pinterest",
+        logo: "fab fa-pinterest"
+      }
+    ],
+    });
+</script>
+
+<script>
+  var player = new MediaElementPlayer('player2', {
+      features: ['playpause', 'current', 'progress', 'duration', 'volume','speed'],
+      defaultSpeed: 1.0,
+      // other configuration elements
+  });
+</script>
+
+
+
+{{ template "_internal/google_analytics_async.html" . }}
