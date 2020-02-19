@@ -1,0 +1,97 @@
+baseurl = "https://www.cloudwithchris.com/"
+languageCode = "en-us"
+title = "Cloud with Chris"
+theme = "castanet"
+googleAnalytics = ""
+paginate = "9"
+
+
+[permalinks]
+	# page = "/:filename/"
+	about = "/:filename/"
+	episode = "/:filename/"
+
+
+# The theme supports menus with up to one submenu per menu item
+# The menu name must be "Main"
+# The menus are sorted based upon their identifier
+[[Menu.Main]]
+    name = "About Chris"
+    identifier = "about"
+    url = "https://www.christianreddington.co.uk"
+
+[[Menu.Main]]
+    name = "Contact"
+    identifier = "contact"
+    url = "/contact"
+
+[[Menu.Main]]
+    name = "Guests"
+    identifier = "guests"
+    url = "/guest"
+
+[params]
+mainSections = ["episode"]
+site_theme = "grey"
+# site_layout = "grid"
+site_layout = "row"
+enable_jumbo = "true"
+# enable_jumbo = "false"
+# truncate = "100"
+about_logo = "/img/cloudwithchris.png"
+copyright_notice = "Copyright 2020 [Chris Reddington](https://www.christianreddington.co.uk), Proudly running using Hugo and the Castanet Theme"
+itunes_subscribe = "http://itunes.apple.com/us/podcast/arrested-devops/id773888088?mt=2&uo=4&at=11lsCi"
+android_subscribe = "http://subscribeonandroid.com/feeds.podtrac.com/VGAulpN7MY1U"
+spotify_subscribe = "https://open.spotify.com/show/..."
+google_play_subscribe = "https://goo.gl/app/playmusic?ibi=com.google.PlayMusic&isi=691797987&ius=googleplaymusic&link=https://play.google.com/music/m/Ihj4yege3lfmp3vs5yoopgxijpi?t%3DArrested_DevOps"
+stitcher_subscribe = "http://www.stitcher.com/podcast/arrested-devops-2/arrested-devops"
+soundcloud_subscribe = "http://feeds.soundcloud.com/users/soundcloud:users:203144248/sounds.rss"
+pocketcasts_subscribe = "http://pcasts.in/feed/feeds.soundcloud.com/users/soundcloud:users:203144248/sounds.rss"
+#mailchimp_subscribe = "//arresteddevops.us3.list-manage.com/subscribe/post?u=5e4cbcac996bb9df25f970a89&amp;id=154fa76bcc"
+#rss_subscribe = "http://feed.com/myfeed" #only set this if you don't want to use the built-in feed
+description = "Some description about CLoud with Chris here"
+#media_prefix = "https://media.blubrry.com/arresteddevops/content.blubrry.com/arresteddevops/"
+disqusShortname = ""
+
+  [params.feed]
+    copyright = "Copyright 2020 Chris Reddington" #do not use markdown in this field; it is used in the feed
+    itunes_subtitle = "Some short description here" #no markdown or HTML
+    itunes_author = "Chris Reddington" #no markdown or HTML
+    itunes_summary = "Some longer description here"
+    itunes_owner_name = "Chris Reddington"
+    itunes_owner_email = "tbc@tbc.com" #contains the e-mail address that will be used to contact the owner of the Podcast for communication specifically about their Podcast on iTunes. It will not be publicly displayed on iTunes.
+    itunes_image = "https://www.cloudwithchris.com/img/cloudwithchris.png" #fqdn to the image art for your podcast
+    itunes_top_category = "Technology"
+    itunes_first_sub_category = "Software How-To"
+    itunes_second_sub_category = "Tech News"
+    language = "en-us"
+    explicit = "no"
+    
+  [params.social]
+    facebook = "CloudWithChris"
+    #facebook_admin = ["500557137","1234"] # This needs to be one or more page admins to get domain insights
+    twitter = "CloudWithChris"
+    twitter_domain = "cloudwithchris.com" # This domain shows in twitter cards as "View on `twitter_domain`"
+    youtube = "arresteddevops"
+
+  [params.authors]
+    [params.authors.Chris]
+      name	= "Chris Reddington"
+      thumbnail = "img/hosts/chris-headshot.jpg"
+      bio = "Chris is a Welsh Tech Geek, Senior FastTrack for Azure Engineer, Musical Theatre Enthusiast and Improving Improviser!"
+      [params.authors.Matt.social]
+        github = "christianreddington"
+        twitter = "reddobowen"
+        linkedin = "christianreddington"
+        homepage = "https://www.christianreddington.co.uk"
+
+    [params.links]
+      [params.links.ado]
+        name = "Arrested DevOps"
+        url = "https://www.arresteddevops.com"
+      [params.links.ffs]
+        name = "Food Fight Show"
+        url = "https://foodfightshow.org"
+      [params.links.sdt]
+        name = "Software Defined Talk"
+        url = "https://cote.io/podcasts/sdt/"
