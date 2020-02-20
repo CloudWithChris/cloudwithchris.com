@@ -18,12 +18,7 @@ paginate = "9"
 [[Menu.Main]]
     name = "About Chris"
     identifier = "about"
-    url = "www.christianreddington.co.uk"
-
-[[Menu.Main]]
-    name = "Contact"
-    identifier = "contact"
-    url = "/contact"
+    url = "https://www.christianreddington.co.uk"
 
 [[Menu.Main]]
     name = "Guests"
@@ -72,7 +67,7 @@ disqusShortname = ""
     #facebook_admin = ["500557137","1234"] # This needs to be one or more page admins to get domain insights
     twitter = "CloudWithChris"
     twitter_domain = "cloudwithchris.com" # This domain shows in twitter cards as "View on `twitter_domain`"
-    youtube = "arresteddevops"
+    youtube = "UC6KrOsGhSVJBszv_AwbcMxA"
 
   [params.authors]
     [params.authors.Chris]
@@ -84,14 +79,3 @@ disqusShortname = ""
         twitter = "reddobowen"
         linkedin = "christianreddington"
         homepage = "https://www.christianreddington.co.uk"
-
-    [params.links]
-      [params.links.ado]
-        name = "Arrested DevOps"
-        url = "https://www.arresteddevops.com"
-      [params.links.ffs]
-        name = "Food Fight Show"
-        url = "https://foodfightshow.org"
-      [params.links.sdt]
-        name = "Software Defined Talk"
-        url = "https://cote.io/podcasts/sdt/"
