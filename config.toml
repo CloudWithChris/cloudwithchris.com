@@ -44,7 +44,7 @@ copyright_notice = "Copyright 2020 [Chris Reddington](https://www.christianreddi
 #android_subscribe = "http://subscribeonandroid.com/feeds.podtrac.com/VGAulpN7MY1U"
 spotify_subscribe = "https://open.spotify.com/show/3oBrdKm5grzl58GBiV0j2y"
 #google_play_subscribe = "https://goo.gl/app/playmusic?ibi=com.google.PlayMusic&isi=691797987&ius=googleplaymusic&link=https://play.google.com/music/m/Ihj4yege3lfmp3vs5yoopgxijpi?t%3DArrested_DevOps"
-#stitcher_subscribe = "http://www.stitcher.com/podcast/arrested-devops-2/arrested-devops"
+stitcher_subscribe = "https://www.stitcher.com/s?fid=507667&refid=stpr"
 #soundcloud_subscribe = "http://feeds.soundcloud.com/users/soundcloud:users:203144248/sounds.rss"
 pocketcasts_subscribe = "https://pca.st/u5t985sn"
 ##mailchimp_subscribe = "//arresteddevops.us3.list-manage.com/subscribe/post?u=5e4cbcac996bb9df25f970a89&amp;id=154fa76bcc"
