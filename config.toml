@@ -33,7 +33,7 @@ site_layout = "row"
 enable_jumbo = "true"
 # enable_jumbo = "false"
 # truncate = "100"
-about_logo = "/img/cloudwithchris-logo.png"
+about_logo = "/img/cloudwithchrislogo.png"
 copyright_notice = "Copyright 2020 [Chris Reddington](https://www.christianreddington.co.uk), Proudly running using [Hugo](https://gohugo.io/) and the [Castanet Theme](https://themes.gohugo.io/castanet/). Microphone Icon in logo is made by [Smashicons](https://www.flaticon.com/authors/smashicons) from [www.flaticon.com](https://www.flaticon.com/)."
 #itunes_subscribe = "http://itunes.apple.com/us/podcast/arrested-devops/id773888088?mt=2&uo=4&at=11lsCi"
 #android_subscribe = "http://subscribeonandroid.com/feeds.podtrac.com/VGAulpN7MY1U"
@@ -55,7 +55,7 @@ disqusShortname = ""
     itunes_summary = "Exploring Cloud concepts with Chris Reddington (Welsh Tech Geek, Cloud Advocate, Musical Theatre Enthusiast and Improving Improviser!). We will regularly invite guests to talk about their experiences with the cloud and hear about some of the lessons learned around their cloud journey."
     itunes_owner_name = "Chris Reddington"
     itunes_owner_email = "chris@cloudwithchris.com" #contains the e-mail address that will be used to contact the owner of the Podcast for communication specifically about their Podcast on iTunes. It will not be publicly displayed on iTunes.
-    itunes_image = "https://www.cloudwithchris.com/img/cloudwithchris-logo.png" #fqdn to the image art for your podcast
+    itunes_image = "https://www.cloudwithchris.com/img/cloudwithchrislogo.png" #fqdn to the image art for your podcast
     itunes_top_category = "Technology"
     itunes_first_sub_category = "Podcasting"
     itunes_second_sub_category = "Software How-To"
