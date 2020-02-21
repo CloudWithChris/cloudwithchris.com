@@ -55,7 +55,7 @@ disqusShortname = ""
     itunes_summary = "Exploring Cloud concepts with Chris Reddington (Welsh Tech Geek, Cloud Advocate, Musical Theatre Enthusiast and Improving Improviser!). We will regularly invite guests to talk about their experiences with the cloud and hear about some of the lessons learned around their cloud journey."
     itunes_owner_name = "Chris Reddington"
     itunes_owner_email = "chris@cloudwithchris.com" #contains the e-mail address that will be used to contact the owner of the Podcast for communication specifically about their Podcast on iTunes. It will not be publicly displayed on iTunes.
-    itunes_image = "https://www.cloudwithchris.com/img/cloudwithchris.png" #fqdn to the image art for your podcast
+    itunes_image = "https://www.cloudwithchris.com/img/cloudwithchris-logo.png" #fqdn to the image art for your podcast
     itunes_top_category = "Technology"
     itunes_first_sub_category = "Podcasting"
     itunes_second_sub_category = "Software How-To"
@@ -67,7 +67,7 @@ disqusShortname = ""
     #facebook_admin = ["500557137","1234"] # This needs to be one or more page admins to get domain insights
     twitter = "CloudWithChris"
     twitter_domain = "cloudwithchris.com" # This domain shows in twitter cards as "View on `twitter_domain`"
-    youtube = "UC6KrOsGhSVJBszv_AwbcMxA"
+    youtube = "channel/UC6KrOsGhSVJBszv_AwbcMxA"
 
   [params.authors]
     [params.authors.Chris]
