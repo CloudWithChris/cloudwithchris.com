@@ -5,6 +5,7 @@ on:
       - master
     types: 
       - opened
+      - synchronized
       - edited
       - closed
 jobs:
@@ -47,4 +48,4 @@ jobs:
       with:
         azcliversion: 2.0.72
         inlineScript: |
-          az storage blob upload-batch --account-name cloudwithchrispreview -d '$web' -s '${{ github.head_ref }}'
+          az storage blob upload-batch --account-name cloudwithchrispreview -d '$web/${{ github.head_ref }}' -s 'website'
