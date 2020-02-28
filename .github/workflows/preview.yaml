@@ -2,7 +2,7 @@ name: Preview
 on:
   pull_request:
     branches: 
-      - preview/*
+      - master
     types: 
       - opened
       - edited
