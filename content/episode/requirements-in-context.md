@@ -22,7 +22,9 @@ explicit = "no" # values are "yes" or "no"
 
 Hello and welcome to the first episode of Cloud with Chris. Now I should start by introducing what this podcast is all about.
 
-My name is Chris Reddington, and day to day I help different organisations move their way into the cloud. Of course, I see many trends and themes as I help those organisations move. So, what I want to do is share those with you in my podcast.It could be about solution architecture, DevOps and the operational readiness of bringing up a workload, or just diving into a specific cloud service.
+My name is Chris Reddington, and day to day I help different organisations move their way into the cloud. Of course, I see many trends and themes as I help those organisations move. So, what I want to do is share those with you in my podcast.
+
+It could be about solution architecture, DevOps and the operational readiness of bringing up a workload, or just diving into a specific cloud service.
 
 Now don't worry! The plan is that you shouldn't have to listen to just me on every single episode. I'm planning to bring in some of my friends, colleagues and other folks onto the show, so we can get some variety of perspective and learn from different journeys into the cloud.
 
@@ -30,7 +32,13 @@ So now that we've explained the show, let's start talking about the first episod
 
 So, that is why the first episode will be known as requirements in context. Enjoy.
 
-Let's start with an analogy. I ask you to go and design a building. Where do you start?Now that pause was deliberate. Because, your mind is already going to be racing in so many directions. What question do you start with? Let's have a think. What is the building's purpose? Is it an office, a shop, a factory, a warehouse, a theatre maybe? There are so many options that we could choose.Now each of those types of scenarios is likely going to have a different set requirements and criteria on how they should and in fact need to be designed. They may potentially even have some external regulations that they need to adhere to. Now speaking about regulations, there may be rules that are required because you are in a specific country, or region of a country, or maybe even some kind of industry-dependent regulation, which you need to meet because (for example if it was a hospital, let's say).All of these thoughts are before we even begin to speak to our specific client, and what finer requirements that may be important to them. For example, let's assume the organisation is a hotel chain. Do they have a brand of being a unique boutique hotel, who care deeply about providing a high-class customer service and care about style and brand for example? Or is it a budget hotel based near an airport, where simplicity and maximising on the number of rooms available is a key requirement?
+Let's start with an analogy. I ask you to go and design a building. Where do you start?
+
+Now that pause was deliberate. Because, your mind is already going to be racing in so many directions. What question do you start with? Let's have a think. What is the building's purpose? Is it an office, a shop, a factory, a warehouse, a theatre maybe? There are so many options that we could choose.
+
+Now each of those types of scenarios is likely going to have a different set requirements and criteria on how they should and in fact need to be designed. They may potentially even have some external regulations that they need to adhere to. Now speaking about regulations, there may be rules that are required because you are in a specific country, or region of a country, or maybe even some kind of industry-dependent regulation, which you need to meet because (for example if it was a hospital, let's say).
+
+All of these thoughts are before we even begin to speak to our specific client, and what finer requirements that may be important to them. For example, let's assume the organisation is a hotel chain. Do they have a brand of being a unique boutique hotel, who care deeply about providing a high-class customer service and care about style and brand for example? Or is it a budget hotel based near an airport, where simplicity and maximising on the number of rooms available is a key requirement?
 
 You can see where this analogy is going, and you can see how this aligns to requirements for a cloud project as well. You're probably thinking that this is a very common topic, and shouldn't deserve a place as the defining episode of my podcast! I recently setup my blog posts again, and was reading a blog from about 4 years ago, titled "Building Solutions in the Cloud", which focused on the importance of defining these requirements.
 
