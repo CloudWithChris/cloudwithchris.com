@@ -1,8 +1,12 @@
 name: Preview
-on: 
-  push:
-      branches:
-        - preview/*
+on:
+  pull_request:
+    branches: 
+      - preview/*
+    types: 
+      - opened
+      - edited
+      - closed
 jobs:
   build:
     runs-on: ubuntu-latest
