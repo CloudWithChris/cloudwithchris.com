@@ -1,0 +1,46 @@
+name: CI
+on: 
+  push:
+      branches:
+        - preview/*
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:            
+    - uses: actions/checkout@v2
+    - name: Checkout submodules
+      shell: bash
+      run: |
+        auth_header="$(git config --local --get http.https://github.com/.extraheader)"
+        git submodule sync --recursive
+        git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=  
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v2
+      with:
+        hugo-version: '0.62.2'
+        # extended: true
+    - name: Build
+      run: hugo --minify --buildFuture  
+    - name: Upload website as Artifact
+      uses: actions/upload-artifact@v1
+      with:
+        name: website
+        path: /home/runner/work/cloudwithchris.com/cloudwithchris.com/public
+  publish:    
+    runs-on: ubuntu-latest
+    needs: build
+    steps:    
+    - name: Download website changes
+      uses: actions/download-artifact@v1
+      with:
+        name: website
+    - name: Azure Login
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}     
+    - name: Azure CLI script
+      uses: azure/CLI@v1
+      with:
+        azcliversion: 2.0.72
+        inlineScript: |
+          az storage blob upload-batch --account-name cloudwithchrispreview -d '$web' -s ${{ github.head_ref }}
