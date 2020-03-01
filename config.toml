@@ -16,14 +16,29 @@ paginate = "9"
 # The menu name must be "Main"
 # The menus are sorted based upon their identifier
 [[Menu.Main]]
-    name = "About Chris"
-    identifier = "about"
-    url = "https://www.christianreddington.co.uk"
+    name = "Episodes"
+    identifier = "0-episodes"
+    url = "/"
+
+[[Menu.Main]]
+    name = "Suggest a topic"
+    identifier = "1-topics"
+    url = "/topic-suggestions"
+
+[[Menu.Main]]
+    name = "Become a Guest"
+    identifier = "2-guestsignup"
+    url = "/guest-signup"
 
 [[Menu.Main]]
     name = "Guests"
-    identifier = "guests"
+    identifier = "3-guests"
     url = "/guest"
+
+[[Menu.Main]]
+    name = "About Chris"
+    identifier = "4-about"
+    url = "https://www.christianreddington.co.uk"
 
 [params]
 mainSections = ["episode"]
