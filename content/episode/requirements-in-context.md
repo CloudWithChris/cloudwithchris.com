@@ -1,8 +1,8 @@
 +++
 Title = "1 - Requirements in Context"
 Description = "This is the first episode! We'll be talking about all things requirements. Why is that? Well, that's the place any kind of project should start - What are you aiming for, what are you trying to achieve and what is the context?"
-Date = 2020-02-28T12:00:00Z
-PublishDate = 2020-02-28T12:00:00Z # this is the datetime for the when the epsiode was published. This will default to Date if it is not set. Example is "2016-04-25T04:09:45-05:00"
+Date = 2020-03-01T12:00:00Z
+PublishDate = 2020-03-01T12:00:00Z # this is the datetime for the when the epsiode was published. This will default to Date if it is not set. Example is "2016-04-25T04:09:45-05:00"
 podcast_file = "1 - Requirements.mp3" # the name of the podcast file, after the media prefix.
 podcast_duration = "15:42:383"
 podcast_bytes = "18354176" # the length of the episode in bytes
