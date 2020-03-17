@@ -89,7 +89,7 @@ disqusShortname = ""
       name	= "Chris Reddington"
       thumbnail = "img/hosts/chris-headshot.jpg"
       bio = "Chris is a Welsh Tech Geek, Senior FastTrack for Azure Engineer, Musical Theatre Enthusiast and Improving Improviser!"
-      [params.authors.Matt.social]
+      [params.authors.Chris.social]
         github = "christianreddington"
         twitter = "reddobowen"
         linkedin = "christianreddington"
