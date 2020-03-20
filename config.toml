@@ -23,12 +23,12 @@ paginate = "9"
 [[Menu.Main]]
     name = "Suggest a topic"
     identifier = "1-topics"
-    url = "/topic-suggestions"
+    url = "https://forms.office.com/Pages/ResponsePage.aspx?id=I8_hAe_rSkSatzbwI0Rs1nhBo3a5mW9AuJOwL1Kt0n9UQVcyOFZFNkdXU0FGNTM0Uk0zUEdPT1VFNy4u"
 
 [[Menu.Main]]
     name = "Become a Guest"
     identifier = "2-guestsignup"
-    url = "/guest-signup"
+    url = "https://calendly.com/cloudwithchris"
 
 [[Menu.Main]]
     name = "Guests"
