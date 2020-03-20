@@ -7,7 +7,7 @@ jobs:
     steps:
        - name: My first step
          if: github.event_name == 'issues' && contains(github.event.issue.title, 'Episode Suggestion')
-         run: echo This event is an issue that contains the title "Episode Suggestion.        
+         run: echo This event is an issue that contains the title Episode Suggestion.        
     #- name: add-new-issues-to-repository-based-project-column
     #  uses: docker://takanabe/github-actions-automate-projects:v0.0.1
     #  if: github.event_name == 'issues' && github.event.action == 'opened'
