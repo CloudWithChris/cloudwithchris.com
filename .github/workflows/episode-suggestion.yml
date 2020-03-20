@@ -4,14 +4,11 @@ on:
 jobs:
   github-actions-automate-projects:
     runs-on: ubuntu-latest
-    steps:
-       - name: My first step
-         if: github.event_name == 'issues' && contains(github.event.issue.title, 'Episode Suggestion')
-         run: echo This event is an issue that contains the title Episode Suggestion.        
-    #- name: add-new-issues-to-repository-based-project-column
-    #  uses: docker://takanabe/github-actions-automate-projects:v0.0.1
-    #  if: github.event_name == 'issues' && github.event.action == 'opened'
-    #  env:
-    #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    #    GITHUB_PROJECT_URL: https://github.com/chrisreddington/cloudwithchris.com/projects/1
-    #    GITHUB_PROJECT_COLUMN_NAME: To do
+    steps:       
+    - name: add-new-issues-to-repository-based-project-column
+      uses: docker://takanabe/github-actions-automate-projects:v0.0.1
+      if: github.event_name == 'issues' && contains(github.event.issue.title, 'Episode Suggestion')
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_PROJECT_URL: https://github.com/chrisreddington/cloudwithchris.com/projects/1
+        GITHUB_PROJECT_COLUMN_NAME: To do
