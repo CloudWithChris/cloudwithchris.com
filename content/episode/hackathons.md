@@ -1,8 +1,6 @@
 +++
 Title = "4 - Hackathons"
-Description = "Here we go - Episode #4! Have you ever had an idea, and you want to quickly prove it out? Or have you wanted to build out a scenario to expand your own skills, whether that is development, design or perhaps other skills? You've probably heard about Hackathon events in recent years, and that's what we'll focus on in this episode! I'm very excited to introduce my second guest of the show, Maria Vrabie, a very good friend, who has plenty of experience with Hackathons, both participating in them and organising or mentoring for them.
-
-It's a very insightful session, so let's go ahead and find out more about Maria's experience with Hackathons. Here we go."
+Description = "Here we go - Episode #4! Have you ever had an idea, and you want to quickly prove it out? Or have you wanted to build out a scenario to expand your own skills, whether that is development, design or perhaps other skills? You've probably heard about Hackathon events in recent years, and that's what we'll focus on in this episode! I'm very excited to introduce my second guest of the show, Maria Vrabie, a very good friend, who has plenty of experience with Hackathons, both participating in them and organising or mentoring for them. It's a very insightful session, so let's go ahead and find out more about Maria's experience with Hackathons. Here we go."
 Date = 2020-04-12T00:01:00Z
 PublishDate = 2020-04-12T00:01:00Z # this is the datetime for the when the epsiode was published. This will default to Date if it is not set. Example is "2016-04-25T04:09:45-05:00"
 podcast_file = "4 - Hackathons.mp3" # the name of the podcast file, after the media prefix.
