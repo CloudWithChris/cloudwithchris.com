@@ -21,7 +21,6 @@ explicit = "no" # values are "yes" or "no"
 # media_override # if you want to use a specific URL for the audio file
 # truncate = ""
 +++
-
 Hello and welcome back to another episode Cloud with Chris! You're with me - Chris Reddington, and we'll be talking about all things cloud.
 
 Thanks for the recent subscriptions across my platforms! We’re now not too far away from reaching the 100 subscriptions needed on YouTube to register the channel name. [If you haven't subscribed yet, and I know I keep asking -  please do](https://www.youtube.com/channel/UC6KrOsGhSVJBszv_AwbcMxA)! Of course, if you can share out onto your own social networks, that would be brilliant.
