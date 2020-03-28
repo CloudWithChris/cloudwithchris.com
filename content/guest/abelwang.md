@@ -1,16 +1,16 @@
 +++
 Title = "Abel Wang"
-Date = 2020-02-18T23:26:43Z
+Date = 2020-02-29T00:01:00Z
 Twitter = "abelsquidhead"
 Website = "http://abelsquidhead.com/"
 Type = "guest"
 Facebook = ""
 Linkedin = ""
-GitHub = ""
-Thumbnail = ""
+GitHub = "abelsquidhead"
+Thumbnail = "img/guests/abel-wang.jpg"
 Pinterest = ""
 Instagram = ""
 YouTube = ""
 #Aka = []
 +++
-Principal Cloud Advocate, DevOps Lead in the #LoECDA team. Specialize in Azure DevOps and Azure. 
+Abel Wang is a Principal Cloud Advocate and DevOps Lead at Microsoft, specializing in DevOps and Azure with a background in application development. 
