@@ -1,4 +1,4 @@
-baseurl = "https://www.cloudwithchris.com/"
+baseurl = "#{hostname}#"
 languageCode = "en-us"
 title = "Cloud with Chris"
 theme = "castanet"
