@@ -139,7 +139,7 @@ a skills and ideas it can be great right.
 
 **Chris:** Excellent. Well, Maria, thank you so much! I think there's plenty throughout this episode  that we've learned about. For example, how hackathons are similar and share some of these concepts relating to DevOps, relating to things like requirements which we spoke about numerous times in Cloud with Chris. It's also an accelerator for those kind of organisations that might be either starting their journey into cloud or might be further along in the cloud, and they're just trying something new. Maybe there re energising something, they're modernising, they're trying something new. What I'm hearing is hackathons are so relevant here, and could be a new way to invigorate some of their teams and get people excited about that journey they are on. So thank you for sharing the story, and thank you for sharing some of your tips and tricks here. I think they are very valuable for folks listening in
 
-**Maria:** No problem, Chris! Thank you so much for having m. If there is anything I can do - actually referring to your last question - in terms of hackathons... Folks can find me on LinkedIn or Twitter, so I'm happy to help where I can as well.
+**Maria:** No problem, Chris! Thank you so much for having me. If there is anything I can do - actually referring to your last question - in terms of hackathons... Folks can find me on LinkedIn or Twitter, so I'm happy to help where I can as well.
 
 **Chris:** Thank you, Maria! And thank you again everyone for listening in again.
 
