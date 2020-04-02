@@ -19,6 +19,14 @@ jobs:
       with:
         hugo-version: '0.62.2'
         # extended: true
+    - name: Replace tokens
+      uses: cschleiden/replace-tokens@v1.0
+      with:
+        tokenPrefix: '#{' # optional, default is #{
+        tokenSuffix: '}#' # optional, default is }#
+        files: '["config.toml"]'
+      env:
+        hostname: 'https://preview.cloudwithchris.com/${{ github.head_ref }}'
     - name: Build
       run: hugo --minify --buildFuture  
     - name: Upload website as Artifact
