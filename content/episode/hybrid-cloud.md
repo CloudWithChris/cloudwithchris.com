@@ -4,13 +4,13 @@ Description = "Joining me in this episode is Thomas Maurer, a Senior Cloud Advoc
 Date = 2020-05-09T00:01:00Z
 PublishDate = 2020-05-09T00:01:00Z # this is the datetime for the when the epsiode was published. This will default to Date if it is not set. Example is "2016-04-25T04:09:45-05:00"
 podcast_file = "6 - Hybrid Cloud.mp3" # the name of the podcast file, after the media prefix.
-podcast_duration = "42:39.537"
-podcast_bytes = "38936576" # the length of the episode in bytes
+podcast_duration = "42:41.445"
+podcast_bytes = "38981632" # the length of the episode in bytes
 episode_image = "img/cloudwithchrislogo.png"
 #episode_banner = "0:40:04"
 guests = ["thomasmaurer"] # The names of your guests, based on the filename without extension.
 #sponsors = []
-episode = "6"
+episode = "6 "
 images = ["img/default-social.png"]
 hosts = ["chrisreddington"] # The names of your hosts, based on the filename without extension.
 #aliases = ["/##"]
@@ -29,4 +29,6 @@ So, let's start talking about episode #6! Joining me in this episode is Thomas M
 
 Wow! I mentioned in the intro that you would be introduced to a variety of Azure Technologies that may be relevant to on-premises, cloud or multi-cloud deployments - and I think that was well and truly covered! A big thank you again to Thomas for joining and sharing his brilliant knowledge in this area!
 
-I would love to hear how you're finding these episodes, and if I can make these any more valuable for you. Please do get in touch either on Facebook or Twitter, @CloudWithChris if you have any feedback! And as always, if you enjoyed this episode - please don't forget to provide a like or subscribe on whichever platform you have been listening in on.  If you think it might be useful for your own followers or connections, please do share onwards as well!Thanks once again for listening in. And, until next time - Goodbye!
+I would love to hear how you're finding these episodes, and if I can make these any more valuable for you. Please do get in touch either on Facebook or Twitter, @CloudWithChris if you have any feedback! And as always, if you enjoyed this episode - please don't forget to provide a like or subscribe on whichever platform you have been listening in on.  If you think it might be useful for your own followers or connections, please do share onwards!
+
+Thanks once again for listening in. And, until next time - Goodbye!
