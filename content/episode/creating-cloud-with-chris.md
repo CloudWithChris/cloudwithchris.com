@@ -1,8 +1,8 @@
 +++
 Title = "7 - Creating Cloud with Chris"
 Description = "We're going to go in a little bit of a different direction for this episode,  and focus on the podcast itself and my podcast journey so far! Not only is this episode topic slightly different, we're running a different format as well! In this episode, I'm joined by my colleague, Fletcher Kelly - who is exploring the idea of setting up his own podcast! Instead of me being the interviewer, I'm the one who ends up in the hot seat and talk about my experience so far of setting up Cloud with Chris! Hopefully this will give you a little bit of an idea of my journey so far, and why I wanted to set the podcast up as well! So, let's go ahead and start the episode..."
-Date = 2020-05-24T00T00:01:00Z
-PublishDate = 2020-05-24T00T00:01:00Z # this is the datetime for the when the epsiode was published. This will default to Date if it is not set. Example is "2016-04-25T04:09:45-05:00"
+Date = 2020-05-24T00:01:00Z
+PublishDate = 2020-05-24T00:01:00Z # this is the datetime for the when the epsiode was published. This will default to Date if it is not set. Example is "2016-04-25T04:09:45-05:00"
 podcast_file = "7 - Creating Cloud with Chris.mp3" # the name of the podcast file, after the media prefix.
 podcast_duration = "27:32.009"
 podcast_bytes = "23564288" # the length of the episode in bytes
