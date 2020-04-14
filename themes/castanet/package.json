@@ -36,6 +36,8 @@
     "mediaelement": "^4.2.14",
     "mediaelement-plugins": "^2.5.0",
     "netlify-cli": "^2.15.0",
-    "popper.js": "^1.15.0"
+    "popper.js": "^1.15.0",
+    "minimist": ">=1.2.3",
+    "kind-of": ">=6.0.3"
   }
 }
