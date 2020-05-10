@@ -1,6 +1,6 @@
 +++
 Title = "6 - Hybrid Cloud"
-Description = "Joining me in this episode is Thomas Maurer, a Senior Cloud Advocate at Microsoft who engages with the community and customers around the world! Most of the focus so far in Cloud with Chris has been on Public Cloud, so Thomas and I adjust course slightly, and talk about Hybrid Cloud, and the new and upcoming features of the Microsoft Azure platform. Get ready to be introduced to a wide variety of Azure Technologies, and how they may be able to strengthen your on-premises, public cloud or multi-cloud deployments. Let's listen in..."
+Description = "Joining me in this episode is Thomas Maurer, a Senior Cloud Advocate at Microsoft who engages with the community and customers around the world! Most of the focus so far in Cloud with Chris has been on Public Cloud, so Thomas and I adjust course slightly, and talk about Hybrid Cloud, and the new and upcoming features of the Microsoft Azure platform. Get ready to be introduced to a wide variety of Azure Technologies, and how they may be able to strengthen your on-premises, public cloud or multi-cloud deployments. Let's listen in..." #dummycomment
 Date = 2020-05-10T00:01:00Z
 PublishDate = 2020-05-10T00:01:00Z # this is the datetime for the when the epsiode was published. This will default to Date if it is not set. Example is "2016-04-25T04:09:45-05:00"
 podcast_file = "6 - Hybrid Cloud.mp3" # the name of the podcast file, after the media prefix.
