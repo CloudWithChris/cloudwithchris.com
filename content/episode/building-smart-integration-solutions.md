@@ -25,7 +25,7 @@ I hope that you're keeping safe and well in these strange times that we're going
 
 So as always, if you have topic suggestions, or you want to come and talk with me in an episode - Please just let me know! You can find more info online at [www.cloudwithchris.com](www.cloudwithchris.com)
 
-Now onto this episode! When we think about cloud, we typically think about distributed systems and somehow bringing those different components or systems together, so integrating them. But what are the common practices, or common challenges? You've probably heard of serverless, how does that fit into things? Well, I'm pleased to be joined by Ezhilarasi ChezhiVan, technical lead at Serverless 360.
+Now onto this episode! When we think about cloud, we typically think about distributed systems and somehow bringing those different components or systems together, so integrating them. But what are the common practices, or common challenges? You've probably heard of serverless, how does that fit into things? Well, I'm pleased to be joined by Ezhilarasi Chezhiyan, Product Consultant of Serverless360 at Kovai.co.
 
 So, without further ado - let's go ahead and jump straight in.
 
