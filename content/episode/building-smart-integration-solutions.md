@@ -1,6 +1,6 @@
 +++
 Title = "9 - Building smart Integration Solutions with Microsoft Azure"
-Description = "When we think about cloud, we typically think about distributed systems and somehow bringing those different components or systems together, so integrating them. But what are the common practices, or common challenges? You've probably heard of serverless, how does that fit into things? Well, I'm pleased to be joined by Ezhilarasi ChezhiVan, technical lead at Serverless 360. So, without further ado - let's go ahead and jump straight in."
+Description = "When we think about cloud, we typically think about distributed systems and somehow bringing those different components or systems together, so integrating them. But what are the common practices, or common challenges? You've probably heard of serverless, how does that fit into things? Well, I'm pleased to be joined by Ezhilarasi Chezhiyan, Product Consultant of Serverless360 at Kovai.co. So, without further ado - let's go ahead and jump straight in."
 Date = 2020-08-02T00:01:00Z
 PublishDate = 2020-08-02T00:01:00Z # this is the datetime for the when the epsiode was published. This will default to Date if it is not set. Example is "2016-04-25T04:09:45-05:00"
 podcast_file = "9 - Building Smart Integration Solutions with Microsoft Azure.mp3" # the name of the podcast file, after the media prefix.
