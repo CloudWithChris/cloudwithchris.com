@@ -11,7 +11,7 @@ A new episode is released every other week. Tune in on every other Sunday for th
 * [RSS](https://www.cloudwithchris.com/episode/index.xml)
 * [Spotify](https://open.spotify.com/show/3oBrdKm5grzl58GBiV0j2y)
 * [Stitcher](https://www.stitcher.com/s?fid=507667&refid=stpr)
-* [YouTube](https://www.youtube.com/channel/UC6KrOsGhSVJBszv_AwbcMxA)
+* [YouTube](https://www.youtube.com/c/CloudWithChris)
 * [Website](https://www.cloudwithchris.com)
 
 ## Contributing
