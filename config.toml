@@ -82,7 +82,7 @@ disqusShortname = ""
     #facebook_admin = ["500557137","1234"] # This needs to be one or more page admins to get domain insights
     twitter = "CloudWithChris"
     twitter_domain = "cloudwithchris.com" # This domain shows in twitter cards as "View on `twitter_domain`"
-    youtube = "channel/UC6KrOsGhSVJBszv_AwbcMxA"
+    youtube = "c/CloudWithChris"
 
   [params.authors]
     [params.authors.Chris]
