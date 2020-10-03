@@ -21,7 +21,7 @@
       {{- end -}}
     {{- end -}}
     {{- with .Params.youtube -}}
-      {{- if . ne "" -}}
+      {{- if . -}}
         {{- $.Scratch.Set "youtube" "true" -}}
       {{- end -}}
     {{- end -}}
@@ -34,7 +34,7 @@
       <div class = "row homepage_episode_row">
         <div class = "col">
           <a href="{{ .Permalink }}" class = "row_latest_episode_title"><h2>{{ .Title }}</h2></a>
-          <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} youtube = {{($.Scratch.Get "youtube")}} and {{ .Params.youtube }}</small>
+          <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }}</small>
         </div>
       </div>
       <div class = "row homepage_episode_row">
@@ -112,7 +112,7 @@
 <section class="episode-list">
 <!-- rest of episodes -->
 {{- if (where site.RegularPages "Type" "in" site.Params.mainSections) -}}
-{{- $paginator := .Paginate (after 1 (where site.RegularPages "Type" "in" site.Params.mainSections)) 5 -}}
+{{- $paginator := .Paginate (after 1 (where site.RegularPages "Type" "in" site.Params.mainSections)) }}
 {{- $list := (where site.RegularPages "Type" "in" site.Params.mainSections) -}}
 {{- $len := (len $list) -}}
 <div class="row main_container">

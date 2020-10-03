@@ -1,5 +1,6 @@
 +++
 Date = {{ .Date }}
+title = ""
 Twitter = ""
 Website = ""
 Type = "guest"
@@ -10,5 +11,7 @@ Thumbnail = ""
 Pinterest = ""
 Instagram = ""
 YouTube = ""
+Twitch = ""
 #Aka = []
+#guest_group = ""
 +++
