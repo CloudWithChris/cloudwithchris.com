@@ -7,6 +7,7 @@ Type = "host"
 Linkedin = "christianreddington"
 GitHub = "chrisreddington"
 Thumbnail = "img/hosts/chris-headshot.jpg"
+YouTube = "CloudWithChris"
 +++
 Welsh Tech Geek, Cloud Advocate, Musical Theatre Enthusiast and Improving Improviser!
 
