@@ -7,10 +7,10 @@ Type = "guest"
 Facebook = ""
 Linkedin = ""
 GitHub = ""
-Thumbnail = "tbc.jpg"
+Thumbnail = "johndowns.jpg"
 Pinterest = ""
 Instagram = ""
 YouTube = ""
 #Aka = []
 +++
-Speaker Bio TBC.
+John is an engineer in the FastTrack for Azure team based in Auckland, New Zealand. John focuses on application and solution architecture, and particularly on globally distributed systems and Azure’s PaaS services.
