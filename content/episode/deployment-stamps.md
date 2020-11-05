@@ -1,6 +1,6 @@
 +++
 Title = "14 - The Deployment Stamps Pattern"
-Description = "Want to focus on scaling an application, or care about resilience? Have a multi-tenant app, but some of your customers have specific requirements for their scenario? Want to have an application deployed globally, but users housed in a particular area for Data Sovereignty? Then listen in to this session where Chris Reddington is joined by John Downs, talking about The Deployment Stamps Pattern. This is another episode in the series of "Architecting for the Cloud, one pattern at a time."
+Description = "Want to focus on scaling an application, or care about resilience? Have a multi-tenant app, but some of your customers have specific requirements for their scenario? Want to have an application deployed globally, but users housed in a particular area for Data Sovereignty? Then listen in to this session where Chris Reddington is joined by John Downs, talking about The Deployment Stamps Pattern. This is another episode in the series of Architecting for the Cloud, one pattern at a time."
 Date = 2020-11-05T03:30:00Z
 PublishDate = 2020-11-05T03:30:00Z # this is the datetime for the when the epsiode was published. This will default to Date if it is not set. Example is "2016-04-25T04:09:45-05:00"
 #podcast_file = "10 - Exploring GitHub Actions to deploy Static Content and Azure Functions.mp3" # the name of the podcast file, after the media prefix.
