@@ -14,7 +14,7 @@ episode = "16"
 images = ["img/default-social.png"]
 hosts = ["chrisreddington"] # The names of your hosts, based on the filename without extension.
 #aliases = ["/##"]
-#youtube = ""
+youtube = "KdNzm42u6Y4"
 explicit = "no" # values are "yes" or "no"
 # media_override # if you want to use a specific URL for the audio file
 # truncate = ""
