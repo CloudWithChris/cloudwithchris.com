@@ -5,12 +5,12 @@ Twitter = ""
 Website = ""
 Type = "guest"
 Facebook = ""
-Linkedin = ""
+Linkedin = "cam-adams-7856a77"
 GitHub = ""
-Thumbnail = "tbc.jpg"
+Thumbnail = "camadams.png"
 Pinterest = ""
 Instagram = ""
 YouTube = ""
 #Aka = []
 +++
-Speaker Bio TBC.
+Cam Adams is an engineering manager within the FastTrack for Azure team. He is a career .Net developer dating back to the pre-release days. Cam has a particular interest in testing, scale and security which combined gives him excuse to DDoS websites in the name of science. #firethelaser
