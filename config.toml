@@ -4,7 +4,7 @@ title = "Cloud with Chris"
 theme = "castanet"
 googleAnalytics = ""
 paginate = "9"
-
+buildFuture = true
 
 [permalinks]
 	# page = "/:filename/"
