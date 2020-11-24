@@ -4,7 +4,7 @@ title = "Cloud with Chris"
 theme = "castanet"
 googleAnalytics = ""
 paginate = "9"
-
+buildFuture = true
 
 [permalinks]
 	# page = "/:filename/"
@@ -20,24 +20,30 @@ paginate = "9"
     identifier = "0-episodes"
     url = "/"
 
+
+[[Menu.Main]]
+    name = "Upcoming"
+    identifier = "1-upcoming"
+    url = "/upcoming"
+
 [[Menu.Main]]
     name = "Suggest a topic"
-    identifier = "1-topics"
+    identifier = "2-topics"
     url = "https://forms.office.com/Pages/ResponsePage.aspx?id=I8_hAe_rSkSatzbwI0Rs1nhBo3a5mW9AuJOwL1Kt0n9UQVcyOFZFNkdXU0FGNTM0Uk0zUEdPT1VFNy4u"
 
 [[Menu.Main]]
     name = "Become a Guest"
-    identifier = "2-guestsignup"
+    identifier = "3-guestsignup"
     url = "https://calendly.com/cloudwithchris"
 
 [[Menu.Main]]
     name = "Guests"
-    identifier = "3-guests"
+    identifier = "4-guests"
     url = "/guest"
 
 [[Menu.Main]]
     name = "About Chris"
-    identifier = "4-about"
+    identifier = "5-about"
     url = "https://www.christianreddington.co.uk"
 
 [params]
