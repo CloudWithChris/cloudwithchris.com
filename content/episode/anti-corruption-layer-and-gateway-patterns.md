@@ -19,5 +19,8 @@ explicit = "no" # values are "yes" or "no"
 # media_override # if you want to use a specific URL for the audio file
 # truncate = ""
 upcoming = true
+categories = ["Architecture"]
+series = ["Architecting for the Cloud, one pattern at a time"]
+tags = ["Architecture", "APIs", "Cloud Design Patterns"]
 +++
 You've heard Peter and Chris talk about The Facade pattern previously. These patterns build upon the Façade concept. The façade layer could be used to translate requests between various subsystems, aggregate multiple backend requests into a single response and offload specialised functionality to a gateway proxy. Tune in and listen to Peter Piper join Chris Reddington, as they discuss The Anti-corruption layer, Gateway Aggregation and Gateway Routing patterns! This is another episode in the series of Architecting for the Cloud, one pattern at a time.
