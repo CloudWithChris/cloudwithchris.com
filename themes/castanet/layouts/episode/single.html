@@ -365,4 +365,17 @@
         </div>
       </div>
       <!-- pager end -->
+
+      
+      <div class="row">
+        <!-- pager begin -->
+        <div class="col-md-12">
+          <ul id="tags">
+            {{ range .Params.tags }}
+              <li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> </li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+
     {{ end }}
