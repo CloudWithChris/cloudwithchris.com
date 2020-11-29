@@ -1,7 +1,7 @@
 <section class="episode-list">
 <!-- rest of episodes -->
 {{- if (where site.RegularPages "Type" "in" site.Params.mainSections) -}}
-{{ $taxonomy := index (last 1 (split (delimit (split .URL "/") "," "")) 0 }}
+{{ $taxonomy := index (last 1 (split (delimit (split .URL "/") "," "")) 0) }}
 {{- $paginator := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections).RelatedTo (keyVals .Data.Plural $taxonomy) -}}
 {{- $list := (where site.RegularPages "Type" "in" site.Params.mainSections).RelatedTo (keyVals .Data.Plural $taxonomy) -}}
 {{- $len := (len $list) -}}
