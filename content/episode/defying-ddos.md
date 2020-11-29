@@ -18,6 +18,9 @@ youtube = "zSObCp1GbSQ"
 explicit = "no" # values are "yes" or "no"
 # media_override # if you want to use a specific URL for the audio file
 # truncate = ""
+categories = ["Security"]
+series = ["Tales from the real world"]
+tags = ["Security", "DDOS"]
 +++
 
 Transcript coming soon!
