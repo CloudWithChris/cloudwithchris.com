@@ -364,9 +364,50 @@
           </nav>
         </div>
       </div>
-      <!-- pager end -->
+      <!-- pager end -->   
+      
+      <div class="row">
+        <div class="col">
+          <h2>Series</h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- pager begin -->
+        <div class="col-md-12">
+          <ul id="series">
+            {{ range .Params.series }}
+              <li><a href="{{ "/series/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> </li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
 
       
+      <div class="row">
+        <div class="col">
+          <h2>Categories</h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- pager begin -->
+        <div class="col-md-12">
+          <ul id="categories">
+            {{ range .Params.categories }}
+              <li><a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> </li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+
+      
+      <div class="row">
+        <div class="col">
+          <h2>Tags</h2>
+        </div>
+      </div>
+
       <div class="row">
         <!-- pager begin -->
         <div class="col-md-12">
