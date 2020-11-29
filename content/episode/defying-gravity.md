@@ -19,5 +19,8 @@ explicit = "no" # values are "yes" or "no"
 upcoming = true
 # media_override # if you want to use a specific URL for the audio file
 # truncate = ""
+categories = ["Architecture"]
+series = ["Tales from the real world"]
+tags = ["Architecture", "Flight Sim"]
 +++
 Have you tried Flight Simulator 2020 and been impressed by how well it maps to the real world? Joined other users in the simulator on a journey and encountered other 'live' aircrafts, or changing weather conditions? This is powered by the Cloud! Join Chris and Cam as they embark on a journey of discovery, and a quick lap around the skies...
