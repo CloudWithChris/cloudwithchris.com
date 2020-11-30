@@ -1,0 +1,25 @@
+<div class = "row">
+  <div class = "col-md-12">
+    {{ $type := .Type }}
+    {{ range $key, $value := .Data.Terms.ByCount  }}
+      {{ $name := .Name }}
+      {{ $count := .Count }}
+      <div class="row person_row">
+          <div class="col-md-3">            
+            {{ $firstChild := index .Pages 0 }}
+            {{ with $firstChild.Params.images }}
+              {{ with $.Site.GetPage (printf "/%s/%s" $type $name) }}
+                <a href="{{ .Page.Permalink }}"><img src="{{ index . 0 }}" alt="{{ .Title }}" class="img-fluid" width="250px"></a>
+              {{ end }}
+            {{ end }}
+          </div>
+          <div class= "col-md-6">
+            {{ with $.Site.GetPage (printf "/%s/%s" $type $name) }}
+              <h3>><a href="{{ .Permalink }}">{{ $name }}</a></h3>
+            {{ end }}
+            <p>{{ $count }} post{{ if ne $count 1 }}s{{ end }}</p>
+        </div>
+      </div>
+    {{ end }}
+  </div>
+</div>
