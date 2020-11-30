@@ -7,12 +7,12 @@
       {{ $firstChild := index .Pages 0}}
       {{ $firstImage := index ($firstChild.Params.images) 0}}
       <div class="row person_row">
-        <div class="col-md-3">          
+        <div class="col-md-4">          
           {{ with $.Site.GetPage (printf "/%s/%s" $type $name) }}
-          <a href="{{ .Page.Permalink }}"><img src="{{ $firstImage | absURL }}" alt="{{ .Title }}" class="img-fluid" width="250px"></a>
+          <a href="{{ .Page.Permalink }}"><img src="{{ $firstImage | absURL }}" alt="{{ .Title }}" class="img-fluid"></a>
           {{ end }}
         </div> 
-      <div class= "col-md-6">
+      <div class= "col-md-8">
         {{ with $.Site.GetPage (printf "/%s/%s" $type $name) }}
           <h3><a href="{{ .Permalink }}">{{ $name }}</a> </h3>
         {{ end }}
