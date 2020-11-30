@@ -1,16 +1,19 @@
-{{ $type := .Type }}
-  {{ range $key, $value := .Data.Terms.ByDate }}
-    {{ $name := .Name }}
-    {{ $count := .Count }}    
-    <div class = "row">
-      <div class="col-md-3">  
-        <p>Placeholder for image</p>
-      </div>    
-      <div class= "col-md-6">
-        {{ with $.Site.GetPage (printf "/%s/%s" $type $name) }}
-        <h3><a href="{{ .Permalink }}">{{ $name }}</a></h3>
-        {{ end }}
-        <p>{{ $count }} post{{ if ne $count 1 }}s{{ end }}</p>
-    </div>  
+<div class = "row">
+  <div class = "col-md-12">
+    <h2>Test</h2>
   </div>
-{{ end }}
+</div>
+<div class = "row">
+  <div class = "col-md-12">
+    <ul>
+      {{ $type := .Type }}
+      {{ range $key, $value := .Data.Terms.Alphabetical }}
+          {{ $name := .Name }}
+          {{ $count := .Count }}
+          {{ with $.Site.GetPage (printf "/%s/%s" $type $name) }}
+              <li><a href="{{ .Permalink }}">{{ $name }}</a> {{ $count }}</li>
+          {{ end }}
+      {{ end }}
+    </ul>
+  </div>
+</div>
