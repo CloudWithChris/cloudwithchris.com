@@ -1,19 +1,24 @@
 <div class = "row">
   <div class = "col-md-12">
-    <h2>Test</h2>
-  </div>
-</div>
-<div class = "row">
-  <div class = "col-md-12">
-    <ul>
       {{ $type := .Type }}
       {{ range $key, $value := .Data.Terms.Alphabetical }}
-          {{ $name := .Name }}
-          {{ $count := .Count }}
+      {{ $name := .Name }}
+      {{ $count := .Count }}
+      {{ $firstChild := index .Pages 0}}
+      {{ $firstImage := index ($firstChild.Params.images) 0}}
+      <div class="row person_row">
+        <div class="col-md-3">          
           {{ with $.Site.GetPage (printf "/%s/%s" $type $name) }}
-              <li><a href="{{ .Permalink }}">{{ $name }}</a> {{ $count }}</li>
+          <a href="{{ .Page.Permalink }}"><img src="{{ $firstImage }}" alt="{{ .Title }}" class="img-fluid" width="250px"></a>
           {{ end }}
+        </div> 
+      </div>
+      <div class= "col-md-6">
+        {{ with $.Site.GetPage (printf "/%s/%s" $type $name) }}
+          <h3><a href="{{ .Permalink }}">{{ $name }}</a> </h3>
+        {{ end }}
+        <p>{{ $count }} episode{{ if ne $count 1 }}s{{ end }}</p>
+      </div>  
       {{ end }}
-    </ul>
   </div>
 </div>
