@@ -2,7 +2,7 @@
 <!-- rest of episodes -->
 {{- if (where site.RegularPages "Type" "in" site.Params.mainSections) -}}
 {{- $paginator := .Paginator }}
-{{- $list := .Paginator  -}}
+{{- $list := .Paginator.Pages  -}}
 {{- $len := (len $list) -}}
 <div class="row main_container">
 {{- with .Site.Params.enable_jumbo -}}
