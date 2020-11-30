@@ -9,7 +9,7 @@
       <div class="row person_row">
         <div class="col-md-3">          
           {{ with $.Site.GetPage (printf "/%s/%s" $type $name) }}
-          <a href="{{ .Page.Permalink }}"><img src="{{ $firstImage }}" alt="{{ .Title }}" class="img-fluid" width="250px"></a>
+          <a href="{{ .Page.Permalink }}"><img src="{{ $firstImage | absURL }}" alt="{{ .Title }}" class="img-fluid" width="250px"></a>
           {{ end }}
         </div> 
       </div>
