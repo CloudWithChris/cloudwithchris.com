@@ -18,6 +18,9 @@ hosts = ["chrisreddington"] # The names of your hosts, based on the filename wit
 explicit = "no" # values are "yes" or "no"
 # media_override # if you want to use a specific URL for the audio file
 # truncate = ""
+categories = ["Podcasting"]
+series = ["Podcast Episodes"]
+tags = ["Podcasting"]
 +++
 Hello, and welcome back to Cloud with Chris! You're with me, Chris Reddington - and we'll be talking about all things Cloud! We're going to go in a little bit of a different direction for this episode,  and focus on the podcast itself and my podcast journey so far! As you'll know, I'm still early on this journey, so I do appreciate all of your support- Whether that is feedback to keep making the episodes more useful, liking or subscribing across social media or podcast channels, or suggesting topic ideas for future episodes! All of these can be found on the Podcast's website, [www.cloudwithchris.com](https://www.cloudwithchris.com).
 

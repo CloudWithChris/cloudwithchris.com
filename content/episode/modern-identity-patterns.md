@@ -18,6 +18,9 @@ youtube = "4OSSVk0IzCk"
 explicit = "no" # values are "yes" or "no"
 # media_override # if you want to use a specific URL for the audio file
 # truncate = ""
+categories = ["Identity"]
+series = ["Podcast Episodes"]
+tags = ["Identity", "Azure AD", "Azure AD B2C", "Authorization", "Authentication", "OAuth"]
 +++
 
 Transcript coming soon!

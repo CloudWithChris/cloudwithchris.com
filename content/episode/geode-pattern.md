@@ -18,5 +18,8 @@ youtube = "0-XgNpjApXM"
 explicit = "no" # values are "yes" or "no"
 # media_override # if you want to use a specific URL for the audio file
 # truncate = ""
+categories = ["Architecture"]
+series = ["Architecting for the Cloud, one pattern at a time"]
+tags = ["Architecture", "APIs", "Cloud Design Patterns"]
 +++
 Due to some audio issues during recording, we will be re-recording this session. Stay tuned for more updates!

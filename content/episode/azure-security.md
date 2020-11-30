@@ -18,6 +18,9 @@ hosts = ["chrisreddington"] # The names of your hosts, based on the filename wit
 explicit = "no" # values are "yes" or "no"
 # media_override # if you want to use a specific URL for the audio file
 # truncate = ""
+categories = ["Security"]
+series = ["Podcast Episodes"]
+tags = ["Security", "Architecture", "DevOps"]
 +++
 Hello, and welcome back to Cloud with Chris! You're with me, Chris Reddington - and we'll be talking about all things Cloud!
 

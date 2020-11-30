@@ -1,5 +1,3 @@
-{{- partial "jumbotron.html" . }}
-
 <section class="episode-list">
 
   <div class = "col episode-list-header">
@@ -8,7 +6,7 @@
 
   <div class = "row">
 
-    {{ $paginator := .Paginate (where ( where site.RegularPages "Type" "in" site.Params.mainSections) ".Params.upcoming" "!=" true ) }}
+    {{ $paginator := .Paginator }}
 
         {{ range $paginator.Pages }}
         {{ $.Scratch.Set "episode" .File.BaseFileName }}

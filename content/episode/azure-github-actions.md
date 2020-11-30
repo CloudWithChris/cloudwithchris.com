@@ -18,6 +18,9 @@ youtube = "T9EtWuDfH1s"
 explicit = "no" # values are "yes" or "no"
 # media_override # if you want to use a specific URL for the audio file
 # truncate = ""
+categories = ["DevOps"]
+series = ["Podcast Episodes"]
+tags = ["DevOps", "GitHub", "Serverless"]
 +++
 
 Transcript coming soon!
