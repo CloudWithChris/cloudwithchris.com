@@ -1,0 +1,5 @@
+{{ $taxonomy := "tags" }} {{ with .Param $taxonomy }}
+  {{ range $index, $tag := . }} {{ with $.Site.GetPage (printf "/%s/%s" $taxonomy $tag) -}}
+  {{- if $index -}}, {{ end -}}<a href="{{ .Permalink }}">{{ $tag }}</a>
+  {{- end -}} {{- end -}}
+{{ end }}
