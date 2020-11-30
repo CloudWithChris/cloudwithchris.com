@@ -14,7 +14,7 @@
         </div> 
       <div class= "col-md-8">
         {{ with $.Site.GetPage (printf "/%s/%s" $type $name) }}
-          <h3><a href="{{ .Permalink }}">{{ $name }}</a> </h3>
+          <h3><a href="{{ .Permalink }}">{{ .Title }}</a> </h3>
         {{ end }}
         <p>{{ $count }} episode{{ if ne $count 1 }}s{{ end }}</p>
       </div>  
