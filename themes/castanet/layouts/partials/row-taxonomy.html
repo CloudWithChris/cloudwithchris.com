@@ -1,8 +1,8 @@
 <section class="episode-list">
 <!-- rest of episodes -->
 {{- if (where site.RegularPages "Type" "in" site.Params.mainSections) -}}
-{{- $paginator := .Paginate (where ( where site.RegularPages "Type" "in" site.Params.mainSections) ".Params.upcoming" "==" true ) }}
-{{- $list := (where ( where site.RegularPages "Type" "in" site.Params.mainSections) ".Params.upcoming" "==" true ) -}}
+{{- $paginator := .Paginator }}
+{{- $list := .Paginator  -}}
 {{- $len := (len $list) -}}
 <div class="row main_container">
 {{- with .Site.Params.enable_jumbo -}}
