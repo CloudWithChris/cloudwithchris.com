@@ -1,9 +1,19 @@
-{{ if isset $.Site.Params "site_layout" }}
-  {{ if eq $.Site.Params.site_layout "grid" }}
-    {{- partial "grid-taxonomies.html" . }}
-  {{ else }}
-    {{- partial "row-taxonomies.html" . }}
-  {{ end }}
-{{ else }}
-  {{- partial "row-taxonomies.html" . }}
-{{ end }}
+<div class = "row">
+  <div class = "col-md-12">
+    <h2>Test</h2>
+  </div>
+</div>
+<div class = "row">
+  <div class = "col-md-12">
+    <ul>
+      {{ $type := .Type }}
+      {{ range $key, $value := .Data.Terms.Alphabetical }}
+          {{ $name := .Name }}
+          {{ $count := .Count }}
+          {{ with $.Site.GetPage (printf "/%s/%s" $type $name) }}
+              <li><a href="{{ .Permalink }}">{{ $name }}</a> {{ $count }}</li>
+          {{ end }}
+      {{ end }}
+    </ul>
+  </div>
+</div>
