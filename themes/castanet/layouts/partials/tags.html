@@ -5,4 +5,4 @@
   {{ with $.Site.GetPage (printf "/%s/%s" $taxonomy $urlTag) -}}
   <a href="{{ .Permalink }}">{{ $tag }}</a>{{ cond (eq (add $index 1) $len) "" ", " }}
   {{- end -}}{{- end -}}
-{{ end }}
+{{ end }} 
