@@ -110,7 +110,7 @@
     </div>
   {{ end }}
 
-  {{ if and (isset .Site.Params "enable_show_next_episode")(and (eq .Site.Params.enable_show_next_episode "true") (ge (len (where ( where site.RegularPages "Type" "in" site.Params.mainSections) ".Params.upcoming" "!=" true )) 1)) }}
+  {{ if and (and (isset .Site.Params "enable_show_next_episode") (eq .Site.Params.enable_show_next_episode "true")) (ge (len (where ( where site.RegularPages "Type" "in" site.Params.mainSections) ".Params.upcoming" "!=" true )) 1) }}
   <div class="col-md-6">
 {{ else }}
   <div class="col-md-12">
