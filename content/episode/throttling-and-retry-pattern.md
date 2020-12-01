@@ -16,7 +16,6 @@ hosts = ["chrisreddington"] # The names of your hosts, based on the filename wit
 #aliases = ["/##"]
 #youtube = "kaR_0mQi1O0"
 explicit = "no" # values are "yes" or "no"
-upcoming = true
 # media_override # if you want to use a specific URL for the audio file
 # truncate = ""
 categories = ["Architecture"]
