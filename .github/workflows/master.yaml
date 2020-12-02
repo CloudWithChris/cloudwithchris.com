@@ -51,7 +51,7 @@ jobs:
       with:
         azcliversion: 2.0.72
         inlineScript: |
-          az storage blob upload-batch --account-name cloudwithchris -d '$web' -s website
+          az storage blob upload-batch --account-name cloudwithchrisprod -d '$web' -s website
     - name: Azure CLI script
       uses: azure/CLI@v1
       with:
