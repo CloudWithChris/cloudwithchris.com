@@ -20,35 +20,67 @@ buildFuture = true
 # The theme supports menus with up to one submenu per menu item
 # The menu name must be "Main"
 # The menus are sorted based upon their identifier
+
 [[Menu.Main]]
     name = "Episodes"
     identifier = "0-episodes"
-    url = "/"
+    url = "#!"
 
+[[Menu.Main]]
+name = "Released"
+identifier = "0-episodes-released"
+url = "/"
+parent = "0-episodes"
 
 [[Menu.Main]]
     name = "Upcoming"
-    identifier = "1-upcoming"
+    identifier = "0-episodes-upcoming"
     url = "/upcoming"
+    parent = "0-episodes"
+
+[[Menu.Main]]
+    name = "By category"
+    identifier = "0-episodes-category"
+    url = "/categories"
+    parent = "0-episodes"
+
+[[Menu.Main]]
+    name = "By series"
+    identifier = "0-episodes-series"
+    url = "/series"
+    parent = "0-episodes"
+
+[[Menu.Main]]
+    name = "By tag"
+    identifier = "0-episodes-tag"
+    url = "/tags"
+    parent = "0-episodes"
+
+[[Menu.Main]]
+    name = "Get involved"
+    identifier = "1-getinvolved"
+    url = "#!"
 
 [[Menu.Main]]
     name = "Suggest a topic"
-    identifier = "2-topics"
+    identifier = "1-getinvolved-1-topics"
     url = "https://forms.office.com/Pages/ResponsePage.aspx?id=I8_hAe_rSkSatzbwI0Rs1nhBo3a5mW9AuJOwL1Kt0n9UQVcyOFZFNkdXU0FGNTM0Uk0zUEdPT1VFNy4u"
+    parent = "1-getinvolved"
 
 [[Menu.Main]]
     name = "Become a Guest"
-    identifier = "3-guestsignup"
+    identifier = "1-getinvolved-2-guestsignup"
     url = "https://calendly.com/cloudwithchris"
+    parent = "1-getinvolved"
 
 [[Menu.Main]]
     name = "Guests"
-    identifier = "4-guests"
+    identifier = "2-guests"
     url = "/guest"
 
 [[Menu.Main]]
     name = "About Chris"
-    identifier = "5-about"
+    identifier = "3-about"
     url = "https://www.christianreddington.co.uk"
 
 [params]
