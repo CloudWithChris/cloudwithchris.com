@@ -2,7 +2,7 @@ name: 'Close Preview Branch'
 on:
   pull_request:
     branches: 
-      - master
+      - dev
     types: 
       - closed
 jobs:
