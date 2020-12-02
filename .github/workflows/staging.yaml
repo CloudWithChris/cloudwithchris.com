@@ -1,8 +1,8 @@
-name: Preview
-on:
-  pull_request:
-    branches: 
-      - dev
+name: Staging (Dev)
+on: 
+  push:
+      branches:
+        - dev
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -26,9 +26,9 @@ jobs:
         tokenSuffix: '}#' # optional, default is }#
         files: '["config.toml"]'
       env:
-        hostname: 'https://preview.cloudwithchris.com/${{ github.head_ref }}'
+        hostname: 'https://staging.cloudwithchris.com/'
     - name: Build
-      run: hugo --minify --buildFuture  
+      run: hugo --minify    
     - name: Upload website as Artifact
       uses: actions/upload-artifact@v1
       with:
@@ -51,4 +51,10 @@ jobs:
       with:
         azcliversion: 2.0.72
         inlineScript: |
-          az storage blob upload-batch --account-name cloudwithchrispreview -d '$web/${{ github.head_ref }}' -s 'website'
+          az storage blob upload-batch --account-name cloudwithchrisstaging -d '$web' -s website
+    - name: Azure CLI script
+      uses: azure/CLI@v1
+      with:
+        azcliversion: 2.0.72
+        inlineScript: |
+          az cdn endpoint purge --content-paths  "/*" --profile-name "cloudwithchris" --name "cloudwithchris-staging" --resource-group "cloudwithchris"
