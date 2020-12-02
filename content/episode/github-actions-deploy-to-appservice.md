@@ -20,6 +20,6 @@ explicit = "no" # values are "yes" or "no"
 # truncate = ""
 categories = ["DevOps"]
 series = ["GitHub Actions and Azure"]
-tags = ["GitHub", "GitHub Actions", "DevOps", ".NET Core", "App Service"]
+tags = ["GitHub", "GitHub Actions", "DevOps", ".NET Core", "App Service"] #dummychange
 +++
 You have your .NET Core code. You have your application infrastructure ready. Now, it's time for us to deploy that application to Azure using GitHub Actions!
