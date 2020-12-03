@@ -13,4 +13,4 @@ Instagram = ""
 YouTube = ""
 #Aka = []
 +++
-Abel Wang is a Principal Cloud Advocate and DevOps Lead at Microsoft, specializing in DevOps and Azure with a background in application development. 
+Abel Wang is a Principal Cloud Advocate and DevOps Lead at Microsoft, specializing in DevOps and Azure with a background in application development.

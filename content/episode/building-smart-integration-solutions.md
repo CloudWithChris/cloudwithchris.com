@@ -32,7 +32,7 @@ Now onto this episode! When we think about cloud, we typically think about distr
 
 So, without further ado - let's go ahead and jump straight in.
 
-** Show notes to follow at a later stage**
+**Show notes to follow at a later stage**
 
 There we go, plenty to take in Logic Apps, Azure Functions, Event Grid, Service Bus and more. Serverless technologies are a great way to build out your distributed applications. We learned that they can be reactive or event driven, which can lead us towards cost efficiencies, and only paying for what we need, rather than compute on an ongoing basis.
 

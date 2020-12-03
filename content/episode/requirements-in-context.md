@@ -63,7 +63,7 @@ Now defining these types of metrics ahead of time is a super valuable activity, 
 
 There are definitely themes that I see in this space when I work with organisations. For example:
 
-- Not having any clearly defined availability requirements, so not knowing what target they need to achieve 
+- Not having any clearly defined availability requirements, so not knowing what target they need to achieve
 - Not having any clearly defined requirements, so they design based off assumptions which will never meet the business' requirements without some re-work or re-architecture needed at a later point
 - Or worse yet, overcomplicating the design to meet requirements which are not needed so adding in extra complexity to meet some kind of availability requirement that just isn't needed and isn't suitable for that environment
 
@@ -78,12 +78,12 @@ Scenario 2 - You host your applications and instances in the same datacentre bui
 Scenario 3 - You host your applications and instances in different datacentre buildings but those datacentre buildings are in a small distance of each other
 Scenario 4 - You host your applications in different datacentres, but perhaps they're split across different countries or different areas across a country
 
-Each one of those scenarios will have a different tolerance to failure. 
+Each one of those scenarios will have a different tolerance to failure.
 
 - For example, if there was a power outage in a rack, then scenario 1 would suffer downtime whereas the others would not
 - If there was a significant weather event (e.g. tornado/lightning strike/ tsunami for example) which caused issues with a particular building, then Scenarios 1 and 2 would fail. You can see how this idea extrapolates outwards.
 
-These concepts translate in exactly the same way to the cloud. We still need to consider these eventualities. Cloud Services still run in datacentres, but at a much bigger scale. 
+These concepts translate in exactly the same way to the cloud. We still need to consider these eventualities. Cloud Services still run in datacentres, but at a much bigger scale.
 
 So the question is now a little less abstract than picking a percentage number that you want to be available, but what scale of risk are you willing to accept compared to cost? Cost is another factor which we must consider in the context of these decisions. This is especially as important - I've seen occasions where designs have been overcomplicated - which is a risk in its own right - and will cause an increase in cost directly to the resources that you are consuming, as well as the ongoing maintenance of the system as well.
 
@@ -91,13 +91,13 @@ Consider the scenario, where you are building a solution using Microsoft Azure. 
 
 To contrast that, a 99.999% SLA would mean 6 seconds of downtime a week, 25.9 seconds per month and 5.26 minutes per year. So that's quite a difference!
 
-At a high level, how would you design an application to meet each of those requirements? Each approach would drive you in a slightly different variation. For example, in the latter scenario, you may want to design the system to be resilient against a catastrophic event where an entire Azure region could be brought down - Perhaps by a Tsunami, Meteor strike, or one of those big events that we mentioned earlier. 
+At a high level, how would you design an application to meet each of those requirements? Each approach would drive you in a slightly different variation. For example, in the latter scenario, you may want to design the system to be resilient against a catastrophic event where an entire Azure region could be brought down - Perhaps by a Tsunami, Meteor strike, or one of those big events that we mentioned earlier.
 
 In the initial 99.9% SLA scenario, it would be likely that running in a single region (potentially even in the same building) would be acceptable to meet the requirements. We do of course need to factor in our own processes into that agreement, for example, any downtime window for updating our software and the application itself into that SLA, so that we then know what we are going to be giving to our end business users or end customers. Now that briefly touches upon the area of DevOps, but we will definitely  be talking about that in another episode as well.
 
 I have seen a number of organisations take the approach of  "we're only as strong as the weakest link", meaning, they set the SLA of the solution equal to the component with the lowest SLA percentage. However, I would argue that this is not the most accurate way to look at it. You should look at something called a Composite SLA, where you look at the sum of the parts (or rather, the product of the failure of those parts) rather than looking at the weakest part of the system.
 
-Moving on from resilience, let's talk about scalability and performance. 
+Moving on from resilience, let's talk about scalability and performance.
 
 Consider that solution that you were architecting earlier on (with the 99.9 or the 99.999% SLA). How many users does the application need to serve? That's quite a broad question, so we might need to understand that in some more detail.
 
