@@ -36,7 +36,7 @@ It's a very insightful session, so let's go ahead and find out more about Maria'
 
 **Chris:** No worries, no worries! It's a pleasure to speak to you as always. So, today we're going to talk about hackathons. I know it's something that you're very passionate about it, and is something you've done a lot in the past as well, right?
 
-**Maria:** Awesome. Yeah, it actually all started his back my time at university - which seems such a long time ago now. 
+**Maria:** Awesome. Yeah, it actually all started his back my time at university - which seems such a long time ago now.
 
 **Chris:** So university was the first time you did a hackathon?
 

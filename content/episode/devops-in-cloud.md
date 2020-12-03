@@ -24,7 +24,7 @@ tags = ["DevOps", "Azure DevOps", "Shift Left", "Data DevOps"]
 +++
 Hello and welcome back to Cloud with Chris! You're with me - Chris Reddington, and we'll be talking about all things cloud. I've been doing some updates to my website, so please check out the "Become a Guest" or "Topic Suggestion" Links, as you'll now see some different forms you can complete.
 
-And of course, as a reminder - I'm also looking to increase my presence on YouTube, so if you could subscribe to [my Channel, Cloud with Chris](https://www.youtube.com/channel/UC6KrOsGhSVJBszv_AwbcMxA), that would be greatly appreciated! 
+And of course, as a reminder - I'm also looking to increase my presence on YouTube, so if you could subscribe to [my Channel, Cloud with Chris](https://www.youtube.com/channel/UC6KrOsGhSVJBszv_AwbcMxA), that would be greatly appreciated!
 
 In this episode, I'm very fortunate to have my first guest come and join me! And what better way to kick this off, than a topic area which is very close to my own heart - DevOps. I'm very excited that I was able to invite Abel Wang, Principal Developer Advocate and DevOps lead to come and join me to talk of his experiences at Microsoft. We jump through a few different areas, from What is DevOps, how it links back to requirements, Data DevOps and shifting left. There's plenty to learn from in this one, so let's dive straight in!
 

@@ -24,7 +24,7 @@ tags = ["Security", "Architecture", "DevOps"]
 +++
 Hello, and welcome back to Cloud with Chris! You're with me, Chris Reddington - and we'll be talking about all things Cloud!
 
-In this episode, we get back to a requirements based topic, and an area that will significantly impact the design of our resulting solution architecture. That topic is security! It's one of the hot topics that organisations want to discuss when moving to the cloud. So I'm pleased to be joined in this episode by another colleague, Andrew Nathan, who has a wealth of knowledge in the cyber security space. 
+In this episode, we get back to a requirements based topic, and an area that will significantly impact the design of our resulting solution architecture. That topic is security! It's one of the hot topics that organisations want to discuss when moving to the cloud. So I'm pleased to be joined in this episode by another colleague, Andrew Nathan, who has a wealth of knowledge in the cyber security space.
 
 There's plenty to digest in this one, so let's waste no time and jump straight in. Here we go...
 

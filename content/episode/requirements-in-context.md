@@ -47,7 +47,7 @@ You can see where this analogy is going, and you can see how this aligns to requ
 
 4 years on, and I find I'm still having the very same discussions with a lot of organisations as they begin along their cloud journey.
 
-The cloud is not a magical destination, but it is a new destination. Being ready for that new destination requires a little bit of preparation ahead of time, as we're designing for a new environment. Now we need to consider these, regardless of our approach, whether that's a Lift and Shift scenario or some kind of re-architecture or re-write. 
+The cloud is not a magical destination, but it is a new destination. Being ready for that new destination requires a little bit of preparation ahead of time, as we're designing for a new environment. Now we need to consider these, regardless of our approach, whether that's a Lift and Shift scenario or some kind of re-architecture or re-write.
 
 Cloud isn't magical (and I'm very sorry to say that as I'd love to call myself a cloud magician, that would be really cool!) - But those thoughts around availability, uptime and scalability - like we thought about on premises - still absolutely need to be considered in advance, and leads us into the world of requirements based engineering.
 

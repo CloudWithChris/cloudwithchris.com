@@ -22,7 +22,7 @@ categories = ["Architecture"]
 series = ["Podcast Episodes"]
 tags = ["Architecture", "Hybrid", "Azure Stack"]
 +++
-Hello, and welcome back to this episode of Cloud with Chris! You're with me Chris Reddington and we'll be talking about all things cloud. 
+Hello, and welcome back to this episode of Cloud with Chris! You're with me Chris Reddington and we'll be talking about all things cloud.
 
 The past few weeks and months have been a strange time for us all, so please continue to stay safe and healthy! I hope that these podcast episodes are providing you a little bit of variety, and something different in the day-to-day. Now, don't forget, that you can listen to these on your favourite platforms, whether that is [CloudWithChris.com](https://www.cloudwithchris.com), [Google Play Music](https://playmusic.app.goo.gl/?ibi=com.google.PlayMusic&isi=691797987&ius=googleplaymusic&apn=com.google.android.music&link=https://play.google.com/music/m/Icbsoegu6uvdlor4p4ukknrnel4?t%3DCloud_with_Chris%26pcampaignid%3DMKT-na-all-co-pr-mu-pod-16), [iTunes](https://podcasts.apple.com/gb/podcast/cloud-with-chris/id1499633784), [PocketCasts](https://pca.st/u5t985sn), [Spotify](https://open.spotify.com/show/3oBrdKm5grzl58GBiV0j2y), [Stitcher](https://www.stitcher.com/s?fid=507667&refid=stpr) or [YouTube](https://youtube.com/channel/UC6KrOsGhSVJBszv_AwbcMxA)!
 

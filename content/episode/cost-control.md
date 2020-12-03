@@ -37,7 +37,7 @@ If we think about an on-premises world, we will think about  cost in a slightly 
 
 The stereotypical (or comparable) example is paying your Gas or Electricity bills (or maybe think of a similar service where you may pay based on what you consume). This concept of "Pay as you Go" reduces the strain of up-front investment, and shifts our Infrastructure into a realm which resembles a commodity. So for example, we only pay for what we use.
 
-Dwell on that thought for a few moments. Infrastructure as a commodity. That can be treated as an operational expense. Is that a good thing, or a bad thing? It's not necessarily, either - from a business perspective, it does introduces opportunities as well as challenges. 
+Dwell on that thought for a few moments. Infrastructure as a commodity. That can be treated as an operational expense. Is that a good thing, or a bad thing? It's not necessarily, either - from a business perspective, it does introduces opportunities as well as challenges.
 
 On the plus side,
 - Depending on the exact nature of your business, this could bring in something valuable directly to your entire business model, potentially even act  as a disruptor to that model. For example, you could change your business model from a license based approach to an ongoing / subscription based model, where you then have a consistent and predictable, continuous revenue stream.
