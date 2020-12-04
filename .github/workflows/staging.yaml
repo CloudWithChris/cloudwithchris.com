@@ -33,7 +33,7 @@ jobs:
           DEFAULT_BRANCH: master
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   build:
-    #needs: lint
+    needs: lint
     runs-on: ubuntu-latest
     steps:            
     - uses: actions/checkout@v2
