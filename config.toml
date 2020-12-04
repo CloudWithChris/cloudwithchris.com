@@ -28,31 +28,31 @@ buildFuture = true
 
 [[Menu.Main]]
 name = "Released"
-identifier = "0-episodes-released"
+identifier = "0-episodes-0-released"
 url = "/"
 parent = "0-episodes"
 
 [[Menu.Main]]
     name = "Upcoming"
-    identifier = "0-episodes-upcoming"
+    identifier = "0-episodes-1-upcoming"
     url = "/upcoming"
     parent = "0-episodes"
 
 [[Menu.Main]]
     name = "By category"
-    identifier = "0-episodes-category"
+    identifier = "0-episodes-2-category"
     url = "/categories"
     parent = "0-episodes"
 
 [[Menu.Main]]
     name = "By series"
-    identifier = "0-episodes-series"
+    identifier = "0-episodes-3-series"
     url = "/series"
     parent = "0-episodes"
 
 [[Menu.Main]]
     name = "By tag"
-    identifier = "0-episodes-tag"
+    identifier = "0-episodes-4-tag"
     url = "/tags"
     parent = "0-episodes"
 

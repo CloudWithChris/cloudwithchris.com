@@ -4,7 +4,7 @@ date: 2020-03-01T11:02:10Z
 draft: false
 ---
 
-Do you think you have a conversation topic that would be a great fit for the show? 
+Do you think you have a conversation topic that would be a great fit for the show?
 
 Want to come on to the show and have a chat about your journey?
 
