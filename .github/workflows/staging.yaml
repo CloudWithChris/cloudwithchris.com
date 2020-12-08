@@ -119,4 +119,4 @@ jobs:
         aws-region: eu-west-1    
     - name: Copy files to the staging site with the AWS CLI
       run: |
-        aws s3 sync . s3://cloudwithchris
+        aws s3 sync ./website s3://cloudwithchris
