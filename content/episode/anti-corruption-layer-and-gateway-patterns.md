@@ -1,9 +1,9 @@
 +++
-Title = "21 - The Anti-corruption layer, Gateway Aggregation and Gateway Routing patterns" #dummy
+Title = "20 - The Anti-corruption layer, Gateway Aggregation and Gateway Routing patterns" #dummy
 Description = "You've heard Peter and Chris talk about The Facade pattern previously. These patterns build upon the Façade concept. The façade layer could be used to translate requests between various subsystems, aggregate multiple backend requests into a single response and offload specialised functionality to a gateway proxy. Tune in and listen to Peter Piper join Chris Reddington, as they discuss The Anti-corruption layer, Gateway Aggregation and Gateway Routing patterns! This is another episode in the series of Architecting for the Cloud, one pattern at a time."
 Date = 2020-12-23T00:01:00Z
 PublishDate = 2020-12-23T00:01:00Z # this is the datetime for the when the epsiode was published. This will default to Date if it is not set. Example is "2016-04-25T04:09:45-05:00"
-#podcast_file = "21 - The Backends for Frontends and Strangler Pattern with Peter Piper.mp3" # the name of the podcast file, after the media prefix.
+#podcast_file = "20 - The Backends for Frontends and Strangler Pattern with Peter Piper.mp3" # the name of the podcast file, after the media prefix.
 #podcast_duration = "28:45.000"
 #podcast_bytes = "27635712" # the length of the episode in bytes
 episode_image = "img/cloudwithchrislogo.png"
