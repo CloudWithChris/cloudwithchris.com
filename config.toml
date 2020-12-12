@@ -64,13 +64,13 @@ parent = "0-episodes"
 [[Menu.Main]]
     name = "Suggest a topic"
     identifier = "1-getinvolved-1-topics"
-    url = "https://forms.office.com/Pages/ResponsePage.aspx?id=I8_hAe_rSkSatzbwI0Rs1nhBo3a5mW9AuJOwL1Kt0n9UQVcyOFZFNkdXU0FGNTM0Uk0zUEdPT1VFNy4u"
+    url = "https://github.com/chrisreddington/cloudwithchris.com/discussions?discussions_q=category%3A%22Episode+Ideas%22"
     parent = "1-getinvolved"
 
 [[Menu.Main]]
     name = "Become a Guest"
     identifier = "1-getinvolved-2-guestsignup"
-    url = "https://calendly.com/cloudwithchris"
+    url = "https://github.com/chrisreddington/cloudwithchris.com/discussions?discussions_q=category%3A%22Guest+Introductions%22"
     parent = "1-getinvolved"
 
 [[Menu.Main]]
