@@ -36,7 +36,7 @@ jobs:
         path: /home/runner/work/cloudwithchris.com/cloudwithchris.com/public
   publish:    
     environment:
-      name: staging.azure
+      name: production.azure
       url: https://www.cloudwithchris.com  
     runs-on: ubuntu-latest
     needs: build
