@@ -2,7 +2,7 @@
 Title = "GitHub Issues and GitHub Discussions"
 Description = "In this episode, we'll be taking a look at GitHub Issues and GitHub Discussions which recently came out at GitHub Universe. Interested? Then stick around as we find out more about both of these topics!"
 Date = 2020-12-16T14:00:00Z
-PublishDate = 2020-16-15T14:00:00Z # this is the datetime for the when the epsiode was published. This will default to Date if it is not set. Example is "2016-04-25T04:09:45-05:00"
+PublishDate = 2020-12-16T14:00:00Z # this is the datetime for the when the epsiode was published. This will default to Date if it is not set. Example is "2016-04-25T04:09:45-05:00"
 podcast_file = "G6 - GitHub Issues and GitHub Discussions.mp3" # the name of the podcast file, after the media prefix.
 podcast_duration = "15:02.000"
 podcast_bytes = "14479360" # the length of the episode in bytes
