@@ -6,6 +6,13 @@ googleAnalytics = "UA-185951371-1"
 paginate = "9"
 buildFuture = true
 
+[privacy]
+  [privacy.googleAnalytics]
+    anonymizeIP = false
+    disable = false
+    respectDoNotTrack = true
+    useSessionStorage = false
+
 [taxonomies]
   category = "categories"
   series = "series"
@@ -83,6 +90,23 @@ parent = "0-episodes"
     identifier = "3-about"
     url = "https://www.christianreddington.co.uk"
 
+[[Menu.Main]]
+    name = "Policies"
+    identifier = "4-policies"
+    url = "#!"
+
+[[Menu.Main]]
+    name = "Cookie Policy"
+    identifier = "4-policies-cookies"
+    url = "/cookie-policy"
+    parent = "4-policies"
+
+[[Menu.Main]]
+    name = "Privacy Policy"
+    identifier = "4-policies-privacy"
+    url = "/privacy-policy"
+    parent = "4-policies"
+
 [params]
 mainSections = ["episode"]
 site_theme = "grey"
@@ -93,7 +117,7 @@ enable_jumbo = "true"
 # enable_jumbo = "false"
 # truncate = "100"
 about_logo = "/img/cloudwithchrislogo.png"
-copyright_notice = "Copyright 2020 [Chris Reddington](https://www.christianreddington.co.uk), Proudly running using [Hugo](https://gohugo.io/) and the [Castanet Theme](https://themes.gohugo.io/castanet/). Microphone Icon in logo is made by [Smashicons](https://www.flaticon.com/authors/smashicons) from [www.flaticon.com](https://www.flaticon.com/).  Cloud with Chris is a community-driven personal podcast. Content from episodes do not represent the views of any company or organisation."
+copyright_notice = "Copyright 2020 [Chris Reddington](https://www.christianreddington.co.uk), Proudly running using [Hugo](https://gohugo.io/) and the [Castanet Theme](https://themes.gohugo.io/castanet/). Microphone Icon in logo is made by [Smashicons](https://www.flaticon.com/authors/smashicons) from [www.flaticon.com](https://www.flaticon.com/).  Cloud with Chris is a community-driven personal podcast. Content from episodes do not represent the views of any company or organisation. [Privacy Policy](/privacy-policy) | [Cookie Policy](/cookie-policy)"
 itunes_subscribe = "https://podcasts.apple.com/gb/podcast/cloud-with-chris/id1499633784"
 #android_subscribe = "http://subscribeonandroid.com/feeds.podtrac.com/VGAulpN7MY1U"
 spotify_subscribe = "https://open.spotify.com/show/3oBrdKm5grzl58GBiV0j2y"
