@@ -2,7 +2,7 @@ baseurl = "#{hostname}#"
 languageCode = "en-us"
 title = "Cloud with Chris"
 theme = "castanet"
-googleAnalytics = ""
+googleAnalytics = "G-JVJ6KJ3Q3Y"
 paginate = "9"
 buildFuture = true
 
