@@ -22,8 +22,8 @@ Use and processing of collected information
 
 In order to make the Website and Services available to you, or to meet a legal obligation, we need to collect and use certain Personal Information. If you do not provide the information that we request, we may not be able to provide you with the requested products or services. Any of the information we collect from you may be used for the following purposes:
 
-*   Improve user experience
-*   Run and operate the Website and Services
+* Improve user experience
+* Run and operate the Website and Services
 
 Processing your Personal Information depends on how you interact with the Website and Services, where you are located in the world and if one of the following applies: (i) you have given your consent for one or more specific purposes; this, however, does not apply, whenever the processing of Personal Information is subject to California Consumer Privacy Act or European data protection law; (ii) provision of information is necessary for the performance of an agreement with you and/or for any pre-contractual obligations thereof; (iii) processing is necessary for compliance with a legal obligation to which you are subject; (iv) processing is related to a task that is carried out in the public interest or in the exercise of official authority vested in us; (v) processing is necessary for the purposes of the legitimate interests pursued by us or by a third party.
 
@@ -59,13 +59,13 @@ Data protection rights under GDPR
 
 If you are a resident of the European Economic Area (EEA), you have certain data protection rights and the Operator aims to take reasonable steps to allow you to correct, amend, delete, or limit the use of your Personal Information. If you wish to be informed what Personal Information we hold about you and if you want it to be removed from our systems, please contact us. In certain circumstances, you have the following data protection rights:
 
-*   You have the right to request access to your Personal Information that we store and have the ability to access your Personal Information.
-*   You have the right to request that we correct any Personal Information you believe is inaccurate. You also have the right to request us to complete the Personal Information you believe is incomplete.
-*   You have the right to request the erase your Personal Information under certain conditions of this Policy.
-*   You have the right to object to our processing of your Personal Information.
-*   You have the right to seek restrictions on the processing of your Personal Information. When you restrict the processing of your Personal Information, we may store it but will not process it further.
-*   You have the right to be provided with a copy of the information we have on you in a structured, machine-readable and commonly used format.
-*   You also have the right to withdraw your consent at any time where the Operator relied on your consent to process your Personal Information.
+* You have the right to request access to your Personal Information that we store and have the ability to access your Personal Information.
+* You have the right to request that we correct any Personal Information you believe is inaccurate. You also have the right to request us to complete the Personal Information you believe is incomplete.
+* You have the right to request the erase your Personal Information under certain conditions of this Policy.
+* You have the right to object to our processing of your Personal Information.
+* You have the right to seek restrictions on the processing of your Personal Information. When you restrict the processing of your Personal Information, we may store it but will not process it further.
+* You have the right to be provided with a copy of the information we have on you in a structured, machine-readable and commonly used format.
+* You also have the right to withdraw your consent at any time where the Operator relied on your consent to process your Personal Information.
 
 You have the right to complain to a Data Protection Authority about our collection and use of your Personal Information. For more information, please contact your local data protection authority in the European Economic Area (EEA).
 
