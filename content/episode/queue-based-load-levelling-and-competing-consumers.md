@@ -18,7 +18,6 @@ hosts = ["chrisreddington"] # The names of your hosts, based on the filename wit
 explicit = "no" # values are "yes" or "no"
 # media_override # if you want to use a specific URL for the audio file
 # truncate = ""
-upcoming = true
 categories = ["Architecture"]
 series = ["Architecting for the Cloud, one pattern at a time"]
 tags = ["Architecture", "APIs", "Cloud Design Patterns"]
