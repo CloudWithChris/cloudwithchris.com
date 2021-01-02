@@ -46,7 +46,7 @@ Chris is no stranger to speaking in podcasts or recording videos for YouTube, as
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Z9MHRdAsG8E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-### Azure Mythbusters: I can choose any Azure Compute Service to solve any problem!
+### Azure Mythbusters: I can choose any Azure Compute Service to solve any problem
 
 * [Azure Mythbusters: I can choose any Azure Compute Service to solve any problem!](https://cloudblogs.microsoft.com/industry-blog/en-gb/technetuk/2020/02/04/azure-Mythbusters-i-can-choose-any-azure-compute-service-to-solve-any-problem/)
 
