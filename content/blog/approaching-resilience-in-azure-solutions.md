@@ -19,7 +19,7 @@ In my previous blog post, I kept banging on about the word "Context". Guess what
 Q: Why is it that important?\
 A: Your solution is entirely dependent upon another vendor. Therefore, you need to be clear about the purpose and requirements of your system, so that you can design it a way that will function as you expect, in the domain of the vendor's services.
 
-Context is key. Remember your non-functional requirements.
+Context is key. Remember your non-functional requirements
 ----------------------------------------------------------
 
 How comfortable are you with your non-functional requirements? When I say comfortable, I mean could you explain them to me?
@@ -38,11 +38,11 @@ This probably sounds like I'm teaching to suck eggs, but it's a topic that has b
 
 You're probably thinking that I'm preaching about Waterfall right now, but that's not the case (Agile all the way!). The point I am making is that your entire team should be pointing in the same direction.
 
--   What are the SLAs that your solution should have? (Availability, Throughput, Duration of Transactions, etc... These are all contextual!)
+- What are the SLAs that your solution should have? (Availability, Throughput, Duration of Transactions, etc... These are all contextual!)
 
--   What are the data residency requirements of your solution? Do you have some form of compliance constraints that your team should be aware of? Can certain data
+- What are the data residency requirements of your solution? Do you have some form of compliance constraints that your team should be aware of? Can certain data
 
--   What is the usage profile of your solution, and what is the forecasted growth of usage?
+- What is the usage profile of your solution, and what is the forecasted growth of usage?
 
 There are many other areas that we could investigate around the softer requirements of the solution, but that gives you an initial flavour.
 
@@ -50,26 +50,26 @@ Once you have those answers, then begin considering the components that you wi
 
 You have a few options;
 
--   Identify the risk to your project stakeholders, and highlight the difference in requirements. You could then challenge whether the 100% SLA is required.
+- Identify the risk to your project stakeholders, and highlight the difference in requirements. You could then challenge whether the 100% SLA is required.
 
--   Again, identify the risk to your project stakeholders, and highlight the difference in requirements. They may decided to run at risk, though this should be captured in some form of sign-off.
+- Again, identify the risk to your project stakeholders, and highlight the difference in requirements. They may decided to run at risk, though this should be captured in some form of sign-off.
 
--   Alternatively, this SLA could absolutely be required. If so, then you should consider this when architecting the solution and design a Highly Available system that will help align to this requirement. However, it will add extra complexity. We'll come back to this point in a separate blog post.
+- Alternatively, this SLA could absolutely be required. If so, then you should consider this when architecting the solution and design a Highly Available system that will help align to this requirement. However, it will add extra complexity. We'll come back to this point in a separate blog post.
 
 Once we have our requirements and a candidate architecture, we can head to our second stage...
 
-Analyse the dependencies across your solution; cloud, on-premises and third party.
+Analyse the dependencies across your solution; cloud, on-premises and third party
 ----------------------------------------------------------------------------------
 
 By this stage, you would have some form of architecture diagram, or a strong understanding of how your solution ties together.
 
 Walk through that solution diagram, and component by component review:
 
--   Whether that component hits your non-functional requirements
+- Whether that component hits your non-functional requirements
 
--   Whether that component requires some form of geographical redundancy (This is quite complex, and would likely be performed at the solution level, e.g. a blue/green deployment. What would happen if a region of your cloud provider went down, due to a natural disaster, a poor network link, etc? Are you protected against that?)
+- Whether that component requires some form of geographical redundancy (This is quite complex, and would likely be performed at the solution level, e.g. a blue/green deployment. What would happen if a region of your cloud provider went down, due to a natural disaster, a poor network link, etc? Are you protected against that?)
 
--   What would happen if that particular component degrades or entirely fails? Play through the scenario, to see how this would affect your entire solution (i.e. Determine how tightly coupled the solution is and whether it can degrade gracefully).
+- What would happen if that particular component degrades or entirely fails? Play through the scenario, to see how this would affect your entire solution (i.e. Determine how tightly coupled the solution is and whether it can degrade gracefully).
 
 The above points are very cloud focused. What would happen if there are on premises components (e.g. Databases or Identity systems), or third party services (For example, payments handlers) being used as a pivotal part of your solution.
 

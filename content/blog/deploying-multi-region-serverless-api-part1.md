@@ -15,17 +15,17 @@ tags = ["Azure", "Architecture", "Scalability", "Resilience", "DevOps"]
 
 In my spare time, I work on a pet project called [Theatreers](https://www.github.com/theatreers). The aim of this is a microservice based platform focused on Theatre / Musical Theatre (bringing a few of my passion areas together).
 
-I've recently re-architected the project to align to a serverless technology stack. This includes: 
+I've recently re-architected the project to align to a serverless technology stack. This includes:
 
 * A set of **core global services**, such as -
-    * A Single Page App hosted on Azure Blob Storage
-    * Azure Front Door that sits in front of the blob storage, as well as the back-end API servicess
-* A number of **core regional resources** that exist in each region and are used across the suite of microservices - 
-    * An API Management instance deployed in the Consumption Tier
-    * An App Insights resource used as a sink for all telemetry within a regional deployment
+  * A Single Page App hosted on Azure Blob Storage
+  * Azure Front Door that sits in front of the blob storage, as well as the back-end API servicess
+* A number of **core regional resources** that exist in each region and are used across the suite of microservices -
+  * An API Management instance deployed in the Consumption Tier
+  * An App Insights resource used as a sink for all telemetry within a regional deployment
 * A set of resources that are deployed as part of a **regional microservice stamp**. This includes  -
-    * An Azure Key Vault
-    * The resources required to deploy an Azure Function (App Service Plan, Storage Account and Azure Function App) in consumption mode.
+  * An Azure Key Vault
+  * The resources required to deploy an Azure Function (App Service Plan, Storage Account and Azure Function App) in consumption mode.
 
 This first blog post will focus on the ARM Template design for the **core regional resources**, particularly, the API Management tier.
 
@@ -37,7 +37,7 @@ The project uses the concept of **[Linked Templates](https://docs.microsoft.com/
 
 The concept of Linked Templates is that Azure Resource Manager can deploy other Azure Resource Manager templates. Those other templates must be accessible on either HTTP or HTTPS over the internet. The templates can be held securely; a typical pattern is to use a private store (Such as Azure Blob Storage) and pass in a SAS token in the URL. Stores where some form of authentication is required are not supported.
 
-This linked template approach gives us modularity for our infrastructure templates, meaning separation of concerns. As we know from software engineering, this gives us reusability and also the ability to unit test individual components. 
+This linked template approach gives us modularity for our infrastructure templates, meaning separation of concerns. As we know from software engineering, this gives us reusability and also the ability to unit test individual components.
 
 The API Management template referenced in the previous gist can be found in the next gist;
 
@@ -47,7 +47,7 @@ Notice that the template is solely focused on the API Management Infrastructure,
 
 The core infrastructure will be deployed in a separate lifecycle to the APIs. This is because the APIs will be deployed in a separate pipeline which aligns to the deployment cadence of each individual Microservice that it is representing.
 
-Notice that the template takes two parameters, a location and a namePrefix. This is what provides the flexibility to deploly across multiple regions (i.e. the appropriate naming prefix for the region, and the region in which it should be deployed). 
+Notice that the template takes two parameters, a location and a namePrefix. This is what provides the flexibility to deploly across multiple regions (i.e. the appropriate naming prefix for the region, and the region in which it should be deployed).
 
 Also note that the parameters defined in the template are limited. This is a core recommended practice for Infrastructure as Code, ensuring that the template is deterministic (predictable). Imagine the scenario from a live operational perspective. If you have 20 different parameters that can be tweaked, the resulting deployment may be less predictable and prone to accidental misconfiguration due to human error. To gain the flexibility of different environment configurations, you could consider the "T-Shirt sizing" approach. This is where you would have a parameter that drives the resulting configuration (e.g. environmentName mapping to dev or prod), which then adjusts the variables used for the number of units to be deployed, SKUs, etc.
 

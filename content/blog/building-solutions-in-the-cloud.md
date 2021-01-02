@@ -31,16 +31,16 @@ Each of these scenarios will have very different requirements, both from a funct
 
 Thinking solely technical architecture is a very easy trap to fall into, when transitioning into the cloud.
 
--   What happens if there is a disaster, for example - a datacenter outage?
--   What happens if our data leaks - How will we respond as an organisation?
--   How will we support our users to provide a great end-user experience?
--   How do we ensure consistency and continuity across our cloud resources, and the mechanisms that we use to deploy them?
+- What happens if there is a disaster, for example - a datacenter outage?
+- What happens if our data leaks - How will we respond as an organisation?
+- How will we support our users to provide a great end-user experience?
+- How do we ensure consistency and continuity across our cloud resources, and the mechanisms that we use to deploy them?
 
 Consider the supporting operations. The innovation of cloud technologies is rapid, and keeping up can be tough. But you need to ensure that your processes safeguard you. It is part of the mindset of transitioning from product to service...
 
--   How can you provide a great customer experience, if your custom support team is available 9 - 5, when customer usage is 24x7?
--   How can you be sure that your Disaster Recovery processes are appropriate, when they were last tested on the sites initial deployment?
--   What will happen if you roll out a major release into production, but due to a lack of load testing - You find you have deployed code which contains a bottleneck and hits performance in your live environment.
+- How can you provide a great customer experience, if your custom support team is available 9 - 5, when customer usage is 24x7?
+- How can you be sure that your Disaster Recovery processes are appropriate, when they were last tested on the sites initial deployment?
+- What will happen if you roll out a major release into production, but due to a lack of load testing - You find you have deployed code which contains a bottleneck and hits performance in your live environment.
 
 It is not just about the cloud architecture, but also about the governance and supporting organisational policies and processes. You will now have a cloud vendor involved. You may be utilising third party services as well. It is important to ensure there is clarity on responsibilities, clear governance on cloud usage and defined processes and escalation routes for those unwanted eventualities.
 

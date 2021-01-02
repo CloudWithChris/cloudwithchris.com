@@ -17,17 +17,17 @@ Scalability is one of the common areas where I have seen common misconceptions, 
 
 But before we jump into that topic, let's first revisit the three main cloud operating models or paradigms:
 
--   Infrastructure as a Service (IaaS) - Think of this as "Hosting" your application. The clue is in the term "Infrastructure", you are very much getting a Virtual Machine - So are responsible for the Operating System, Network Connectivity, etc.
+- Infrastructure as a Service (IaaS) - Think of this as "Hosting" your application. The clue is in the term "Infrastructure", you are very much getting a Virtual Machine - So are responsible for the Operating System, Network Connectivity, etc.
 
--   Platform as a Service (PaaS) - Think of that as "Building" your application. Rather than caring too much about the underlying infrastructure (i.e. Which version of the OS, advanced configurations of the underlying infrastructure), you abstract away from those details and focus on building the application quickly. (Note: There is likely still some degree of configuration required here!)
+- Platform as a Service (PaaS) - Think of that as "Building" your application. Rather than caring too much about the underlying infrastructure (i.e. Which version of the OS, advanced configurations of the underlying infrastructure), you abstract away from those details and focus on building the application quickly. (Note: There is likely still some degree of configuration required here!)
 
--   Software as a Service (SaaS) - Think of this as "Consuming" an application. You don't want to build another version of an application, so you consume software that has been produced by another organisation. Think of Office 365 as an example here.
+- Software as a Service (SaaS) - Think of this as "Consuming" an application. You don't want to build another version of an application, so you consume software that has been produced by another organisation. Think of Office 365 as an example here.
 
 There are a couple of other concepts to be aware of; Scaling Up vs. Scaling Out.
 
--   Imagine scaling up as throwing more power behind a particular server (i.e. Increasing the number of CPUs it has, increasing the RAM).
+- Imagine scaling up as throwing more power behind a particular server (i.e. Increasing the number of CPUs it has, increasing the RAM).
 
--   Now, think of Scaling out as building out a server farm. Replicating the level of machine that you have, and increasing the number of instances of that machine to serve the volume of load that you have.
+- Now, think of Scaling out as building out a server farm. Replicating the level of machine that you have, and increasing the number of instances of that machine to serve the volume of load that you have.
 
 Now, time for some myth busting!
 
