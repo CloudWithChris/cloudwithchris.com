@@ -1,5 +1,5 @@
 +++
-Description = "Are you thinking of scalability in your cloud application?"
+Description = "Scalability is one of the common areas where I have seen common misconceptions, when customers begin building on the platform."
 date = 2016-09-29T12:00:00-00:00
 PublishDate = 2016-09-29T12:00:00-00:00 # this is the datetime for the when the epsiode was published. This will default to Date if it is not set. Example is "2016-04-25T04:09:45-05:00"
 title = "Are you thinking of scalability in your cloud application?"

@@ -1,5 +1,5 @@
 +++
-Description = "Building Solutions in the Cloud"
+Description = "By now, we should be aware of the benefits that the cloud can bring to any individual or organisaton. There are plenty of case studies, talking about the scalable, flexible and economic benefits. Companies see the cloud as a differentiator, and utilise it to disrupt and innovate in their respective markets. Gartner predicts that in 2016 the total public cloud market is due to increase by 16%. But, Chris - You're starting a blog about technology. Why are you talking to me about customer case studies and market fact? Why? Context."
 date = 2016-08-04T12:00:00-00:00
 PublishDate = 2016-08-04T12:00:00-00:00 # this is the datetime for the when the epsiode was published. This will default to Date if it is not set. Example is "2016-04-25T04:09:45-05:00"
 title = "Building Solutions in the Cloud"

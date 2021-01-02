@@ -1,5 +1,5 @@
 +++
-Description = "Approaching Resilience in Azure Solutions"
+Description = "I mentioned in Building Solutions in the Cloud that I would be writing a series of blog posts on the areas of risk that I have seen since I have been providing guidance around Azure. In this post, I will provide some thoughts on how you can consider resilience within the context of your own solution or application."
 date = 2016-08-26T12:00:00-00:00
 PublishDate = 2016-08-26T12:00:00-00:00 # this is the datetime for the when the epsiode was published. This will default to Date if it is not set. Example is "2016-04-25T04:09:45-05:00"
 title = "Approaching Resilience in Azure Solutions"

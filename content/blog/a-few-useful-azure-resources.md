@@ -1,5 +1,5 @@
 +++
-Description = "A few useful Azure Resources"
+Description = "Over the past few weeks, I have been working on a number of projects relating to Azure. The usual theme has crept up, around recommended practices, and where to go for documentation. There are a couple of great resources to be aware of!"
 date = 2016-09-03T12:00:00-00:00
 PublishDate = 2016-09-03T12:00:00-00:00 # this is the datetime for the when the epsiode was published. This will default to Date if it is not set. Example is "2016-04-25T04:09:45-05:00"
 title = "A few useful Azure Resources"
