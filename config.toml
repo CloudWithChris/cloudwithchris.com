@@ -112,6 +112,9 @@ parent = "0-episodes"
     url = "/privacy-policy"
     parent = "5-policies"
 
+[markup.goldmark.renderer]
+unsafe= true
+
 [params]
 mainSections = ["episode"]
 site_theme = "grey"
