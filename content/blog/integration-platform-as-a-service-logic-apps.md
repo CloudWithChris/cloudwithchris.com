@@ -14,8 +14,7 @@ tags = ["Blogging"]
 +++
 In case you had not already heard, [Logic Apps have now reached general availability on Azure](https://azure.microsoft.com/en-us/blog/announcing-azure-logic-apps-general-availability/) (or read [an MSDN article by Jeff Hollan](https://blogs.msdn.microsoft.com/logicapps/2016/07/27/azure-logic-apps-reaches-general-availability) on the topic).
 
-What are Logic Apps?
---------------------
+## What are Logic Apps?
 
 Logic Apps enable integration points primarily between Software as a Service (SaaS) offerings, and can be easily configured through a User Interface, available on the Azure Portal. This integration is facilitated by using [a series of connectors](https://azure.microsoft.com/en-gb/documentation/articles/apis-list/), which are focused around [enterprise integration](https://blogs.msdn.microsoft.com/logicapps/2016/06/30/public-preview-of-logic-apps-enteprise-integration-pack/) (in Public Preview at time of writing) and SaaS applications such as SalesForce, Twilio, Office 365, Twitter and more (though it's worth noting that some of these are in beta!)
 
@@ -69,7 +68,7 @@ Once you are happy, save the Logic App in the top left hand corner of the screen
 
 You may be interested to see what is happening in the background. Whilst you are using the UI, a JSON document is being updated, which reflects the template of the Logic App being created.
 
-You will notice a couple of variables relating to connectors, e.g. @parameters('$connections')\['twilio'\]\['connectionId'\]. You will also notice new resources in the same Resource Group as the logic app that you created, which match these references.
+You will notice a couple of variables relating to connectors, e.g. @parameters('$connections') \['twilio'\] \['connectionId'\]. You will also notice new resources in the same Resource Group as the logic app that you created, which match these references.
 
 This is an **incredibly** basic logic app, serving solely one user. Though it demonstrates the simplicity of the technology. Additionally, we have triggered this Logic App based upon detecting a new post in the RSS feed. We could do this in numerous approaches, as documented [here](https://msdn.microsoft.com/library/azure/mt643939.aspx). However, I hope that this has been useful and that you have created something useful for yourself in the process.
 

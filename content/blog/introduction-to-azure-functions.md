@@ -23,13 +23,9 @@ If you consider using Service Bus in a cloud architecture, you may also previous
 First, let's create the Azure Function in the Azure Portal.
 
 * There is a point to note here around the _App Service Plan_ type. You can see in the previous screenshot that I selected "Dynamic". This refers to the "Serverless" compute approach of Azure Functions. There is some further detail on the [Azure Function Scalability Documentation pages](https://azure.microsoft.com/en-gb/documentation/articles/functions-scale/) about this. From a cost-perspective, if you have a sporadically running function, then you may want to look at the Dynamic plans.
-    
 * Following from the cost point above, the cost of the Azure Function is calculated slightly differently, and is worth a quick read on the referenced documentation page.
-    
 * The Azure Functions platform itself will deal with the scalability (scaling out and scaling in) as required, based upon the number of times the configured triggers are hit.
-    
 * **Health Warning:** This feature is still in preview. Documentation, functionality and pricing could still change!
-    
 
 Now that we've covered some of the background points, let's jump in to our newly created Azure Function. Once we navigate to the resource, we will be greeted by the quick start page as shown below. Let's start off by clicking the "New Function" button, just under the "Search my functions" box.
 

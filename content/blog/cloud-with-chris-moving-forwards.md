@@ -23,13 +23,13 @@ Additionally, I have an open item in my mind around Twitter. I currently have a 
 
 Now for the interesting bit, content! We seem to have had a good rhythm with content over recent months, and I plan for that to continue! I'm currently looking throughout 2021, and considering the various series that I want to complete, and the topics that may be of interest. If you have a series / technology that you'd like to see covered, then please do let me know - As I want to make sure I'm prioritising the right topics for you!
 
-So far, we have the following - 
+So far, we have the following -
 * Azure and GitHub
 * Architecting in the Cloud, One Pattern at a Time
 * Tales from the real world
 * Additional episodes that are released on a regular basis
 
-There are a few other series ideas that I'm planning out / determining how they may work - 
+There are a few other series ideas that I'm planning out / determining how they may work -
 * A series that is a little more relaxed, e.g. having a number of presenters in a gaming scenario (e.g. Minecraft, Among Us, Flight Sim, etc.) discussing some of the latest top of mind thoughts / thoughts around archietcture/technology used within those games.
 * Expanding the guests that I invite onto the show, to folks that can explain their own cloud implementations and the decisions that they have made.
 * A weekly episode on the latest trends that I'm seeing, as well as some of the latest announcements (Of course, I can't cover everything - but will aim to cover the bits that stand out!)

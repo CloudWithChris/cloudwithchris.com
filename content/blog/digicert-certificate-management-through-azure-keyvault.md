@@ -28,7 +28,7 @@ Azure’s Key Vault can help in this area. Recently, at Microsoft Ignite 2016–
 
 ![Step 2](/img/blog/digicert-certificate-management-through-azure-keyvault/step-2.jpg "Set the variable names appropriately")
 
-**3.** Now that you have an Azure Key Vault, you need to link this to your organisation for your Certificate Authority issuer. There are a few pieces of information needed to get this going. Specifically, for DigiCert, you can find this [here]https://www.digicert.com/azure-key-vault/connect-to-certcentral-quick-start-guide.htm).
+**3.** Now that you have an Azure Key Vault, you need to link this to your organisation for your Certificate Authority issuer. There are a few pieces of information needed to get this going. Specifically, for DigiCert, you can find this [here](https://www.digicert.com/azure-key-vault/connect-to-certcentral-quick-start-guide.htm).
 
 **a.**  $orgIdentifier – The organisation ID associated with your CertCentral account on DigiCert.
 
