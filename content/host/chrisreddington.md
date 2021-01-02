@@ -40,7 +40,7 @@ Chris is no stranger to speaking in podcasts or recording videos for YouTube, as
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/8IqpT8zBN-w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-### Azure Mythbusters: Cloud is new, so there are no clear archietcture patterns!
+### Azure Mythbusters: Cloud is new, so there are no clear archietcture patterns
 
 * [Click here for the writeup](https://cloudblogs.microsoft.com/industry-blog/en-gb/technetuk/2020/01/28/azure-Mythbusters-cloud-is-new-so-there-are-no-clear-architecture-patterns/)
 
