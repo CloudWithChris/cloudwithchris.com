@@ -64,48 +64,53 @@ parent = "0-episodes"
     parent = "0-episodes"
 
 [[Menu.Main]]
+    name = "Blog"
+    identifier = "1-blog"
+    url = "/blog"
+
+[[Menu.Main]]
     name = "Get involved"
-    identifier = "1-getinvolved"
+    identifier = "2-getinvolved"
     url = "#!"
 
 [[Menu.Main]]
     name = "Suggest a topic"
-    identifier = "1-getinvolved-1-topics"
+    identifier = "2-getinvolved-1-topics"
     url = "https://github.com/chrisreddington/cloudwithchris.com/discussions?discussions_q=category%3A%22Episode+Ideas%22"
-    parent = "1-getinvolved"
+    parent = "2-getinvolved"
 
 [[Menu.Main]]
     name = "Become a Guest"
-    identifier = "1-getinvolved-2-guestsignup"
+    identifier = "2-getinvolved-2-guestsignup"
     url = "https://github.com/chrisreddington/cloudwithchris.com/discussions?discussions_q=category%3A%22Guest+Introductions%22"
-    parent = "1-getinvolved"
+    parent = "2-getinvolved"
 
 [[Menu.Main]]
     name = "Guests"
-    identifier = "2-guests"
+    identifier = "3-guests"
     url = "/guest"
 
 [[Menu.Main]]
     name = "About Chris"
-    identifier = "3-about"
+    identifier = "4-about"
     url = "https://www.christianreddington.co.uk"
 
 [[Menu.Main]]
     name = "Policies"
-    identifier = "4-policies"
+    identifier = "5-policies"
     url = "#!"
 
 [[Menu.Main]]
     name = "Cookie Policy"
-    identifier = "4-policies-cookies"
+    identifier = "5-policies-cookies"
     url = "/cookie-policy"
-    parent = "4-policies"
+    parent = "5-policies"
 
 [[Menu.Main]]
     name = "Privacy Policy"
-    identifier = "4-policies-privacy"
+    identifier = "5-policies-privacy"
     url = "/privacy-policy"
-    parent = "4-policies"
+    parent = "5-policies"
 
 [params]
 mainSections = ["episode"]
