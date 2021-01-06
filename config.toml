@@ -93,7 +93,7 @@ parent = "0-episodes"
 [[Menu.Main]]
     name = "About Chris"
     identifier = "4-about"
-    url = "https://www.christianreddington.co.uk"
+    url = "/host/chrisreddington"
 
 [[Menu.Main]]
     name = "Policies"
