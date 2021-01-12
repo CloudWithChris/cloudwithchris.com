@@ -1,27 +1,33 @@
-+++
-Title = "9 - Building smart Integration Solutions with Microsoft Azure"
-Description = "When we think about cloud, we typically think about distributed systems and somehow bringing those different components or systems together, so integrating them. But what are the common practices, or common challenges? You've probably heard of serverless, how does that fit into things? Well, I'm pleased to be joined by Ezhilarasi Chezhiyan, Product Consultant of Serverless360 at Kovai.co. So, without further ado - let's go ahead and jump straight in."
-Date = 2020-08-02T00:01:00Z
-PublishDate = 2020-08-02T00:01:00Z # this is the datetime for the when the epsiode was published. This will default to Date if it is not set. Example is "2016-04-25T04:09:45-05:00"
-podcast_file = "9 - Building Smart Integration Solutions with Microsoft Azure.mp3" # the name of the podcast file, after the media prefix.
-podcast_duration = "33:03.488"
-podcast_bytes = "23642112" # the length of the episode in bytes
-episode_image = "img/cloudwithchrislogo.png"
-#episode_banner = "0:40:04"
-guests = ["ezhilarasichezhiyan"] # The names of your guests, based on the filename without extension.
-#sponsors = []
-episode = "9"
-images = ["img/default-social.png"]
-hosts = ["chrisreddington"] # The names of your hosts, based on the filename without extension.
-#aliases = ["/##"]
-#youtube = ""
-explicit = "no" # values are "yes" or "no"
-# media_override # if you want to use a specific URL for the audio file
-# truncate = ""
-categories = ["Architecture"]
-series = ["Podcast Episodes"]
-tags = ["Serverless", "Monitoring"]
-+++
+---
+Date: "2020-08-02T00:01:00Z"
+Description: When we think about cloud, we typically think about distributed systems
+  and somehow bringing those different components or systems together, so integrating
+  them. But what are the common practices, or common challenges? You've probably heard
+  of serverless, how does that fit into things? Well, I'm pleased to be joined by
+  Ezhilarasi Chezhiyan, Product Consultant of Serverless360 at Kovai.co. So, without
+  further ado - let's go ahead and jump straight in.
+PublishDate: "2020-08-02T00:01:00Z"
+Title: 9 - Building smart Integration Solutions with Microsoft Azure
+categories:
+- Architecture
+episode: "9"
+episode_image: img/cloudwithchrislogo.png
+explicit: "no"
+guests:
+- ezhilarasichezhiyan
+hosts:
+- chrisreddington
+images:
+- img/default-social.png
+podcast_bytes: "23642112"
+podcast_duration: "33:03.488"
+podcast_file: 9 - Building Smart Integration Solutions with Microsoft Azure.mp3
+series:
+- Podcast Episodes
+tags:
+- Serverless
+- Monitoring
+---
 Hello, and welcome back to Cloud with Chris! You're with me, Chris Reddington - and we'll be talking about all things Cloud!
 
 I hope that you're keeping safe and well in these strange times that we're going through! You may have noticed a drop off on my episodes over the recent weeks and months. I've had to take some time away to focus on my own health, but all is good and I'm looking forward to getting a rhythm going again with these podcast episodes!

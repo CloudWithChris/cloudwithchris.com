@@ -1,17 +1,23 @@
-+++
-Description = "Cloud Governance seems to have come up a few times over the past few weeks, so I wanted to post a short, sharp blog about it!"
-date = 2017-02-25T12:00:00-00:00
-PublishDate = 2017-02-25T12:00:00-00:00 # this is the datetime for the when the epsiode was published. This will default to Date if it is not set. Example is "2016-04-25T04:09:45-05:00"
-title = "Azure Scaffold - Governance Recommendations"
-images = ["img/cloudwithchrislogo.png"]
-Author = "chrisreddington"
-# blog_banner = "img/episode/default-banner.jpg"
-blog_image = "img/cloudwithchrislogo.png"
-categories = ["Announcement"]
-tags = ["Azure", "Governance", "RBAC", "Resource Tags", "Resource Policies", "Subscription Management"]
-#series = ["The Nirvana of DevOps"]
-#aliases = ["/##"]
-+++
+---
+Author: chrisreddington
+Description: Cloud Governance seems to have come up a few times over the past few
+  weeks, so I wanted to post a short, sharp blog about it!
+PublishDate: "2017-02-25T12:00:00Z"
+blog_image: img/cloudwithchrislogo.png
+categories:
+- Announcement
+date: "2017-02-25T12:00:00Z"
+images:
+- img/cloudwithchrislogo.png
+tags:
+- Azure
+- Governance
+- RBAC
+- Resource Tags
+- Resource Policies
+- Subscription Management
+title: Azure Scaffold - Governance Recommendations
+---
 The topic seems to have come up a few times over the past few weeks, so I wanted to post a short, sharp blog about it!
 
 _How should I structure my Azure Subscription Hierarchy?_  

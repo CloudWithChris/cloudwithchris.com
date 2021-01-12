@@ -1,17 +1,18 @@
-+++
-Description = "In case you had not already heard, Logic Apps have now reached general availability on Azure (or read an MSDN article by Jeff Hollan on the topic)."
-date = 2016-09-12T12:00:00-00:00
-PublishDate = 2016-09-12T12:00:00-00:00 # this is the datetime for the when the epsiode was published. This will default to Date if it is not set. Example is "2016-04-25T04:09:45-05:00"
-title = "Integration Platform as a Service: Logic Apps"
-images = ["img/cloudwithchrislogo.png"]
-Author = "chrisreddington"
-# blog_banner = "img/episode/default-banner.jpg"
-blog_image = "img/cloudwithchrislogo.png"
-categories = ["Announcement"]
-tags = ["Blogging"]
-#series = ["The Nirvana of DevOps"]
-#aliases = ["/##"]
-+++
+---
+Author: chrisreddington
+Description: In case you had not already heard, Logic Apps have now reached general
+  availability on Azure (or read an MSDN article by Jeff Hollan on the topic).
+PublishDate: "2016-09-12T12:00:00Z"
+blog_image: img/cloudwithchrislogo.png
+categories:
+- Announcement
+date: "2016-09-12T12:00:00Z"
+images:
+- img/cloudwithchrislogo.png
+tags:
+- Blogging
+title: 'Integration Platform as a Service: Logic Apps'
+---
 In case you had not already heard, [Logic Apps have now reached general availability on Azure](https://azure.microsoft.com/en-us/blog/announcing-azure-logic-apps-general-availability/) (or read [an MSDN article by Jeff Hollan](https://blogs.msdn.microsoft.com/logicapps/2016/07/27/azure-logic-apps-reaches-general-availability) on the topic).
 
 ## What are Logic Apps?

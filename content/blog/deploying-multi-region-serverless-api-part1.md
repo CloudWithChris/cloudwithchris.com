@@ -1,17 +1,26 @@
-+++
-Description = "In my spare time, I work on a pet project called Theatreers. The aim of this is a microservice based platform focused on Theatre / Musical Theatre (bringing a few of my passion areas together). I've recently re-architected the project to align to a multi-region serverless technology stack."
-date = 2019-07-13T12:00:00-00:00
-PublishDate = 2019-07-13T12:00:00-00:00 # this is the datetime for the when the epsiode was published. This will default to Date if it is not set. Example is "2016-04-25T04:09:45-05:00"
-title = "Deploying a multi-region Serverless API Layer (Part 1)"
-images = ["img/cloudwithchrislogo.png"]
-Author = "chrisreddington"
-# blog_banner = "img/episode/default-banner.jpg"
-blog_image = "img/cloudwithchrislogo.png"
-categories = ["Azure", "Cloud Architecture", "DevOps"]
-tags = ["Azure", "Architecture", "Scalability", "Resilience", "DevOps"]
-#series = ["The Nirvana of DevOps"]
-#aliases = ["/##"]
-+++
+---
+Author: chrisreddington
+Description: In my spare time, I work on a pet project called Theatreers. The aim
+  of this is a microservice based platform focused on Theatre / Musical Theatre (bringing
+  a few of my passion areas together). I've recently re-architected the project to
+  align to a multi-region serverless technology stack.
+PublishDate: "2019-07-13T12:00:00Z"
+blog_image: img/cloudwithchrislogo.png
+categories:
+- Azure
+- Cloud Architecture
+- DevOps
+date: "2019-07-13T12:00:00Z"
+images:
+- img/cloudwithchrislogo.png
+tags:
+- Azure
+- Architecture
+- Scalability
+- Resilience
+- DevOps
+title: Deploying a multi-region Serverless API Layer (Part 1)
+---
 
 In my spare time, I work on a pet project called [Theatreers](https://www.github.com/theatreers). The aim of this is a microservice based platform focused on Theatre / Musical Theatre (bringing a few of my passion areas together).
 

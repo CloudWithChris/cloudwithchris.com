@@ -1,27 +1,35 @@
-+++
-Title = "6 - Hybrid Cloud"
-Description = "Joining me in this episode is Thomas Maurer, a Senior Cloud Advocate at Microsoft who engages with the community and customers around the world! Most of the focus so far in Cloud with Chris has been on Public Cloud, so Thomas and I adjust course slightly, and talk about Hybrid Cloud, and the new and upcoming features of the Microsoft Azure platform. Get ready to be introduced to a wide variety of Azure Technologies, and how they may be able to strengthen your on-premises, public cloud or multi-cloud deployments. Let's listen in..." #dummycomment
-Date = 2020-05-10T00:01:00Z
-PublishDate = 2020-05-10T00:01:00Z # this is the datetime for the when the epsiode was published. This will default to Date if it is not set. Example is "2016-04-25T04:09:45-05:00"
-podcast_file = "6 - Hybrid Cloud.mp3" # the name of the podcast file, after the media prefix.
-podcast_duration = "42:41.445"
-podcast_bytes = "38981632" # the length of the episode in bytes
-episode_image = "img/cloudwithchrislogo.png"
-#episode_banner = "0:40:04"
-guests = ["thomasmaurer"] # The names of your guests, based on the filename without extension.
-#sponsors = []
-episode = "6 "
-images = ["img/default-social.png"]
-hosts = ["chrisreddington"] # The names of your hosts, based on the filename without extension.
-#aliases = ["/##"]
-#youtube = ""
-explicit = "no" # values are "yes" or "no"
-# media_override # if you want to use a specific URL for the audio file
-# truncate = ""
-categories = ["Architecture"]
-series = ["Podcast Episodes"]
-tags = ["Architecture", "Hybrid", "Azure Stack"]
-+++
+---
+Date: "2020-05-10T00:01:00Z"
+Description: Joining me in this episode is Thomas Maurer, a Senior Cloud Advocate
+  at Microsoft who engages with the community and customers around the world! Most
+  of the focus so far in Cloud with Chris has been on Public Cloud, so Thomas and
+  I adjust course slightly, and talk about Hybrid Cloud, and the new and upcoming
+  features of the Microsoft Azure platform. Get ready to be introduced to a wide variety
+  of Azure Technologies, and how they may be able to strengthen your on-premises,
+  public cloud or multi-cloud deployments. Let's listen in...
+PublishDate: "2020-05-10T00:01:00Z"
+Title: 6 - Hybrid Cloud
+categories:
+- Architecture
+episode: '6 '
+episode_image: img/cloudwithchrislogo.png
+explicit: "no"
+guests:
+- thomasmaurer
+hosts:
+- chrisreddington
+images:
+- img/default-social.png
+podcast_bytes: "38981632"
+podcast_duration: "42:41.445"
+podcast_file: 6 - Hybrid Cloud.mp3
+series:
+- Podcast Episodes
+tags:
+- Architecture
+- Hybrid
+- Azure Stack
+---
 Hello, and welcome back to this episode of Cloud with Chris! You're with me Chris Reddington and we'll be talking about all things cloud.
 
 The past few weeks and months have been a strange time for us all, so please continue to stay safe and healthy! I hope that these podcast episodes are providing you a little bit of variety, and something different in the day-to-day. Now, don't forget, that you can listen to these on your favourite platforms, whether that is [CloudWithChris.com](https://www.cloudwithchris.com), [Google Play Music](https://playmusic.app.goo.gl/?ibi=com.google.PlayMusic&isi=691797987&ius=googleplaymusic&apn=com.google.android.music&link=https://play.google.com/music/m/Icbsoegu6uvdlor4p4ukknrnel4?t%3DCloud_with_Chris%26pcampaignid%3DMKT-na-all-co-pr-mu-pod-16), [iTunes](https://podcasts.apple.com/gb/podcast/cloud-with-chris/id1499633784), [PocketCasts](https://pca.st/u5t985sn), [Spotify](https://open.spotify.com/show/3oBrdKm5grzl58GBiV0j2y), [Stitcher](https://www.stitcher.com/s?fid=507667&refid=stpr) or [YouTube](https://youtube.com/channel/UC6KrOsGhSVJBszv_AwbcMxA)!

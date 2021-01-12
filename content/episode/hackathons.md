@@ -1,27 +1,36 @@
-+++
-Title = "4 - Hackathons" #dummyedit
-Description = "Here we go - Episode #4! Have you ever had an idea, and you want to quickly prove it out? Or have you wanted to build out a scenario to expand your own skills, whether that is development, design or perhaps other skills? You've probably heard about Hackathon events in recent years, and that's what we'll focus on in this episode! I'm very excited to introduce my second guest of the show, Maria Vrabie, a very good friend, who has plenty of experience with Hackathons, both participating in them and organising or mentoring for them. It's a very insightful session, so let's go ahead and find out more about Maria's experience with Hackathons. Here we go."
-Date = 2020-04-12T00:01:00Z
-PublishDate = 2020-04-12T00:01:00Z # this is the datetime for the when the epsiode was published. This will default to Date if it is not set. Example is "2016-04-25T04:09:45-05:00"
-podcast_file = "4 - Hackathons.mp3" # the name of the podcast file, after the media prefix.
-podcast_duration = "31:50.738"
-podcast_bytes = "26562560" # the length of the episode in bytes
-episode_image = "img/cloudwithchrislogo.png"
-#episode_banner = "0:40:04"
-guests = ["mariavrabie"] # The names of your guests, based on the filename without extension.
-#sponsors = []
-episode = "4"
-images = ["img/default-social.png"]
-hosts = ["chrisreddington"] # The names of your hosts, based on the filename without extension.
-#aliases = ["/##"]
-#youtube = ""
-explicit = "no" # values are "yes" or "no"
-# media_override # if you want to use a specific URL for the audio file
-# truncate = ""
-categories = ["Hackathons"]
-series = ["Podcast Episodes"]
-tags = ["Hackathons", "Development"]
-+++
+---
+Date: "2020-04-12T00:01:00Z"
+Description: 'Here we go - Episode #4! Have you ever had an idea, and you want to
+  quickly prove it out? Or have you wanted to build out a scenario to expand your
+  own skills, whether that is development, design or perhaps other skills? You''ve
+  probably heard about Hackathon events in recent years, and that''s what we''ll focus
+  on in this episode! I''m very excited to introduce my second guest of the show,
+  Maria Vrabie, a very good friend, who has plenty of experience with Hackathons,
+  both participating in them and organising or mentoring for them. It''s a very insightful
+  session, so let''s go ahead and find out more about Maria''s experience with Hackathons.
+  Here we go.'
+PublishDate: "2020-04-12T00:01:00Z"
+Title: 4 - Hackathons
+categories:
+- Hackathons
+episode: "4"
+episode_image: img/cloudwithchrislogo.png
+explicit: "no"
+guests:
+- mariavrabie
+hosts:
+- chrisreddington
+images:
+- img/default-social.png
+podcast_bytes: "26562560"
+podcast_duration: "31:50.738"
+podcast_file: 4 - Hackathons.mp3
+series:
+- Podcast Episodes
+tags:
+- Hackathons
+- Development
+---
 Hello and welcome back to another episode Cloud with Chris! You're with me - Chris Reddington, and we'll be talking about all things cloud.
 
 Thanks for the recent subscriptions across my platforms! We’re now not too far away from reaching the 100 subscriptions needed on YouTube to register the channel name. [If you haven't subscribed yet, and I know I keep asking -  please do](https://www.youtube.com/channel/UC6KrOsGhSVJBszv_AwbcMxA)! Of course, if you can share out onto your own social networks, that would be brilliant.

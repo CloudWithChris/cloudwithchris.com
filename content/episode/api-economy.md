@@ -1,27 +1,33 @@
-+++
-Title = "5 - The API Economy" #dummy
-Description = "Let's introduce the next episode -We have another guest! We're starting to bring a few of those previous topics together in this episode. We touch upon requirements, DevOps, and building applications - or rather APIs - in the cloud. In this episode, I talk with a colleague and friend, Peter Piper, on factors that relate and impact API design. So, without further ado… here we go!"
-Date = 2020-04-25T00:01:00Z
-PublishDate = 2020-04-25T00:01:00Z # this is the datetime for the when the epsiode was published. This will default to Date if it is not set. Example is "2016-04-25T04:09:45-05:00"
-podcast_file = "5 - API Economy.mp3" # the name of the podcast file, after the media prefix.
-podcast_duration = "31:14.387"
-podcast_bytes = "26312704" # the length of the episode in bytes
-episode_image = "img/cloudwithchrislogo.png"
-#episode_banner = "0:40:04"
-guests = ["peterpiper"] # The names of your guests, based on the filename without extension.
-#sponsors = []
-episode = "5"
-images = ["img/default-social.png"]
-hosts = ["chrisreddington"] # The names of your hosts, based on the filename without extension.
-#aliases = ["/##"]
-#youtube = ""
-explicit = "no" # values are "yes" or "no"
-# media_override # if you want to use a specific URL for the audio file
-# truncate = ""
-categories = ["Architecture"]
-series = ["Podcast Episodes"]
-tags = ["Architecture", "APIs", "Cloud Design Patterns"]
-+++
+---
+Date: "2020-04-25T00:01:00Z"
+Description: Let's introduce the next episode -We have another guest! We're starting
+  to bring a few of those previous topics together in this episode. We touch upon
+  requirements, DevOps, and building applications - or rather APIs - in the cloud.
+  In this episode, I talk with a colleague and friend, Peter Piper, on factors that
+  relate and impact API design. So, without further ado… here we go!
+PublishDate: "2020-04-25T00:01:00Z"
+Title: 5 - The API Economy
+categories:
+- Architecture
+episode: "5"
+episode_image: img/cloudwithchrislogo.png
+explicit: "no"
+guests:
+- peterpiper
+hosts:
+- chrisreddington
+images:
+- img/default-social.png
+podcast_bytes: "26312704"
+podcast_duration: "31:14.387"
+podcast_file: 5 - API Economy.mp3
+series:
+- Podcast Episodes
+tags:
+- Architecture
+- APIs
+- Cloud Design Patterns
+---
 Hello and welcome back to Cloud with Chris! You're with me - Chris Reddington, and we'll be talking about all things cloud. Now, the backlog of episodes continues to look healthy, with a number of additional session ideas planned and a number of guests scheduled to come in. But, please do keep your thoughts coming in, and if you find these podcasts useful, please do continue to share - and I hope that we can grow the community that supports it!
 
 Let's introduce the next episode -We have another guest! We're starting to bring a few of those previous topics together in this episode. We touch upon requirements, DevOps, and building applications - or rather APIs - in the cloud. In this episode, I talk with a colleague and friend, Peter Piper, on factors that relate and impact API design. So, without further ado… here we go!

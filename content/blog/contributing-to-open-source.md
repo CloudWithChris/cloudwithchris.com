@@ -1,17 +1,23 @@
-+++
-Description = "Contributing to Open Source Software. It sounds so formal, doesn't it? I thought that for quite a long time, and it put a bit of a mental barrier in place for me to begin my journey. I am a classic over thinker, but that's perhaps another blog in its own right! Contributing to Open Source isn't as scary as it may first initially seem. Let's start with a few thoughts."
-date = 2021-01-12T12:00:00-00:00
-PublishDate = 2021-01-12T12:00:00-00:00 # this is the datetime for the when the epsiode was published. This will default to Date if it is not set. Example is "2016-04-25T04:09:45-05:00"
-title = "Contributing to Open Source"
-images = ["img/cloudwithchrislogo.png"]
-Author = "chrisreddington"
-# blog_banner = "img/episode/default-banner.jpg"
-blog_image = "img/cloudwithchrislogo.png"
-categories = ["Announcement"]
-tags = ["Software Development", "Open Source", "Community"]
-#series = ["The Nirvana of DevOps"]
-#aliases = ["/##"]
-+++
+---
+Author: chrisreddington
+Description: Contributing to Open Source Software. It sounds so formal, doesn't it?
+  I thought that for quite a long time, and it put a bit of a mental barrier in place
+  for me to begin my journey. I am a classic over thinker, but that's perhaps another
+  blog in its own right! Contributing to Open Source isn't as scary as it may first
+  initially seem. Let's start with a few thoughts.
+PublishDate: "2021-01-12T12:00:00Z"
+blog_image: img/cloudwithchrislogo.png
+categories:
+- Announcement
+date: "2021-01-12T12:00:00Z"
+images:
+- img/cloudwithchrislogo.png
+tags:
+- Software Development
+- Open Source
+- Community
+title: Contributing to Open Source
+---
 Contributing to Open Source Software. It sounds so formal, doesn't it? I thought that for quite a long time, and it put a bit of a mental barrier in place for me to begin my journey. I am a classic over thinker, but that's perhaps another blog in its own right!
 
 Contributing to Open Source isn't as scary as it may first initially seem. Let's start with a few thoughts.

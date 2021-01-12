@@ -1,7 +1,7 @@
 ---
-title: "Topic Suggestions"
-date: 2020-03-01T11:01:43Z
+date: "2020-03-01T11:01:43Z"
 draft: false
+title: Topic Suggestions
 ---
 
 Have an idea for a topic to be covered on the show? Do you want me to expand on a topic that has previously been covered?

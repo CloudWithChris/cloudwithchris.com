@@ -1,17 +1,21 @@
-+++
-Description = "If you have been keeping up to date with the latest and greatest in Azure Services (yes, I know there are quite a few!), you may have heard of a new service called Azure Functions. Azure Functions is an event-driven Platform as a Service capability, helping you to execute code upon the occurrence of a particular event. It is currently in preview, though already has a lot of potential."
-date = 2016-09-12T12:00:00-00:00
-PublishDate = 2016-09-12T12:00:00-00:00 # this is the datetime for the when the epsiode was published. This will default to Date if it is not set. Example is "2016-04-25T04:09:45-05:00"
-title = "An Introduction to Azure Functions"
-images = ["img/cloudwithchrislogo.png"]
-Author = "chrisreddington"
-# blog_banner = "img/episode/default-banner.jpg"
-blog_image = "img/cloudwithchrislogo.png"
-categories = ["Announcement"]
-tags = ["Blogging"]
-#series = ["The Nirvana of DevOps"]
-#aliases = ["/##"]
-+++
+---
+Author: chrisreddington
+Description: If you have been keeping up to date with the latest and greatest in Azure
+  Services (yes, I know there are quite a few!), you may have heard of a new service
+  called Azure Functions. Azure Functions is an event-driven Platform as a Service
+  capability, helping you to execute code upon the occurrence of a particular event.
+  It is currently in preview, though already has a lot of potential.
+PublishDate: "2016-09-12T12:00:00Z"
+blog_image: img/cloudwithchrislogo.png
+categories:
+- Announcement
+date: "2016-09-12T12:00:00Z"
+images:
+- img/cloudwithchrislogo.png
+tags:
+- Blogging
+title: An Introduction to Azure Functions
+---
 If you have been keeping up to date with the latest and greatest in Azure Services (yes, I know there are quite a few!), you may have heard of a new service called Azure Functions.
 
 Azure Functions is an event-driven Platform as a Service capability, helping you to execute code upon the occurrence of a particular event. It is currently in preview, though already has a lot of potential.

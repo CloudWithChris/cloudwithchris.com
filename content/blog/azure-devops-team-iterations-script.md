@@ -1,17 +1,28 @@
-+++
-Description = "Consider this scenario. You are managing a software project using Azure DevOps, and you have multiple teams working towards a common cadence. Perhaps that cadence is managed by a central team. To gain the most value from your sprint planning, you would need to associate the iterations from the project level with each individual team. This is a scenario that I have for my fictitious Theatreers project, but also a scenario I encountered recently with a colleague. I have been helping them setup an Azure DevOps project to track the development of IP and collateral, so that they can more accurately forecast what they expect to land and show the value being delivered by the team."
-date = 2019-06-16T19:00:00-00:00
-PublishDate = 2019-06-16T19:00:00-00:00 # this is the datetime for the when the epsiode was published. This will default to Date if it is not set. Example is "2016-04-25T04:09:45-05:00"
-title = "Using Azure DevOps REST APIs to automatically create Team Iterations"
-images = ["img/cloudwithchrislogo.png"]
-Author = "chrisreddington"
-# blog_banner = "img/episode/default-banner.jpg"
-blog_image = "img/cloudwithchrislogo.png"
-categories = ["Azure DevOps", "DevOps"]
-tags = ["Azure DevOps", "DevOps", "Automation"]
-#series = ["The Nirvana of DevOps"]
-#aliases = ["/##"]
-+++
+---
+Author: chrisreddington
+Description: Consider this scenario. You are managing a software project using Azure
+  DevOps, and you have multiple teams working towards a common cadence. Perhaps that
+  cadence is managed by a central team. To gain the most value from your sprint planning,
+  you would need to associate the iterations from the project level with each individual
+  team. This is a scenario that I have for my fictitious Theatreers project, but also
+  a scenario I encountered recently with a colleague. I have been helping them setup
+  an Azure DevOps project to track the development of IP and collateral, so that they
+  can more accurately forecast what they expect to land and show the value being delivered
+  by the team.
+PublishDate: "2019-06-16T19:00:00Z"
+blog_image: img/cloudwithchrislogo.png
+categories:
+- Azure DevOps
+- DevOps
+date: "2019-06-16T19:00:00Z"
+images:
+- img/cloudwithchrislogo.png
+tags:
+- Azure DevOps
+- DevOps
+- Automation
+title: Using Azure DevOps REST APIs to automatically create Team Iterations
+---
 
 Consider this scenario. You are managing a software project using Azure DevOps, and you have multiple teams working towards a common cadence. Perhaps that cadence is managed by a central team. To gain the most value from your sprint planning, you would need to associate the iterations from the project level with each individual team.
 
