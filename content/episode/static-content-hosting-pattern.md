@@ -15,7 +15,7 @@ images:
 - img/episodes/static-content-hosting-pattern-social.jpg
 podcast_bytes: "18878464"
 podcast_duration: "19:36.000"
-podcast_file: 21 - The Queue Based Load Leveling and Competing Consumers Pattern.mp3
+podcast_file: 22 - Static Content Hosting Pattern.mp3
 series:
 - Architecting for the Cloud, one pattern at a time
 tags:
