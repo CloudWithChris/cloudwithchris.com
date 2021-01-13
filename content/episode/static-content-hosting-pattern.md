@@ -7,12 +7,12 @@ Title: 22 - Static Content Hosting Pattern (Save cost and gain performance for s
 categories:
 - Architecture
 episode: "22"
-episode_image: img/cloudwithchrislogo.png
+episode_image: img/episodes/static-content-hosting-pattern-thumb.jpg
 explicit: "no"
 hosts:
 - chrisreddington
 images:
-- img/default-social.png
+- img/episodes/static-content-hosting-pattern-social.jpg
 podcast_bytes: "18878464"
 podcast_duration: "19:36.000"
 podcast_file: 21 - The Queue Based Load Leveling and Competing Consumers Pattern.mp3
