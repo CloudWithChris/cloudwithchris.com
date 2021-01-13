@@ -1,17 +1,17 @@
-+++
-Description = "Surely, a Hello World post is a right of passage for technical bloggers?"
-date = 2016-07-04T12:00:00-00:00
-PublishDate = 2016-07-04T12:00:00-00:00 # this is the datetime for the when the epsiode was published. This will default to Date if it is not set. Example is "2016-04-25T04:09:45-05:00"
-title = "System.out.println('Hello World');"
-images = ["img/cloudwithchrislogo.png"]
-Author = "chrisreddington"
-# blog_banner = "img/episode/default-banner.jpg"
-blog_image = "img/cloudwithchrislogo.png"
-categories = ["Announcement"]
-tags = ["Blogging"]
-#series = ["The Nirvana of DevOps"]
-#aliases = ["/##"]
-+++
+---
+Author: chrisreddington
+Description: Surely, a Hello World post is a right of passage for technical bloggers?
+PublishDate: "2016-07-04T12:00:00Z"
+blog_image: img/cloudwithchrislogo.png
+categories:
+- Announcement
+date: "2016-07-04T12:00:00Z"
+images:
+- img/cloudwithchrislogo.png
+tags:
+- Blogging
+title: System.out.println('Hello World');
+---
 
 Surely, a "Hello World" post is a right of passage for technical bloggers?
 

@@ -1,17 +1,26 @@
-+++
-Description = "During the 2020 Festive Break, I had a lot of time on my hands. I took 4 weeks of my Annual Leave, which meant I had the majority of December to personal time. Personal time / time off is great, but I also wanted to push myself and catch up on some pieces that were on my personal learning or achievement list for some time. I started refreshing my knowledge around Rails (having developed in it some years ago, it's progressed quite a bit!), NodeJS, GoLang and Rust. All interesting to learn, and I'm sure I'll be continuing on my journey with these throughout 2021.  But that's not the point in this blog post. One of the activities that I kicked off was contributing into the Hugo Community. Read on to find out more."
-date = 2021-01-06T12:00:00-00:00
-PublishDate = 2021-01-06T12:00:00-00:00 # this is the datetime for the when the epsiode was published. This will default to Date if it is not set. Example is "2016-04-25T04:09:45-05:00"
-title = "Contributing to a Hugo Theme - The Castanet and  Hugo Community Themes"
-images = ["img/cloudwithchrislogo.png"]
-Author = "chrisreddington"
-# blog_banner = "img/episode/default-banner.jpg"
-blog_image = "img/cloudwithchrislogo.png"
-categories = ["Announcement"]
-tags = ["Hugo", "Open Source"]
-#series = ["The Nirvana of DevOps"]
-#aliases = ["/##"]
-+++
+---
+Author: chrisreddington
+Description: During the 2020 Festive Break, I had a lot of time on my hands. I took
+  4 weeks of my Annual Leave, which meant I had the majority of December to personal
+  time. Personal time / time off is great, but I also wanted to push myself and catch
+  up on some pieces that were on my personal learning or achievement list for some
+  time. I started refreshing my knowledge around Rails (having developed in it some
+  years ago, it's progressed quite a bit!), NodeJS, GoLang and Rust. All interesting
+  to learn, and I'm sure I'll be continuing on my journey with these throughout 2021.  But
+  that's not the point in this blog post. One of the activities that I kicked off
+  was contributing into the Hugo Community. Read on to find out more.
+PublishDate: "2021-01-06T12:00:00Z"
+blog_image: img/cloudwithchrislogo.png
+categories:
+- Announcement
+date: "2021-01-06T12:00:00Z"
+images:
+- img/cloudwithchrislogo.png
+tags:
+- Hugo
+- Open Source
+title: Contributing to a Hugo Theme - The Castanet and  Hugo Community Themes
+---
 During the 2020 Festive Break, I had a lot of time on my hands. I took 4 weeks of my Annual Leave, which meant I had the majority of December to personal time
 
 Personal time / time off is great, but I also wanted to push myself and catch up on some pieces that were on my personal learning or achievement list for some time. I started refreshing my knowledge around Rails (having developed in it some years ago, it's progressed quite a bit!), NodeJS, GoLang and Rust. All interesting to learn, and I'm sure I'll be continuing on my journey with these throughout 2021.

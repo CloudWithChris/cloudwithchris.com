@@ -1,27 +1,32 @@
-+++
-Title = "2 - Cost Control"
-Description = "Let's introduce Episode #2! This was a suggestion from the community, so a big thank you to Garth Niblock for this one! Last time we talked about requirements, and cost is one dimension of that - but a very important one. When we move into a cloud world, the technology will change, but the way way that we think about cost changes as well. So this episode will be called 'Cost Control'. Let's listen in..."
-Date = 2020-03-15T00:01:00Z
-PublishDate = 2020-03-15T00:01:00Z # this is the datetime for the when the epsiode was published. This will default to Date if it is not set. Example is "2016-04-25T04:09:45-05:00"
-podcast_file = "2 - Cost Control.mp3" # the name of the podcast file, after the media prefix.
-podcast_duration = "23:10.269"
-podcast_bytes = "22253568" # the length of the episode in bytes
-episode_image = "img/cloudwithchrislogo.png"
-#episode_banner = "0:40:04"
-#guests = [] # The names of your guests, based on the filename without extension.
-#sponsors = []
-episode = "2"
-images = ["img/default-social.png"]
-hosts = ["chrisreddington"] # The names of your hosts, based on the filename without extension.
-#aliases = ["/##"]
-#youtube = ""
-explicit = "no" # values are "yes" or "no"
-# media_override # if you want to use a specific URL for the audio file
-# truncate = ""
-categories = ["Architecture"]
-series = ["Podcast Episodes"]
-tags = ["Architecture", "Cost", "Governance"]
-+++
+---
+Date: "2020-03-15T00:01:00Z"
+Description: 'Let''s introduce Episode #2! This was a suggestion from the community,
+  so a big thank you to Garth Niblock for this one! Last time we talked about requirements,
+  and cost is one dimension of that - but a very important one. When we move into
+  a cloud world, the technology will change, but the way way that we think about cost
+  changes as well. So this episode will be called ''Cost Control''. Let''s listen
+  in...'
+PublishDate: "2020-03-15T00:01:00Z"
+Title: 2 - Cost Control
+categories:
+- Architecture
+episode: "2"
+episode_image: img/cloudwithchrislogo.png
+explicit: "no"
+hosts:
+- chrisreddington
+images:
+- img/default-social.png
+podcast_bytes: "22253568"
+podcast_duration: "23:10.269"
+podcast_file: 2 - Cost Control.mp3
+series:
+- Podcast Episodes
+tags:
+- Architecture
+- Cost
+- Governance
+---
 
 Hello and welcome back to Cloud with Chris! You're with me - Chris Reddington, and we'll be talking about all things cloud. Now, just as  reminder - I would love to have any and all topic suggestions, so please get in touch with me on either [Facebook](https://www.facebook.com/CloudWithChris/) or [Twitter](https://twitter.com/CloudWithChris), @CloudWithChris. I'm also working through inviting a number of people to come onto the show as a guest. If you'd be interest in joining me for an episode, then please in get in touch as well! I'm also looking to increase my presence on [YouTube](https://www.youtube.com/channel/UC6KrOsGhSVJBszv_AwbcMxA), so if you could subscribe to my channel - Cloud with Chris, that would be greatly appreciated!
 

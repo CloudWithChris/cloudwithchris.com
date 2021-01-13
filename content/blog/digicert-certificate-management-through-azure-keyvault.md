@@ -1,17 +1,22 @@
-+++
-Description = "When designing a solution, you want to be sure that your communications are secure and that your users can trust your application. Typically, SSL certificates can be useful for this purpose.That is well and good from a design and development perspective, but there may some management headaches when operating and governing the solution. How do you keep track of the certificates? How do you guarantee that they are kept secure? How do you ensure that certificates renew on time?"
-date = 2016-09-12T12:00:00-00:00
-PublishDate = 2016-09-12T12:00:00-00:00 # this is the datetime for the when the epsiode was published. This will default to Date if it is not set. Example is "2016-04-25T04:09:45-05:00"
-title = "DigiCert Certificate Management through Azure Key Vault"
-images = ["img/cloudwithchrislogo.png"]
-Author = "chrisreddington"
-# blog_banner = "img/episode/default-banner.jpg"
-blog_image = "img/cloudwithchrislogo.png"
-categories = ["Announcement"]
-tags = ["Blogging"]
-#series = ["The Nirvana of DevOps"]
-#aliases = ["/##"]
-+++
+---
+Author: chrisreddington
+Description: When designing a solution, you want to be sure that your communications
+  are secure and that your users can trust your application. Typically, SSL certificates
+  can be useful for this purpose.That is well and good from a design and development
+  perspective, but there may some management headaches when operating and governing
+  the solution. How do you keep track of the certificates? How do you guarantee that
+  they are kept secure? How do you ensure that certificates renew on time?
+PublishDate: "2016-09-12T12:00:00Z"
+blog_image: img/cloudwithchrislogo.png
+categories:
+- Announcement
+date: "2016-09-12T12:00:00Z"
+images:
+- img/cloudwithchrislogo.png
+tags:
+- Blogging
+title: DigiCert Certificate Management through Azure Key Vault
+---
 Azure Key Vault helps safeguard cryptographic keys and secrets used by cloud applications and services.  It streamlines the key management process, enabling you to maintain control of keys that access and encrypt your data.  Developers can create keys for development and testing in minutes, and then seamlessly migrate them to production keys.  Security administrators can grant (and revoke) permission to keys, as needed.
 
 When designing a solution, you want to be sure that your communications are secure and that your users can trust your application. Typically, SSL certificates can be useful for this purpose.

@@ -1,27 +1,33 @@
-+++
-Title = "8 - Azure Security"
-Description = "In this episode, we get back to a requirements based topic, and an area that will significantly impact the design of our resulting solution architecture. That topic is security! It's one of the hot topics that organisations want to discuss when moving to the cloud. So I'm pleased to be joined in this episode by another colleague, Andrew Nathan, who has a wealth of knowledge in the cyber security space."
-Date = 2020-06-07T00:01:00Z
-PublishDate = 2020-06-07T00:01:00Z # this is the datetime for the when the epsiode was published. This will default to Date if it is not set. Example is "2016-04-25T04:09:45-05:00"
-podcast_file = "8 - Azure Security.mp3" # the name of the podcast file, after the media prefix.
-podcast_duration = "47:31.145"
-podcast_bytes = "41209856" # the length of the episode in bytes
-episode_image = "img/cloudwithchrislogo.png"
-#episode_banner = "0:40:04"
-guests = ["andrewnathan"] # The names of your guests, based on the filename without extension.
-#sponsors = []
-episode = "8"
-images = ["img/default-social.png"]
-hosts = ["chrisreddington"] # The names of your hosts, based on the filename without extension.
-#aliases = ["/##"]
-#youtube = ""
-explicit = "no" # values are "yes" or "no"
-# media_override # if you want to use a specific URL for the audio file
-# truncate = ""
-categories = ["Security"]
-series = ["Podcast Episodes"]
-tags = ["Security", "Architecture", "DevOps"]
-+++
+---
+Date: "2020-06-07T00:01:00Z"
+Description: In this episode, we get back to a requirements based topic, and an area
+  that will significantly impact the design of our resulting solution architecture.
+  That topic is security! It's one of the hot topics that organisations want to discuss
+  when moving to the cloud. So I'm pleased to be joined in this episode by another
+  colleague, Andrew Nathan, who has a wealth of knowledge in the cyber security space.
+PublishDate: "2020-06-07T00:01:00Z"
+Title: 8 - Azure Security
+categories:
+- Security
+episode: "8"
+episode_image: img/cloudwithchrislogo.png
+explicit: "no"
+guests:
+- andrewnathan
+hosts:
+- chrisreddington
+images:
+- img/default-social.png
+podcast_bytes: "41209856"
+podcast_duration: "47:31.145"
+podcast_file: 8 - Azure Security.mp3
+series:
+- Podcast Episodes
+tags:
+- Security
+- Architecture
+- DevOps
+---
 Hello, and welcome back to Cloud with Chris! You're with me, Chris Reddington - and we'll be talking about all things Cloud!
 
 In this episode, we get back to a requirements based topic, and an area that will significantly impact the design of our resulting solution architecture. That topic is security! It's one of the hot topics that organisations want to discuss when moving to the cloud. So I'm pleased to be joined in this episode by another colleague, Andrew Nathan, who has a wealth of knowledge in the cyber security space.

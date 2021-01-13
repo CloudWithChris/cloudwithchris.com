@@ -1,17 +1,21 @@
-+++
-Description = "You may have noticed there are some posts preceding this one. I've had a few attempts at putting my blog together, but then dwindle out on my cadence... Well, given the recent success with my Cloud with Chris podcast, I'm beginning to consolidate... Starting with my blog! Here's an update on what you have to look forward to!"
-date = 2021-01-02T12:00:00-00:00
-PublishDate = 2021-01-02T12:00:00-00:00 # this is the datetime for the when the epsiode was published. This will default to Date if it is not set. Example is "2016-04-25T04:09:45-05:00"
-title = "Cloud With Chris - Moving Forwards"
-images = ["img/cloudwithchrislogo.png"]
-Author = "chrisreddington"
-# blog_banner = "img/episode/default-banner.jpg"
-blog_image = "img/cloudwithchrislogo.png"
-categories = ["Announcement"]
-tags = ["Blogging"]
-#series = ["The Nirvana of DevOps"]
-#aliases = ["/##"]
-+++
+---
+Author: chrisreddington
+Description: You may have noticed there are some posts preceding this one. I've had
+  a few attempts at putting my blog together, but then dwindle out on my cadence...
+  Well, given the recent success with my Cloud with Chris podcast, I'm beginning to
+  consolidate... Starting with my blog! Here's an update on what you have to look
+  forward to!
+PublishDate: "2021-01-02T12:00:00Z"
+blog_image: img/cloudwithchrislogo.png
+categories:
+- Announcement
+date: "2021-01-02T12:00:00Z"
+images:
+- img/cloudwithchrislogo.png
+tags:
+- Blogging
+title: Cloud With Chris - Moving Forwards
+---
 
 You may have noticed there are some posts preceding this one. I've had a few attempts at putting my own personal blog together, but over time, my posts dwindle... Well, given the recent success with my Cloud with Chris podcast, I'm beginning to consolidate... Starting with my blog! Here's an update on what you have to look forward to!
 
