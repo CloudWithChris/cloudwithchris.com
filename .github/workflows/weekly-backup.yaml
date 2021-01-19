@@ -1,0 +1,18 @@
+name: 'Weekly Backup'
+on:
+  schedule:
+    - cron: 0 0 * * SUN
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:     
+    - name: Azure Login
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}     
+    - name: Azure CLI script
+      uses: azure/CLI@v1
+      with:
+        azcliversion: 2.0.72
+        inlineScript: |
+          az storage blob copy start-batch --account-name cloudwithchrisbackup --destination-container podcasts --source-account-name cloudwithchrisprod --source-container podcasts
