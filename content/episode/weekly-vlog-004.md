@@ -1,6 +1,6 @@
 ---
 Date: "2021-01-25T09:30:00Z"
-Description: 'In this video, Chris lays out his third weekly technology vlog update
+Description: 'In this video, Chris lays out his weekly technology vlog update
   talking about TBC'
 PublishDate: "2021-01-25T09:30:00Z"
 Title: 'V002 - Weekly Technology Vlog #3 (Content TBC)'
@@ -28,4 +28,4 @@ tags:
 # youtube: VyQI5SOsw3M
 upcoming: true
 ---
-In this video, Chris lays out his third weekly technology vlog update talking about TBC.
+In this video, Chris lays out his weekly technology vlog update talking about TBC.
