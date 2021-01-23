@@ -1,6 +1,6 @@
 ---
 Author: chrisreddington
-Description: TBC
+Description: "A few people have recently been asking about my setup, so I figured it may be a good time to start writing about it! I'll break this into a few posts to keep it digestible. The first part will be focused on the main powerhouse behind it all - My PC!"
 PublishDate: "2021-01-27T12:00:00Z"
 blog_image: img/cloudwithchrislogo.png
 categories:
