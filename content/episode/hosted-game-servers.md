@@ -7,14 +7,14 @@ categories:
 - Architecture
 - Gaming
 episode: "CGN1"
-episode_image: img/CGN1 - Hosting a Game Server-ThumbnailSquare.jpg
+episode_image: img/episodes/CGN1 - Hosting a Game Server-ThumbnailSquare.jpg
 explicit: "no"
 guests:
 - leewilliams
 hosts:
 - chrisreddington
 images:
-- img/CGN1 - Hosting a Game Server-ThumbnailSquare.jpg
+- img/episodes/CGN1 - Hosting a Game Server-ThumbnailSquare.jpg
 podcast_bytes: "27885568"
 podcast_duration: "28:58.000"
 podcast_file: CGN1 - Hosting a Game Server-ThumbnailSquare.mp3
