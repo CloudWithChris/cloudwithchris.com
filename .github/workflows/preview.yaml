@@ -46,6 +46,7 @@ jobs:
           FILTER_REGEX_INCLUDE: .*content/.*
           DEFAULT_BRANCH: master
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_JSCPD: false
   build:
     needs: [lint, compressor]
     runs-on: ubuntu-latest
