@@ -3,13 +3,13 @@ Date: "2020-10-09T00:01:00Z"
 Facebook: ""
 GitHub: ""
 Instagram: ""
-Linkedin: ""
+Linkedin: "https://www.linkedin.com/in/leewill/"
 Pinterest: ""
-# Thumbnail: img/guests/tbc.jpg
+Thumbnail: img/guests/leewilliams.jpg
 Title: Lee Williams
-# Twitter: willeastbury
+Twitter: leewilliams
 Type: guest
 Website: ""
 YouTube: ""
 ---
-Will works on the FastTrack for Azure Engineering team at Microsoft, helping customers to build, deploy and scale cloud solutions.
+Lee is currently a Senior Product Marketing Manager at Microsoft focusing on Game Development on Azure. Based in Seattle, he partners closely with engineering and developer advocates on leading the business strategy for game development on Microsoft Azure.
