@@ -1,11 +1,11 @@
 ---
-Date: "2021-03-29T09:30:00Z"
+Date: "2021-05-24T09:30:00Z"
 Description: "In this video, Chris lays out another weekly technology vlog update talking about TBC"
-PublishDate: "2021-03-29T09:30:00Z"
-Title: "V013 - Weekly Technology Vlog #13 (Content TBC)"
+PublishDate: "2021-05-24T09:30:00Z"
+Title: "V021 - Weekly Technology Vlog #21 (Content TBC)"
 categories:
 - Vlog
-episode: V013
+episode: V021
 episode_image: img/cloudwithchris.png # img/vlog/v002.jpg
 explicit: "no"
 guests: []
