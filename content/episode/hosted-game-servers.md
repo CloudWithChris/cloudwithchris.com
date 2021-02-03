@@ -17,7 +17,7 @@ images:
 - img/episodes/CGN1 - Hosting a Game Server-ThumbnailSquare.jpg
 podcast_bytes: "27885568"
 podcast_duration: "28:58.000"
-podcast_file: CGN1 - Hosting a Game Server-ThumbnailSquare.mp3
+podcast_file: CGN1 - Hosting a Game Server.mp3
 series:
 - Cloud Gaming Notes
 tags:
