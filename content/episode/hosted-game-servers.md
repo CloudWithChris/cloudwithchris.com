@@ -7,23 +7,22 @@ categories:
 - Architecture
 - Gaming
 episode: "CGN1"
-episode_image: img/cloudwithchrislogo.png
+episode_image: img/episodes/CGN1 - Hosting a Game Server-ThumbnailSquare.jpg
 explicit: "no"
 guests:
 - leewilliams
 hosts:
 - chrisreddington
 images:
-- img/default-social.png
-# podcast_bytes: "42078208"
-# podcast_duration: "0:43:55.000"
-# podcast_file: 14 - The Deployment Stamps Pattern with John Downs.mp3
+- img/episodes/CGN1 - Hosting a Game Server-ThumbnailSquare.jpg
+podcast_bytes: "27885568"
+podcast_duration: "28:58.000"
+podcast_file: CGN1 - Hosting a Game Server-ThumbnailSquare.mp3
 series:
 - Cloud Gaming Notes
 tags:
 - Architecture
 - Gaming
-# youtube: kaR_0mQi1O0
-upcoming: true
+youtube: VdiqtCRK6jQ
 ---
 Ever thought about what it takes to host a game in the Cloud? Well, this is the series for you! On the first Wednesday of every month, we explore Cloud Concepts that impact your journey to a connected multiplayer gaming experience! In this first session, we'll play some Minecraft and talk to the concept of a hosted game server.
