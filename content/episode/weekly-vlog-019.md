@@ -1,8 +1,8 @@
 ---
-Date: "2021-03-29T09:30:00Z"
+Date: "2021-05-10T09:30:00Z"
 Description: "In this video, Chris lays out another weekly technology vlog update talking about TBC"
-PublishDate: "2021-03-29T09:30:00Z"
-Title: "V013 - Weekly Technology Vlog #13 (Content TBC)"
+PublishDate: "2021-05-10T09:30:00Z"
+Title: "V019 - Weekly Technology Vlog #19 (Content TBC)"
 categories:
 - Vlog
 episode: V013
