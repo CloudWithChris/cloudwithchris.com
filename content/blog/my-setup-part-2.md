@@ -1,19 +1,11 @@
 ---
 Author: chrisreddington
 Description: "A few people have recently been asking about my setup, so I figured it may be a good time to start writing about it! This is the second part of the series, where I'll focus on the Lights, Recording Equipment and my overall setup. If you're interested in the PC setup, then take a look at my previous blog post!"
-<<<<<<< HEAD
 PublishDate: "2021-02-03T12:00:00Z"
 blog_image: img/cloudwithchrislogo.png
 categories:
 - Announcement
 date: "2021-02-03T12:00:00Z"
-=======
-PublishDate: "2021-01-27T12:00:00Z"
-blog_image: img/cloudwithchrislogo.png
-categories:
-- Announcement
-date: "2021-01-27T12:00:00Z"
->>>>>>> master
 images:
 - img/cloudwithchrislogo.png
 tags:
