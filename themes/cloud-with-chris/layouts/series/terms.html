@@ -1,0 +1,13 @@
+{{ define "main" }}
+<div class="container" align="center">
+  <div class="row g-2">      
+    
+  {{- partial "cards/series-card.html" . -}}    
+
+    {{- partial "paginator.html" . -}}
+  </div>
+</div>
+{{ end }}
+
+{{ define "top" }}
+{{ end }}

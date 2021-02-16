@@ -1,0 +1,8 @@
+{{ $taxo := .taxo }}
+{{ $site := .site }}
+
+{{ range $value := .value }}
+  {{ with $site.GetPage (printf "/%s/%s" $taxo ($value | urlize)) }}
+    <a href="{{ .Permalink  }}"><span class="badge bg-secondary">{{ $value | humanize }}</span></a>
+  {{- end -}}
+{{ end }}

@@ -1,0 +1,27 @@
+{{ define "main" }}
+<div class="container" align="center">
+  <div class="row g-2">   
+    {{ $paginator := .Paginate (where .Data.Pages ".Params.upcoming" "!=" true) }}
+    {{- partial "paginator.html" . -}}
+    
+    {{ range $paginator.Pages }}
+      {{- partial "cards/generic-card.html" . -}}
+    {{ end }}
+
+    {{- partial "paginator.html" . -}}
+  </div>
+</div>
+{{ end }}
+
+{{ define "top" }}
+<section class="py-5 container">
+  <div class="row float-center">
+    {{ range first 3 (where .Data.Pages ".Params.upcoming" true).ByDate }}         
+      {{- partial "upcoming-episode.html" . -}}
+    {{ end }}
+  </div>  
+  <div class="row float-end">
+    <p><a href="{{ "/upcoming" | absURL }}">See all upcoming episodes</a></p>
+  </div>
+</section>
+{{ end }}

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" lang="{{ .Language }}">
+    {{- partial "head.html" . -}}
+    <body class="d-flex flex-column min-vh-100">
+        {{- partial "header.html" . -}}
+            <main class="d-flex flex-column flex-fill">
+                {{- block "top" . }}{{- end }}
+                <div class="bg-main flex-fill">
+                    {{- block "main" . }}{{- end }}
+                 </div>
+            </main>
+        {{- partial "footer.html" . -}}
+    </body>
+</html>

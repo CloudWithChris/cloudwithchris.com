@@ -1,0 +1,46 @@
+  
+{{ define "main" }}
+<div class="container" align="center">
+  <div class="row">
+    <div class="col">
+      {{- partial "latest.html" . -}}
+    </div>
+  </div>  
+  <div class="dropdown-divider"></div>
+  <div class="container">
+    <div class="row g-2">   
+      {{ $blogs := where (where $.Site.RegularPages "Section" "blog") ".Params.upcoming" "!=" true }}
+      {{ $episodes := where (where $.Site.RegularPages "Section" "episode") ".Params.upcoming" "!=" true }}
+      {{ $all := (union $blogs $episodes).ByDate.Reverse }}
+
+      {{ $paginator := .Paginate (after 1 ($all)) }}
+
+      {{- partial "paginator.html" . -}}
+      
+      {{ range $index, $value := $paginator.Pages }}
+        {{- partial "cards/generic-card.html" . -}}
+        {{ if not (modBool $index 2 )}}  
+          <div class="dropdown-divider"></div>
+         {{ else }}
+          <div class="dropdown-divider d-block d-sm-block d-md-none"></div>
+        {{ end }}
+      {{ end }}
+
+      {{- partial "paginator.html" . -}}
+    </div>
+  </div>
+</div>
+{{ end }}
+
+{{ define "top" }}
+<section class="py-5 container">
+  <div class="row float-center">
+    {{ range first 3 (where (where $.Site.RegularPages "Section" "episode") ".Params.upcoming" true).ByDate }}         
+      {{- partial "upcoming-episode.html" . -}}
+    {{ end }}
+  </div>  
+  <div class="row float-end">
+    <p><a href="{{ "/upcoming" | absURL }}">See all upcoming episodes</a></p>
+  </div>
+</section>
+{{ end }}

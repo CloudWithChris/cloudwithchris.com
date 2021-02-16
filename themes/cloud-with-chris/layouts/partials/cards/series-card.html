@@ -1,0 +1,19 @@
+{{ $type := .Type }}
+{{ range $key, $value := .Data.Terms.Alphabetical }}
+  {{ $name := .Name }}
+  {{ $count := .Count }}
+
+  <div class="col-md-6">    
+    <div class="row g-0">
+      <div class="col-md-12">
+        <div class="card-body episode-card">
+          
+          <a href="{{ with $.Site.GetPage (printf "/%s/%s" $type $name) }}{{ .Permalink }}{{ end }}"><h3 class="card-title">{{ $name | humanize }}</h3></a>
+  
+          <p class="card-text">There are {{ $count }} episodes either published or scheduled for this series.</p>
+          <p>{{ with $.Site.GetPage (printf "/%s/%s" $type $name) }}{{ .Content }}{{ end }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+{{ end }}

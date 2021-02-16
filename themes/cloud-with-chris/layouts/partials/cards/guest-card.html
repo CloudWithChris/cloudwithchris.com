@@ -1,0 +1,23 @@
+
+{{ $site := .Site }}
+{{ $scratch := .Scratch }}
+
+<div class="col-md-6">    
+  <div class="row g-0">
+    <div class="col-md-2">
+      <a href="{{ .Permalink }}"><img src="{{ .Params.Thumbnail | absURL }}" class="rounded-circle z-depth-2 align-middle" width="100" title="{{ .Title }}" alt="{{ .Title }}" /></a>
+    </div>
+    <div class="col-md-10">
+      <div class="card-body episode-card">
+        
+        <a href="{{ .Permalink }}"><h3 class="card-title">{{ .Title }}</h3></a>
+
+        <p class="card-text">{{ .Content | truncate 300}}</p>
+        
+        {{ with .Params.tags }}
+          <p>{{ partial "tags.html" (dict "taxo" "tags" "value" . "site" $.Site ) }}</p>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</div>

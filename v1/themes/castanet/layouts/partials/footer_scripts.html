@@ -1,0 +1,73 @@
+<script src='{{ "js/castanet-min.js" | absURL }}'></script>
+<script>
+    $("#share").jsSocials({
+        shares: [
+      {
+        share: "facebook",
+        logo: "fab fa-facebook",
+      },
+      {
+        share: "twitter",           // name of share
+        label: "Tweet",             // share button text (optional)
+        logo: "fab fa-twitter",
+        {{ if (isset .Site.Params.social "twitter" )}}
+          via: "{{ .Site.Params.social.twitter }}",       // custom twitter sharing param 'via' (optional)
+        {{ end }}
+        url: "{{ .Permalink }}",
+        text: "{{ title .Title }}"
+      },
+      {
+        share: "linkedin",
+        logo: "fab fa-linkedin"
+      },
+      {
+        share: "pinterest",
+        logo: "fab fa-pinterest"
+      }
+    ],
+    });
+</script>
+
+<script>
+  $(document).ready(function() {
+
+    $('.transcript').hide();
+    $(".hide_transcript").hide();
+    $(".hide_transcript").click(function () {
+    $(".transcript").hide("fast");
+    $(".show_transcript").show();
+    $(".hide_transcript").hide();
+   });
+
+    $(".show_transcript").click(function () {
+    $(".transcript").show(500);
+    $(".hide_transcript").show();
+    $(".show_transcript").hide();
+   });
+
+  });
+
+</script>
+
+<script>
+  var player = new MediaElementPlayer('player2', {
+      features: ['playpause', 'current', 'progress', 'duration', 'volume','speed'],
+      defaultSpeed: 1.0,
+      // other configuration elements
+  });
+</script>
+
+
+
+<script type="text/javascript" src="//www.privacypolicies.com/public/cookie-consent/3.1.0/cookie-consent.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({"notice_banner_type":"headline","consent_type":"express","palette":"light","language":"en","website_name":"Cloud With Chris","cookies_policy_url":"https://www.cloudwithchris.com/cookie-policy"});
+});
+</script>
+
+<!-- Google Analytics -->
+{{ partial "google-analytics.html" . }}
+<!-- end of Google Analytics-->
+
+<noscript>Cookie Consent by <a href="https://www.PrivacyPolicies.com/cookie-consent/" rel="nofollow noopener">PrivacyPolicies.com</a></noscript>

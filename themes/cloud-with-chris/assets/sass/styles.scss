@@ -1,0 +1,388 @@
+html, body {
+  height: 100%;
+}
+
+footer {
+  padding-top:20px;
+  background-color: $footer-blue;
+} 
+
+footer a {
+  color: #FFFFFF;
+}
+
+.flex {  
+  display: flex;
+  flex-direction: column;
+}
+
+.icons {
+  font-size: 25px;
+}
+
+.bg-cwc {
+  background-color: $cloud-with-chris-blue;
+}
+
+.header-area {
+  text-align: center;
+  color: white;
+  padding-bottom: 10px;
+}
+
+.episode-card {
+  text-align: left;
+}
+
+.episode-card-img {
+
+}
+
+.bg-main {
+  background-color: $main-blue;
+  flex: 1;
+  padding-top: 5px;
+}
+
+.copyright-notice {
+  color: #FFFFFF;
+}
+
+main a {
+  color: $cloud-with-chris-blue;
+  text-decoration: none;
+}
+
+main a:hover {
+  color: $footer-blue;
+  text-decoration: none;
+}
+
+.row {
+  display: flex;
+}
+@media screen and (min-width: 500px) {
+  .column {
+    flex: 50%;
+    padding: 5px;
+  }
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 500px) {
+  .column {
+    width: 100%;
+  }
+}
+
+//Pagination
+
+.pagination {
+  display: flex;
+  list-style: none;
+  border-radius: .25rem;
+  margin: 20px 0;
+  padding: 0;
+  justify-content: center;
+}
+
+.page-link {
+  position: relative;
+  display: block;
+  padding: .75rem 1rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: #007bff;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+}
+
+.homepage .page-link,
+.listing .page-link {
+  background-color: #fff;
+}
+
+.page-item.disabled .page-link {
+  color: #6c757d;
+  pointer-events: none;
+  cursor: auto;
+  background-color: #fff;
+  border-color: #dee2e6;
+}
+
+.page-item.active .page-link {
+  z-index: 1;
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.youtube {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  min-height: 40vh;
+  max-height: 50vh;
+}
+
+// Icons
+
+// Social Buttons for Speakers + Organizers
+
+.btn-social-small {
+  width: 25px;
+  height: 25px;
+  padding: 0
+}
+
+.btn-social {
+  width: 40px;
+  height: 40px;
+  padding: 0
+}
+
+
+.btn.btn-rounded {
+  border-radius: 50px
+}
+
+.btn-apple {
+  background: #D56DFB;
+  color: #ffffff
+}
+
+.btn-apple:hover,
+.btn-apple:focus {
+  background: #B150E2;
+  color: #ffffff
+}
+
+.btn-outline-apple {
+  border: 1px solid #D56DFB;
+  color: #3b579d
+}
+
+.btn-outline-apple:hover {
+  background: #D56DFB;
+  color: #ffffff
+}
+
+.btn-facebook {
+  background: #3b579d;
+  color: #ffffff
+}
+
+.btn-facebook:hover,
+.btn-facebook:focus {
+  background: #2d4278;
+  color: #ffffff
+}
+
+.btn-outline-facebook {
+  border: 1px solid #3b579d;
+  color: #3b579d
+}
+
+.btn-outline-facebook:hover {
+  background: #3b579d;
+  color: #ffffff
+}
+
+.btn-github {
+  background: #333333;
+  color: #ffffff
+}
+
+.btn-github:hover,
+.btn-github:focus {
+  background: #000000;
+  color: #ffffff
+}
+
+.btn-outline-github {
+  border: 1px solid #333333;
+  color: #333333
+}
+
+.btn-outline-github:hover {
+  background: #333333;
+  color: #ffffff
+}
+
+.btn-google {
+  background: #fab908;
+  color: #ffffff
+}
+
+.btn-google:hover,
+.btn-google:focus {
+  background: #d69f07;
+  color: #ffffff
+}
+
+.btn-outline-google {
+  border: 1px solid #fab908;
+  color: #333333
+}
+
+.btn-outline-google:hover {
+  background: #fab908;
+  color: #ffffff
+}
+
+.btn-instagram {
+  background: #dc4a38;
+  color: #ffffff
+}
+
+.btn-instagram:hover,
+.btn-instagram:focus {
+  background: #bf3322;
+  color: #ffffff
+}
+
+.btn-outline-instagram {
+  border: 1px solid #dc4a38;
+  color: #dc4a38
+}
+
+.btn-outline-instagram:hover {
+  background: #e52d27;
+  color: #ffffff
+}
+
+.btn-linkedin {
+  background: #0177b5;
+  color: #ffffff
+}
+
+.btn-linkedin:hover,
+.btn-linkedin:focus {
+  background: #015682;
+  color: #ffffff
+}
+
+.btn-outline-linkedin {
+  border: 1px solid #0177b5;
+  color: #0177b5
+}
+
+.btn-outline-linkedin:hover {
+  background: #0177b5;
+  color: #ffffff
+}
+
+.btn-rss {
+  background: #ee802f;
+  color: #ffffff
+}
+
+.btn-rss:hover,
+.btn-rss:focus {
+  background: #d3712b;
+  color: #ffffff
+}
+
+.btn-outline-rss {
+  border: 1px solid #ee802f;
+  color: #ee802f
+}
+
+.btn-outline-rss:hover {
+  background: #ee802f;
+  color: #ffffff
+}
+
+.btn-twitch {
+  background: #6441a5;
+  color: #ffffff
+}
+
+.btn-spotify {
+  background: #1DB954;
+  color: #ffffff
+}
+
+.btn-spotify:hover,
+.btn-spotify:focus {
+  background: #19a74b;
+  color: #ffffff
+}
+
+.btn-outline-spotify {
+  border: 1px solid #1DB954;
+  color: #1DB954
+}
+
+.btn-outline-spotify:hover {
+  background: #1DB954;
+  color: #ffffff
+}
+
+.btn-twitch:hover,
+.btn-twitch:focus {
+  background: #3c2762;
+  color: #ffffff
+}
+
+.btn-outline-twitch {
+  border: 1px solid #333333;
+  color: #333333
+}
+
+.btn-outline-twitch:hover {
+  background: #333333;
+  color: #ffffff
+}
+
+.btn-twitter {
+  background: #2caae1;
+  color: #ffffff
+}
+
+.btn-twitter:hover,
+.btn-twitter:focus {
+  background: #1b8dbf;
+  color: #ffffff
+}
+
+.btn-outline-twitter {
+  border: 1px solid #2caae1;
+  color: #2caae1
+}
+
+.btn-outline-twitter:hover {
+  background: #2caae1;
+  color: #ffffff
+}
+
+.btn-website {
+  background: #fd7e14;
+  color: #ffffff
+}
+
+.btn-website:hover,
+.btn-website:focus {
+  background: #b15102;
+  color: #ffffff
+}
+
+.btn-youtube {
+  background: #e52d27;
+  color: #ffffff
+}
+
+.btn-youtube:hover,
+.btn-youtube:focus {
+  background: #c21d17;
+  color: #ffffff
+}
+
+.btn-outline-youtube {
+  border: 1px solid #e52d27;
+  color: #e52d27
+}
+
+.btn-outline-youtube:hover {
+  background: #e52d27;
+  color: #ffffff
+}

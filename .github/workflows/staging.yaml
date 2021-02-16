@@ -64,17 +64,19 @@ jobs:
         auth_header="$(git config --local --get http.https://github.com/.extraheader)"
         git submodule sync --recursive
         git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=  
+    - name: Node Dependencies
+      run: npm ci    
     - name: Setup Hugo
       uses: peaceiris/actions-hugo@v2
       with:
-        hugo-version: '0.62.2'
-        # extended: true
+        hugo-version: '0.80.0'
+        extended: true
     - name: Replace tokens
       uses: cschleiden/replace-tokens@v1.0
       with:
         tokenPrefix: '#{' # optional, default is #{
         tokenSuffix: '}#' # optional, default is }#
-        files: '["config.toml"]'
+        files: '["config.yaml"]'
       env:
         hostname: 'https://staging.cloudwithchris.com/'
     - name: Build

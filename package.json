@@ -1,0 +1,9 @@
+{
+  "name": "CloudWithChris",
+  "version": "2.0.0",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.2",
+    "bootstrap": "^5.0.0-beta2"
+  }
+}

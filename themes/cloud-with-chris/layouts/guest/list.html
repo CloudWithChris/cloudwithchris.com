@@ -1,0 +1,33 @@
+{{ define "main" }}
+<div class="container" align="center">
+  <div class="row g-2">   
+    {{ $paginator := .Paginate (where $.Site.RegularPages "Section" "guest").ByTitle }}
+
+    {{- partial "paginator.html" . -}}
+    
+    {{ range $paginator.Pages }}
+      {{- partial "cards/guest-card.html" . -}}
+    {{ end }}
+
+    {{- partial "paginator.html" . -}}
+  </div>
+</div>
+{{ end }}
+
+{{ define "top" }}
+  <div class="py-5 container">
+
+    <div class="row">
+      {{ range first 12 (where $.Site.RegularPages "Section" "guest").ByTitle }}
+        <div class="col-2">
+          <a href="{{ .Permalink }}"><img src="{{ .Params.Thumbnail | absURL }}" class="rounded-circle z-depth-2 align-middle" width="125" title="{{ .Title }}" alt="{{ .Title }}" /></a>
+        </div>
+      {{ end }}
+    </div>
+
+    <div class="row text-center">
+    <p>Interested in becoming a guest on the show? <a href="https://www.sessionize.com/cloudwithchris/">Sign up!</a></p>
+    <p>Have ideas for a new episode topic, or perhaps a new series? <a href="https://www.twitter.com/reddobowen">Tweet me on Twitter!</a></p> 
+    </div> 
+  </div>
+{{ end }}
