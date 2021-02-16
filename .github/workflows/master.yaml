@@ -31,7 +31,7 @@ jobs:
       with:
         tokenPrefix: '#{' # optional, default is #{
         tokenSuffix: '}#' # optional, default is }#
-        files: '["config.toml"]'
+        files: '["config.yaml"]'
       env:
         hostname: 'https://www.cloudwithchris.com/'
     - name: Build

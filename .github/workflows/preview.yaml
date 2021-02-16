@@ -70,7 +70,7 @@ jobs:
       with:
         tokenPrefix: '#{' # optional, default is #{
         tokenSuffix: '}#' # optional, default is }#
-        files: '["config.toml"]'
+        files: '["config.yaml"]'
       env:
         hostname: 'https://preview.cloudwithchris.com/${{ github.head_ref }}'
     - name: Build
