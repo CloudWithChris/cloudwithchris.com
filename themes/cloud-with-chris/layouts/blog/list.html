@@ -1,0 +1,25 @@
+{{ define "main" }}
+<div class="container" align="center">
+  <div class="container">
+    <div class="row g-2">   
+      {{ $paginator := .Paginate (after 1 (where (where $.Site.RegularPages "Section" "blog") ".Params.upcoming" "!=" true)) }}
+
+      {{- partial "paginator.html" . -}}
+      
+      {{ range $index, $value := $paginator.Pages }}
+        {{- partial "cards/blog-card.html" . -}}
+        {{ if not (modBool $index 2 )}}  
+          <div class="dropdown-divider"></div>
+         {{ else }}
+          <div class="dropdown-divider d-block d-sm-block d-md-none"></div>
+        {{ end }}
+      {{ end }}
+
+      {{- partial "paginator.html" . -}}
+    </div>
+  </div>
+</div>
+{{ end }}
+
+{{ define "top" }}
+{{ end }}

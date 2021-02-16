@@ -1,7 +1,7 @@
 ---
-Date: "2021-02-05T15:30:00Z"
+Date: "2021-02-09T15:30:00Z"
 Description: Mental Health - A concept that often has stigma surrounding it, or a concept that is misunderstood. In this episode, Chris Reddington is joined by Andrew Nathan as they both talk through their own experiences of Mental Health, the importance of looking after your mental health, and being okay with not being okay.
-PublishDate: "2021-02-05T15:30:00Z"
+PublishDate: "2021-02-09T15:30:00Z"
 Title: 25 - A conversation on Mental Health
 categories:
 - People

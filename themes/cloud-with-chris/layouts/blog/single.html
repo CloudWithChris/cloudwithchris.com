@@ -1,0 +1,38 @@
+{{ define "main" }}
+<div class="container">
+  <p>{{ .Content }}</p>
+</div>
+{{ end }}
+
+{{ define "top" }}
+{{ $site := .Site }}
+{{ $scratch := .Scratch }}
+
+  <div class="container" align="center">
+    <div class="col">
+      <div class="row">
+        {{ with .Params.author }}              
+          {{ $name := . }}
+          {{ $scratch.Set "person" ($name | urlize) }}
+          {{- range where $site.Pages "Type" "host" -}}
+            {{- if eq .File.TranslationBaseName ($scratch.Get "person") -}}
+              {{- $scratch.Set "host-exist" "true" -}}     
+                  <a href="{{ .Permalink | absURL}}"><img src="{{ .Params.Thumbnail | absURL}}" width="100" class="rounded-circle z-depth-2" alt="{{ .Title }}" title="{{ .Title }}" /></a>
+              {{- $scratch.Set "host-exist" "false" -}}
+            {{ end }}
+          {{- end -}}
+        {{ end }}
+        </p>
+      </div>
+      
+      <div class="row d-flex align-items-center justify-content-center">
+        <h2>{{ .PublishDate.Format "Mon, Jan 2, 2006" }}</h2>
+      </div>
+      
+      
+      {{ with .Params.tags }}
+        <p>{{ partial "tags.html" (dict "taxo" "tags" "value" . "site" $.Site ) }}</p>
+      {{ end }}
+    </div>
+  </div>
+{{ end }}

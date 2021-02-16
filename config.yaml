@@ -1,0 +1,112 @@
+baseURL: "https://v2.cloudwithchris.com/"
+buildFuture: true
+googleAnalytics: "UA-185951371-1"
+languageCode: "en-us"
+theme: "cloud-with-chris"
+title: "Cloud With Chris"
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+menu:
+  footer:
+    - name: "Get Involved"
+      weight: 1
+      url: "/get-involved"
+    - name: "Privacy"
+      weight: 2
+      url: "/privacy-policy"
+    - name: "Cookies"
+      weight: 3
+      url: "/cookie-policy"
+  main:
+    - name: "Home"
+      weight: 1
+      url: "/"
+    - name: "About"
+      weight: 2
+      url: "/about"
+    - name: "Episodes"
+      weight: 3
+      url: "/episode"
+    - name: "Blog"
+      weight: 4
+      url: "/Blog"
+    - name: "Guests"
+      weight: 5
+      url: "/guest"
+
+module:
+  mounts:
+    - source: "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+      target: "assets/js/bootstrap.bundle.min.js"
+    - source: "node_modules/bootstrap/scss"
+      target: "assets/sass/bootstrap"
+    - source: "./node_modules/@fortawesome/fontawesome-free/scss"
+      target: "assets/sass/fontawesome"
+    - source: "./node_modules/@fortawesome/fontawesome-free/webfonts"
+      target: "static/webfonts"
+    - source: content
+      target: content
+    - source: static
+      target: static
+    - source: layouts
+      target: layouts
+    - source: data
+      target: data
+    - source: assets
+      target: assets
+    - source: i18n
+      target: i18n
+    - source: archetypes
+      target: archetypes
+
+params:
+  about_logo: "/img/cloudwithchrislogo.png"
+  copyright_notice: "Copyright 2020 [Chris Reddington](https://www.christianreddington.co.uk), Proudly running using [Hugo](https://gohugo.io/)."
+  itunes_subscribe: "https://podcasts.apple.com/gb/podcast/cloud-with-chris/id1499633784"
+  spotify_subscribe: "https://open.spotify.com/show/3oBrdKm5grzl58GBiV0j2y"
+  google_play_subscribe: "https://podcasts.google.com/feed/aHR0cHM6Ly93d3cuY2xvdWR3aXRoY2hyaXMuY29tL2VwaXNvZGUvaW5kZXgueG1s?sa=X&ved=0CAMQ4aUDahcKEwiwsr2N1ePtAhUAAAAAHQAAAAAQBA"
+  stitcher_subscribe: "https://www.stitcher.com/s?fid=507667&refid=stpr"
+  pocketcasts_subscribe: "https://pca.st/u5t985sn"
+  description: "Exploring Cloud concepts with Chris Reddington (Welsh Tech Geek, Cloud Advocate, Musical Theatre Enthusiast and Improving Improviser!). We will regularly invite guests to talk about their experiences with the cloud and hear about some of the lessons learned around their cloud journey. Cloud with Chris is a community-driven personal podcast. Content from episodes do not represent the views of any company or organisation."
+  media_prefix: "https://podcasts.cloudwithchris.com/"
+
+  channels:
+    apple: "https://podcasts.apple.com/gb/podcast/cloud-with-chris/id1499633784"
+    google: "https://podcasts.google.com/feed/aHR0cHM6Ly93d3cuY2xvdWR3aXRoY2hyaXMuY29tL2VwaXNvZGUvaW5kZXgueG1s?sa=X&ved=0CAMQ4aUDahcKEwiwsr2N1ePtAhUAAAAAHQAAAAAQBA"
+    spotify: "https://open.spotify.com/show/3oBrdKm5grzl58GBiV0j2y"
+
+  feed:
+    copyright: "Copyright 2020 Chris Reddington" #do not use markdown in this field; it is used in the feed
+    itunes_subtitle: "Exploring Cloud concepts with Chris Reddington!" #no markdown or HTML
+    itunes_author: "Chris Reddington" #no markdown or HTML
+    itunes_summary: "Exploring Cloud concepts with Chris Reddington (Welsh Tech Geek, Cloud Advocate, Musical Theatre Enthusiast and Improving Improviser!). We will regularly invite guests to talk about their experiences with the cloud and hear about some of the lessons learned around their cloud journey."
+    itunes_owner_name: "Chris Reddington"
+    itunes_owner_email: "chris@cloudwithchris.com" #contains the e-mail address that will be used to contact the owner of the Podcast for communication specifically about their Podcast on iTunes. It will not be publicly displayed on iTunes.
+    itunes_image: "https://www.cloudwithchris.com/img/cloudwithchrislogo.png" #fqdn to the image art for your podcast
+    itunes_top_category: "Technology"
+    itunes_first_sub_category: "Podcasting"
+    itunes_second_sub_category: "Software How-To"
+    language: "en-us"
+    explicit: "no"
+
+  social:
+    facebook: "CloudWithChris"
+    github: "chrisreddington/cloudwithchris.com"
+    twitter: "reddobowen"
+    twitter_domain: "cloudwithchris.com" # This domain shows in twitter cards as "View on `twitter_domain`"
+    youtube: "CloudWithChris"
+
+privacy:
+  googleAnalytics:
+    anonymizeIP: false
+    disable: false
+    respectDoNotTrack: true
+    useSessionStorage: false
+
+taxonomies:
+  tag: "tags"
+  series: "series"

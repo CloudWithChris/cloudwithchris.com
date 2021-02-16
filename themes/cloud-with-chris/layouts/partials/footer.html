@@ -1,0 +1,60 @@
+<footer class="mt-auto">
+  <nav class="navbar">
+    <div class="container">
+      <ul class="icons nav">
+        {{ with .Site.Params.Social.YouTube }}
+          <li class="nav-item">            
+            <a class="nav-link" href="https://www.youtube.com/c/{{ . }}"><button type="button" aria-label="YouTube" class="btn btn-social btn-youtube btn-rounded"><i class="fab fa-youtube"></i></button></a>
+          </li>
+        {{ end }}
+        {{ with .Site.Params.Social.Twitter }}
+          <li class="nav-item">
+            <a class="nav-link" href="https://twitter.com/{{ . }}" aria-label="Twitter"><button aria-label="Twitter" type="button" class="btn btn-social btn-twitter btn-rounded"><i class="fab fa-twitter"></i></button></a>
+          </li>
+        {{ end }}
+        {{ with .Site.Params.Social.Facebook }}
+          <li class="nav-item">
+            
+            <a class="nav-link" href="https://facebook.com/{{ . }}" aria-label="Twitter"><button aria-label="Twitter" type="button" class="btn btn-social btn-facebook btn-rounded"><i class="fab fa-facebook"></i></button></a>
+          </li>  
+        {{ end }}        
+        {{ with .Site.Params.Social.GitHub }}
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/{{ . }}" aria-label="GitHub"><button type="button" aria-label="GitHub" class="btn btn-social btn-github btn-rounded"><i class="fab fa-github"></i></button></a>
+          </li>
+        {{ end }}
+      </ul>
+      <div class="d-flex justify-content-center copyright-notice">
+        <p>{{ .Site.Params.copyright_notice | markdownify }}</p>
+      </div>
+      <div class="d-flex">
+        <ul class="nav">
+          {{ $currentPage := . }}
+            {{ range .Site.Menus.footer }}
+              {{ partial "helper/navigation-menu.html" (dict "context" . "currentPage" $currentPage) }}
+            {{ end }}
+        </ul>
+      </div>
+    </div>
+  </nav>
+</footer>
+<!-- JavaScript and dependencies -->
+
+  {{ $bootstrap := resources.Get "js/bootstrap.bundle.min.js" }}
+  {{ $js := slice $bootstrap | resources.Concat "js/bundle.js" | resources.Minify }}
+
+  <script src="{{$js.RelPermalink}}" defer></script>
+
+  
+<script type="text/javascript" src="//www.privacypolicies.com/public/cookie-consent/3.1.0/cookie-consent.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({"notice_banner_type":"headline","consent_type":"express","palette":"light","language":"en","website_name":"Cloud With Chris","cookies_policy_url":"https://www.cloudwithchris.com/cookie-policy"});
+});
+</script>
+
+<!-- google analytics -->
+{{ partial "partials/google-analytics.html" . }}
+<!-- end of Google Analytics-->
+
+<noscript>Cookie Consent by <a href="https://www.PrivacyPolicies.com/cookie-consent/" rel="nofollow noopener">PrivacyPolicies.com</a></noscript>

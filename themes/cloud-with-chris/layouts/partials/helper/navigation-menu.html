@@ -1,0 +1,17 @@
+{{ $context := .context }}
+{{ $currentPage := .currentPage }}
+
+{{ with $context }}
+  {{ if.HasChildren }}
+    <li class="nav-item dropdown {{ if $currentPage.HasMenuCurrent "main" . }}active{{ end }}">
+      <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown">{{ .Name }}</a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        {{ range .Children }}
+          <a class="dropdown-item" href="{{ .URL }}">{{ .Name }}</a>
+        {{ end }}
+      </div>
+    </li>
+  {{ else }}
+    <li class="nav-item  {{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}"><a class="nav-link" href="{{ .URL | absURL }}">{{ .Name }}</a></li>
+  {{ end }}
+{{ end }}

@@ -1,0 +1,10 @@
+<section class="py-5 container">
+  <div class="row float-center">
+    {{ range first 3 (where (where $.Site.RegularPages "Section" "episode") ".Params.upcoming" true).ByDate }}         
+      {{- partial "upcoming-episode.html" . -}}
+    {{ end }}
+  </div>  
+  <div class="row float-end">
+    <p><a href="{{ "/upcoming" | absURL }}">See all upcoming episodes</a></p>
+  </div>
+</section>
