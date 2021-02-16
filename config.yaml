@@ -1,4 +1,4 @@
-baseURL: "https://v2.cloudwithchris.com/"
+baseURL: "#{hostname}#"
 buildFuture: true
 googleAnalytics: "UA-185951371-1"
 languageCode: "en-us"
