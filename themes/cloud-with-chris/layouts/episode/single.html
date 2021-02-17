@@ -4,7 +4,7 @@
 
   {{ with .Params.podcast_file }}
     <div id="podscribe-embed-root"></div>
-    <script>
+    <script cookie-consent="strictly-necessary">
       var podscribeEmbedVars = {
         epGuid: 'https://podcasts.cloudwithchris.com/{{ . }}',
         rssUrl: 'https://www.cloudwithchris.com/episode/index.xml',
@@ -18,7 +18,7 @@
         showTimestamps: true
       };
     </script>
-    <script src="https://app.podscribe.ai/static/js/embed.js"></script>
+    <script cookie-consent="strictly-necessary" src="https://app.podscribe.ai/static/js/embed.js"></script>
   {{ end }}
 </div>
 {{ end }}
