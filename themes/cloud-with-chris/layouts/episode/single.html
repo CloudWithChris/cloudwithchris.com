@@ -2,6 +2,8 @@
 <div class="container">
   <p>{{ .Content }}</p>
 
+  <div class="dropdown-divider"></div>
+
   {{ with .Params.podcast_file }}
     <div id="podscribe-embed-root"></div>
     <script cookie-consent="strictly-necessary">
@@ -12,13 +14,13 @@
         font: undefined,
         fontColor: undefined,
         speakerFontColor: '#25A6D9',
-        height: '600px',
-        showEditButton: false,
+        height: '1000px',
+        showEditButton: true,
         showSpeakers: true,
         showTimestamps: true
       };
     </script>
-    <script cookie-consent="tracking" src="https://app.podscribe.ai/static/js/embed.js"></script>
+    <script cookie-consent="tracking" src="{{ "js/embed.js" | absURL }}"></script>
   {{ end }}
 </div>
 {{ end }}
