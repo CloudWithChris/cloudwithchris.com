@@ -92,7 +92,7 @@ main a:hover {
   padding: .75rem 1rem;
   margin-left: -1px;
   line-height: 1.25;
-  color: #007bff;
+  color: $cloud-with-chris-blue;
   background-color: #fff;
   border: 1px solid #dee2e6;
 }
@@ -113,8 +113,8 @@ main a:hover {
 .page-item.active .page-link {
   z-index: 1;
   color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
+  background-color: $cloud-with-chris-blue;
+  border-color: $cloud-with-chris-blue;
 }
 
 .youtube {
