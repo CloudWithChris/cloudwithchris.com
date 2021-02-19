@@ -10,10 +10,10 @@
   <div class="container">
     <div class="row g-2">   
       {{ $blogs := where (where $.Site.RegularPages "Section" "blog") ".Params.upcoming" "!=" true }}
-      {{ $episodes := where (where $.Site.RegularPages "Section" "episode") ".Params.upcoming" "!=" true }}
+      {{ $episodes := after 1 (where (where $.Site.RegularPages "Section" "episode") ".Params.upcoming" "!=" true) }}
       {{ $all := (union $blogs $episodes).ByDate.Reverse }}
 
-      {{ $paginator := .Paginate (after 1 ($all)) }}
+      {{ $paginator := .Paginate $all }}
 
       {{- partial "paginator.html" . -}}
       
