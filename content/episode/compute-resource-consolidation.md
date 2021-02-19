@@ -15,7 +15,7 @@ images:
 - img/cloudwithchrislogo.png
 podcast_bytes: "27406336"
 podcast_duration: "28:32.000"
-podcast_file: 22 - Static Content Hosting Pattern.mp3
+podcast_file: 27 - Compute Resource Consolidation.mp3
 series:
 - Architecting for the Cloud, one pattern at a time
 tags:
