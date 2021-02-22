@@ -1,31 +1,31 @@
 ---
 Date: "2021-02-22T09:30:00Z"
-Description: 'In this video, Chris lays out his eighth weekly technology vlog update
-  talking about TBC'
+Description: "In this video, Chris recaps the events over the last week, including his transition from FastTrack for Azure Engineer into a Cloud Solution Architect, The Compute Resource Consolidation Pattern and being 'In Conversation with' JonnyChipz and the relaunch of Azure Thames Valley! This week, expect an additional blog post on GitHub and GPG, as well as an Intro to Landing Zones with Karim Fahmy. Don't forget to checkout the session with Squared Up on Thursday as well! It's a busy week! The last one has been busy for the Azure Enginering teams, as we recap some of the updates (This is one not to miss - There's a lot!)"
 PublishDate: "2021-02-22T09:30:00Z"
-Title: 'V008 - Weekly Technology Vlog #8 (Content TBC)'
+Title: 'V008 - Weekly Technology Vlog #8 (Changing Role, Guest Appearances, LOTS of Azure News)'
 categories:
 - Vlog
 episode: V008
-episode_image: img/cloudwithchris.png # img/vlog/v002.jpg
+episode_image: img/vlog/v008.jpg
 explicit: "no"
 guests: []
 hosts:
 - chrisreddington
 images:
 - img/default-social.png
-# - img/vlog/v002.jpg
-# podcast_bytes: "13803520"
-# podcast_duration: "14:19.000"
-# podcast_file: V002 - Weekly Technology Vlog.mp3
+- img/vlog/v008.jpg
+podcast_bytes: "25g935872"
+podcast_duration: "27:00.000"
+podcast_file: V008 - Weekly Technology Vlog.mp3
 series:
 - Weekly Vlog
 tags:
-#- Podcast
-#- Sessionize
-#- Azure
-#- Community
-# youtube: VyQI5SOsw3M
-upcoming: true
+- Career
+- Cloud
+- Community
+- Azure
+- JonnyChipz
+- Azure Thames Valley
+youtube: e5_ZFHW8bbE
 ---
-In this video, Chris lays out his eighth weekly technology vlog update talking about TBC.
+In this video, Chris recaps the events over the last week, including his transition from FastTrack for Azure Engineer into a Cloud Solution Architect, The Compute Resource Consolidation Pattern and being "In Conversation with" JonnyChipz and the relaunch of Azure Thames Valley! This week, expect an additional blog post on GitHub and GPG, as well as an Intro to Landing Zones with Karim Fahmy. Don't forget to checkout the session with Squared Up on Thursday as well! It's a busy week! The last one has been busy for the Azure Enginering teams, as we recap some of the updates (This is one not to miss - There's a lot!)
