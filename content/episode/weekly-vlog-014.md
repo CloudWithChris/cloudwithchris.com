@@ -6,7 +6,7 @@ Title: "V014 - Weekly Technology Vlog #14 (Content TBC)"
 categories:
 - Vlog
 episode: V014
-episode_image: img/cloudwithchris.png # img/vlog/v002.jpg
+episode_image: img/cloudwithchrislogo.png # img/vlog/v002.jpg
 explicit: "no"
 guests: []
 hosts:

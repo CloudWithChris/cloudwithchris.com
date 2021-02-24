@@ -6,7 +6,7 @@ Title: 'V006 - Weekly Technology Vlog #6 (Recap, Coming Up and NEWS!)'
 categories:
 - Vlog
 episode: V006
-episode_image: img/cloudwithchris.png # img/vlog/v002.jpg
+episode_image: img/vlog/v006.png
 explicit: "no"
 guests: []
 hosts:

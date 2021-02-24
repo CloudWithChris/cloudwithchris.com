@@ -7,7 +7,7 @@ Title: 'V012 - Weekly Technology Vlog #12 (Content TBC)'
 categories:
 - Vlog
 episode: V012
-episode_image: img/cloudwithchris.png # img/vlog/v002.jpg
+episode_image: img/cloudwithchrislogo.png # img/vlog/v002.jpg
 explicit: "no"
 guests: []
 hosts:
