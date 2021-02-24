@@ -6,7 +6,7 @@ Title: "V018 - Weekly Technology Vlog #18 (Content TBC)"
 categories:
 - Vlog
 episode: V018
-episode_image: img/cloudwithchris.png # img/vlog/v002.jpg
+episode_image: img/cloudwithchrislogo.png # img/vlog/v002.jpg
 explicit: "no"
 guests: []
 hosts:

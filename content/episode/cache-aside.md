@@ -6,7 +6,7 @@ Title: 28 - The Cache Aside Pattern (Optimise your caching approach!)
 categories:
 - Architecture
 episode: "28"
-episode_image: img/cloudwithchris.png
+episode_image: img/cloudwithchrislogo.png
 explicit: "no"
 hosts:
 - chrisreddington

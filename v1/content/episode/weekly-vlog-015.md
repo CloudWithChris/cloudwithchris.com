@@ -6,7 +6,7 @@ Title: "V015 - Weekly Technology Vlog #15 (Content TBC)"
 categories:
 - Vlog
 episode: V015
-episode_image: img/cloudwithchris.png # img/vlog/v002.jpg
+episode_image: img/cloudwithchrislogo.png # img/vlog/v002.jpg
 explicit: "no"
 guests: []
 hosts:
