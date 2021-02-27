@@ -2,10 +2,10 @@
 Date: "2021-03-26T15:30:00Z"
 Description: "Do you know what caused the Titanic to sink? Poorly designed bulkheads. How can you ensure resilience between components in your cloud application? Effectively designed bulkheads! In this session, join Chris as he explores how the bulkhead pattern can help you prevent excessive load or failures in one service impacting the consumers of that service!"
 PublishDate: "2021-03-26T15:30:00Z"
-Title: 30 - The Bulkhead Pattern (Isolate your components to prevent failures)
+Title: 31 - The Bulkhead Pattern (Isolate your components to prevent failures)
 categories:
 - Architecture
-episode: "30"
+episode: "31"
 episode_image: img/cloudwithchrislogo.png
 explicit: "no"
 hosts:
