@@ -33,8 +33,8 @@ Now, with that context. Let's consider an example of how easy it is to impersona
 
 Firstly, let's go ahead and create a brand new directory. Navigate to it and initialise a Git repository using ``git init``.
 
-Next, navigate into that newly initialised Git repository and set the following **local** configurations - 
-```
+Next, navigate into that newly initialised Git repository and set the following **local** configurations -
+```bash
 git config --local user.email "alice@contoso.com"
 git config --local user.name "Alice"
 ```
@@ -43,20 +43,20 @@ git config --local user.name "Alice"
 
 Next, "Alice" creates a file called myfile.php with the below contents:
 
-```
+```php
 <?php
 
 echo "Hello World"; 
 
 ?>
 ```
-Now if we run git status, we can see that the file is untracked. 
+Now if we run git status, we can see that the file is untracked.
 
 ![Git Status showing file untracked](/img/blog/gpg-git-part-1/git-status-1.jpg)
 
 This means that the version control is aware that the file exists, but hasn't been formally recognised/versioned within Git. We need to go ahead and first add the file to the staging environment, and then commit the file to the version control.
 
-```
+```bash
 git add myfile.php
 git commit -m "My Hello World Sample"
 ```
@@ -65,7 +65,7 @@ git commit -m "My Hello World Sample"
 
 Now we can see that a change has been made by Alice! Or at least, it appears to be made by Alice. Do you recall us logging in, authenticating or verifying who we are at any point? For now, let's assume that it's a genuine commit by Alice. Let's change our context and become Bob.
 
-```
+```bash
 git config --local user.email "bob@contoso.com"
 git config --local user.name "Bob"
 ```
@@ -76,7 +76,7 @@ Bob wants to enhance the sample by making it relevant to the company. He changes
 
 Now, Bob runs the following commands -
 
-```
+```bash
 git add myfile.php
 git commit -m "Adjust to Hello Contoso"
 ```
@@ -91,7 +91,7 @@ Now as a side note, you should be super careful whenever performing any function
 
 Now, with the health warning out of the way - Let's continue... Eve goes ahead and runs the following script. The script uses the ``git-filter-branch`` command to replace any commits with OLD_EMAIL with NEW_EMAIL, as well as replacing the name. Any commit that matches the if statement in the script will be changed.
 
-```
+```bash
 git filter-branch --env-filter '
 OLD_EMAIL="bob@contoso.com"
 NEW_NAME="Alice"
