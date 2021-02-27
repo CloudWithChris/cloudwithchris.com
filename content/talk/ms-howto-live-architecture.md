@@ -16,5 +16,6 @@ tags:
 - Architecture
 - Requirements
 - Azure Architecture Center
+youtube: aLBmQlLd73I
 ---
 Chris will join Mert Yeter on the MSHowTo show talking all things DevOps!
