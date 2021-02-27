@@ -24,5 +24,5 @@ Join Chris Reddington, Senior FastTrack for Azure Engineer at Microsoft for this
 In this webinar you will:
 
 * Learn how Application Insights fits into the wider Azure Monitoring ecosystem
-* How to use it to bring clarity to a distributed cloud deployment 
+* How to use it to bring clarity to a distributed cloud deployment
 * Join Chris for a live Q&A!
