@@ -5,31 +5,12 @@
 <div class="col-md-6 col-12">    
   <div class="row g-0">
     <div class="col-12 col-sm-4">
-      <p>
-        
-        {{ if eq .Section "talk" }}
-          {{ if .Params.externalLink }}
-            <a href="{{ .Params.externalLink }}"><img src="{{ .Params.image | absURL }}" class="rounded-circle z-depth-2 align-middle" width="100" title="{{ .Title }}" alt="{{ .Title }}" /></a>
-          {{ else }}
-            <a href="{{ .Permalink }}"><img src="{{ .Params.image | absURL }}" class="rounded-circle z-depth-2 align-middle" width="100" title="{{ .Title }}" alt="{{ .Title }}" /></a>
-          {{ end }}
-        {{ else }}       
-          <a href="{{ .Permalink }}">
-            {{ if eq .Section "episode" }}
-              <img src="{{ .Params.episode_image | absURL }}" class="rounded-circle z-depth-2 align-middle" width="100" title="{{ .Title }}" alt="{{ .Title }}" />
-            {{ else if eq .Section "blog" }}
-              <img src="{{ .Params.blog_image | absURL }}" class="rounded-circle z-depth-2 align-middle" width="100" title="{{ .Title }}" alt="{{ .Title }}" />
-            {{ end }}
-            </p>
-          </a>
-        {{ end }}
-        <p>
-          {{ if eq .Section "talk" }}
-            <span class="badge bg-warning text-dark d-inline pull-right">{{ .Params.talkType | humanize }}</span>
-          {{ else }}
-            <span class="badge bg-warning text-dark d-inline pull-right">{{ .Type | humanize }}</span>
-          {{ end }}
-        </p>
+      {{ if .Params.externalLink }}
+        <p><a href="{{ .Params.externalLink }}"><img src="{{ .Params.image | absURL }}" class="rounded-circle z-depth-2 align-middle" width="100" title="{{ .Title }}" alt="{{ .Title }}" /></a></p>
+      {{ else }}
+        <p><a href="{{ .Params.externalLink }}"><img src="{{ .Params.image | absURL }}" class="rounded-circle z-depth-2 align-middle" width="100" title="{{ .Title }}" alt="{{ .Title }}" /></a></p>
+      {{ end }}
+      <p><span class="badge bg-warning text-dark d-inline pull-right">{{ .Params.talkType | humanize }}</span></p>
     </div>
     <div class="col-12 col-sm-8">
       <div class="card-body episode-card">
@@ -39,6 +20,8 @@
         {{ else }}
           <a href="{{ .Permalink }}"><h3 class="card-title">{{ .Title }}</h3></a>
         {{ end }}
+
+        {{ with .Params.eventName }}<h4>{{ . }}</h4>{{ end }}
 
         <p class="card-text">{{ .Content | truncate 300}}</p>
         
@@ -51,20 +34,8 @@
           </p>
         {{ end }}
         <p class="card-text">
-
-        {{ with .Params.author }}              
-          {{ $name := . }}
-          {{ $scratch.Set "person" ($name | urlize) }}
-          {{- range where $site.Pages "Type" "host" -}}
-            {{- if eq .File.TranslationBaseName ($scratch.Get "person") -}}
-              {{- $scratch.Set "host-exist" "true" -}}     
-                  <a href="{{ .Permalink | absURL}}"><img src="{{ .Params.Thumbnail | absURL}}" width="50" class="rounded-circle z-depth-2" alt="{{ .Title }}" title="{{ .Title }}" /></a>
-              {{- $scratch.Set "host-exist" "false" -}}
-            {{ end }}
-          {{- end -}}
-        {{ end }}
           
-        {{ with .Params.hosts }}              
+          {{ with .Params.hosts }}              
           {{ range $name := . }}
             {{ $scratch.Set "person" ($name | urlize) }}
             {{- range where $site.Pages "Type" "host" -}}
@@ -90,11 +61,7 @@
           {{ end }}
         {{ end }}
 
-        {{ if eq .Section "talk" }}
           <small class="text-muted">{{ if eq .Params.upcoming true }}Scheduled for {{ else }}Occured on {{ end }}{{ .Date.Format "Mon, Jan 2, 2006" }}</small></p>
-        {{ else }}
-          <small class="text-muted">{{ if eq .Params.upcoming true }}Scheduled for {{ else }}Published on {{ end }}{{ .PublishDate.Format "Mon, Jan 2, 2006" }}</small></p>
-        {{ end }}
       </div>
     </div>
   </div>

@@ -1,8 +1,0 @@
-node_modules
-bower_components
-# released binaries
-release/
-dist
-.DS_Store
-.Ulysses-Group.plist
-public/

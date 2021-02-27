@@ -11,7 +11,8 @@
     <div class="row g-2">   
       {{ $blogs := where (where $.Site.RegularPages "Section" "blog") ".Params.upcoming" "!=" true }}
       {{ $episodes := after 1 (where (where $.Site.RegularPages "Section" "episode") ".Params.upcoming" "!=" true) }}
-      {{ $all := (union $blogs $episodes).ByDate.Reverse }}
+      {{ $talks := where (where $.Site.RegularPages "Section" "talk") ".Params.upcoming" "!=" true }}
+      {{ $all := (union $talks (union $blogs $episodes)).ByDate.Reverse }}
 
       {{ $paginator := .Paginate $all }}
 
