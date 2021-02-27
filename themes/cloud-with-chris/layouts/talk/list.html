@@ -1,0 +1,38 @@
+{{ define "main" }}
+<div class="container" align="center">
+  <div class="row g-2">   
+    {{ $paginator := .Paginate (where (where $.Site.RegularPages "Section" "talk") ".Params.upcoming" "!=" true) }}
+
+    {{- partial "paginator.html" . -}}
+    
+    {{ range $index, $value := $paginator.Pages }}
+      {{- partial "cards/talk-card.html" . -}}
+      {{ if not (modBool $index 2 )}}  
+        <div class="dropdown-divider"></div>
+       {{ else }}
+        <div class="dropdown-divider d-block d-sm-block d-md-none"></div>
+      {{ end }}
+    {{ end }}
+
+    {{- partial "paginator.html" . -}}
+  </div>
+</div>
+{{ end }}
+
+{{ define "top" }}
+  <div class="py-5 container">
+    <div class="row float-center">
+
+      {{ $upcomingTalks := first 3 (where (where $.Site.RegularPages "Section" "talk") ".Params.upcoming" true).ByDate}}
+      {{ $count := len $upcomingTalks }}
+      {{ range $upcomingTalks }}   
+        {{- partial "upcoming-talk.html" (dict "count" $count "value" . "site" $.Site ) -}}
+      {{ end }}
+    </div>  
+
+
+    <div class="row text-center pt-5">
+      <h5>Interested in having me speak on a webinar, at a local group, or conference? <a href="https://www.twitter.com/reddobowen">Tweet me on Twitter!</a></h5> 
+    </div> 
+  </div>
+{{ end }}

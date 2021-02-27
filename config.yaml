@@ -34,8 +34,11 @@ menu:
     - name: "Blog"
       weight: 4
       url: "/Blog"
-    - name: "Guests"
+    - name: "Talks"
       weight: 5
+      url: "/talk"
+    - name: "Guests"
+      weight: 6
       url: "/guest"
 
 module:
