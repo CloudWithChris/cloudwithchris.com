@@ -19,11 +19,11 @@ Hopefully by now you've had a chance to read [part 1](gpg-git-part-1) of this se
 
 In this post, I am making an assumption that you are brand new to using GPG Keys and do not yet have a master key, or any other keys in place.
 
-As a reminder, we'll be focusing on setting this up in a Windows environment. As a first step, I downloaded [GPG4win](https://www.gpg4win.org/about.html). This contains several useful components, including Kleopatra, which exposes a number of the commands that we'll be using in the blog post through an intuitive User Interface as an alternative route.
+As a reminder, we'll be focusing on setting this up in a Windows environment. As a first step, I downloaded [GPG4win](https://www.gpg4win.org/about.html). This contains several useful components, including Kleopatra, which exposes a number of the commands that we'll be using in the blog post through an intuitive User Interface as an alternative if you prefer.
 
 Once installed, open up a command prompt window. While not required, if you haven't used it before - I'd encourage you to try out the [Windows Terminal](https://aka.ms/terminal) which is available through the Windows Store. It's a great piece of software, which allows you to interact with several commandline environments (e.g. PowerShell, PowerShell Core, Command Prompt, Several distributions of Windows Subsystem, Azure Cloud Shell, and even [connect directly to VMs in the cloud](https://www.thomasmaurer.ch/2020/05/how-to-ssh-into-an-azure-vm-from-windows-terminal-menu/)). This isn't required though, as you can just use the native command line prompt application.
 
-**Important: Not using command prompt was one of my main hurdles when setting up in my own environment. My local preference is to use PowerShell rather than Command Prompt. After spending a lot of time digging into this, I discovered (with thanks to [this helpful gist](https://gist.github.com/chrisroos/1205934#gistcomment-2862988)_ that PowerShell may impact the encoding of the output file, which causes later issues. I'll explain a little later - but keep this in mind if you do insist on using PowerShell.**
+**Important: Not using command prompt was one of my main hurdles when setting up in my own environment. My local preference is to use PowerShell rather than Command Prompt. After spending a lot of time digging into this, I discovered (with thanks to [this helpful gist](https://gist.github.com/chrisroos/1205934#gistcomment-2862988)) that PowerShell may impact the encoding of the output file, which causes later issues. I'll explain a little later - but keep this in mind if you do insist on using PowerShell.**
 
 In your command line, type the below:
 
@@ -38,11 +38,11 @@ gpg: keybox 'C:/Users/chris/AppData/Roaming/gnupg/pubring.kbx' created
 gpg: C:/Users/chris/AppData/Roaming/gnupg/trustdb.gpg: trustdb created
 ```
 
-**Note: Take note of the above folder output, where the gnupg folder is stored on your own system. While I was debugging the command prompt/powershell issue, I renamed the gnupg folder several times, so that I could reinitialise the keyring and try a set of alternative steps.**
+**Note: Take note of the above folder output, where the gnupg folder is stored on your own system. While I was debugging the Command Prompt/PowerShell challenges, I renamed the gnupg folder several times, so that I could reinitialise the keyring and try a set of alternative steps.**
 
 Now, it's time for us to start creating keys. First off, we're going to create a **GPG Master Key**. The idea behind this key is that we can "Certify" (C) other subkeys and identities associated with our key. Given the power here, it's a good practice to keep this separate from your signing keys/encryption keys (think of this as a principal of least privilege / separation of concerns).
 
-We'll complete the next step as Alice (alice@contoso.com), as she was the one who was spoofed in our prior blog post's example. We'll use the gpg command, with the --expert and --full-generate-key flags. The --full-generate-key flag allows us generated a full featured key pair. 
+In this post, we'll complete the next step as Alice (alice@contoso.com), as she was the one who was spoofed in our [prior blog post's example](gpg-git-part-1). Please feel free to follow along and complete this for yourself. We'll use the gpg command, with the --expert and --full-generate-key flags. The --full-generate-key flag allows us generated a full featured key pair. 
 
 The --full-generate-key command allows us to define:
 * The keysize (i.e. number of bits)
@@ -52,7 +52,7 @@ The --expert flag gives us access to several additional configuration options, i
 * Additional options for the type of key we want
 * Ability to granularly select the capabilities of the key (**S**ign, **C**ertify, **E**ncrypt and **A**uthenticate
 
-Then, we will of course need to associate some information with that key (Name, E-mail Address, etc.)
+Then, we will of course need to associate some information about the user with that key (Name, E-mail Address, etc.)
 
 ```bash
 C:\Users\chris>gpg --full-generate-key --expert
@@ -139,14 +139,18 @@ pub   rsa2048 2021-02-28 [C]
 uid                      Alice <alice@contoso.com>
 ```
 
-**Note: During the process, you will also be asked to enter a passphrase associated with that key. Do not forget this, as you'll need this to certify subkeys/identities, and use that key in general.**
+**Note: During the process, you will also be asked to enter a passphrase associated with that key. Do not forget this, as you'll need this to certify subkeys/identities, and when exporting / importing any of your secret (private) keys.**
 
 A couple of observations -
-* We used option 8 (RSA (Set your own capabilities)) so that we can make our master key only capable of Certify (as we discussed a little earlier on in the post).
-* Take note of the hex value that is outputted (your master key ID). We'll need that later.
-[CHECK THIS] * We set the keysize to be 2048 bits. This is needed due to the type of YubiKey that I have access to (YubiKey NEO). This was another gotcha that caused me to lose a fair bit of time, so do be aware of any limitations on your YubiKey. Ideally, you'd want this to be higher if your key is capable.
+* We used option 8 (RSA (Set your own capabilities)) so that we can make our master key only capable of Certify. As a reminder, this is because we want to have the principal of least privileged. This master key should be logged away as it can certify other subkeys, so we want to limit its capability (i.e. not Sign, Encrypt or Authenticate). 
+* Take note of the hex value that is outputted. This is your master key ID - we'll need that for several steps later.
+* We set the keysize to be 2048 bits. Ideally, you'd want this to be higher if your key is capable. I went down this path at the YubiKey I have is a YubiKey NEO. The YubiKey NEO is capable of only storing keys with a maximum bitsize of 2048 bits. Now having said that, this master key won't be landing on our YubiKey NEO, instead we will copy a subkey with signing capabilities. I had thought that it shouldn't be a problem for the master key to be 4096 bits, though I did have some challenges copying my subkey to the YubiKey NEO when I had 4096 bits set on the master. I encourage you to try this out, and see your own results - my suspicion is that I misconfigured / mistyped something along the way. 
+   * In general, the bit size was another gotcha that caused me to lose a fair bit of time, so do be aware of any limitations on your YubiKey for the keys that will be transferred. 
+* We set the valid timeframe of this key to 0, i.e. it should never expire. You'll want to consider the most appropriate length, based upon the type of key you're generating. As this is my master key and will be used to certify other subkeys, I don't want it to expire, as I'll be storing it away securely with locked down access. You may choose a different length based upon your scenario. Ultimately, make sure you have a process in place to revoke the key if there is a breach (though, you would then need to set your entire chain again from scratch).
 
-Now, in a real world scenario - we may need to add an additional uid for our Git signing. For example, GitHub [provides a capability](https://docs.github.com/en/github/setting-up-and-managing-your-github-user-account/blocking-command-line-pushes-that-expose-your-personal-email-address) where you can block any command line pushes that expose your personal e-mail address. Instead, you have a no-reply e-mail alias from GitHub that you can use instead. For me (Chris, no longer Alice!) - this is a step that I took when setting up my own signing process.
+Now, in a real world scenario - we may need to add an additional uid (User ID) for our Git signing. As an example, GitHub [provides a capability](https://docs.github.com/en/github/setting-up-and-managing-your-github-user-account/blocking-command-line-pushes-that-expose-your-personal-email-address) where you can block any Git command line pushes that expose your personal e-mail address. Instead, you can use a no-reply e-mail alias from GitHub, ensuring your personal details remain private. For me (Speaking as Chris, and not Alice at this point!) - this is a step that I took when setting up my own signing process.
+
+Let's go ahead and add the new uid. Notice in the below that we have a hexadecimal string? That is the ID of the key that we generated in the previous step. You'll need to replace the key id in the first line below with the key ID that you generated in the previous step (and all relevant future steps).
 
 ```bash
 C:\Users\chris>gpg --edit-key  --expert 6E7ECB409742866910B10197A0B82563C344D4AA
@@ -199,26 +203,30 @@ sec  rsa2048/A0B82563C344D4AA
 gpg> save
 ```
 
-**Notice the little asterix after you type uid1, next to the first user id? That's used for the next line, when you say 'primary' making primary that item**.
+**Notice the little asterix after you type uid 1 into the GPG command prompt, next to the first user id? That's used when you type in your next command. When you type 'primary' you are specifying that you want uid 1 to be the primary identifier for this key.**.
 
-At this point, it's probably a good time to create a backup of your master key. There are two commands to be aware of here, gpg --export that exports your **public key** (which you can share with others) and gpg --export-secret-key (which you should not share with anyone, and should hold securely).
+At this point, it's probably a good time to create a backup of your master key. There are two commands to be aware of here, gpg --export which exports your **public key** (the one that you can share with others) and gpg --export-secret-key which exports your **private key** (the one that you should not share with anyone, and should store securely).
 
-You'll also notice in the below snippet that we use the --armor flag. This enables us to create an ascii armored output. If we don't use that, then you'll get a "non-readable" format. Go ahead and try if you like :)
+You'll also notice in the below snippet that we use the --armor flag. This enables us to create an ascii armored output. If we don't use that, then you'll get a "non-readable" format. Feel free to try without, so that you can understand the difference between the two!
+
+As a reminder, remember that you'll need to replace the key ID used in the below example with your own key ID.
 
 ```bash
 gpg --export --armor 6E7ECB409742866910B10197A0B82563C344D4AA > master-public.txt
 gpg --export-secret-key --armor 6E7ECB409742866910B10197A0B82563C344D4AA > master-private.txt
 ```
 
-**Note: when exporting your private key, you will be asked for your secret passphrase.**
+**Note: When exporting your private key, you will be asked for the secret passphrase that you set when you created the master key.**
 
-It's also a good practice to create a revocation certificate. This allows you to invalidate the certificate before its scheduled expiry date (if it has one, remember that we set ours to never). Note the asc format of the certificate.
+It's also a good practice to create a revocation certificate. This allows you to invalidate the key before its scheduled expiry date (That is, if it has an expiry date! Remember that we set ours to never? This would be the approach we'd need to folow to cause that key to expire.). Note also the asc file format of the certificate, which is the armored ASCII file format.
 
 ```bash
 gpg --gen-revoke 6E7ECB409742866910B10197A0B82563C344D4AA > master-revocation-certificate.asc
 ```
 
-Okay, let's pause. At this point, we have a master private key, a master public key and a revocation certificate for the keypair. At this point, we'll now want to go ahead and create a subkey. Remember, the reason we're creating a subkey is so that if it gets compromised, then we don't need to revoke our primary (master) key. Instead, we can invalidate the compromised subkey and generate a new one in its place. It's also a common practice to have different subkeys for different machines, so if one machine gets compromised, then another is not. There is an excellent explanation (better than I could put together) on what a subkey is over at [The EnigMail project Forum](https://www.enigmail.net/forum/viewtopic.php?f=3&t=375).
+Okay, let's pause. At this point, we have a master private key, a master public key and a revocation certificate for the master keypair. We'll now want to go ahead and create a subkey. Remember, the reason we're creating a subkey is so that if it gets compromised (as it may be stored on some less trusted machines/environments), then we don't need to revoke our primary (master) key. This is a good thing, as our master key may have certified other subkeys - If we lost that, then our entire keychain would be at risk. Instead, we can invalidate the compromised subkey and generate a new one in its place. It's also a common practice to have different subkeys for different machines, so if one machine gets compromised, then another is not. There is an excellent explanation (better than I could ever put together!) on what a subkey is over at [The EnigMail project Forum](https://www.enigmail.net/forum/viewtopic.php?f=3&t=375).
+
+**Note: Don't forget, as you follow the below example - You'll need to replace the key ID with your own key ID!**
 
 ```bash
 C:\Users\chris>
@@ -301,10 +309,18 @@ gpg> save
 
 A couple of observations once again -
 * We used option 8 (RSA (Set your own capabilities)) so that we can make our subkey only capable of the Sign action (again, considering our principal of least privilege).
-* Notice that we now see there are two keypairs underneath our key. One with the appreciate sec, and one with the abbreviation ssb.
-* Notice how we are not asked to confirm the name or e-mail address of the associated user. As this is associated with our original primary key (i.e. this is a subkey), we do not need to go ahead and enter this information once again.
+* Notice that we now see there are two keypairs underneath our key? One with the format abbreviation sec, and one with the abbreviation ssb.
+   * In case you're interested, these abbreviations are:
+      * pub (Public Key)
+      * uid (User ID)
+      * sig (Signature)
+      * sub (Subkey)
+      * sec (Secret Key / Private Key)
+      * ssb (Secret Subkey / Private Subkey)
+   * The [Debian Wiki](https://wiki.debian.org/Subkeys) also has a good explanation around subkeys if you're interested.
+* Notice how we are not asked to confirm the name or e-mail address of the associated user? This is associated with our original primary key (remember that we've generated a subkey), we do not need to go ahead and enter this information once again.
 
-Now, let's export the subkey so that we have a backup available.
+Now, let's export the subkey so that we have a backup available. I could have used the longform text output of the key ID, but wanted to also show that you can use the shortform that was generated in the previous example. Notice how these 16 hexadecimal values are the final 16 from the longform identifier.
 
 ```bash
 gpg --export-secret-subkeys --armor A0B82563C344D4AA > subkeys-secret.txt
@@ -312,7 +328,7 @@ gpg --export-secret-subkeys --armor A0B82563C344D4AA > subkeys-secret.txt
 
 **Note: Whenever you're exporting secret key information, you will need to confirm your passphrase for the master key.**
 
-At this point, I renamed my gnupg folder to a temporary rename (e.g. gnupg-temp), so that I can reinitialise my keyring by using any gpg command. The reason for this is to remove the master keys from your system (remember they should be stored in an offline backup securely), to minimise the chance of a potential compromise. Once complete, go ahead and import the subkeys secret information by using the below. 
+At this point, I renamed my gnupg folder to a temporary name (e.g. gnupg-temp), so that I can reinitialise my keyring by using any gpg command. I wanted to simulate removing the master keys from my keyring (remember they should be stored in an offline backup securely, and not on any machines which are in a low trust environment), to minimise the chance of a potential compromise. Once complete, go ahead and import the Secret Subkey by importing the text file from the last gpg step. 
 
 ```bash
 C:\Users\chris>gpg --import subkeys-secret.txt
@@ -341,4 +357,8 @@ ssb   rsa2048 2021-02-28 [S] [expires: 2022-02-28]
 
 Notice that the top item shows sec# instead of sec? Well, that's because the private key of the master (primary) key is not present in the keyring.
 
-So you're probably wondering how/why you would use that revocation certificate?.. Add a little bit here.
+Right! We've now generated a master key and a subkey - congratulations! Make sure you go ahead and store your master key somewhere safe (ideally on a completely separate system from where you'll be using your subkey). We'll stop here for this particular blog post. In part 3, we'll configure git to use our subkey to sign our Git Commits and show how GitHub accepts the public key component for validation of the signing.
+
+Again, I hope that this has been useful. I'd love to know how you're finding this particular series! Get in touch with me over on [Twitter @reddobowen](https://twitter.com/reddobowen), and let me know any creative ways that you're planning to use GPG keys!
+
+Until the next blog post, bye for now!
