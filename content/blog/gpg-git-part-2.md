@@ -33,7 +33,7 @@ gpg --list-keys
 
 You will likely see an output similar to the below, if you have not yet initialised your keyring. If you have an initialised keyring but no previous keys, then you will see no output. Otherwise, you'll see the list of keys.
 
-```
+```bash
 gpg: keybox 'C:/Users/chris/AppData/Roaming/gnupg/pubring.kbx' created
 gpg: C:/Users/chris/AppData/Roaming/gnupg/trustdb.gpg: trustdb created
 ```
@@ -42,7 +42,7 @@ gpg: C:/Users/chris/AppData/Roaming/gnupg/trustdb.gpg: trustdb created
 
 Now, it's time for us to start creating keys. First off, we're going to create a **GPG Master Key**. The idea behind this key is that we can "Certify" (C) other subkeys and identities associated with our key. Given the power here, it's a good practice to keep this separate from your signing keys/encryption keys (think of this as a principal of least privilege / separation of concerns).
 
-In this post, we'll complete the next step as Alice (alice@contoso.com), as she was the one who was spoofed in our [prior blog post's example](gpg-git-part-1). Please feel free to follow along and complete this for yourself. We'll use the gpg command, with the --expert and --full-generate-key flags. The --full-generate-key flag allows us generated a full featured key pair. 
+In this post, we'll complete the next step as Alice (alice@contoso.com), as she was the one who was spoofed in our [prior blog post's example](gpg-git-part-1). Please feel free to follow along and complete this for yourself. We'll use the gpg command, with the --expert and --full-generate-key flags. The --full-generate-key flag allows us generated a full featured key pair.
 
 The --full-generate-key command allows us to define:
 * The keysize (i.e. number of bits)
@@ -142,10 +142,10 @@ uid                      Alice <alice@contoso.com>
 **Note: During the process, you will also be asked to enter a passphrase associated with that key. Do not forget this, as you'll need this to certify subkeys/identities, and when exporting / importing any of your secret (private) keys.**
 
 A couple of observations -
-* We used option 8 (RSA (Set your own capabilities)) so that we can make our master key only capable of Certify. As a reminder, this is because we want to have the principal of least privileged. This master key should be logged away as it can certify other subkeys, so we want to limit its capability (i.e. not Sign, Encrypt or Authenticate). 
+* We used option 8 (RSA (Set your own capabilities)) so that we can make our master key only capable of Certify. As a reminder, this is because we want to have the principal of least privileged. This master key should be logged away as it can certify other subkeys, so we want to limit its capability (i.e. not Sign, Encrypt or Authenticate).
 * Take note of the hex value that is outputted. This is your master key ID - we'll need that for several steps later.
-* We set the keysize to be 2048 bits. Ideally, you'd want this to be higher if your key is capable. I went down this path at the YubiKey I have is a YubiKey NEO. The YubiKey NEO is capable of only storing keys with a maximum bitsize of 2048 bits. Now having said that, this master key won't be landing on our YubiKey NEO, instead we will copy a subkey with signing capabilities. I had thought that it shouldn't be a problem for the master key to be 4096 bits, though I did have some challenges copying my subkey to the YubiKey NEO when I had 4096 bits set on the master. I encourage you to try this out, and see your own results - my suspicion is that I misconfigured / mistyped something along the way. 
-   * In general, the bit size was another gotcha that caused me to lose a fair bit of time, so do be aware of any limitations on your YubiKey for the keys that will be transferred. 
+* We set the keysize to be 2048 bits. Ideally, you'd want this to be higher if your key is capable. I went down this path at the YubiKey I have is a YubiKey NEO. The YubiKey NEO is capable of only storing keys with a maximum bitsize of 2048 bits. Now having said that, this master key won't be landing on our YubiKey NEO, instead we will copy a subkey with signing capabilities. I had thought that it shouldn't be a problem for the master key to be 4096 bits, though I did have some challenges copying my subkey to the YubiKey NEO when I had 4096 bits set on the master. I encourage you to try this out, and see your own results - my suspicion is that I misconfigured / mistyped something along the way.
+  * In general, the bit size was another gotcha that caused me to lose a fair bit of time, so do be aware of any limitations on your YubiKey for the keys that will be transferred.
 * We set the valid timeframe of this key to 0, i.e. it should never expire. You'll want to consider the most appropriate length, based upon the type of key you're generating. As this is my master key and will be used to certify other subkeys, I don't want it to expire, as I'll be storing it away securely with locked down access. You may choose a different length based upon your scenario. Ultimately, make sure you have a process in place to revoke the key if there is a breach (though, you would then need to set your entire chain again from scratch).
 
 Now, in a real world scenario - we may need to add an additional uid (User ID) for our Git signing. As an example, GitHub [provides a capability](https://docs.github.com/en/github/setting-up-and-managing-your-github-user-account/blocking-command-line-pushes-that-expose-your-personal-email-address) where you can block any Git command line pushes that expose your personal e-mail address. Instead, you can use a no-reply e-mail alias from GitHub, ensuring your personal details remain private. For me (Speaking as Chris, and not Alice at this point!) - this is a step that I took when setting up my own signing process.
@@ -310,14 +310,14 @@ gpg> save
 A couple of observations once again -
 * We used option 8 (RSA (Set your own capabilities)) so that we can make our subkey only capable of the Sign action (again, considering our principal of least privilege).
 * Notice that we now see there are two keypairs underneath our key? One with the format abbreviation sec, and one with the abbreviation ssb.
-   * In case you're interested, these abbreviations are:
-      * pub (Public Key)
-      * uid (User ID)
-      * sig (Signature)
-      * sub (Subkey)
-      * sec (Secret Key / Private Key)
-      * ssb (Secret Subkey / Private Subkey)
-   * The [Debian Wiki](https://wiki.debian.org/Subkeys) also has a good explanation around subkeys if you're interested.
+  * In case you're interested, these abbreviations are:
+    * pub (Public Key)
+    * uid (User ID)
+    * sig (Signature)
+    * sub (Subkey)
+    * sec (Secret Key / Private Key)
+    * ssb (Secret Subkey / Private Subkey)
+  * The [Debian Wiki](https://wiki.debian.org/Subkeys) also has a good explanation around subkeys if you're interested.
 * Notice how we are not asked to confirm the name or e-mail address of the associated user? This is associated with our original primary key (remember that we've generated a subkey), we do not need to go ahead and enter this information once again.
 
 Now, let's export the subkey so that we have a backup available. I could have used the longform text output of the key ID, but wanted to also show that you can use the shortform that was generated in the previous example. Notice how these 16 hexadecimal values are the final 16 from the longform identifier.
@@ -328,7 +328,7 @@ gpg --export-secret-subkeys --armor A0B82563C344D4AA > subkeys-secret.txt
 
 **Note: Whenever you're exporting secret key information, you will need to confirm your passphrase for the master key.**
 
-At this point, I renamed my gnupg folder to a temporary name (e.g. gnupg-temp), so that I can reinitialise my keyring by using any gpg command. I wanted to simulate removing the master keys from my keyring (remember they should be stored in an offline backup securely, and not on any machines which are in a low trust environment), to minimise the chance of a potential compromise. Once complete, go ahead and import the Secret Subkey by importing the text file from the last gpg step. 
+At this point, I renamed my gnupg folder to a temporary name (e.g. gnupg-temp), so that I can reinitialise my keyring by using any gpg command. I wanted to simulate removing the master keys from my keyring (remember they should be stored in an offline backup securely, and not on any machines which are in a low trust environment), to minimise the chance of a potential compromise. Once complete, go ahead and import the Secret Subkey by importing the text file from the last gpg step.
 
 ```bash
 C:\Users\chris>gpg --import subkeys-secret.txt
