@@ -1,7 +1,7 @@
 ---
-Date: "2021-03-03T18:00:00Z"
+Date: "2021-03-03T12:00:00Z"
 Description: Ever thought about what it takes to host a game in the Cloud? Well, this is the series for you! On the first Wednesday of every month, we explore Cloud Concepts that impact your journey to a connected multiplayer gaming experience! In this second session, we'll play some Halo and talk about matchmaking services and how ensuring a resilient service is crucial to an end gamer's experience.
-PublishDate: "2021-03-03T18:00:00Z"
+PublishDate: "2021-03-03T12:00:00Z"
 Title: CGN2 - Cloud Gaming Notes Episode 2 - Matchmaking Services
 categories:
 - Architecture
