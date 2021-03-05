@@ -1,10 +1,6 @@
 ---
 Date: "2020-10-02T17:30:00Z"
-Description: Recently, I've been doing a bit of work with GitHub Actions as well as
-  Terraform for a pet project I've been working on. I've been building a multi-tenanted
-  inventory app for my Yu-Gi-Oh card collection. In this session, we'll explore some
-  of the GitHub actions that I have used to deploy the application content and various
-  Microservices.
+Description: "Recently, I've been doing a bit of work with GitHub Actions as well as Terraform for a pet project I've been working on. I've been building a multi-tenanted inventory app for my Yu-Gi-Oh card collection. In this session, we'll explore some of the GitHub actions that I have used to deploy the application content and various Microservices."
 PublishDate: "2020-10-02T17:30:00Z"
 Title: 10 - Exploring GitHub Actions to deploy Static Content and Azure Functions
   | Cloud with Chris
@@ -28,5 +24,4 @@ tags:
 - Serverless
 youtube: T9EtWuDfH1s
 ---
-
-Transcript coming soon!
+Recently, I've been doing a bit of work with GitHub Actions as well as Terraform for a pet project I've been working on. I've been building a multi-tenanted inventory app for my Yu-Gi-Oh card collection. In this session, we'll explore some of the GitHub actions that I have used to deploy the application content and various Microservices.

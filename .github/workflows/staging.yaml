@@ -58,20 +58,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:            
     - uses: actions/checkout@v2
-    - name: Checkout submodules
-      shell: bash
-      run: |
-        auth_header="$(git config --local --get http.https://github.com/.extraheader)"
-        git submodule sync --recursive
-        git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=  
-    - name: Node Dependencies
+    - name: "Install Node Dependencies"
       run: npm ci    
-    - name: Setup Hugo
+    - name: "Setup Hugo on Runner"
       uses: peaceiris/actions-hugo@v2
       with:
         hugo-version: '0.80.0'
         extended: true
-    - name: Replace tokens
+    - name: "Replace tokens in Configuration"
       uses: cschleiden/replace-tokens@v1.0
       with:
         tokenPrefix: '#{' # optional, default is #{
@@ -79,9 +73,9 @@ jobs:
         files: '["config.yaml"]'
       env:
         hostname: 'https://staging.cloudwithchris.com/'
-    - name: Build
+    - name: "Build and Minify Hugo Contents"
       run: hugo --minify    
-    - name: Upload website as Artifact
+    - name: "Upload Generated Static Content as Website Artifact"
       uses: actions/upload-artifact@v1
       with:
         name: website
@@ -93,21 +87,21 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:    
-    - name: Download website changes
+    - name: "Download Website Artifact"
       uses: actions/download-artifact@v1
       with:
         name: website
-    - name: Azure Login
+    - name: "Login to Azure"
       uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}     
-    - name: Azure CLI script
+    - name: "Upload Static Content to Storage"
       uses: azure/CLI@v1
       with:
         azcliversion: 2.0.72
         inlineScript: |
           az storage blob upload-batch --account-name cloudwithchrisstaging -d '$web' -s website
-    - name: Azure CLI script
+    - name: "Purge CDN"
       uses: azure/CLI@v1
       with:
         azcliversion: 2.0.72
@@ -119,17 +113,17 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:    
-    - name: Download website changes
+    - name: "Download Website Artifact"
       uses: actions/download-artifact@v1
       with:
         name: website
-    - name: Set up Cloud SDK
+    - name: "Authenticate Google SDK with Credentials"
       uses: google-github-actions/setup-gcloud@master
       with:
         project_id: ${{ secrets.GCP_PROJECT_ID }}
         service_account_key: ${{ secrets.GCP_SA_KEY }}
         export_default_credentials: true
-    - name: Use gcloud CLI
+    - name: "Upload Static Content to Google Storage"
       run: gsutil cp -r website/** gs://gcp.cloudwithchris.com
   publish-aws: 
     environment:
@@ -137,16 +131,16 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:    
-    - name: Download website changes
+    - name: "Download Website Artifact"
       uses: actions/download-artifact@v1
       with:
         name: website
-    - name: Configure AWS Credentials
+    - name: "Authenticate with AWS Credentials"
       uses: aws-actions/configure-aws-credentials@v1
       with:
         aws-access-key-id: ${{ secrets.AWS_STAGING_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_STAGING_SECRET_ACCESS_KEY }}
         aws-region: eu-west-1    
-    - name: Copy files to the staging site with the AWS CLI
+    - name: "Upload Static Content to Staging S3 Bucket"
       run: |
         aws s3 sync ./website s3://cloudwithchris

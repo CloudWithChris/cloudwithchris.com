@@ -1,15 +1,6 @@
 ---
 Date: "2020-11-13T03:30:00Z"
-Description: Starting to think about the data layer of your application, and concerned
-  about scalability of your solution? Or have some form of application that needs
-  to have segragation of data, perhaps customers with requirements to have their data
-  in a particular geography? Then the first part of the session may be for you, focused
-  on the Sharding pattern! But what about if you're using a data store which doesn't
-  support secondary indexes? Won't you be limited on the efficiency and types of queries
-  that you can run across your data? Then this is where you may be interested in the
-  Index Table Pattern. Listen in to this session where Chris Reddington is joined
-  by Steph Martin, talking about both of these patterns. This is another episode in
-  the series of Architecting for the Cloud, one pattern at a time.
+Description: "Starting to think about the data layer of your application, and concerned about scalability of your solution? Or have some form of application that needs to have segragation of data, perhaps customers with requirements to have their data in a particular geography? Then the first part of the session may be for you, focused on the Sharding pattern! But what about if you're using a data store which doesn't support secondary indexes? Won't you be limited on the efficiency and types of queries that you can run across your data? Then this is where you may be interested in the Index Table Pattern. Listen in to this session where Chris Reddington is joined by Steph Martin, talking about both of these patterns. This is another episode in the series of Architecting for the Cloud, one pattern at a time."
 PublishDate: "2020-11-13T03:30:00Z"
 Title: 15 - The Sharding and Index Table Patterns
 categories:
@@ -34,5 +25,4 @@ tags:
 - Cloud Design Patterns
 youtube: ukzpTNRxyr4
 ---
-
-Transcript coming soon!
+Starting to think about the data layer of your application, and concerned about scalability of your solution? Or have some form of application that needs to have segragation of data, perhaps customers with requirements to have their data in a particular geography? Then the first part of the session may be for you, focused on the Sharding pattern! But what about if you're using a data store which doesn't support secondary indexes? Won't you be limited on the efficiency and types of queries that you can run across your data? Then this is where you may be interested in the Index Table Pattern. Listen in to this session where Chris Reddington is joined by Steph Martin, talking about both of these patterns. This is another episode in the series of Architecting for the Cloud, one pattern at a time.

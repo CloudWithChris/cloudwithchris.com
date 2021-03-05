@@ -1,0 +1,29 @@
+name: Master
+on: 
+  push:
+      branches:
+        - master
+      paths:
+        - "podcast_audio/**"
+jobs:
+  publish:    
+    environment:
+      name: production.azure
+      url: https://www.cloudwithchris.com  
+    runs-on: ubuntu-latest
+    needs: build
+    steps:    
+    - uses: actions/checkout@v2
+      with:
+        lfs: true
+        fetch-depth: 1
+    - name: Azure Login
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}     
+    - name: "Upload podcast files to storage that don't yet exist"
+      uses: azure/CLI@v1
+      with:
+        azcliversion: 2.0.72
+        inlineScript: |
+          az storage blob upload-batch --account-name cloudwithchrisprod -d 'podcasts' -s '$GITHUB_WORKSPACE/podcast_audio' --if-unmodified-since 2020-01-01T00:00Z
