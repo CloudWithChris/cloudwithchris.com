@@ -1,4 +1,4 @@
-name: Master
+name: "Podcast Audio Upload"
 on: 
   push:
       branches:
@@ -25,4 +25,4 @@ jobs:
       with:
         azcliversion: 2.0.72
         inlineScript: |
-          az storage blob upload-batch --account-name cloudwithchrisprod -d 'podcasts' -s '$GITHUB_WORKSPACE/podcast_audio' --if-unmodified-since 2020-01-01T00:00Z
+          az storage blob upload-batch --account-name cloudwithchrisprod -d "podcasts" -s "${{ github.workspace }}/podcast_audio" --if-unmodified-since 2020-01-01T00:00Z
