@@ -3,7 +3,7 @@ Date: "2021-03-22T09:30:00Z"
 Description: 'In this video, Chris lays out his twelfth weekly technology vlog update
   talking about TBC'
 PublishDate: "2021-03-22T09:30:00Z"
-Title: 'V012 - Weekly Technology Vlog #12 (Content TBC)'
+Title: 'V012 - Weekly Technology Vlog #12'
 categories:
 - Vlog
 episode: V012

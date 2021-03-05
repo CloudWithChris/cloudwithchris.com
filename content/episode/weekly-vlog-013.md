@@ -2,7 +2,7 @@
 Date: "2021-03-29T09:30:00Z"
 Description: "In this video, chris provides another update on Cloud with Chris, updates on what's coming soon and Azure related news!"
 PublishDate: "2021-03-29T09:30:00Z"
-Title: "V013 - Weekly Technology Vlog #13 (Content TBC)"
+Title: "V013 - Weekly Technology Vlog #13"
 categories:
 - Vlog
 episode: V013

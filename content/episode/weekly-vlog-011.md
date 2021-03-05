@@ -3,7 +3,7 @@ Date: "2021-03-15T09:30:00Z"
 Description: 'In this video, Chris lays out his eleventh weekly technology vlog update
   talking about TBC'
 PublishDate: "2021-03-15T09:30:00Z"
-Title: 'V011 - Weekly Technology Vlog #11 (Content TBC)'
+Title: 'V011 - Weekly Technology Vlog #11'
 categories:
 - Vlog
 episode: V011

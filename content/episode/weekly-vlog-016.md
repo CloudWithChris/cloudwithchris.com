@@ -2,7 +2,7 @@
 Date: "2021-04-19T09:30:00Z"
 Description: "In this video, chris provides another update on Cloud with Chris, updates on what's coming soon and Azure related news!"
 PublishDate: "2021-04-19T09:30:00Z"
-Title: "V016 - Weekly Technology Vlog #16 (Content TBC)"
+Title: "V016 - Weekly Technology Vlog #16"
 categories:
 - Vlog
 episode: V016
