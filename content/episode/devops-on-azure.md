@@ -11,7 +11,7 @@ explicit: "no"
 hosts:
 - chrisreddington
 guests:
-- glensmall
+- mertyeter
 images:
 - img/cloudwithchris.png
 #podcast_bytes: "18878464"

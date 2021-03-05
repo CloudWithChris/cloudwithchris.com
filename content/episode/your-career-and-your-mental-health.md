@@ -25,4 +25,4 @@ tags:
 #youtube: LY7FEAoPucM
 upcoming: true
 ---
-TBCPeople often talk about work life balance, how its not working for them, and how they feel pushed over the limit. Lets dig into it a little, look at how it can be managed, and address some difficult truths as well.
+People often talk about work life balance, how its not working for them, and how they feel pushed over the limit. Lets dig into it a little, look at how it can be managed, and address some difficult truths as well.
