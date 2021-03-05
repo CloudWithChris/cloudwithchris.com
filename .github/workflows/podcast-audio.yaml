@@ -11,14 +11,13 @@ jobs:
       name: production.azure
       url: https://www.cloudwithchris.com  
     runs-on: ubuntu-latest
+    env:
+      PODCAST_AUDIO_LOCATION: $GITHUB_WORKSPACE/podcast_audio
     steps:    
     - uses: actions/checkout@v2
       with:
         lfs: true
         fetch-depth: 1
-    - run: "ls -la"
-    - run: "ls -la podcast_audio"
-    - run: "ls -la ${{ github.workspace }}/podcast_audio"
     - name: Azure Login
       uses: azure/login@v1
       with:
@@ -28,4 +27,4 @@ jobs:
       with:
         azcliversion: 2.20.0
         inlineScript: |
-          az storage blob upload-batch --account-name cloudwithchrisprod -d 'podcasts' -s '${{ github.workspace }}/podcast_audio' --if-unmodified-since 2020-01-01T00:00Z
+          az storage blob upload-batch --account-name cloudwithchrisprod -d 'podcasts' -s ${{ env.PODCAST_AUDIO_LOCATION }} --if-unmodified-since 2020-01-01T00:00Z
