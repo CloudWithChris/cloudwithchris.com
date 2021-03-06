@@ -20,8 +20,8 @@ jobs:
     - name: "Replace tokens in Configuration"
       uses: cschleiden/replace-tokens@v1.0
       with:
-        tokenPrefix: '#{' # optional, default is #{
-        tokenSuffix: '}#' # optional, default is }#
+        tokenPrefix: '#{'
+        tokenSuffix: '}#'
         files: '["config.yaml"]'
       env:
         hostname: 'https://www.cloudwithchris.com/'
@@ -31,7 +31,7 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: website
-        path: /home/runner/work/cloudwithchris.com/cloudwithchris.com/public
+        path: ${{ github.workspace }}/public
   publish:    
     environment:
       name: production.azure

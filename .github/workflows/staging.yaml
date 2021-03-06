@@ -25,27 +25,13 @@ jobs:
           commit-message: Compressed Images
           body: ${{ steps.calibre.outputs.markdown }}
   lint:
-    # Name the Job
     name: Lint Code Base
-    # Set the agent to run on
     runs-on: ubuntu-latest
-
-    ##################
-    # Load all steps #
-    ##################
     steps:
-      ##########################
-      # Checkout the code base #
-      ##########################
       - name: Checkout Code
         uses: actions/checkout@v2
         with:
-          # Full git history is needed to get a proper list of changed files within `super-linter`
           fetch-depth: 0
-
-      ################################
-      # Run Linter against code base #
-      ################################
       - name: Lint Code Base
         uses: github/super-linter@v3
         env:
@@ -68,8 +54,8 @@ jobs:
     - name: "Replace tokens in Configuration"
       uses: cschleiden/replace-tokens@v1.0
       with:
-        tokenPrefix: '#{' # optional, default is #{
-        tokenSuffix: '}#' # optional, default is }#
+        tokenPrefix: '#{'
+        tokenSuffix: '}#'
         files: '["config.yaml"]'
       env:
         hostname: 'https://staging.cloudwithchris.com/'
@@ -79,7 +65,7 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: website
-        path: /home/runner/work/cloudwithchris.com/cloudwithchris.com/public
+        path: ${{ github.workspace }}/public
   publish-azure:    
     environment:
       name: staging.azure
