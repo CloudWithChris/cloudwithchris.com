@@ -12,13 +12,12 @@ images:
 - img/cloudwithchris.png
 talkType: "Meetup"
 eventName: "Limerick DotNet Azure User Group"
-externalLink: "https://www.meetup.com/Limerick-DotNet/events/275864448"
 tags:
 - DevOps
 - GitHub
 - Deployment
 - GitHub Actions
 - Static Content
-upcoming: true
+youtube: to6j4ImHKJ8
 ---
 Chris is a Senior Azure Engineer at Microsoft. He'll explore how GitHub Actions can be used to deploy your own static websites (or other apps!) to Azure.
