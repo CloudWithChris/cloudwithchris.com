@@ -209,6 +209,8 @@ At this point, it's probably a good time to create a backup of your master key. 
 
 You'll also notice in the below snippet that we use the --armor flag. This enables us to create an ascii armored output. If we don't use that, then you'll get a "non-readable" format. Feel free to try without, so that you can understand the difference between the two!
 
+**Note: Remember I mentioned that I had some challenges when using PowerShell? Well, this is where I encountered them! Everything would export successfully, but when trying to import the keys, there was a problem. I found this incredibly frustrating, as I couldn't understand what I was doing wrong. It turns out (after a lot of digging, and thanks to [this Gist](https://gist.github.com/chrisroos/1205934#gistcomment-2862988)), that the output file will be encoded with BOM when using PowerShell, which causes the import challenges. If you're set on using PowerShell, then you could do that and change the encoding of the file to UTF8 (without BOM), but I found that using Command Prompt made sense as it directly outputted the file with a UTF8 encoding, avoiding the challenges.**
+
 As a reminder, remember that you'll need to replace the key ID used in the below example with your own key ID.
 
 ```bash
