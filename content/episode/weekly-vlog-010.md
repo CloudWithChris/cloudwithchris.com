@@ -1,31 +1,31 @@
 ---
 Date: "2021-03-08T09:30:00Z"
-Description: 'In this video, Chris lays out his tenth weekly technology vlog update
-  talking about TBC'
+Description: "In this video, Chris updates on the Cloud With Chris content over the last week. It's been busy! Vlog #9, Git and GPG Keys Part 2, Cloud Gaming Notes Episode 2, The Side Car and Ambassador Patterns, Teasing the Cloud Drops Series and presenting at the Limerick Dotnet Azure User Group. There are episode recordings already scheduled until Mid-July, with plenty of additional content planned as well! Oh, and there was this small Microsoft Ignite conference, where we cover some of the key updates there as well! And some dates for your diaries.. March 18th - Welsh Azure User Group (Lightning Talks), March 25th (MSHowTo Live) and April 6th (Northern Azure User Group), where Scott Hanselman will also be speaking!"
 PublishDate: "2021-03-08T09:30:00Z"
-Title: 'V010 - Weekly Technology Vlog #10'
+Title: 'V010 - Weekly Technology Vlog #10 (Episode backlog until Mid-July! New Microphone, Ignite Content!)'
 categories:
 - Vlog
 episode: V010
-episode_image: img/cloudwithchrislogo.png # img/vlog/v002.jpg
+episode_image: img/vlog/v010.jpg
 explicit: "no"
 guests: []
 hosts:
 - chrisreddington
 images:
 - img/default-social.png
-# - img/vlog/v002.jpg
-# podcast_bytes: "13803520"
-# podcast_duration: "14:19.000"
-# podcast_file: V002 - Weekly Technology Vlog.mp3
+- img/vlog/v010.jpg
+podcast_bytes: "27938816"
+podcast_duration: "29:03.000"
+podcast_file: V010 - Weekly Technology Vlog.mp3
 series:
 - Weekly Vlog
 tags:
-#- Podcast
-#- Sessionize
-#- Azure
-#- Community
-# youtube: VyQI5SOsw3M
-upcoming: true
+- Podcast
+- Sessionize
+- Azure
+- Community
+youtube: GG8zFHzoB4c
 ---
-In this video, Chris lays out his tenth weekly technology vlog update talking about TBC.
+In this video, Chris updates on the Cloud With Chris content over the last week. It's been busy! Vlog #9, Git and GPG Keys Part 2, Cloud Gaming Notes Episode 2, The Side Car and Ambassador Patterns, Teasing the Cloud Drops Series and presenting at the Limerick Dotnet Azure User Group. There are episode recordings already scheduled until Mid-July, with plenty of additional content planned as well! Oh, and there was this small Microsoft Ignite conference, where we cover some of the key updates there as well! 
+
+And some dates for your diaries.. March 18th - Welsh Azure User Group (Lightning Talks), March 25th (MSHowTo Live) and April 6th (Northern Azure User Group), where Scott Hanselman will also be speaking!
