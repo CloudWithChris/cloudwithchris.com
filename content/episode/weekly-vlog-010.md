@@ -26,6 +26,6 @@ tags:
 - Community
 youtube: GG8zFHzoB4c
 ---
-In this video, Chris updates on the Cloud With Chris content over the last week. It's been busy! Vlog #9, Git and GPG Keys Part 2, Cloud Gaming Notes Episode 2, The Side Car and Ambassador Patterns, Teasing the Cloud Drops Series and presenting at the Limerick Dotnet Azure User Group. There are episode recordings already scheduled until Mid-July, with plenty of additional content planned as well! Oh, and there was this small Microsoft Ignite conference, where we cover some of the key updates there as well! 
+In this video, Chris updates on the Cloud With Chris content over the last week. It's been busy! Vlog #9, Git and GPG Keys Part 2, Cloud Gaming Notes Episode 2, The Side Car and Ambassador Patterns, Teasing the Cloud Drops Series and presenting at the Limerick Dotnet Azure User Group. There are episode recordings already scheduled until Mid-July, with plenty of additional content planned as well! Oh, and there was this small Microsoft Ignite conference, where we cover some of the key updates there as well!
 
 And some dates for your diaries.. March 18th - Welsh Azure User Group (Lightning Talks), March 25th (MSHowTo Live) and April 6th (Northern Azure User Group), where Scott Hanselman will also be speaking!
