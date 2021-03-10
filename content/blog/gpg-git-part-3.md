@@ -28,7 +28,7 @@ git config --local user.signingkey "0F8B8DE7FDFE3872"
 git config --local commit.gpgsign true
 ```
 
-A few observations on the above - 
+A few observations on the above -
 * We are once again resetting the user settings for this repository to Alice's details. These details must be aligned with the details that you used in the GPG Key for the signing to work correctly (i.e. the detials that you're committing with and the details you're signing the commit with).
 * Notice the user.signingkey value that I provided? This is the ID of the subkey used for signing, rather than the master key for certification.
 * Notice that commit.gpgsign is set to true? This means that every single commit in this repository must automatically be forced to be signed, instead of having to provide a flag during each git commit command. This is an optional choice that i have made. If you wanted this to be optional, then you could use the ``-S`` or ``--gpg-sign=KEYID`` properties as needed. I'd prefer all my commits to be signed, hence adjusting it at the git config level.
@@ -108,7 +108,7 @@ Once you have added the Public GPG Key details to GitHub, you can now go ahead a
 
 At this point, we have now configured out local Git repository to use the Git signing key whenever making a new commit to our Git repository. Once those changes are pushed to GitHub, because of the link between the Public GPG Key in our GitHub account and the commits signed with the Private Key, the commits can be marked as verified in the GitHub User Interface. This gives us some reassurance that they are genuine.
 
-We can go one step further, which we will explore in the next post. Currently, the Private Key for signing our commits is stored on the machine itself. What happens if a malicious actor is able to gain access to our machine? Until we identify the intrusion, they may be able to spoof our identity if they happen to know the passphrase associated with the Private Key. 
+We can go one step further, which we will explore in the next post. Currently, the Private Key for signing our commits is stored on the machine itself. What happens if a malicious actor is able to gain access to our machine? Until we identify the intrusion, they may be able to spoof our identity if they happen to know the passphrase associated with the Private Key.
 
 There is a common and growing practice within technology to use Multi-Factor Authentication practices to protect our accounts. This second factor is usually something you have, such as a YubiKey (or a code on an Authentication App) to ensure that it is really you. For our Git and GPG key signing scenario, we'll be using a YubiKey NEO. Of course, there is always the argument that someone could steal a YubiKey from you, but the theory is that the second factor is something additional that you have, rather than being stored on the machine itself, making it harder for a compromise (not impossible of course).
 
