@@ -5,11 +5,11 @@ GitHub: ""
 Instagram: ""
 Linkedin: ""
 Pinterest: ""
-Thumbnail: "img/cloudwithchrislogo.png"
+Thumbnail: "img/guests/dominicwilliamson.jpg"
 Title: "Dominic Williamson"
-Twitter: ""
+Twitter: "DominicWillit"
 Type: "guest"
-Website: ""
+Website: "https://sudoku.social/"
 YouTube: ""
 ---
-tbc
+Based in sunny Brisbane Australia, Dominic has been making products for the past 10 years. By day he's senior product manager for Microsoft Teams and by night manages a distributed game development studio.
