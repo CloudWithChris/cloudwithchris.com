@@ -1,8 +1,8 @@
 ---
 Date: "2021-05-05T12:00:00Z"
-Description: "Ever thought about what it takes to host a game in the Cloud? Well, this is the series for you! On the first Wednesday of every month, we explore Cloud Concepts that impact your journey to a connected multiplayer gaming experience! In this session, Chris is joined by Dominic who has recently been through the process of building his own game, Sudoku Social! Dom will talk all about his experiences and jorney of making this fun and mind-challenging sudoku multiplayer experience!"
+Description: "Ever thought about what it takes to host a game in the Cloud? Well, this is the series for you! On the first Wednesday of every month, we explore Cloud Concepts that impact your journey to a connected multiplayer gaming experience! In this session, Chris is joined by Dominic who has recently been through the process of building his own game, Sudoku Social! Take the classic puzzle game and adding a cross-platform social twist with the cloud. Sudoku Social has been a passion project to learn game development and bring players together to answer the ultimate question. Who is the fastest Sudoku player?"
 PublishDate: "2021-05-05T12:00:00Z"
-Title: CGN4 - Cloud Gaming Notes Episode 4 - Building a multi-player Sudoku Game (Sudoku Social)
+Title: CGN4 - Cloud Gaming Notes Episode 4 - Cross-platform social Sudoku with Azure PlayFab
 categories:
 - Architecture
 - Gaming
@@ -27,4 +27,4 @@ tags:
 #youtube: A2DEBT8HL6k
 upcoming: true
 ---
-Ever thought about what it takes to host a game in the Cloud? Well, this is the series for you! On the first Wednesday of every month, we explore Cloud Concepts that impact your journey to a connected multiplayer gaming experience! In this session, Chris is joined by Dominic who has recently been through the process of building his own game, Sudoku Social! Dom will talk all about his experiences and jorney of making this fun and mind-challenging sudoku multiplayer experience!
+Ever thought about what it takes to host a game in the Cloud? Well, this is the series for you! On the first Wednesday of every month, we explore Cloud Concepts that impact your journey to a connected multiplayer gaming experience! In this session, Chris is joined by Dominic who has recently been through the process of building his own game, Sudoku Social! Take the classic puzzle game and adding a cross-platform social twist with the cloud. Sudoku Social has been a passion project to learn game development and bring players together to answer the ultimate question. Who is the fastest Sudoku player?
