@@ -36,4 +36,4 @@ jobs:
         inlineScript: |
           pwd
           ls -la
-          az storage blob upload --account-name cloudwithchrisprod -c 'podcasts' --file '/github/workspace/${{ env.PODCAST_AUDIO_LOCATION }}'' -n ${{ env.PODCAST_AUDIO_BLOB }} --if-unmodified-since 2020-01-01T00:00Z
+          az storage blob upload --account-name cloudwithchrisprod -c 'podcasts' --file '/github/workspace/${{ env.PODCAST_AUDIO_LOCATION }}' -n ${{ env.PODCAST_AUDIO_BLOB }} --if-unmodified-since 2020-01-01T00:00Z
