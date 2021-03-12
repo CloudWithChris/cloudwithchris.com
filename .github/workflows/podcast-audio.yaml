@@ -11,13 +11,16 @@ jobs:
       name: production.azure
       url: https://www.cloudwithchris.com  
     runs-on: ubuntu-latest
-    env:
-      PODCAST_AUDIO_LOCATION: $GITHUB_WORKSPACE/podcast_audio
     steps:    
-    - uses: actions/checkout@v2
-      with:
-        lfs: true
-        fetch-depth: 1
+    - name: Download Podcast
+      run: |
+        git clone --config lfs.fetchexclude="/podcast_audio" https://github.com/chrisreddington/cloudwithchris.com.git
+        cd cloudwithchris.com
+        $filechanged=git diff --name-only HEAD^ HEAD -- '*.mp3'
+        echo "PODCAST_AUDIO_LOCATION=$filechanged" >> $GITHUB_ENV
+        rm ./$filechanged
+        git config --unset lfs.fetchexclude
+        git checkout . 
     - name: Azure Login
       uses: azure/login@v1
       with:
