@@ -17,6 +17,7 @@ jobs:
         git clone --config lfs.fetchexclude="/podcast_audio" https://github.com/chrisreddington/cloudwithchris.com.git ./
         filechanged=`git diff --name-only HEAD^ HEAD -- '*.mp3'`
         echo "PODCAST_AUDIO_LOCATION=$GITHUB_WORKSPACE/$filechanged" >> $GITHUB_ENV
+        echo "PODCAST_AUDIO_BLOB=${filechanged/podcast_audio\//''}" >> $GITHUB_ENV
         rm ./$filechanged
         git config --unset lfs.fetchexclude
         git checkout . 
@@ -29,4 +30,4 @@ jobs:
       with:
         azcliversion: 2.20.0
         inlineScript: |
-          az storage blob upload-batch --account-name cloudwithchrisprod -d 'podcasts' -s ${{ env.PODCAST_AUDIO_LOCATION }} --if-unmodified-since 2020-01-01T00:00Z
+          az storage blob upload --account-name cloudwithchrisprod -c 'podcasts' -n ${{ env.PODCAST_AUDIO_BLOB }} --if-unmodified-since 2020-01-01T00:00Z
