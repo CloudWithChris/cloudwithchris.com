@@ -23,6 +23,7 @@ jobs:
         git checkout . 
     - name:
       run: |
+        ls-la 'cloudwithchris.com/${{ env.PODCAST_AUDIO_LOCATION }}' 
         ls -la
         cd cloudwithchris.com
         ls -la
