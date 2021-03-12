@@ -21,21 +21,13 @@ jobs:
         rm ./$filechanged
         git config --unset lfs.fetchexclude
         git checkout . 
-    - name:
-      run: |
-        ls -la 'cloudwithchris.com/${{ env.PODCAST_AUDIO_LOCATION }}' 
-        ls -la
-        cd cloudwithchris.com
-        ls -la
-        cd podcast_audio
-        ls -la
-    #- name: Azure Login
-    #  uses: azure/login@v1
-    #  with:
-    #    creds: ${{ secrets.AZURE_CREDENTIALS }}     
-    #- name: "Upload podcast files to storage that don't yet exist"
-    #  uses: azure/CLI@v1
-    #  with:
-    #    azcliversion: 2.20.0
-    #    inlineScript: |
-    #      az storage blob upload-batch --account-name cloudwithchrisprod -d 'podcasts' -s 'cloudwithchris.com/${{ env.PODCAST_AUDIO_LOCATION }}' --if-unmodified-since 2020-01-01T00:00Z
+    - name: Azure Login
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}     
+    - name: "Upload podcast files to storage that don't yet exist"
+      uses: azure/CLI@v1
+      with:
+        azcliversion: 2.20.0
+        inlineScript: |
+          az storage blob upload-batch --account-name cloudwithchrisprod -d 'podcasts' -s 'cloudwithchris.com/${{ env.PODCAST_AUDIO_LOCATION }}' --if-unmodified-since 2020-01-01T00:00Z
