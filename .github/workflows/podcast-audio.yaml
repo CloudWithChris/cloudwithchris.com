@@ -23,6 +23,7 @@ jobs:
         git checkout . 
         cd podcast_audio
         pwd
+        ls -la
         echo "PODCAST_AUDIO_LOCATION=$GITHUB_WORKSPACE/$filechanged" >> $GITHUB_ENV
         echo "PODCAST_AUDIO_BLOB=${filechanged/podcast_audio\//''}" >> $GITHUB_ENV
     - name: Azure Login
