@@ -14,6 +14,8 @@ jobs:
     steps:    
     - name: Download Podcast
       run: |
+        pwd
+        mkdir cloudwithchris.com
         git clone --config lfs.fetchexclude="/podcast_audio" https://github.com/chrisreddington/cloudwithchris.com.git
         cd cloudwithchris.com
         filechanged=`git diff --name-only HEAD^ HEAD -- '*.mp3'`
