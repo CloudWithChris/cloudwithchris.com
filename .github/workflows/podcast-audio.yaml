@@ -30,4 +30,4 @@ jobs:
       with:
         azcliversion: 2.20.0
         inlineScript: |
-          az storage blob upload --account-name cloudwithchrisprod -c 'podcasts' -n ${{ env.PODCAST_AUDIO_BLOB }} --if-unmodified-since 2020-01-01T00:00Z
+          az storage blob upload --account-name cloudwithchrisprod -c 'podcasts' --file ${{ env.PODCAST_AUDIO_LOCATION }} -n ${{ env.PODCAST_AUDIO_BLOB }} --if-unmodified-since 2020-01-01T00:00Z
