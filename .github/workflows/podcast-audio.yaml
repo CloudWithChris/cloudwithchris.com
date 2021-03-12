@@ -16,7 +16,7 @@ jobs:
       run: |
         git clone --config lfs.fetchexclude="/podcast_audio" https://github.com/chrisreddington/cloudwithchris.com.git
         cd cloudwithchris.com
-        filechanged=git diff --name-only HEAD^ HEAD -- '*.mp3'
+        filechanged=`git diff --name-only HEAD^ HEAD -- '*.mp3'`
         echo "PODCAST_AUDIO_LOCATION=$filechanged" >> $GITHUB_ENV
         rm ./$filechanged
         git config --unset lfs.fetchexclude
