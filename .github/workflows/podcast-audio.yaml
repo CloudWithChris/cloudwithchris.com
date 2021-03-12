@@ -18,13 +18,13 @@ jobs:
         git clone --config lfs.fetchexclude="/podcast_audio" https://github.com/chrisreddington/cloudwithchris.com.git ./
         ls -la
         filechanged=`git diff --name-only HEAD^ HEAD -- '*.mp3'`
-        echo "PODCAST_AUDIO_LOCATION=$GITHUB_WORKSPACE/$filechanged" >> $GITHUB_ENV
-        echo "PODCAST_AUDIO_BLOB=${filechanged/podcast_audio\//''}" >> $GITHUB_ENV
         rm ./$filechanged
         git config --unset lfs.fetchexclude
         git checkout . 
         cd podcast_audio
         pwd
+        echo "PODCAST_AUDIO_LOCATION=$GITHUB_WORKSPACE/$filechanged" >> $GITHUB_ENV
+        echo "PODCAST_AUDIO_BLOB=${filechanged/podcast_audio\//''}" >> $GITHUB_ENV
     - name: Azure Login
       uses: azure/login@v1
       with:
