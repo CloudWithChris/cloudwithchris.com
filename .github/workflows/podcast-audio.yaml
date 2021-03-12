@@ -24,7 +24,6 @@ jobs:
         cd podcast_audio
         pwd
         ls -la
-        echo "PODCAST_AUDIO_LOCATION=$GITHUB_WORKSPACE/$filechanged" >> $GITHUB_ENV
         echo "PODCAST_AUDIO_BLOB=${filechanged/podcast_audio\//''}" >> $GITHUB_ENV
     - name: Azure Login
       uses: azure/login@v1
@@ -37,4 +36,4 @@ jobs:
         inlineScript: |
           pwd
           ls -la
-          az storage blob upload --account-name cloudwithchrisprod -c 'podcasts' --file ${{ env.PODCAST_AUDIO_LOCATION }} -n ${{ env.PODCAST_AUDIO_BLOB }} --if-unmodified-since 2020-01-01T00:00Z
+          az storage blob upload --account-name cloudwithchrisprod -c 'podcasts' --file '/github/workspace/${{ env.PODCAST_AUDIO_LOCATION }}'' -n ${{ env.PODCAST_AUDIO_BLOB }} --if-unmodified-since 2020-01-01T00:00Z
