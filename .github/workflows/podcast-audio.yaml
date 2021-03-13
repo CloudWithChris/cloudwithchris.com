@@ -12,20 +12,23 @@ jobs:
       url: https://www.cloudwithchris.com  
     runs-on: ubuntu-latest
     steps:    
-    - name: Download Podcast
+    - name: Download Podcast files that are different from prior commit
       run: |
-        pwd
         git clone --config lfs.fetchexclude="/podcast_audio" https://github.com/chrisreddington/cloudwithchris.com.git ./
-        ls -la
-        filechanged=`git diff --name-only HEAD^ HEAD -- '*.mp3'`
-        rm ./$filechanged
+        fileschanged=$(git diff --name-only HEAD^ HEAD -- '*.mp3')
+        echo "$fileschanged" > files.txt
+        xargs -a files.txt -d'\n' rm
         git config --unset lfs.fetchexclude
         git checkout . 
         cd podcast_audio
-        pwd
-        ls -la
-        echo "PODCAST_AUDIO_LOCATION=$filechanged" >> $GITHUB_ENV
-        echo "PODCAST_AUDIO_BLOB=${filechanged/podcast_audio\//''}" >> $GITHUB_ENV
+        sed -i -e 's/podcast_audio\///g' ../files.txt
+        for i in *; do
+            if ! grep -qxFe "$i" ../files.txt
+            then
+                echo "Deleting: $i"
+                rm "$i"
+            fi
+        done
     - name: Azure Login
       uses: azure/login@v1
       with:
@@ -35,6 +38,4 @@ jobs:
       with:
         azcliversion: 2.20.0
         inlineScript: |
-          pwd
-          ls -la
-          az storage blob upload --account-name cloudwithchrisprod -c 'podcasts' --file '/github/workspace/${{ env.PODCAST_AUDIO_LOCATION }}' -n ${{ env.PODCAST_AUDIO_BLOB }} --if-unmodified-since 2020-01-01T00:00Z
+          az storage blob upload-batch --account-name cloudwithchrisprod -d 'podcasts' -s '/github/workspace/podcast_audio' --if-unmodified-since 2020-01-01T00:00Z
