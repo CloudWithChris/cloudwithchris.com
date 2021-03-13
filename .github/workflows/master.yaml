@@ -50,12 +50,12 @@ jobs:
     - name: "Upload Static Content to Storage"
       uses: azure/CLI@v1
       with:
-        azcliversion: 2.0.72
+        azcliversion: 2.20.0
         inlineScript: |
-          az storage blob upload-batch --account-name cloudwithchrisprod -d '$web' -s website
+          az storage blob upload-batch --account-name cloudwithchrisprod -d '$web' -s website --auth-mode login
     - name: "Purge CDN"
       uses: azure/CLI@v1
       with:
-        azcliversion: 2.0.72
+        azcliversion: 2.20.0
         inlineScript: |
           az cdn endpoint purge --content-paths  "/*" --profile-name "cloudwithchris" --name "cloudwithchris" --resource-group "cloudwithchris"

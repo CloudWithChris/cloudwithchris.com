@@ -18,6 +18,6 @@ jobs:
     - name: Azure CLI script
       uses: azure/CLI@v1
       with:
-        azcliversion: 2.0.72
+        azcliversion: 2.20.0
         inlineScript: |
-          az storage blob delete-batch --account-name cloudwithchrispreview -s '$web' --pattern '${{ github.head_ref }}/*'
+          az storage blob delete-batch --account-name cloudwithchrispreview --source '$web' --pattern '${{ github.head_ref }}/*' --auth-mode login

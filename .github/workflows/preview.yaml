@@ -77,6 +77,6 @@ jobs:
     - name: "Upload Static Content to Storage"
       uses: azure/CLI@v1
       with:
-        azcliversion: 2.0.72
+        azcliversion: 2.20.0
         inlineScript: |
-          az storage blob upload-batch --account-name cloudwithchrispreview -d '$web/${{ github.head_ref }}' -s 'website'
+          az storage blob upload-batch --account-name cloudwithchrispreview -d '$web/${{ github.head_ref }}' -s 'website' --auth-mode login
