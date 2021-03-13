@@ -6,7 +6,9 @@ on:
     types: 
       - closed
 jobs:
-  build:
+  CloseFolder:
+    environment:
+      name: preview.azure  
     runs-on: ubuntu-latest
     steps:     
     - name: Azure Login

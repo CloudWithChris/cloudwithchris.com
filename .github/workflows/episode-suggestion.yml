@@ -1,3 +1,4 @@
+name: 'Add Episode to Project Board'
 on:
   issues:
     types: [opened]
