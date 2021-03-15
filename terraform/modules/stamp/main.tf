@@ -57,6 +57,6 @@ resource "azurerm_cdn_endpoint" "main_endpoint" {
 
   origin {
     name      = azurerm_storage_account.main_stg.name
-    host_name = azurerm_storage_account.main_stg.primary_web_endpoint
+    host_name = replace(replace(azurerm_storage_account.main_stg.primary_web_endpoint, "https://", ""), ".net/", ".net")
   }
 }
