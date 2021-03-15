@@ -35,7 +35,7 @@ data "azurerm_cdn_profile" "core" {
 }
 
 resource "azurerm_storage_account" "main_stg" {
-  name                     = "${local.resource_prefix_no_dashes}${var.environment}"
+  name                     = "${local.resource_prefix_no_dashes}"
   resource_group_name      = azurerm_resource_group.main_rg.name
   location                 = azurerm_resource_group.main_rg.location
   account_kind             = "StorageV2"
