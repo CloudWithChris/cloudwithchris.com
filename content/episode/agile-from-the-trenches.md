@@ -1,8 +1,8 @@
 ---
 Date: "2021-06-25T15:30:00Z"
-Description: "TBC"
+Description: "In this session Erin talks a little bit about what Agile is, how it works in the real world, and shares some stories and anecdotes she's seen as an Agile Coach in the trenches."
 PublishDate: "2021-06-25T15:30:00Z"
-Title: 40 - Erin Placeholder
+Title: 40 - Agile from the trenches
 categories:
 - DevOps
 episode: "40"
@@ -24,4 +24,4 @@ tags:
 #youtube: LY7FEAoPucM
 upcoming: true
 ---
-TBC
+In this session Erin talks a little bit about what Agile is, how it works in the real world, and shares some stories and anecdotes she's seen as an Agile Coach in the trenches.
