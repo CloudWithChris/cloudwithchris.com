@@ -54,6 +54,7 @@ resource "azurerm_cdn_endpoint" "main_endpoint" {
   profile_name        = data.azurerm_cdn_profile.core.name
   location            = data.azurerm_cdn_profile.core.location
   resource_group_name = data.azurerm_cdn_profile.core.resource_group_name
+  origin_host_header  = replace(replace(azurerm_storage_account.main_stg.primary_web_endpoint, "https://", ""), ".net/", ".net")
 
   origin {
     name      = azurerm_storage_account.main_stg.name
