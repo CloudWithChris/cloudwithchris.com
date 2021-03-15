@@ -30,7 +30,7 @@ resource "azurerm_resource_group" "main_rg" {
 }
 
 data "azurerm_cdn_profile" "core" {
-  name                = "${var.resource_prefix}-cdn"
+  name                = "${var.core_resource_group_name}-cdn"
   resource_group_name = var.core_resource_group_name
 }
 
