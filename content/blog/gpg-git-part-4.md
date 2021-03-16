@@ -53,7 +53,7 @@ ssb>  rsa2048/SUBKEYXXXXXXXXXX  created: 2021-02-10  expires: 2022-02-10
 
 To move the GPG Key to the YubiKey, we need to use the gpg commandline once again. If you have multiple keys on the machine, then you may need to use the toggle in gpg to select the key that you want to move across. If you've followed the steps from these blog posts in order (and moved the Certification key off of the machine), then you shouldn't need to use this step. If you do, take a look at Scott's blog above, as he shows this approach.
 
-Before completing the next step, make sure that you have backed up your keys. Keytocard is a destructive action (as also discussed over on [this GitHub issue](https://github.com/drduh/YubiKey-Guide/issues/19)). 
+Before completing the next step, make sure that you have backed up your keys. Keytocard is a destructive action (as also discussed over on [this GitHub issue](https://github.com/drduh/YubiKey-Guide/issues/19)).
 
 ```bash
 gpg --edit-key YourSubkeyHere
@@ -85,7 +85,7 @@ Following on from the point made just before the code block - If you need to cop
 
 You'll want to go ahead and make sure that your YubiKey has the appropriate pins set up. As described in the [YubiKey docs](https://developers.yubico.com/PIV/Introduction/YubiKey_and_PIV.html#:~:text=Technical%20details%20about%20the%20YubiKey,default%20PUK%20code%20is%2012345678.) the default pin is 12345678 and the default admin pin is 12345678. As you can imagine, these aren't the hardest to guess - so make sure you take the time to change these, and remember them!
 
-You can achieve by using the below - 
+You can achieve by using the below -
 
 ```bash
 gpg --card-edit
