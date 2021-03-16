@@ -63,14 +63,14 @@ There is NO WARRANTY, to the extent permitted by law.
 
 Secret subkeys are available.
 
-pub  rsa2048/443CD976670F6EAD
+pub  rsa2048/XXXXXXXXXXXXXXXX
      created: 2021-02-10  expires: never       usage: C
      trust: ultimate      validity: ultimate
-ssb  rsa2048/C6E6703A663E373D
+ssb  rsa2048/XXXXXXXXXXXXXXXX
      created: 2021-02-10  expires: 2022-02-10  usage: S
-     card-no: 0006 06531587
-[ultimate] (1). Chris Reddington <christian.reddington@outlook.com>
-[ultimate] (2)  Chris Reddington <791642+chrisreddington@users.noreply.github.com>
+     card-no: XXXX XXXXXXXX
+[ultimate] (1). Chris Reddington <XXXXXX@contoso.com>
+[ultimate] (2)  Chris Reddington <XXXXXX+XXXXXXXXXXXXXXX@users.noreply.github.com>
 
 gpg> keytocard
 Really move the primary key? (y/N) y
