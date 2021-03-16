@@ -46,7 +46,7 @@ Authentication key: [none]
 General key info..: sub  rsa2048/SUBKEYXXXXXXXXXX 2021-02-10 Chris Reddington <XXXXXX@contoso.com>
 sec#  rsa2048/MAINKEYXXXXXXXXX  created: 2021-02-10  expires: never
 ssb>  rsa2048/SUBKEYXXXXXXXXXX  created: 2021-02-10  expires: 2022-02-10
-                                card-no: 0006 06531587
+                                card-no: XXXX XXXXXXXX
 ```
 
 **Note: A good [pro-tip from Scott Hanselman](https://www.hanselman.com/blog/how-to-setup-signed-git-commits-with-a-yubikey-neo-and-gpg-and-keybase-on-windows) at this stage. If you have access to multiple smart card readers (including Windows Hello), then you may need to include a reader-port in the scdaemon.conf file at %appdata%\gnupg\scdaemon.conf. This is a step that I had to complete, so thanks Scott for the heads up on this one!**
