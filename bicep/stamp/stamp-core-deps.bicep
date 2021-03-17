@@ -1,5 +1,6 @@
 // Set the parameters, for template flexibility
 param coreLocation string
+param domain string
 param environment string
 param originURL string
 param resourcePrefix string
@@ -8,7 +9,7 @@ param resourcePrefix string
 var stgname = '${resourcePrefix}${environment}'
 
 // Deploy the CDN profile
-resource cdnEndpoint 'Microsoft.Cdn/profiles/endpoints@2020-04-15' = {
+resource cdnEndpoint 'Microsoft.Cdn/profiles/endpoints@2020-09-01' = {
   name: '${resourcePrefix}-core-cdn/${stgname}'
   location: coreLocation
   properties: {
@@ -20,5 +21,16 @@ resource cdnEndpoint 'Microsoft.Cdn/profiles/endpoints@2020-04-15' = {
         }
       }
     ]
+  }
+}
+
+// Deploy a CName record pointing to the CDNEndpoint
+resource previewCNAME 'Microsoft.Network/dnsZones/CNAME@2018-05-01' = {
+  name: '${domain}/preview'
+  properties: {
+    TTL: 300
+    CNAMERecord: {
+      cname: cdnEndpoint.properties.hostName
+    }
   }
 }

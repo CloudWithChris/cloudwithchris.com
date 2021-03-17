@@ -7,6 +7,9 @@ param environment string
 param stampLocation string = 'northeurope'
 param resourcePrefix string = 'cwc'
 
+// Set variables to be re-used easily
+var domain = 'cwc.com'
+
 // Create the Resource Group
 resource resourcegroup 'Microsoft.Resources/resourceGroups@2020-06-01' = {
   name: '${resourcePrefix}-${environment}-rg'
@@ -28,9 +31,10 @@ module coreDependencies './stamp-core-deps.bicep' = {
   // Deploy this module in the context of the CORE resource group
   scope: resourceGroup('${resourcePrefix}-core-rg')
   params: {
-    resourcePrefix: resourcePrefix
-    environment: environment
     coreLocation: coreLocation
+    environment: environment
+    domain: domain
+    resourcePrefix: resourcePrefix
     originURL: stampResources.outputs.stgDomain
   }
 }

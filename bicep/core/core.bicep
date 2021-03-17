@@ -6,6 +6,9 @@ param environment string = 'core'
 param location string = 'northeurope'
 param resourcePrefix string = 'cwc'
 
+// Set variables to be re-used easily
+var domain = 'cwc.com'
+
 // Create the Resource Group
 resource resourcegroup 'Microsoft.Resources/resourceGroups@2020-06-01' = {
   name: '${resourcePrefix}-${environment}-rg'
@@ -18,6 +21,7 @@ module coreResources './core-resources.bicep' = {
   // Deploy this module in the context of the new resource group
   scope: resourceGroup(resourcegroup.name)
   params: {
+    domain: domain
     environment: environment
     location: location
     resourcePrefix: resourcePrefix
