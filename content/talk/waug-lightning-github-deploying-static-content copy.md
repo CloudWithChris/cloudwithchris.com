@@ -12,7 +12,7 @@ images:
 - img/cloudwithchris.png
 talkType: "Meetup"
 eventName: "Welsh Azure User Group"
-youtube: "mnFlgVogAEg&t=2732s"
+youtube: "mnFlgVogAEg"
 tags:
 - DevOps
 - GitHub
