@@ -12,7 +12,7 @@ images:
 - img/cloudwithchris.png
 talkType: "Meetup"
 eventName: "Welsh Azure User Group"
-externalLink: "https://www.meetup.com/MSFT-Stack/events/275581754/"
+youtube: "mnFlgVogAEg&t=2732s"
 tags:
 - DevOps
 - GitHub
