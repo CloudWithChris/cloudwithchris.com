@@ -1,31 +1,29 @@
 ---
 Date: "2021-03-22T09:30:00Z"
-Description: 'In this video, Chris lays out his twelfth weekly technology vlog update
-  talking about TBC'
+Description: "This marks 3 months of the weekly vlogging! Chris talks about last week's very busy week (New content/talks every single day!). A new Cloud Drop episode on GitHub Codespaces, Part 4 of using GPG Keys to sign your Git Commits & GitHub, Welsh #Azure User Group and Using #Terraform #Cloud with Azure. As well as a series of #Azure Blogs, #Azure Updates, #DevOps Blog Updates and #GitHub Updates."
 PublishDate: "2021-03-22T09:30:00Z"
-Title: 'V012 - Weekly Technology Vlog #12'
+Title: 'V012 - Weekly Technology Vlog #12 (Busy week, and quite a few blog posts to cover!)'
 categories:
 - Vlog
 episode: V012
-episode_image: img/cloudwithchrislogo.png # img/vlog/v002.jpg
+episode_image: img/vlog/v012.jpg
 explicit: "no"
 guests: []
 hosts:
 - chrisreddington
 images:
 - img/default-social.png
-# - img/vlog/v002.jpg
-# podcast_bytes: "13803520"
-# podcast_duration: "14:19.000"
-# podcast_file: V002 - Weekly Technology Vlog.mp3
+- img/vlog/v012.jpg
+podcast_bytes: "25346476"
+podcast_duration: "26:19.000"
+podcast_file: V012 - Weekly Technology Vlog.mp3
 series:
 - Weekly Vlog
 tags:
-#- Podcast
-#- Sessionize
-#- Azure
-#- Community
-# youtube: VyQI5SOsw3M
-upcoming: true
+- Podcast
+- Azure
+- Community
+- GitHub
+youtube: US-rE8HgFCA
 ---
-In this video, Chris lays out his twelfth weekly technology vlog update talking about TBC.
+This marks 3 months of the weekly vlogging! Chris talks about last week's very busy week (New content/talks every single day!). A new Cloud Drop episode on GitHub Codespaces, Part 4 of using GPG Keys to sign your Git Commits & GitHub, Welsh #Azure User Group and Using #Terraform #Cloud with Azure. As well as a series of #Azure Blogs, #Azure Updates, #DevOps Blog Updates and #GitHub Updates.
