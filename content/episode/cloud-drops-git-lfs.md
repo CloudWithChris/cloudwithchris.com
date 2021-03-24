@@ -14,7 +14,7 @@ images:
 - "img/episodes/cloud-drops-introducing-git-lfs.jpg"
 podcast_bytes: "4857856"
 podcast_duration: "05:01.000"
-podcast_file: "Cloud Drop - Cloud Drop - Introducing and Setting Up Git LFS.mp3"
+podcast_file: "Cloud Drop - Introducing and Setting Up Git LFS.mp3"
 series:
 - "Cloud Drops"
 tags:
