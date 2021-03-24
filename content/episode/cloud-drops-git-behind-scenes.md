@@ -1,7 +1,7 @@
 ---
-Date: "2021-03-23T00:01:00Z"
+Date: "2021-03-24T00:01:00Z"
 Description: "Have you ever wondered how Git works behind the scenes? We'll go ahead, initialise an empty folder as a Git repository and explore the .Git folder that is created."
-PublishDate: "2021-03-23T00:01:00Z"
+PublishDate: "2021-03-24T00:01:00Z"
 Title: "Cloud Drops - How does Git work behind the scenes?"
 categories:
 - Git
