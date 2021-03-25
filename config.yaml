@@ -14,7 +14,7 @@ menu:
   footer:
     - name: "Get Involved"
       weight: 1
-      url: "/get-involved"
+      url: "https://sessionize.com/CloudWithChris"
     - name: "Privacy"
       weight: 2
       url: "/privacy-policy"
