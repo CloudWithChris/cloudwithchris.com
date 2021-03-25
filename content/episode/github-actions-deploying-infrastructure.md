@@ -8,7 +8,7 @@ Title: GitHub Actions and Azure - Deploying ARM templates with GitHub Actions
 categories:
 - DevOps
 episode: G3
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 guests: []
 hosts:

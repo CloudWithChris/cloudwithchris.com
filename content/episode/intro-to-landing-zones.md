@@ -6,7 +6,7 @@ Title: 28 - Intro to Landing Zones
 categories:
 - Architecture
 episode: "28"
-episode_image: img/episodes/28 - Intro to Landing Zones -Thumbnail.jpg
+image: img/episodes/28 - Intro to Landing Zones -Thumbnail.jpg
 explicit: "no"
 guests:
 - karimfahmy

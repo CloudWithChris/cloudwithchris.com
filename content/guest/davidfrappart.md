@@ -5,7 +5,7 @@ GitHub: ""
 Instagram: ""
 Linkedin: "david-frappart-66625627"
 Pinterest: ""
-Thumbnail: img/guests/davidfrappart.jpg
+image: img/guests/davidfrappart.jpg
 Title: David Frappart
 Twitter: Cloudgeekdavid
 Type: guest

@@ -12,7 +12,7 @@ Title: 3 - DevOps in a Cloud World
 categories:
 - DevOps
 episode: "1"
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 guests:
 - abelwang

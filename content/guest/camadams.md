@@ -5,7 +5,7 @@ GitHub: ""
 Instagram: ""
 Linkedin: cam-adams-7856a77
 Pinterest: ""
-Thumbnail: img/guests/camadams.png
+image: img/guests/camadams.png
 Title: Cam Adams
 Twitter: ""
 Type: guest

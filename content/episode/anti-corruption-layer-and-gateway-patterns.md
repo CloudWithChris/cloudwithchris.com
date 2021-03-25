@@ -12,7 +12,7 @@ Title: 20 - The Anti-corruption layer, Gateway Aggregation and Gateway Routing p
 categories:
 - Architecture
 episode: "20"
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 guests:
 - peterpiper

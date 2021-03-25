@@ -6,7 +6,7 @@ Title: "Tales from the Real World - Architecting the Transformation"
 categories:
 - Architecture
 episode: ""
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 guests:
 - asankaabeysinghe

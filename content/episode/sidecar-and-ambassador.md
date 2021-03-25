@@ -6,7 +6,7 @@ Title: 29 - The Sidecar and Ambassador Patterns
 categories:
 - Architecture
 episode: "29"
-episode_image: img/episodes/29 - Sidecar and Ambassador -Thumbnail.jpg
+image: img/episodes/29 - Sidecar and Ambassador -Thumbnail.jpg
 explicit: "no"
 guests:
 - peterpiper

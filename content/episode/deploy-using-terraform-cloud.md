@@ -6,7 +6,7 @@ Title: 31 - Deploying to Azure through Terraform Cloud
 categories:
 - Architecture
 episode: "31"
-episode_image: img/episodes/deploy-using-terraform-cloud.jpg
+image: img/episodes/deploy-using-terraform-cloud.jpg
 explicit: "no"
 hosts:
 - chrisreddington

@@ -5,7 +5,7 @@ Description: I mentioned in Building Solutions in the Cloud that I would be wri
   guidance around Azure. In this post, I will provide some thoughts on how you can
   consider resilience within the context of your own solution or application.
 PublishDate: "2016-08-26T12:00:00Z"
-blog_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 categories:
 - Azure
 - Cloud Architecture

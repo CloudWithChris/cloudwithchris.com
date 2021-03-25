@@ -110,7 +110,7 @@
         <description>{{ .Description  | plainify  }}</description>
         <googleplay:description>{{ .Description  | plainify }}</googleplay:description>
         {{ "<content:encoded><![CDATA[" | safeHTML }}{{ .Content | safeHTML }}{{"]]></content:encoded>" | safeHTML}}
-          {{- with .Params.episode_image -}}
+          {{- with .Params.image -}}
           <itunes:image href="{{ . | absURL }}"></itunes:image>
           <googleplay:image href="{{ . | absURL }}"></googleplay:image>
           {{- end -}}

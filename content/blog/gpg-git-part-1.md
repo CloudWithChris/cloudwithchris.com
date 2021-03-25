@@ -2,7 +2,7 @@
 Author: chrisreddington
 Description: "For a while now, I've been using GPG Keys to sign my Git Commits to prove that my commits on GitHub are genuine and from me. Over the last few weeks, I've been inspired by a couple of colleagues (Kudos to Adrian and Julie if you're reading this) to dig out my YubiKey and use these for my key signing activities. While there are several blog posts on the topic already, I encountered a number of roadblocks along the way. The intent of this blog post is to be the first of a series, where we'll explore what GPG is, why it may be valuable to you and how you can get going using them. We'll then take this forwards an additional step, and show how you can use YubiKeys as a second factor of verification and the benefits of this approach. By no means am I the world's expert in cryptography, and some of these topics, but I wanted to document my own understanding for posterity, as I'll inevitably need to repeat/review the process in the future. I hope that this may be useful to you."
 PublishDate: "2021-02-24T12:00:00Z"
-blog_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 categories:
 - Announcement
 date: "2021-02-24T12:00:00Z"

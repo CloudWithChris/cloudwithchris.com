@@ -7,7 +7,7 @@ categories:
 - Architecture
 - Gaming
 episode: "CGN3"
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 guests:
 - leewilliams

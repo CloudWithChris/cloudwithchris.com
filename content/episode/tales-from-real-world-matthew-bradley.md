@@ -7,7 +7,7 @@ categories:
 - Azure
 - Architecture
 episode: "TBC"
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 hosts:
 - chrisreddington

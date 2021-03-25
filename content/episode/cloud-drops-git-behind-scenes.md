@@ -6,7 +6,7 @@ Title: "Cloud Drops - How does Git work behind the scenes?"
 categories:
 - Git
 episode: ""
-episode_image: "img/episodes/cloud-drops-git-behind-scenes.jpg"
+image: "img/episodes/cloud-drops-git-behind-scenes.jpg"
 explicit: "no"
 hosts:
 - chrisreddington

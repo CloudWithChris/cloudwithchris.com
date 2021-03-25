@@ -11,7 +11,7 @@ Title: 2 - Cost Control
 categories:
 - Architecture
 episode: "2"
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 hosts:
 - chrisreddington

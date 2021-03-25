@@ -6,7 +6,7 @@ Title: "39 - A discussion with John Lunn"
 categories:
 - People
 episode: "39"
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 hosts:
 - chrisreddington

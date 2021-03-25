@@ -6,7 +6,7 @@ Title: 38 - Hands-on with The Geode Pattern (Build globally distributed applicat
 categories:
 - Architecture
 episode: "38"
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 guests:
 - willeastbury

@@ -6,7 +6,7 @@ Title: "43 - A Decentralized Reference Architecture for Cloud-native Application
 categories:
 - Architecture
 episode: "43"
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 guests:
 - asankaabeysinghe

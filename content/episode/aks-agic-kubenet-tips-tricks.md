@@ -6,7 +6,7 @@ Title: "44 - AKS, AGIC and Kubenet - Tips and tricks to make it work"
 categories:
 - Architecture
 episode: "44"
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 guests:
 - davidfrappart

@@ -5,7 +5,7 @@ GitHub: ""
 Instagram: ""
 Linkedin: andrew-nathan
 Pinterest: ""
-Thumbnail: img/guests/andrewnathan.jpg
+image: img/guests/andrewnathan.jpg
 Title: Andrew Nathan
 Twitter: AndrewNathan05
 Type: guest

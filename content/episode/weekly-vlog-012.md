@@ -6,7 +6,7 @@ Title: 'V012 - Weekly Technology Vlog #12 (Busy week, and quite a few blog posts
 categories:
 - Vlog
 episode: V012
-episode_image: img/vlog/v012.jpg
+image: img/vlog/v012.jpg
 explicit: "no"
 guests: []
 hosts:

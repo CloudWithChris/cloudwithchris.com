@@ -6,7 +6,7 @@ Title: "Tales from the Real World - Azure AD B2C: A real silver bullet"
 categories:
 - Architecture
 episode: ""
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 guests:
 - facundolarocca

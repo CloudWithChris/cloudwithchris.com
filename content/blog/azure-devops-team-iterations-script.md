@@ -10,7 +10,7 @@ Description: Consider this scenario. You are managing a software project using A
   can more accurately forecast what they expect to land and show the value being delivered
   by the team.
 PublishDate: "2019-06-16T19:00:00Z"
-blog_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 categories:
 - Azure DevOps
 - DevOps

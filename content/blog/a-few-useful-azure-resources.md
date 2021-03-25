@@ -5,7 +5,7 @@ Description: Over the past few weeks, I have been working on a number of project
   where to go for documentation. There are a couple of great resources to be aware
   of!
 PublishDate: "2016-09-03T12:00:00Z"
-blog_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 categories:
 - Azure
 - Useful Resources

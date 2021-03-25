@@ -7,7 +7,7 @@ Description: When designing a solution, you want to be sure that your communicat
   the solution. How do you keep track of the certificates? How do you guarantee that
   they are kept secure? How do you ensure that certificates renew on time?
 PublishDate: "2016-09-12T12:00:00Z"
-blog_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 categories:
 - Announcement
 date: "2016-09-12T12:00:00Z"

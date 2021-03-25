@@ -6,7 +6,7 @@ Title: 'V007 - Weekly Technology Vlog #7 (Recap, NEW SITE, NEWS!)'
 categories:
 - Vlog
 episode: V007
-episode_image: img/vlog/v007.jpg
+image: img/vlog/v007.jpg
 explicit: "no"
 guests: []
 hosts:

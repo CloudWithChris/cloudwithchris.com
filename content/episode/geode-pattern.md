@@ -9,7 +9,7 @@ Title: 11 - The Geode Pattern - What is it and how can it be useful for my app?
 categories:
 - Architecture
 episode: "11"
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 guests:
 - willeastbury

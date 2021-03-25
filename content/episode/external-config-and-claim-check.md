@@ -6,7 +6,7 @@ Title: 33 - External Config and Claim Check Pattern - Easier Management and Exte
 categories:
 - Architecture
 episode: "33"
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 guests:
 - peterpiper

@@ -7,7 +7,7 @@ Title: GitHub Actions and Azure - Deploying .NET Core code to Azure App Service
 categories:
 - DevOps
 episode: G4
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 guests: []
 hosts:

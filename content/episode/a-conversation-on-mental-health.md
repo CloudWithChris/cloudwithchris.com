@@ -6,7 +6,7 @@ Title: 25 - A conversation on Mental Health
 categories:
 - People
 episode: "25"
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 hosts:
 - chrisreddington

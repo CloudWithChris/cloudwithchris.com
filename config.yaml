@@ -66,6 +66,12 @@ module:
     - source: archetypes
       target: archetypes
 
+outputs:
+  home:
+    - "HTML"
+    - "RSS"
+    - "JSON"
+
 params:
   about_logo: "/img/cloudwithchrislogo.png"
   copyright_notice: "Copyright 2020 [Chris Reddington](https://www.christianreddington.co.uk), Proudly running using [Hugo](https://gohugo.io/)."

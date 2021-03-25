@@ -11,7 +11,7 @@ Title: 9 - Building smart Integration Solutions with Microsoft Azure
 categories:
 - Architecture
 episode: "9"
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 guests:
 - ezhilarasichezhiyan

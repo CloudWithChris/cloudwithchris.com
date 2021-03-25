@@ -5,7 +5,7 @@ Description: In my spare time, I work on a pet project called Theatreers. The ai
   a few of my passion areas together). I've recently re-architected the project to
   align to a multi-region serverless technology stack.
 PublishDate: "2019-07-13T12:00:00Z"
-blog_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 categories:
 - Azure
 - Cloud Architecture

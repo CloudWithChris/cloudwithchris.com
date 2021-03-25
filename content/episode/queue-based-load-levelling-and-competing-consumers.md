@@ -12,7 +12,7 @@ Title: 21 - The Queue Based Load Leveling and Competing Consumers Pattern
 categories:
 - Architecture
 episode: "21"
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 guests:
 - willeastbury

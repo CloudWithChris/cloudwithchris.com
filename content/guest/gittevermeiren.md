@@ -5,7 +5,7 @@ GitHub: ""
 Instagram: ""
 Linkedin: "gitte-vermeiren-b1b2221"
 Pinterest: ""
-Thumbnail: img/guests/gittevermeiren.jpg
+image: img/guests/gittevermeiren.jpg
 Title: Gitte Vermeiren
 Twitter: GitteTitter
 Type: guest

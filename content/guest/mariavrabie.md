@@ -5,7 +5,7 @@ GitHub: ""
 Instagram: ""
 Linkedin: maria-vrabie-365525101
 Pinterest: ""
-Thumbnail: img/guests/mariavrabie.jpg
+image: img/guests/mariavrabie.jpg
 Title: Maria Vrabie
 Twitter: mariaVrb01
 Type: guest

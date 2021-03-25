@@ -10,7 +10,7 @@ Title: 8 - Azure Security
 categories:
 - Security
 episode: "8"
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 guests:
 - andrewnathan

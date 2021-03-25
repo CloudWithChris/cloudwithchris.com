@@ -6,7 +6,7 @@ Title: "V029 - Weekly Technology Vlog #29"
 categories:
 - Vlog
 episode: V029
-episode_image: img/cloudwithchrislogo.png # img/vlog/v002.jpg
+image: img/cloudwithchrislogo.png # img/vlog/v002.jpg
 explicit: "no"
 guests: []
 hosts:

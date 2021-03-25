@@ -5,7 +5,7 @@ GitHub: petpipe123
 Instagram: ""
 Linkedin: peterpiper
 Pinterest: ""
-Thumbnail: img/guests/peter-piper.jpg
+image: img/guests/peter-piper.jpg
 Title: Peter Piper
 Twitter: petpipe
 Type: guest

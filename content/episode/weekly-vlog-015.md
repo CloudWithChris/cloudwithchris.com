@@ -6,7 +6,7 @@ Title: "V015 - Weekly Technology Vlog #15"
 categories:
 - Vlog
 episode: V015
-episode_image: img/cloudwithchrislogo.png # img/vlog/v002.jpg
+image: img/cloudwithchrislogo.png # img/vlog/v002.jpg
 explicit: "no"
 guests: []
 hosts:

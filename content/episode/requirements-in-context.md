@@ -8,7 +8,7 @@ Title: 1 - Requirements in Context
 categories:
 - Architecture
 episode: "1"
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 hosts:
 - chrisreddington

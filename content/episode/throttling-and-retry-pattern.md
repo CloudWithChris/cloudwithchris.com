@@ -12,7 +12,7 @@ Title: 17 - The Throttling, Retry and Circuit Breaker Patterns
 categories:
 - Architecture
 episode: "17"
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 guests:
 - johndowns

@@ -12,7 +12,7 @@
 
 {{ define "top" }}
   <div class="container" align="center">
-    <img src="{{ .Params.Thumbnail | absURL}}" width="150" class="rounded-circle z-depth-2" alt="{{ .Title }}" title="{{ .Title }}" />
+    <img src="{{ .Params.image | absURL}}" width="150" class="rounded-circle z-depth-2" alt="{{ .Title }}" title="{{ .Title }}" />
     <p>
       {{ with .Params.Github }}
         <a href="https://github.com/{{ . }}" aria-label="GitHub"><button type="button" aria-label="GitHub" class="btn btn-social btn-github btn-rounded"><i class="fab fa-github"></i></button></a>

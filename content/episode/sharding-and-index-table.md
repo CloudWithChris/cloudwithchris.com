@@ -6,7 +6,7 @@ Title: 15 - The Sharding and Index Table Patterns
 categories:
 - Architecture
 episode: "15"
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 guests:
 - stephmartin

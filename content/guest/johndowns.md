@@ -5,7 +5,7 @@ GitHub: ""
 Instagram: ""
 Linkedin: ""
 Pinterest: ""
-Thumbnail: img/guests/johndowns.jpg
+image: img/guests/johndowns.jpg
 Title: John Downs
 Twitter: ""
 Type: guest

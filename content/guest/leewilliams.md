@@ -5,7 +5,7 @@ GitHub: ""
 Instagram: ""
 Linkedin: "https://www.linkedin.com/in/leewill/"
 Pinterest: ""
-Thumbnail: img/guests/leewilliams.jpg
+image: img/guests/leewilliams.jpg
 Title: Lee Williams
 Twitter: leewilliams
 Type: guest

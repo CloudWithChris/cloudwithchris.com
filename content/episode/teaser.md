@@ -5,7 +5,7 @@ Description: This is the first recording, a brief teaser ahead of launching clou
 PublishDate: "2020-02-19T00:01:00Z"
 Title: 0 - Teaser
 episode: "0"
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 hosts:
 - chrisreddington

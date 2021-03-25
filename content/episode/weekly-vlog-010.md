@@ -6,7 +6,7 @@ Title: 'V010 - Weekly Technology Vlog #10 (Episode backlog until Mid-July! New M
 categories:
 - Vlog
 episode: V010
-episode_image: img/vlog/v010.jpg
+image: img/vlog/v010.jpg
 explicit: "no"
 guests: []
 hosts:

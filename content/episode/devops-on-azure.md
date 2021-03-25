@@ -6,7 +6,7 @@ Title: 41 - DevOps on Azure
 categories:
 - DevOps
 episode: "40"
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 hosts:
 - chrisreddington

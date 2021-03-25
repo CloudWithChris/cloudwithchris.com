@@ -7,7 +7,7 @@ categories:
 - Architecture
 - Gaming
 episode: "CGN1"
-episode_image: img/episodes/CGN1 - Hosting a Game Server-ThumbnailSquare.jpg
+image: img/episodes/CGN1 - Hosting a Game Server-ThumbnailSquare.jpg
 explicit: "no"
 guests:
 - leewilliams

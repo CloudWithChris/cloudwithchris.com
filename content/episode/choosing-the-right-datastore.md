@@ -6,7 +6,7 @@ Title: "42 - How to choose the 'Right' Datastore for your scenario"
 categories:
 - Architecture
 episode: "42"
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 guests:
 - stephmartin

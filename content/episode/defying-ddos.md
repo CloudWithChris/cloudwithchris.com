@@ -6,7 +6,7 @@ Title: 13 - Tales from the Real World - Defying DDOS
 categories:
 - Security
 episode: "13"
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 guests:
 - camadams

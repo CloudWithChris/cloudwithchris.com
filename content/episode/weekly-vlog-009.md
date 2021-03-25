@@ -6,7 +6,7 @@ Title: 'V009 - Weekly Technology Vlog #9 (1 year of Cloud With Chris, Azure Reti
 categories:
 - Vlog
 episode: V009
-episode_image: img/vlog/v009.jpg
+image: img/vlog/v009.jpg
 explicit: "no"
 guests: []
 hosts:

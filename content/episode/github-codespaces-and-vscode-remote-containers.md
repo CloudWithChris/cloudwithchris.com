@@ -12,7 +12,7 @@ Title: GitHub Codespaces, Visual Studio Code and Remote Containers
 categories:
 - DevOps
 episode: G7
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 guests: []
 hosts:

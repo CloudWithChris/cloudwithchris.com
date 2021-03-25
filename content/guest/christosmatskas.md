@@ -5,7 +5,7 @@ GitHub: ""
 Instagram: ""
 Linkedin: ""
 Pinterest: ""
-Thumbnail: img/guests/christosmatskas.jpg
+image: img/guests/christosmatskas.jpg
 Title: Christos Matskas
 Twitch: 425show
 Twitter: christosmatskas

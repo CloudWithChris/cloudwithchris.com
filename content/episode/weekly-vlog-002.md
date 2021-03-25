@@ -9,7 +9,7 @@ Title: 'V002 - Weekly Technology Vlog #2 (Show Updates, Azure Updates, CloudFami
 categories:
 - Vlog
 episode: V002
-episode_image: img/vlog/v002.jpg
+image: img/vlog/v002.jpg
 explicit: "no"
 guests: []
 hosts:

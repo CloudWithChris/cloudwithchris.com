@@ -6,7 +6,7 @@ Title: "Cloud Drops - Introducing and Setting up Git LFS (Large File Storage)"
 categories:
 - Git
 episode: ""
-episode_image: "img/episodes/cloud-drops-introducing-git-lfs.jpg"
+image: "img/episodes/cloud-drops-introducing-git-lfs.jpg"
 explicit: "no"
 hosts:
 - chrisreddington

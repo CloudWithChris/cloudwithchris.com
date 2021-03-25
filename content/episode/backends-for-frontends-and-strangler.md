@@ -6,7 +6,7 @@ Title: 16 - The Backends for Frontends and Strangler Pattern with Peter Piper
 categories:
 - Architecture
 episode: "16"
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 guests:
 - peterpiper

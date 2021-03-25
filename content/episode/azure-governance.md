@@ -7,7 +7,7 @@ categories:
 - Technology
 - Azure
 episode: "35"
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 hosts:
 - chrisreddington

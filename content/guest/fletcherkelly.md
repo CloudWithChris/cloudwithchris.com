@@ -5,7 +5,7 @@ GitHub: fskelly
 Instagram: ""
 Linkedin: fletcherkelly
 Pinterest: ""
-Thumbnail: img/guests/fletcherkelly.jpg
+image: img/guests/fletcherkelly.jpg
 Title: Fletcher Kelly
 Twitter: fskelly
 Type: guest

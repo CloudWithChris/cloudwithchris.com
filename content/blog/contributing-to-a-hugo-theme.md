@@ -10,7 +10,7 @@ Description: During the 2020 Festive Break, I had a lot of time on my hands. I t
   that's not the point in this blog post. One of the activities that I kicked off
   was contributing into the Hugo Community. Read on to find out more.
 PublishDate: "2021-01-06T12:00:00Z"
-blog_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 categories:
 - Announcement
 date: "2021-01-06T12:00:00Z"

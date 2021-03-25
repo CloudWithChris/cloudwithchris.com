@@ -5,7 +5,7 @@ GitHub: willeastbury
 Instagram: ""
 Linkedin: willeastbury
 Pinterest: ""
-Thumbnail: img/guests/willeastbury.jpg
+image: img/guests/willeastbury.jpg
 Title: Will Eastbury
 Twitter: willeastbury
 Type: guest

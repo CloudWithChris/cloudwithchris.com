@@ -6,7 +6,7 @@ Description: If you have been keeping up to date with the latest and greatest in
   capability, helping you to execute code upon the occurrence of a particular event.
   It is currently in preview, though already has a lot of potential.
 PublishDate: "2016-09-12T12:00:00Z"
-blog_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 categories:
 - Announcement
 date: "2016-09-12T12:00:00Z"

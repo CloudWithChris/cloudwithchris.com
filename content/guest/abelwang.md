@@ -5,7 +5,7 @@ GitHub: abelsquidhead
 Instagram: ""
 Linkedin: ""
 Pinterest: ""
-Thumbnail: img/guests/abel-wang.jpg
+image: img/guests/abel-wang.jpg
 Title: Abel Wang
 Twitter: abelsquidhead
 Type: guest

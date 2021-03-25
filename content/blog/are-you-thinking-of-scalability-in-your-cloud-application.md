@@ -3,7 +3,7 @@ Author: chrisreddington
 Description: Scalability is one of the common areas where I have seen common misconceptions,
   when customers begin building on the platform.
 PublishDate: "2016-09-29T12:00:00Z"
-blog_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 categories:
 - Azure
 - Cloud Architecture

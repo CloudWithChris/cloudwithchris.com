@@ -5,7 +5,7 @@ GitHub: ""
 Instagram: ""
 Linkedin: steph-martin-38907614
 Pinterest: ""
-Thumbnail: img/guests/steph-martin.png
+image: img/guests/steph-martin.png
 Title: Steph Martin
 Twitter: stephj_martin
 Type: guest
