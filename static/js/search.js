@@ -1,4 +1,4 @@
-summaryInclude=60;
+summaryInclude=300;
 var fuseOptions = {
   shouldSort: true,
   includeMatches: true,
@@ -11,10 +11,13 @@ var fuseOptions = {
   keys: [
     {name:"title",weight:0.5},
     {name:"contents",weight:0.2},
-    {name:"tags",weight:0.1},
-    {name:"categories",weight:0.1},
+    {name:"tags",weight:0.05},
+    {name:"categories",weight:0.05},
     {name:"image",weight:0.05},
-    {name:"section",weight:0.05}
+    {name:"section",weight:0.05},
+    {name:"guests",weight:0.05},
+    {name:"datePublished",weight:0.04},
+    {name:"hosts",weight:0.01}
   ]
 };
 
@@ -67,7 +70,7 @@ function populateResults(result){
     //pull template from hugo templarte definition
     var templateDefinition = $('#search-result-template').html();
     //replace values
-    var output = render(templateDefinition,{key:key,title:value.item.title,link:value.item.permalink,tags:value.item.tags,categories:value.item.categories,snippet:snippet, image:value.item.image,section:value.item.section,series:value.item.series});
+    var output = render(templateDefinition,{key:key,title:value.item.title,link:value.item.permalink,tags:value.item.tags,categories:value.item.categories,snippet:snippet, image:value.item.image,section:value.item.section,series:value.item.series,guests:value.item.guests,datePublished:value.item.datePublished,hosts:value.item.hosts});
     $('#search-results').append(output);
 
     $.each(snippetHighlights,function(snipkey,snipvalue){
@@ -84,12 +87,19 @@ function param(name) {
 function render(templateString, data) {
   var conditionalMatches;
   var conditionalPattern = /\$\{\s*isset ([a-zA-Z]*) \s*\}(.*)\$\{\s*end\s*}/g;
+  var guestMatches;
+  var guestPattern = /\$\{\s*guest ([a-zA-Z]*) \s*\}(.*)\$\{\s*end\s*}/g;
+  var dateMatches;
+  var datePattern = /\$\{\s*date ([a-zA-Z]*) \s*\}(.*)\$\{\s*end\s*}/g;
+  var hostMatches;
+  var hostPattern = /\$\{\s*host ([a-zA-Z]*) \s*\}(.*)\$\{\s*end\s*}/g;
   var tagsMatches;
   var tagsPattern = /\$\{\s*tags ([a-zA-Z]*) \s*\}(.*)\$\{\s*end\s*}/g;
+  var sectionMatches;
+  var sectionPattern = /\$\{\s*section ([a-zA-Z]*) \s*\}(.*)\$\{\s*end\s*}/g;
   var seriesMatches;
   var seriesPattern = /\$\{\s*series ([a-zA-Z]*) \s*\}(.*)\$\{\s*end\s*}/g;
   var copy;
-  var tagHTML;
 
   //since loop below depends on re.lastInxdex, we use a copy to capture any manipulations whilst inside the loop
   copy = templateString;
@@ -119,6 +129,37 @@ function render(templateString, data) {
   }
   templateString = copy;
 
+  // Next up, replace any guest sections with the appropriate tag items.
+  while ((hostMatches = hostPattern.exec(templateString)) !== null) {
+    copy = copy.replace(hostMatches[0], convertToHostsHtml(data.hosts));  
+  }
+  templateString = copy;
+  
+  // Next up, replace any guest sections with the appropriate tag items.
+  while ((guestMatches = guestPattern.exec(templateString)) !== null) {
+    copy = copy.replace(guestMatches[0], convertToGuestsHtml(data.guests));  
+  }
+  templateString = copy;
+
+  // Next up, replace any guest sections with the appropriate tag items.
+  while ((sectionMatches = sectionPattern.exec(templateString)) !== null) {
+    copy = copy.replace(sectionMatches[0], convertToSectionHtml(data.section));  
+  }
+  templateString = copy;
+
+  // Next up, replace any tag sections with the appropriate tag items.
+  while ((dateMatches = datePattern.exec(templateString)) !== null) {
+    var now = new Date();
+    var publishedDate = new Date(Date.parse(data.datePublished));
+    if (publishedDate < now){
+      copy = copy.replace(dateMatches[0], "<small class=\"text-muted\">Published on "+ publishedDate.toDateString() +"</small>");
+    } else {      
+      copy = copy.replace(dateMatches[0], "<small class=\"text-muted\">Scheduled for "+ publishedDate.toDateString() +"</small>");
+    }
+  
+  }
+  templateString = copy;
+
   // Now any conditionals removed we can do simple substitution
   var key, find, re;
   for (key in data) {
@@ -129,11 +170,32 @@ function render(templateString, data) {
   return templateString;
 }
 
+
+function convertToGuestsHtml(rawGuests){
+  var guestsHTML = '';
+  if (rawGuests != null){
+    rawGuests.forEach(guest => {
+      guestsHTML = guestsHTML + '<a href="/guest/'+ convertToUrl(guest) +'"><img src="/img/guests/'+ guest +'.jpg" width="50" class="rounded-circle z-depth-2" alt="' + guest +'" title="'+ guest +'" /></a> '
+    });
+    return guestsHTML;
+  }
+}
+
+function convertToHostsHtml(rawHosts){
+  var hostsHTML = '';
+  if (rawHosts != null){
+    rawHosts.forEach(host => {
+      hostsHTML = hostsHTML + '<a href="/host/'+ convertToUrl(host) +'"><img src="/img/hosts/'+ host +'.jpg" width="50" class="rounded-circle z-depth-2" alt="' + host +'" title="'+ host +'" /></a> '
+    });
+    return hostsHTML;
+  }
+}
+
 function convertToTagHtml(rawTags){
   var tagsHTML = '';
   if (rawTags != null){
     rawTags.forEach(tag => {
-      tagsHTML = tagsHTML + '<span class="badge bg-info text-dark">' + tag + '</span> '
+      tagsHTML = tagsHTML + '<a href="/tags/'+ convertToUrl(tag) +'"><span class="badge bg-info text-dark">' + tag + '</span></a> '
     });
     return tagsHTML;
   }
@@ -143,8 +205,21 @@ function convertToSeriesHtml(rawSeries){
   var seriesHTML = '';
   if (rawSeries != null){
     rawSeries.forEach(tag => {
-      seriesHTML = seriesHTML + '<span class="badge bg-secondary text-dark">' + tag + '</span> '
+      seriesHTML = seriesHTML + '<a href="/series/'+ convertToUrl(tag) +'"><span class="badge bg-secondary text-dark">' + tag + '</span></a> '
     });
     return seriesHTML;
   }
+}
+
+function convertToSectionHtml(section){
+  return '<span class="badge bg-warning text-dark">' + jsUcFirst(section) + '</span></a>';
+}
+
+function convertToUrl(text){
+  return text.replace(/ /g, '-').toLowerCase();
+}
+
+function jsUcFirst(string) 
+{
+    return string.charAt(0).toUpperCase() + string.slice(1);
 }

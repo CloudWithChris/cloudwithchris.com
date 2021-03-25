@@ -9,10 +9,11 @@
     <script id="search-result-template" type="text/x-js-template">          
       <div class="col-md-6 col-12">    
         <div class="row g-0">
-          <div class="col-12 col-sm-4" id="summary-${key}">
+          <div class="col-12 col-sm-4 text-center" id="summary-${key}">
             <p>
             <a href="${link}"><img src="${image}" class="rounded-circle z-depth-2 align-middle" width="100" title="${title}" alt="${title}" /></a>
             </p>
+            ${ isset section }<p class="align-middle">${ section section } ${ end }</p>${ end }
           </div>
           <div class="col-12 col-sm-8">
             <div class="card-body episode-card">
@@ -20,6 +21,8 @@
               <p class="card-text">${snippet}</p>
               ${ isset tags }<p>${ tags tags } ${tags} ${ end }</p> ${ end }
               ${ isset series }<p>${ series series } ${tags} ${ end }</p> ${ end }
+              <p>${ isset hosts }${ host hosts } ${ end } ${ end } ${ isset guests } ${ guest guests } ${ end }</p>${ end }
+              ${ isset datePublished }<p>${ date datePublished } ${ end }</p>${ end }
           </div>
         </div>
       </div>
