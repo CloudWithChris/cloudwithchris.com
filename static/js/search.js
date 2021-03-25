@@ -9,10 +9,10 @@ var fuseOptions = {
   maxPatternLength: 32,
   minMatchCharLength: 1,
   keys: [
-    {name:"title",weight:0.7},
-    {name:"contents",weight:0.5},
-    {name:"tags",weight:0.3},
-    {name:"categories",weight:0.3},
+    {name:"title",weight:0.5},
+    {name:"contents",weight:0.2},
+    {name:"tags",weight:0.1},
+    {name:"categories",weight:0.1},
     {name:"image",weight:0.05},
     {name:"section",weight:0.05}
   ]
@@ -67,7 +67,7 @@ function populateResults(result){
     //pull template from hugo templarte definition
     var templateDefinition = $('#search-result-template').html();
     //replace values
-    var output = render(templateDefinition,{key:key,title:value.item.title,link:value.item.permalink,tags:value.item.tags,categories:value.item.categories,snippet:snippet, image:value.item.image,section:value.item.section});
+    var output = render(templateDefinition,{key:key,title:value.item.title,link:value.item.permalink,tags:value.item.tags,categories:value.item.categories,snippet:snippet, image:value.item.image,section:value.item.section,series:value.item.series});
     $('#search-results').append(output);
 
     $.each(snippetHighlights,function(snipkey,snipvalue){
@@ -82,21 +82,44 @@ function param(name) {
 }
 
 function render(templateString, data) {
-  var conditionalMatches,conditionalPattern,copy;
-  conditionalPattern = /\$\{\s*isset ([a-zA-Z]*) \s*\}(.*)\$\{\s*end\s*}/g;
+  var conditionalMatches;
+  var conditionalPattern = /\$\{\s*isset ([a-zA-Z]*) \s*\}(.*)\$\{\s*end\s*}/g;
+  var tagsMatches;
+  var tagsPattern = /\$\{\s*tags ([a-zA-Z]*) \s*\}(.*)\$\{\s*end\s*}/g;
+  var seriesMatches;
+  var seriesPattern = /\$\{\s*series ([a-zA-Z]*) \s*\}(.*)\$\{\s*end\s*}/g;
+  var copy;
+  var tagHTML;
+
   //since loop below depends on re.lastInxdex, we use a copy to capture any manipulations whilst inside the loop
   copy = templateString;
+
   while ((conditionalMatches = conditionalPattern.exec(templateString)) !== null) {
     if(data[conditionalMatches[1]]){
       //valid key, remove conditionals, leave contents.
       copy = copy.replace(conditionalMatches[0],conditionalMatches[2]);
-    }else{
+    } else {
       //not valid, remove entire section
       copy = copy.replace(conditionalMatches[0],'');
     }
   }
   templateString = copy;
-  //now any conditionals removed we can do simple substitution
+
+  // Next up, replace any tag sections with the appropriate tag items.
+  while ((tagsMatches = tagsPattern.exec(templateString)) !== null) {
+
+    copy = copy.replace(tagsMatches[0], convertToTagHtml(data.tags));
+  }
+  templateString = copy;
+
+  // Next up, replace any tag sections with the appropriate tag items.
+  while ((seriesMatches = seriesPattern.exec(templateString)) !== null) {
+
+    copy = copy.replace(seriesMatches[0], convertToSeriesHtml(data.series));
+  }
+  templateString = copy;
+
+  // Now any conditionals removed we can do simple substitution
   var key, find, re;
   for (key in data) {
     find = '\\$\\{\\s*' + key + '\\s*\\}';
@@ -104,4 +127,24 @@ function render(templateString, data) {
     templateString = templateString.replace(re, data[key]);
   }
   return templateString;
+}
+
+function convertToTagHtml(rawTags){
+  var tagsHTML = '';
+  if (rawTags != null){
+    rawTags.forEach(tag => {
+      tagsHTML = tagsHTML + '<span class="badge bg-info text-dark">' + tag + '</span> '
+    });
+    return tagsHTML;
+  }
+}
+
+function convertToSeriesHtml(rawSeries){
+  var seriesHTML = '';
+  if (rawSeries != null){
+    rawSeries.forEach(tag => {
+      seriesHTML = seriesHTML + '<span class="badge bg-secondary text-dark">' + tag + '</span> '
+    });
+    return seriesHTML;
+  }
 }
