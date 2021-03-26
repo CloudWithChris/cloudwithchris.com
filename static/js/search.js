@@ -86,19 +86,19 @@ function param(name) {
 
 function render(templateString, data) {
   var conditionalMatches;
-  var conditionalPattern = /\$\{\s*isset ([a-zA-Z]*) \s*\}(.*)\$\{\s*end\s*}/g;
+  var conditionalPattern = /\$\{\s*isset ([a-zA-Z]*) \s*\}(.*)\$\{\s*end isset\s*}/g;
   var guestMatches;
-  var guestPattern = /\$\{\s*guest ([a-zA-Z]*) \s*\}(.*)\$\{\s*end\s*}/g;
+  var guestPattern = /\$\{\s*guest ([a-zA-Z]*) \s*\}(.*)\$\{\s*end guest\s*}/g;
   var dateMatches;
-  var datePattern = /\$\{\s*date ([a-zA-Z]*) \s*\}(.*)\$\{\s*end\s*}/g;
+  var datePattern = /\$\{\s*date ([a-zA-Z]*) \s*\}(.*)\$\{\s*end date\s*}/g;
   var hostMatches;
-  var hostPattern = /\$\{\s*host ([a-zA-Z]*) \s*\}(.*)\$\{\s*end\s*}/g;
+  var hostPattern = /\$\{\s*host ([a-zA-Z]*) \s*\}(.*)\$\{\s*end host\s*}/g;
   var tagsMatches;
-  var tagsPattern = /\$\{\s*tags ([a-zA-Z]*) \s*\}(.*)\$\{\s*end\s*}/g;
+  var tagsPattern = /\$\{\s*tags ([a-zA-Z]*) \s*\}(.*)\$\{\s*end tags\s*}/g;
   var sectionMatches;
-  var sectionPattern = /\$\{\s*section ([a-zA-Z]*) \s*\}(.*)\$\{\s*end\s*}/g;
+  var sectionPattern = /\$\{\s*section ([a-zA-Z]*) \s*\}(.*)\$\{\s*end section\s*}/g;
   var seriesMatches;
-  var seriesPattern = /\$\{\s*series ([a-zA-Z]*) \s*\}(.*)\$\{\s*end\s*}/g;
+  var seriesPattern = /\$\{\s*series ([a-zA-Z]*) \s*\}(.*)\$\{\s*end series\s*}/g;
   var copy;
 
   //since loop below depends on re.lastInxdex, we use a copy to capture any manipulations whilst inside the loop

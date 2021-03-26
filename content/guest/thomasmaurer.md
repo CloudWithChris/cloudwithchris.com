@@ -5,7 +5,7 @@ GitHub: thomasmaurer
 Instagram: ""
 Linkedin: thomasmaurer2
 Pinterest: ""
-image: img/guests/thomas-maurer.jpg
+image: img/guests/thomasmaurer.jpg
 Title: Thomas Maurer
 Twitter: thomasmaurer
 Type: guest

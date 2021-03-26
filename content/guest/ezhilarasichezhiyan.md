@@ -5,7 +5,7 @@ GitHub: ""
 Instagram: ""
 Linkedin: ezhilarasi-kesavan-a0902a109
 Pinterest: ""
-image: img/guests/ezhilarasichezhiyan.png
+image: img/guests/ezhilarasichezhiyan.jpg
 Title: Ezhilarasi Chezhiyan
 Twitter: ezhilarasikesav
 Type: guest
