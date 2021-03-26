@@ -1,24 +1,29 @@
 summaryInclude=300;
 var fuseOptions = {
-  shouldSort: true,
+  isCaseSensitive: false,
+  includeScore: true,
   includeMatches: true,
-  threshold: 0.0,
-  tokenize:true,
-  location: 0,
-  distance: 100,
-  maxPatternLength: 32,
-  minMatchCharLength: 1,
+  minMatchCharLength: 3,
+  shouldSort: true,
+  findAllMatches: false,
   keys: [
-    {name:"title",weight:0.5},
-    {name:"contents",weight:0.2},
-    {name:"tags",weight:0.05},
-    {name:"categories",weight:0.05},
-    {name:"image",weight:0.05},
-    {name:"section",weight:0.05},
-    {name:"guests",weight:0.05},
-    {name:"datePublished",weight:0.04},
-    {name:"hosts",weight:0.01}
-  ]
+    {
+      "name": "title",
+      weight: 0.6
+    },
+    {
+      "name": "contents",
+      weight: 0.2
+    },
+    {
+      "name": "tags",
+      weight: 0.2
+    }
+  ],
+  location: 0,
+  threshold: 0.2,
+  distance: 200,
+  ignoreFieldNorm: true
 };
 
 var searchQuery = param("s");
@@ -33,6 +38,7 @@ function executeSearch(searchQuery){
   $.getJSON( "/index.json", function( data ) {
     var pages = data;
     var fuse = new Fuse(pages, fuseOptions);
+    console.log(fuse);
     var result = fuse.search(searchQuery);
     console.log({"matches":result});
     if(result.length > 0){
