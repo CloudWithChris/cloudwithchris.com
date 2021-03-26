@@ -12,7 +12,7 @@ Title: 6 - Hybrid Cloud
 categories:
 - Architecture
 episode: '6 '
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 guests:
 - thomasmaurer

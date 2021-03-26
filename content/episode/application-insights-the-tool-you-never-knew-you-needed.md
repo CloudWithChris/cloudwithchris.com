@@ -6,7 +6,7 @@ Title: "Application Insights: The Tool You Never Knew You Needed"
 categories:
 - DevOps
 episode: "36"
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 hosts:
 - chrisreddington

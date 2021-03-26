@@ -6,7 +6,7 @@ Title: 34 - The Bulkhead Pattern (Isolate your components to prevent failures)
 categories:
 - Architecture
 episode: "34"
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 hosts:
 - chrisreddington

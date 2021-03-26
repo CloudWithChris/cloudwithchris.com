@@ -6,7 +6,7 @@ Title: 26 - The Pub Sub, Priority Queue and Pipes and Filter Patterns
 categories:
 - Architecture
 episode: "26"
-episode_image: img/episodes/priority-queues-pipes-filters-thumbnail.jpg
+image: img/episodes/priority-queues-pipes-filters-thumbnail.jpg
 explicit: "no"
 guests:
 - willeastbury

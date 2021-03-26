@@ -5,7 +5,7 @@ GitHub: ""
 Instagram: ""
 Linkedin: "matthew-bradley-b38919146"
 Pinterest: ""
-Thumbnail: img/guests/mattbradley.jpg
+image: img/guests/mattbradley.jpg
 Title: Matt Bradley
 Twitter: "mbradl03"
 Type: guest

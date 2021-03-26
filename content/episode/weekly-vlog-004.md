@@ -6,7 +6,7 @@ Title: 'V004 - Weekly Technology Vlog #4 (JamStack + Cloud, Upcoming Talks and T
 categories:
 - Vlog
 episode: V004
-episode_image: img/vlog/v004.jpg
+image: img/vlog/v004.jpg
 explicit: "no"
 guests: []
 hosts:

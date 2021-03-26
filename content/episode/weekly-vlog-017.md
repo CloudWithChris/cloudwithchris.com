@@ -6,7 +6,7 @@ Title: "V017 - Weekly Technology Vlog #17"
 categories:
 - Vlog
 episode: V017
-episode_image: img/cloudwithchrislogo.png # img/vlog/v002.jpg
+image: img/cloudwithchrislogo.png # img/vlog/v002.jpg
 explicit: "no"
 guests: []
 hosts:

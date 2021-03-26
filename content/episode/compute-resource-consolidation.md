@@ -7,7 +7,7 @@ Title: 27 - The Compute Resource Consolidation Pattern (Optimise for Cost!)
 categories:
 - Architecture
 episode: "27"
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 hosts:
 - chrisreddington

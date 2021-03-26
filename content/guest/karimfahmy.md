@@ -5,7 +5,7 @@ GitHub: ""
 Instagram: ""
 Linkedin: "https://www.linkedin.com/in/karimfahmy/"
 Pinterest: ""
-Thumbnail: img/guests/karimfahmy.png
+image: img/guests/karimfahmy.jpg
 Title: Karim Fahmy
 Twitter: "https://twitter.com/KarimFa90175961"
 Type: guest

@@ -5,7 +5,7 @@ GitHub: ""
 Instagram: ""
 Linkedin: "asankaabeysinghe"
 Pinterest: ""
-Thumbnail: img/guests/asankaabeysinghe.jpg
+image: img/guests/asankaabeysinghe.jpg
 Title: Asanka Abeysinghe
 Twitter: asankama
 Type: guest

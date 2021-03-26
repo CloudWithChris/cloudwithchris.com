@@ -6,7 +6,7 @@ Title: "Cloud Drops - Installing, Upgrading and Auto-Upgrading the Azure CLI"
 categories:
 - Azure
 episode: ""
-episode_image: "img/episodes/cloud-drops-azure-cli.jpg"
+image: "img/episodes/cloud-drops-azure-cli.jpg"
 explicit: "no"
 hosts:
 - chrisreddington

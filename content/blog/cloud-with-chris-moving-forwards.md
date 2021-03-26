@@ -6,7 +6,7 @@ Description: You may have noticed there are some posts preceding this one. I've 
   consolidate... Starting with my blog! Here's an update on what you have to look
   forward to!
 PublishDate: "2021-01-02T12:00:00Z"
-blog_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 categories:
 - Announcement
 date: "2021-01-02T12:00:00Z"

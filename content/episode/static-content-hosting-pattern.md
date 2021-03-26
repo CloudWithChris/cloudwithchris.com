@@ -7,7 +7,7 @@ Title: 22 - Static Content Hosting Pattern (Save cost and gain performance for s
 categories:
 - Architecture
 episode: "22"
-episode_image: img/episodes/static-content-hosting-pattern-thumb.jpg
+image: img/episodes/static-content-hosting-pattern-thumb.jpg
 explicit: "no"
 hosts:
 - chrisreddington

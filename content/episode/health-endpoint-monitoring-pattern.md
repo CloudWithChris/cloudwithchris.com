@@ -6,7 +6,7 @@ Title: 24 - Health Endpoint Monitoring Pattern (Monitor your service and its dep
 categories:
 - Architecture
 episode: "24"
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 hosts:
 - chrisreddington

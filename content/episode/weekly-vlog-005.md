@@ -6,7 +6,7 @@ Title: 'V005 - Weekly Technology Vlog #5 (My Setup, Architecture Patterns, Menta
 categories:
 - Vlog
 episode: V005
-episode_image: img/vlog/v005.jpg
+image: img/vlog/v005.jpg
 explicit: "no"
 guests: []
 hosts:

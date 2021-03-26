@@ -5,7 +5,7 @@ PublishDate: "2021-04-22T20:00:00Z"
 Title: Discussing the Cloud with Chris GitHub Architecture and GitHub setup
 categories:
 - DevOps
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 hosts:
 - chrisreddington

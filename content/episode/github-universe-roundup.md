@@ -9,7 +9,7 @@ Title: GitHub Universe and GitHub Actions Deployments
 categories:
 - DevOps
 episode: G5
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 guests: []
 hosts:

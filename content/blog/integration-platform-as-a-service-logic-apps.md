@@ -3,7 +3,7 @@ Author: chrisreddington
 Description: In case you had not already heard, Logic Apps have now reached general
   availability on Azure (or read an MSDN article by Jeff Hollan on the topic).
 PublishDate: "2016-09-12T12:00:00Z"
-blog_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 categories:
 - Announcement
 date: "2016-09-12T12:00:00Z"

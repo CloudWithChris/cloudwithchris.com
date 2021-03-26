@@ -6,7 +6,7 @@ Title: GitHub Actions and Azure - Using Environments with GitHub Actions
 categories:
 - DevOps
 episode: G8
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 guests: []
 hosts:

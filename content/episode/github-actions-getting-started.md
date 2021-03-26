@@ -8,7 +8,7 @@ Title: GitHub Actions and Azure - Getting started with GitHub Actions and Azure 
 categories:
 - DevOps
 episode: G2
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 guests: []
 hosts:

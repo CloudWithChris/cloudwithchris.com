@@ -13,7 +13,11 @@
               {{ range .Site.Menus.main }}
                 {{ partial "helper/navigation-menu.html" (dict "context" . "currentPage" $currentPage) }}
               {{ end }}
-          </ul>        
+          </ul>          
+          <form class="d-flex" action="{{ "search" | absURL }}">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search-query" name="s">
+            <button class="btn btn-nav" type="submit">Search</button>
+          </form>        
         </div>
     </div>
   </nav>

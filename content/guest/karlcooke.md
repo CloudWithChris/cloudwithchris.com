@@ -5,7 +5,7 @@ GitHub: ""
 Instagram: ""
 Linkedin: "karlcooke"
 Pinterest: ""
-Thumbnail: img/guests/karlcooke.jpg
+image: img/guests/karlcooke.jpg
 Title: Karl Cooke
 Twitter: Karl_ITNerd
 Type: guest

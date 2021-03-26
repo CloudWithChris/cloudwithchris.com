@@ -5,7 +5,7 @@ GitHub: ""
 Instagram: ""
 Linkedin: pjgcreations
 Pinterest: ""
-Thumbnail: img/guests/petergallagher.jpg
+image: img/guests/petergallagher.jpg
 Title: Peter Gallagher
 Twitter: pete_codes
 Type: guest

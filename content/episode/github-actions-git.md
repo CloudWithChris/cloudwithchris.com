@@ -9,7 +9,7 @@ Title: GitHub Actions and Azure - Source Controlling our Code using Git
 categories:
 - DevOps
 episode: G1
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 guests: []
 hosts:

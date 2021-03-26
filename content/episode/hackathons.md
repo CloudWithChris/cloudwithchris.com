@@ -14,7 +14,7 @@ Title: 4 - Hackathons
 categories:
 - Hackathons
 episode: "4"
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 guests:
 - mariavrabie

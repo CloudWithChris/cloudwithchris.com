@@ -6,7 +6,7 @@ Title: 'V003 - Weekly Technology Vlog #3 (Contributing to OSS, Azure Thames Vall
 categories:
 - Vlog
 episode: V003
-episode_image: img/vlog/v003.jpg
+image: img/vlog/v003.jpg
 explicit: "no"
 guests: []
 hosts:

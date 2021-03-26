@@ -390,3 +390,12 @@ main a:hover {
   background: #e52d27;
   color: #ffffff
 }
+
+.btn-nav {
+  color: $main-blue;
+}
+
+.btn-nav:hover {
+  background-color: $main-blue;
+  color: $cloud-with-chris-blue;
+}

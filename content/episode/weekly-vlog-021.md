@@ -6,7 +6,7 @@ Title: "V021 - Weekly Technology Vlog #21"
 categories:
 - Vlog
 episode: V021
-episode_image: img/cloudwithchrislogo.png # img/vlog/v002.jpg
+image: img/cloudwithchrislogo.png # img/vlog/v002.jpg
 explicit: "no"
 guests: []
 hosts:

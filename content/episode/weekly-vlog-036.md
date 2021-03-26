@@ -6,7 +6,7 @@ Title: "V036 - Weekly Technology Vlog #36"
 categories:
 - Vlog
 episode: V036
-episode_image: img/cloudwithchrislogo.png # img/vlog/v002.jpg
+image: img/cloudwithchrislogo.png # img/vlog/v002.jpg
 explicit: "no"
 guests: []
 hosts:

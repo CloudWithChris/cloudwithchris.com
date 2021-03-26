@@ -9,7 +9,7 @@ Title: 'V001 - Weekly Technology Vlog #1 (Blog, Hugo, Azure, GitHub & Azure DevO
 categories:
 - Vlog
 episode: V001
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 guests: []
 hosts:

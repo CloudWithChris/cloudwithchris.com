@@ -6,7 +6,7 @@ Title: "Accelerate .NET to Azure with GitHub Actions"
 categories:
 - DevOps
 episode: "32"
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 hosts:
 - chrisreddington

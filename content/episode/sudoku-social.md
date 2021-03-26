@@ -7,7 +7,7 @@ categories:
 - Architecture
 - Gaming
 episode: "CGN4"
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 guests:
 - dominicwilliamson

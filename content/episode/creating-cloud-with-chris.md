@@ -13,7 +13,7 @@ Title: 7 - Creating Cloud with Chris
 categories:
 - Podcasting
 episode: "7"
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 guests:
 - fletcherkelly

@@ -10,7 +10,7 @@ Title: 5 - The API Economy
 categories:
 - Architecture
 episode: "5"
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 guests:
 - peterpiper

@@ -7,7 +7,7 @@ categories:
 - Architecture
 - Gaming
 episode: "CGN2"
-episode_image: img/episodes/CGN2.jpg
+image: img/episodes/CGN2.jpg
 explicit: "no"
 guests:
 - leewilliams

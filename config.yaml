@@ -14,7 +14,7 @@ menu:
   footer:
     - name: "Get Involved"
       weight: 1
-      url: "/get-involved"
+      url: "https://sessionize.com/CloudWithChris"
     - name: "Privacy"
       weight: 2
       url: "/privacy-policy"
@@ -65,6 +65,12 @@ module:
       target: i18n
     - source: archetypes
       target: archetypes
+
+outputs:
+  home:
+    - "HTML"
+    - "RSS"
+    - "JSON"
 
 params:
   about_logo: "/img/cloudwithchrislogo.png"

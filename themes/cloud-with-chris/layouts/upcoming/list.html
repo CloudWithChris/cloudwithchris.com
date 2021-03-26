@@ -25,7 +25,7 @@
     <div class="row">
       {{ range first 12 (where $.Site.RegularPages "Section" "guest").ByTitle }}
         <div class="col-md-2">
-          <a href="{{ .Permalink }}"><img src="{{ .Params.Thumbnail | absURL }}" class="rounded-circle z-depth-2 align-middle" width="125" title="{{ .Title }}" alt="{{ .Title }}" /></a>
+          <a href="{{ .Permalink }}"><img src="{{ .Params.image | absURL }}" class="rounded-circle z-depth-2 align-middle" width="125" title="{{ .Title }}" alt="{{ .Title }}" /></a>
         </div>
       {{ end }}
     </div>

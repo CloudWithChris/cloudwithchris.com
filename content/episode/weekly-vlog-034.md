@@ -6,7 +6,7 @@ Title: "V034 - Weekly Technology Vlog #34"
 categories:
 - Vlog
 episode: V034
-episode_image: img/cloudwithchrislogo.png # img/vlog/v002.jpg
+image: img/cloudwithchrislogo.png # img/vlog/v002.jpg
 explicit: "no"
 guests: []
 hosts:

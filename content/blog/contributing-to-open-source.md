@@ -6,7 +6,7 @@ Description: Contributing to Open Source Software. It sounds so formal, doesn't 
   blog in its own right! Contributing to Open Source isn't as scary as it may first
   initially seem. Let's start with a few thoughts.
 PublishDate: "2021-01-12T12:00:00Z"
-blog_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 categories:
 - Announcement
 date: "2021-01-12T12:00:00Z"

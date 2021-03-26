@@ -6,7 +6,7 @@ Title: "V022 - Weekly Technology Vlog #22"
 categories:
 - Vlog
 episode: V022
-episode_image: img/cloudwithchrislogo.png # img/vlog/v002.jpg
+image: img/cloudwithchrislogo.png # img/vlog/v002.jpg
 explicit: "no"
 guests: []
 hosts:

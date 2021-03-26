@@ -7,7 +7,7 @@ Title: 10 - Exploring GitHub Actions to deploy Static Content and Azure Function
 categories:
 - DevOps
 episode: "10"
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 hosts:
 - chrisreddington

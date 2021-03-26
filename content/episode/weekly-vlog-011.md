@@ -6,7 +6,7 @@ Title: 'V011 - Weekly Technology Vlog #11'
 categories:
 - Vlog
 episode: V011
-episode_image: img/vlog/v011.jpg
+image: img/vlog/v011.jpg
 explicit: "no"
 guests: []
 hosts:

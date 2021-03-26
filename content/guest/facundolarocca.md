@@ -5,7 +5,7 @@ GitHub: ""
 Instagram: ""
 Linkedin: "facundo-la-rocca"
 Pinterest: ""
-Thumbnail: img/guests/facundolarocca.jpg
+image: img/guests/facundolarocca.jpg
 Title: Facundo La Rocca
 Twitter: TheRockFacu
 Type: guest

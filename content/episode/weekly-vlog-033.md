@@ -6,7 +6,7 @@ Title: "V033 - Weekly Technology Vlog #33"
 categories:
 - Vlog
 episode: V033
-episode_image: img/cloudwithchrislogo.png # img/vlog/v002.jpg
+image: img/cloudwithchrislogo.png # img/vlog/v002.jpg
 explicit: "no"
 guests: []
 hosts:

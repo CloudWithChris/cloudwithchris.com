@@ -6,7 +6,7 @@ Title: "V018 - Weekly Technology Vlog #18"
 categories:
 - Vlog
 episode: V018
-episode_image: img/cloudwithchrislogo.png # img/vlog/v002.jpg
+image: img/cloudwithchrislogo.png # img/vlog/v002.jpg
 explicit: "no"
 guests: []
 hosts:

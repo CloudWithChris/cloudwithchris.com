@@ -8,7 +8,7 @@ Title: GitHub Issues and GitHub Discussions
 categories:
 - DevOps
 episode: G6
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 guests: []
 hosts:

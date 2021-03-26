@@ -6,7 +6,7 @@ Title: "Cloud Drops - Introduction to GitHub Codespaces"
 categories:
 - DevOps
 episode: ""
-episode_image: "img/episodes/cloud-drops-github-codespaces.jpg"
+image: "img/episodes/cloud-drops-github-codespaces.jpg"
 explicit: "no"
 hosts:
 - chrisreddington

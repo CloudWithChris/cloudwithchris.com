@@ -6,7 +6,7 @@ Title: 37 - Your Career and Your Mental Health
 categories:
 - People
 episode: "32"
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 hosts:
 - chrisreddington

@@ -6,7 +6,7 @@ Title: "V038 - Weekly Technology Vlog #38"
 categories:
 - Vlog
 episode: V038
-episode_image: img/cloudwithchrislogo.png # img/vlog/v002.jpg
+image: img/cloudwithchrislogo.png # img/vlog/v002.jpg
 explicit: "no"
 guests: []
 hosts:

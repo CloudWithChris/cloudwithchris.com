@@ -8,7 +8,7 @@ Description: By now, we should be aware of the benefits that the cloud can bring
   starting a blog about technology. Why are you talking to me about customer case
   studies and market fact? Why? Context.
 PublishDate: "2016-08-04T12:00:00Z"
-blog_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 categories:
 - Azure
 - Cloud Architecture

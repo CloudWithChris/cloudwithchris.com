@@ -5,7 +5,7 @@ GitHub: jonnychipz
 Instagram: ""
 Linkedin: "japlunn"
 Pinterest: ""
-Thumbnail: img/guests/johnlunn.jpg
+image: img/guests/johnlunn.jpg
 Title: John Lunn
 Twitter: jonnychipz
 Type: guest

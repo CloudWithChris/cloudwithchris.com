@@ -6,7 +6,7 @@ Title: 23 - Gatekeeper and Valet Key Patterns - Secure your APIs and Resources
 categories:
 - Architecture
 episode: "23"
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 guests:
 - peterpiper

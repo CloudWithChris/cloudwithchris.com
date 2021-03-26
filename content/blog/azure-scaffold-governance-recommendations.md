@@ -3,7 +3,7 @@ Author: chrisreddington
 Description: Cloud Governance seems to have come up a few times over the past few
   weeks, so I wanted to post a short, sharp blog about it!
 PublishDate: "2017-02-25T12:00:00Z"
-blog_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 categories:
 - Announcement
 date: "2017-02-25T12:00:00Z"

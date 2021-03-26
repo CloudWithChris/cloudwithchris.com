@@ -6,7 +6,7 @@ Title: 12 - Modern Identity Patterns
 categories:
 - Identity
 episode: "12"
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 guests:
 - christosmatskas

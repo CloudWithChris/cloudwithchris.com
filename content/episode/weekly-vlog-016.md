@@ -6,7 +6,7 @@ Title: "V016 - Weekly Technology Vlog #16"
 categories:
 - Vlog
 episode: V016
-episode_image: img/cloudwithchrislogo.png # img/vlog/v002.jpg
+image: img/cloudwithchrislogo.png # img/vlog/v002.jpg
 explicit: "no"
 guests: []
 hosts:

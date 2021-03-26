@@ -6,7 +6,7 @@ Title: 14 - The Deployment Stamps Pattern
 categories:
 - Architecture
 episode: "14"
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 guests:
 - johndowns

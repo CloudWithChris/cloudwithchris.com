@@ -17,7 +17,7 @@
           {{- range where $site.Pages "Type" "host" -}}
             {{- if eq .File.TranslationBaseName ($scratch.Get "person") -}}
               {{- $scratch.Set "host-exist" "true" -}}     
-                  <a href="{{ .Permalink | absURL}}"><img src="{{ .Params.Thumbnail | absURL}}" width="100" class="rounded-circle z-depth-2" alt="{{ .Title }}" title="{{ .Title }}" /></a>
+                  <a href="{{ .Permalink | absURL}}"><img src="{{ .Params.image | absURL}}" width="100" class="rounded-circle z-depth-2" alt="{{ .Title }}" title="{{ .Title }}" /></a>
               {{- $scratch.Set "host-exist" "false" -}}
             {{ end }}
           {{- end -}}

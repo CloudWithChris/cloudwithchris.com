@@ -5,7 +5,7 @@ GitHub: "isaacrlevin"
 Instagram: ""
 Linkedin: "isaacrobinlevin"
 Pinterest: ""
-Thumbnail: img/guests/isaaclevin.jpg
+image: img/guests/isaaclevin.jpg
 Title: "Isaac Levin"
 Twitter: "isaacrlevin"
 Type: guest

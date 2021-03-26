@@ -6,7 +6,7 @@ Title: "V035 - Weekly Technology Vlog #35"
 categories:
 - Vlog
 episode: V035
-episode_image: img/cloudwithchrislogo.png # img/vlog/v002.jpg
+image: img/cloudwithchrislogo.png # img/vlog/v002.jpg
 explicit: "no"
 guests: []
 hosts:

@@ -6,7 +6,7 @@ Title: 'V008 - Weekly Technology Vlog #8 (Changing Role, Guest Appearances, LOTS
 categories:
 - Vlog
 episode: V008
-episode_image: img/vlog/v008.jpg
+image: img/vlog/v008.jpg
 explicit: "no"
 guests: []
 hosts:

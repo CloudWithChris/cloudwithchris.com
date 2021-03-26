@@ -6,7 +6,7 @@ Title: 19 - The Event Sourcing, Materialized View and CQRS Patterns
 categories:
 - Architecture
 episode: "19"
-episode_image: img/cloudwithchrislogo.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 guests:
 - stephmartin
