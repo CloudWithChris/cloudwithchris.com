@@ -216,7 +216,7 @@ function convertToSectionHtml(section){
 }
 
 function convertToUrl(text){
-  return text.replace(/ /g, '-').toLowerCase();
+  return text.replace(/ /g, '-').replace(/[,]/g,"").toLowerCase();
 }
 
 function jsUcFirst(string) 
