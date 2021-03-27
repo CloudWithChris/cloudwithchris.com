@@ -16,6 +16,5 @@ externalLink: "https://www.mshowto.org/"
 tags:
 - DevOps
 - GitHub
-upcoming: true
 ---
 Chris will join Mert Yeter on the MSHowTo show talking all things DevOps!
