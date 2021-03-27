@@ -50,9 +50,9 @@
               {{ end }}
             {{- end -}}
           {{ end }}
-        {{ end }}
+        {{ end }}</p>
 
-          <small class="text-muted">{{ if eq .Params.upcoming true }}Scheduled {{ else }}Published on {{ end }}{{ .PublishDate.Format "Mon, Jan 2, 2006" }}</small></p>
+          <p class="card-text"><small class="text-muted">{{ if eq .Params.upcoming true }}Scheduled {{ else }}Published on {{ end }}{{ .PublishDate.Format "Mon, Jan 2, 2006" }}</small></p>
         </div>
       </div>
     </div>
