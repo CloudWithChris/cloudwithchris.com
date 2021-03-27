@@ -2,7 +2,7 @@
 <header>
   <nav class="navbar navbar-expand-lg navbar-dark bg-cwc">
     <div class="container">
-        <a class="navbar-brand" href="{{ "/" | absURL }}"><img src="{{ "img/Cloud.png" | absURL }}" alt="Cloud With Chris" title="Cloud With Chris" /></a>
+        <a class="navbar-brand" href="{{ "/" | absURL }}"><img src="{{ "img/Cloud.png" | absURL }}" alt="Cloud With Chris" title="Cloud With Chris" height="145" /></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -12,7 +12,19 @@
             {{ $currentPage := . }}
               {{ range .Site.Menus.main }}
                 {{ partial "helper/navigation-menu.html" (dict "context" . "currentPage" $currentPage) }}
-              {{ end }}
+              {{ end }}              
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Series
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">                
+                {{ range $name, $taxonomy := .Site.Taxonomies.series }}
+                  {{ with site.GetPage (printf "/%s" ($name | urlize )) -}} 
+                    <li><a class="dropdown-item" href="{{ .Permalink | absURL }}">{{ .Title }}</a></li>
+                  {{ end }}
+                {{ end }}
+              </ul>
+            </li>
           </ul>          
           <form class="d-flex" action="{{ "search" | absURL }}">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search-query" name="s">

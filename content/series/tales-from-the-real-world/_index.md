@@ -1,0 +1,5 @@
+---
+title: "Tales from the Real World"
+description: "Technology is great, but sometimes when we apply it to real world scenarios there can be challenges. There might be people/process challenges, or issues trying to bring different types of technology together. We also need to make considerations around security and many other cross-cutting concerns. This is less about the theory, and the technology - focusing more on the stories and the lessons learned from the real world. Tune in to this and listen in!"
+---
+Technology is great, but sometimes when we apply it to real world scenarios there can be challenges. There might be people/process challenges, or issues trying to bring different types of technology together. We also need to make considerations around security and many other cross-cutting concerns. This is less about the theory, and the technology - focusing more on the stories and the lessons learned from the real world. Tune in to this and listen in!

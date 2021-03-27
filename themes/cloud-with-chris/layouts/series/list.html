@@ -15,13 +15,17 @@
 
 {{ define "top" }}
 <section class="py-5 container">
-  <div class="row float-center">
+  <div class="row float-center text-center">
+    <p>{{ .Content }}</p>
+    <p>Interested on being on the show? Then propose a session on the <a href="https://sessionize.com/cloudwithchris">Cloud With Chris Sessionize Page</a>!</p>
     {{ range first 3 (where .Data.Pages ".Params.upcoming" true).ByDate }}         
       {{- partial "upcoming-episode.html" . -}}
     {{ end }}
   </div>  
+  {{ if ge (where .Data.Pages ".Params.upcoming" true) 1 }}
   <div class="row float-end">
     <p><a href="{{ "/upcoming" | absURL }}">See all upcoming episodes</a></p>
   </div>
+  {{ end }}
 </section>
 {{ end }}
