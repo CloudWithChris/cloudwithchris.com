@@ -1,30 +1,30 @@
 ---
-Date: "2021-03-29T09:30:00Z"
-Description: "In this video, chris provides another update on Cloud with Chris, updates on what's coming soon and Azure related news!"
-PublishDate: "2021-03-29T09:30:00Z"
-Title: "V013 - Weekly Technology Vlog #13"
+Date: "2021-03-28T09:30:00Z"
+Description: "In this video, Chris provides an update on the Azure Blogs (lots of great updates this week), a quick-fire round of Azure Technology Updates, dives into the Azure DevOps Blog and GitHub Blogs. Then we cover a VERY busy week of Cloud with Chris over the last week, and what's coming up talk-wise over April (It's looking to be a packed month!)"
+PublishDate: "2021-03-28T09:30:00Z"
+Title: "V013 - Weekly Technology Vlog #13 (Lots of Azure, DevOps & GitHub) Blogs, Quick-fire Azure Updates"
 categories:
 - Vlog
 episode: V013
-image: img/cloudwithchrislogo.png # img/vlog/v002.jpg
+image: img/vlog/v013.jpg
 explicit: "no"
 guests: []
 hosts:
 - chrisreddington
 images:
 - img/default-social.png
-# - img/vlog/v002.jpg
-# podcast_bytes: "13803520"
-# podcast_duration: "14:19.000"
-# podcast_file: V002 - Weekly Technology Vlog.mp3
+- img/vlog/v013.jpg
+podcast_bytes: "28598272"
+podcast_duration: 29:42.000"
+podcast_file: V013 - Weekly Technology Vlog.mp3
 series:
 - Weekly Vlog
 tags:
-#- Podcast
-#- Sessionize
-#- Azure
-#- Community
-# youtube: VyQI5SOsw3M
-upcoming: true
+- Podcast
+- Azure
+- GitHub
+- DevOps
+- Community
+youtube: xiLeTkRJj5A
 ---
-In this video, chris provides another update on Cloud with Chris, updates on what's coming soon and Azure related news!
+In this video, Chris provides an update on the Azure Blogs (lots of great updates this week), a quick-fire round of Azure Technology Updates, dives into the Azure DevOps Blog and GitHub Blogs. Then we cover a VERY busy week of Cloud with Chris over the last week, and what's coming up talk-wise over April (It's looking to be a packed month!)
