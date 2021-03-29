@@ -16,8 +16,6 @@ By day, he works with stakeholders in startups and enterprises from developers a
 
 Chris has presented at several internal and external events including Microsoft Tech Ready, Microsoft Ignite and several Microsoft Tech Summit events.
 
-
-
 <div class="row">
   <div class="column">
     <img src="/img/chris-ignitetour-1.jpg" alt="Microsoft Ignite Tour (Amsterdam)" style="width:100%">
@@ -34,7 +32,6 @@ Chris has presented at several internal and external events including Microsoft 
     <img src="/img/public-speaking.jpg" alt="Speaking at a Microsoft Tech Summit event" style="width:100%">
   </div>
 </div>
-
 
 Chris is no stranger to speaking in podcasts or recording videos for YouTube, as he has also collaborated on a YouTube series called Azure Mythbusters, with the intent of busting common myths about the cloud.
 
