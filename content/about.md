@@ -12,7 +12,7 @@ Chris is a Cloud Solution Architect at Microsoft UK, working with customers in t
   </div>
 </div>
 
-By day, he works with stakeholders in startups and enterprises from developers and system admins through to Heads of Division and CTOs on accelerating their journey to the cloud, while actively listening and working with the Azure Engineering teams to further improve the Azure Platform. His primrary technical areas of focus are Cloud Architecture, Cloud Native Solutions (including Kubernetes) and DevOps tooling and principals.
+By day, he works with stakeholders in startups and enterprises from developers and system admins through to Heads of Division and CTOs on accelerating their journey to the cloud, while actively listening and working with the Azure Engineering teams to further improve the Azure Platform. His primary technical areas of focus are Cloud Architecture, Cloud Native Solutions (including Kubernetes) and DevOps tooling and principals.
 
 Chris has presented at several internal and external events including Microsoft Tech Ready, Microsoft Ignite and several Microsoft Tech Summit events.
 
@@ -33,7 +33,7 @@ Chris has presented at several internal and external events including Microsoft 
   </div>
 </div>
 
-Chris is no stranger to speaking in podcasts or recording videos for YouTube, as he has also collaborated on a YouTube series called Azure Mythbusters, with the intent of busting common myths about the cloud.
+Chris is no stranger to speaking in podcasts or recording videos content. Aside from Cloud with Chris, he has also collaborated on a YouTube series called Azure Mythbusters, with the intent of busting common myths about the cloud.
 
 <div class="row">
   <div class="column">
@@ -96,4 +96,4 @@ By night, Chris is a Musical Theatre Enthusiast. He has sat as committee member 
 
 Photo Credit - Godspell and Annie Photos credit to Mike Gribble. Jesus Christ Superstar photo credit to Richard Brown.
 
-Chris is  trying his hand at a new skill, improv! He has recently attended an intensive workshop with The Showstoppers, and is continuing to refine his skills with What's the game Improv! His vision is to merge the two areas together, and form a Musical Improv group in Reading, called [Theatreers](https://www.theatreers.com) - though this is a work in progress!
+Chris is  trying his hand at a new skill, improv! He recently attended an intensive workshop with The Showstoppers, and is continuing to refine his skills with What's the game Improv! His vision is to merge the two areas together, and take part in more Musical Improv - though this is a slow work in progress, with thanks to COVID-19!
