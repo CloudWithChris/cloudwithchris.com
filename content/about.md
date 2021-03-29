@@ -4,20 +4,48 @@ title: About
 
 Exploring Cloud concepts with Chris Reddington (Welsh Tech Geek, Cloud Advocate, Musical Theatre Enthusiast and Improving Improviser!). We will regularly invite guests to talk about their experiences with the cloud and hear about some of the lessons learned around their cloud journey. Cloud with Chris is a community-driven personal podcast. Content from episodes do not represent the views of any company or organisation.
 
-Chris is currently a Senior Engineer on Microsoft's [FastTrack for Azure](https://azure.microsoft.com/en-gb/programs/azure-fasttrack/) team.
-
-By day, he works with stakeholders in startups and enterprises from developers and system admins through to Heads of Division and CTOs on accelerating their journey to the cloud, while actively listening and working with the Azure Engineering teams to further improve the Azure Platform. His primrary tecnical areas of focus are Cloud Architecture, Cloud Native Solutions (including Kubernetes) and DevOps tooling and principals.
-
-Chris has presented at several internal and external events including Microsoft Tech Ready, Microsoft Ignite and several Microsoft Tech Summit events.
+Chris is a Cloud Solution Architect at Microsoft UK, working with customers in the Manufacturing & Resources industry.
 
 <div class="row">
   <div class="column">
-  <img src="/img/public-speaking.jpg" alt="Speaking at a Microsoft Tech Summit event" style="width:100%">
+    <img src="/img/chris-ignitetour-4.jpg" alt="Microsoft Ignite Tour (Amsterdam)" style="width:100%">
+  </div>
+</div>
+
+By day, he works with stakeholders in startups and enterprises from developers and system admins through to Heads of Division and CTOs on accelerating their journey to the cloud, while actively listening and working with the Azure Engineering teams to further improve the Azure Platform. His primrary technical areas of focus are Cloud Architecture, Cloud Native Solutions (including Kubernetes) and DevOps tooling and principals.
+
+Chris has presented at several internal and external events including Microsoft Tech Ready, Microsoft Ignite and several Microsoft Tech Summit events.
+
+
+
+<div class="row">
+  <div class="column">
+    <img src="/img/chris-ignitetour-1.jpg" alt="Microsoft Ignite Tour (Amsterdam)" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="/img/chris-ignitetour-2.jpg" alt="Microsoft Ignite Tour (Amsterdam)" style="width:100%">
+  </div>
+</div>
+<div class="row">
+  <div class="column">
+    <img src="/img/chris-ignitetour-3.jpg" alt="Microsoft Ignite Tour (Amsterdam)" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="/img/public-speaking.jpg" alt="Speaking at a Microsoft Tech Summit event" style="width:100%">
   </div>
 </div>
 
 
 Chris is no stranger to speaking in podcasts or recording videos for YouTube, as he has also collaborated on a YouTube series called Azure Mythbusters, with the intent of busting common myths about the cloud.
+
+<div class="row">
+  <div class="column">
+    <img src="/img/chris-mythbusters-1.jpg" alt="Filming Episodes for the Azure Mythbusters Series" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="/img/chris-mythbusters-2.jpg" alt="Filming Episodes for the Azure Mythbusters Series" style="width:100%">
+  </div>
+</div>
 
 ### Azure Mythbusters: You don’t need requirements in the Cloud… Or do you?
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ObeO6-jsfP8?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
