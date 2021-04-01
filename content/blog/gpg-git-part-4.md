@@ -15,7 +15,7 @@ tags:
 - Security
 title: Using GPG Keys to sign Git Commits - Part 4
 ---
-Part 4 - The final part (at least for now, until I find somewhere else that we can expand on with this)! This part will focus on porting the keys that we have recently generated onto our YubiKey device. I own a YubiKey NEO, so i'll be using that.
+Part 4 - The final part (at least for now, until I find somewhere else that we can expand on with this)! This part will focus on porting the keys that we have recently generated onto our YubiKey device. I own a YubiKey NEO, so I'll be using that.
 
 **Note: Be aware that the YubiKey NEO has a limitation where it can only hold keys up to a size of 2048 bits. If you have generated a key longer than this, then the move will fail. You may need to go through the previous blog posts to re-generate the keys. Though I mentioned this limitation in [part 2](./blog/gpg-git-part-2).**
 

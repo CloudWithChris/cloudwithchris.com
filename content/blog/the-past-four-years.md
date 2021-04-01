@@ -19,7 +19,7 @@ For the past four years, I've been part of a team at Microsoft called [FastTrack
 
 There is never a perfect time to say goodbye, but for me - now is the time. From Monday, I'll be taking on a new role within Microsoft as a Senior Cloud Solution Architect within Microsoft UK's Customer Success Unit, focusing on the Manufacturing & Resources Industries. Career changes can be big moments of change, and a good opportunity to reflect.
 
-I started off in FastTrack for Azure as employee #9, and the first employee outside of the United States. At this point, it was a startup - delivering with a subset of customers primarily based in the US, but looking to begin regional expansions and increase the scope of what it does. For me, this meant regular travel between the UK and the US for several months. Primarily to build relationships with my heavily-US focused team, but also to support the growth and evolution of the business and organisation.
+I started off in FastTrack for Azure as employee #9, and the first employee outside of the United States. At this point, it was a start-up - delivering with a subset of customers primarily based in the US, but looking to begin regional expansions and increase the scope of what it does. For me, this meant regular travel between the UK and the US for several months. Primarily to build relationships with my heavily-US focused team, but also to support the growth and evolution of the business and organisation.
 
 Fast forward four years, and there are so many incredible moments that I look back favourably upon, to name but a few -
 * Being heavily involved in the recruiting throughout the early stages of our Australian and EMEA teams

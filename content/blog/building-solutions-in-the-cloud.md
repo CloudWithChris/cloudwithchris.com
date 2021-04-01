@@ -23,7 +23,7 @@ tags:
 title: Building Solutions in the Cloud
 ---
 
-By now, we should be aware of the benefits that the cloud can bring to any individual or organisaton. There are plenty of case studies, talking about the scalable, flexible and economic benefits (See [Azure](https://azure.microsoft.com/en-gb/case-studies/), [AWS](https://aws.amazon.com/solutions/case-studies/) or [Google](https://cloud.google.com/customers/) for more information).
+By now, we should be aware of the benefits that the cloud can bring to any individual or organisation. There are plenty of case studies, talking about the scalable, flexible and economic benefits (See [Azure](https://azure.microsoft.com/en-gb/case-studies/), [AWS](https://aws.amazon.com/solutions/case-studies/) or [Google](https://cloud.google.com/customers/) for more information).
 
 Companies see the cloud as a differentiator, and utilise it to disrupt and innovate in their respective markets. [Gartner predicts](http://www.gartner.com/newsroom/id/3188817) that in 2016 the total public cloud market is due to increase by 16%.
 
@@ -37,11 +37,11 @@ Consider an e-commerce site. It has users on a 24x7 basis, potentially 365 days 
 
 Conversely, consider an internal HR portal for a small business. It is likely used predominantly within working hours, and has a limited user-base.
 
-Each of these scenarios will have very different requirements, both from a functional and non-functional perspective. This is important, perhaps even moreso when considering the cloud as your next step. You need to think of the whole setup, end to end and not just the architecture. Think People, Processes AND technology - [ITIL](https://en.wikipedia.org/wiki/ITIL) anyone?
+Each of these scenarios will have very different requirements, both from a functional and non-functional perspective. This is important, perhaps even more so when considering the cloud as your next step. You need to think of the whole setup, end to end and not just the architecture. Think People, Processes AND technology - [ITIL](https://en.wikipedia.org/wiki/ITIL) anyone?
 
 Thinking solely technical architecture is a very easy trap to fall into, when transitioning into the cloud.
 
-- What happens if there is a disaster, for example - a datacenter outage?
+- What happens if there is a disaster, for example - a datacentre outage?
 - What happens if our data leaks - How will we respond as an organisation?
 - How will we support our users to provide a great end-user experience?
 - How do we ensure consistency and continuity across our cloud resources, and the mechanisms that we use to deploy them?

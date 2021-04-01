@@ -19,7 +19,7 @@ Okay, part 3! At this point, I'm assuming that you have already familiarised you
 
 By the end of this post, we should be able to use GPG Keys to sign our commits with a GPG Key from our machine. We won't introduce YubiKeys into the equation just yet, and we'll leave that for a part 4 post. In part 2, we generated a GPG master key for certification, and a subkey for signing. We'll be focusing on the signing subkey for the majority of this particular article. As a reminder, your keyring should only have the secret subkey imported, and not contain the private master key (Keep in mind principle of least privilege / separation of concerns!).
 
-Let's navigate to the repository that we were using. In the folder of your local Git repository, use your commandline window to enter the following:
+Let's navigate to the repository that we were using. In the folder of your local Git repository, use your command line window to enter the following:
 
 ```bash
 git config --local user.email "alice@contoso.com"
@@ -29,10 +29,10 @@ git config --local commit.gpgsign true
 ```
 
 A few observations on the above -
-* We are once again resetting the user settings for this repository to Alice's details. These details must be aligned with the details that you used in the GPG Key for the signing to work correctly (i.e. the detials that you're committing with and the details you're signing the commit with).
+* We are once again resetting the user settings for this repository to Alice's details. These details must be aligned with the details that you used in the GPG Key for the signing to work correctly (i.e. the details that you're committing with and the details you're signing the commit with).
 * Notice the user.signingkey value that I provided? This is the ID of the subkey used for signing, rather than the master key for certification.
-* Notice that commit.gpgsign is set to true? This means that every single commit in this repository must automatically be forced to be signed, instead of having to provide a flag during each git commit command. This is an optional choice that i have made. If you wanted this to be optional, then you could use the ``-S`` or ``--gpg-sign=KEYID`` properties as needed. I'd prefer all my commits to be signed, hence adjusting it at the git config level.
-* Also notice that we have used the --local flag in each line. While this is not necessary (as the default behaviour of git config is to make these changes in the local repository rather than globally using ``--global``), I feel it provides clarity in this example and also provides some predictability for the example incase the default behaviour ever changes in the future!
+* Notice that commit.gpgsign is set to true? This means that every single commit in this repository must automatically be forced to be signed, instead of having to provide a flag during each git commit command. This is an optional choice that I have made. If you wanted this to be optional, then you could use the ``-S`` or ``--gpg-sign=KEYID`` properties as needed. I'd prefer all my commits to be signed, hence adjusting it at the git config level.
+* Also notice that we have used the --local flag in each line. While this is not necessary (as the default behaviour of git config is to make these changes in the local repository rather than globally using ``--global``), I feel it provides clarity in this example and also provides some predictability for the example in case the default behaviour ever changes in the future!
 
 Open the myfile.php, and adjust it to the following:
 
@@ -44,7 +44,7 @@ echo "Hello Contoso!!!";
 ?>
 ```
 
-Add the file to Git's staging area, and then commit the file to your local Git rerpository.
+Add the file to Git's staging area, and then commit the file to your local Git repository.
 
 ```bash
 git add myfile.php
@@ -90,7 +90,7 @@ Date:   Mon Mar 8 20:28:40 2021 +0000
 
 What does the above tell us? It tells us that the latest commit used was indeed signed with a GPG Key. Great! So that means we're done right, and we can finish this blog series? Not quite. Review the warning - "The key is not certified with a trusted signature! There is no indication that the signature belongs to the owner." This is where the GitHub GPG Key verification functionality comes into play.
 
-Now, for the rest of this blog post I'm going to stop speaking frmo Alice's perspective and showcase the rest as myself (primarily because I don't have access to alice@contoso.com or have that e-mail address associated with my GitHub account, so any examples demonstrating this on GitHub would not be marked as verified).
+Now, for the rest of this blog post I'm going to stop speaking from Alice's perspective and showcase the rest as myself (primarily because I don't have access to alice@contoso.com or have that e-mail address associated with my GitHub account, so any examples demonstrating this on GitHub would not be marked as verified).
 
 For these next steps to work, you will need to make sure that one of the e-mail addresses used in the GPG Key is also associated with your GitHub account. You can verify that and make the necessary adjustments over on your [GitHub Settings > Emails](https://github.com/settings/emails). As a reminder, there is an option in the E-Mail settings page that says **Keep my email address private**. This allows you to use a no-reply e-mail from GitHub to obscure your personal e-mail address and avoid any privacy issues (remember that when using ``git log`` we can see the commiter's username and e-mail address). If you want to use this no-reply e-mail for the GPG Signing key, then you need to make sure that you have updated your git config user.email to use the no-reply e-mail address, and also included it as as an e-mail address within your key (e.g. Alice's digits+githubusername@users.noreply.github.com).
 
