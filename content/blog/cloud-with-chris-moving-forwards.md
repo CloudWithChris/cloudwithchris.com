@@ -21,7 +21,7 @@ You may have noticed there are some posts preceding this one. I've had a few att
 
 As we enter 2021, like most, I've been reflecting on what my goals are / what I want to achieve. Rather than setting many goals, I've decided to stay focused on one goal. My contributions into the technical community. So it was only natural that I start thinking about the various channels that I have, and how I can consolidate/focus, as well as decide upon what type of content I'll be focusing on.
 
-This is step 1, consolidating my blog from my prior website into the Cloud With Chris Platform. Given that both sites were focused around me, it made sense to consolidate, so I'll be setting up a redirect from my christianreddington.co.uk domain to cloudwithchris.com moving forward. I'll also be consolidating my social media presence. Twitch was a nice idea/experiment, but I'd like to focus on YouTube and the various podcasting channels where I have a presence, so i'll also be deprioritising the Twitch side of things moving forward as well.
+This is step 1, consolidating my blog from my prior website into the Cloud With Chris Platform. Given that both sites were focused around me, it made sense to consolidate, so I'll be setting up a redirect from my christianreddington.co.uk domain to cloudwithchris.com moving forward. I'll also be consolidating my social media presence. Twitch was a nice idea/experiment, but I'd like to focus on YouTube and the various podcasting channels where I have a presence, so I'll also be deprioritising the Twitch side of things moving forward as well.
 
 Additionally, I have an open item in my mind around Twitter. I currently have a [personal account](https://twitter.com/reddobowen) and the [Podcast account](https://twitter.com/CloudWithChris). I'm considering closing the CloudWithChris one, in favour of directing people to my personal Twitter Account, and renaming the handle to chrisreddington for consistency across my social media presence. Though, reddobowen is what I commonly use in gaming and other platforms, so this one is undecided!
 
@@ -34,7 +34,7 @@ So far, we have the following -
 * Additional episodes that are released on a regular basis
 
 There are a few other series ideas that I'm planning out / determining how they may work -
-* A series that is a little more relaxed, e.g. having a number of presenters in a gaming scenario (e.g. Minecraft, Among Us, Flight Sim, etc.) discussing some of the latest top of mind thoughts / thoughts around archietcture/technology used within those games.
+* A series that is a little more relaxed, e.g. having a number of presenters in a gaming scenario (e.g. Minecraft, Among Us, Flight Sim, etc.) discussing some of the latest top of mind thoughts / thoughts around architecture/technology used within those games.
 * Expanding the guests that I invite onto the show, to folks that can explain their own cloud implementations and the decisions that they have made.
 * A weekly episode on the latest trends that I'm seeing, as well as some of the latest announcements (Of course, I can't cover everything - but will aim to cover the bits that stand out!)
 * A roundup from conferences that occur throughout the year (Again, this won't cover everything - but will hopefully act as a good summary / trigger for you to find out more!)

@@ -83,11 +83,11 @@ git commit -m "Adjust to Hello Contoso"
 
 Now, "Alice" or "Bob" can go ahead and use git pull to ensure they have the latest version of the repository (or any other user with appropriate access). If they use the ``git log`` command, they will see that there are changes made by two users. Alice, and Bob. Again, it __appears__ as though the changes have been made by two users. Again, bear in mind that we haven't had to prove that we are either Alice, or Bob.
 
-![Git log showing Alice and Bob's's commits](/img/blog/gpg-git-part-1/git-status-4.jpg)
+![Git log showing Alice and Bob's commits](/img/blog/gpg-git-part-1/git-status-4.jpg)
 
 Now one final scenario, remember Eve? Well, Eve has become interested in the project and wants to give credit for the great work back to Alice, and remove Bob from the picture.
 
-Now as a side note, you should be super careful whenever performing any functions that are rewriting history of Git commits. If you have already integrated the original code into a rerpository which other users have access to (e.g. Azure DevOps, GitHub, etc.), then rewriting history may not even be accepted by the remote repository, and if it does may cause a **lot** of pain. Unless you thoroughly understand the consequences of what you're doing, I do not recommend you do this in any kind of live environment. There are plenty of guides/articles on this out there, and goes beyond the scope of this article.
+Now as a side note, you should be super careful whenever performing any functions that are rewriting history of Git commits. If you have already integrated the original code into a repository which other users have access to (e.g. Azure DevOps, GitHub, etc.), then rewriting history may not even be accepted by the remote repository, and if it does may cause a **lot** of pain. Unless you thoroughly understand the consequences of what you're doing, I do not recommend you do this in any kind of live environment. There are plenty of guides/articles on this out there, and goes beyond the scope of this article.
 
 Now, with the health warning out of the way - Let's continue... Eve goes ahead and runs the following script. The script uses the ``git-filter-branch`` command to replace any commits with OLD_EMAIL with NEW_EMAIL, as well as replacing the name. Any commit that matches the if statement in the script will be changed.
 
@@ -110,7 +110,7 @@ fi
 ' --tag-name-filter cat -- --branches --tags
 ```
 
-![Git log showing that all commits now belong to alice](/img/blog/gpg-git-part-1/git-status-5.jpg)
+![Git log showing that all commits now belong to Alice](/img/blog/gpg-git-part-1/git-status-5.jpg)
 
 See the problem? We have no guarantee on the authenticity of those commits. Are any of those people Alice, Bob or Eve? Are all of the commits potentially fake? Without having some kind of signed commit, we have no certainty. And this is where the value of GPG keys lie in this particular scenario. Being able to showcase that the changes committed have been signed by someone with a key that matches user metadata (e.g. e-mail address).
 

@@ -15,13 +15,13 @@ tags:
 - Security
 title: Using GPG Keys to sign Git Commits - Part 2
 ---
-Hopefully by now you've had a chance to read [part 1](./blog/gpg-git-part-1) of this series, which explains why you may be interested in using GPG keys to sign your commits. Congratulations on getting to the second part! In part two, we're going to focus on how I worked through setting up GPG in my Windows environment, and generating a set of keys for use. There were some challenges/hurdles along the way, and we'll talk through those too! I may do another separate blog post at a later poit on setting this up within Windows Subsystem for Linux. However, there are plenty of articles that alraedy focus on MacOS / Native Linux, so it isn't really the focus of this post.
+Hopefully by now you've had a chance to read [part 1](./blog/gpg-git-part-1) of this series, which explains why you may be interested in using GPG keys to sign your commits. Congratulations on getting to the second part! In part two, we're going to focus on how I worked through setting up GPG in my Windows environment, and generating a set of keys for use. There were some challenges/hurdles along the way, and we'll talk through those too! I may do another separate blog post at a later point on setting this up within Windows Subsystem for Linux. However, there are plenty of articles that already focus on MacOS / Native Linux, so it isn't really the focus of this post.
 
 In this post, I am making an assumption that you are brand new to using GPG Keys and do not yet have a master key, or any other keys in place.
 
 As a reminder, we'll be focusing on setting this up in a Windows environment. As a first step, I downloaded [GPG4win](https://www.gpg4win.org/about.html). This contains several useful components, including Kleopatra, which exposes a number of the commands that we'll be using in the blog post through an intuitive User Interface as an alternative if you prefer.
 
-Once installed, open up a command prompt window. While not required, if you haven't used it before - I'd encourage you to try out the [Windows Terminal](https://aka.ms/terminal) which is available through the Windows Store. It's a great piece of software, which allows you to interact with several commandline environments (e.g. PowerShell, PowerShell Core, Command Prompt, Several distributions of Windows Subsystem, Azure Cloud Shell, and even [connect directly to VMs in the cloud](https://www.thomasmaurer.ch/2020/05/how-to-ssh-into-an-azure-vm-from-windows-terminal-menu/)). This isn't required though, as you can just use the native command line prompt application.
+Once installed, open up a command prompt window. While not required, if you haven't used it before - I'd encourage you to try out the [Windows Terminal](https://aka.ms/terminal) which is available through the Windows Store. It's a great piece of software, which allows you to interact with several command line environments (e.g. PowerShell, PowerShell Core, Command Prompt, Several distributions of Windows Subsystem, Azure Cloud Shell, and even [connect directly to VMs in the cloud](https://www.thomasmaurer.ch/2020/05/how-to-ssh-into-an-azure-vm-from-windows-terminal-menu/)). This isn't required though, as you can just use the native command line prompt application.
 
 **Important: Not using command prompt was one of my main hurdles when setting up in my own environment. My local preference is to use PowerShell rather than Command Prompt. After spending a lot of time digging into this, I discovered (with thanks to [this helpful gist](https://gist.github.com/chrisroos/1205934#gistcomment-2862988)) that PowerShell may impact the encoding of the output file, which causes later issues. I'll explain a little later - but keep this in mind if you do insist on using PowerShell.**
 
@@ -220,7 +220,7 @@ gpg --export-secret-key --armor 6E7ECB409742866910B10197A0B82563C344D4AA > maste
 
 **Note: When exporting your private key, you will be asked for the secret passphrase that you set when you created the master key.**
 
-It's also a good practice to create a revocation certificate. This allows you to invalidate the key before its scheduled expiry date (That is, if it has an expiry date! Remember that we set ours to never? This would be the approach we'd need to folow to cause that key to expire.). Note also the asc file format of the certificate, which is the armored ASCII file format.
+It's also a good practice to create a revocation certificate. This allows you to invalidate the key before its scheduled expiry date (That is, if it has an expiry date! Remember that we set ours to never? This would be the approach we'd need to follow to cause that key to expire.). Note also the asc file format of the certificate, which is the armored ASCII file format.
 
 ```bash
 gpg --gen-revoke 6E7ECB409742866910B10197A0B82563C344D4AA > master-revocation-certificate.asc
@@ -322,7 +322,7 @@ A couple of observations once again -
   * The [Debian Wiki](https://wiki.debian.org/Subkeys) also has a good explanation around subkeys if you're interested.
 * Notice how we are not asked to confirm the name or e-mail address of the associated user? This is associated with our original primary key (remember that we've generated a subkey), we do not need to go ahead and enter this information once again.
 
-Now, let's export the subkey so that we have a backup available. I could have used the longform text output of the key ID, but wanted to also show that you can use the shortform that was generated in the previous example. Notice how these 16 hexadecimal values are the final 16 from the longform identifier.
+Now, let's export the subkey so that we have a backup available. I could have used the longform text output of the key ID, but wanted to also show that you can use the short form that was generated in the previous example. Notice how these 16 hexadecimal values are the final 16 from the longform identifier.
 
 ```bash
 gpg --export-secret-subkeys --armor A0B82563C344D4AA > subkeys-secret.txt

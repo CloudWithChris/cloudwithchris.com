@@ -36,7 +36,7 @@ So, with all that in mind - I came up with the idea of the Hugo Community Theme.
 
 Why Hugo? First, let's start with "What is Hugo" as there may be some readers who have not used/do not know what Hugo is. Hugo is a static site generator written in GoLang (don't worry, you don't need to know GoLang to use it!). This means that it converts markdown pages into HTML when you build/compile/render the website.
 
-For local development, you can use the "Hugo Serve" command to get your local instance of the site updating in realtime as you make edits. For a production deployment, you would typically compile the website into the static assets (HTML/JavaScript/CSS/Images) and push that to a platform.
+For local development, you can use the "Hugo Serve" command to get your local instance of the site updating in real-time as you make edits. For a production deployment, you would typically compile the website into the static assets (HTML/JavaScript/CSS/Images) and push that to a platform.
 
 Take for example CloudWithChris.com. This website is built using Hugo, uses the Castanet theme (as mentioned earlier, thank you again [Matt Stratton](https://twitter.com/mattstratton)!) and is hosted on Azure Blob Storage, fronted by Azure CDN. As an experiment, I also have the assets pushed up to AWS S3 and GCP's Cloud Storage, and have an open item to load balance origins across all 3 endpoints (perhaps that could be another blog post).
 

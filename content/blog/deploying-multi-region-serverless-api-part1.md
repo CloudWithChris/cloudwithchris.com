@@ -28,7 +28,7 @@ I've recently re-architected the project to align to a serverless technology sta
 
 * A set of **core global services**, such as -
   * A Single Page App hosted on Azure Blob Storage
-  * Azure Front Door that sits in front of the blob storage, as well as the back-end API servicess
+  * Azure Front Door that sits in front of the blob storage, as well as the back-end API services
 * A number of **core regional resources** that exist in each region and are used across the suite of microservices -
   * An API Management instance deployed in the Consumption Tier
   * An App Insights resource used as a sink for all telemetry within a regional deployment
@@ -56,7 +56,7 @@ Notice that the template is solely focused on the API Management Infrastructure,
 
 The core infrastructure will be deployed in a separate lifecycle to the APIs. This is because the APIs will be deployed in a separate pipeline which aligns to the deployment cadence of each individual Microservice that it is representing.
 
-Notice that the template takes two parameters, a location and a namePrefix. This is what provides the flexibility to deploly across multiple regions (i.e. the appropriate naming prefix for the region, and the region in which it should be deployed).
+Notice that the template takes two parameters, a location and a namePrefix. This is what provides the flexibility to deploy across multiple regions (i.e. the appropriate naming prefix for the region, and the region in which it should be deployed).
 
 Also note that the parameters defined in the template are limited. This is a core recommended practice for Infrastructure as Code, ensuring that the template is deterministic (predictable). Imagine the scenario from a live operational perspective. If you have 20 different parameters that can be tweaked, the resulting deployment may be less predictable and prone to accidental misconfiguration due to human error. To gain the flexibility of different environment configurations, you could consider the "T-Shirt sizing" approach. This is where you would have a parameter that drives the resulting configuration (e.g. environmentName mapping to dev or prod), which then adjusts the variables used for the number of units to be deployed, SKUs, etc.
 
