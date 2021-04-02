@@ -1,9 +1,10 @@
 baseURL: "#{hostname}#"
 buildFuture: true
 googleAnalytics: "UA-185951371-1"
-languageCode: "en-us"
+languageCode: "en-gb"
 theme: "cloud-with-chris"
 title: "Cloud With Chris"
+enableRobotsTXT: true
 
 markup:
   goldmark:
@@ -74,6 +75,7 @@ outputs:
 
 params:
   about_logo: "/img/cloudwithchrislogo.png"
+  author: "Chris Reddington"
   copyright_notice: "Copyright 2020 [Chris Reddington](https://www.christianreddington.co.uk), Proudly running using [Hugo](https://gohugo.io/)."
   itunes_subscribe: "https://podcasts.apple.com/gb/podcast/cloud-with-chris/id1499633784"
   spotify_subscribe: "https://open.spotify.com/show/3oBrdKm5grzl58GBiV0j2y"
@@ -81,7 +83,9 @@ params:
   stitcher_subscribe: "https://www.stitcher.com/s?fid=507667&refid=stpr"
   pocketcasts_subscribe: "https://pca.st/u5t985sn"
   description: "Exploring Cloud concepts with Chris Reddington (Welsh Tech Geek, Cloud Advocate, Musical Theatre Enthusiast and Improving Improviser!). We will regularly invite guests to talk about their experiences with the cloud and hear about some of the lessons learned around their cloud journey. Cloud with Chris is a community-driven personal podcast. Content from episodes do not represent the views of any company or organisation."
+  language_name: "English"
   media_prefix: "https://podcasts.cloudwithchris.com/"
+  ogimage: "/img/cloudwithchrislogo.png"
 
   channels:
     apple: "https://podcasts.apple.com/gb/podcast/cloud-with-chris/id1499633784"
@@ -99,8 +103,145 @@ params:
     itunes_top_category: "Technology"
     itunes_first_sub_category: "Podcasting"
     itunes_second_sub_category: "Software How-To"
-    language: "en-us"
+    language: "en-gb"
     explicit: "no"
+
+  keywords:
+  - cloud
+  - azure
+  - gcp
+  - aws
+  - chris reddington
+  - cloud tutorials
+  - cloud design patterns
+  - devops how to
+  - how to deploy using github actions
+  - how to design for the cloud
+  - cloud architecture
+  - azure architecture center
+  - google cloud platform
+  - amazon web services
+  - christian reddington
+  - github
+  - github actions
+  - github discussions
+  - microsoft
+  - github issues
+  - amazon
+  - google
+  - SLO
+  - SLA
+  - RTO
+  - RPO
+  - non-functional requirements
+  - functional requirements
+  - requirements
+  - cost management
+  - cloud governance
+  - cost control
+  - resource governance
+  - cloud recommended practices
+  - cloud best practices
+  - learn cloud
+  - learn Azure
+  - Microsoft Azure
+  - how to get started with azure
+  - how to keep up to date with azure
+  - technology podcast
+  - technology vlog
+  - azure vlog
+  - azure podcast
+  - cloud podcast
+  - cloud vlog
+  - cloud content
+  - azure content
+  - github content
+  - github podcast
+  - github vlog
+  - azure design patterns
+  - kubernetes
+  - azure kubernetes service
+  - azure app service
+  - platform as a service
+  - infrastructure as a service
+  - software as a service
+  - cloud gaming
+  - gaming
+  - game server
+  - application development
+  - software development
+  - devops
+  - liveops
+  - Continuous Integration
+  - Continuous Deployment
+  - azure updates
+  - azure blog
+  - cloud blog
+  - github blog
+  - devops blog
+  - meetup speaker
+  - technology speaker
+  - keynote speaker
+  - technology keynote
+  - conference speaker
+  - technology conference speaker
+  - cloud gaming technology
+  - how cloud is influencing gaming
+  - cloud drops
+  - architecting for the cloud one pattern at a time
+  - tales from the real world
+  - cloud gaming notes
+  - weekly vlog
+  - static websites
+  - hugo
+  - hugo on azure
+  - static content
+  - azure static web apps
+  - logic apps
+  - iPaas
+  - serverless
+  - Azure Functions
+  - key vault
+  - azure key vault
+  - CosmosDB
+  - Git
+  - version control
+  - .net
+  - dotnet
+  - terraform
+  - arm templates
+  - bicep
+  - cloud monitoring
+  - azure monitor
+  - azure governance
+  - compute resource consolidation
+  - queueing
+  - messaging
+  - publish subscriber patterns
+  - priority queue patterns
+  - pipes and filters pattern
+  - geode pattern
+  - health endpoint monitoring pattern
+  - gatekeeper pattern
+  - valet key pattern
+  - JAMStack
+  - static content hosting pattern
+  - github codespaces
+  - anti-corruption layer pattern
+  - gateway aggregation pattern
+  - gateway routing pattern
+  - event sourcing pattern
+  - cqrs pattern
+  - command query responsibility segregation pattern
+  - throttling pattern
+  - retry pattern
+  - circuit breaker pattern
+  - backends for frontends pattern
+  - sharding pattern
+  - index table pattern
+  - deployment stamps pattern
+  - cloud security
+  - devsecops
 
   social:
     facebook: "CloudWithChris"

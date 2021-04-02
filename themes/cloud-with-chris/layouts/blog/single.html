@@ -24,15 +24,22 @@
         {{ end }}
         </p>
       </div>
+
+      <div class="row">
+        {{ partial "socialshare.html" . }}
+      </div>
       
       <div class="row d-flex align-items-center justify-content-center">
-        <h2>{{ .PublishDate.Format "Mon, Jan 2, 2006" }}</h2>
+        <h2>Published on {{ .PublishDate.Format "Mon, Jan 2, 2006" }}</h2>
       </div>
       
       
       {{ with .Params.tags }}
         <p>{{ partial "tags.html" (dict "taxo" "tags" "value" . "site" $.Site ) }}</p>
       {{ end }}
+
+      
+      
     </div>
   </div>
 {{ end }}

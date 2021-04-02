@@ -178,6 +178,27 @@ main a:hover {
   color: #ffffff
 }
 
+.btn-email {
+  background: #c34046;
+  color: #ffffff
+}
+
+.btn-email:hover,
+.btn-email:focus {
+  background: #9b3338;
+  color: #ffffff
+}
+
+.btn-outline-email {
+  border: 1px solid #c34046;
+  color: #c34046
+}
+
+.btn-outline-email:hover {
+  background: #c34046;
+  color: #ffffff
+}
+
 .btn-facebook {
   background: #3b579d;
   color: #ffffff
@@ -375,6 +396,27 @@ main a:hover {
 .btn-website:hover,
 .btn-website:focus {
   background: #b15102;
+  color: #ffffff
+}
+
+.btn-whatsapp {
+  background: #25D366;
+  color: #ffffff
+}
+
+.btn-whatsapp:hover,
+.btn-whatsapp:focus {
+  background: #21b85a;
+  color: #ffffff
+}
+
+.btn-outline-whatsapp {
+  border: 1px solid #25D366;
+  color: #25D366
+}
+
+.btn-outline-whatsapp:hover {
+  background: #25D366;
   color: #ffffff
 }
 

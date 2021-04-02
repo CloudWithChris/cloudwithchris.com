@@ -1,9 +1,11 @@
 <title>{{ .Title }} | {{ .Site.Title }}</title>  
+<link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
 <meta property="og:title" content="{{ .Title }} | {{ .Site.Title }}" />
 <meta name="twitter:title" content="{{ .Title }} | {{ .Site.Title }}" />
 <meta itemprop="name" content="{{ .Title }} | {{ .Site.Title }}" />
 <meta name="application-name" content="{{ .Title }} | {{ .Site.Title }}" />
 <meta property="og:site_name" content="{{ .Site.Title }}" />
+
 
 {{ if not .Params.Description }}
   <meta name="description" content="{{ .Site.Params.description }}" />
@@ -24,7 +26,7 @@
 <meta property="og:url" content="{{ .Permalink }}" />
 
 <meta property="og:locale" content="{{ .Language.Lang }}">
-<meta name="language" content="{{ .Language.LanguageName }}">
+<meta name="language" content="{{ .Site.Params.language_name }}">
 {{ range .AllTranslations }}
   <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" title="{{ .Language.LanguageName }}">
 {{ end }}
@@ -71,13 +73,11 @@
   <meta property="og:article:published_time" content={{ .Date.Format "2006-01-02T15:04:05Z0700" | safeHTML }} /> 
   <meta property="article:published_time" content={{ .Date.Format "2006-01-02T15:04:05Z0700" | safeHTML }} />
   
-  {{ with.Params.author }} 
-    <meta property="og:article:author" content="{{humanize . }}" />
-    <meta property="article:author" content="{{humanize . }}" /> 
-    <meta name="author" content="{{humanize . }}" /> 
-  {{ end }}
+  <meta property="og:article:author" content="{{humanize .Site.Params.author }}" />
+  <meta property="article:author" content="{{humanize .Site.Params.author }}" /> 
+  <meta name="author" content="{{humanize .Site.Params.author }}" /> 
   
-  {{ with.Params.category }} 
+  {{ with .Params.category }} 
     <meta name="news_keywords" content="{{ index . 0 }}" />
     <meta property="article:section" content="{{ index . 0 }}" /> 
   {{ end }}
@@ -113,15 +113,14 @@
 {{ end }}
 
 <meta property="og:type" content="website" /> 
-<meta name="author" content="{{ .Site.Params.author }}" />
 <script defer type="application/ld+json">
   { 
     "@context": "http://schema.org", 
     "@type": "WebSite", 
     "url": {{ .Permalink }}, 
     "sameAs": [
-      {{ printf "%s%s" "https://twitter.com/" .Site.Params.twitter | htmlUnescape |  safeHTML }}, 
-      {{ printf "%s%s" "https://github.com/" .Site.Params.github | htmlUnescape |  safeHTML }}
+      {{ printf "%s%s" "https://twitter.com/" .Site.Params.social.twitter | htmlUnescape |  safeHTML }}, 
+      {{ printf "%s%s" "https://github.com/" .Site.Params.social.github | htmlUnescape |  safeHTML }}
     ], 
     "name": "{{ .Title }}", 
     "logo": {{ "/favicon.ico" | absURL }}
@@ -131,8 +130,8 @@
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
-<meta name="twitter:site" content="@{{ .Site.Params.twitter }}">
-<meta name="twitter:creator" content="@{{ .Site.Params.twitter }}" />
+<meta name="twitter:site" content="@{{ .Site.Params.social.twitter }}">
+<meta name="twitter:creator" content="@{{ .Site.Params.social.twitter }}" />
 
 {{ with.Site.Params.facebook }}
   {{ with .app_id }}
@@ -144,10 +143,15 @@
 {{ end }}
 
 <!-- Theme Color -->
-<meta name="theme-color" content="#141414" /> 
-<meta name="msapplication-TileColor" content="#141414" />
+<meta name="theme-color" content="#29aae1" /> 
+<meta name="msapplication-TileColor" content="#29aae1" />
 
-<meta name="keywords" content="" />
+{{ if .Params.Tags }}  
+  <meta name="keywords" content="{{ print (delimit .Params.Tags ", ") ", " (delimit .Site.Params.Keywords ", ") }}" />
+{{ else }}
+  <meta name="keywords" content="{{ print (delimit .Site.Params.Keywords ", ") }}" />
+{{ end }}
+
 <meta name="imagemode" content="force" />
 <meta name="coverage" content="Worldwide" /> 
 <meta name="distribution" content="Global" />
@@ -156,5 +160,13 @@
 <meta name="apple-mobile-web-app-title" content="{{ .Site.Title }}" /> 
 <meta name="mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-<meta name="apple-touch-fullscreen" content="yes" /> 
-<link rel="apple-touch-icon" href="{{ "img/apple-touch-icon.png" | absURL }} ">
+<meta name="apple-touch-fullscreen" content="yes" />
+
+<link rel="icon" type="image/png" href="/favicon-16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicon-32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-96.png" sizes="96x96">
+
+  
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="/favicon-152.png">
+<link rel="apple-touch-icon-precomposed" sizes="167x167" href="/favicon-167.png">
+<link rel="apple-touch-icon-precomposed" sizes="180x180" href="/favicon-180.png">
