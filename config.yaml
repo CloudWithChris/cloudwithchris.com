@@ -1,7 +1,7 @@
 baseURL: "#{hostname}#"
 buildFuture: true
 googleAnalytics: "UA-185951371-1"
-languageCode: "en-us"
+languageCode: "en-gb"
 theme: "cloud-with-chris"
 title: "Cloud With Chris"
 enableRobotsTXT: true
@@ -75,6 +75,7 @@ outputs:
 
 params:
   about_logo: "/img/cloudwithchrislogo.png"
+  author: "Chris Reddington"
   copyright_notice: "Copyright 2020 [Chris Reddington](https://www.christianreddington.co.uk), Proudly running using [Hugo](https://gohugo.io/)."
   itunes_subscribe: "https://podcasts.apple.com/gb/podcast/cloud-with-chris/id1499633784"
   spotify_subscribe: "https://open.spotify.com/show/3oBrdKm5grzl58GBiV0j2y"
@@ -82,7 +83,9 @@ params:
   stitcher_subscribe: "https://www.stitcher.com/s?fid=507667&refid=stpr"
   pocketcasts_subscribe: "https://pca.st/u5t985sn"
   description: "Exploring Cloud concepts with Chris Reddington (Welsh Tech Geek, Cloud Advocate, Musical Theatre Enthusiast and Improving Improviser!). We will regularly invite guests to talk about their experiences with the cloud and hear about some of the lessons learned around their cloud journey. Cloud with Chris is a community-driven personal podcast. Content from episodes do not represent the views of any company or organisation."
+  language_name: "English"
   media_prefix: "https://podcasts.cloudwithchris.com/"
+  ogimage: "/img/cloudwithchrislogo.png"
 
   channels:
     apple: "https://podcasts.apple.com/gb/podcast/cloud-with-chris/id1499633784"
@@ -100,8 +103,13 @@ params:
     itunes_top_category: "Technology"
     itunes_first_sub_category: "Podcasting"
     itunes_second_sub_category: "Software How-To"
-    language: "en-us"
+    language: "en-gb"
     explicit: "no"
+
+  keywords:
+    - "a"
+    - "b"
+    - "c"
 
   social:
     facebook: "CloudWithChris"
