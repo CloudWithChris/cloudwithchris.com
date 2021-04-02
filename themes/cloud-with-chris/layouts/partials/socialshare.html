@@ -1,0 +1,35 @@
+{{ $title := .Title }}
+{{ $url := printf "%s" .Permalink }}
+{{ $body := print $title ", by " .Site.Title "\n" .Params.description "\n\n" $url "\n" }}
+
+<ul class="icons nav list-inline mx-auto justify-content-center">
+  <li>
+    <a href="https://twitter.com/intent/tweet?hashtags=CloudWithChris&amp;url={{ .Permalink }}&amp;text={{ .Title }}" target="_blank" rel="noopener" aria-label="Share on Twitter" class="share-btn twitter">
+      <button aria-label="Twitter" type="button" class="btn btn-social btn-twitter btn-rounded"><i class="fab fa-twitter"></i></button>
+    </a>
+  </li>&nbsp;
+
+  <li>
+    <a href="https://www.facebook.com/sharer.php?u={{ $url }}" target="_blank" rel="noopener" aria-label="Share on Facebook" class="share-btn facebook">
+      <button aria-label="Twitter" type="button" class="btn btn-social btn-facebook btn-rounded"><i class="fab fa-facebook"></i></button>
+    </a>
+  </li>&nbsp;
+
+  <li>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ $url }}&amp;source={{ $url }}&amp;title={{ $title }}&amp;summary={{ $title }}" target="_blank" rel="noopener" aria-label="Share on LinkedIn" class="share-btn linkedin">
+      <button aria-label="LinkedIn" type="button" class="btn btn-social btn-linkedin btn-rounded"><i class="fab fa-linkedin"></i></button>
+    </a>
+  </li>&nbsp;
+
+  <li>
+    <a href="whatsapp://send?text={{ $body }}" target="_blank" class="share-btn whatsapp">
+      <button aria-label="WhatsApp" type="button" class="btn btn-social btn-whatsapp btn-rounded"><i class="fab fa-whatsapp"></i></button>
+    </a>
+  </li>&nbsp;
+
+  <li>
+    <a href="mailto:?subject={{ .Site.Title }} - {{ $title }}.&amp;body={{ $body }}" target="_blank" class="share-btn email">
+      <button aria-label="E-Mail" type="button" class="btn btn-social btn-email btn-rounded"><i class="fas fa-envelope"></i></button>
+  </a>
+  </li>
+</ul>

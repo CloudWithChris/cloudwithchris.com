@@ -59,6 +59,9 @@
         {{ end }}
         </p>
       </div>
+      <div class="row" class="text-center">
+        {{ partial "socialshare.html" . }}
+      </div>
       
       <div class="row">
         <h2>{{ if eq .Params.upcoming true }}Scheduled for {{ else }}Published on {{ end }}{{ .PublishDate.Format "Mon, Jan 2, 2006" }}</h2>
