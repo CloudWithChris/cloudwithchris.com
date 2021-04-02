@@ -4,6 +4,7 @@ googleAnalytics: "UA-185951371-1"
 languageCode: "en-us"
 theme: "cloud-with-chris"
 title: "Cloud With Chris"
+enableRobotsTXT: true
 
 markup:
   goldmark:
