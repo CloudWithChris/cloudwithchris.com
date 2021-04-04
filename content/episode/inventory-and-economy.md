@@ -24,6 +24,6 @@ series:
 tags:
 - Architecture
 - Gaming
-youtube: 2e7sXK3hDRQ
+youtube: iAvvrTDPUeQ
 ---
 Ever thought about what it takes to host a game in the Cloud? Well, this is the series for you! On the first Wednesday of every month, we explore Cloud Concepts that impact your journey to a connected multiplayer gaming experience! In this second session, we'll play Sea of Thieves and talk about building an inventory system and economy that powers certain games like MMORPGs or open world games like Sea of Thieves.
