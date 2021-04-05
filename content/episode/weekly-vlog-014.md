@@ -1,30 +1,30 @@
 ---
-Date: "2021-04-05T09:30:00Z"
-Description: "In this video, chris provides another update on Cloud with Chris, updates on what's coming soon and Azure related news!"
-PublishDate: "2021-04-05T09:30:00Z"
-Title: "V014 - Weekly Technology Vlog #14"
+Date: "2021-04-04T09:30:00Z"
+Description: "In this livestream, Chris covers the latest and greatest in the Azure, Azure DevOps & GitHub world, as well as the latest and upcoming content releases on Cloud with Chris!"
+PublishDate: "2021-04-04T09:30:00Z"
+Title: "V014 - Weekly Vlog #14 Azure, DevOps & GitHub Blogs, Azure Updates & New CloudWithChris content"
 categories:
 - Vlog
 episode: V014
-image: img/cloudwithchrislogo.png # img/vlog/v002.jpg
+image: img/vlog/v014.jpg
 explicit: "no"
 guests: []
 hosts:
 - chrisreddington
 images:
 - img/default-social.png
-# - img/vlog/v002.jpg
-# podcast_bytes: "13803520"
-# podcast_duration: "14:19.000"
-# podcast_file: V002 - Weekly Technology Vlog.mp3
+- img/vlog/v014.jpg
+podcast_bytes: "28024832"
+podcast_duration: "29:13.000"
+podcast_file: V014 - Weekly Technology Vlog.mp3
 series:
 - Weekly Vlog
 tags:
-#- Podcast
-#- Sessionize
-#- Azure
-#- Community
-# youtube: VyQI5SOsw3M
-upcoming: true
+- Podcast
+- Azure
+- Azure DevOps
+- GitHub
+- Community
+youtube: YcXLYIzlE50
 ---
-In this video, chris provides another update on Cloud with Chris, updates on what's coming soon and Azure related news!
+In this livestream, Chris covers the latest and greatest in the Azure, Azure DevOps & GitHub world, as well as the latest and upcoming content releases on Cloud with Chris!
