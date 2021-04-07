@@ -43,7 +43,7 @@ I'm writing this blog post using Windows Terminal Preview, Version 1.7.572.0, so
 
 This setting area allows you to customise the appearance, the colour schemes and more of your Windows Terminal. More importantly (from my perspective), it allows you to create, update and delete profiles (Though I don't believe the UI allows you to delete the pre-made profiles). Why do I think the profiles settings are the most important? Well, did you notice something interesting in the first screenshot of this blogpost? There are two profiles relating to Virtual Machines!
 
-When you create a profile, you can go ahead and specify a command line activity to run. For example, Windows PowerShell runs ``powershell.exe``, Ubuntu runs ``wsl.exe -d Ubuntu-20.04``. But what about SSH? 
+When you create a profile, you can go ahead and specify a command line activity to run. For example, Windows PowerShell runs ``powershell.exe``, Ubuntu runs ``wsl.exe -d Ubuntu-20.04``. But what about SSH?
 
   > **TIP**: Did you know that there is an OpenSSH Client available as an optional feature in Windows 10? You can find out more in [this article](https://www.howtogeek.com/336775/how-to-enable-and-use-windows-10s-built-in-ssh-commands/) on how to get this setup. This will allow you to use SSH directly within Windows, rather than needing to use Windows Subsystem for Linux.
 
@@ -59,7 +59,7 @@ The experience will work exactly as you expect. If you have a private key held i
 
 ![Listing of .ssh directories in WSL and Windows, showing different keys](/img/blog/windows-terminal-productive-azure/windows-terminal-ssh-keys.jpg)
 
-Finally, you will also notice that [Azure Cloud Shell is available for you as a profile in Windows Terminal](https://devblogs.microsoft.com/commandline/the-azure-cloud-shell-connector-in-windows-terminal/).This is the same Azure Cloud Shell that you would connect to if you were in the Azure Portal, or if you connected directly to [https://shell.azure.com/](https://shell.azure.com/). The Azure Cloud Shell has [several tools installed by default](https://docs.microsoft.com/en-gb/azure/cloud-shell/features#tools) (including Git, Terraform, the Azure CLI and Kubectl). 
+Finally, you will also notice that [Azure Cloud Shell is available for you as a profile in Windows Terminal](https://devblogs.microsoft.com/commandline/the-azure-cloud-shell-connector-in-windows-terminal/).This is the same Azure Cloud Shell that you would connect to if you were in the Azure Portal, or if you connected directly to [https://shell.azure.com/](https://shell.azure.com/). The Azure Cloud Shell has [several tools installed by default](https://docs.microsoft.com/en-gb/azure/cloud-shell/features#tools) (including Git, Terraform, the Azure CLI and Kubectl).
 
 Another great feature of Azure Cloud Shell is the ability to persist your files across sessions. When you first create an Azure Cloud Shell instance, you'll be prompted to either create or attach it to an existing Azure File Share in Azure Storage. The home directory is persisted in the file share (as an .img rather than as individual files), but beware - files outside of home are **not** persisted across sessions.
 
