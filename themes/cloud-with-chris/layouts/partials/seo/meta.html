@@ -1,11 +1,14 @@
-<title>{{ .Title }} | {{ .Site.Title }}</title>  
+<title>{{ .Title | default .Site.Title }}
+  {{ if not .IsHome }} | {{ .Site.Title }}{{ end }}
+  </title>
 <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
-<meta property="og:title" content="{{ .Title }} | {{ .Site.Title }}" />
-<meta name="twitter:title" content="{{ .Title }} | {{ .Site.Title }}" />
-<meta itemprop="name" content="{{ .Title }} | {{ .Site.Title }}" />
-<meta name="application-name" content="{{ .Title }} | {{ .Site.Title }}" />
+<meta property="og:title" content="{{ .Title | default .Site.Title }}{{ if not .IsHome }} | {{ .Site.Title }}{{ end }}" />
+<meta name="twitter:title" content="{{ .Title | default .Site.Title }}{{ if not .IsHome }} | {{ .Site.Title }}{{ end }}" />
+<meta itemprop="name" content="{{ .Title | default .Site.Title }}{{ if not .IsHome }} | {{ .Site.Title }}{{ end }}" />
+<meta name="application-name" content="{{ .Title | default .Site.Title }}{{ if not .IsHome }} | {{ .Site.Title }}{{ end }}" />
 <meta property="og:site_name" content="{{ .Site.Title }}" />
 
+<meta http-equiv="Content-Security-Policy" content="script-src 'self' https://www.google-analytics.com https://www.youtube.com 'sha256-1CfYbUbDQSoUKS2uxzsF5X4poiM0VN/82KjKyg9DTbA=' 'sha256-OnRLgxAvC0sv+JBQ3zD0dfHi1+ptHEqRDuIyhkyjLFE='; img-src 'self' https://www.google-analytics.com www.google-analytics.com https://stats.g.doubleclick.net https://s.ytimg.com; connect-src 'self' https://www.google-analytics.com www.google-analytics.com https://stats.g.doubleclick.net; child-src https://www.youtube.com http://www.youtube.com">
 
 {{ if not .Params.Description }}
   <meta name="description" content="{{ .Site.Params.description }}" />
@@ -20,7 +23,17 @@
 {{ end }}
 
 <base href="{{ .Permalink }}">
-<link rel="canonical" href="{{ .Site.BaseURL }}" /> 
+{{ $paginator := .Paginate (where .Site.RegularPages ".Params.post" "!=" false) }}
+<!-- Remove the line above if you already have it in the file, you don't need it twice in the same file (you do need it once in each file that refers to the paginator object though). -->
+{{ if .IsHome }}
+  {{ if eq $paginator.PageNumber 1 }}
+    <link rel="canonical" href="{{ .Permalink }}" />
+  {{ else }}
+    <link rel="canonical" href="{{ .Permalink }}page/{{ $paginator.PageNumber }}/" />
+  {{ end }}
+{{ else }}
+  <link rel="canonical" href="{{ .Permalink }}" />
+{{ end }}
 <meta name="url" content="{{ .Permalink }}" />
 <meta name="twitter:url" content="{{ .Permalink }}" /> 
 <meta property="og:url" content="{{ .Permalink }}" />
