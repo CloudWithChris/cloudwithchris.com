@@ -56,8 +56,7 @@
 {{ if eq .Section "blog" }} 
 
   <!-- Pagination meta tags for list pages only -->
-  {{ $paginator := .Paginate (where .Pages "Section" "blog") }}
-  {{ $paginator := .Paginate (where .Pages "Section" "episode") }}
+  {{ $paginator := .Paginate (where (where .Pages "Section" "blog") ".Params.upcoming" "!=" true) }}
   {{ if $paginator }}
     <link rel="first" href="{{ $paginator.First.URL }}">
     <link rel="last" href="{{ $paginator.Last.URL }}">
@@ -121,7 +120,7 @@
     }
   </script>
 {{ else if eq .Section "episode" }} 
-  {{ $paginator := .Paginate (where .Pages "Section" "episode") }}
+  {{ $paginator := .Paginate (where (where .Pages "Section" "episode") ".Params.upcoming" "!=" true) }}
   {{ if $paginator }}
     <link rel="first" href="{{ $paginator.First.URL }}">
     <link rel="last" href="{{ $paginator.Last.URL }}">
@@ -142,7 +141,7 @@
     <link rel="canonical" href="{{ .Permalink }}" />
   {{ end }}
 {{ else if eq .Section "guest" }} 
-  {{ $paginator := .Paginate (where .Pages "Section" "guest") }}
+  {{ $paginator := .Paginate (where .Pages "Section" "guest").ByTitle }}
   {{ if $paginator }}
     <link rel="first" href="{{ $paginator.First.URL }}">
     <link rel="last" href="{{ $paginator.Last.URL }}">
@@ -163,7 +162,7 @@
     <link rel="canonical" href="{{ .Permalink }}" />
   {{ end }}
 {{ else if eq .Section "talk" }} 
-  {{ $paginator := .Paginate (where .Pages "Section" "talk") }}
+  {{ $paginator := .Paginate (where (where .Pages "Section" "talk") ".Params.upcoming" "!=" true) }}
   {{ if $paginator }}
     <link rel="first" href="{{ $paginator.First.URL }}">
     <link rel="last" href="{{ $paginator.Last.URL }}">
@@ -184,7 +183,7 @@
     <link rel="canonical" href="{{ .Permalink }}" />
   {{ end }}
 {{ else if eq .Section "series" }} 
-  {{ $paginator := .Paginate (where .Pages "Section" "series") }}
+  {{ $paginator := .Paginate (where .Data.Pages ".Params.upcoming" "!=" true) }}
   {{ if $paginator }}
     <link rel="first" href="{{ $paginator.First.URL }}">
     <link rel="last" href="{{ $paginator.Last.URL }}">
@@ -205,7 +204,7 @@
     <link rel="canonical" href="{{ .Permalink }}" />
   {{ end }}
 {{ else if eq .Section "tags" }} 
-  {{ $paginator := .Paginate (where .Pages "Section" "tags") }}
+  {{ $paginator := .Paginate (where .Data.Pages ".Params.upcoming" "!=" true) }}
   {{ if $paginator }}
     <link rel="first" href="{{ $paginator.First.URL }}">
     <link rel="last" href="{{ $paginator.Last.URL }}">
