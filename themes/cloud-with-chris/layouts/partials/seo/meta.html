@@ -6,7 +6,7 @@
 <meta name="application-name" content="{{ .Title | default .Site.Title }}{{ if not .IsHome }} | {{ .Site.Title }}{{ end }}" />
 <meta property="og:site_name" content="{{ .Site.Title }}" />
 
-<meta http-equiv="Content-Security-Policy" content="script-src 'self' https://www.google-analytics.com https://www.youtube.com 'sha256-oWm/NzHRzhKAQfKde1fqIBg3QUdhBSrbrIUH8Dy9YKI=' 'sha256-nPQLCTXBCD97YQ1ZzpMyCUGdUVokvRe8Zmpc70g2diY='; img-src 'self' https://www.google-analytics.com www.google-analytics.com https://stats.g.doubleclick.net https://s.ytimg.com; connect-src 'self' https://www.google-analytics.com www.google-analytics.com https://stats.g.doubleclick.net; child-src https://www.youtube.com http://www.youtube.com">
+<meta http-equiv="Content-Security-Policy" content="script-src 'self' https://www.google-analytics.com https://www.youtube.com 'sha256-oWm/NzHRzhKAQfKde1fqIBg3QUdhBSrbrIUH8Dy9YKI=' 'sha256-nPQLCTXBCD97YQ1ZzpMyCUGdUVokvRe8Zmpc70g2diY='; img-src 'self' https://www.google-analytics.com www.google-analytics.com https://stats.g.doubleclick.net https://s.ytimg.com; connect-src 'self' https://www.google-analytics.com www.google-analytics.com https://stats.g.doubleclick.net; child-src https://www.youtube.com http://www.youtube.com; object-src none">
 
 {{ if not .Params.Description }}
   <meta name="description" content="{{ .Site.Params.description }}" />
