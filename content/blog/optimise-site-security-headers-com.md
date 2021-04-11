@@ -26,7 +26,7 @@ The grades that you can achieve range from an A+ to an F. You can also receive a
 
 In case you're unable to read the image, the headers and descriptions are as follows -
 
-* **Content-Security-Policy** -	Content Security Policy is an effective measure to protect your site from XSS attacks. By whitelisting sources of approved content, you can prevent the browser from loading malicious assets.
+* **Content-Security-Policy** - Content-Security-Policy is an effective measure to protect your site from XSS attacks. By whitelisting sources of approved content, you can prevent the browser from loading malicious assets.
 * **X-Frame-Options** - X-Frame-Options tells the browser whether you want to allow your site to be framed or not. By preventing a browser from framing your site you can defend against attacks like clickjacking. Recommended value "X-Frame-Options: SAMEORIGIN".
 * **X-Content-Type-Options** - X-Content-Type-Options stops a browser from trying to MIME-sniff the content type and forces it to stick with the declared content-type. The only valid value for this header is "X-Content-Type-Options: nosniff".
 * **Referrer-Policy** - Referrer-Policy is a new header that allows a site to control how much information the browser includes with navigations away from a document and should be set by all sites.
