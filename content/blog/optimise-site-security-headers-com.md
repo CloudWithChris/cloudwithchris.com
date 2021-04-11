@@ -25,11 +25,12 @@ As any engaged listener does, I took note of the tools that he used, and added t
 The grades that you can achieve range from an A+ to an F. You can also receive an R grade if the site provides a redirect. From what I can tell, the grading system gives you an F by default if you do not pass any of the headers. Then for each header that you turn green, you improve by a grade.
 
 In case you're unable to read the image, the headers and descriptions are as follows -
+
 * **Content-Security-Policy** -	Content Security Policy is an effective measure to protect your site from XSS attacks. By whitelisting sources of approved content, you can prevent the browser from loading malicious assets.
-* **X-Frame-Options** -	X-Frame-Options tells the browser whether you want to allow your site to be framed or not. By preventing a browser from framing your site you can defend against attacks like clickjacking. Recommended value "X-Frame-Options: SAMEORIGIN".
+* **X-Frame-Options** - X-Frame-Options tells the browser whether you want to allow your site to be framed or not. By preventing a browser from framing your site you can defend against attacks like clickjacking. Recommended value "X-Frame-Options: SAMEORIGIN".
 * **X-Content-Type-Options** - X-Content-Type-Options stops a browser from trying to MIME-sniff the content type and forces it to stick with the declared content-type. The only valid value for this header is "X-Content-Type-Options: nosniff".
-* **Referrer-Policy** -	Referrer Policy is a new header that allows a site to control how much information the browser includes with navigations away from a document and should be set by all sites.
-* **Permissions-Policy** - Permissions Policy is a new header that allows a site to control which features and APIs can be used in the browser.
+* **Referrer-Policy** - Referrer-Policy is a new header that allows a site to control how much information the browser includes with navigations away from a document and should be set by all sites.
+* **Permissions-Policy** - Permissions-Policy is a new header that allows a site to control which features and APIs can be used in the browser.
 
 So, we can now understand the problem. From a risk perspective, I perceived the impact as medium/low and the likelihood of abuse to be low. particularly due to the early phase of my platform, and volume of users that I currently have visiting. However, with that said though, I want to ensure that I'm providing an accessible, secure and easy to use platform for my end-users to use. So within a few days, I made sure that each of these items were resolved.
 
@@ -44,6 +45,7 @@ Below, you can find an image which shows the configuration of modifying the resp
 ![Rules Engine configuration for www.cloudwithchris.com](/img/blog/optimise-site-security-headers-com/rules-engine-config.png)
 
 Again, for readability -
+
 * **Always Modify response header Append Strict-Transport-Security** max-age=31536000; includeSubDomains
   * This was the recommended value from securityheaders.com
 * **Always Modify response header Append X-Frame-Options** SAMEORIGIN
@@ -76,11 +78,11 @@ script-src 'self' https://www.google-analytics.com https://www.youtube.com 'sha2
 geolocation=(), camera=(), fullscreen=("https://youtube.com"), microphone=(), accelerometer=()
 In a nutshell, this allows scripts to be run from the same origin, google-analytics.com, youtube.com, as well as inline scripts that have a given SHA that I already know. Images can be the same origin, google-analytics.com, YouTube images, etc. Finally, [connect-src](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/connect-src) restricts the URLs which can be loaded using script interfaces (including websockets, External HTTP Requests and more).
 
-Now, the next step was to paste this value into the CDN rules engine header value for Content-Security-Policy and we're done!.. Or so I thought. It turns out that there is a max length of 128 characters for these values in the CDN rules engine. 
+Now, the next step was to paste this value into the CDN rules engine header value for Content-Security-Policy and we're done!.. Or so I thought. It turns out that there is a max length of 128 characters for these values in the CDN rules engine.
 
   > If this is a blocker for you, I'd encourage you to take a look at [this UserVoice post](https://feedback.azure.com/forums/217313-networking/suggestions/41077912-header-value-character-limit-in-azure-front-door-r) which explains the exact same scenario for Azure Front Door.
 
-So, back to the drawing board.. let's leave the Azure CDN configuration as-is and think of alternative options. Fortunately, there is an alternative. Content-Security policies can be set as a meta tag within the HTML body itself. I would have preferred to have everything managed through Azure CDN, but unfortunately that's not an option. 
+So, back to the drawing board.. let's leave the Azure CDN configuration as-is and think of alternative options. Fortunately, there is an alternative. Content-Security policies can be set as a meta tag within the HTML body itself. I would have preferred to have everything managed through Azure CDN, but unfortunately that's not an option.
 
 So, I added the below snippet to my header -
 
