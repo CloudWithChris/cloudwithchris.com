@@ -24,7 +24,7 @@ I've had many failed attempts at blogging. Just look back at my blog posts on Cl
 
 * What if someone else has already written a blog post about it? You'll likely have a different story, or different angle to the previous article. Why not reference their work, and build upon it - telling your own story?
 * What if I'm not the world's expert in that area? We're all learning, and we can all learn together. This is the idea behind community, is that we will all have our various interest areas. You'll likely be stronger in some areas and have room for development in others. Where can you help others grow and contribute back?
-* What if my content isn't good enough? This is a hurdle that you'll need to work through. Everyone goes through it, and it's easy to get caught in the analysis paralysis of 'should I release this'. The answer is YES! As Jamie said on the Livestream, Just clich publish - learn to dance with the fear. 
+* What if my content isn't good enough? This is a hurdle that you'll need to work through. Everyone goes through it, and it's easy to get caught in the analysis paralysis of 'should I release this'. The answer is YES! As Jamie said on the Livestream, Just clich publish - learn to dance with the fear.
 * Linking to the above point, the beauty of this is that with each blog post, or each vlog or podcast, you can take that as a learning experience. Some people hate listening or watching themselves back in the recording. I'm one of those people. But, I've had to get used to that - so that I can listen to my content and improve. I listen/watch back every single episode, so that I can aim to take at least one improvement point away and carry it forwards to keep building even more quality content.
 
 ## Set yourself up for success
@@ -35,7 +35,7 @@ To work towards that growth, it's good to have a series of mini-goals to work to
 
 Now on that point, it's important to also not bite off more than you can chew. Be realistic, and start at a level that makes sense. I presented at the Northern Azure User Group last week, where Scott Hanselman was the other presenter. He gave some great advice on this front, so I'll paraphase what he said. If you write one blog post a week, that's 50 posts throughout a year. If you do that over 20 years, that's 1,000 articles. That's a portfolio which shows huge amounts of value compared to lines on your CV. If you write 2 articles a week over 20 years, then that's 2,000.
 
-So hopefully you get the idea here. You don't need to boil the ocean and start running too quickly. Find your rhythm, and the cadence that works well for you. For example, since the beginning of this year, I've been doing the following - 
+So hopefully you get the idea here. You don't need to boil the ocean and start running too quickly. Find your rhythm, and the cadence that works well for you. For example, since the beginning of this year, I've been doing the following -
 
 * Monday is the release of my Weelky Vlog
 * Tuesday may be community commitments (e.g. Azure Thames Valley) or other presenting commitments
