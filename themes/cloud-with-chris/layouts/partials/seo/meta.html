@@ -6,7 +6,7 @@
 <meta name="application-name" content="{{ .Title | default .Site.Title }}{{ if not .IsHome }} | {{ .Site.Title }}{{ end }}" />
 <meta property="og:site_name" content="{{ .Site.Title }}" />
 
-<meta http-equiv="Content-Security-Policy" content="script-src 'self' https://www.google-analytics.com https://www.youtube.com 'sha256-oWm/NzHRzhKAQfKde1fqIBg3QUdhBSrbrIUH8Dy9YKI=' 'sha256-nPQLCTXBCD97YQ1ZzpMyCUGdUVokvRe8Zmpc70g2diY=' 'sha256-Sp1X4oKBJAKvMiTi53LGB1wskjJJziC/qQfIqQvIlKA='; img-src 'self' https://www.google-analytics.com https://stats.g.doubleclick.net https://s.ytimg.com https://app.podscribe.ai; connect-src 'self' https://backend.podscribe.ai https://podcasts.cloudwithchris.com https://www.google-analytics.com https://stats.g.doubleclick.net; child-src https://www.youtube.com; object-src none">
+<meta http-equiv="Content-Security-Policy" content="script-src 'self' https://www.google-analytics.com https://www.youtube.com 'sha256-oWm/NzHRzhKAQfKde1fqIBg3QUdhBSrbrIUH8Dy9YKI=' 'sha256-nPQLCTXBCD97YQ1ZzpMyCUGdUVokvRe8Zmpc70g2diY=' 'sha256-Sp1X4oKBJAKvMiTi53LGB1wskjJJziC/qQfIqQvIlKA='; img-src 'self' https://www.google-analytics.com https://stats.g.doubleclick.net https://s.ytimg.com https://app.podscribe.ai https://is5-ssl.mzstatic.com; connect-src 'self' https://backend.podscribe.ai https://podcasts.cloudwithchris.com https://www.google-analytics.com https://stats.g.doubleclick.net; child-src https://www.youtube.com; object-src none">
 
 {{ if not .Params.Description }}
   <meta name="description" content="{{ .Site.Params.description }}" />
