@@ -11,7 +11,7 @@
         "epGuid": "https://podcasts.cloudwithchris.com/{{ . }}",
       }
       </script>
-      <script src="js/podscribe.js" cookie-consent="strictly-necessary"></script>
+      <script src="{{ "js/podscribe.js" | absURL }}" cookie-consent="strictly-necessary"></script>
     
     <script cookie-consent="tracking" src="{{ "js/embed.js" | absURL }}"></script>
   {{ end }}
