@@ -76,7 +76,10 @@ outputs:
 params:
   about_logo: "/img/cloudwithchrislogo.png"
   author: "Chris Reddington"
-  copyright_notice: "Copyright 2020 [Chris Reddington](https://www.christianreddington.co.uk), Proudly running using [Hugo](https://gohugo.io/)."
+  copyright:
+    established: "2020"
+    notice: "[Chris Reddington](https://www.christianreddington.co.uk). Proudly running using [Hugo](https://gohugo.io/)."
+    additional_information: "Theme created by Chris Reddington, building upon [Matt Stratton's Castanet Theme](https://github.com/mattstratton/castanet)"
   itunes_subscribe: "https://podcasts.apple.com/gb/podcast/cloud-with-chris/id1499633784"
   spotify_subscribe: "https://open.spotify.com/show/3oBrdKm5grzl58GBiV0j2y"
   google_play_subscribe: "https://podcasts.google.com/feed/aHR0cHM6Ly93d3cuY2xvdWR3aXRoY2hyaXMuY29tL2VwaXNvZGUvaW5kZXgueG1s?sa=X&ved=0CAMQ4aUDahcKEwiwsr2N1ePtAhUAAAAAHQAAAAAQBA"

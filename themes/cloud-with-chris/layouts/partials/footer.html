@@ -24,8 +24,8 @@
           </li>
         {{ end }}
       </ul>
-      <div class="d-flex justify-content-center copyright-notice">
-        <p>{{ .Site.Params.copyright_notice | markdownify }}</p>
+      <div class="d-flex justify-content-center copyright-notice text-wrap">
+        <p>&copy; {{ .Site.Params.copyright.established | markdownify }} - {{ dateFormat "2006" now }} {{ .Site.Params.copyright.notice | markdownify }}</p>
       </div>
       <div class="d-flex">
         <ul class="nav">
