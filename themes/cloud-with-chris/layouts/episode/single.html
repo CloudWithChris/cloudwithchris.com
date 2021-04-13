@@ -6,20 +6,13 @@
 
   {{ with .Params.podcast_file }}
     <div id="podscribe-embed-root"></div>
-    <script cookie-consent="strictly-necessary">
-      var podscribeEmbedVars = {
-        epGuid: 'https://podcasts.cloudwithchris.com/{{ . }}',
-        rssUrl: 'https://www.cloudwithchris.com/episode/index.xml',
-        backgroundColor: '#CFDCE1',
-        font: undefined,
-        fontColor: undefined,
-        speakerFontColor: '#25A6D9',
-        height: '1000px',
-        showEditButton: true,
-        showSpeakers: true,
-        showTimestamps: true
-      };
-    </script>
+    <script type="application/json" data-cwc-selector="episode-data">
+      {
+        "epGuid": "https://podcasts.cloudwithchris.com/{{ . }}",
+      }
+      </script>
+      <script src="js/podscribe.js" cookie-consent="strictly-necessary"></script>
+    
     <script cookie-consent="tracking" src="{{ "js/embed.js" | absURL }}"></script>
   {{ end }}
 </div>
