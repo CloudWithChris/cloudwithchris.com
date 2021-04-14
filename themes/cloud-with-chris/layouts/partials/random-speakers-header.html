@@ -1,0 +1,7 @@
+<div class="row">
+  {{ range first 12 (shuffle (where $.Site.RegularPages "Section" "guest")) }}
+    <div class="col-2">
+      <a href="{{ .Permalink }}"><img src="{{ .Params.image | absURL }}" class="rounded-circle z-depth-2 align-middle" width="125" title="{{ .Title }}" alt="{{ .Title }}" /></a>
+    </div>
+  {{ end }}
+</div>

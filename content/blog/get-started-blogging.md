@@ -18,6 +18,8 @@ title: Tips on getting started with blogging and content creation
 
 In case you missed it, [Shannon Kuehn](https://www.shankuehn.io/), [Jamie Maguire](https://jamiemaguire.net/), [John Lunn](https://jonnychipz.com/) and I joined [Sarah Lean](https://www.techielass.com) for a [panel livestream on her channel](https://www.youtube.com/watch?v=J5q_DZJRpYM) talking about our experiences getting started with blogging, and our experiences with blogging platforms. In this post, I want to focus on the first aspect - how you can get started with blogging, and some of the common themes / recommendations I've heard, not just from this session, but from other active community contributors.
 
+![Screen snippet from the Blog Panel - Sarah Lean (@TechieLass), Shannon Kuehn (@shankuehn), Chris Reddington (@reddobowen), Jamie Maguire (@jamie_maguire1), John Lunn (@jonnychipz)](/img/blog/get-started-blogging/blog-panel.jpg)
+
 ## Just get started
 
 I've had many failed attempts at blogging. Just look back at my blog posts on CloudWithChris, and you'll see how far they date back. You have to start somewhere. On that point, you won't be creating masterpieces from the very beginning. I compare this to some of the content that I've made in my podcasts / video content. My initial podcast content was very scripted, and planned ahead of time, whereas now I've learned the balance between being natural and enough up front planning to successfully execute my ideas into reality. That said, analysis paralysis can always take over.
