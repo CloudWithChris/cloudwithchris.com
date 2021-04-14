@@ -72,10 +72,9 @@ After making the adjustments, I begun the process of investigating the Content-S
 
 So by the end of it, I had compiled a header value similar to the below -
 ```bash
-script-src 'self' https://www.google-analytics.com https://www.youtube.com 'sha256-oWm/NzHRzhKAQfKde1fqIBg3QUdhBSrbrIUH8Dy9YKI=' 'sha256-nPQLCTXBCD97YQ1ZzpMyCUGdUVokvRe8Zmpc70g2diY='; img-src 'self' https://www.google-analytics.com www.google-analytics.com https://stats.g.doubleclick.net https://s.ytimg.com; connect-src 'self' https://www.google-analytics.com www.google-analytics.com https://stats.g.doubleclick.net; child-src https://www.youtube.com http://www.youtube.com
+script-src 'self' https://www.google-analytics.com https://www.youtube.com 'sha256-oWm/NzHRzhKAQfKde1fqIBg3QUdhBSrbrIUH8Dy9YKI=' 'sha256-nPQLCTXBCD97YQ1ZzpMyCUGdUVokvRe8Zmpc70g2diY='; img-src 'self' https://www.google-analytics.com https://stats.g.doubleclick.net https://s.ytimg.com https://app.podscribe.ai https://is5-ssl.mzstatic.com; connect-src 'self' https://backend.podscribe.ai https://podcasts.cloudwithchris.com https://www.google-analytics.com https://stats.g.doubleclick.net; child-src https://www.youtube.com; object-src none
 ```
 
-geolocation=(), camera=(), fullscreen=("https://youtube.com"), microphone=(), accelerometer=()
 In a nutshell, this allows scripts to be run from the same origin, google-analytics.com, youtube.com, as well as inline scripts that have a given SHA that I already know. Images can be the same origin, google-analytics.com, YouTube images, etc. Finally, [connect-src](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/connect-src) restricts the URLs which can be loaded using script interfaces (including websockets, External HTTP Requests and more).
 
 Now, the next step was to paste this value into the CDN rules engine header value for Content-Security-Policy and we're done!.. Or so I thought. It turns out that there is a max length of 128 characters for these values in the CDN rules engine.
@@ -87,10 +86,10 @@ So, back to the drawing board.. let's leave the Azure CDN configuration as-is an
 So, I added the below snippet to my header -
 
 ```html
-<meta http-equiv="Content-Security-Policy" content="script-src 'self' https://www.google-analytics.com https://www.youtube.com 'sha256-oWm/NzHRzhKAQfKde1fqIBg3QUdhBSrbrIUH8Dy9YKI=' 'sha256-nPQLCTXBCD97YQ1ZzpMyCUGdUVokvRe8Zmpc70g2diY='; img-src 'self' https://www.google-analytics.com www.google-analytics.com https://stats.g.doubleclick.net https://s.ytimg.com; connect-src 'self' https://www.google-analytics.com www.google-analytics.com https://stats.g.doubleclick.net; child-src https://www.youtube.com http://www.youtube.com">
+<meta http-equiv="Content-Security-Policy" content="script-src 'self' https://www.google-analytics.com https://www.youtube.com 'sha256-oWm/NzHRzhKAQfKde1fqIBg3QUdhBSrbrIUH8Dy9YKI=' 'sha256-nPQLCTXBCD97YQ1ZzpMyCUGdUVokvRe8Zmpc70g2diY='; img-src 'self' https://www.google-analytics.com https://stats.g.doubleclick.net https://s.ytimg.com https://app.podscribe.ai https://is5-ssl.mzstatic.com; connect-src 'self' https://backend.podscribe.ai https://podcasts.cloudwithchris.com https://www.google-analytics.com https://stats.g.doubleclick.net; child-src https://www.youtube.com; object-src none">
 ```
 
-Unfortunately, this won't be recognised by securityheaders.com as a fix. However, I know that I have addressed the underlying concern and this has now been implemented on the website.
+Unfortunately, this won't be recognised by securityheaders.com as a fix. However, I know that I have addressed the underlying concern and this has now been implemented on the website. Additionally, [Mozilla Observatory](https://observatory.mozilla.org/) gives the site an A+ rating.
 
 Great, so with that - We've gone ahead and strengthened the security posture of the website against potential areas of abuse, such as cross-site scripting, forcing browsers to realise they must only use an encrypted medium of transfer, and more. In fairness, the risks are very low for my website. There is no user interaction to any backend system, and is primarily a 'brochureware' type of website. However, I want to make sure that if there is the potential for any risk, that it is mitigated and addressed.
 
