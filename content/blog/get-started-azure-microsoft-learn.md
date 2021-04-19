@@ -20,7 +20,7 @@ Microsoft Learn is a free online learning platform that was announced back in Ig
 
 So what is Microsoft Learn? It is a platform focused around... clue is in the name - Learning! Initially launched with modular based content and learning paths, the platform has continued expanding over the recent years not just in content, but in terms of approaches that you can learn as well.
 
-Microsoft Learn isn't *just* about Azure, but also has content relating to GitHub, Dynamics 365, Microsoft 365 and more. But those are all large subject matter areas. What if you're a developer? Or a security engineer? A solutions architect? Or a DevOps engineer? Microsoft Learn has you covered, as you can also view the content available based upon role. 
+Microsoft Learn isn't *just* about Azure, but also has content relating to GitHub, Dynamics 365, Microsoft 365 and more. But those are all large subject matter areas. What if you're a developer? Or a security engineer? A solutions architect? Or a DevOps engineer? Microsoft Learn has you covered, as you can also view the content available based upon role.
 
 Go ahead and navigate over to [Microsoft Learn](https://docs.microsoft.com/en-us/learn/) and explore the "Products" tab or the "Roles" tab, and you'll understand the point I'm making here! The content in these pages is split across two types -
 
