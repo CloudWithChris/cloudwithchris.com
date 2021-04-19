@@ -14,7 +14,7 @@ tags:
 - How To
 title: Getting started with Azure using Microsoft Learn
 ---
-Often, I'm asked the question how do I get started with Azure? Are there any resources, tutorials, guides that you can recommend? I know about topic <X>, but how do I learn more? I've been working with, and continuously learning Azure over the past 7 years or so. When I started, the main resources were Microsoft Docs and community sites. Both great resorces, but there was a gap for a truly educational resource, rather than technical reference material. Enter [Microsoft Learn](https://docs.microsoft.com/en-us/learn/).
+Often, I'm asked the question how do I get started with Azure? Are there any resources, tutorials, guides that you can recommend? I know about topic X, but how do I learn more? I've been working with (and continuously learning) Azure over the past 7 years or so. When I started, the main resources were Microsoft Docs and community sites. Both great resources, but there was a gap for a truly educational resource, rather than technical reference material. Enter [Microsoft Learn](https://docs.microsoft.com/en-us/learn/).
 
 Microsoft Learn is a free online learning platform that was announced back in Ignite 2018. 2018 sounds like a long time ago, but feels like not long ago at all! As a result, I'm still finding that there are some folks who haven't used it, or are aware of it but have used it quite some time ago. As a fun fact, I wrote up some of the initial content for the architecture modules before it was launched at Ignite, so played a small part in helping with the initial release - which is a fun anecdote!
 
@@ -24,7 +24,7 @@ Microsoft Learn isn't *just* about Azure, but also has content relating to GitHu
 
 Go ahead and navigate over to [Microsoft Learn](https://docs.microsoft.com/en-us/learn/) and explore the "Products" tab or the "Roles" tab, and you'll understand the point I'm making here! The content in these pages is split across two types -
 
-* **Modules** - A series of related articles, videos and labs/exercises to help you increase your skills on a given topic. Modules are split up into *units*, allowing you to consume content in a bite-sized way - no matter how much time you have avaialble!
+* **Modules** - A series of related articles, videos and labs/exercises to help you increase your skills on a given topic. Modules are split up into *units*, allowing you to consume content in a bite-sized way - no matter how much time you have available!
 * **Learning Paths** - A collection of modules, typically organised under some role-based or technology-based scenario.
 
 ![Microsoft Learn Catalog](/img/blog/get-started-azure-microsoft-learn/MicrosoftLearn-Catalog.png)
@@ -39,7 +39,7 @@ Now I mentioned a bit earlier that in some cases, you may consume content throug
 
 So, we have a free online learning platform, that is gamified, with content broken down into units / modules / learning paths so that we can learn based upon the amount of time we have available? Yep, that's exactly right.
 
-This content isn't just about people who are brand new to Azure. What if you're a specialist in a certain domain (e.g. a developer), but want to start exploring data science concepts? The content is abbsolutely relevant to you! Cloud in general is a very broad space, so there's absolutely an opportunity to skill up within your current domain, or learn something new - even if you're an experienced hand at Azure!
+This content isn't just about people who are brand new to Azure. What if you're a specialist in a certain domain (e.g. a developer), but want to start exploring data science concepts? The content is absolutely relevant to you! Cloud in general is a very broad space, so there's absolutely an opportunity to skill up within your current domain, or learn something new - even if you're an experienced hand at Azure!
 
 But take a moment to think about that thought, some of these learning paths and modules are likely more appropriate for certain personas or role types than others. It's no coincidence that the Microsoft Azure Certifications are also aligned as role-based certifications (e.g. The [Azure Administrator Associate](https://docs.microsoft.com/en-us/learn/certifications/azure-administrator/), [Azure Developer Associate](https://docs.microsoft.com/en-us/learn/certifications/azure-developer/), [Azure AI Engineer Associate](https://docs.microsoft.com/en-us/learn/certifications/azure-ai-engineer/)).
 
