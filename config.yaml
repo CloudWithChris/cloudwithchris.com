@@ -16,6 +16,9 @@ menu:
     - name: "Get Involved"
       weight: 1
       url: "https://sessionize.com/CloudWithChris"
+    - name: "Code of Conduct"
+      weight: 1
+      url: "/code-of-conduct"
     - name: "Privacy"
       weight: 2
       url: "/privacy-policy"
