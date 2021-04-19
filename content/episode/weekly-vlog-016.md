@@ -1,30 +1,30 @@
 ---
 Date: "2021-04-19T09:30:00Z"
-Description: "In this video, chris provides another update on Cloud with Chris, updates on what's coming soon and Azure related news!"
+Description: "In this video, Chris provides another update (Update #16!) on Cloud with Chris, updates on what's coming soon and Azure, Azure DevOps and GitHub related news!"
 PublishDate: "2021-04-19T09:30:00Z"
 Title: "V016 - Weekly Technology Vlog #16"
 categories:
 - Vlog
 episode: V016
-image: img/cloudwithchrislogo.png # img/vlog/v002.jpg
+image: img/vlog/v016.jpg
 explicit: "no"
 guests: []
 hosts:
 - chrisreddington
 images:
+- img/vlog/v016.jpg
 - img/default-social.png
-# - img/vlog/v002.jpg
-# podcast_bytes: "13803520"
-# podcast_duration: "14:19.000"
-# podcast_file: V002 - Weekly Technology Vlog.mp3
+podcast_bytes: "30806016"
+podcast_duration: "32:09.000"
+podcast_file: V016 - Weekly Technology Vlog.mp3
 series:
 - Weekly Vlog
 tags:
-#- Podcast
-#- Sessionize
-#- Azure
-#- Community
-# youtube: VyQI5SOsw3M
-upcoming: true
+- GitHub
+- Azure DevOps
+- Azure
+- Community
+- cloudwithchris.com
+youtube: WIdign_rUYE
 ---
-In this video, chris provides another update on Cloud with Chris, updates on what's coming soon and Azure related news!
+In this video, Chris provides another update (Update #16!) on Cloud with Chris, updates on what's coming soon and Azure, Azure DevOps and GitHub related news!
