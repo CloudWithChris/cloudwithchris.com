@@ -7,24 +7,24 @@ categories:
 - Technology
 - Azure
 episode: "35"
-image: img/cloudwithchrislogo.png
+image: img/episodes/azure-spring-cloud.jpg
 explicit: "no"
 hosts:
 - chrisreddington
 guests:
 - gittevermeiren
 images:
+- img/episodes/azure-spring-cloud.jpg
 - img/cloudwithchris.png
-# podcast_bytes: "53415936"
-# podcast_duration: "55:42.000"
-# podcast_file: 25 - A conversation on mental health.mp3
+podcast_bytes: "54660891"
+podcast_duration: "56:50.000"
+podcast_file: 35 - A discussion on Azure Spring Cloud.mp3
 tags:
 - Cloud
 - Azure
 - Learn
 - Community
 - Java
-youtube: ""
-upcoming: true
+youtube: "v1ftJCnDDjg"
 ---
 Find out how you can leverage Azure Spring Cloud for running your Java spring boot applications on Azure. Chris is joined by Gitte Vermeiren as they talk through all things Azure Spring Cloud in this episode of Cloud With Chris!
