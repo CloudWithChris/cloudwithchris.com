@@ -18,11 +18,11 @@ Logic Apps is a Platform as a Service (PaaS) offering, which allows you to easil
 
   > Logic Apps v1 can be offered [in a consumption mode](https://docs.microsoft.com/en-us/azure/logic-apps/logic-apps-pricing). This means that you will get charged based upon the number of invocations/executions that are used within the Logic App. There are other hosting options available, including the Integration Service Environment which would be charged differently. Full details are available in the link provided.
 
-Logic Apps runs / instances start with a trigger. Something has to ensure that a workflow run begins. For example, that could be manually by sending an HTTP Request to a given endpoint, scheduling the workflow to run on a given cadence, triggering based upon an event (e.g. a new item has appeared on an RSS feed). 
+Logic Apps runs / instances start with a trigger. Something has to ensure that a workflow run begins. For example, that could be manually by sending an HTTP Request to a given endpoint, scheduling the workflow to run on a given cadence, triggering based upon an event (e.g. a new item has appeared on an RSS feed).
 
 Once the workflow is triggered, it will then begin running a series of actions. These actions are based on [hundreds of connectors](https://docs.microsoft.com/en-us/azure/connectors/apis-list) that are available for you to consume. The Logic App is not just limited to running these actions in a sequential order. You're able to also add conditions, as well as parallel branches and loops to design complex workflows.
 
-So how do you go ahead and make one of these Logic App workflows? You can create a new Logic App in the Azure Portal. 
+So how do you go ahead and make one of these Logic App workflows? You can create a new Logic App in the Azure Portal.
 
 ![Creating Logic Apps Experience](/img/blog/introduction-to-logic-apps/logicapps-create.png)
 
@@ -34,7 +34,7 @@ You can start from a blank logic app, or existing templates. You'll then be able
 
 ![Example Logic Apps Workflow](/img/blog/introduction-to-logic-apps/logicapps-designer2.png)
 
-Now that we understand how we can get started, let's go ahead and explore how I use this for my Cloud with Chris automation behind the scenes. Ultimately, consider this next workflow as the 'receiver' for a series of inputs. 
+Now that we understand how we can get started, let's go ahead and explore how I use this for my Cloud with Chris automation behind the scenes. Ultimately, consider this next workflow as the 'receiver' for a series of inputs.
 
 From a sender perspective, I have several Power Automate workflows that consume from sources such as my Cloud with Chris blog RSS feed, Cloud with Chris podcast episodes RSS feed sand new YouTube video releases. After the content has been approved through power automate (with a comment, which ultimately becomes the text that is shared on social media), I post messages in a JSON format to a private Microsoft Teams channel. In a real world / enterprise scenario, I would expect to see a messaging system like Azure Service Bus with Publish/Subscriber, Azure Storage Queues or similar. However, this was more of an 'art of the possible', and plumbing/connecting multiple sources together.
 
@@ -67,9 +67,9 @@ There is an option available in the [Parse JSON action](https://docs.microsoft.c
 
 ![Part 2 of the Cloud with Chris publishing workflow](/img/blog/introduction-to-logic-apps/logicapp-part2.png)
 
-Next up, I take the outputs from the previous JSON step and use the [Twitter Connector to post a Tweet](https://docs.microsoft.com/en-us/connectors/twitter/#post-a-tweet) with the approval message as well as the URL to the content. 
+Next up, I take the outputs from the previous JSON step and use the [Twitter Connector to post a Tweet](https://docs.microsoft.com/en-us/connectors/twitter/#post-a-tweet) with the approval message as well as the URL to the content.
 
-To make sure that the content is well-marketed, I also post to the relevant subreddits for the content. To do that, I need to make a call to the [Reddit API directly](https://www.reddit.com/dev/api/). That requires a few different pieces of information based on the authentication model that I'm using to the Reddit API - a ``Client ID``, ``Client Secret`` and ``Account Password``. 
+To make sure that the content is well-marketed, I also post to the relevant subreddits for the content. To do that, I need to make a call to the [Reddit API directly](https://www.reddit.com/dev/api/). That requires a few different pieces of information based on the authentication model that I'm using to the Reddit API - a ``Client ID``, ``Client Secret`` and ``Account Password``.
 
   > There are several approaches to authenticate to the Reddit API. You will need to assess which authentication method is best for your scenario. As this is a personal integration workflow / personal application, I have opted for this simple approach. If you are building applications for end-users, then you may need to use a different authentication mechanism.
   
@@ -77,7 +77,7 @@ You'll notice that all of these are stored in Azure Key Vault, and I'm using the
 
 ![Part 3 of the Cloud with Chris publishing workflow](/img/blog/introduction-to-logic-apps/logicapp-part3.png)
 
-The next step is to use the ``Client ID``, ``Client Secret`` and ``Account Password`` from the Key Vault actions calling the Reddit API to retrieve an access token by [using the HTTP action](https://docs.microsoft.com/en-us/azure/connectors/connectors-native-http#add-an-http-action). 
+The next step is to use the ``Client ID``, ``Client Secret`` and ``Account Password`` from the Key Vault actions calling the Reddit API to retrieve an access token by [using the HTTP action](https://docs.microsoft.com/en-us/azure/connectors/connectors-native-http#add-an-http-action).
 
   > For the specifics of how the Reddit API works, you'll once again need to consult Reddit's documentation. I had previously reviewd some documentation that suggested the API would need to be interacted with using the ``application/x-www-form-urlencoded`` content type. However, you'll need to explore this further to determine the right approach for the APIs you need to work with.
 
