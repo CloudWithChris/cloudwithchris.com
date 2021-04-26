@@ -14,7 +14,7 @@ title: 'Introduction to Logic Apps'
 ---
 Many years ago, I [wrote a blog post](/blog/integration-platform-as-a-service-logic-apps) which introduced Logic Apps at a very high level when they were initially released. Ahead of a blog post that I want to write on Logic Apps v2, I thought that it may be worth writing a more thorough recap of Logic Apps as a platform.
 
-Logic Apps is a Platform as a Service (PaaS) offering, which allows you to easily build visual workflow integrations. Whether that's plumbing several microservices together, entirely different solutions within an enterprise, or some of the repetetive backend administrative tasks for a podcast or blog site, Logic Apps may be worth exploring.
+Logic Apps is a Platform as a Service (PaaS) offering, which allows you to easily build visual workflow integrations. Whether that's plumbing several microservices together, entirely different solutions within an enterprise, or some of the repetitive backend administrative tasks for a podcast or blog site, Logic Apps may be worth exploring.
 
   > Logic Apps v1 can be offered [in a consumption mode](https://docs.microsoft.com/en-us/azure/logic-apps/logic-apps-pricing). This means that you will get charged based upon the number of invocations/executions that are used within the Logic App. There are other hosting options available, including the Integration Service Environment which would be charged differently. Full details are available in the link provided.
 
@@ -26,7 +26,7 @@ So how do you go ahead and make one of these Logic App workflows? You can create
 
 ![Creating Logic Apps Experience](/img/blog/introduction-to-logic-apps/logicapps-create.png)
 
-From there, you'll have the option to use the visual designer to create your workflow. You can create these using code (ARM Templates) if you wish, but I think the Visual Designer makes the authoring experience simlpe.
+From there, you'll have the option to use the visual designer to create your workflow. You can create these using code (ARM Templates) if you wish, but I think the Visual Designer makes the authoring experience simple.
 
 ![Initial Logic Apps Designer Experience](/img/blog/introduction-to-logic-apps/logicapps-designer.png)
 
