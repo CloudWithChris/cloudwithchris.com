@@ -27,6 +27,11 @@ tags:
 - Sessionize
 - Azure
 - Community
+- GitHub Codespaces
+- Visual Studio Code
+- Azure DevOps
+- DevOps
+- GitHub
 youtube: VyQI5SOsw3M
 ---
 In this video, Chris lays out his second weekly technology vlog update talking about updates on Cloud With Chris (Weekly Vlogs, Blogs, Podcast Series episodes, Sessionize), Azure Updates, Community Updates (John Lunn aka JonnyChipz, Sarah Lean aka TechieLass, CloudFamily.info and Richard Hooper aka PixelRobots).

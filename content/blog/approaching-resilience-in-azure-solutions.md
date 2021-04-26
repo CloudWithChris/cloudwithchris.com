@@ -16,6 +16,7 @@ tags:
 - Azure
 - Architecture
 - Resilience
+- Requirements
 title: Approaching Resilience in Azure Solutions
 ---
 I mentioned in [Building Solutions in the Cloud](https://www.christianreddington.co.uk/building-solutions-in-the-cloud/) that I would be writing a series of blog posts on the areas of risk that I have seen since I have been providing guidance around Azure. In this post, I will provide some thoughts on how you can consider resilience within the context of your own solution or application.

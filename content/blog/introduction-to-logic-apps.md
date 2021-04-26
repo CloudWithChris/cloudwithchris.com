@@ -10,6 +10,11 @@ images:
 - img/cloudwithchrislogo.png
 tags:
 - Blogging
+- Logic Apps
+- Integration
+- Messaging
+- RBAC
+- Azure Storage
 title: 'Introduction to Logic Apps'
 ---
 Many years ago, I [wrote a blog post](/blog/integration-platform-as-a-service-logic-apps) which introduced Logic Apps at a very high level when they were initially released. Ahead of a blog post that I want to write on Logic Apps v2, I thought that it may be worth writing a more thorough recap of Logic Apps as a platform.

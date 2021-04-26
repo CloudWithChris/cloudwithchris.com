@@ -16,7 +16,8 @@ tags:
 - Architecture
 - DevOps
 - GitHub
-- Learn Cloud
+- Learn cloud
+- Learn Azure
 youtube: YtcLt6_uPKY
 ---
 Mr Chris Reddington talks to us about his life as a Microsoft Azure Fast Track Engineer and some of the pain points he helps Customer navigate. We discuss DevOps and Infrastructure as Code as well as key skills needed for this modern IT world we now live in and more!

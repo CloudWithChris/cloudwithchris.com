@@ -23,6 +23,7 @@ tags:
 - Architecture
 - APIs
 - Cloud Design Patterns
+- Azure Architecture Center
 #youtube: TE4pif__A8c
 upcoming: true
 ---

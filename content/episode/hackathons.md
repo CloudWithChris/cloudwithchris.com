@@ -30,6 +30,9 @@ series:
 tags:
 - Hackathons
 - Development
+- Agile
+- Azure
+- Requirements
 ---
 Hello and welcome back to another episode Cloud with Chris! You're with me - Chris Reddington, and we'll be talking about all things cloud.
 

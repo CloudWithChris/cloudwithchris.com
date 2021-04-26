@@ -23,7 +23,6 @@ tags:
 - Cloud
 - Azure
 - Learn
-- Community
 - Java
 youtube: "v1ftJCnDDjg"
 ---

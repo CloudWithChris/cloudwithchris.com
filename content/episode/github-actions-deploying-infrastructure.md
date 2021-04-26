@@ -27,6 +27,8 @@ tags:
 - DevOps
 - Infrastructure as Code
 - ARM Templates
+- How To
+- Integration
 youtube: o7Ab5LsAm8o
 ---
 Have an application that you want to deploy to Azure in an automated way? Well, before we deploy the application code, we need some Azure Infrastructure for it to run on. In this video, we have you covered on how to deploy that infrastructure!

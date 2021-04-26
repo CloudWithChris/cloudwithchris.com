@@ -20,7 +20,9 @@ images:
 tags:
 - DevOps
 - Developer
-- Application Development
+- Development
+- Application Insights
+- Application Observability
 youtube: yFV4uBsH26M
 upcoming: true
 ---

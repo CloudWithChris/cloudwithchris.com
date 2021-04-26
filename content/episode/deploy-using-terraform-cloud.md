@@ -19,7 +19,6 @@ tags:
 - DevOps
 - Terraform
 - Terraform Cloud
-- Hashicorp
 - Infrastructure as Code
 youtube: iewk-BkJpdU
 ---

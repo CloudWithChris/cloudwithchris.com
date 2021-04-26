@@ -21,7 +21,7 @@ podcast_file: 32 - Accelerate .NET to Azure with GitHub Actions.mp3
 tags:
 - DevOps
 - Developer
-- Application Development
+- Development
 youtube: UHoC_IpCsSs
 ---
 GitHub Actions makes it easy to automate all your software workflows, now with world-class CI/CD. Build, test, and deploy your code right from GitHub. Make code reviews, branch management, and issue triaging work the way you want. With .NET Core bringing a cross platform approach, getting your applications to the Cloud is easier than ever.

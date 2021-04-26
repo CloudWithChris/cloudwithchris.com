@@ -24,6 +24,8 @@ tags:
 - Sessionize
 - Azure
 - Community
+- Bicep
+- ARM Templates
 youtube: Q-vn4uq1fes
 ---
 In this video, Chris updates on cloud with Chris from the recent week as well as Azureish Live, what's coming up over the next week (Azure Thames Valley, another blog post and Compute Resource Consolidation Pattern). We then explore the most recent updates from Azure Updates, Azure Architecture Center, Azure DevOps Blog and GitHub Blog. There are some good updates on Project Bicep, Delivery Plans 2.0. and a whole host of Azure updates this week!

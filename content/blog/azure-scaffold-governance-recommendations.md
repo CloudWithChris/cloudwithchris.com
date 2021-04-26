@@ -13,9 +13,11 @@ tags:
 - Azure
 - Governance
 - RBAC
-- Resource Tags
-- Resource Policies
+- Azure Resource Tags
+- Azure Resource Policies
 - Subscription Management
+- Cloud Adoption Framework
+- Cloud Foundations
 title: Azure Scaffold - Governance Recommendations
 ---
 The topic seems to have come up a few times over the past few weeks, so I wanted to post a short, sharp blog about it!

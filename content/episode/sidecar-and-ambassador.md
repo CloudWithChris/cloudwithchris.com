@@ -24,6 +24,7 @@ tags:
 - Architecture
 - APIs
 - Cloud Design Patterns
+- Azure Architecture Center
 - Security
 youtube: 6-pQKhIYbEU
 ---

@@ -23,6 +23,8 @@ tags:
 - Architecture
 - APIs
 - Cloud Design Patterns
+- Azure Architecture Center
+- Requirements
 youtube: kaR_0mQi1O0
 ---
 Want to focus on scaling an application, or care about resilience? Have a multi-tenant app, but some of your customers have specific requirements for their scenario? Want to have an application deployed globally, but users housed in a particular area for Data Sovereignty? Then listen in to this session where Chris Reddington is joined by John Downs, talking about The Deployment Stamps Pattern. This is another episode in the series of Architecting for the Cloud, one pattern at a time.

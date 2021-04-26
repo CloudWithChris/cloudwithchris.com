@@ -27,7 +27,9 @@ tags:
 - Azure DevOps
 - Infrastructure as Code
 - Bicep
-- Messaging Patterns
+- ARM Templates
+- Wellbeing
+- Messaging
 youtube: IPomqtMIh5o
 ---
 In this video, Chris updates on cloud with Chris from the recent week, and what's coming up over the next week (Azureish Live, another blog post and The Pipes & Filter / Priority Queues patterns). We then explore the most recent updates from Azure Updates, Azure Architecture Center, Azure DevOps Blog and GitHub Blog. There are some good updates on Project Bicep, Delivery Plans 2.0. and a whole host of Azure updates this week!

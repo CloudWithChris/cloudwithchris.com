@@ -22,9 +22,10 @@ series:
 tags:
 - Podcast
 - Ignite
-- Conference
+- Microsoft Conference
 - AKS
-- Architecture Patterns
+- Kubernetes
+- Cloud Design Patterns
 - Azure
 - Community
 youtube: 4tXhWaRZw6Q

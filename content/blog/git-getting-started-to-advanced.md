@@ -12,6 +12,7 @@ tags:
 - Technology
 - DevOps
 - Git
+- How To
 title: Why use Git, How it Works and what's going on behind the scenes?
 ---
 ## Introduction

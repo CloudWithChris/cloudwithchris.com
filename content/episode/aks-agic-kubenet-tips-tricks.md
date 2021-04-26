@@ -23,6 +23,7 @@ tags:
 - Kubernetes
 - Security
 - Managed Identities
+- AKS
 #youtube: 0s3yjmJ0ksA
 upcoming: true
 ---

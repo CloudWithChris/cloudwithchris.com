@@ -14,6 +14,8 @@ images:
 - img/cloudwithchrislogo.png
 tags:
 - Blogging
+- Serverless
+- Event-driven Architecture
 title: An Introduction to Azure Functions
 ---
 If you have been keeping up to date with the latest and greatest in Azure Services (yes, I know there are quite a few!), you may have heard of a new service called Azure Functions.

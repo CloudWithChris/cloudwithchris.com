@@ -20,6 +20,7 @@ tags:
 - Architecture
 - Scalability
 - Resilience
+- Requirements
 title: Building Solutions in the Cloud
 ---
 

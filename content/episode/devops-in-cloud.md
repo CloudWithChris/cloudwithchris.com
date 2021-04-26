@@ -30,6 +30,7 @@ tags:
 - Azure DevOps
 - Shift Left
 - Data DevOps
+- Testing
 ---
 Hello and welcome back to Cloud with Chris! You're with me - Chris Reddington, and we'll be talking about all things cloud. I've been doing some updates to my website, so please check out the "Become a Guest" or "Topic Suggestion" Links, as you'll now see some different forms you can complete.
 

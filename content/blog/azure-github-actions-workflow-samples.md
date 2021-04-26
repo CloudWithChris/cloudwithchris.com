@@ -12,6 +12,7 @@ tags:
 - GitHub
 - GitHub Actions
 - Azure
+- Manual Approvals
 title: Contributing towards Azure GitHub Actions
 ---
 I've talked in the past about my Open Source journey, and some of the contributions that I have made in the community. In my current role, I've been leading on the global strategy for my team's DevOps practice, defining the areas of focus and initiatives that may be beneficial for the team. In this post, I'm going to talk through one of these initiatives, and how you can contribute towards the Azure GitHub Actions experience!

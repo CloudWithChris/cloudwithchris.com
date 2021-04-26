@@ -24,7 +24,6 @@ tags:
 - Cloud
 - Community
 - Azure
-- JonnyChipz
 - Azure Thames Valley
 youtube: e5_ZFHW8bbE
 ---

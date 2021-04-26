@@ -20,6 +20,8 @@ podcast_file: 25 - A conversation on mental health.mp3
 tags:
 - Mental Health
 - Health
+- People
+- Wellbeing
 youtube: he2x6QgbVSk
 ---
 Mental Health - A concept that often has stigma surrounding it, or a concept that is misunderstood. In this episode, Chris Reddington is joined by Andrew Nathan as they both talk through their own experiences of Mental Health, the importance of looking after your mental health, and being okay with not being okay.

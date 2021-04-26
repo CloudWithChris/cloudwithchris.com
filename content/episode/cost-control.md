@@ -26,6 +26,8 @@ tags:
 - Architecture
 - Cost
 - Governance
+- DDOS
+- Requirements
 ---
 
 Hello and welcome back to Cloud with Chris! You're with me - Chris Reddington, and we'll be talking about all things cloud. Now, just as  reminder - I would love to have any and all topic suggestions, so please get in touch with me on either [Facebook](https://www.facebook.com/CloudWithChris/) or [Twitter](https://twitter.com/CloudWithChris), @CloudWithChris. I'm also working through inviting a number of people to come onto the show as a guest. If you'd be interest in joining me for an episode, then please in get in touch as well! I'm also looking to increase my presence on [YouTube](https://www.youtube.com/channel/UC6KrOsGhSVJBszv_AwbcMxA), so if you could subscribe to my channel - Cloud with Chris, that would be greatly appreciated!

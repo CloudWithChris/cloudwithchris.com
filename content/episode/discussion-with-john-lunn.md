@@ -22,6 +22,7 @@ tags:
 - Azure
 - Learn
 - Community
+- People
 youtube: ""
 upcoming: true
 ---

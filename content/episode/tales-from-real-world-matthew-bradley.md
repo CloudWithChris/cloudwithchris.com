@@ -25,6 +25,7 @@ tags:
 - Azure
 - Learn
 - Community
+- Azure Storage
 youtube: ""
 upcoming: true
 ---

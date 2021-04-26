@@ -23,6 +23,7 @@ tags:
 - Architecture
 - APIs
 - Cloud Design Patterns
+- Requirements
 ---
 
 Hello and welcome to the first episode of Cloud with Chris. Now I should start by introducing what this podcast is all about.

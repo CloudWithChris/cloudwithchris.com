@@ -19,7 +19,8 @@ series:
 - Architecting for the Cloud, one pattern at a time
 tags:
 - Architecture
-- Bulkhead
+- Azure Architecture Center
+- Cloud Design Patterns
 - Resilience
 youtube: xPJSKM2AsQo
 ---

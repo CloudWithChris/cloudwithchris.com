@@ -18,6 +18,7 @@ tags:
 - Deployment
 - GitHub Actions
 - Static Content
+- Azure Storage
 externalLink: https://www.eventbrite.co.uk/e/glasgow-azure-user-group-24-tickets-143276745603
 upcoming: true
 ---

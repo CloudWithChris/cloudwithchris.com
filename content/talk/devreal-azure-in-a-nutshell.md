@@ -17,6 +17,7 @@ tags:
 - Azure
 - Azure Fundamentals
 - Learn Azure
+- Learn Cloud
 - Getting started with Azure
 youtube: n0aIx4Lbt-0
 upcoming: true

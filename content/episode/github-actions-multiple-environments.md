@@ -24,6 +24,7 @@ tags:
 - DevOps
 - .NET Core
 - App Service
+- Manual Approvals
 # youtube: vmvr9_BDPTE
 upcoming: true
 ---

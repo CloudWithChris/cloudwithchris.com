@@ -18,6 +18,7 @@ tags:
 - Deployment
 - GitHub Actions
 - Static Content
+- Azure Storage
 upcoming: true
 externalLink: https://www.cloudlunchlearn.com/Marathon
 ---

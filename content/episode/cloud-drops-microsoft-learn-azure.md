@@ -18,10 +18,9 @@ podcast_file: "Cloud Drop - Using Microsoft Learn to get started with Azure.mp3"
 series:
 - "Cloud Drops"
 tags:
-- Learn
-- Education
+- Learn Azure
+- Learn Cloud
 - Azure
-- Azure Skills
 - Microsoft Learn
 youtube: IYaQtpK8P-c
 ---

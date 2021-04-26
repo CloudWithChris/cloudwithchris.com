@@ -27,6 +27,11 @@ tags:
 - Security
 - Architecture
 - DevOps
+- Agile
+- Authentication
+- Authorization
+- DDOS
+- Requirements
 ---
 Hello, and welcome back to Cloud with Chris! You're with me, Chris Reddington - and we'll be talking about all things Cloud!
 

@@ -20,7 +20,7 @@ series:
 #podcast_duration: "0:34:43.000"
 #podcast_file: 19 - The Event Sourcing, Materialized View and CQRS Patterns.mp3
 tags:
-- Microservrices
+- Microservices
 - APIs
 - Monitoring
 #youtube: 0s3yjmJ0ksA

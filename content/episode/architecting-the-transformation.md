@@ -22,6 +22,8 @@ series:
 tags:
 - Architect
 - Architecture
+- Productivity
+- Agile
 #youtube: 0s3yjmJ0ksA
 upcoming: true
 ---

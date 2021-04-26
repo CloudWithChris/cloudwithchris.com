@@ -27,9 +27,8 @@ tags:
 - DevOps
 - .NET Core
 - App Service
-- Deployments
-- Release
 - Manual Approvals
+- GitHub Discussions
 youtube: -3K550t5bzQ
 ---
 In this episode, we're going to be taking a slight detour away from GitHub actions and focus on some of the announcements from GitHub universe last week. We're going to explore them both from the announcements, and also take a look at some of those features that have already been released. Stay tuned!

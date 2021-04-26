@@ -21,6 +21,8 @@ tags:
 - People
 - Process
 - Technology
+- Testing
+- Shift Left
 - DevOps
 youtube: ""
 upcoming: true

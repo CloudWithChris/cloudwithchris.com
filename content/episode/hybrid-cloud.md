@@ -29,6 +29,8 @@ tags:
 - Architecture
 - Hybrid
 - Azure Stack
+- Requirements
+- Azure Arc
 ---
 Hello, and welcome back to this episode of Cloud with Chris! You're with me Chris Reddington and we'll be talking about all things cloud.
 

@@ -27,6 +27,10 @@ tags:
 - Architecture
 - APIs
 - Cloud Design Patterns
+- Integration
+- Microservices
+- OAuth
+- Requirements
 ---
 Hello and welcome back to Cloud with Chris! You're with me - Chris Reddington, and we'll be talking about all things cloud. Now, the backlog of episodes continues to look healthy, with a number of additional session ideas planned and a number of guests scheduled to come in. But, please do keep your thoughts coming in, and if you find these podcasts useful, please do continue to share - and I hope that we can grow the community that supports it!
 

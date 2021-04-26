@@ -18,6 +18,9 @@ tags:
 - Deployment
 - GitHub Actions
 - Static Content
+- GitHub Issues
+- GitHub Codespaces
+- Visual Studio Code
 upcoming: true
 externalLink: https://www.cloudlunchlearn.com/Marathon
 ---

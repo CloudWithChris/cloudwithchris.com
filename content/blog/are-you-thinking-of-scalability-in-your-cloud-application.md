@@ -14,6 +14,9 @@ tags:
 - Azure
 - Architecture
 - Scalability
+- IaaS
+- PaaS
+- SaaS
 title: Are you thinking of scalability in your cloud application?
 ---
 

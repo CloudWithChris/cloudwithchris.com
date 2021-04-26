@@ -19,6 +19,9 @@ tags:
 - Scalability
 - Resilience
 - DevOps
+- ARM Templates
+- Microservices
+- Serverless
 title: Deploying a multi-region Serverless API Layer (Part 1)
 ---
 

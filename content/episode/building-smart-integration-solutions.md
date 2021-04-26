@@ -26,7 +26,9 @@ series:
 - Podcast Episodes
 tags:
 - Serverless
+- Event-Driven Architecture
 - Monitoring
+- Integration
 ---
 Hello, and welcome back to Cloud with Chris! You're with me, Chris Reddington - and we'll be talking about all things Cloud!
 
