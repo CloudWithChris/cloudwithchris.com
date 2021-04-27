@@ -21,6 +21,12 @@
 
 {{ define "top" }}
   <div class="py-5 container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Episodes</li>
+      </ol>
+    </nav>
     {{- partial "random-speakers-header.html" . -}}    
 
     <div class="row text-center">

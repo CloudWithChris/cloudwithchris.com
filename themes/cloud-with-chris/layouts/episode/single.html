@@ -25,6 +25,14 @@
   <section class="py-5 container" align="center">
     <div class="col">
       <div class="row">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item"><a href="/episode">Episodes</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ .Title }}</li>
+          </ol>
+        </nav>
+
         <p>{{ with .Params.hosts }}              
           {{ range $name := . }}
             {{ $scratch.Set "person" ($name | urlize) }}

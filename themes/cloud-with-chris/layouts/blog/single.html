@@ -8,9 +8,18 @@
 {{ $site := .Site }}
 {{ $scratch := .Scratch }}
 
-  <div class="container" align="center">
+<div class="py-5 container" align="center">
     <div class="col">
-      <div class="row">
+      <div class="row float-center">
+        
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item"><a href="/blog">Blog</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ .Title }}</li>
+          </ol>
+        </nav>
+
         {{ with .Params.author }}              
           {{ $name := . }}
           {{ $scratch.Set "person" ($name | urlize) }}

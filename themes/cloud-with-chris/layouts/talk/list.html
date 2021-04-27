@@ -21,18 +21,29 @@
 
 {{ define "top" }}
   <div class="py-5 container">
-    <div class="row float-center">
+    
+    <div class="col">
+      <div class="row">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Talks</li>
+          </ol>
+        </nav>
+      </div>
 
-      {{ $upcomingTalks := first 3 (where (where $.Site.RegularPages "Section" "talk") ".Params.upcoming" true).ByDate}}
-      {{ $count := len $upcomingTalks }}
-      {{ range $upcomingTalks }}   
-        {{- partial "upcoming-talk.html" (dict "count" $count "value" . "site" $.Site ) -}}
-      {{ end }}
-    </div>  
+      <div class="row float-center">
+        {{ $upcomingTalks := first 3 (where (where $.Site.RegularPages "Section" "talk") ".Params.upcoming" true).ByDate}}
+        {{ $count := len $upcomingTalks }}
+        {{ range $upcomingTalks }}   
+          {{- partial "upcoming-talk.html" (dict "count" $count "value" . "site" $.Site ) -}}
+        {{ end }}
+      </div>  
 
 
-    <div class="row text-center pt-5">
-      <h5>Interested in having me speak on a webinar, at a local group, or conference? <a href="https://www.twitter.com/reddobowen">Tweet me on Twitter!</a></h5> 
-    </div> 
+      <div class="row text-center pt-5">
+        <h5>Interested in having me speak on a webinar, at a local group, or conference? <a href="https://www.twitter.com/reddobowen">Tweet me on Twitter!</a></h5> 
+      </div> 
+    </div>
   </div>
 {{ end }}

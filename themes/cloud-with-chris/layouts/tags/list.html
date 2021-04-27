@@ -14,4 +14,15 @@
 {{ end }}
 
 {{ define "top" }}
+<section class="py-5 container">
+  <div class="row">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/tags">Tags</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{ .Title }}</li>
+      </ol>
+    </nav>
+  </div>
+</section>
 {{ end }}
