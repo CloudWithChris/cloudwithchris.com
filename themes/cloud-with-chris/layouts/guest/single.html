@@ -11,6 +11,20 @@
 {{ end }}
 
 {{ define "top" }}
+
+  <section class="py-5 container" align="center">
+    <div class="col">
+      <div class="row">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item"><a href="/guest">Guests</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ .Title }}</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </section>
   <div class="container" align="center">
     <img src="{{ .Params.image | absURL}}" width="150" class="rounded-circle z-depth-2" alt="{{ .Title }}" title="{{ .Title }}" />
     <p>
