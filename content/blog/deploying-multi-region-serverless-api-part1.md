@@ -1,15 +1,8 @@
 ---
 Author: chrisreddington
-Description: In my spare time, I work on a pet project called Theatreers. The aim
-  of this is a microservice based platform focused on Theatre / Musical Theatre (bringing
-  a few of my passion areas together). I've recently re-architected the project to
-  align to a multi-region serverless technology stack.
+Description: "In my spare time, I work on a pet project called Theatreers. The aim of this is a microservice based platform focused on Theatre / Musical Theatre (bringing a few of my passion areas together). I've recently re-architected the project to align to a multi-region serverless technology stack."
 PublishDate: "2019-07-13T12:00:00Z"
 image: img/cloudwithchrislogo.png
-categories:
-- Azure
-- Cloud Architecture
-- DevOps
 date: "2019-07-13T12:00:00Z"
 images:
 - img/cloudwithchrislogo.png
@@ -19,6 +12,9 @@ tags:
 - Scalability
 - Resilience
 - DevOps
+- ARM Templates
+- Microservices
+- Serverless
 title: Deploying a multi-region Serverless API Layer (Part 1)
 ---
 

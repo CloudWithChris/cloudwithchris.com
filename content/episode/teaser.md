@@ -1,7 +1,6 @@
 ---
 Date: "2020-02-19T00:01:00Z"
-Description: This is the first recording, a brief teaser ahead of launching cloud
-  with Chris. Stay tuned, and follow for more info!
+Description: "This is the first recording, a brief teaser ahead of launching cloud with Chris. Stay tuned, and follow for more info!"
 PublishDate: "2020-02-19T00:01:00Z"
 Title: 0 - Teaser
 episode: "0"

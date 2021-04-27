@@ -1,12 +1,8 @@
 ---
 Date: "2020-11-29T00:01:00Z"
-Description: Want to find out more about how GitHub Actions work? How about the Azure
-  Actions that you might use in your first deployments in the platform? Then stick
-  around, because this video is the one for you!
+Description: "Want to find out more about how GitHub Actions work? How about the Azure Actions that you might use in your first deployments in the platform? Then stick around, because this video is the one for you!"
 PublishDate: "2020-11-29T00:01:00Z"
 Title: GitHub Actions and Azure - Getting started with GitHub Actions and Azure Login
-categories:
-- DevOps
 episode: G2
 image: img/cloudwithchrislogo.png
 explicit: "no"

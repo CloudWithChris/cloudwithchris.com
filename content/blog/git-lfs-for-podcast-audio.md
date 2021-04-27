@@ -3,8 +3,6 @@ Author: chrisreddington
 Description: "For some time, I've been using GitHub actions to update the content of my website (i.e. pages, descriptions, metadata, etc.). Through Hugo, these content updates automatically update the RSS feeds. This then makes the episodes appear in podcast services such as Apple Podcasts, Google Podcasts and Spotify. However, throughout that time I have been manually uploading the podcast files to my storage account. It wasn't a significant overhead, but I kept thinking that there must be a better way to do this. And, there is - I've implemented it! This blog post will walk you through why I've made these changes, how I made them and what the result is."
 PublishDate: "2021-03-24T12:00:00Z"
 image: img/cloudwithchrislogo.png
-categories:
-- Announcement
 date: "2021-03-24T12:00:00Z"
 images:
 - img/cloudwithchrislogo.png
@@ -12,6 +10,10 @@ tags:
 - Technology
 - DevOps
 - Git
+- Manual Approvals
+- GitHub
+- GitHub Actions
+- Azure Storage
 title: Using Git LFS to version Podcast Audio files and trigger releases to production with GitHub Actions
 ---
 For some time, I've been using GitHub actions to update the content of my website (i.e. pages, descriptions, metadata, etc.). Through Hugo, these content updates automatically update the RSS feeds. This then makes the episodes appear in podcast services such as Apple Podcasts, Google Podcasts and Spotify. However, throughout that time I have been manually uploading the podcast files to my storage account. It wasn't a significant overhead, but I kept thinking that there must be a better way to do this. And, there is - I've implemented it! This blog post will walk you through why I've made these changes, how I made them and what the result is.

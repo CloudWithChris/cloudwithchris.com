@@ -1,19 +1,8 @@
 ---
 Author: chrisreddington
-Description: Consider this scenario. You are managing a software project using Azure
-  DevOps, and you have multiple teams working towards a common cadence. Perhaps that
-  cadence is managed by a central team. To gain the most value from your sprint planning,
-  you would need to associate the iterations from the project level with each individual
-  team. This is a scenario that I have for my fictitious Theatreers project, but also
-  a scenario I encountered recently with a colleague. I have been helping them setup
-  an Azure DevOps project to track the development of IP and collateral, so that they
-  can more accurately forecast what they expect to land and show the value being delivered
-  by the team.
+Description: "Consider this scenario. You are managing a software project using Azure DevOps, and you have multiple teams working towards a common cadence. Perhaps that cadence is managed by a central team. To gain the most value from your sprint planning, you would need to associate the iterations from the project level with each individual team. This is a scenario that I have for my fictitious Theatreers project, but also a scenario I encountered recently with a colleague. I have been helping them setup an Azure DevOps project to track the development of IP and collateral, so that they can more accurately forecast what they expect to land and show the value being delivered by the team."
 PublishDate: "2019-06-16T19:00:00Z"
 image: img/cloudwithchrislogo.png
-categories:
-- Azure DevOps
-- DevOps
 date: "2019-06-16T19:00:00Z"
 images:
 - img/cloudwithchrislogo.png

@@ -3,8 +3,6 @@ Author: chrisreddington
 Description: "Hopefully by now you've had a chance to read [part 1](gpg-git-part-1) of this series, which explains why you may be interested in using GPG keys to sign your commits. Congratulations on getting to the second part! In part two, we're going to focus on how I worked through setting up GPG in my Windows environment, and generating a set of keys for use. There were some challenges/hurdles along the way, and we'll talk through those too!"
 PublishDate: "2021-03-03T12:00:00Z"
 image: img/cloudwithchrislogo.png
-categories:
-- Announcement
 date: "2021-03-03T12:00:00Z"
 images:
 - img/cloudwithchrislogo.png
@@ -13,6 +11,7 @@ tags:
 - DevOps
 - Git
 - Security
+- Windows Terminal
 title: Using GPG Keys to sign Git Commits - Part 2
 ---
 Hopefully by now you've had a chance to read [part 1](./blog/gpg-git-part-1) of this series, which explains why you may be interested in using GPG keys to sign your commits. Congratulations on getting to the second part! In part two, we're going to focus on how I worked through setting up GPG in my Windows environment, and generating a set of keys for use. There were some challenges/hurdles along the way, and we'll talk through those too! I may do another separate blog post at a later point on setting this up within Windows Subsystem for Linux. However, there are plenty of articles that already focus on MacOS / Native Linux, so it isn't really the focus of this post.

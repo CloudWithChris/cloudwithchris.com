@@ -1,12 +1,8 @@
 ---
 Author: chrisreddington
-Description: Scalability is one of the common areas where I have seen common misconceptions,
-  when customers begin building on the platform.
+Description: "Scalability is one of the common areas where I have seen common misconceptions, when customers begin building on the platform."
 PublishDate: "2016-09-29T12:00:00Z"
 image: img/cloudwithchrislogo.png
-categories:
-- Azure
-- Cloud Architecture
 date: "2016-09-29T12:00:00Z"
 images:
 - img/cloudwithchrislogo.png
@@ -14,6 +10,9 @@ tags:
 - Azure
 - Architecture
 - Scalability
+- IaaS
+- PaaS
+- SaaS
 title: Are you thinking of scalability in your cloud application?
 ---
 

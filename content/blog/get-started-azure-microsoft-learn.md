@@ -3,8 +3,6 @@ Author: chrisreddington
 Description: "Often, I'm asked the question how do I get started with Azure? Are there any resources, tutorials, guides that you can recommend? I know about topic <X>, but how do I learn more? I've been working with, and continuously learning Azure over the past 7 years or so. When I started, the main resources were Microsoft Docs and community sites. Both great resorces, but there was a gap for a truly educational resource, rather than technical reference material. Enter Microsoft Learn."
 PublishDate: "2021-04-19T08:00:00Z"
 image: img/cloudwithchrislogo.png
-categories:
-- Announcement
 date: "2021-04-19T08:00:00Z"
 images:
 - img/cloudwithchrislogo.png
@@ -12,6 +10,7 @@ tags:
 - Microsoft Learn
 - Azure
 - How To
+- Getting started with Azure
 title: Getting started with Azure using Microsoft Learn
 ---
 Often, I'm asked the question how do I get started with Azure? Are there any resources, tutorials, guides that you can recommend? I know about topic X, but how do I learn more? I've been working with (and continuously learning) Azure over the past 7 years or so. When I started, the main resources were Microsoft Docs and community sites. Both great resources, but there was a gap for a truly educational resource, rather than technical reference material. Enter [Microsoft Learn](https://docs.microsoft.com/en-us/learn/).

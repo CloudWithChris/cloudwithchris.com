@@ -3,8 +3,6 @@ Author: chrisreddington
 Description: "For some time now, I've been using Windows Terminal as my local terminal for interacting with my command-line tools for quite some time now. Whenever I'm demonstrating Kubernetes concepts or working with the Azure CLI, I'll likely have had the Windows Terminal open at some point. I always get questioned about which terminal that is, and how people can get access to it. I recently put together a Cloud Drop on How Windows Terminal can make YOU productive with Azure, so I figured it's time to also write up a blog post on the same! Whether you're a Developer, DevOps Engineer, Infrastructure Operations or Data Scientist, you've probably had to interact with a command line terminal / shell at some point, so I hope this will be useful for you!"
 PublishDate: "2021-04-07T08:00:00Z"
 image: img/cloudwithchrislogo.png
-categories:
-- Announcement
 date: "2021-04-08T08:00:00Z"
 images:
 - img/cloudwithchrislogo.png
@@ -12,7 +10,11 @@ tags:
 - Technology
 - DevOps
 - Productivity
-- Command-line
+- Command-Line
+- How To
+- Windows Terminal
+- Azure
+- Azure Storage
 title: Windows Terminal - What is it, and how can it make you productive with Azure?
 ---
 For some time now, I've been using Windows Terminal as my local terminal for interacting with my command-line tools for quite some time now. Whenever I'm demonstrating Kubernetes concepts or working with the Azure CLI, I'll likely have had the Windows Terminal open at some point. I always get questioned about which terminal that is, and how people can get access to it. I recently put together a [Cloud Drop on How Windows Terminal can make YOU productive with Azure](/episode/cloud-drops-windows-terminal-productive-azure), so I figured it's time to also write up a blog post on the same! Whether you're a Developer, DevOps Engineer, Infrastructure Operations or Data Scientist, you've probably had to interact with a command line terminal / shell at some point, so I hope this will be useful for you!

@@ -1,16 +1,9 @@
 ---
 Date: "2020-12-18T15:30:00Z"
-Description: Have you tried Flight Simulator 2020 and been impressed by how well it
-  maps to the real world? Joined other users in the simulator on a journey and encountered
-  other 'live' aircrafts, or changing weather conditions? This is powered by the Cloud!
-  Join Chris and Cam as they embark on a journey of discovery, and a quick lap around
-  the skies...
+Description: "Have you tried Flight Simulator 2020 and been impressed by how well it maps to the real world? Joined other users in the simulator on a journey and encountered other 'live' aircrafts, or changing weather conditions? This is powered by the Cloud! Join Chris and Cam as they embark on a journey of discovery, and a quick lap around the skies..."
 PublishDate: "2020-12-18T15:30:00Z"
 Title: 18 - Tales from the Real World - Defying Gravity.. The magic behind Flight
   Simulator 2020
-categories:
-- Architecture
-- Gaming
 episode: "18"
 image: img/cloudwithchrislogo.png
 explicit: "no"
@@ -28,8 +21,7 @@ series:
 - Tales from the real world
 tags:
 - Architecture
-- Flight Sim
-upcoming: false
+- Gaming
 youtube: RxiE2NIRPKU
 ---
 Have you tried Flight Simulator 2020 and been impressed by how well it maps to the real world? Joined other users in the simulator on a journey and encountered other 'live' aircrafts, or changing weather conditions? This is powered by the Cloud! Join Chris and Cam as they embark on a journey of discovery, and a quick lap around the skies...

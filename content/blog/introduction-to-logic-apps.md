@@ -1,15 +1,18 @@
 ---
 Author: chrisreddington
-Description: "TBC"
+Description: "Many years ago, I wrote a blog post which introduced Logic Apps at a very high level when they were initially released. Ahead of a blog post that I want to write on Logic Apps v2, I thought that it may be worth writing a more thorough recap of Logic Apps as a platform. Logic Apps is a Platform as a Service (PaaS) offering, which allows you to easily build visual workflow integrations. Whether that's plumbing several microservices together, entirely different solutions within an enterprise, or some of the repetitive backend administrative tasks for a podcast or blog site, Logic Apps may be worth exploring."
 PublishDate: "2021-04-26T12:00:00Z"
 image: img/cloudwithchrislogo.png
-categories:
-- Announcement
 date: "2021-04-26T12:00:00Z"
 images:
 - img/cloudwithchrislogo.png
 tags:
 - Blogging
+- Logic Apps
+- Integration
+- Messaging
+- RBAC
+- Azure Storage
 title: 'Introduction to Logic Apps'
 ---
 Many years ago, I [wrote a blog post](/blog/integration-platform-as-a-service-logic-apps) which introduced Logic Apps at a very high level when they were initially released. Ahead of a blog post that I want to write on Logic Apps v2, I thought that it may be worth writing a more thorough recap of Logic Apps as a platform.

@@ -1,14 +1,8 @@
 ---
 Author: chrisreddington
-Description: You may have noticed there are some posts preceding this one. I've had
-  a few attempts at putting my blog together, but then dwindle out on my cadence...
-  Well, given the recent success with my Cloud with Chris podcast, I'm beginning to
-  consolidate... Starting with my blog! Here's an update on what you have to look
-  forward to!
+Description: "You may have noticed there are some posts preceding this one. I've had a few attempts at putting my blog together, but then dwindle out on my cadence... Well, given the recent success with my Cloud with Chris podcast, I'm beginning to consolidate... Starting with my blog! Here's an update on what you have to look forward to!"
 PublishDate: "2021-01-02T12:00:00Z"
 image: img/cloudwithchrislogo.png
-categories:
-- Announcement
 date: "2021-01-02T12:00:00Z"
 images:
 - img/cloudwithchrislogo.png

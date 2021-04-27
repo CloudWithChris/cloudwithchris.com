@@ -3,8 +3,6 @@ Date: "2021-04-03T00:01:00Z"
 Description: "Windows Terminal is a modern application that allows you to use your command line of choice, whether that is the Windows Command Prompt, PowerShell, PowerShell Core, Windows Subsystem for Linux  or the Azure Cloud Shell. This Cloud Drop shows you how to install Windows Terminal, and some tips/tricks in making you productive in Azure!"
 PublishDate: "2021-04-03T00:01:00Z"
 Title: "Cloud Drops - How Windows Terminal can make YOU productive with Azure"
-categories:
-- Azure
 episode: ""
 image: "img/episodes/cloud-drops-windows-terminal-productive-azure.jpg"
 explicit: "no"
@@ -21,6 +19,9 @@ tags:
 - Windows Terminal
 - Command-Line
 - Azure
+- How To
+- DevOps
+- Productivity
 youtube: W2LUQbd1VzU
 ---
 Windows Terminal is a modern application that allows you to use your command line of choice, whether that is the Windows Command Prompt, PowerShell, PowerShell Core, Windows Subsystem for Linux  or the Azure Cloud Shell. This Cloud Drop shows you how to install Windows Terminal, and some tips/tricks in making you productive in Azure!

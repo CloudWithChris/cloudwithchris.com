@@ -3,8 +3,6 @@ Author: chrisreddington
 Description: "In case you missed it, Shannon Kuehn, Jamie Maguire, John Lunn and I joined Sarah Lean for a panel livestream on her channel talking about our experiences getting started with blogging, and our experiences with blogging platforms. In this post, I want to focus on the first aspect - how you can get started with blogging, and some of the common themes / recommendations I've heard, not just from this session, but from other active community contributors."
 PublishDate: "2021-04-12T08:00:00Z"
 image: img/cloudwithchrislogo.png
-categories:
-- Announcement
 date: "2021-04-12T08:00:00Z"
 images:
 - img/cloudwithchrislogo.png

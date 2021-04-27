@@ -6,8 +6,6 @@ Description: In this video, Chris sets off his weekly technology vlog updates ta
   and Azure DevOps.
 PublishDate: "2021-01-04T09:30:00Z"
 Title: 'V001 - Weekly Technology Vlog #1 (Blog, Hugo, Azure, GitHub & Azure DevOps)'
-categories:
-- Vlog
 episode: V001
 image: img/cloudwithchrislogo.png
 explicit: "no"

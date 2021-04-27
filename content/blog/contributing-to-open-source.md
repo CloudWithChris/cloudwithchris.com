@@ -1,21 +1,16 @@
 ---
 Author: chrisreddington
-Description: Contributing to Open Source Software. It sounds so formal, doesn't it?
-  I thought that for quite a long time, and it put a bit of a mental barrier in place
-  for me to begin my journey. I am a classic over thinker, but that's perhaps another
-  blog in its own right! Contributing to Open Source isn't as scary as it may first
-  initially seem. Let's start with a few thoughts.
+Description: "Contributing to Open Source Software. It sounds so formal, doesn't it? I thought that for quite a long time, and it put a bit of a mental barrier in place for me to begin my journey. I am a classic over thinker, but that's perhaps another blog in its own right! Contributing to Open Source isn't as scary as it may first initially seem. Let's start with a few thoughts."
 PublishDate: "2021-01-12T12:00:00Z"
 image: img/cloudwithchrislogo.png
-categories:
-- Announcement
 date: "2021-01-12T12:00:00Z"
 images:
 - img/cloudwithchrislogo.png
 tags:
-- Software Development
+- Development
 - Open Source
 - Community
+- How to
 title: Contributing to Open Source
 ---
 Contributing to Open Source Software. It sounds so formal, doesn't it? I thought that for quite a long time, and it put a bit of a mental barrier in place for me to begin my journey. I am a classic over thinker, but that's perhaps another blog in its own right!

@@ -1,24 +1,25 @@
 ---
 Author: chrisreddington
-Description: ""
+Description: "In my blog post earlier this week, I mentioned that I recently spoke at the Northern Azure User Group. The other speaker for the evening was Scott Hanselman, who talked about his journey moving a 17 year old .NET App into Azure. This was his blog. Along the way, he called out some of the tools that he used along the way. One was a tool called securityheaders.com. As any engaged listener does, I took note of the tools that he used, and added them to my cloudwithchris.com backlog during the talk. When I later investigated the initial rating of the website, I received a score of an F - which appears to be the lowest possible score that you can receive! Given that I only allow HTTPS traffic to my website, I was surprised by this - so I begun looking into the recommendations further."
 PublishDate: "2021-04-14T08:00:00Z"
 image: img/cloudwithchrislogo.png
-categories:
-- Announcement
 date: "2021-04-14T08:00:00Z"
 images:
 - img/cloudwithchrislogo.png
 tags:
-- Website
+- Web Development
 - Security
 - Blogging
+- How To
+- Azure Storage
+- Static Content
 title: Optimise your site - Addressing recommendations from securityheaders.com
 ---
 ## Introduction
 
 In my blog post earlier this week, I mentioned that I recently spoke at the Northern Azure User Group. The other speaker for the evening was Scott Hanselman, who talked about his journey moving a 17 year old .NET App into Azure. This was his blog. Along the way, he called out some of the tools that he used along the way. One was a tool called [securityheaders.com](https://securityheaders.com/).
 
-As any engaged listener does, I took note of the tools that he used, and added them to my cloudwithchris.com backlog during the talk. When I later investigated the initial rating of the website, I received a score of an F - which appears to be the lowest possible score that you can receive! Given that I only allow HTTPS traffic to my website, I was surprised by this - so I begun looking into the reccomendations further.
+As any engaged listener does, I took note of the tools that he used, and added them to my cloudwithchris.com backlog during the talk. When I later investigated the initial rating of the website, I received a score of an F - which appears to be the lowest possible score that you can receive! Given that I only allow HTTPS traffic to my website, I was surprised by this - so I begun looking into the recommendations further.
 
 ![Output from Missing Security Headers on securityheaders.com](/img/blog/optimise-site-security-headers-com/missing-headers.png)
 

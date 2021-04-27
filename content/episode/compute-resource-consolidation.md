@@ -4,8 +4,6 @@ Description: Have you deployed your application in a way that it needs compute d
   at a time.
 PublishDate: "2021-02-19T15:30:00Z"
 Title: 27 - The Compute Resource Consolidation Pattern (Optimise for Cost!)
-categories:
-- Architecture
 episode: "27"
 image: img/cloudwithchrislogo.png
 explicit: "no"

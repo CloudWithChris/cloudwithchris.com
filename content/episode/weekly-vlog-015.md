@@ -3,8 +3,6 @@ Date: "2021-04-12T09:30:00Z"
 Description: "Welcome to weekly Vlog #15! We'll be covering the latest from Azure, Azure DevOps, GitHub and Cloud with Chris!"
 PublishDate: "2021-04-12T09:30:00Z"
 Title: "V015 - Weekly Technology Vlog #15"
-categories:
-- Vlog
 episode: V015
 image: img/vlog/v015.jpg
 explicit: "no"
