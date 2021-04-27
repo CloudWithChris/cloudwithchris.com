@@ -17,6 +17,8 @@ images:
 # podcast_bytes: "53415936"
 # podcast_duration: "55:42.000"
 # podcast_file: 25 - A conversation on mental health.mp3
+series:
+- Tales from the real world
 tags:
 - Community
 - Open Source

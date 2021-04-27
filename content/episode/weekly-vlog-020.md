@@ -1,7 +1,7 @@
 ---
-Date: "2021-05-17T09:30:00Z"
+Date: "2021-05-16T09:30:00Z"
 Description: "In this video, chris provides another update on Cloud with Chris, updates on what's coming soon and Azure related news!"
-PublishDate: "2021-05-17T09:30:00Z"
+PublishDate: "2021-05-16T09:30:00Z"
 Title: "V020 - Weekly Technology Vlog #20"
 episode: V020
 image: img/cloudwithchrislogo.png # img/vlog/v002.jpg
