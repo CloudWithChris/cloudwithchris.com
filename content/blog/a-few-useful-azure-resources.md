@@ -1,14 +1,8 @@
 ---
 Author: chrisreddington
-Description: Over the past few weeks, I have been working on a number of projects
-  relating to Azure. The usual theme has crept up, around recommended practices, and
-  where to go for documentation. There are a couple of great resources to be aware
-  of!
+Description: "Over the past few weeks, I have been working on a number of projects relating to Azure. The usual theme has crept up, around recommended practices, and where to go for documentation. There are a couple of great resources to be aware of!"
 PublishDate: "2016-09-03T12:00:00Z"
 image: img/cloudwithchrislogo.png
-categories:
-- Azure
-- Useful Resources
 date: "2016-09-03T12:00:00Z"
 images:
 - img/cloudwithchrislogo.png

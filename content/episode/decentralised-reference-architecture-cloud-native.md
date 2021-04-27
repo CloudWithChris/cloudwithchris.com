@@ -3,8 +3,6 @@ Date: "2021-07-30T03:30:00Z"
 Description: "In this talk, Asanka will introduce the 'cell-based' reference architecture, which is decentralized, API-centric, cloud-native and microservices friendly. He will explain the role of APIs in the cell-based approach, as well as examine how real applications are built as cells. Asanka will explore the metrics and approaches that can be used to measure the effectiveness of the architecture and explore how organizations can implement the cell approach."
 PublishDate: "2021-07-30T03:30:00Z"
 Title: "43 - A Decentralized Reference Architecture for Cloud-native Applications"
-categories:
-- Architecture
 episode: "43"
 image: img/cloudwithchrislogo.png
 explicit: "no"

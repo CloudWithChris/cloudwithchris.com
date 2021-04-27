@@ -3,8 +3,6 @@ Author: chrisreddington
 Description: "Part 4 - The final part (at least for now, until I find somewhere else that we can expand on with this)! This part will focus on porting the keys that we have recently generated onto our YubiKey device. I own a YubiKey NEO, so i'll be using that."
 PublishDate: "2021-03-17T12:00:00Z"
 image: img/cloudwithchrislogo.png
-categories:
-- Announcement
 date: "2021-03-17T12:00:00Z"
 images:
 - img/cloudwithchrislogo.png

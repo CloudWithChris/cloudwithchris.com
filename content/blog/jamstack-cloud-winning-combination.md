@@ -3,8 +3,6 @@ Author: chrisreddington
 Description: When I mention the term JAMStack, I'm not pretending that I'm Paddington bear with a stack of Jam sandwiches! If you hadn't heard, JAMStack is a term that describes applications based on JavaScript, APIs and Markup. That means, we're referring to files that are content in nature. Think about files like HTML, CSS, Images, etc.  Ok, now with that context - why has it risen in popularity? Surely this is something that could have been done for many years, so why now? My hypothesis... Cloud.
 PublishDate: "2021-01-20T12:00:00Z"
 image: img/cloudwithchrislogo.png
-categories:
-- Announcement
 date: "2021-01-20T12:00:00Z"
 images:
 - img/cloudwithchrislogo.png

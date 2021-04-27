@@ -3,8 +3,6 @@ Date: "2021-03-28T09:30:00Z"
 Description: "In this video, Chris provides an update on the Azure Blogs (lots of great updates this week), a quick-fire round of Azure Technology Updates, dives into the Azure DevOps Blog and GitHub Blogs. Then we cover a VERY busy week of Cloud with Chris over the last week, and what's coming up talk-wise over April (It's looking to be a packed month!)"
 PublishDate: "2021-03-28T09:30:00Z"
 Title: "V013 - Weekly Technology Vlog #13 (Lots of Azure, DevOps & GitHub) Blogs, Quick-fire Azure Updates"
-categories:
-- Vlog
 episode: V013
 image: img/vlog/v013.jpg
 explicit: "no"

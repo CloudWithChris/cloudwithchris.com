@@ -3,8 +3,6 @@ Date: "2021-04-26T09:30:00Z"
 Description: "Welcome to weekly Vlog #17! We'll be covering the latest from Azure, Azure DevOps, GitHub and Cloud with Chris! Chris also covers a new pet project he's been working on, the Hugo CrossPoster!"
 PublishDate: "2021-04-26T09:30:00Z"
 Title: "V017 - Weekly Technology Vlog #17"
-categories:
-- Vlog
 episode: V017
 image: img/vlog/v017.jpg
 explicit: "no"

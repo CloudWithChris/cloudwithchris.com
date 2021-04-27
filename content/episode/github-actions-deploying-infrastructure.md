@@ -1,12 +1,8 @@
 ---
 Date: "2020-12-02T00:01:00Z"
-Description: Have an application that you want to deploy to Azure in an automated
-  way? Well, before we deploy the application code, we need some Azure Infrastructure
-  for it to run on. In this video, we have you covered on how to deploy that infrastructure!
+Description: "Have an application that you want to deploy to Azure in an automated way? Well, before we deploy the application code, we need some Azure Infrastructure for it to run on. In this video, we have you covered on how to deploy that infrastructure!"
 PublishDate: "2020-12-02T00:01:00Z"
 Title: GitHub Actions and Azure - Deploying ARM templates with GitHub Actions
-categories:
-- DevOps
 episode: G3
 image: img/cloudwithchrislogo.png
 explicit: "no"

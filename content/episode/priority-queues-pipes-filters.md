@@ -3,8 +3,6 @@ Date: "2021-02-12T15:30:00Z"
 Description: Ever wondered how complex integration systems / enterprise messaging works? Curious about whether there's a way to bypass and prioritise certain messages? Then join this episode as Chris Reddington and Will Eastbury explore the Priority Queue and Pipes and Filter patterns. Spoiler - These aren't new cloud design patterns, and are well known patterns in the messaging world!
 PublishDate: "2021-02-12T15:30:00Z"
 Title: 26 - The Pub Sub, Priority Queue and Pipes and Filter Patterns
-categories:
-- Architecture
 episode: "26"
 image: img/episodes/priority-queues-pipes-filters-thumbnail.jpg
 explicit: "no"

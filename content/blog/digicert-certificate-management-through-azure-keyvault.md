@@ -1,15 +1,8 @@
 ---
 Author: chrisreddington
-Description: When designing a solution, you want to be sure that your communications
-  are secure and that your users can trust your application. Typically, SSL certificates
-  can be useful for this purpose.That is well and good from a design and development
-  perspective, but there may some management headaches when operating and governing
-  the solution. How do you keep track of the certificates? How do you guarantee that
-  they are kept secure? How do you ensure that certificates renew on time?
+Description: "When designing a solution, you want to be sure that your communications are secure and that your users can trust your application. Typically, SSL certificates can be useful for this purpose.That is well and good from a design and development perspective, but there may some management headaches when operating and governing the solution. How do you keep track of the certificates? How do you guarantee that they are kept secure? How do you ensure that certificates renew on time?"
 PublishDate: "2016-09-12T12:00:00Z"
 image: img/cloudwithchrislogo.png
-categories:
-- Announcement
 date: "2016-09-12T12:00:00Z"
 images:
 - img/cloudwithchrislogo.png

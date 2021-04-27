@@ -1,11 +1,9 @@
 ---
 Date: "2021-01-15T15:30:00Z"
-Description: Do you have a website that is made up mostly of Static Content (e.g. HTML, JavaScript, CSS, Images)? Interested how you can optimise for performance and cost savings as well? Then join this episode as we talk through the Cloud Design Pattern, "The Static Content Hosting Pattern". This is another episode in the series of Architecting for the Cloud, one pattern at a time.
+Description: "Do you have a website that is made up mostly of Static Content (e.g. HTML, JavaScript, CSS, Images)? Interested how you can optimise for performance and cost savings as well? Then join this episode as we talk through the Cloud Design Pattern, "The Static Content Hosting Pattern". This is another episode in the series of Architecting for the Cloud, one pattern at a time."
   at a time.
 PublishDate: "2021-01-15T15:30:00Z"
 Title: 22 - Static Content Hosting Pattern (Save cost and gain performance for static websites!)
-categories:
-- Architecture
 episode: "22"
 image: img/episodes/static-content-hosting-pattern-thumb.jpg
 explicit: "no"

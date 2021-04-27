@@ -1,17 +1,8 @@
 ---
 Author: chrisreddington
-Description: By now, we should be aware of the benefits that the cloud can bring to
-  any individual or organisaton. There are plenty of case studies, talking about the
-  scalable, flexible and economic benefits. Companies see the cloud as a differentiator,
-  and utilise it to disrupt and innovate in their respective markets. Gartner predicts that
-  in 2016 the total public cloud market is due to increase by 16%. But, Chris - You're
-  starting a blog about technology. Why are you talking to me about customer case
-  studies and market fact? Why? Context.
+Description: "By now, we should be aware of the benefits that the cloud can bring to any individual or organisaton. There are plenty of case studies, talking about the scalable, flexible and economic benefits. Companies see the cloud as a differentiator, and utilise it to disrupt and innovate in their respective markets. Gartner predicts that in 2016 the total public cloud market is due to increase by 16%. But, Chris - You're starting a blog about technology. Why are you talking to me about customer case studies and market fact? Why? Context."
 PublishDate: "2016-08-04T12:00:00Z"
 image: img/cloudwithchrislogo.png
-categories:
-- Azure
-- Cloud Architecture
 date: "2016-08-04T12:00:00Z"
 images:
 - img/cloudwithchrislogo.png

@@ -1,11 +1,8 @@
 ---
 Date: "2020-12-02T00:01:00Z"
-Description: You have your .NET Core code. You have your application infrastructure
-  ready. Now, it's time for us to deploy that application to Azure using GitHub Actions!
+Description: "You have your .NET Core code. You have your application infrastructure ready. Now, it's time for us to deploy that application to Azure using GitHub Actions!"
 PublishDate: "2020-12-02T00:01:00Z"
 Title: GitHub Actions and Azure - Deploying .NET Core code to Azure App Service
-categories:
-- DevOps
 episode: G4
 image: img/cloudwithchrislogo.png
 explicit: "no"

@@ -1,12 +1,8 @@
 ---
 Date: "2020-03-01T00:01:00Z"
-Description: This is the first episode! We'll be talking about all things requirements.
-  Why is that? Well, that's the place any kind of project should start - What are
-  you aiming for, what are you trying to achieve and what is the context?
+Description: "This is the first episode! We'll be talking about all things requirements. Why is that? Well, that's the place any kind of project should start - What are you aiming for, what are you trying to achieve and what is the context?"
 PublishDate: "2020-03-01T00:01:00Z"
 Title: 1 - Requirements in Context
-categories:
-- Architecture
 episode: "1"
 image: img/cloudwithchrislogo.png
 explicit: "no"
@@ -24,6 +20,7 @@ tags:
 - APIs
 - Cloud Design Patterns
 - Requirements
+youtube: YW08iPBTBCI
 ---
 
 Hello and welcome to the first episode of Cloud with Chris. Now I should start by introducing what this podcast is all about.

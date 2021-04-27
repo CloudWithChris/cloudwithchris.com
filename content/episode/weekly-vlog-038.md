@@ -3,8 +3,6 @@ Date: "2021-09-13-T09:30:00Z"
 Description: "In this video, chris provides another update on Cloud with Chris, updates on what's coming soon and Azure related news!"
 PublishDate: "2021-09-13T09:30:00Z"
 Title: "V037 - Weekly Technology Vlog #37"
-categories:
-- Vlog
 episode: V037
 image: img/cloudwithchrislogo.png # img/vlog/v002.jpg
 explicit: "no"

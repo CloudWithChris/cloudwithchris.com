@@ -3,9 +3,6 @@ Date: "2021-05-14T15:30:00Z"
 Description: "In this session, Chris is joined by Jamie Maguire - Developer, Microsoft MVP (AI) & Pluralsight Author. Jamie shares how he built a SaaS (Software as a Service) in my own time using .NET and Azure. The platform lets you analyse Twitter, grow, maintain and manage your Twitter account. If you've considered building your own SaaS platform, then stay tuned for this episode!"
 PublishDate: "2021-05-14T15:30:00Z"
 Title: "Social Opinion with Jamie Maguire"
-categories:
-- Azure
-- Architecture
 episode: "TBC"
 image: img/cloudwithchrislogo.png
 explicit: "no"

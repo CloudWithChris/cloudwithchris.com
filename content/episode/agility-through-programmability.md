@@ -3,8 +3,6 @@ Date: "2021-09-10T03:30:00Z"
 Description: "Asanka will share his experience from applying programmability in successful projects delivered iteratively, rapidly and in a timely way. In addition to the associated lean methodology, he will discuss a supportive reference architecture."
 PublishDate: "2021-09-10T03:30:00Z"
 Title: "Tales from the Real World - Achieving true agility through programmability"
-categories:
-- Architecture
 episode: ""
 image: img/cloudwithchrislogo.png
 explicit: "no"

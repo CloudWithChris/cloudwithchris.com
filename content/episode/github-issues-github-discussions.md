@@ -1,12 +1,8 @@
 ---
 Date: "2020-12-16T14:00:00Z"
-Description: In this episode, we'll be taking a look at GitHub Issues and GitHub Discussions
-  which recently came out at GitHub Universe. Interested? Then stick around as we
-  find out more about both of these topics!
+Description: "In this episode, we'll be taking a look at GitHub Issues and GitHub Discussions which recently came out at GitHub Universe. Interested? Then stick around as we find out more about both of these topics!"
 PublishDate: "2020-12-16T14:00:00Z"
 Title: GitHub Issues and GitHub Discussions
-categories:
-- DevOps
 episode: G6
 image: img/cloudwithchrislogo.png
 explicit: "no"

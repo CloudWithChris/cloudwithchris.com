@@ -1,14 +1,8 @@
 ---
 Author: chrisreddington
-Description: I mentioned in Building Solutions in the Cloud that I would be writing
-  a series of blog posts on the areas of risk that I have seen since I have been providing
-  guidance around Azure. In this post, I will provide some thoughts on how you can
-  consider resilience within the context of your own solution or application.
+Description: "I mentioned in Building Solutions in the Cloud that I would be writing a series of blog posts on the areas of risk that I have seen since I have been providing guidance around Azure. In this post, I will provide some thoughts on how you can consider resilience within the context of your own solution or application."
 PublishDate: "2016-08-26T12:00:00Z"
 image: img/cloudwithchrislogo.png
-categories:
-- Azure
-- Cloud Architecture
 date: "2016-08-26T12:00:00Z"
 images:
 - img/cloudwithchrislogo.png

@@ -3,9 +3,6 @@ Date: "2021-09-10T15:30:00Z"
 Description: "In this session Chris is joined by Ivo who will explain how his company Proximus are leveraging Azure to offer services to their customers. He will explain how they transform and what the future will be. He will also cover the benefits and struggles that they faced on the way."
 PublishDate: "2021-09-10T15:30:00Z"
 Title: "Tales from the Real World - Leveraging Azure as a Telco provider"
-categories:
-- Technology
-- Azure
 episode: "35"
 image: img/cloudwithchrislogo.png
 explicit: "no"

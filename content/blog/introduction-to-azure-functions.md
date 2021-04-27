@@ -1,14 +1,8 @@
 ---
 Author: chrisreddington
-Description: If you have been keeping up to date with the latest and greatest in Azure
-  Services (yes, I know there are quite a few!), you may have heard of a new service
-  called Azure Functions. Azure Functions is an event-driven Platform as a Service
-  capability, helping you to execute code upon the occurrence of a particular event.
-  It is currently in preview, though already has a lot of potential.
+Description: "If you have been keeping up to date with the latest and greatest in Azure Services (yes, I know there are quite a few!), you may have heard of a new service called Azure Functions. Azure Functions is an event-driven Platform as a Service capability, helping you to execute code upon the occurrence of a particular event. It is currently in preview, though already has a lot of potential."
 PublishDate: "2016-09-12T12:00:00Z"
 image: img/cloudwithchrislogo.png
-categories:
-- Announcement
 date: "2016-09-12T12:00:00Z"
 images:
 - img/cloudwithchrislogo.png

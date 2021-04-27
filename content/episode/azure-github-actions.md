@@ -4,8 +4,6 @@ Description: "Recently, I've been doing a bit of work with GitHub Actions as wel
 PublishDate: "2020-10-02T17:30:00Z"
 Title: 10 - Exploring GitHub Actions to deploy Static Content and Azure Functions
   | Cloud with Chris
-categories:
-- DevOps
 episode: "10"
 image: img/cloudwithchrislogo.png
 explicit: "no"

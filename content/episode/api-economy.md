@@ -1,14 +1,8 @@
 ---
 Date: "2020-04-25T00:01:00Z"
-Description: Let's introduce the next episode -We have another guest! We're starting
-  to bring a few of those previous topics together in this episode. We touch upon
-  requirements, DevOps, and building applications - or rather APIs - in the cloud.
-  In this episode, I talk with a colleague and friend, Peter Piper, on factors that
-  relate and impact API design. So, without further ado… here we go!
+Description: "Let's introduce the next episode -We have another guest! We're starting to bring a few of those previous topics together in this episode. We touch upon requirements, DevOps, and building applications - or rather APIs - in the cloud. In this episode, I talk with a colleague and friend, Peter Piper, on factors that relate and impact API design. So, without further ado… here we go!"
 PublishDate: "2020-04-25T00:01:00Z"
 Title: 5 - The API Economy
-categories:
-- Architecture
 episode: "5"
 image: img/cloudwithchrislogo.png
 explicit: "no"
@@ -31,6 +25,7 @@ tags:
 - Microservices
 - OAuth
 - Requirements
+youtube: zE0g2VycIDU
 ---
 Hello and welcome back to Cloud with Chris! You're with me - Chris Reddington, and we'll be talking about all things cloud. Now, the backlog of episodes continues to look healthy, with a number of additional session ideas planned and a number of guests scheduled to come in. But, please do keep your thoughts coming in, and if you find these podcasts useful, please do continue to share - and I hope that we can grow the community that supports it!
 

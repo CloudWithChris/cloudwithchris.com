@@ -1,14 +1,8 @@
 ---
 Date: "2020-06-07T00:01:00Z"
-Description: In this episode, we get back to a requirements based topic, and an area
-  that will significantly impact the design of our resulting solution architecture.
-  That topic is security! It's one of the hot topics that organisations want to discuss
-  when moving to the cloud. So I'm pleased to be joined in this episode by another
-  colleague, Andrew Nathan, who has a wealth of knowledge in the cyber security space.
+Description: "In this episode, we get back to a requirements based topic, and an area that will significantly impact the design of our resulting solution architecture. That topic is security! It's one of the hot topics that organisations want to discuss when moving to the cloud. So I'm pleased to be joined in this episode by another colleague, Andrew Nathan, who has a wealth of knowledge in the cyber security space."
 PublishDate: "2020-06-07T00:01:00Z"
 Title: 8 - Azure Security
-categories:
-- Security
 episode: "8"
 image: img/cloudwithchrislogo.png
 explicit: "no"
@@ -32,6 +26,7 @@ tags:
 - Authorization
 - DDOS
 - Requirements
+youtube: 0UbMBxE-gDU
 ---
 Hello, and welcome back to Cloud with Chris! You're with me, Chris Reddington - and we'll be talking about all things Cloud!
 

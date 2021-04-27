@@ -3,8 +3,6 @@ Date: "2021-03-16T00:01:00Z"
 Description: "Have you ever had to setup a development environment from scratch? You have to install a ton of dependencies, probably a few tools along the way as well. It's not fun, it takes a lot of time and it prevents you from being productive. This is where GitHub Codespaces comes in."
 PublishDate: "2021-03-16T00:01:00Z"
 Title: "Cloud Drops - Introduction to GitHub Codespaces"
-categories:
-- DevOps
 episode: ""
 image: "img/episodes/cloud-drops-github-codespaces.jpg"
 explicit: "no"

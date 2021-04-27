@@ -3,8 +3,6 @@ Author: chrisreddington
 Description: "Principal of least privilege is a commonly used phrase within the Technology Industry. The idea is that we'll assign permissions of what the user needs to get the job done, rather than anything broader or more privileged. This helps reduce the blast radius in the event of a compromised account. This stretches to Azure resources at the management plane, but in some cases can also stretch to the data plane of those resources. We'll be exploring these further in this blog post."
 PublishDate: "2021-04-21T08:00:00Z"
 image: img/cloudwithchrislogo.png
-categories:
-- Announcement
 date: "2021-04-21T08:00:00Z"
 images:
 - img/cloudwithchrislogo.png

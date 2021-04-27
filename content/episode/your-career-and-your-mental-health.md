@@ -3,8 +3,6 @@ Date: "2021-06-04T15:30:00Z"
 Description: "People often talk about work life balance, how its not working for them, and how they feel pushed over the limit. Lets dig into it a little, look at how it can be managed, and address some difficult truths as well."
 PublishDate: "2021-06-04T15:30:00Z"
 Title: 37 - Your Career and Your Mental Health
-categories:
-- People
 episode: "32"
 image: img/cloudwithchrislogo.png
 explicit: "no"

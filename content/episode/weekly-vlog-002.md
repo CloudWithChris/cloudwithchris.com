@@ -1,13 +1,8 @@
 ---
 Date: "2021-01-11T09:30:00Z"
-Description: 'In this video, Chris lays out his second weekly technology vlog update
-  talking about updates on Cloud With Chris (Weekly Vlogs, Blogs, Podcast Series episodes,
-  Sessionize), Azure Updates, Community Updates (John Lunn aka JonnyChipz, Sarah Lean
-  aka TechieLass, CloudFamily.info and Richard Hooper aka PixelRobots). '
+Description: "In this video, Chris lays out his second weekly technology vlog update talking about updates on Cloud With Chris (Weekly Vlogs, Blogs, Podcast Series episodes, Sessionize), Azure Updates, Community Updates (John Lunn aka JonnyChipz, Sarah Lean aka TechieLass, CloudFamily.info and Richard Hooper aka PixelRobots)."
 PublishDate: "2021-01-11T09:30:00Z"
 Title: 'V002 - Weekly Technology Vlog #2 (Show Updates, Azure Updates, CloudFamily.info)'
-categories:
-- Vlog
 episode: V002
 image: img/vlog/v002.jpg
 explicit: "no"

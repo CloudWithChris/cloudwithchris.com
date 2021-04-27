@@ -3,8 +3,6 @@ Author: chrisreddington
 Description: "Okay, part 3! At this point, I'm assuming that you have already familiarised yourself with [part 1](./blog/gpg-git-part-1) and [part 2](./blog/gpg-git-part-2) of the series. As a quick recap, part 1 focused on why we would consider using GPG Keys in general. Part 2 focused on how to generate GPG keys along with some recommended practices on splitting out our master (Certification) key, from our specific purpose-driven keys. This post (part 3) focuses on using those keys as part of our usual development workflow using Git. We'll be assuming that GitHub is our end target, as GitHub supports [commit signature verification using GPG Keys](https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification)."
 PublishDate: "2021-03-10T12:00:00Z"
 image: img/cloudwithchrislogo.png
-categories:
-- Announcement
 date: "2021-03-10T12:00:00Z"
 images:
 - img/cloudwithchrislogo.png

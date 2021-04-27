@@ -3,8 +3,6 @@ Date: "2020-10-16T09:30:00Z"
 Description: "Planning to build a cloud application, but not so sure on the latest Identity Patterns? Not sure on your AAD compared with your AAD B2B or AAD B2C? Then check out this episode, where Chris Reddington is joined by Christos Matskas."
 PublishDate: "2020-10-16T09:30:00Z"
 Title: 12 - Modern Identity Patterns
-categories:
-- Identity
 episode: "12"
 image: img/cloudwithchrislogo.png
 explicit: "no"
