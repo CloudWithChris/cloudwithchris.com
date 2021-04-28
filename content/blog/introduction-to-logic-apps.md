@@ -82,7 +82,7 @@ You'll notice that all of these are stored in Azure Key Vault. I'm using the [Az
 
 The next step is to use the ``Client ID``, ``Client Secret`` and ``Account Password`` from the Key Vault actions calling the Reddit API to retrieve an access token by [using the HTTP action](https://docs.microsoft.com/en-us/azure/connectors/connectors-native-http#add-an-http-action).
 
-  > For the specifics of how the Reddit API works, you'll once again need to consult Reddit's documentation. I had previously reviewd some documentation that suggested the API would need to be interacted with using the ``application/x-www-form-urlencoded`` content type. However, you'll need to explore this further to determine the right approach for the APIs you need to work with.
+  > For the specifics of how the Reddit API works, you'll once again need to consult Reddit's documentation. I had previously reviewed some documentation that suggested the API would need to be interacted with using the ``application/x-www-form-urlencoded`` content type. However, you'll need to explore this further to determine the right approach for the APIs you need to work with.
 
 We then once again use the [Parse JSON action](https://docs.microsoft.com/en-us/azure/logic-apps/logic-apps-perform-data-operations#parse-json-action) to determine the output from the HTTP response so that we can use the token as part of the future Reddit API calls. As a reminder, you need to provide the schema in the Parse JSON action. Here is an example of the schema for this action -
 
