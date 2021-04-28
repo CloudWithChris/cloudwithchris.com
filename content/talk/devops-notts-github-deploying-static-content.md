@@ -1,7 +1,7 @@
 ---
-Date: "2021-04-27T18:00:00Z"
+Date: "2021-05-25T18:00:00Z"
 Description: "Chris is a Cloud Solution Architect at Microsoft. He'll provide an overview of GitHub and explore how GitHub Actions can be used to build and deploy your own static websites (or other apps!) to Azure."
-PublishDate: "2021-04-27T18:00:00Z"
+PublishDate: "2021-05-25T18:00:00Z"
 Title: "How GitHub Actions can help in building and deploying a static website and more"
 image: img/cloudwithchrislogo.png
 hosts:
