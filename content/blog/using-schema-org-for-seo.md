@@ -51,12 +51,12 @@ Initially, some of the content in my metadata partial built upon existing exampl
 
 This is an interesting snippet of code. What is it doing? Well, this is the magic that tells search engines how to display our listings, combined with the metadata that we mentioned earlier (Title, Description, etc.).
 
-So what is schema.org? According to the schema.org site *Schema.org is a collaborative, community activity with a mission to create, maintain, and promote schemas for structured data on the Internet, on web pages, in email messages, and beyond... Founded by Google, Microsoft, Yahoo and Yandex, Schema.org vocabularies are developed by an open community process, using the public-schemaorg@w3.org mailing list and through GitHub.* 
+So, what is schema.org? According to the schema.org site *Schema.org is a collaborative, community activity with a mission to create, maintain, and promote schemas for structured data on the Internet, on web pages, in email messages, and beyond... Founded by Google, Microsoft, Yahoo and Yandex, Schema.org vocabularies are developed by an open community process, using the public-schemaorg@w3.org mailing list and through GitHub.* 
 
 As you'll probably gauge from the above, schema.org is an open specification to provide structured data so that the search engines understand the desired listing for our search results. Once again, if you're interested you can find how I've implemented these standards in my [metadata partial template](https://github.com/chrisreddington/cloudwithchris.com/blob/master/themes/cloud-with-chris/layouts/partials/seo/meta.html).
 
 There are a couple of resources that were invaluable in implementing this -
-* [Using schema.org as a reference for the different schema types](https://schema.org/) - I use this  to appropriately render different information (e.g. a Guest page should be a [person](https://schema.org/Person), A blog post should be an [article type](https://schema.org/BlogPosting), a podcast episode should be an [episode type](https://schema.org/PodcastEpisode), etc.)
+* [Using schema.org as a reference for the different schema types](https://schema.org/) - I use this to appropriately render different information (e.g. a Guest page should be a [person](https://schema.org/Person), A blog post should be an [article type](https://schema.org/BlogPosting), a podcast episode should be an [episode type](https://schema.org/PodcastEpisode), etc.)
 * [Google Search's Rich Result Test](https://search.google.com/test/rich-results) - I used this page to copy/paste the generated/rendered (i.e. when I used hugo serve in my local environment's) schema.org script/metdata. This helped me confirm whether the metadata structure is valid, and *may* be used by the search engine.
 
 ![Example schema.org validation in Google Rich Results Test](/img/blog/using-schema-org-for-seo/google-richresults-test.png)
@@ -73,6 +73,6 @@ This can be incredibly powerful. For example, have you ever searched for 'How To
 
 I'm now in the process waiting for Google to discover the changes, re-crawling/re-indexing the site over time. The breadcrumb results seem to be working well so far, but I haven't seen any changes based upon Person/Blog/Podcast episode as yet, so will be monitoring the impact of these changes.
 
-What do you think of using structured schema to influence the search engine results? Have you implemented this on your own site, and have some ideas or recommendations? Or, have you read through this, and thought of some ideas that I may have overlooked? I'd love to hear further! Let me know over on [Twitter, @cloudwithchris](https://twitter.com/reddobowen).
+What do you think of using structured schema to influence the search engine results? Have you implemented this on your own site, and have some ideas or recommendations? Or have you read through this, and thought of some ideas that I may have overlooked? I'd love to hear further! Let me know over on [Twitter, @cloudwithchris](https://twitter.com/reddobowen).
 
 Thanks for reading, and I hope this has encouraged you to investigate implementing structured schema for your own ite! Until the next blog post, bye for now!
