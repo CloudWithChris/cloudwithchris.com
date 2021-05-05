@@ -13,7 +13,7 @@ tags:
 - dotnet
 title: "Crossposting Content: A New Project"
 ---
-Following on from my [recent post](/blog/using-schema-org-for-seo) where I discussed using schema.org for Search Engine Optimisation (SEO), I wanted to stick with a similar theme, but a slightly different angle or topic. This time, we'll be covering the topic of crossposting content. 
+Following on from my [recent post](/blog/using-schema-org-for-seo) where I discussed using schema.org for Search Engine Optimisation (SEO), I wanted to stick with a similar theme, but a slightly different angle or topic. This time, we'll be covering the topic of crossposting content.
 
 What is Crossposting? It's the idea that you'll post your content in multiple locations (e.g. [medium.com](https://cloudwithchris.medium.com/) or [dev.to](https://dev.to/cloudwithchris)) to broaden your reach. One of the main  benefits is that these sites are a platform for many bloggers. So if you use the appropriate tags and titles, you may be able to draw in additional members to your audience. It's not quite as easy as that though. If you post your content without appropriately linking back to your original content, you could be damaging yourself from an SEO perspective (e.g. is someone copying/plagiarizing content? What is the original source?). So let's cover this in al little more detail.
 
