@@ -1,6 +1,6 @@
 ---
 Date: "2021-05-02T09:30:00Z"
-Description: "In this video, chris provides another update on Cloud with Chris, updates on what's coming soon and Azure related news!"
+Description: "Welcome to weekly Vlog #18! We'll be covering the latest from Azure, Azure DevOps, GitHub and Cloud with Chris! Chris also provides an update on the Hugo CrossPoster."
 PublishDate: "2021-05-02T09:30:00Z"
 Title: "V018 - Weekly Technology Vlog #18"
 episode: V018
@@ -12,17 +12,17 @@ hosts:
 images:
 - img/default-social.png
 # - img/vlog/v002.jpg
-# podcast_bytes: "13803520"
-# podcast_duration: "14:19.000"
-# podcast_file: V002 - Weekly Technology Vlog.mp3
+podcast_bytes: "29936196"
+podcast_duration: "31:14.000"
+podcast_file: V018 - Weekly Technology Vlog.mp3
 series:
 - Weekly Vlog
 tags:
-#- Podcast
-#- Sessionize
-#- Azure
-#- Community
-# youtube: VyQI5SOsw3M
-upcoming: true
+- Azure
+- AzureDevOps
+- GitHub
+- Community
+- Blogging
+youtube: z5qQOHOeOuM
 ---
-In this video, chris provides another update on Cloud with Chris, updates on what's coming soon and Azure related news!
+Welcome to weekly Vlog #18! We'll be covering the latest from Azure, Azure DevOps, GitHub and Cloud with Chris! Chris also provides an update on the Hugo CrossPoster.
