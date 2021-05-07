@@ -23,7 +23,6 @@ tags:
 - .NET Core
 - App Service
 - Manual Approvals
-# youtube: vmvr9_BDPTE
-upcoming: true
+youtube: NeQPXo2JnHs
 ---
 You have a working set of GitHub actions, but several environments that you want to deploy into. How do you easily separate secrets for use between environments, and ensure you have approvals before releasing into production? For that, you'll need to use Environments! We'll explore those in this episode of Cloud with Chris!
