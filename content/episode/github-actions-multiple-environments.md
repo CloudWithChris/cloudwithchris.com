@@ -4,16 +4,17 @@ Description: "You have a working set of GitHub actions, but several environments
 PublishDate: "2021-05-07T00:01:00Z"
 Title: GitHub Actions and Azure - Using Environments with GitHub Actions
 episode: G8
-image: img/cloudwithchrislogo.png
+image: img/episodes/github-actions-multiple-environments.jpg
 explicit: "no"
 guests: []
 hosts:
 - chrisreddington
 images:
+- img/episodes/github-actions-multiple-environments.jpg
 - img/default-social.png
-#podcast_bytes: "34508800"
-#podcast_duration: "17:54.000"
-#podcast_file: G4 - GitHub Actions and Azure - Deploying .NET Core code to Azure App.mp3
+podcast_bytes: "33665024"
+podcast_duration: "34:57.000"
+podcast_file: G8 - GitHub Actions Multiple Environments.mp3
 series:
 - GitHub Actions and Azure
 tags:
