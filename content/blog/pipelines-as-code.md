@@ -19,13 +19,13 @@ Recently [on Twitter](https://twitter.com/thegraycat/status/1388873685587668992)
 
 Coincidentally, I'll also be releasing a Cloud Drop tomorrow on the topic as well.
 
-Firstly, what are pipelines as code? Pipelines as code are quite literally as the name implies. Rather than creating your build and deployment pipelines through a user interface, you would treat it exactly like your application or infrastructure code, creating and storing the pipeline code within your repository. 
+Firstly, what are pipelines as code? Pipelines as code are quite literally as the name implies. Rather than creating your build and deployment pipelines through a user interface, you would treat it exactly like your application or infrastructure code, creating and storing the pipeline code within your repository.
 
 Many providers are now offering this functionality, including [Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-schema?view=azure-devops&tabs=schema%2Cparameter-schema), [Circle CI](https://circleci.com/docs/2.0/sample-config/), [GitHub](https://docs.github.com/en/actions/quickstart), [Gitlab](https://docs.gitlab.com/ee/ci/yaml/), [Jenkins](https://docs.cloudbees.com/docs/admin-resources/latest/pipeline-templates-user-guide/setting-up-a-pipeline-template) and others.
 
 In this post, we'll be focusing on Azure DevOps' Azure Pipelines implementation.
 
-## Yes, source control your pipelines!
+## Yes, source control your pipelines
 
 Absolutely source control your pipelines. Why? You get the same benefits as when you source control your application code or infrastructure code. Not limited to, but including the ability to:
 
@@ -191,7 +191,7 @@ Okay, great - we have a multi-stage pipeline and are using a template to allow f
 * We can easily identify the deployments across several pipelines that have made their way into this environment.
 * We can add a requirement for manual or automated approvals against an environment. This means that the deployment will not automatically proceed unless the requirements are fulfilled.
 
-To demonstrate this, click on the environment that you defined and has been created for you. Select the ellipsis (three dots) and hit **Approvals and checks**. This is where you can add the manual or automated approvals. Add an **approval**, and configure the approval steps to your liking. 
+To demonstrate this, click on the environment that you defined and has been created for you. Select the ellipsis (three dots) and hit **Approvals and checks**. This is where you can add the manual or automated approvals. Add an **approval**, and configure the approval steps to your liking.
 
 ![Screenshot showing the approvals experience in the environments section of Azure Pipelines](/img/blog/pipelines-as-code/approvals-screenshot.jpg)
 
