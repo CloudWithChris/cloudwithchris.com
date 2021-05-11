@@ -1,6 +1,6 @@
 ---
 Author: chrisreddington
-Description: ""
+Description: "You may have heard of Event-Driven Architectures before, but haven't had the chance to get hands-on and build one as yet. That's exactly what we'll be working through in this blog post!"
 PublishDate: "2021-05-12T08:00:00Z"
 image: img/cloudwithchrislogo.png
 date: "2021-05-12T08:00:00Z"
@@ -34,8 +34,8 @@ We mentioned in the original context that we have a requirement of 'guaranteed p
 
 Let's first understand how Event Grid may be able to help here, and how it handles delivery to a destination (commonly referred to as an event-handler).
 
-  > **TIP:** Whenever you're building event-driven workflows, you'll typically encounter messaging services along the way such as Service Bus Topics & Queues, Azure Storage Queues and Event Grid. It's important that you understand the capabilities of each messaging platform, and more importantly how they differ. 
-  > 
+  > **TIP:** Whenever you're building event-driven workflows, you'll typically encounter messaging services along the way such as Service Bus Topics & Queues, Azure Storage Queues and Event Grid. It's important that you understand the capabilities of each messaging platform, and more importantly how they differ.
+  >
   > For example:
   >
   > * If a consumer reads a message, does it get removed instantly (as the message is considered delivered successfully), or do you have a peek lock or peek lease approach, to ensure that messages are processed correctly before being removed?
@@ -68,9 +68,9 @@ We'll go ahead and select the **Event Subscription** creation option. This is wh
 
 * A topic is a common term in messaging patterns. The topic is where the source (in this case, our storage account) sends the events. There a few types of topics -
   * System Topics which are built-in and provided by Azure Services, just like the Azure Storage example that we're showing here.
-  * Custom Topics which are used by applications or third-party topics. 
+  * Custom Topics which are used by applications or third-party topics.
   * Partner Topics - If you want to enable consumers of your SaaS platform to react to events within your application.
-* An Event Subscription is used to let event grid know which events you're interested in receiving. You'll specify an event handler (or destination) when you're creating the subscription. 
+* An Event Subscription is used to let event grid know which events you're interested in receiving. You'll specify an event handler (or destination) when you're creating the subscription.
 * An Event handler is where the event is sent. In this example, our event-handler will be the Azure Storage Queue.
 
 With that context, we can now proceed in creating our Event Grid System Topic and Event Grid Subscription. Find below the configuration that I entered, though you can of course name these appropriately as you see fit.
@@ -124,7 +124,7 @@ Brilliant, so we now have events being generated and sent to the Azure Storage q
 
 > **TIP:** Azure Functions is an event-driven serverless service. It works based upon triggers, inputs and output bindings. When using Azure Functions, you need to make sure that you thoroughly understand these bindings and how they work. Some of you may be wondering why we didn't directly bind the Azure Function directly to Azure Blob storage events (which is indeed possible). Take a look at the [Azure Docs](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-storage-blob-trigger?tabs=csharp) to find out more details.
 >
-> Each of the bindings will have details that you'll want to understand how in a bit more depth. For example, the [Queue Storage Trigger](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-storage-queue-trigger?tabs=csharp) has some details around concurrency, the polling algorithm, poison messages and more that are useful to be aware of. Before using any of the bindings, I suggest that you read through the associated trigger documentation to appropriately understand any implementation details to be considered. 
+> Each of the bindings will have details that you'll want to understand how in a bit more depth. For example, the [Queue Storage Trigger](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-storage-queue-trigger?tabs=csharp) has some details around concurrency, the polling algorithm, poison messages and more that are useful to be aware of. Before using any of the bindings, I suggest that you read through the associated trigger documentation to appropriately understand any implementation details to be considered.
 
 For the purposes of the blog post, I'm creating a function directly in the Azure Portal as a C Sharp Script. However, for a real implementation which is more production-focused, I would create a C Sharp Project and ensure the code is version controlled with an appropriate build and release process wrapped around it for the delivery.
 
@@ -158,9 +158,9 @@ We can also use Application Insights to inspect the logs that have been outputte
 
 ![Screenshot showing the Azure Application Transaction search view, showing logs outputted from the Azure Function](/img/blog/event-driven-workflow-with-event-grid/appinsights-search.jpg)
 
-And finally, for completeness - let's once again take a look at the overall resource gruop - so that you can see the resources that have been created.
+And finally, for completeness - let's once again take a look at the overall resource group - so that you can see the resources that have been created.
 
-You will find - 
+You will find -
 * The Source Storage Account, where we are uploading our blobs to kick off the process
 * The Storage Account which holds the Azure Queues, which is the event-handler for our Event Grid System Topic.
 * An Event Grid System Topic that also has a Managed Service Identity associated with it, with the Storage Queue Data Message Sender permission to the Storage Account containing the queue.
@@ -168,7 +168,7 @@ You will find -
 
 ![Screenshot showing the Azure Application Transaction search view, showing logs outputted from the Azure Function](/img/blog/event-driven-workflow-with-event-grid/appinsights-search.jpg)
 
-And that is it, that is our event-driven architecture which is kickstarted with Azure Event Grid! The aim of this post was to showcase how Azure Event Grid can help in these event-driven workflows, though did also feature another event-driven service - Azure Functions.
+And that is it, that is our event-driven architecture which is kick-started with Azure Event Grid! The aim of this post was to showcase how Azure Event Grid can help in these event-driven workflows, though did also feature another event-driven service - Azure Functions.
 
 I hope that this gave you a bit of insight into some of the considerations needed when building an event-driven workflow, and introduced you to some new concepts. Have you got any ideas on what you could build with an event-driven workflow? Have you started building something? I'd love to hear all about it on [Twitter, @reddobowen](https://twitter.com/reddobowen).
 
