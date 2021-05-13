@@ -17,4 +17,4 @@ tags:
 - Automation
 youtube: BCDAfjE33gY
 ---
-Chris is a podcaster ('Hoster') in his own right with his 'Cloud with Chris' show (https://www.cloudwithchris.com/) . On this episode he talks to us about using GitHub Actions for processing of static file content (like you have on a Podcast for example).
+Chris is a podcaster ('Hoster') in his own right with his 'Cloud with Chris' show ([https://www.cloudwithchris.com/](https://www.cloudwithchris.com/)). On this episode he talks to us about using GitHub Actions for processing of static file content (like you have on a Podcast for example).
