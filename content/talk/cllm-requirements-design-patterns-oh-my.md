@@ -16,7 +16,6 @@ tags:
 - Deployment
 - GitHub Actions
 - Static Content
-upcoming: true
-externalLink: https://www.cloudlunchlearn.com/Marathon
+youtube: https://www.youtube.com/watch?v=QiTMd9fh2qQ&t=122s
 ---
 In this session, we’ll navigate through a typical journey when designing the architecture of a cloud solution and consider the decisions that we may wish to make at various stages. Alongside that, we’ll factor in how requirements and design patterns can help influence our overall design.
