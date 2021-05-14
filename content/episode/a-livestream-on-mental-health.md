@@ -1,8 +1,8 @@
 ---
 Date: "2021-05-13T17:00:00Z"
-Description: "#MentalHealth​ - A concept that often has stigma surrounding it, or a concept that is misunderstood.  In this livestream, Chris will be joined by several friends and colleagues as they talk through their own mental health stories."
+Description: "MentalHealth​ - A concept that often has stigma surrounding it, or a concept that is misunderstood.  In this livestream, Chris will be joined by several friends and colleagues as they talk through their own mental health stories."
 PublishDate: "2021-05-13T17:00:00Z"
-Title: "A livestream on Mental Health - #MentalHealthAwarenessWeek"
+Title: "A livestream on Mental Health - Mental Health Awareness Week"
 image: img/cloudwithchrislogo.png
 explicit: "no"
 hosts:
