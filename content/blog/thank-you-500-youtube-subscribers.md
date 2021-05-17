@@ -12,7 +12,7 @@ tags:
 - cloudwithchris.com
 title: Thank you! Cloud with Chris has reached 500 YouTube Subscribers
 ---
-I'm sat writing this blog post about 4 months after writing my [2021 kick off blog post](https://www.cloudwithchris.com/blog/cloud-with-chris-moving-forwards/). My aim for 2021 was to focus on one goal - contributing back into the technical community.
+I'm sat writing this blog post about 4 months after writing my [2021 kick off blog post](/blog/cloud-with-chris-moving-forwards/). My aim for 2021 was to focus on one goal - contributing back into the technical community.
 
 {{< tweet 1345748585443454978 >}}
 
