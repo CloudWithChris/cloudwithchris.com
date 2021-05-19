@@ -22,7 +22,7 @@ Azure Static Web Apps provides an ability to easily create a hosting platform fo
 
 Now, one of the main points that I raise in my usual talk on hosting websites using the Static Content Hosting pattern is the significant cost-benefit of doing this. In an average month, I spend less than £5 for the entire end-to-end running of my environments. Yes, environments plural - that includes Preview, Staging and production, and also includes the cost of streaming my audio files to third party platforms like Apple Podcasts, Google Podcasts, Spotify and consumed directly from [www.cloudwithchris.com](https://www.cloudwithchris.com).
 
-So, what's the cost of Azure Static Web Apps? Or rather, how is it billed? There are two options - 
+So, what's the cost of Azure Static Web Apps? Or rather, how is it billed? There are two options -
 
 * **Free** which is intended for hobby or personal projects. You do not get as many custom domains per app as in the standard tier, and you also have a smaller total allowable app size. You also have to deploy the Azure Functions within the **managed** Azure Static Web Apps context, rather than bringing your own existing Azure Functions resource. Most importantly, there is no SLA with the free tier.
 * **Standard** which is intended for production projects. You get a larger number of custom domains per app (5 per app, instead of the 2 in the free tier), and can deploy an app with a maximum size of 500MB (compared to 250MB for the free tier). You'll of course be able to bring your own Azure Functions within this tier as well.
