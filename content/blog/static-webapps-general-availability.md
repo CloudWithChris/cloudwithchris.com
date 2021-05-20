@@ -31,7 +31,7 @@ So, what's the cost of Azure Static Web Apps? Or rather, how is it billed? There
 
 > **TIP:** It's always worth checking the [Azure Pricing Calculator](https://azure.microsoft.com/en-gb/pricing/calculator/) or the relevant [Azure Pricing Page](https://azure.microsoft.com/en-gb/pricing/details/app-service/static/) for the latest and greatest pricing details, as it can change over time!
 
-Now we have the service tiers / pricing thoughts out of the way, let's go ahead and take a look at the creation experience. Remember how Azure Static Web Apps makes it a significantly easier experience to deploy our static websites earlier? I meant it. First off, we'll find the usual details that we'd expect to see, including pricing tier, region to host the application, etc.
+Now we have the service tiers / pricing thoughts out of the way, let's go ahead and take a look at the creation experience. Remember how I mentioned that Azure Static Web Apps makes it a significantly easier experience to deploy our static websites earlier? I meant it. First off, we'll find the usual details that we'd expect to see, including pricing tier, region to host the application, etc.
 
 ![Screenshot of the Azure Static Web Apps creation process - part 1](/img/blog/static-webapps-general-availability/static-webapp-portal-create1.png)
 
