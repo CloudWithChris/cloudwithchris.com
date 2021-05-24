@@ -32,7 +32,7 @@ Finally, the ``Docker container action``. This is the option that I ultimately c
 
 Great, so we have a decision on how to orchestrate the command-line application. What's next? For the Docker container action, we need two files - a ``Dockerfile`` and an ``Action metadata file``, also known as the ``action.yml`` file.
 
-If you have built Docker images in the past, then this process will be no different to any others that you have built. For those new to Docker - A dockerfile is effectively a set of instructions for building a Docker image. You specify a base image (another Docker image) to build on top of, and then specify a series of steps to be added on top of that image. Each instruction is another image layer, so when you look at the output of a Docker build step, you'll see lots of hashes relating to a new image for each layer. 
+If you have built Docker images in the past, then this process will be no different to any others that you have built. For those new to Docker - A Dockerfile is effectively a set of instructions for building a Docker image. You specify a base image (another Docker image) to build on top of, and then specify a series of steps to be added on top of that image. Each instruction is another image layer, so when you look at the output of a Docker build step, you'll see lots of hashes relating to a new image for each layer.
 
 As is usual good practice, the example below uses a multi-stage build to ensure that the final resulting image is lightweight and only contains the needed dependencies to run effectively. The main build step will use an image which contains the necessary tools to compile the source code into the needed application binary.
 
@@ -79,8 +79,8 @@ This is by no means intended to be a tutorial on how to write a Dockerfile. Howe
 
 Next up, the ``Action metadata file`` also known as the ``action.yml`` file. This defines the inputs, outputs and main entrypoint for your action. The schema of this file is well-defined in the [GitHub Actions docs](https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions). To make it easier, I have included the ``action.yml`` file for my Hugo Cross Poster GitHub Action. It has a few main components -
 
-* A series of metadata about the action. For example, the name, description and branding. 
-* A set of expected ``inputs`` that are required for the GitHub Action. 
+* A series of metadata about the action. For example, the name, description and branding.
+* A set of expected ``inputs`` that are required for the GitHub Action.
 * It is possible to have a set of ``outputs``, if you plan to expose information to be passed to other GitHub Actions. I don't use this in my action.
 * A ``runs`` property, which specifies:
   * The type of GitHub action that we are defining (i.e. Docker, JavaScript etc.)
