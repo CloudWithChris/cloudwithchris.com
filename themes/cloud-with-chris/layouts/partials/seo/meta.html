@@ -223,250 +223,264 @@
     {{ $scratch.Add "sameAs" (slice (printf "%s%s" "https://twitch.tv/" . )) }}
   {{ end }}
 
-<script defer type="application/ld+json">
-  { 
-    "@context": "http://schema.org", 
-    "@type": "Person",
-    "name": "{{ .Params.Title }}",
-    "image": {{ .Params.image | absURL | htmlUnescape |  safeHTML }},
-    "url": {{ .Permalink  | htmlUnescape |  safeHTML }},
-    "sameAs": {{ .Scratch.Get "sameAs" }}
-  }
-</script>
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [{
-      "@type": "ListItem",
-      "position": 1,
-      "name": "{{ .Site.Title }}",
-      "item": {{ .Site.BaseURL}}
-    },{
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Guests",
-      "item": {{ printf "%s%s" .Site.BaseURL "/guest/" | absURL | htmlUnescape |  safeHTML }}
-    },{
-      "@type": "ListItem",
-      "position": 3,
-      "name": {{ .Title }}
-    }]
-  }
-  </script>
-{{ else if (and (eq .Type "episode") (eq .IsPage true)) }}
-<script defer type="application/ld+json">
-  { 
-    "@context": "http://schema.org", 
-    "@type": "PodcastEpisode",
-    "name": "{{ .Params.Title }}",
-    "image": {{ .Params.image | absURL | htmlUnescape |  safeHTML }},
-    "url": {{ .Permalink  }},
-    "description": "{{ .Params.Description }}",
-    "associatedMedia": {
-      "@type": "MediaObject",
-      "contentUrl": {{ printf "%s%s" .Site.Params.media_prefix .Params.podcast_file | absURL | htmlUnescape |  safeHTML }}
-    },
-    {{ if .Params.Series }}
-    "partOfSeries": {
-      "@type": "PodcastSeries",
-      "name": "{{ index (.Params.Series) 0 }}",
-      "url":  {{ printf "%s%s%s" .Site.BaseURL "series/" (urlize (index (.Params.Series) 0)) | absURL | htmlUnescape |  safeHTML }}
-    },
-    {{ end }}
-    "video": {
-      "@type": "VideoObject",
-      "url": {{ printf "%s%s" "https://youtu.be/" .Params.Youtube | htmlUnescape |  safeHTML }},
-      "uploadDate": "{{ .PublishDate.Format "2006-01-02" }}",
-      "description": "{{ .Params.Description }}",
-      "name": "{{ .Title }}",
-      "thumbnailUrl": {{ .Params.image | absURL | htmlUnescape |  safeHTML }}
-    }
-  }
-</script>
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [{
-      "@type": "ListItem",
-      "position": 1,
-      "name": "{{ .Site.Title }}",
-      "item": {{ .Site.BaseURL}}
-    },{
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Episodes",
-      "item": {{ printf "%s%s" .Site.BaseURL "/episode/" | absURL | htmlUnescape |  safeHTML }}
-    },{
-      "@type": "ListItem",
-      "position": 3,
-      "name": {{ .Title }}
-    }]
-  }
-  </script>
-{{ else if (and (eq .Type "blog") (eq .IsPage true)) }}
-<script defer type="application/ld+json">
-  { 
-    "@context": "http://schema.org", 
-    "@type": "BlogPosting",
-    "name": "{{ .Params.Title }}",
-    "mainEntityOfPage": "True",
-    "dateModified": "{{ .Lastmod.Format "2006-01-02" }}",
-    "headline": {{ .Title }},
-    "author": {
+  <script defer type="application/ld+json">
+    { 
+      "@context": "http://schema.org", 
       "@type": "Person",
-      "name": {{ .Params.Author | humanize }}
-    },    
-    "datePublished": "{{ .Date.Format "2006-01-02" }}",
-    "description": {{ .Description }},
-    "wordCount": {{ .WordCount }},
-    "image": {{ .Params.image | absURL | htmlUnescape |  safeHTML }},
-    "url": {{ .Permalink  }},
-    "publisher": {
-      "@type": "Organization",
-      "name": "{{ .Site.Title }}",
-      "logo": {
-        "@type": "imageObject",
-        "url": {{ "/favicon.ico" | absURL }}
-      }
-    },    
-    {{ with .Params.Tags }}
-      "keywords": {{ delimit . ", " }}
-    {{ end }}
-  }
-</script>
-
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [{
-      "@type": "ListItem",
-      "position": 1,
-      "name": "{{ .Site.Title }}",
-      "item": {{ .Site.BaseURL}}
-    },{
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Blogs",
-      "item": {{ printf "%s%s" .Site.BaseURL "/blog/" | absURL | htmlUnescape |  safeHTML }}
-    },{
-      "@type": "ListItem",
-      "position": 3,
-      "name": {{ .Title }}
-    }]
-  }
-  </script>
-{{ else if (and (eq .Type "talk") (eq .IsPage true)) }}
-<script defer type="application/ld+json">
-  { 
-    "@context": "http://schema.org", 
-    "@type": "Event",
-    "name": "{{ .Title }}",
-    "description": "{{ .Params.Description }}",
-    "location": {
-      "@type": "VirtualLocation",
-      "url": "{{ .Permalink }}"
-    },
-    "url": {{ .Permalink  }},
-    {{ with .Params.externalLink }}
-    "sameAs": [
-      {{ . | htmlUnescape |  safeHTML  }}
-    ],
-    {{ end }}
-    "startDate": "{{ .Date.Format "2006-01-02" }}",
-    {{ with .Params.Tags }}
-      "keywords": {{ delimit . ", " }}
-    {{ end }}
-  }
-</script>
-
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [{
-      "@type": "ListItem",
-      "position": 1,
-      "name": "{{ .Site.Title }}",
-      "item": {{ .Site.BaseURL}}
-    },{
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Talks",
-      "item": {{ printf "%s%s" .Site.BaseURL "/talk/" | absURL | htmlUnescape |  safeHTML }}
-    },{
-      "@type": "ListItem",
-      "position": 3,
-      "name": {{ .Title }}
-    }]
-  }
-  </script>
-{{ end }}
-
-<script defer type="application/ld+json">
-  { 
-    "@context": "http://schema.org", 
-    "@type": "WebSite", 
-    "url": {{ .Permalink }}, 
-    "sameAs": [
-      {{ printf "%s%s" "https://twitter.com/" .Site.Params.social.twitter | htmlUnescape |  safeHTML }}, 
-      {{ printf "%s%s" "https://github.com/" .Site.Params.social.github | htmlUnescape |  safeHTML }}
-    ], 
-    "name": "{{ .Title }}", 
-    "logo": {{ "/favicon.ico" | absURL }},
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": {{ printf "%s%s" .Site.BaseURL "/search?s={search_term_string}" | htmlUnescape |  safeHTML }},
-      "query-input": "required name=search_term_string"
+      "name": "{{ .Params.Title }}",
+      "image": {{ .Params.image | absURL | htmlUnescape |  safeHTML }},
+      "url": {{ .Permalink  | htmlUnescape |  safeHTML }},
+      "sameAs": {{ .Scratch.Get "sameAs" }}
     }
-  }
-</script>
-
-
-
-<meta property="og:type" content="website" /> 
-<meta name="robots" content="index,follow" /> 
-<meta name="googlebot" content="index,follow" />
-
-<meta name="twitter:site" content="@{{ .Site.Params.social.twitter }}">
-<meta name="twitter:creator" content="@{{ .Site.Params.social.twitter }}" />
-
-{{ with.Site.Params.facebook }}
-  {{ with .app_id }}
-    <meta property="fb:app_id" content="{{ . }}" />
-  {{ end }}
-  {{ with .admins }}
-    <meta property="fb:admins" content="{{ . }}" />
-  {{ end }}
-{{ end }}
-
-<!-- Theme Color -->
-<meta name="theme-color" content="#29aae1" /> 
-<meta name="msapplication-TileColor" content="#29aae1" />
-
-{{ if .Params.Tags }}  
-  <meta name="keywords" content="{{ print (delimit .Params.Tags ", ") ", " (delimit .Site.Params.Keywords ", ") }}" />
-{{ else }}
-  <meta name="keywords" content="{{ print (delimit .Site.Params.Keywords ", ") }}" />
-{{ end }}
-
-<meta name="imagemode" content="force" />
-<meta name="coverage" content="Worldwide" /> 
-<meta name="distribution" content="Global" />
-<meta name="HandheldFriendly" content="True" /> 
-<meta name="msapplication-tap-highlight" content="no" />
-<meta name="apple-mobile-web-app-title" content="{{ .Site.Title }}" /> 
-<meta name="mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-<meta name="apple-touch-fullscreen" content="yes" />
-
-<link rel="icon" type="image/png" href="/favicon-16.png" sizes="16x16">
-<link rel="icon" type="image/png" href="/favicon-32.png" sizes="32x32">
-<link rel="icon" type="image/png" href="/favicon-96.png" sizes="96x96">
-
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "{{ .Site.Title }}",
+        "item": {{ .Site.BaseURL}}
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Guests",
+        "item": {{ printf "%s%s" .Site.BaseURL "/guest/" | absURL | htmlUnescape |  safeHTML }}
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": {{ .Title }}
+      }]
+    }
+    </script>
+  {{ else if (and (eq .Type "episode") (eq .IsPage true)) }}
+  <script defer type="application/ld+json">
+    { 
+      "@context": "http://schema.org", 
+      "@type": "PodcastEpisode",
+      "name": "{{ .Params.Title }}",
+      "image": {{ .Params.image | absURL | htmlUnescape |  safeHTML }},
+      "url": {{ .Permalink  }},
+      "description": "{{ .Params.Description }}",
+      "associatedMedia": {
+        "@type": "MediaObject",
+        "contentUrl": {{ printf "%s%s" .Site.Params.media_prefix .Params.podcast_file | absURL | htmlUnescape |  safeHTML }}
+      },
+      {{ if .Params.Series }}
+      "partOfSeries": {
+        "@type": "PodcastSeries",
+        "name": "{{ index (.Params.Series) 0 }}",
+        "url":  {{ printf "%s%s%s" .Site.BaseURL "series/" (urlize (index (.Params.Series) 0)) | absURL | htmlUnescape |  safeHTML }}
+      },
+      {{ end }}
+      "video": {
+        "@type": "VideoObject",
+        "contentUrl": {{ printf "%s%s" "https://youtu.be/" .Params.Youtube | htmlUnescape |  safeHTML }},
+        "uploadDate": "{{ .PublishDate.Format "2006-01-02" }}",
+        "description": "{{ .Params.Description }}",
+        "name": "{{ .Title }}",
+        "thumbnailUrl": {{ .Params.image | absURL | htmlUnescape |  safeHTML }}
+      }
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "{{ .Site.Title }}",
+        "item": {{ .Site.BaseURL}}
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Episodes",
+        "item": {{ printf "%s%s" .Site.BaseURL "/episode/" | absURL | htmlUnescape |  safeHTML }}
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": {{ .Title }}
+      }]
+    }
+    </script>
+  {{ else if (and (eq .Type "blog") (eq .IsPage true)) }}
+  <script defer type="application/ld+json">
+    { 
+      "@context": "http://schema.org", 
+      "@type": "BlogPosting",
+      "name": "{{ .Params.Title }}",
+      "mainEntityOfPage": "True",
+      "dateModified": "{{ .Lastmod.Format "2006-01-02" }}",
+      "headline": {{ .Title }},
+      "author": {
+        "@type": "Person",
+        "name": {{ .Params.Author | humanize }}
+      },    
+      "datePublished": "{{ .Date.Format "2006-01-02" }}",
+      "description": {{ .Description }},
+      "wordCount": {{ .WordCount }},
+      "image": {{ .Params.image | absURL | htmlUnescape |  safeHTML }},
+      "url": {{ .Permalink  }},
+      "publisher": {
+        "@type": "Organization",
+        "name": "{{ .Site.Title }}",
+        "logo": {
+          "@type": "imageObject",
+          "url": {{ "/favicon.ico" | absURL }}
+        }
+      },    
+      {{ with .Params.Tags }}
+        "keywords": {{ delimit . ", " }}
+      {{ end }}
+    }
+  </script>
   
-<link rel="apple-touch-icon-precomposed" sizes="152x152" href="/favicon-152.png">
-<link rel="apple-touch-icon-precomposed" sizes="167x167" href="/favicon-167.png">
-<link rel="apple-touch-icon-precomposed" sizes="180x180" href="/favicon-180.png">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "{{ .Site.Title }}",
+        "item": {{ .Site.BaseURL}}
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blogs",
+        "item": {{ printf "%s%s" .Site.BaseURL "/blog/" | absURL | htmlUnescape |  safeHTML }}
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": {{ .Title }}
+      }]
+    }
+    </script>
+  {{ else if (and (eq .Type "talk") (eq .IsPage true)) }}
+  <script defer type="application/ld+json">
+    { 
+      "@context": "http://schema.org", 
+      "@type": "Event",
+      "name": "{{ .Title }}",
+      "description": "{{ .Params.Description }}",
+      "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "performer": {      
+        "@type": "Person",
+        "image": "https://www.cloudwithchris.com/img/hosts/chrisreddington.jpg",
+        "name": "Chris Reddington",
+        "url": "https://www.cloudwithchris.com"
+      },
+      "organizer": {
+        "@type": "Organization",
+        "name": "{{ .Params.eventName }}"
+      },
+      "image": "https://www.cloudwithchris.com/img/cloudwithchrislogo.png",
+      "location": {
+        "@type": "VirtualLocation",
+        "url": "{{ .Permalink }}"
+      },
+      "url": {{ .Permalink  }},
+      {{ with .Params.externalLink }}
+      "sameAs": [
+        {{ . | htmlUnescape |  safeHTML  }}
+      ],
+      {{ end }}
+      "startDate": "{{ .Date.Format "2006-01-02" }}",
+      "endDate": "{{ .Date.Format "2006-01-02" }}",
+      {{ with .Params.Tags }}
+        "keywords": {{ delimit . ", " }}
+      {{ end }}
+    }
+  </script>
+  
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "{{ .Site.Title }}",
+        "item": {{ .Site.BaseURL}}
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Talks",
+        "item": {{ printf "%s%s" .Site.BaseURL "/talk/" | absURL | htmlUnescape |  safeHTML }}
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": {{ .Title }}
+      }]
+    }
+    </script>
+  {{ end }}
+  
+  <script defer type="application/ld+json">
+    { 
+      "@context": "http://schema.org", 
+      "@type": "WebSite", 
+      "url": {{ .Permalink }}, 
+      "sameAs": [
+        {{ printf "%s%s" "https://twitter.com/" .Site.Params.social.twitter | htmlUnescape |  safeHTML }}, 
+        {{ printf "%s%s" "https://github.com/" .Site.Params.social.github | htmlUnescape |  safeHTML }}
+      ], 
+      "name": "{{ .Title }}", 
+      "logo": {{ "/favicon.ico" | absURL }},
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {{ printf "%s%s" .Site.BaseURL "/search?s={search_term_string}" | htmlUnescape |  safeHTML }},
+        "query-input": "required name=search_term_string"
+      }
+    }
+  </script>
+  
+  
+  
+  <meta property="og:type" content="website" /> 
+  <meta name="robots" content="index,follow" /> 
+  <meta name="googlebot" content="index,follow" />
+  
+  <meta name="twitter:site" content="@{{ .Site.Params.social.twitter }}">
+  <meta name="twitter:creator" content="@{{ .Site.Params.social.twitter }}" />
+  
+  {{ with.Site.Params.facebook }}
+    {{ with .app_id }}
+      <meta property="fb:app_id" content="{{ . }}" />
+    {{ end }}
+    {{ with .admins }}
+      <meta property="fb:admins" content="{{ . }}" />
+    {{ end }}
+  {{ end }}
+  
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#29aae1" /> 
+  <meta name="msapplication-TileColor" content="#29aae1" />
+  
+  {{ if .Params.Tags }}  
+    <meta name="keywords" content="{{ print (delimit .Params.Tags ", ") ", " (delimit .Site.Params.Keywords ", ") }}" />
+  {{ else }}
+    <meta name="keywords" content="{{ print (delimit .Site.Params.Keywords ", ") }}" />
+  {{ end }}
+  
+  <meta name="imagemode" content="force" />
+  <meta name="coverage" content="Worldwide" /> 
+  <meta name="distribution" content="Global" />
+  <meta name="HandheldFriendly" content="True" /> 
+  <meta name="msapplication-tap-highlight" content="no" />
+  <meta name="apple-mobile-web-app-title" content="{{ .Site.Title }}" /> 
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-touch-fullscreen" content="yes" />
+  
+  <link rel="icon" type="image/png" href="/favicon-16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/favicon-32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/favicon-96.png" sizes="96x96">
+  
+    
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/favicon-152.png">
+  <link rel="apple-touch-icon-precomposed" sizes="167x167" href="/favicon-167.png">
+  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/favicon-180.png">
