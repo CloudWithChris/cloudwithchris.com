@@ -15,7 +15,7 @@ title: Securing App Service with Easy Auth behind a Public Application Gateway
 I recently encountered a scenario that I wanted to spend some time writing up. Imagine that you have a requirement to deploy a new Web Application to Microsoft Azure. However, there are some additional requirements -
 
 * The application must require Azure Active Directory Authentication.
-* The web application must not be accessible **directly** across the public internet. 
+* The web application must not be accessible **directly** across the public internet.
 * An end-user should be able to connect to the web app using a Public DNS record, so that they feel that it is an authentic experience.
 
 There are several ways that this could be achieved, but may bring in some complexity. Some of these include -
@@ -103,11 +103,11 @@ Navigating back to our App Service instance and running through the validation s
 
 ![Screenshot showing the initial check for the hostname](/img/blog/secure-app-service-with-easy-auth-and-app-gateway-public/app-service-custom-domain.jpg)
 
-At this point, we have an additional hostname (custom domain) bound to the App Service instance. This means that when our traffic hits App Service, any requests with the hostname cwc-secured-app.cloudwithchris.com will go to the appropriate app service instance. 
+At this point, we have an additional hostname (custom domain) bound to the App Service instance. This means that when our traffic hits App Service, any requests with the hostname cwc-secured-app.cloudwithchris.com will go to the appropriate app service instance.
 
 But, we now have a warning in the portal ``You have custom domains that are not secured and will cause browser warnings/errors when accessed over https. Click on "Add binding" to secure your custom domains.`` If we're happy to navigate over HTTP rather than HTTPS, then that custom domain will work just fine. However, given we're focusing on securing the application - it would make sense for us to focus on the SSL aspect too.
 
-There's some good news if you have been keeping up to date with the [Microsoft Build Announcements](/blog/build-2021-summary) over the last week. [App Service Managed Certificates now generally available](https://azure.microsoft.com/en-gb/updates/app-service-managed-certificates-now-generally-available/). This means that we can get an SSL certificate for our App Service for free. 
+There's some good news if you have been keeping up to date with the [Microsoft Build Announcements](/blog/build-2021-summary) over the last week. [App Service Managed Certificates now generally available](https://azure.microsoft.com/en-gb/updates/app-service-managed-certificates-now-generally-available/). This means that we can get an SSL certificate for our App Service for free.
 
 To start the process, navigate to TLS/SSL settings on the left hand menu and click into the Private Key Certificates (.pfx) tab. You should see an option to **Create App Service Managed Certificate**.
 
@@ -129,7 +129,7 @@ You'll need to navigate back to the Custom domains menu, and add a binding betwe
 
 ![Screenshot showing the binding process between the custom domain and the newly generated certificate](/img/blog/secure-app-service-with-easy-auth-and-app-gateway-public/app-service-custom-domain-cert.jpg)
 
-> **Tip:** Later on in this post, we'll need to use a certificate with Application Gateway. The free App Service Managed Certificate is not exportable (as documented here](https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-certificate#create-a-free-managed-certificate)), so you'll need to have an SSL certificated generated elsewhere to take in HTTPS traffic through the Application Gateway. I have typically used [ZeroSSL](https://zerossl.com/) in the past as they provide short-lived certificates for free. There are of course many options available, though you may already have an SSL certificate to hand! I don't plan to go into this in any depth in the post, so will leave this as a separate exercise for you.
+> **Tip:** Later on in this post, we'll need to use a certificate with Application Gateway. The free App Service Managed Certificate is not exportable ([as documented here](https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-certificate#create-a-free-managed-certificate)), so you'll need to have an SSL certificated generated elsewhere to take in HTTPS traffic through the Application Gateway. I have typically used [ZeroSSL](https://zerossl.com/) in the past as they provide short-lived certificates for free. There are of course many options available, though you may already have an SSL certificate to hand! I don't plan to go into this in any depth in the post, so will leave this as a separate exercise for you.
 
 At this point, it does of course mean that you could navigate to the https version of your custom domain. Let's do that to verify the authentication process before we bring the Application Gateway into the mix.
 
@@ -209,16 +209,15 @@ Finally, we can add additional path-based routing if required. Otherwise, we can
 
 Let's move on. Feel free to add on any needed Azure Resource Tags, and then go ahead and create your resource. After a few minutes, you should find that your Application Gateway resource has been created successfully.
 
-Now for the moment of truth. Let's remap the CNAME record that we configured earlier to point to our Application Gateway instead of the App Service instance. 
+Now for the moment of truth. Let's remap the CNAME record that we configured earlier to point to our Application Gateway instead of the App Service instance.
 
 > **Tip:** You have a couple of options here. You can use an A record and map to the IP address of the application gateway. Alternatively, you can navigate to the Public IP address and set a DNS name label (as [described here](https://docs.microsoft.com/en-gb/azure/virtual-machines/custom-domain)) so that you can just remap the existing CNAME record that you have. That's exactly what I'm going to do. I gave my IP address a DNS name label of cwc-gateway. As it's deployed in North Europe, that makes the overall DNS cwc-gateway.northeurope.cloudapp.azure.com. I'll point my cwc-secured-app CNAME record for cloudwithchris.com to that instead of the cwc-secured-app.azurewebsites.net.
 
 Once the DNS records update, navigate to your custom domain and take a look at your application in all it's glory! Or, not.. Uh oh. We've likely just received an HTTP 502 Response (Bad Gateway). Actually, it's once again solvable (and a logical point that we've reached). The Application Gateway is sending a health probe to the backend (our App Service) to determine if everything is healthy. Remember, we set up Easy Auth on our App Service instance? The health probe will likely be [receiving an HTTP response that it doesn't think is successful](https://docs.microsoft.com/en-us/azure/application-gateway/application-gateway-probe-overview#probe-matching). By default, an HTTP(S) response with status code 200-399 is considered healthy.
 
-Given that Easy Auth is applying to the entire site (rather than a section by section basis), all endpoints will likely be responding with the same status code (i.e. we can't create a custom endpoint page which doesn't require authentication). As this blog post has become quite lengthy, we'll use a quick (and some may call it dirty) fix - Associate a custom Health Probe with our HTTP Settings in the Application Gateway. 
+Given that Easy Auth is applying to the entire site (rather than a section by section basis), all endpoints will likely be responding with the same status code (i.e. we can't create a custom endpoint page which doesn't require authentication). As this blog post has become quite lengthy, we'll use a quick (and some may call it dirty) fix - Associate a custom Health Probe with our HTTP Settings in the Application Gateway.
 
-At first, I create a Health Probe primarily with the default settings and then hit "Test Probe" at the bottom. After a few seconds, I receive an error message - *	
-Received invalid status code: 401 in the backend server’s HTTP response. As per the health probe configuration, 200-399 is the acceptable status code. Either modify probe configuration or resolve backend issues. Learn more*.
+At first, I create a Health Probe primarily with the default settings and then hit "Test Probe" at the bottom. After a few seconds, I receive an error message - *Received invalid status code: 401 in the backend server’s HTTP response. As per the health probe configuration, 200-399 is the acceptable status code. Either modify probe configuration or resolve backend issues. Learn more*.
 
 That makes it a lot clearer, we can see that we need to include a 401 as a valid response code. In fairness, in the context of this application - a 401 status code (Unauthorized) does imply that the application is indeed running. However, in a real world scenario - I'd much rather see the [Health Endpoint Monitoring Pattern](https://docs.microsoft.com/en-us/azure/architecture/patterns/health-endpoint-monitoring) used, aggregating the health of any services that the application depends on. Once you've added 401 to the expected set of HTTP Status Codes to match against, test the probe again. This time, it should be a success. Finally, click the add button to associate the custom health probe with the HTTP Settings that you configured earlier on.
 
@@ -226,28 +225,28 @@ That makes it a lot clearer, we can see that we need to include a 401 as a valid
 
 Navigate to your custom domain. If your token was cached from earlier, you may find that you log straight in. Alternatively, try logging in from a private browser. You should find that the authentication flow is now working as expected.
 
-Right, we're nearly there on the requirements! We now just need to make sure that traffic cannot get to the App Service instance directly, and that it **must** go through the Application Gateway. To achieve that, we'll use [App Service Access Restrictions](https://docs.microsoft.com/en-us/azure/app-service/networking-features#access-restrictions) and restrict access to only be allowed from the Public IP address of the Application Gateway. 
+Right, we're nearly there on the requirements! We now just need to make sure that traffic cannot get to the App Service instance directly, and that it **must** go through the Application Gateway. To achieve that, we'll use [App Service Access Restrictions](https://docs.microsoft.com/en-us/azure/app-service/networking-features#access-restrictions) and restrict access to only be allowed from the Public IP address of the Application Gateway.
 
 First, navigate to your Application Gateway and note down the Public IP address that is being used. Once complete, navigate to your App Service instance in the Azure Portal and select Networking. Navigate to Access Restrictions.
 
 ![Screenshot showing the Networking (preview) UI within the App Service that we have been working on](/img/blog/secure-app-service-with-easy-auth-and-app-gateway-public/appservice-networking-preview.jpg)
 
-> **Tip:** For this blog post, I'm using the Networking (preview) option instead. I much prefer the visual / diagram nature of this UI, and find it much more intuitive. Feel free to use whichever option you prefer. 
+> **Tip:** For this blog post, I'm using the Networking (preview) option instead. I much prefer the visual / diagram nature of this UI, and find it much more intuitive. Feel free to use whichever option you prefer.
 
 Before you apply any restrictions, navigate to the original URL of your App Service instance (the one ending in azurewebsites.net). You should notice that it's still publicly accessible and available... for now.
 
 In the access restrictions page, you should see that there are two tabs. One for nameofyourapp.azurewebsites.net (which is the actual web application that you have deployed) and nameofyourapp**.scm**.azurewebsites.net (which is an area used to manage the Kudu console or used to publish your app by using web deploy). We will be restricting the one **without** scm in the name, so that we don't restrict any administration activities for the kudu sandbox. Of course, if needed - we could restrict the scm endpoint too - but that's out of scope of our initial requirements.
 
- We'll go ahead and create an Access Restriction rule as follows -
+We'll go ahead and create an Access Restriction rule as follows -
 
- * **Name:** AppGatewayOnly
- * **Action:** Allow
- * **Priority:** 100 (Though, this doesn't really matter unless we start adding more rules. Rules are evaluated in order of priority from low to high).
- * **Description:** Only Allow Application Gateway to communicate
- * **Type:** IPv4
- * **IP Address Block:** *Enter the IP address of your Application Gateway here*
+* **Name:** AppGatewayOnly
+* **Action:** Allow
+* **Priority:** 100 (Though, this doesn't really matter unless we start adding more rules. Rules are evaluated in order of priority from low to high).
+* **Description:** Only Allow Application Gateway to communicate
+* **Type:** IPv4
+* **IP Address Block:** *Enter the IP address of your Application Gateway here*
 
- With that in place, go ahead and click Add Rule. 
+With that in place, go ahead and click Add Rule.
 
 ![Screenshot showing the Access Restriction Rule being configured](/img/blog/secure-app-service-with-easy-auth-and-app-gateway-public/appservice-accessrestrictions.jpg)
 
@@ -267,7 +266,7 @@ So there we go! With that, we've been able to fulfil our requirements -
 
 * The application must require Azure Active Directory Authentication.
   * **This is achieved by using Easy Auth in App Service**
-* The web application must not be accessible **directly** across the public internet. 
+* The web application must not be accessible **directly** across the public internet.
   * **This is achieved by using App Service Access Restrictions to only allow traffic from an Application Gateway.**.
 * An end-user should be able to connect to the web app using a Public DNS record, so that they feel that it is an authentic experience.
   * **This is achieved by binding a custom domain to the App Service, so that we can transparently pass the hostname from our Application Gateway multi site listener to the back end app service instance. This reduces any complexity in needing to use Rewrite Rules or similar, and keeps the solution simple and manageable.**
