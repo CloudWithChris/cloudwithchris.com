@@ -33,8 +33,17 @@ menu:
       weight: 2
       url: "/about"
     - name: "Episodes"
+      identifier: "episodes"
       weight: 3
+      url: "#"
+    - name: "Past"
       url: "/episode"
+      weight: 1
+      parent: "episodes"
+    - name: "Upcoming"
+      url: "/upcoming"
+      weight: 2
+      parent: "episodes"
     - name: "Blog"
       weight: 4
       url: "/Blog"
