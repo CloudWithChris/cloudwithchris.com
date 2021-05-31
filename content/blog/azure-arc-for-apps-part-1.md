@@ -1,19 +1,21 @@
 ---
 Author: chrisreddington
 Description: ""
-PublishDate: "2021-06-02T08:00:00Z"
+PublishDate: "2021-06-01T08:00:00Z"
 image: img/cloudwithchrislogo.png
-date: "2021-06-02T08:00:00Z"
+date: "2021-06-01T08:00:00Z"
 images:
 - img/cloudwithchrislogo.png
 tags:
-- Technology
-- DevOps
-- Git
-- Security
-- How To
+- Containers
+- Developer
+- Cloud Native
+- Kubernetes
+- Azure
+- Azure Arc
 title: Using Azure Arc for Apps - Part 1 - Setting up Azure Arc for Kubernetes
 ---
+
 ## Cloud Native Applications that run anywhere
 At Microsoft //Build 2021, Microsoft announced a series of updates relating to Cloud Native Applications anywhere. In summary, those updates refer to running Azure Services (such as App Services, Logic Apps, Azure Functions, Event Grid and API Management) in any Kubernetes cluster which is managed by Azure Arc. That means you could have Azure App Services running in Amazon Web Services (AWS), Google Cloud Platform (GCP), or in your on-premises Kubernetes deployment. This is a significant update, so I've decided that I'll be writing a series of blog posts on the topic - as one post would not do the topic justice!
 
@@ -44,7 +46,7 @@ And so, we have arrived at the purpose of this first blog post. Let's create a K
 * Setting up a Kubernetes Cluster using kind (Kubernetes in Docker) and installing the required components for Azure Arc enabled Kubernetes
 * Setting up an Azure Kubernetes Cluster and installing the required components for Azure Arc enabled Kubernetes
 
-### Creating a Kubernetes Cluster using kind
+### Creating a Kubernetes Cluster with WSL and kind
 
 I have Windows 10 running on my desktop machine. This is the one that I typically use for gaming, streaming, development work and write the majority of my blog posts here.
 
@@ -105,7 +107,13 @@ Have a nice day! 👋
 
 ## Creating an Azure Kubernetes Service Cluster
 
-TBC
+Fortunately, this experience is very intuitive and incredibly well-documented. For the purposes of this blog post, I don't plan to cover this in too much depth. Instead, I'll sign-post you to a couple of options -
+
+* [Azure Docs on creating an AKS Cluster through the Azure Portal](https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough-portal)
+* [Azure Docs on creating an AKS cluster through the Azure CLI](https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough)
+* [Azure Docs on creating an AKS cluster through Azure PowerShell](https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough-powershell)
+
+> **Note:** Each of these docs also demonstrate how to run and test an application on the cluster. That will not be needed when working through this blog. Instead, work your way through to (and including) the **Connect to the cluster** step.
 
 ## Enabling Azure Arc on your Kubernetes Cluster
 
@@ -189,6 +197,7 @@ Okay, now for the big moment! We're going to be transforming the Kubernetes Clus
 > 
 > * Make sure that you have the latest helm version installed before progressing. Learn why below the snippet!
 > * In the environment where you'll be executing the Azure CLI command, make sure that your kubectl context is set to the correct kubernetes cluster. The az connectedk8s connect command will be using the current kubeconfig context. It will create a Helm Deployment for you, deploying the required components to enable Azure Arc enabled Kubernetes on your cluster.
+> * Be aware that Azure Arc for Kubernetes is supported in numerous regions. However, if you plan to follow the additional posts in this series, then you may need to give some thought about where you deploy your Azure Arc enabled Kubernetes resource. For example, in [part 2](/blog/azure-arc-for-apps-part-2), we discuss that (at time of writing) the App Service Kubernetes environment [is only available in West Europe and East US](https://docs.microsoft.com/en-gb/azure/app-service/overview-arc-integration#public-preview-limitations).
 
 ```bash
 arcClusterName="rb-arc-aks"
@@ -217,5 +226,11 @@ And there you go, you are the proud new owner of an Azure Arc enabled Kubernetes
 * Configure [Azure Monitor for Containers](https://docs.microsoft.com/en-us/azure/azure-monitor/containers/container-insights-enable-arc-enabled-clusters) to gain insight into your clusters.
 
 That is out of scope for this particular blog series, so we won't be running through those items. If you're interested, please feel free to explore those topics further using the Azure Docs above. We now have the pre-requisites (A Kubernetes Cluster with Azure Arc configured) to deploy a number of Azure Services onto our Azure Kubernetes cluster. These are split into several different posts, so I'd encourage you to read these separate posts!
+
+* [Part 2](/blog/azure-arc-for-apps-part-2)
+* [Part 3](/blog/azure-arc-for-apps-part-3)
+* [Part 4](/blog/azure-arc-for-apps-part-4)
+* [Part 5](/blog/azure-arc-for-apps-part-5)
+* [Part 6](/blog/azure-arc-for-apps-part-6)
 
 With that, thank you for reading. I'd love to hear if this content was useful. Please let me know over on [Twitter, @reddobowen](https://twitter.com/reddobowen). I hope that you'll continue on with the series, in which case - read on! Otherwise, until the next blog post - Thanks for reading, and bye for now!
