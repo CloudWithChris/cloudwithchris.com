@@ -210,7 +210,7 @@ For the Private IP address - If you setup an Application Gateway with the Standa
 
 ### Application Gateway - Backends
 
-On to Step 3, Backends. We may have many backend pools that we want to route to (e.g. if we have an Application Gateway acting as a listener for multiple sites). We'll first need to **Add a backend pool**. 
+On to Step 3, Backends. We may have many backend pools that we want to route to (e.g. if we have an Application Gateway acting as a listener for multiple sites). We'll first need to **Add a backend pool**.
 
 > **Tip:** On the blade which opens, you'll notice that there is an option to *add backend pool without targets*. This is useful if you decide to create an Application Gateway before any backend infrastructure, which is entirely possible and plausible. We created the App Service earlier on in this blog post to keep the content easy to follow, so we don't need to use that approach.
 
@@ -283,7 +283,7 @@ At first, create a Health Probe which resembles the out of the box health probe 
 
 Once complete, hit **Test** at the bottom. After a few seconds, I receive an error message - *Received invalid status code: 401 in the backend server’s HTTP response. As per the health probe configuration, 200-399 is the acceptable status code. Either modify probe configuration or resolve backend issues. Learn more*.
 
-That makes it a lot clearer, we can see that we need to include a 401 as a valid response code. In fairness, in the context of this application - a 401 status code (Unauthorized) does imply that the application is indeed running. 
+That makes it a lot clearer, we can see that we need to include a 401 as a valid response code. In fairness, in the context of this application - a 401 status code (Unauthorized) does imply that the application is indeed running.
 
 > **Tip:** In a real world scenario - I'd much rather see the [Health Endpoint Monitoring Pattern](https://docs.microsoft.com/en-us/azure/architecture/patterns/health-endpoint-monitoring) used, aggregating the health of any services that the application depends on.
 
@@ -307,9 +307,9 @@ First, navigate to your Application Gateway and note down the Public IP address 
 
 Before you apply any restrictions, navigate to the original URL of your App Service instance (the one ending in azurewebsites.net). You should notice that it's still publicly accessible and available... for now.
 
-In the access restrictions page, you should see that there are two tabs - 
-  * One for nameofyourapp.azurewebsites.net (which is the actual web application that you have deployed)
-  * One for nameofyourapp.**scm**.azurewebsites.net (which is an endpoint used to manage the Kudu console or used to publish your app by using web deploy).
+In the access restrictions page, you should see that there are two tabs -
+* One for nameofyourapp.azurewebsites.net (which is the actual web application that you have deployed)
+* One for nameofyourapp.**scm**.azurewebsites.net (which is an endpoint used to manage the Kudu console or used to publish your app by using web deploy).
   
 We will be restricting the one **without** scm in the name, so that we don't restrict any administration activities for the kudu sandbox/deployment. Of course, if needed - we could restrict the scm endpoint too - but that's out of scope of our initial requirements.
 
