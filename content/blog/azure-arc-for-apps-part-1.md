@@ -227,10 +227,10 @@ And there you go, you are the proud new owner of an Azure Arc enabled Kubernetes
 
 That is out of scope for this particular blog series, so we won't be running through those items. If you're interested, please feel free to explore those topics further using the Azure Docs above. We now have the pre-requisites (A Kubernetes Cluster with Azure Arc configured) to deploy a number of Azure Services onto our Azure Kubernetes cluster. These are split into several different posts, so I'd encourage you to read these separate posts!
 
-* [Part 2](/blog/azure-arc-for-apps-part-2)
-* [Part 3](/blog/azure-arc-for-apps-part-3)
-* [Part 4](/blog/azure-arc-for-apps-part-4)
-* [Part 5](/blog/azure-arc-for-apps-part-5)
-* [Part 6](/blog/azure-arc-for-apps-part-6)
+* [Part 2 - Deploying App Services to Kubernetes](/blog/azure-arc-for-apps-part-2)
+* Part 3 (Coming soon)
+* Part 4 (Coming soon)
+* Part 5 (Coming soon)
+* Part 6 (Coming soon)
 
 With that, thank you for reading. I'd love to hear if this content was useful. Please let me know over on [Twitter, @reddobowen](https://twitter.com/reddobowen). I hope that you'll continue on with the series, in which case - read on! Otherwise, until the next blog post - Thanks for reading, and bye for now!

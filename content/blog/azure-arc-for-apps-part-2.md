@@ -909,10 +909,10 @@ This is probably one of the longer blog posts of the series (at least, he says t
 
 With that, any comments and feedback are always appreciated over on [Twitter, @reddobowen](https://twitter.com/reddobowen). Don't forget, there are several posts in this series that continue the story of Azure Arc for Apps.
 
-* [Part 1](/blog/azure-arc-for-apps-part-1)
-* [Part 3](/blog/azure-arc-for-apps-part-3)
-* [Part 4](/blog/azure-arc-for-apps-part-4)
-* [Part 5](/blog/azure-arc-for-apps-part-5)
-* [Part 6](/blog/azure-arc-for-apps-part-6)
+* [Part 1 - Setting up Azure Arc for Kubernetes](/blog/azure-arc-for-apps-part-1)
+* Part 3 (Coming soon)
+* Part 4 (Coming soon)
+* Part 5 (Coming soon)
+* Part 6 (Coming soon)
 
  I hope that you'll continue on with the series, in which case - read on! Otherwise, until the next blog post - Thanks for reading, and bye for now!
