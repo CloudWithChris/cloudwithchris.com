@@ -1,6 +1,6 @@
 ---
 Author: chrisreddington
-Description: ""
+Description: "In part 1 of this Using Azure Arc for Apps series, we explored Azure Arc and Azure Arc enabled Kubernetes clusters. In this post, we'll be exploring App Services on Azure Arc. More specifically, these application services run on an Azure Arc enabled Kubernetes cluster, which is a pre-requisite for us to progress. At time of writing, this approach is in public preview, so we may see certain limitations / features that are not yet available."
 PublishDate: "2021-06-01T08:01:00Z"
 image: img/cloudwithchrislogo.png
 date: "2021-06-01T08:01:00Z"
