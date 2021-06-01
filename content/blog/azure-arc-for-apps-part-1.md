@@ -1,6 +1,6 @@
 ---
 Author: chrisreddington
-Description: ""
+Description: "At Microsoft //Build 2021, Microsoft announced a series of updates relating to Cloud Native Applications anywhere. In summary, those updates refer to running Azure Services (such as App Services, Logic Apps, Azure Functions, Event Grid and API Management) in any Kubernetes cluster which is managed by Azure Arc. That means you could have Azure App Services running in Amazon Web Services (AWS), Google Cloud Platform (GCP), or in your on-premises Kubernetes deployment. This is a significant update, so I've decided that I'll be writing a series of blog posts on the topic - as one post would not do the topic justice!"
 PublishDate: "2021-06-01T08:00:00Z"
 image: img/cloudwithchrislogo.png
 date: "2021-06-01T08:00:00Z"
@@ -13,7 +13,7 @@ tags:
 - Kubernetes
 - Azure
 - Azure Arc
-title: Using Azure Arc for Apps - Part 1 - Setting up Azure Arc for Kubernetes
+title: Using Azure Arc for Apps - Part 1 - Setting up an Azure Arc enabled Kubernetes Cluster
 ---
 
 ## Cloud Native Applications that run anywhere
