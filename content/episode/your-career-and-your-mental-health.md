@@ -3,25 +3,25 @@ Date: "2021-06-04T15:30:00Z"
 Description: "People often talk about work life balance, how its not working for them, and how they feel pushed over the limit. Lets dig into it a little, look at how it can be managed, and address some difficult truths as well."
 PublishDate: "2021-06-04T15:30:00Z"
 Title: 37 - Your Career and Your Mental Health
-episode: "32"
-image: img/cloudwithchrislogo.png
+episode: "37"
+image: img/episodes/your-career-and-your-mental-health.jpg
 explicit: "no"
 hosts:
 - chrisreddington
 guests:
 - glensmall
 images:
+- img/episodes/your-career-and-your-mental-health.jpg
 - img/cloudwithchris.png
-#podcast_bytes: "18878464"
-#podcast_duration: "19:36.000"
-#podcast_file: 22 - Static Content Hosting Pattern.mp3
+podcast_bytes: "41152095"
+podcast_duration: "42:45.000"
+podcast_file: 37 - Your Career and Your Mental Health.mp3
 tags:
 - Mental Health
 - Health
 - Wellbeing
 - Career
 - People
-#youtube: LY7FEAoPucM
-upcoming: true
+youtube: WVJbpcSaly8
 ---
 People often talk about work life balance, how its not working for them, and how they feel pushed over the limit. Lets dig into it a little, look at how it can be managed, and address some difficult truths as well.
