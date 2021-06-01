@@ -1,9 +1,9 @@
 ---
 Author: chrisreddington
 Description: ""
-PublishDate: "2021-06-02T08:03:00Z"
+PublishDate: "2021-06-02T08:04:00Z"
 image: img/cloudwithchrislogo.png
-date: "2021-06-02T08:03:00Z"
+date: "2021-06-02T08:04:00Z"
 images:
 - img/cloudwithchrislogo.png
 tags:
@@ -12,64 +12,58 @@ tags:
 - Git
 - Security
 - How To
-title: Using Azure Arc for Apps - Part 4
+title: Using Azure Arc for Apps - Part 4 - Deploying Logic Apps into your App Services Kubernetes Environment
 ---
-You should have already followed part 2. You don't necessarilly need to have reviewed part 3 in order.
+## App Service Kubernetes Environment
+
+In [part 1](/blog/azure-arc-for-apps-part-1) of this *Using Azure Arc for Apps* series, we explored Azure Arc and Azure Arc enabled Kubernetes clusters. In [part 2](/blog/azure-arc-for-apps-part-2), we deployed an App Service Kubernetes Environment into our Azure Arc enabled Kubernetes cluster. As you'll likely be aware, both Azure Functions (this blog post) and Azure Logic Apps (the next blog post) can run on Azure App Service. The same is true for an App Service Kubernetes Environment, we can run App Services, Logic Apps and Azure Functions.
+
+> **Tip:** [Part 1](/blog/azure-arc-for-apps-part-1) and [Part 2](/blog/azure-arc-for-apps-part-2) (up until the Create an App Service resource in our App Service Kubernetes Environment section) are pre-requisites to working through this blog post, if you plan to get hands on. As noted above, an Azure Arc enabled Kubernetes cluster is a pre-requisite to deploy App Services, Azure Functions or Logic Apps to a Kubernetes cluster.
+
+To be clear, we won't go through the process of setting up an App Service Kubernetes Environment again in this blog post. I'm going to make an assumption that you already have this in place. If not, please go back to [part 2](/blog/azure-arc-for-apps-part-2) to complete this. That should keep this blog post a little shorter in length!
 
 
-![Screenshot showing the Azure Functions create experience on an Arc-Enabled Kubernetes Cluster through Azure Portal](/img/blog/azure-arc-for-apps-part-4/app-service-on-kubernetes-functions-create.jpg)
-![Screenshot showing the Azure Functions create experience on an Arc-Enabled Kubernetes Cluster through Azure Portal](/img/blog/azure-arc-for-apps-part-4/app-service-on-kubernetes-functions-create2.jpg)
-![Screenshot showing the Azure Functions create experience on an Arc-Enabled Kubernetes Cluster through Azure Portal](/img/blog/azure-arc-for-apps-part-4/app-service-on-kubernetes-functions-create3.jpg)
-![Screenshot showing the Azure Functions create experience on an Arc-Enabled Kubernetes Cluster through Azure Portal](/img/blog/azure-arc-for-apps-part-4/app-service-on-kubernetes-functions-createfinal.jpg)
-
-
-![Screenshot showing the Azure Functions create experience on an Arc-Enabled Kubernetes Cluster through Azure Portal](/img/blog/azure-arc-for-apps-part-4/app-service-on-kubernetes-functions-creating.jpg)
+![Screenshot showing the Logic App Create Experience on Arc-Enabled Kubernetes Cluster through Azure Portal](/img/blog/azure-arc-for-apps-part-4/app-service-on-kubernetes-logic-apps-standard.jpg)
+![Screenshot showing the Logic App Docker / Zip Deployment Requirements on Arc-Enabled Kubernetes Cluster through Azure Portal](/img/blog/azure-arc-for-apps-part-4/app-service-on-kubernetes-logic-apps-container-or-zip.jpg)
 
 ```bash
 kubectl get po -n appservice --watch
 NAME                                                            READY   STATUS    RESTARTS   AGE
-christest-55d5-5f775bbdd-sdnpd                                  1/1     Running   0          16h
-christest-79944ffd49-5tzxt                                      2/2     Running   0          59m
-christest-79944ffd49-7n5bs                                      2/2     Running   0          59m
-christest-79944ffd49-ksb96                                      2/2     Running   0          59m
-logic-app-k8s-7cc75474-xmxdd                                    2/2     Running   0          15h
-rb-arc-aks-appsvc-k8se-activator-56f59bbb9f-h57q7               1/1     Running   0          16h
-rb-arc-aks-appsvc-k8se-app-controller-86656c54cf-f8fmm          1/1     Running   0          16h
-rb-arc-aks-appsvc-k8se-build-service-568b9d8d7-5pldl            1/1     Running   0          16h
-rb-arc-aks-appsvc-k8se-envoy-586565cdbd-4qzvn                   1/1     Running   0          16h
-rb-arc-aks-appsvc-k8se-envoy-586565cdbd-9hb5g                   1/1     Running   0          16h
-rb-arc-aks-appsvc-k8se-envoy-586565cdbd-xpp7h                   1/1     Running   0          16h
-rb-arc-aks-appsvc-k8se-http-scaler-569b995bb-2csvc              1/1     Running   0          16h
-rb-arc-aks-appsvc-k8se-img-cacher-xc47s                         1/1     Running   0          16h
-rb-arc-aks-appsvc-k8se-keda-metrics-apiserver-678946464-hvf67   1/1     Running   0          16h
-rb-arc-aks-appsvc-k8se-keda-operator-b7488958-5h4t8             1/1     Running   0          16h
-rb-arc-aks-appsvc-k8se-log-processor-jpt2m                      1/1     Running   193        16h
-arc-aks-func-demo-6cd899c4bf-7sz22                              0/2     Pending   0          0s
-arc-aks-func-demo-6cd899c4bf-7sz22                              0/2     Pending   0          0s
-arc-aks-func-demo-6cd899c4bf-7sz22                              0/2     ContainerCreating   0          0s
-rb-arc-aks-appsvc-k8se-log-processor-jpt2m                      0/1     Error               193        16h
-rb-arc-aks-appsvc-k8se-log-processor-jpt2m                      0/1     CrashLoopBackOff    193        16h
-arc-aks-func-demo-6cd899c4bf-7sz22                              1/2     Running             0          42s
-arc-aks-func-demo-6cd899c4bf-7sz22                              2/2     Running             0          44s
+christest-559548c65f-ncmkz                                      2/2     Running   0          55m
+christest-559548c65f-wmv7p                                      2/2     Running   0          55m
+christest-559548c65f-zf22d                                      2/2     Running   0          61m
+christest-55d5-5f775bbdd-sdnpd                                  1/1     Running   0          42m
+logic-app-k8s-7cc75474-xmxdd                                    2/2     Running   0          26m
+rb-arc-aks-appsvc-k8se-activator-56f59bbb9f-h57q7               1/1     Running   0          75m
+rb-arc-aks-appsvc-k8se-app-controller-86656c54cf-f8fmm          1/1     Running   0          75m
+rb-arc-aks-appsvc-k8se-build-service-568b9d8d7-5pldl            1/1     Running   0          84m
+rb-arc-aks-appsvc-k8se-envoy-586565cdbd-4qzvn                   1/1     Running   0          84m
+rb-arc-aks-appsvc-k8se-envoy-586565cdbd-9hb5g                   1/1     Running   0          84m
+rb-arc-aks-appsvc-k8se-envoy-586565cdbd-xpp7h                   1/1     Running   0          84m
+rb-arc-aks-appsvc-k8se-http-scaler-569b995bb-2csvc              1/1     Running   0          84m
+rb-arc-aks-appsvc-k8se-img-cacher-xc47s                         1/1     Running   0          84m
+rb-arc-aks-appsvc-k8se-keda-metrics-apiserver-678946464-hvf67   1/1     Running   0          84m
+rb-arc-aks-appsvc-k8se-keda-operator-b7488958-5h4t8             1/1     Running   0          84m
+rb-arc-aks-appsvc-k8se-log-processor-jpt2m                      0/1     Error     15         84m
 ```
 
-![Screenshot showing the Azure Functions create experience on an Arc-Enabled Kubernetes Cluster through Azure Portal](/img/blog/azure-arc-for-apps-part-4/app-service-on-kubernetes-apps-resource-group.jpg)
+How does the App Service Plan come into all of this?
 
 ```bash
 kubectl get deployment -n appservice
 NAME                                            READY   UP-TO-DATE   AVAILABLE   AGE
-arc-aks-func-demo                               1/1     1            1           17m
 christest                                       3/3     3            3           16h
-christest-55d5                                  1/1     1            1           16h
-logic-app-k8s                                   1/1     1            1           16h
-rb-arc-aks-appsvc-k8se-activator                1/1     1            1           17h
-rb-arc-aks-appsvc-k8se-app-controller           1/1     1            1           17h
-rb-arc-aks-appsvc-k8se-build-service            1/1     1            1           17h
-rb-arc-aks-appsvc-k8se-envoy                    3/3     3            3           17h
-rb-arc-aks-appsvc-k8se-http-scaler              1/1     1            1           17h
-rb-arc-aks-appsvc-k8se-keda-metrics-apiserver   1/1     1            1           17h
-rb-arc-aks-appsvc-k8se-keda-operator            1/1     1            1           17h
+christest-55d5                                  1/1     1            1           15h
+logic-app-k8s                                   1/1     1            1           15h
+rb-arc-aks-appsvc-k8se-activator                1/1     1            1           16h
+rb-arc-aks-appsvc-k8se-app-controller           1/1     1            1           16h
+rb-arc-aks-appsvc-k8se-build-service            1/1     1            1           16h
+rb-arc-aks-appsvc-k8se-envoy                    3/3     3            3           16h
+rb-arc-aks-appsvc-k8se-http-scaler              1/1     1            1           16h
+rb-arc-aks-appsvc-k8se-keda-metrics-apiserver   1/1     1            1           16h
+rb-arc-aks-appsvc-k8se-keda-operator            1/1     1            1           16h
 ```
+
 
 ```bash
 kubectl get crd
@@ -114,23 +108,22 @@ workerapps.k8se.microsoft.com                          2021-05-29T16:40:13Z
 
 ```bash
 kubectl get apps.k8se.microsoft.com --all-namespaces
-NAMESPACE    NAME                AGE
-appservice   arc-aks-func-demo   17m
-appservice   christest           17h
-appservice   christest-55d5      16h
-appservice   logic-app-k8s       16h
+NAMESPACE    NAME             AGE
+appservice   christest        16h
+appservice   christest-55d5   15h
+appservice   logic-app-k8s    15h
 ```
 
 ```bash
-kubectl describe apps.k8se.microsoft.com arc-aks-func-demo --namespace appservice
-Name:         arc-aks-func-demo
+kubectl describe apps.k8se.microsoft.com logic-app-k8s -n appservice
+Name:         logic-app-k8s
 Namespace:    appservice
 Labels:       k8se.microsoft.com/environmentName=production
 Annotations:  <none>
 API Version:  k8se.microsoft.com/v1alpha1
 Kind:         App
 Metadata:
-  Creation Timestamp:  2021-05-30T09:33:30Z
+  Creation Timestamp:  2021-05-29T17:37:48Z
   Finalizers:
     app.finalizer.k8se.io
   Generation:  2
@@ -146,12 +139,16 @@ Metadata:
         .:
         f:appType:
         f:code:
+          .:
+          f:packageRef:
+            .:
+            f:framework:
+            f:hostingFramework:
         f:config:
           .:
           f:appSettings:
             .:
             f:name:
-          f:appStartupCmd:
           f:slotName:
         f:httpOptions:
           .:
@@ -167,15 +164,12 @@ Metadata:
         f:triggerOptions:
     Manager:      unknown
     Operation:    Update
-    Time:         2021-05-30T09:33:30Z
+    Time:         2021-05-29T17:37:48Z
     API Version:  k8se.microsoft.com/v1alpha1
     Fields Type:  FieldsV1
     fieldsV1:
       f:metadata:
         f:finalizers:
-      f:spec:
-        f:code:
-          f:containers:
       f:status:
         .:
         f:appHealthStatus:
@@ -183,28 +177,22 @@ Metadata:
         f:observedGeneration:
     Manager:         appcontroller
     Operation:       Update
-    Time:            2021-05-30T09:34:15Z
-  Resource Version:  334551
-  UID:               7bd55973-3bad-4309-9cf7-b9efc494a797
+    Time:            2021-05-29T17:40:10Z
+  Resource Version:  25178
+  UID:               2e3e0d08-5883-4782-b40f-502243d93f81
 Spec:
-  App Type:  functionapp,kubernetes,linux,container
+  App Type:  functionapp,kubernetes,linux
   Code:
-    Containers:
-      Image:  mcr.microsoft.com/azure-functions/dotnet:3.0-appservice-quickstart
-      Name:   http
-      Ports:
-        Container Port:  80
-        Name:            http
-        Protocol:        TCP
-      Resources:
+    Package Ref:
+      Framework:          Node|12
+      Hosting Framework:  azure-functions|3
   Config:
     App Settings:
-      Name:           arc-aks-func-demo-secrets
-    App Startup Cmd:
-    Slot Name:        production
+      Name:     logic-app-k8s-secrets
+    Slot Name:  production
   Http Options:
     Hostnames:
-      Domain:                               arc-aks-func-demo.rb-arc-aks-appsv-gdcume5.westeurope.k4apps.io
+      Domain:                               logic-app-k8s.rb-arc-aks-appsv-gdcume5.westeurope.k4apps.io
     Port:                                   80
     Scm Ip Security Restrictions Use Main:  false
   Scale Options:
@@ -219,3 +207,81 @@ Status:
   Observed Generation:     2
 Events:                    <none>
 ```
+
+```bash
+kubectl get approutes.k8se.microsoft.com -n appservice
+NAME            AGE
+christest       16h
+logic-app-k8s   15h
+```
+
+```bash
+kubectl describe approutes.k8se.microsoft.com christest -n appservice
+Name:         christest
+Namespace:    appservice
+Labels:       <none>
+Annotations:  <none>
+API Version:  k8se.microsoft.com/v1alpha1
+Kind:         AppRoute
+Metadata:
+  Creation Timestamp:  2021-05-29T16:51:11Z
+  Finalizers:
+    approute.finalizer.k8se.io
+  Generation:  2
+  Managed Fields:
+    API Version:  k8se.microsoft.com/v1alpha1
+    Fields Type:  FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:finalizers:
+          .:
+          v:"approute.finalizer.k8se.io":
+        f:ownerReferences:
+          .:
+          k:{"uid":"60cd36dc-c66e-4f2c-8bc1-14714b209365"}:
+            .:
+            f:apiVersion:
+            f:blockOwnerDeletion:
+            f:controller:
+            f:kind:
+            f:name:
+            f:uid:
+      f:spec:
+        .:
+        f:routes:
+          .:
+          f:christest:
+            .:
+            f:hostnames:
+          f:christest-55d5:
+            .:
+            f:hostnames:
+      f:status:
+    Manager:    appcontroller
+    Operation:  Update
+    Time:       2021-05-29T17:22:30Z
+  Owner References:
+    API Version:           k8se.microsoft.com/v1alpha1
+    Block Owner Deletion:  true
+    Controller:            true
+    Kind:                  App
+    Name:                  christest
+    UID:                   60cd36dc-c66e-4f2c-8bc1-14714b209365
+  Resource Version:        19483
+  UID:                     7febb811-a3d6-4e16-b81f-bda5f463134d
+Spec:
+  Routes:
+    Christest:
+      Hostnames:
+        Domain:  christest.rb-arc-aks-appsv-gdcume5.westeurope.k4apps.io
+    christest-55d5:
+      Hostnames:
+        Domain:  christest-staging.rb-arc-aks-appsv-gdcume5.westeurope.k4apps.io
+Status:
+Events:  <none>
+```
+
+Enter something here about jumping around all Azure Arc for App Services when I've been writing up this post, but here's what the resource group looks like.
+
+
+![Screenshot showing the resources created in the Azure Portal](/img/blog/azure-arc-for-apps-part-4/app-service-on-kubernetes-apps-resource-group.jpg)
