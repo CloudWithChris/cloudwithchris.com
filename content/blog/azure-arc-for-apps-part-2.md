@@ -113,9 +113,11 @@ logAnalyticsKeyEnc=$(echo -n "${logAnalyticsKeyEncWithSpace//[[:space:]]/}") # N
 
 ## Install the App Service Extension to your Azure Arc enabled Kubernetes cluster
 
-This is a required step. It can be achieved through the Azure Portal if you prefer, though we will be using the Azure CLI throughout this blog post. Navigate to your Azure Arc enabled Kubernetes cluster and select Extensions from the left hand menu. From there, you should see an "Add Extensions" button. In the list of possible extensions, you should see Application services extension (preview). As I prepared to write this blog post series, I primarily followed the Azure Docs. Therefore, I used the Azure CLI to enable an instance of the App Service Extension on my Azure Arc enabled Kubernetes Cluster.
+This is a required step. It can be achieved through the Azure Portal if you prefer, though we will be using the Azure CLI throughout this blog post. Navigate to your Azure Arc enabled Kubernetes cluster and select Extensions from the left hand menu. From there, you should see an "Add Extensions" button. In the list of possible extensions, you should see Application services extension (preview). As I prepared to write this blog post series, I primarily followed the Azure Docs.
 
-> **Comment:** I wanted to make sure I added the line above, as I appreciate folks learn in different ways. I actually stumbled upon the Azure Arc extensions experience in the Azure Portal when I worked through setting up Event Grid on Kubernetes. 
+> **Comment:** I wanted to make sure I added the line above, as I appreciate folks learn in different ways. I actually stumbled upon the Azure Arc extensions experience in the Azure Portal when I worked through setting up Event Grid on Kubernetes.
+
+Therefore, I used the Azure CLI to enable an instance of the App Service Extension on my Azure Arc enabled Kubernetes Cluster.
 
 > **Important:** If you skipped the optional Log Analytics Workspace step, then you'll need to amend the snippet below. The docs note that you can remove the last three lines frmo the az k8s-extension create aspect of the script (so lines beginning with --configuration-settings "logProcessor.appLogs.... onwards").
 
@@ -291,7 +293,7 @@ Navigating to the Azure Portal, we can see that the resource has been created.
 
 ## Configuring Easy Auth for our App Service
 
-The experience to configure Authentication for our App Service deployment is no different to that when using the Platform as a Service (PaaS) hosted platform that we are used to. I'm going to make an assumption that you are familiar with this experience already, so it won't be the focus of this blog post (as it's already becoming quite a long one!). For completeness, you can find an example screenshot below of the Easy Auth experience. Before progressing, go ahead and configure an identity provider. I configured Azure Active Directory. 
+The experience to configure Authentication for our App Service deployment is no different to that when using the Platform as a Service (PaaS) hosted platform that we are used to. I'm going to make an assumption that you are familiar with this experience already, so it won't be the focus of this blog post (as it's already becoming quite a long one!). For completeness, you can find an example screenshot below of the Easy Auth experience. Before progressing, go ahead and configure an identity provider. I configured Azure Active Directory.
 
 ![Screenshot showing the Easy Auth setup for Kubernetes on App Service](/img/blog/azure-arc-for-apps-part-2/app-service-on-kubernetes-easyauth.jpg)
 
@@ -593,7 +595,7 @@ And to complete the story - Once we navigate to our application in the productio
 
 At this point in my write-up, I'm quite late in to the night - So this may be where my brain is firing on fewer cylinders! However, I'm not quite sure on how the concept of App Service Plans translates into the Application Services Kubernetes environment. It appears as though a new App Service Plan is created for each new App Service created. This somewhat makes sense, given that we didn't have any choice to configure this in the very beginning.
 
-However, when I looked at the deployment in Kubernetes - I see no link between the naming of the deployments and the App Service Plans. 
+However, when I looked at the deployment in Kubernetes - I see no link between the naming of the deployments and the App Service Plans.
 
 ```bash
 kubectl get deployment -n appservice
@@ -880,7 +882,7 @@ And as expected, there lies the information for both of our slots for the christ
 
 ## Resources available in the Azure Resource Group
 
-Okay, we've had a whistle-stop tour through the many App Service features. Not only showcasing that these are the same features that we're used to in the multi-tenanted App Service model, but also taking a look at how these map to some of the Kubernetes concepts that we may be aware of. 
+Okay, we've had a whistle-stop tour through the many App Service features. Not only showcasing that these are the same features that we're used to in the multi-tenanted App Service model, but also taking a look at how these map to some of the Kubernetes concepts that we may be aware of.
 
 As I've been writing up this series of blog posts, I've been jumping around between creating App Services, Logic Apps and Azure Functions. But, to give you a flavour of what the resources look like within a resource group - you can check out the screenshot below. Spoiler: They don't look any different to any other App Service, Logic App or Azure Function that you would deploy in Azure.
 

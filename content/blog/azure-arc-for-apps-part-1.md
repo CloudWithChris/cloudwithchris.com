@@ -33,7 +33,7 @@ How does Azure Arc enabled Kubernetes fit into that? [Azure Arc enabled Kubernet
 
 > **Thought:** Consider the scenario where you need to quickly spin up underlying infrastructure across a number of different sites across the country. For example, a retail environment where you are deploying application infrastructure for each store. That could be time consuming, require time on site and could be error-prone. Containers help us run applications consistently across environments. Kubernetes helps us orchestrate containers at scale. So, if we needed to deploy and manage Kubernetes Clusters at scale (i.e. country-wide retail stores)? Azure Arc can help us. For example, setting guardrails across resources with Azure Policy ensuring a level of compliance; Using GitOps to deploy configuration across one or more clusters at scale from Git repositories (which means, as we deploy updates - our clusters can also stay in sync!); Integrate into our existing Azure operational approach for monitoring, inventory, resource tagging, threat protection with Azure Defender and more.
 
-Okay, so now we understand why we may want to consider Azure Arc and Azure Arc enabled Kubernetes. How does this fit in to the various Azure services that can be used in a combination with Azure Arc? Take note of what I mentioned in the thought above. Containers help us run applications consistently across environments. Kubernetes helps us orchestrate containers at scale. 
+Okay, so now we understand why we may want to consider Azure Arc and Azure Arc enabled Kubernetes. How does this fit in to the various Azure services that can be used in a combination with Azure Arc? Take note of what I mentioned in the thought above. Containers help us run applications consistently across environments. Kubernetes helps us orchestrate containers at scale.
 
 The Azure Services (such as App Services, Logic Apps, Azure Functions, Event Grid and API Management) can all be deployed to a Kubernetes cluster, which ensures we have a consistent environment for deployment. To enable these Application Services in a Kubernetes cluster, we need to ensure that our Kubernetes cluster is Azure Arc enabled (i.e. has Azure Arc installed on it).
 
@@ -52,8 +52,8 @@ I have Windows 10 running on my desktop machine. This is the one that I typicall
 
 These are the following **pre-requisites** that I have installed -
 
-* [Docker Desktop](https://docs.docker.com/docker-for-windows/install/) 
-* [Windows Subsystem for Linux 2](https://docs.microsoft.com/en-us/windows/wsl/install-win10) 
+* [Docker Desktop](https://docs.docker.com/docker-for-windows/install/)
+* [Windows Subsystem for Linux 2](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
 * [Ubuntu 20.04 LTS](https://www.microsoft.com/en-us/p/ubuntu-2004-lts/9n6svws3rx71?activetab=pivot:overviewtab), or your favourite distribution of Linux.
 * [Windows Terminal](https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab)
   * This isn't a hard requirement, but a strong recommendation. I love being able to use a single terminal application across all of the types of consoles that I work with (PowerShell, Command Prompt, Bash Terminals, etc.)
@@ -137,7 +137,7 @@ Before installing any software or enabling any service, it's a good practice to 
 
 ### Setting up Azure Arc
 
-If this is your first time setting up an Azure Arc enabled Kubernetes cluster, then you may need to register several Microsoft Resource Provider endpoints. 
+If this is your first time setting up an Azure Arc enabled Kubernetes cluster, then you may need to register several Microsoft Resource Provider endpoints.
 
 > **Note:** Whenever you deploy or interact with resources, you are typically retrieving or sending information to the Azure APIs about that resource. For example, creating a Network Interface Card, or retrieving details about a Public IP resource. These APIs are commonly known as Azure Resource Providers. If you have written any Azure Resource Manager (ARM) templates, Bicep Templates or Terraform Templates, you may have noticed some of these resource provider (e.g. Microsoft.Web, Microsoft.Compute, Microsoft.Kubernetes, etc.).
 >
@@ -194,7 +194,7 @@ Okay, now for the big moment! We're going to be transforming the Kubernetes Clus
 
 
 > **Tip:** Before executing the below bash script -
-> 
+>
 > * Make sure that you have the latest helm version installed before progressing. Learn why below the snippet!
 > * In the environment where you'll be executing the Azure CLI command, make sure that your kubectl context is set to the correct kubernetes cluster. The az connectedk8s connect command will be using the current kubeconfig context. It will create a Helm Deployment for you, deploying the required components to enable Azure Arc enabled Kubernetes on your cluster.
 > * Be aware that Azure Arc for Kubernetes is supported in numerous regions. However, if you plan to follow the additional posts in this series, then you may need to give some thought about where you deploy your Azure Arc enabled Kubernetes resource. For example, in [part 2](/blog/azure-arc-for-apps-part-2), we discuss that (at time of writing) the App Service Kubernetes environment [is only available in West Europe and East US](https://docs.microsoft.com/en-gb/azure/app-service/overview-arc-integration#public-preview-limitations).
@@ -221,7 +221,7 @@ rb-arc-aks     northeurope  rb-arc-rg
 > After onboarding your cluster to Azure Arc, the cluster metadata may not be available immediately. The Azure Docs suggest that it may take 5 to 10 mins for this to appear in the Azure Portal.
 
 And there you go, you are the proud new owner of an Azure Arc enabled Kubernetes Cluster! You have a new world of possibilities. So at this point, you could -
-* Start applying [Azure Policy across your Kubernetes clusters)](https://docs.microsoft.com/en-us/azure/governance/policy/concepts/policy-for-kubernetes?toc=/azure/azure-arc/kubernetes/toc.json) to ensure they adhere to certain standards. 
+* Start applying [Azure Policy across your Kubernetes clusters)](https://docs.microsoft.com/en-us/azure/governance/policy/concepts/policy-for-kubernetes?toc=/azure/azure-arc/kubernetes/toc.json) to ensure they adhere to certain standards.
 * Use [GitOps ensure certain configuration/deployments are in place](https://docs.microsoft.com/en-us/azure/azure-arc/kubernetes/tutorial-use-gitops-connected-cluster) across your clusters.
 * Configure [Azure Monitor for Containers](https://docs.microsoft.com/en-us/azure/azure-monitor/containers/container-insights-enable-arc-enabled-clusters) to gain insight into your clusters.
 
