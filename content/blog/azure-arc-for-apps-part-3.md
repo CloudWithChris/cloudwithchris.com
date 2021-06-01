@@ -43,9 +43,9 @@ Notice in the screenshot below that when trying to deploy a PowerShell Core 7.0 
 
 ![Screenshot showing the Azure Functions create experience on an Arc-Enabled Kubernetes Cluster through Azure Portal](/img/blog/azure-arc-for-apps-part-3/app-service-on-kubernetes-functions-create3.jpg)
 
-On the **Hosting** tab, you'll be able to configure the Azure Storage Account used by the Azure Function. 
+On the **Hosting** tab, you'll be able to configure the Azure Storage Account used by the Azure Function.
 
-> Azure Storage is a pre-requisite for the Azure Functions tooling, so this still needs to be deployed. 
+> Azure Storage is a pre-requisite for the Azure Functions tooling, so this still needs to be deployed.
 >
 > At this point, my mind jumps to the fact that our Azure Function may be in another cloud provider or on-premises, and there may be some latency to access the Azure Storage account. I may investigate this further in a separate blog post to understand the impact.
 
@@ -111,9 +111,9 @@ rb-arc-aks-appsvc-k8se-http-scaler              1/1     1            1          
 rb-arc-aks-appsvc-k8se-keda-metrics-apiserver   1/1     1            1           17h
 rb-arc-aks-appsvc-k8se-keda-operator            1/1     1            1           17h
 ```
-# Configuring Easy Auth for our Azure Function App
+## Configuring Easy Auth for our Azure Function App
 
-The experience to configure Authentication for our App Service deployment is no different to that when using the Platform as a Service (PaaS) hosted platform that we are used to. I'm going to make an assumption that you are familiar with this experience already, so it won't be the focus of this blog post (as it's already becoming quite a long one!). For completeness, you can find an example screenshot below of the Easy Auth experience. Before progressing, go ahead and configure an identity provider. I configured Azure Active Directory. 
+The experience to configure Authentication for our App Service deployment is no different to that when using the Platform as a Service (PaaS) hosted platform that we are used to. I'm going to make an assumption that you are familiar with this experience already, so it won't be the focus of this blog post (as it's already becoming quite a long one!). For completeness, you can find an example screenshot below of the Easy Auth experience. Before progressing, go ahead and configure an identity provider. I configured Azure Active Directory.
 
 ![Screenshot showing the Easy Auth setup for Kubernetes on a Function App](/img/blog/azure-arc-for-apps-part-3/app-service-on-kubernetes-functions-easyauth.jpg)
 
@@ -245,13 +245,13 @@ Deployment slots are a feature of App Service (which also apply to Azure Functio
 
 When I first attempted to create a deployment slot, I had a Function App which received code from a Function project (i.e. code-based).
 
-I was able to create a Staging Slot in the portal, and everything appeared as though it was successful. However, using the ``kubectl get po -n appservice --watch``, I was unable to see any infrastructure created to support it. After navigating to the staging slot URL, I received a 404 error for the new staging slot endpoint that was created. 
+I was able to create a Staging Slot in the portal, and everything appeared as though it was successful. However, using the ``kubectl get po -n appservice --watch``, I was unable to see any infrastructure created to support it. After navigating to the staging slot URL, I received a 404 error for the new staging slot endpoint that was created.
 
-I later tried this again with a Function App that ran based on a Docker Image that I had built and packaged from the same codebase. The Deployment Slot appeared to be created successfully (similarly to the Code-based deployment). When I navigated to the staging endpoint at ``https://demo-function-staging.rb-arc-aks-appsv-gdcume5.westeurope.k4apps.io``, I was surprised to find that the staging slot worked, and displayed the default Azure Function landing page. 
+I later tried this again with a Function App that ran based on a Docker Image that I had built and packaged from the same codebase. The Deployment Slot appeared to be created successfully (similarly to the Code-based deployment). When I navigated to the staging endpoint at ``https://demo-function-staging.rb-arc-aks-appsv-gdcume5.westeurope.k4apps.io``, I was surprised to find that the staging slot worked, and displayed the default Azure Function landing page.
 
 After running ``kubectl get po -n appservice --watch``, we can see that there is an additional pod created, not just our production application.
 
-```
+```bash
 kubectl get po -n appservice --watch
 NAME                                                            READY   STATUS    RESTARTS   AGE
 arc-aks-func-demo-5d8b4948c8-xktbs                              2/2     Running   0          47m
@@ -425,7 +425,7 @@ After a short amount of time, the Function App should once again be live. Naviga
 
 ## Reviewing the deployed Functions in the Azure Portal
 
-You are able to see the functions deployed in your Function App from inside the Azure Portal. 
+You are able to see the functions deployed in your Function App from inside the Azure Portal.
 
 ![Screenshot showing the list of functions deployed into the Function App](/img/blog/azure-arc-for-apps-part-3/app-service-on-kubernetes-functions-functionslist.jpg)
 
@@ -604,7 +604,7 @@ We can identify some information about the scale options that have been set with
 
 ## Resources available in the Azure Resource Group
 
-Okay, we've had a whistle-stop tour through the many Azure Function features in the context of an App Service Kubernetes Environment. Not only showcasing that these are the same features that we're used to in the multi-tenanted App Service model, but also taking a look at how these map to some of the Kubernetes concepts that we may be aware of. 
+Okay, we've had a whistle-stop tour through the many Azure Function features in the context of an App Service Kubernetes Environment. Not only showcasing that these are the same features that we're used to in the multi-tenanted App Service model, but also taking a look at how these map to some of the Kubernetes concepts that we may be aware of.
 
 As I've been writing up this series of blog posts, I've been jumping around between creating App Services, Logic Apps and Azure Functions. But, to give you a flavour of what the resources look like within a resource group - you can check out the screenshot below. Spoiler: They don't look any different to any other App Service, Logic App or Azure Function that you would deploy in Azure.
 
