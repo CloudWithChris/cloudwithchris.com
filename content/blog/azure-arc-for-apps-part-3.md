@@ -53,11 +53,11 @@ You can also configure the Operating System as Windows or Linux. However, much l
 
 ![Screenshot showing the Azure Functions create experience on an Arc-Enabled Kubernetes Cluster through Azure Portal](/img/blog/azure-arc-for-apps-part-3/app-service-on-kubernetes-functions-createfinal.jpg)
 
-As usual, you can configure Application Insights through the experience as well. We'll leave this as the defaults (enabled), and proress towards the Review and Create stage.
+As usual, you can configure Application Insights through the experience as well. We'll leave this as the default (enabled), and progress towards the Review and Create stage.
 
 ![Screenshot showing the Azure Functions create experience on an Arc-Enabled Kubernetes Cluster through Azure Portal](/img/blog/azure-arc-for-apps-part-3/app-service-on-kubernetes-functions-creating.jpg)
 
-Before I hit create on the App Service, I ran the command ``kubectl get po -n appservice --watch`` in my terminal (though change the -n property to the namespace variable that you had set earlier on). You should see that a new pod will get scheduled in the Kubernetes cluster. Yes, that is the Azure Function App that you created through the Azure Portal using your custom location.
+Before I hit create on the Function App, I ran the command ``kubectl get po -n appservice --watch`` in my terminal (You should change the -n property to the namespace where you configured your app service deployments). You should see that a new pod will get scheduled in the Kubernetes cluster. Yes, that is the Azure Function App that you created through the Azure Portal using your custom location.
 
 ```bash
 kubectl get po -n appservice --watch
@@ -89,7 +89,7 @@ arc-aks-func-demo-6cd899c4bf-7sz22                              2/2     Running 
 
 ## Function Plans
 
-Before we jump into Azure Functions in depth and the configuration experience, I want to call out a point from the Azure Docs below.
+Before we jump into Azure Functions in depth and the configuration experience, I want to call out a point from the Azure Docs.
 
 > **Note:** Function apps run in an App Service Kubernetes environment on a Dedicated (App Service) plan. When you create your function app without an existing plan, the correct plan is created for you.
 
@@ -117,7 +117,7 @@ The experience to configure Authentication for our App Service deployment is no 
 
 ![Screenshot showing the Easy Auth setup for Kubernetes on a Function App](/img/blog/azure-arc-for-apps-part-3/app-service-on-kubernetes-functions-easyauth.jpg)
 
-Before moving on, there is one interesting point to note. Before fully configuring Easy Auth on the App Service, run the command ``kubectl get po -n appservice --watch`` (or replace the -n value with the appropriate value for your namespace). You should see that a new pod (arc-aks-func-demo-65774c56bb-l7wc7 in the snippet below) will get scheduled in the Kubernetes cluster and contains **three** containers You'll also notice that the previous instance of the function app (arc-aks-func-demo-6458895445-7x4vv) which contained **two** containers is then terminated. This appears to work the same way as App Service in an App Service Kubernetes Environment. This is not surprising - It appears as though the Easy Auth functionality is a side car container to the main function that is running.
+Before moving on, there is one interesting point to note. Before fully configuring Easy Auth on the App Service, run the command ``kubectl get po -n appservice --watch`` (or replace the -n value with the appropriate value for your namespace). You should see that a new pod (arc-aks-func-demo-65774c56bb-l7wc7 in the snippet below) will get scheduled in the Kubernetes cluster and contains **three** containers You'll also notice that the previous instance of the function app (arc-aks-func-demo-6458895445-7x4vv) which contained **two** containers is then terminated. This appears to work the same way as App Service in an App Service Kubernetes Environment. This is not surprising - The Easy Auth functionality is deployed as a side car container to the main function.
 
 ```bash
 NAME                                                            READY   STATUS    RESTARTS   AGE
@@ -163,29 +163,29 @@ arc-aks-func-demo-6458895445-7x4vv                              2/2     Terminat
 
 ## Configuring Application Insights for our Azure Function App
 
-It is possible to use Application Insights to collect data from a Function App in an App Service Kubernetes Environment, unlike an App Services app. I suspect this is due to the underlying implementation of how Azure Services / Azure Functions connect with Application Insights.
+It is possible to use Application Insights to collect data from a Function App in an App Service Kubernetes Environment, unlike an App Services app. I suspect this is due to the underlying implementation of how Azure Functions connects with Application Insights as part of the Azure Functions runtime.
 
-You will have likely configured this as **enabled** when you created your Azure Function App (I did, at least). Once again, the experience is no different to what we would expect of a Function App in the multi-tenanted hosting model.
+You will have likely set this to **enabled** when you created your Azure Function App (I did, at least). Once again, the experience is no different to what we would expect of a Function App in the multi-tenanted hosting model.
 
 ![Screenshot showing the App Insights configuration experience for a Function App in an Application Service Kubernetes Environment](/img/blog/azure-arc-for-apps-part-3/app-service-on-kubernetes-functions-appinsights.jpg)
 
-Just to investigate, I went ahead and disabled Application Insights within the Function App blade as shown above. I immediately received a pop up, asking as below -
+As part of my investigations for this post, I went ahead and disabled Application Insights within the Function App blade as shown above. I immediately received a pop up, asking as below -
 
 > **You are about to turn off Application Insights. This will update app settings and restart your site. Do you want to continue?**
 >
 > To turn Application Insights entirely off, check that Application Insights SDK and the instrumentation key are removed from your application.
 
-As you may have expected, if you've read the App Service blog post - I once again had the command ``kubectl get po -n appservice --watch`` ready to go. This time, I was intrigued. I was expecting to see a pod redeployment, or some kind of change. Nothing happened.
+I was prepared. I had executed the command ``kubectl get po -n appservice --watch`` once again. But this time, I was intrigued. I was expecting to see a pod redeployment, or some kind of change. Nothing happened.
 
-I'd be interested to understand what actually happens when enabling / disabling App Insights. I suspect that this is related to the Azure Function Runtime in the container image, rather than the pods that are deployed in Kubernetes. However, I don't have a fully conclusive answer.
+I'd be interested to understand what actually happens when enabling / disabling App Insights. My hypothesis is that once again this is due to the underlying implementation of how Azure Functions connects with Application Insights as part of the Azure Functions runtime. However, I don't have a fully conclusive answer.
 
-Either way, I have tested Application Insights on a Function App which has the function deployed as a Function project, as well as a Docker container. Both provide telemetry to Application Insights as expected.
+Either way, I have tested Application Insights on Function Apps deployed as a Function project (Code), as well as a Docker container. Both provide telemetry to Application Insights as expected.
 
 ![Screenshot showing the App Insights output for a Function App in an Application Service Kubernetes Environment](/img/blog/azure-arc-for-apps-part-3/app-service-on-kubernetes-functions-appinsights-output.jpg)
 
 ## Configuring Custom Domains
 
-Custom domains is an available option in the left hand menu, though I encountered some issues here as you can see from the screenshot below.
+Custom domains is an available option in the left hand menu, though I encountered some issues here as you can see from the screenshot below, similarly to App Service.
 
 The outcome is exactly the same as App Services. This is one that I plan to investigate further, and determine whether this is a user interface challenge (e.g. should custom domains actually be grayed out as it's unsupported, or is the validation experience not available through the user interface).
 
@@ -197,7 +197,7 @@ As is the case with many Platform as a Service (PaaS) services, scaling is as ea
 
 ![Screenshot showing the Scaling out Functionality for a Function App hosted in App Service on Kubernetes through Azure Portal](/img/blog/azure-arc-for-apps-part-3/app-service-on-kubernetes-functions-scale-out.jpg)
 
-If you have your Kubernetes-thinking hat on, then you'll probably be able to determine where this is going. Before saving the new scale out configuration, I once again ran the command ``kubectl get po -n appservice --watch``. You'll notice that Kubernetes maintains the replicaset (i.e. arc-aks-func-demo-65774c56bb-l7wc7), but adds two additional pods to it. Again, this is unsurprising and in-line with how we'd expect Kubernetes to handle a scale out event for any Kubernetes workload.
+If you have your Kubernetes-thinking hat on, then you'll probably see where this is going. Before saving the new scale out configuration, I once again ran the command ``kubectl get po -n appservice --watch``. You'll see that Kubernetes maintains the replicaset (i.e. arc-aks-func-demo-65774c56bb-l7wc7), but adds creates additional pods (ending lql9n and cfj4j). Again, this is unsurprising and in-line with how we'd expect Kubernetes to handle a scale out event for any Kubernetes workload.
 
 ```bash
 kubectl get po -n appservice --watch
@@ -243,13 +243,15 @@ Deployment slots are a feature of App Service (which also apply to Azure Functio
 
 ![Screenshot showing the Deployment Slots Functionality for a Function App hosted in App Service on Kubernetes through Azure Portal](/img/blog/azure-arc-for-apps-part-3/app-service-on-kubernetes-functions-deployment-slots.jpg)
 
-When I first attempted to create a deployment slot, I had a Function App which received code from a Function project (i.e. code-based).
+### Configuring Deployment Slots for Code-based Function app deployments
 
-I was able to create a Staging Slot in the portal, and everything appeared as though it was successful. However, using the ``kubectl get po -n appservice --watch``, I was unable to see any infrastructure created to support it. After navigating to the staging slot URL, I received a 404 error for the new staging slot endpoint that was created.
+I first attempted to create a deployment slot, using a Function App which received code from a Function project (i.e. code-based). I was able to create a Staging Slot in the portal, and everything appeared as though it was successful. However, using the ``kubectl get po -n appservice --watch``, I was unable to see any infrastructure created to support it. After navigating to the staging slot URL, I received a 404 error for the new staging slot endpoint that was created.
 
-I later tried this again with a Function App that ran based on a Docker Image that I had built and packaged from the same codebase. The Deployment Slot appeared to be created successfully (similarly to the Code-based deployment). When I navigated to the staging endpoint at ``https://demo-function-staging.rb-arc-aks-appsv-gdcume5.westeurope.k4apps.io``, I was surprised to find that the staging slot worked, and displayed the default Azure Function landing page.
+### Configuring Deployment Slots for container based Function app deployments
 
-After running ``kubectl get po -n appservice --watch``, we can see that there is an additional pod created, not just our production application.
+I later tried this again with a Function App that ran based on a Docker Image that I had built and packaged from the same codebase. The Deployment Slot appeared to be created successfully (similarly to the Code-based deployment). When I navigated to the staging endpoint at ``https://demo-function-staging.rb-arc-aks-appsv-gdcume5.westeurope.k4apps.io``, I was pleasantly surprised to find that the staging slot worked, and displayed the default Azure Function landing page.
+
+After running ``kubectl get po -n appservice --watch``, we can see that there is an additional pod created as we would expect. One representing our production application, one representing the staging slot.
 
 ```bash
 kubectl get po -n appservice --watch
@@ -272,7 +274,7 @@ rb-arc-aks-appsvc-k8se-log-processor-fbhpl                      1/1     Running 
 rb-arc-aks-appsvc-k8se-log-processor-jpt2m                      1/1     Running   815        3d3h
 ```
 
-And once again, to confirm - let's describe the pod and inspect the staging slot name. ``kubectl describe po demo-function-4254-6859684bdd-dpb8t -n appservice``.
+To confirm - let's describe the pod using ``kubectl`` and inspect the staging slot name. For me, Ill use ``kubectl describe po demo-function-4254-6859684bdd-dpb8t -n appservice``, but change the pod name and namespace value as appropriate for your deployment.
 
 ```bash
 kubectl describe po demo-function-4254-6859684bdd-dpb8t -n appservice
@@ -349,13 +351,13 @@ Events:
   Warning  Unhealthy  11m   kubelet            Readiness probe failed: dial tcp 10.240.0.195:80: connect: connection refused
 ```
 
-Take note of the fact that there is an environment variable called WEBSITE_SLOT_NAME with the value of staging, which proves this pod is indeed the staging instance of our demo-function Function App.
+Take note of the fact that there is an environment variable called WEBSITE_SLOT_NAME with the value of staging. This proves that this pod is indeed the staging instance of our demo-function Function App.
 
-I plan to revisit this section once again in a fresh environment, as I wasn't aware of any [limitations](https://docs.microsoft.com/en-us/azure/azure-functions/functions-deployment-slots#limitations) for deployment slots in Azure Functions. This may be a nuance of Azure Functions running on an App Service Kubernetes Environment, though I'll update this section as soon as I know any further details. If you read this and are aware of any different, please let me know - as I'd love to update this.
+I plan to revisit this section once again in a fresh environment, as I wasn't aware of any [limitations](https://docs.microsoft.com/en-us/azure/azure-functions/functions-deployment-slots#limitations) for deployment slots in Azure Functions. This may be a nuance of Azure Functions running on an App Service Kubernetes Environment, or it may be something that I've misconfigured in my deployment. I'll update this section as soon as I know any further details. If you read this and are aware of anything related, please let me know - I'd love to update this!
 
 ## Configuring deployment center
 
-Now, it's time for us to deploy something to our Function App! You may recall that we have a couple of options for deploying an Azure Function. Either deploying a function project as a code-based approach or deploying a Docker container image.
+Now, it's time for us to deploy something to our Function App! You may recall that we have a couple of options for deploying an Azure Function. Either deploying a function project (a code-based approach) or deploying a Docker container image.
 
 We'll walk through both options below.
 
@@ -369,25 +371,23 @@ One approach that you can use is by using the ``func azure functionapp publish``
 func azure functionapp publish <APP_NAME>
 ```
 
-I opted for a more "DevOps-esque" approach. Firstly, I generated a File > New Azure Function and pushed the code to a GitHub repository.
+I opted for a more traditional DevOps approach. Firstly, I generated a File > New Azure Function and pushed the code to a GitHub repository.
 
 ![Screenshot showing a basic Azure Function in GitHub](/img/blog/azure-arc-for-apps-part-3/app-service-on-kubernetes-functions-deployment-center-repo.jpg)
 
-I then navigated over to the Deployment Center tab of my Azure Function and configured the source to be GitHub. I went ahead and configured the settings so that they matched up to the GitHub repository that I showed in the screenshot above.
+I then navigated over to the Deployment Center tab of my Azure Function and set the source as GitHub. I went ahead and configured the settings so that they matched the GitHub repository that I showed in the screenshot above.
 
 ![Screenshot showing a basic Azure Function in GitHub](/img/blog/azure-arc-for-apps-part-3/app-service-on-kubernetes-functions-deployment-center-configuration.jpg)
 
-After hitting save, I navigated over to the GitHub repository. Below is a screenshot of a commit made on my behalf. It committed a GitHub Action workflow file to my repository with the required steps to deploy the Azure Function to the Function App (to be clear - The Function App that is running on my App Service for Kubernetes environment).
+After hitting save, I navigated over to the GitHub repository. Below is a screenshot of a commit made on my behalf. It committed a GitHub Actions workflow file to my repository with the required steps to deploy the Azure Function to the Function App (to be clear - The Function App that is running on my App Service for Kubernetes environment).
 
 ![Screenshot showing a GitHub Action Workflow setup automatically by App Service's Deployment Center functionality](/img/blog/azure-arc-for-apps-part-3/app-service-on-kubernetes-functions-deployment-center-github-action.jpg)
 
-The docs note that a full deployment can take some time to complete on an Azure Arc enabled Kubernetes cluster. To determine if the Function project is fully deployed, you can use the command -
+The docs note that a full deployment can take some time to complete on an Azure Arc enabled Kubernetes cluster. To determine if the Function project is fully deployed, you can use the command ``func azure functionapp list-functions``
 
-```bash
-func azure functionapp list-functions
-```
+> **Note:** I really want to stress the line above. I wrote that section, and took a break as I had dinner (forgetting what I had written). After I returned to continue writing, I progressed with a deployment. I was worried that the deployment hadn't worked correctly as it took some time, However, after some patience - it deployed.
 
-> **Note:** I really want to stress the line above. I wrote that section, and then went for dinner (forgetting what I had written). After coming back, and then executing a deployment, I was worried that the deployment hadn't worked correctly. It took some time, but after some patience - it deployed.
+Below is an example of the output for my own Function App deployed in an App Service Kubernetes Environment.
 
 ```bash
 func azure functionapp list-functions arc-aks-func-demo
@@ -396,29 +396,27 @@ Functions in arc-aks-func-demo:
         Invoke url: https://arc-aks-func-demo.rb-arc-aks-appsv-gdcume5.westeurope.k4apps.io/api/function1
 ```
 
-Finally - navigating back to the deployment center section of my App Service in the Azure Portal, I can see the logs of the runs (including the time, associated Git Commit ID, Commit Author, Git Commit Message and Status).
+Finally - navigating back to the deployment center section of the Function App in the Azure Portal, I can see the logs of the runs (including the time, associated Git Commit ID, Commit Author, Git Commit Message and Status).
 
 ![Screenshot showing a GitHub Action Workflow setup automatically by App Service's Deployment Center functionality](/img/blog/azure-arc-for-apps-part-3/app-service-on-kubernetes-functions-deployment-center-logs.jpg)
 
-Navigating to ``https://arc-aks-func-demo.rb-arc-aks-appsv-gdcume5.westeurope.k4apps.io/api/function1`` in the web browser, I also saw the expected result from the Azure Function. The deployment of the basic function is complete!
+Navigating to ``https://arc-aks-func-demo.rb-arc-aks-appsv-gdcume5.westeurope.k4apps.io/api/function1`` in the web browser, I received the expected result from the Azure Function. The deployment of the basic function is complete!
 
 ### Deploying a Docker Container to a Function App in an App Service Kubernetes Environment
 
-If you have created an Azure Function before, you'll be aware that you can create an Azure Function that executes based upon a Docker container, rather than an Azure Function project.
+If you have created an Azure Function before, you'll be aware that you can create an Azure Function that executes based upon a Docker container, rather than an Azure Function project. To keep this section short, I've pushed a a Docker container image ahead of time to an Azure Container Registry. The container image contains the same build output as the code in the Function Project sample above (i.e. the code from the GitHub repository in the previous section).
 
-I've pushed a a Docker container image to an Azure Container Registry which is the same output as the code in the Function Project sample approach (in the previous section).
-
-If you prefer to use the Azure CLI to create your resources, you can specify the Docker Image to be used at creation time. The Azure Portal did not give us this option during the creation experience.
+If you prefer to use the Azure CLI to create your resources, you can specify the Docker Image to be used at creation time. The Azure Portal did not give us this option during the creation experience though.
 
 ```bash
 az functionapp create --resource-group MyResourceGroup --name <APP_NAME> --custom-location <CUSTOM_LOCATION_ID> --storage-account <STORAGE_NAME> --functions-version 3 --runtime dotnet --deployment-container-image-name <DOCKER_ID>/azurefunctionsimage:v1.0.0
 ```
 
-Otherwise, let's follow on with the configuration in the Azure Portal. We'll navigate to the Deployment Center section of the Function App. I've configured the settings to pull from an Azure Container Registry where I have pushed a Docker Image containing my Function.
+Otherwise, let's assume that you created a Function App to be deployed using containers through the Azure Portal. Let's continue the configuration in the Azure Portal. We'll navigate to the Deployment Center section of the Function App. I've configured the settings to pull from the Azure Container Registry where my docker image resides.
 
 ![Screenshot showing the Deployment Center configuration for an Azure Function deployed using Docker](/img/blog/azure-arc-for-apps-part-3/app-service-on-kubernetes-functions-deployment-center-docker.jpg)
 
-After a short amount of time, the Function App should once again be live. Navigate to the Function App endpoint, adding the /api/Function1 path. You should see that the function has been successfully deployed to your Function App running in your App Service Kubernetes Environment.
+After a short amount of time (It felt shorter than the code-based deployment), the Function App should once again be live. Navigate to the Function App endpoint, adding the /api/Function1 path. You should see that the function has been successfully deployed to your Function App running in your App Service Kubernetes Environment.
 
 ![Screenshot showing the successful execution of the API from our Function App that has been deployed with a Docker container](/img/blog/azure-arc-for-apps-part-3/app-service-function-docker-api-call.jpg)
 
@@ -439,7 +437,7 @@ If we navigate to Code + Test - We can see some of the files, but as expected, w
 
 ## Custom Resource Definitions in Kubernetes
 
-You can absolutely feel free to skip over this next section. However, as I'm comfortable with Kubernetes - I wanted to dig into some more detail about what's going on behind the scenes with App Service. Specifically, what custom resource definitions got created when we set up the Application Services extension for our Azure Arc enabled Kubernetes cluster earlier? You can see there are several custom resource definitions on my Kubernetes cluster -
+You can absolutely feel free to skip over this next section. However, as I'm comfortable with Kubernetes - I wanted to dig into some more detail about what's going on behind the scenes with Function Apps. Specifically, what custom resource definitions got created when we set up the Application Services extension for our Azure Arc enabled Kubernetes cluster earlier? You can see there are several custom resource definitions on my Kubernetes cluster -
 
 * Those ending k8se.microsoft.com relate to the Application Services Extension / App Services Kubernetes environment
 * Those ending in clusterconfig.azure.com relate to the Azure Arc enabled Kubernetes cluster functionality
@@ -488,7 +486,7 @@ virtualapps.k8se.microsoft.com                         2021-05-29T16:40:13Z
 workerapps.k8se.microsoft.com                          2021-05-29T16:40:13Z
 ```
 
-While writing this blog post, I've been deploying App Services, Azure Functions and Logic Apps. You'll notice when running ``kubectl get apps.k8se.microsoft.com --all-namespaces``, we can see several Kubernetes resources. These include an Azure Function called arc-aks-func-demo, Azure App Service called christest (with a Production Slot and Staging Slot) and a Logic App called logic-app-k8s.
+While writing this blog post, I've been deploying App Services, Azure Functions and Logic Apps. You'll notice that after executing ``kubectl get apps.k8se.microsoft.com --all-namespaces``, we can see several Kubernetes resources. These include a function app called arc-aks-func-demo, App Service called christest (with a Production Slot and Staging Slot) and a Logic App called logic-app-k8s.
 
 ```bash
 kubectl get apps.k8se.microsoft.com --all-namespaces
@@ -499,7 +497,7 @@ appservice   christest-55d5      16h
 appservice   logic-app-k8s       16h
 ```
 
-Let's take a peek at the Azure Function resource that is in our Kubernetes Cluster.
+Let's take a peek at the function app Kubernetes resources that exists in our Kubernetes Cluster.
 
 ```bash
 kubectl describe apps.k8se.microsoft.com arc-aks-func-demo --namespace appservice
@@ -600,7 +598,7 @@ Status:
 Events:                    <none>
 ```
 
-We can identify some information about the scale options that have been set within the Azure Function in the Azure Portal, the hostnames that are configured, information around the staging slots. There is nothing particularly exciting that we didn't already know at this point, though it's always useful to see how this comes together in a Custom Resource Definition.
+We can identify information on the scale options that have been set within the Azure Function in the Azure Portal, the hostnames that are configured and information around the staging slots. There is nothing particularly exciting that we didn't already know at this point, though I personally find it useful to see how this comes together in a Custom Resource Definition.
 
 ## Resources available in the Azure Resource Group
 
@@ -612,12 +610,12 @@ As I've been writing up this series of blog posts, I've been jumping around betw
 
 ## Summary
 
-As you will have noticed, this post is similar in nature to [part 2](/blog/azure-arc-for-apps-part-2) - which focused on deploying App Services to our App Service Kubernetes Environment. This isn't surprising, and I'm sure you won't be surprised that part 4 is equally similar, because all of these services can run in an App Services Environment.Regardless of whether you're coming from an Azure Functions background, a Kubernetes background, or both - I hope that it has provided some value. I've enjoyed writing this one out. I think there's some huge potential of App Service for Kubernetes environment in an Azure Arc enabled Kubernetes cluster.
+As you will have noticed, this post is similar in nature to [part 2](/blog/azure-arc-for-apps-part-2) - which focused on deploying App Services to our App Service Kubernetes Environment. This isn't surprising. I'm sure you won't be surprised that part 4 is equally similar. This is because all of these services can run in an App Services Environment. Regardless of whether you're coming from an Azure Functions background, a Kubernetes background, or both - I hope that this post has provided some value as much as I've enjoyed writing it. I think there's some huge potential for App Service Kubernetes Environments in an Azure Arc enabled Kubernetes cluster.
 
 With that, any comments and feedback are always appreciated over on [Twitter, @reddobowen](https://twitter.com/reddobowen). Don't forget, there are several posts in this series that continue the story of Azure Arc for Apps.
 
-* [Part 1](/blog/azure-arc-for-apps-part-1)
-* [Part 2](/blog/azure-arc-for-apps-part-2)
+* [Part 1 - Setting up an Azure Arc enabled Kubernetes cluster](/blog/azure-arc-for-apps-part-1)
+* [Part 2 - Deploying App Services to Kubernetes](/blog/azure-arc-for-apps-part-2)
 * Part 4 (Coming Soon)
 * Part 5 (Coming Soon)
 * Part 6 (Coming Soon)
