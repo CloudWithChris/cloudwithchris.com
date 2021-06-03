@@ -83,3 +83,23 @@
     </div>
   </section>
 {{ end }}
+
+{{ define "bottom" }}
+{{ $site := .Site }}
+{{ $page := .Page }}
+{{ $scratch := .Scratch }}
+
+<div class="py-5 container" align="center">
+    <div class="col">
+      <div class="row float-center">
+        {{ $related := .Site.RegularPages.Related . | first 4 }}
+          {{ with $related }}
+          <h3>Related</h3>
+          <p></p>
+          {{ range . }}
+            {{- partial "cards/footer-generic-card.html" . -}}
+          {{ end }}
+        {{ end }}      
+    </div>
+  </div>
+{{ end }}

@@ -13,6 +13,8 @@ tags:
 - Kubernetes
 - Azure
 - Azure Arc
+series: 
+- "Using Azure Arc for Apps"
 title: Using Azure Arc for Apps - Part 2 - Deploying App Services to Kubernetes
 ---
 ## App Service Kubernetes Environment

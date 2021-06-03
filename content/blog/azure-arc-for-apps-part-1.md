@@ -13,6 +13,8 @@ tags:
 - Kubernetes
 - Azure
 - Azure Arc
+series: 
+- "Using Azure Arc for Apps"
 title: Using Azure Arc for Apps - Part 1 - Setting up an Azure Arc enabled Kubernetes Cluster
 ---
 
