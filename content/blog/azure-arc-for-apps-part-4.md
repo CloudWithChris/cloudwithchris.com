@@ -58,11 +58,11 @@ This message will appear regardless of your chosen deployment model (i.e. Code o
 
 ![Screenshot showing the Logic App Docker / Zip Deployment Requirements on Arc-Enabled Kubernetes Cluster through Azure Portal](/img/blog/azure-arc-for-apps-part-4/app-service-on-kubernetes-logic-apps-container-or-zip.jpg)
 
-So, it looks like we'll need to use Visual Studio Code to build our Logic Apps workflow and then deploy to the code-based Logic App deployment. Let's go ahead and do that (though we'll look into the more typical DevOps process a little later).
+We could use the Logic Apps Visual Studio Code tooling to build our Logic Apps workflow and then deploy to the code-based Logic App deployment.
 
-![Screenshot showing the VSCode Logic App Designer mid-publishing step](/img/blog/azure-arc-for-apps-part-4/app-service-on-kubernetes-logic-apps-container-vscode-publish.jpg)
+![Screenshot showing the VSCode Logic App Designer mid-publishing step](/img/blog/azure-arc-for-apps-part-4/app-service-on-kubernetes-logic-apps-vscode-publish.jpg)
 
-I had some issues trying to deploy the code changes to the Logic App. Likewise, we'll be unable to deploy to the Logic App which is using a container deployment method. So, let's move straight on to the Deployment Center approach.
+If you prefer, go ahead and do that. However, I'm going to move straight on to the Deployment Center approach.
 
 ## Configuring deployment center
 
@@ -84,15 +84,56 @@ Once saved, navigate over to your GitHub repository. You'll notice that there is
 
 ![Screenshot showing the GitHub Action workflow file deployed to the repository on our behalf](/img/blog/azure-arc-for-apps-part-4/app-service-on-kubernetes-logic-apps-deploymentcenter-workflow.jpg)
 
-Once again, this didn't work as expected. The GitHub Action workflow file failed with an error relating to package.json. This makes sense, as there's no package.json in the repository. For now, we'll pause on this approach and focus on the Docker based approach moving forwards.
+This didn't work as expected. The GitHub Action workflow file failed with an error relating to package.json. This makes sense, as there's no package.json (which is a requirement when trying to restore packages for node projects) in the repository. 
+
+> **Tip:** After some digging, I found the [Azure/LogicApps repository which has a github-sample](https://github.com/Azure/logicapps/tree/master/github-sample) which contains an example of a Logic App workflow and deploying that using GitHub Actions. The GitHub Action workflow file used looks significantly different (i.e. no restoring node dependencies, and instead - just copies the files from the Repository to a subfolder and publishes that artifact for release as a zip).
+>
+> While I had hoped this would deploy successfully, I had some issues. I made it up until the "Run Azure Functions Action" step, but then the action hung. It seemed as if it was unable to connect to the Logic App.
+
+For now, we'll pause on this approach and focus on the Docker based approach moving forwards.
 
 ### Deploying a Docker Container to a Logic App in an App Service Kubernetes Environment
 
 Just like Azure Functions, you can deploy a Logic App using a Docker Container Image. Ahead of time, I've gone ahead and built a Docker Container Image using the same code which was pushed up to the GitHub repository referenced in the previous section.
 
-## Reviewing the Logic Apps Workflow once again in the Azure Portal
+> **Tip:** I make this step sound incredibly easy. From what I can see, the Logic Apps Visual Studio Code tooling doesn't have an option to generate a Dockerfile for you. There were several Dockerfiles in the wild that used a very specific base image name, and didn't feel quite right. After some digging, I found the [Azure/LogicApps repository which has a github-sample](https://github.com/Azure/logicapps/tree/master/github-sample), including a Dockerfile. I used that Dockerfile to build a docker image from my local machine and push that to the container registry. In a real world scenario, I would have a CI/CD workflow setup for that, but this is not the point of this blog post.
+>
+> While the VSCode tooling doesn't have an option to generate the Dockerfile, the Azure Functions runtime does. You can use the command ``func init --docker-only`` to initialise the required Dockerfile for the project.
 
-GO BACK AND TAKE A LOOK AT THE WORKFLOWS.
+We'll configure the Registry settings in Deployment Center to match with the Azure Container Registry, as well as the image that we have pushed up.
+
+![Screenshot showing the Deployment Center settings for the Docker-based Logic App](/img/blog/azure-arc-for-apps-part-4/app-service-on-kubernetes-logic-apps-deploymentcenter-docker.jpg)
+
+Before hitting save, I had my ``kubectl get po -n appservice --watch`` command ready to go. The result is exactly as you would expect. A new pod gets deployed, while the previous instance (logic-app-k8s-docker-75cb6b5486-t9dtf) is terminated.
+
+```bash
+kubectl get po -n appservice --watch
+logic-app-k8s-5fb47788b5-6vp9w                                  2/2     Running   0          10h
+logic-app-k8s-5fb47788b5-7k5qs                                  2/2     Running   0          9h
+logic-app-k8s-5fb47788b5-9pblr                                  2/2     Running   0          9h
+logic-app-k8s-docker-75cb6b5486-t9dtf                           2/2     Running   0          22s
+rb-arc-aks-appsvc-k8se-activator-6ff8f77d68-j5qd5               1/1     Running   0          10h
+rb-arc-aks-appsvc-k8se-app-controller-766777cf79-flsdl          1/1     Running   0          10h
+rb-arc-aks-appsvc-k8se-build-service-568b9d8d7-v7vw7            1/1     Running   0          10h
+rb-arc-aks-appsvc-k8se-envoy-7bdd5bbdb7-695gn                   1/1     Running   0          10h
+rb-arc-aks-appsvc-k8se-envoy-7bdd5bbdb7-7bqx8                   1/1     Running   0          10h
+rb-arc-aks-appsvc-k8se-envoy-7bdd5bbdb7-89px9                   1/1     Running   0          10h
+rb-arc-aks-appsvc-k8se-http-scaler-5c9676ffc9-s7w44             1/1     Running   0          10h
+rb-arc-aks-appsvc-k8se-img-cacher-v5ppw                         1/1     Running   0          10h
+rb-arc-aks-appsvc-k8se-img-cacher-wqhvc                         1/1     Running   0          10h
+rb-arc-aks-appsvc-k8se-keda-metrics-apiserver-678946464-zzg5t   1/1     Running   0          10h
+rb-arc-aks-appsvc-k8se-keda-operator-b7488958-27nmq             1/1     Running   0          10h
+rb-arc-aks-appsvc-k8se-log-processor-5ns8d                      1/1     Running   101        10h
+rb-arc-aks-appsvc-k8se-log-processor-npnqk                      0/1     Error     113        10h
+logic-app-k8s-docker-58578bc9c-jrb4v                            0/2     Pending   0          0s
+logic-app-k8s-docker-58578bc9c-jrb4v                            0/2     Pending   0          0s
+logic-app-k8s-docker-58578bc9c-jrb4v                            0/2     ContainerCreating   0          0s
+logic-app-k8s-docker-58578bc9c-jrb4v                            1/2     Running             0          3s
+logic-app-k8s-docker-58578bc9c-jrb4v                            2/2     Running             0          8s
+logic-app-k8s-docker-75cb6b5486-t9dtf                           2/2     Terminating         0          34s
+```
+
+The Logic App deployed, and I can see relatable logs in Application Insights (i.e. it's detected the ``HTTPStateless/triggers/manual/invoke`` endpoint). I had setup a basic Logic Apps to act as a request/response, and couldn't call the URL directly with the ``/api/HTTPStateless/triggers/manual/invoke`` endpoint that my Logic App was expecting. Instead my browser displayed a 'took too long to respond' error. The Logic App works fine when running on the Azure Functions runtime locally on my machine, so I suspect is down to an application deployment issue when I push to the App Service Kubernetes Environment. This is something I'll be digging into as a follow-up.
 
 ## Configuring Application Insights for our Logic App
 
@@ -112,6 +153,10 @@ As you may have expected, if you've read my other posts in the series - I ran th
 
 I'd be interested to understand what actually happens when enabling / disabling App Insights. I suspect that this is related to the Azure Function Runtime in the container image, rather than the pods that are deployed in Kubernetes. However, I don't have a fully conclusive answer.
 
+I navigated to the Application Insights resource for my Logic App deployed using a Docker container method. I can see that the logs are appearing within Application Insights as expected.
+
+![Screenshot showing the App Insights output a Logic App deployed using the Docker Method in an Application Service Kubernetes Environment](/img/blog/azure-arc-for-apps-part-4/app-service-on-kubernetes-logic-apps-appinsights-output-docker.jpg)
+
 ## Configuring Custom Domains
 
 Custom domains is an available option in the left hand menu, though as with Azure Functions and App Services, I encountered issues as shown in the screenshot below.
@@ -122,7 +167,7 @@ This is one that I plan to investigate further, and determine whether this is a 
 
 ## Scaling out your Logic App instances
 
-As is the case with many Platform as a Service (PaaS) services, scaling is as easy as adjusting a slider. This is no different when using an App Service Kubernetes environment. We can go ahead and adjust the slider to represent the maximum number of instances that we would like to scale to. Then, App Service for Kubernetes deals with creating the additional instances (kubernetes pods) of our function app behind the scenes as needed.
+As is the case with many Platform as a Service (PaaS) services, scaling is as easy as adjusting a slider. This is no different when using an App Service Kubernetes environment. We can go ahead and adjust the slider to represent the maximum number of instances that we would like to scale to. Then, App Service for Kubernetes deals with creating the additional instances (Kubernetes pods) of our function app behind the scenes as needed.
 
 ![Screenshot showing the Scaling out Functionality for a Logic App hosted in App Service on Kubernetes through Azure Portal](/img/blog/azure-arc-for-apps-part-4/app-service-on-kubernetes-logic-apps-scale-out.jpg)
 
@@ -160,28 +205,6 @@ logic-app-k8s-5fb47788b5-9pblr                                  0/2     PodIniti
 logic-app-k8s-5fb47788b5-7k5qs                                  2/2     Running            0          12s
 logic-app-k8s-5fb47788b5-9pblr                                  1/2     Running            0          50s
 logic-app-k8s-5fb47788b5-9pblr                                  2/2     Running            0          53s
-```
-
-
-```bash
-kubectl get po -n appservice --watch
-NAME                                                            READY   STATUS    RESTARTS   AGE
-christest-559548c65f-ncmkz                                      2/2     Running   0          55m
-christest-559548c65f-wmv7p                                      2/2     Running   0          55m
-christest-559548c65f-zf22d                                      2/2     Running   0          61m
-christest-55d5-5f775bbdd-sdnpd                                  1/1     Running   0          42m
-logic-app-k8s-7cc75474-xmxdd                                    2/2     Running   0          26m
-rb-arc-aks-appsvc-k8se-activator-56f59bbb9f-h57q7               1/1     Running   0          75m
-rb-arc-aks-appsvc-k8se-app-controller-86656c54cf-f8fmm          1/1     Running   0          75m
-rb-arc-aks-appsvc-k8se-build-service-568b9d8d7-5pldl            1/1     Running   0          84m
-rb-arc-aks-appsvc-k8se-envoy-586565cdbd-4qzvn                   1/1     Running   0          84m
-rb-arc-aks-appsvc-k8se-envoy-586565cdbd-9hb5g                   1/1     Running   0          84m
-rb-arc-aks-appsvc-k8se-envoy-586565cdbd-xpp7h                   1/1     Running   0          84m
-rb-arc-aks-appsvc-k8se-http-scaler-569b995bb-2csvc              1/1     Running   0          84m
-rb-arc-aks-appsvc-k8se-img-cacher-xc47s                         1/1     Running   0          84m
-rb-arc-aks-appsvc-k8se-keda-metrics-apiserver-678946464-hvf67   1/1     Running   0          84m
-rb-arc-aks-appsvc-k8se-keda-operator-b7488958-5h4t8             1/1     Running   0          84m
-rb-arc-aks-appsvc-k8se-log-processor-jpt2m                      0/1     Error     15         84m
 ```
 
 ## Custom Resource Definitions in Kubernetes
