@@ -8,6 +8,7 @@
                 <div class="bg-main flex-fill">
                     {{- block "main" . }}{{- end }}
                  </div>
+                 {{- block "bottom" . }}{{- end }}
             </main>
         {{- partial "footer.html" . -}}
     </body>

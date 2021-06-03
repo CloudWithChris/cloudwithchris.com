@@ -1,3 +1,16 @@
+{{ define "top" }}
+<div class="py-5 container">
+  <div class="row float-center">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Blog</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+{{ end }}
+
 {{ define "main" }}
 <div class="container" align="center">
   <div class="container">
@@ -17,19 +30,6 @@
 
       {{- partial "paginator.html" . -}}
     </div>
-  </div>
-</div>
-{{ end }}
-
-{{ define "top" }}
-<div class="py-5 container">
-  <div class="row float-center">
-    <nav aria-label="breadcrumb">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Blog</li>
-      </ol>
-    </nav>
   </div>
 </div>
 {{ end }}

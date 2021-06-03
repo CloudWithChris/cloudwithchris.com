@@ -6,6 +6,18 @@ theme: "cloud-with-chris"
 title: "Cloud With Chris"
 enableRobotsTXT: true
 
+related:
+  includeNewer: false
+  indices:
+  - name: tags
+    weight: 100
+  - name: title
+    weight: 10
+  - name: date
+    weight: 20
+  threshold: 80
+  toLower: true
+
 markup:
   goldmark:
     renderer:

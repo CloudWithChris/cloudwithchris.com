@@ -1,11 +1,6 @@
-{{ define "main" }}
-<div class="container">
-  <p>{{ .Content }}</p>
-</div>
-{{ end }}
-
 {{ define "top" }}
 {{ $site := .Site }}
+{{ $page := .Page }}
 {{ $scratch := .Scratch }}
 
 <div class="py-5 container" align="center">
@@ -47,8 +42,61 @@
         <p>{{ partial "tags.html" (dict "taxo" "tags" "value" . "site" $.Site ) }}</p>
       {{ end }}
 
+      <p></p>
+      <ul class="list-group">
+      {{ $series := .Params.Series }}
+      {{ range where .Site.Pages ".Params.series" "intersect" $series }}
+        {{ if eq . $page }}
+          <li class="list-group-item active" aria-current="true">{{ .Title }}</li>
+        {{ else  }}
+          <li class="list-group-item"><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+        {{ end }}
+        
+      {{ end }}
+    </ul>
       
-      
+    </div>
+  </div>
+{{ end }}
+
+{{ define "main" }}
+{{ $site := .Site }}
+{{ $page := .Page }}
+{{ $scratch := .Scratch }}
+
+<div class="container">
+  <p>{{ .Content }}</p>
+  <p></p>
+  <ul class="list-group">
+    {{ $series := .Params.Series }}
+    {{ range where .Site.Pages ".Params.series" "intersect" $series }}
+      {{ if eq . $page }}
+        <li class="list-group-item active" aria-current="true">{{ .Title }}</li>
+      {{ else  }}
+        <li class="list-group-item"><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    {{ end }}
+  </ul>
+</div>
+{{ if isset .Params "series" }}<p></p>{{ end }}
+{{ end }}
+
+{{ define "bottom" }}
+{{ $site := .Site }}
+{{ $page := .Page }}
+{{ $scratch := .Scratch }}
+
+<div class="py-5 container" align="center">
+    <div class="col">
+      <div class="row float-center">
+        {{ $related := .Site.RegularPages.Related . | first 4 }}
+          {{ with $related }}
+          <h3>Related</h3>
+          <p></p>
+          {{ range . }}
+            {{- partial "cards/footer-generic-card.html" . -}}
+          {{ end }}
+        {{ end }}      
     </div>
   </div>
 {{ end }}
