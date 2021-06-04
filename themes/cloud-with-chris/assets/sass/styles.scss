@@ -450,8 +450,12 @@ main a:hover {
   color: $cloud-with-chris-blue;
 }
 
-.bg-main img {
+.bg-main img:not(.person-image) {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.card-text img {
+  height: 500%;
 }
