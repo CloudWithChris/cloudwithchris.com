@@ -7,11 +7,12 @@ date: "2021-06-04T08:05:00Z"
 images:
 - img/cloudwithchrislogo.png
 tags:
-- Technology
-- DevOps
-- Git
-- Security
-- How To
+- Containers
+- Developer
+- Cloud Native
+- Kubernetes
+- Azure
+- Azure Arc
 series: 
 - "Using Azure Arc for Apps"
 title: Using Azure Arc for Apps - Part 5 - Deploying an Azure API Management gateway to an Azure Arc enabled Kubernetes Cluster

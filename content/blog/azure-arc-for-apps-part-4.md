@@ -7,11 +7,12 @@ date: "2021-06-04T08:04:00Z"
 images:
 - img/cloudwithchrislogo.png
 tags:
-- Technology
-- DevOps
-- Git
-- Security
-- How To
+- Containers
+- Developer
+- Cloud Native
+- Kubernetes
+- Azure
+- Azure Arc
 series: 
 - "Using Azure Arc for Apps"
 title: Using Azure Arc for Apps - Part 4 - Deploying Logic Apps into your App Services Kubernetes Environment
