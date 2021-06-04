@@ -3,11 +3,11 @@ Date: "2021-04-06T18:00:00Z"
 Description: "Chris is a Cloud Solution Architect at Microsoft. He'll explore how GitHub Actions can be used to deploy your own static websites (or other apps!) to Azure."
 PublishDate: "2021-01-01T15:30:00Z"
 Title: "How GitHub Actions can help in building and deploying a static website and more"
-image: img/cloudwithchrislogo.png
+image: img/talks/naug.jpg
 hosts:
 - chrisreddington
 images:
-- img/cloudwithchris.png
+- img/talks/naug.jpg
 talkType: "Meetup"
 eventName: "Northern Azure User Group"
 externalLink: "https://www.meetup.com/Northern-Azure-User-Group/events/276192486/"
