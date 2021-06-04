@@ -3,11 +3,11 @@ Date: "2021-07-26T18:00:00Z"
 Description: "Chris will join Mert Yeter on the MSHowTo show talking all things DevOps!"
 PublishDate: "2021-01-01T15:30:00Z"
 Title: "Requirements, Design Patterns, Cloud Architecture... Oh My"
-image: img/cloudwithchrislogo.png
+image: img/talks/dotnet-notts.jpg
 hosts:
 - chrisreddington
 images:
-- img/cloudwithchris.png
+- img/talks/dotnet-notts.jpg
 talkType: "Meetup"
 eventName: ".NET Notts"
 externalLink: "https://www.meetup.com/dotnetnotts/"
