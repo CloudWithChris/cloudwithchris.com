@@ -16,6 +16,5 @@ tags:
 - Content Creation
 - Podcasting
 youtube: Y5m3YfEO1ks
-upcoming: true
 ---
 Join me and a few colleagues as we talk about demos during presentations and whether they should be live demos or recorded and the arguments for and against each option.

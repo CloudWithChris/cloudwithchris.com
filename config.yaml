@@ -6,6 +6,18 @@ theme: "cloud-with-chris"
 title: "Cloud With Chris"
 enableRobotsTXT: true
 
+related:
+  includeNewer: false
+  indices:
+  - name: tags
+    weight: 100
+  - name: title
+    weight: 10
+  - name: date
+    weight: 20
+  threshold: 80
+  toLower: true
+
 markup:
   goldmark:
     renderer:
@@ -33,8 +45,17 @@ menu:
       weight: 2
       url: "/about"
     - name: "Episodes"
+      identifier: "episodes"
       weight: 3
+      url: "#"
+    - name: "Past"
       url: "/episode"
+      weight: 1
+      parent: "episodes"
+    - name: "Upcoming"
+      url: "/upcoming"
+      weight: 2
+      parent: "episodes"
     - name: "Blog"
       weight: 4
       url: "/Blog"
