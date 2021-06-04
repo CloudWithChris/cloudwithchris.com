@@ -16,7 +16,7 @@ series:
 - "Using Azure Arc for Apps"
 title: Using Azure Arc for Apps - Part 5 - Deploying an Azure API Management gateway to an Azure Arc enabled Kubernetes Cluster
 ---
-# Setting up an Azure API Management Gateway on Azure Arc
+## Setting up an Azure API Management Gateway on Azure Arc
 
 In [part 1](/blog/azure-arc-for-apps-part-1) of this *Using Azure Arc for Apps* series, we explored Azure Arc and Azure Arc enabled Kubernetes clusters. In this post, we'll be exploring API Management on Azure Arc. At time of writing, this approach is in public preview, so we may see certain limitations / features that are not yet available.
 
@@ -358,7 +358,7 @@ The deployment is fairly simple, focusing on a Kubernetes Pod (This could be plu
 
 ## Resources available in the Azure Resource Group
 
-Similarly, the API Management self-hosted gateway is a concept that exists within an API Management Instance. As a result, the resource that you will see in your Azure Resource Group or Azure Subscription is the Azure API Management service itself. 
+Similarly, the API Management self-hosted gateway is a concept that exists within an API Management Instance. As a result, the resource that you will see in your Azure Resource Group or Azure Subscription is the Azure API Management service itself.
 
 ![Screenshot showing the resources available in the Azure Portal, focusing on the API Management instance](/img/blog/azure-arc-for-apps-part-5/arc-apim-rg.jpg)
 
