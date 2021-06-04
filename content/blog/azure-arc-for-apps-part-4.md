@@ -31,15 +31,14 @@ To be clear, we won't go through the process of setting up an App Service Kubern
 
 The creation experience of a Logic App in an App Service Kubernetes Environment is very similar to that for a Logic App as we are used to.
 
-> **Note:** Be aware that to deploy a Logic App to your APp Service Kubernetes Environment, you will have to create a Logic App (Standard) resource and not a Logic App (Consumption) resource. The Logic App (Consumption) tier refers to the multi-tenanted Platform as a Service (PaaS) option.
+> **Note:** Be aware that to deploy a Logic App to your App Service Kubernetes Environment, you will have to create a Logic App (Standard) resource and not a Logic App (Consumption) resource. The Logic App (Consumption) tier refers to the multi-tenanted Platform as a Service (PaaS) option.
 
 * The instance name has a suffix of the custom domain that you will have seen in the **App Service Kubernetes Environment** that you created previously.
 * You can publish a Logic App as a workflow or a Docker Container.
 * The Custom Location item will be an option in the region dropdown. We'll be deploying into that, so that the Logic App is created in our App Service Kubernetes Environment.
-
-![Screenshot showing the Logic App Create Experience on Arc-Enabled Kubernetes Cluster through Azure Portal](/img/blog/azure-arc-for-apps-part-4/app-service-on-kubernetes-logic-apps-standard.jpg)
-
 On the **Hosting** tab, you'll be able to configure the Azure Storage Account used by the Azure Logic App.
+
+![Screenshot showing the First tab of the Logic App (Standard) Creation Experience](/img/blog/azure-arc-for-apps-part-4/app-service-on-kubernetes-logic-apps-standard-create-1.jpg)
 
 > Azure Storage is a pre-requisite for the Azure Functions tooling. As Azure Logic Apps standard builds upon the Azure Functions Runtime, I suspect that this is why the storage account is required.
 >

@@ -3,10 +3,11 @@ Date: "2021-05-13T14:00:00Z"
 Description: "Chris is the producer and host of his podcast CloudWithChris.com. He uses GitHub to version control the website's source code, GitHub Actions to build and deploy the website to Azure and other clouds, and GitHub Issues/Boards to plan the episode backlog. In this session, we'll explore how GitHub can be used to deploy your own workloads to Azure."
 PublishDate: "2021-05-13T14:00:00Z"
 Title: "Cloud Lunch and Learn Marathon 2021 - How GitHub Actions can help in building and deploying a static website and more"
-image: img/cloudwithchrislogo.png
+image: img/talks/cloudlunchandlearn.jpg
 hosts:
 - chrisreddington
 images:
+- img/talks/cloudlunchandlearn.jpg
 - img/cloudwithchris.png
 talkType: "Virtual Conference"
 eventName: "Cloud Lunch and Learn Marathon 2021"
