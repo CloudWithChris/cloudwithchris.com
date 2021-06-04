@@ -1,9 +1,9 @@
 ---
 Author: chrisreddington
 Description: ""
-PublishDate: "2021-06-02T08:04:00Z"
+PublishDate: "2021-06-04T08:04:00Z"
 image: img/cloudwithchrislogo.png
-date: "2021-06-02T08:04:00Z"
+date: "2021-06-04T08:04:00Z"
 images:
 - img/cloudwithchrislogo.png
 tags:
@@ -12,6 +12,8 @@ tags:
 - Git
 - Security
 - How To
+series: 
+- "Using Azure Arc for Apps"
 title: Using Azure Arc for Apps - Part 4 - Deploying Logic Apps into your App Services Kubernetes Environment
 ---
 ## App Service Kubernetes Environment
@@ -26,7 +28,7 @@ To be clear, we won't go through the process of setting up an App Service Kubern
 
 ## Create a Logic App in our App Service Kubernetes Environment
 
-The creation experience of a Logic App in an App Service Kubernetes Environment is very similar to that for a Logic App as we are used to. 
+The creation experience of a Logic App in an App Service Kubernetes Environment is very similar to that for a Logic App as we are used to.
 
 > **Note:** Be aware that to deploy a Logic App to your APp Service Kubernetes Environment, you will have to create a Logic App (Standard) resource and not a Logic App (Consumption) resource. The Logic App (Consumption) tier refers to the multi-tenanted Platform as a Service (PaaS) option.
 
@@ -84,7 +86,7 @@ Once saved, navigate over to your GitHub repository. You'll notice that there is
 
 ![Screenshot showing the GitHub Action workflow file deployed to the repository on our behalf](/img/blog/azure-arc-for-apps-part-4/app-service-on-kubernetes-logic-apps-deploymentcenter-workflow.jpg)
 
-This didn't work as expected. The GitHub Action workflow file failed with an error relating to package.json. This makes sense, as there's no package.json (which is a requirement when trying to restore packages for node projects) in the repository. 
+This didn't work as expected. The GitHub Action workflow file failed with an error relating to package.json. This makes sense, as there's no package.json (which is a requirement when trying to restore packages for node projects) in the repository.
 
 > **Tip:** After some digging, I found the [Azure/LogicApps repository which has a github-sample](https://github.com/Azure/logicapps/tree/master/github-sample) which contains an example of a Logic App workflow and deploying that using GitHub Actions. The GitHub Action workflow file used looks significantly different (i.e. no restoring node dependencies, and instead - just copies the files from the Repository to a subfolder and publishes that artifact for release as a zip).
 >
@@ -371,7 +373,7 @@ We can identify some information about the scale options that have been set with
 
 ## Resources available in the Azure Resource Group
 
-That's another whistle stop tour of a service deployed in Kubernetes. Unsurprisingly (if you've followed the other posts), the resources deployed in the Azure Resource Group don't look particularly different to what we would deploy into the multi-tenanted environment. 
+That's another whistle stop tour of a service deployed in Kubernetes. Unsurprisingly (if you've followed the other posts), the resources deployed in the Azure Resource Group don't look particularly different to what we would deploy into the multi-tenanted environment.
 
 ![Screenshot showing the App deployed in the Azure Portal](/img/blog/azure-arc-for-apps-part-4/app-service-on-kubernetes-apps-resource-group.jpg)
 
@@ -384,7 +386,7 @@ With that, any comments and feedback are always appreciated over on [Twitter, @r
 * [Part 1 - Setting up an Azure Arc enabled Kubernetes cluster](/blog/azure-arc-for-apps-part-1)
 * [Part 2 - Deploying App Services to Kubernetes](/blog/azure-arc-for-apps-part-2)
 * [Part 3 - Deploying Azure Functions into an App Service Kubernetes Environment](/blog/azure-arc-for-apps-part-3)
-* Part 5 (Coming Soon)
+* [Part 5 - Deploying an Azure API Management gateway to an Azure Arc enabled Kubernetes Cluster](/blog/azure-arc-for-apps-part-5)
 * Part 6 (Coming Soon)
 
  I hope that you'll continue on with the series, in which case - read on! Otherwise, until the next blog post - Thanks for reading, and bye for now!

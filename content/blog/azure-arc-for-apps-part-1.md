@@ -21,7 +21,7 @@ title: Using Azure Arc for Apps - Part 1 - Setting up an Azure Arc enabled Kuber
 ## Cloud Native Applications that run anywhere
 At Microsoft //Build 2021, Microsoft announced a series of updates relating to Cloud Native Applications anywhere. In summary, those updates refer to running Azure Services (such as App Services, Logic Apps, Azure Functions, Event Grid and API Management) in any Kubernetes cluster which is managed by Azure Arc. That means you could have Azure App Services running in Amazon Web Services (AWS), Google Cloud Platform (GCP), or in your on-premises Kubernetes deployment. This is a significant update, so I've decided that I'll be writing a series of blog posts on the topic - as one post would not do the topic justice!
 
-In this first post of the series, we'll first gain some understanding around Azure Arc, Azure Arc enabled Kubernetes, and some tips/tricks on getting started. It will be demo heavy, as we get Azure Arc for Kubernetes on a Kubernetes Cluster. There are options here. In this blog post, I showcase Kubernetes in Docker (kind), as well as Azure Kubernetes Service (AKS). However, I continue to use my Azure Kubernetes Service (AKS) deployment in the following blog posts of the series, as several of the application services require a public static IP address, which is something I do not have access to in my local home environment.
+In this first post of the series, we'll first gain some understanding around Azure Arc, Azure Arc enabled Kubernetes, and some tips/tricks on getting started. It will be demo heavy, as we get our Kubernetes cluster setup as an Azure Arc enabled Kubernetes Cluster. There are options here. In this blog post, I showcase Kubernetes in Docker (kind), as well as Azure Kubernetes Service (AKS). However, I continue to use my Azure Kubernetes Service (AKS) deployment in the following blog posts of the series, as several of the application services require a public static IP address, which is something I do not have access to in my local home environment.
 
 ## What is Azure Arc?
 
@@ -231,8 +231,8 @@ That is out of scope for this particular blog series, so we won't be running thr
 
 * [Part 2 - Deploying App Services to Kubernetes](/blog/azure-arc-for-apps-part-2)
 * [Part 3 - Deploying Azure Functions into an App Service Kubernetes Environment](/blog/azure-arc-for-apps-part-3)
-* Part 4 (Coming soon)
-* Part 5 (Coming soon)
+* [Part 4 - Deploying Logic Apps into your App Services Kubernetes Environment](/blog/azure-arc-for-apps-part-4)
+* [Part 5 - Deploying an Azure API Management gateway to an Azure Arc enabled Kubernetes Cluster](/blog/azure-arc-for-apps-part-5)
 * Part 6 (Coming soon)
 
 With that, thank you for reading. I'd love to hear if this content was useful. Please let me know over on [Twitter, @reddobowen](https://twitter.com/reddobowen). I hope that you'll continue on with the series, in which case - read on! Otherwise, until the next blog post - Thanks for reading, and bye for now!

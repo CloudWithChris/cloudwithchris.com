@@ -1,9 +1,9 @@
 ---
 Author: chrisreddington
 Description: ""
-PublishDate: "2021-06-02T08:05:00Z"
+PublishDate: "2021-06-04T08:05:00Z"
 image: img/cloudwithchrislogo.png
-date: "2021-06-02T08:05:00Z"
+date: "2021-06-04T08:05:00Z"
 images:
 - img/cloudwithchrislogo.png
 tags:
@@ -12,9 +12,10 @@ tags:
 - Git
 - Security
 - How To
+series: 
+- "Using Azure Arc for Apps"
 title: Using Azure Arc for Apps - Part 5 - Deploying an Azure API Management gateway to an Azure Arc enabled Kubernetes Cluster
 ---
-
 # Setting up an Azure API Management Gateway on Azure Arc
 
 In [part 1](/blog/azure-arc-for-apps-part-1) of this *Using Azure Arc for Apps* series, we explored Azure Arc and Azure Arc enabled Kubernetes clusters. In this post, we'll be exploring API Management on Azure Arc. At time of writing, this approach is in public preview, so we may see certain limitations / features that are not yet available.
@@ -63,7 +64,7 @@ Next up, go ahead to your API Management Resource and select the **Gateways** it
 
 > **Tip:** As a reminder, you'll begin seeing an additional charge once you create the Gateway object in the Azure Portal, as documented on the pricing page.
 
-Click on your newly created Gateway Object, and you should see a screen similar to the below. 
+Click on your newly created Gateway Object, and you should see a screen similar to the below.
 
 ![Screenshot showing the newly created self-hosted gateway in the Azure Portal](/img/blog/azure-arc-for-apps-part-5/arc-apim-create-apim-gw-self-hosted.jpg)
 
@@ -369,3 +370,12 @@ To find the self-hosted gateway, you will need to look under the API Management 
 
 If you've used self-hosted API Management gateways natively in a Kubernetes cluster or in Docker, then the concept of a self-hosted gateway will be incredibly familiar with you. I hope this post has demonstrated how easy the process is to install a self-hosted to your Azure Arc enabled cluster through the extensions which are available. Likewise, if you were not familiar with self-hosted gateways - I hope that this has been valuable and allowed you to explore some additional concepts.
 
+With that, any comments and feedback are always appreciated over on [Twitter, @reddobowen](https://twitter.com/reddobowen). Don't forget, there are several posts in this series that continue the story of Azure Arc for Apps.
+
+* [Part 1 - Setting up an Azure Arc enabled Kubernetes cluster](/blog/azure-arc-for-apps-part-1)
+* [Part 2 - Deploying App Services to Kubernetes](/blog/azure-arc-for-apps-part-2)
+* [Part 3 - Deploying Azure Functions into an App Service Kubernetes Environment](/blog/azure-arc-for-apps-part-3)
+* [Part 4 - Deploying Logic Apps into your App Services Kubernetes Environment](/blog/azure-arc-for-apps-part-4)
+* Part 6 (Coming Soon)
+
+ I hope that you'll continue on with the series, in which case - read on! Otherwise, until the next blog post - Thanks for reading, and bye for now!
