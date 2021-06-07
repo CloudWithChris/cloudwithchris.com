@@ -121,11 +121,44 @@ At this point, we've fully configured the extension. Let's review our settings a
 
 > **Tip:** The deployment completion notification came almost immediately for me. However, the docs and the portal note that this is an asynchronous operation, and you should check the status in kubernetes. For me, I executed ``kubectl get pods -n eventgrid --watch``
 
+
 ```bash
-kubectl get pods -n eventgrid --watch
+kubectl get po --watch -n eventgrid
 NAME                                  READY   STATUS    RESTARTS   AGE
-eventgrid-broker-f59b4d5-xtbwn        1/1     Running   0          65s
-eventgrid-operator-7cff4cfd7f-7kfbb   1/1     Running   0          65s
+eventgrid-operator-7cff4cfd7f-hb9wm   0/1     Pending   0          0s
+eventgrid-operator-7cff4cfd7f-hb9wm   0/1     Pending   0          0s
+eventgrid-broker-f59b4d5-rmfxh        0/1     Pending   0          0s
+eventgrid-broker-f59b4d5-rmfxh        0/1     Pending   0          0s
+eventgrid-operator-7cff4cfd7f-hb9wm   0/1     ContainerCreating   0          0s
+eventgrid-operator-7cff4cfd7f-hb9wm   1/1     Running             0          1s
+eventgrid-broker-f59b4d5-rmfxh        0/1     Pending             0          2s
+eventgrid-broker-f59b4d5-rmfxh        0/1     ContainerCreating   0          2s
+eventgrid-broker-f59b4d5-rmfxh        1/1     Running             0          5s
+```
+
+I had also prepared the same from the deployment side, using `kubectl get deployment -n eventgrid --watch`
+
+```bash
+kubectl get deployment -n eventgrid --watch
+NAME                 READY   UP-TO-DATE   AVAILABLE   AGE
+eventgrid-operator   0/1     0            0           1s
+eventgrid-operator   0/1     0            0           1s
+eventgrid-broker     0/1     0            0           0s
+eventgrid-broker     0/1     0            0           0s
+eventgrid-operator   0/1     0            0           1s
+eventgrid-operator   0/1     1            0           1s
+eventgrid-broker     0/1     0            0           0s
+eventgrid-broker     0/1     1            0           0s
+eventgrid-operator   1/1     1            1           2s
+eventgrid-broker     1/1     1            1           5s
+```
+
+Likewise, watching the service with `kubectl get svc -n eventgrid --watch` -
+
+```bash
+kubectl get svc -n eventgrid --watch
+NAME        TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)   AGE
+eventgrid   ClusterIP   10.0.121.237   <none>        80/TCP    0s
 ```
 
 Once complete, you should see the Extension Install status change from **Pending** to **Installed**.
