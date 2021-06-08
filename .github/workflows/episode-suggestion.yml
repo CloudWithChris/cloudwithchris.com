@@ -11,5 +11,5 @@ jobs:
       if: github.event_name == 'issues' && contains(github.event.issue.title, 'Episode Suggestion')
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        GITHUB_PROJECT_URL: https://github.com/chrisreddington/cloudwithchris.com/projects/1
+        GITHUB_PROJECT_URL: https://github.com/CloudWithChris/cloudwithchris.com/projects/1
         GITHUB_PROJECT_COLUMN_NAME: To do
