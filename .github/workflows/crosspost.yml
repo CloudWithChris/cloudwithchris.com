@@ -33,11 +33,11 @@ jobs:
         done
     - uses: chrisreddington/hugocrossposter@main
       with:
-        directoryPath: './content/episode'
+        directoryPath: 'content/episode'
         recursiveSubdirectories: 'true'
         originalPostInformation: 'true'
         logPayloadOutput: 'true'
-        searchPattern: '*.md*'
+        searchPattern: '*.md'
         baseUrl: 'www.cloudwithchris.com'
         devtoToken: ${{ secrets.DEVTO_INTEGRATION_TOKEN }}
         mediumAuthorId: ${{ secrets.MEDIUM_AUTHOR_ID }}
@@ -65,11 +65,11 @@ jobs:
         done
     - uses: chrisreddington/hugocrossposter@main
       with:
-        directoryPath: './content/blog'
+        directoryPath: 'content/blog'
         recursiveSubdirectories: 'true'
         originalPostInformation: 'true'
         logPayloadOutput: 'true'
-        searchPattern: '*.md*'
+        searchPattern: '*.md'
         baseUrl: 'www.cloudwithchris.com'
         devtoToken: ${{ secrets.DEVTO_INTEGRATION_TOKEN }}
         mediumAuthorId: ${{ secrets.MEDIUM_AUTHOR_ID }}
