@@ -13,7 +13,6 @@ on:
 jobs:
   crosspost-episode:   
     runs-on: ubuntu-latest
-    needs: publish 
     environment:
       name: production.crosspost
     steps:
@@ -46,7 +45,6 @@ jobs:
         protocol: 'https'
   crosspost-blog:   
     runs-on: ubuntu-latest
-    needs: publish 
     environment:
       name: production.crosspost
     steps:
