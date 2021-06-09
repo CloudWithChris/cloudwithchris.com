@@ -23,6 +23,7 @@ provider "aws" { }
 module "core" {
   source = "../../modules/aws-stamp"
   environment = "dev"
+  core_resource_group_name = "cloudwithchris"
   resource_prefix = "cloudwithchris-dev"
   tags = {
       environment = "Dev"

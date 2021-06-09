@@ -6,12 +6,22 @@ variable "resource_prefix" {
   type = string
 }
 
+variable "core_resource_group_name" {
+  type = string
+}
+
 variable "tags" {
     type = map
 }
 
 locals {
   resource_prefix_no_dashes = replace(var.resource_prefix, "-", "")
+}
+
+
+data "azurerm_dns_zone" "cloudwithchris" {
+  name                = "cloudwithchris.com"
+  resource_group_name = var.core_resource_group_name
 }
 
 resource "aws_s3_bucket" "main_stg" {
@@ -44,4 +54,12 @@ resource "aws_s3_bucket_policy" "main_stg_policy" {
       }
     ]
   })
+}
+
+resource "azurerm_dns_cname_record" "aws_record" {
+  name                = "${var.environment}.aws"
+  zone_name           = azurerm_dns_zone.cloudwithchris.name
+  resource_group_name = var.core_resource_group_name
+  ttl                 = 300
+  record              = aws_s3_bucket.main_stg.website_domain
 }
