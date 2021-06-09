@@ -52,9 +52,10 @@ resource "aws_s3_bucket_policy" "main_stg_policy" {
         Sid         = "AllowAllToRead"
         Effect      = "Allow"
         Principal   = "*"
-        Action      = "s3:GetObject",
+        Action      = "s3:GetObject"
         resource    = [
-          "${aws_s3_bucket.main_stg.arn}"
+          aws_s3_bucket.main_stg.arn,
+          "${aws_s3_bucket.main_stg.arn}/*",
         ]
       }
     ]
