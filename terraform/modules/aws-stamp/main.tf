@@ -156,6 +156,9 @@ resource "azurerm_dns_cname_record" "ssl_validation" {
 }
 
 resource "aws_acm_certificate_validation" "cert_validation" {
+  depends_on = [
+    azurerm_dns_cname_record.ssl_validation
+  ]
   provider                    = aws.us-east-1 # <== Add this
   certificate_arn             = aws_acm_certificate.cert.arn
   validation_record_fqdns     = [for record in azurerm_dns_cname_record.ssl_validation : record.fqdn]
