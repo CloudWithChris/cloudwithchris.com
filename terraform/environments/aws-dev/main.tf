@@ -21,10 +21,11 @@ provider "azurerm" {
 provider "aws" { }
 
 module "core" {
-  source = "../../modules/aws-stamp"
-  environment = "dev"
   core_resource_group_name = "cloudwithchris"
+  environment = "dev"
+  main_domain = "cloudwithchris.com"
   resource_prefix = "cloudwithchris-dev"
+  source = "../../modules/aws-stamp"
   tags = {
       environment = "Dev"
       tier = "Web"
