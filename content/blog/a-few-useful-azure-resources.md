@@ -28,5 +28,4 @@ Search the Azure Article Documentation
 
 - If all else fails, you could always use the Azure.com documentation. But there is plenty of it! Did you know that you can navigate to [https://azure.microsoft.com/en-gb/documentation/articles/](https://azure.microsoft.com/en-gb/documentation/articles/), and search the documentation by a number of factors? For example, you can see below that I am looking for Best Practices relating to Azure Resource Manager (ARM) Templates.
 
-
 Hope that these quick tips have been useful - Please let me know over Twitter if you think there are any other useful pieces to call out!
