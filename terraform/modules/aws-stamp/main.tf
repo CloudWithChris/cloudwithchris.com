@@ -219,7 +219,7 @@ resource "azurerm_dns_cname_record" "cloudfront_dns_bind" {
 
 # Create an AWS IAM User for the Unattended DevOps process
 resource "aws_iam_user" "devops_user" {
-  name = "${core_resource_group_name}-${environment}-devops"
+  name = "${var.core_resource_group_name}-${var.environment}-devops"
 
   # tags = tags
 }
