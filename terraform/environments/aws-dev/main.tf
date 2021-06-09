@@ -23,7 +23,7 @@ provider "aws" { }
 module "core" {
   source = "../../modules/aws-stamp"
   environment = "dev"
-  resource_prefix = "cwc-dev"
+  resource_prefix = "cloudwithchris-dev"
   tags = {
       environment = "Dev"
       tier = "Web"
