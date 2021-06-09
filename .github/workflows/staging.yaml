@@ -124,9 +124,9 @@ jobs:
     - name: "Authenticate with AWS Credentials"
       uses: aws-actions/configure-aws-credentials@v1
       with:
-        aws-access-key-id: ${{ secrets.AWS_STAGING_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_STAGING_SECRET_ACCESS_KEY }}
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_ACCESS_KEY_SECRET }}
         aws-region: eu-west-1    
     - name: "Upload Static Content to Staging S3 Bucket"
       run: |
-        aws s3 sync ./website s3://cloudwithchris
+        aws s3 sync ./website s3://cloudwithchrisdev

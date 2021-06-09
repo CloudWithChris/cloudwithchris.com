@@ -13,18 +13,19 @@ on:
 jobs:
   crosspost-episode:   
     runs-on: ubuntu-latest
-    needs: publish 
     environment:
       name: production.crosspost
     steps:
     - name: Download markdown files that are different from prior commit
       run: |
-        subfolder='content/episode'
+        subfolder='content/episode/'
         git clone --config lfs.fetchexclude="/podcast_audio" https://github.com/CloudWithChris/cloudwithchris.com.git ./
         fileschanged=$(git diff --name-only ${{ github.event.inputs.earliestCommit }} ${{ github.event.inputs.latestCommit }} -- "$subfolder/*.md")
         echo "$fileschanged" > files.txt
         cd $subfolder
-        sed -i -e 's/$subfolder\///g' ../../files.txt
+
+        escaped_subfolder=$(printf '%s\n' "$subfolder" | sed 's:[][\\/.^$*]:\\&:g')
+        sed -i -e "s/$escaped_subfolder//g" ../../files.txt
         for i in *; do
             if ! grep -qxFe "$i" ../../files.txt
             then
@@ -34,11 +35,11 @@ jobs:
         done
     - uses: chrisreddington/hugocrossposter@main
       with:
-        directoryPath: './content/episode'
+        directoryPath: 'content/episode'
         recursiveSubdirectories: 'true'
         originalPostInformation: 'true'
         logPayloadOutput: 'true'
-        searchPattern: '*.md*'
+        searchPattern: '*.md'
         baseUrl: 'www.cloudwithchris.com'
         devtoToken: ${{ secrets.DEVTO_INTEGRATION_TOKEN }}
         mediumAuthorId: ${{ secrets.MEDIUM_AUTHOR_ID }}
@@ -46,7 +47,6 @@ jobs:
         protocol: 'https'
   crosspost-blog:   
     runs-on: ubuntu-latest
-    needs: publish 
     environment:
       name: production.crosspost
     steps:
@@ -57,7 +57,8 @@ jobs:
         fileschanged=$(git diff --name-only ${{ github.event.inputs.earliestCommit }} ${{ github.event.inputs.latestCommit }} -- "$subfolder/*.md")
         echo "$fileschanged" > files.txt
         cd $subfolder
-        sed -i -e 's/$subfolder\///g' ../../files.txt
+        escaped_subfolder=$(printf '%s\n' "$subfolder" | sed 's:[][\\/.^$*]:\\&:g')
+        sed -i -e "s/$escaped_subfolder//g" ../../files.txt
         for i in *; do
             if ! grep -qxFe "$i" ../../files.txt
             then
@@ -67,11 +68,11 @@ jobs:
         done
     - uses: chrisreddington/hugocrossposter@main
       with:
-        directoryPath: './content/blog'
+        directoryPath: 'content/blog'
         recursiveSubdirectories: 'true'
         originalPostInformation: 'true'
         logPayloadOutput: 'true'
-        searchPattern: '*.md*'
+        searchPattern: '*.md'
         baseUrl: 'www.cloudwithchris.com'
         devtoToken: ${{ secrets.DEVTO_INTEGRATION_TOKEN }}
         mediumAuthorId: ${{ secrets.MEDIUM_AUTHOR_ID }}
