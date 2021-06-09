@@ -122,7 +122,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
 resource "aws_acm_certificate" "cert" {
   domain_name       = "${var.environment}.aws.cloudwithchris.com"
   validation_method = "DNS"
-  provider          = "aws.us-east-1" # <== Add this
+  provider          = aws.us-east-1 # <== Add this
 
   #tags              = tags
 
@@ -158,4 +158,5 @@ resource "azurerm_dns_cname_record" "ssl_validation" {
 resource "aws_acm_certificate_validation" "cert_validation" {
   certificate_arn         = aws_acm_certificate.cert.arn
   validation_record_fqdns = [for record in azurerm_dns_cname_record.ssl_validation : record.fqdn]
+  provider          = aws.us-east-1 # <== Add this
 }
