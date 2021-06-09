@@ -31,9 +31,10 @@ resource "aws_s3_bucket_policy" "main_stg_policy" {
 
   policy = jsonencode({
     Version = "2012-10-17"
-    Id      = "${local.resource_prefix_no_dashes}-readall"
+    Id      = "${local.resource_prefix_no_dashes}readall"
     Statement = [
       {
+        Sid         = "AllowAllToRead"
         Effect      = "Allow"
         Principal   = "*"
         Action      = "s3:GetObject",
