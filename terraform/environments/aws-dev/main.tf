@@ -4,6 +4,11 @@ terraform {
       source  = "hashicorp/azurerm"
       version = "=2.46.0"
     }
+
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 3.0"
+    }
   }
 }
 
@@ -12,12 +17,15 @@ provider "azurerm" {
   features {}
 }
 
+# Configure the AWS Provider
+provider "aws" {
+  region = "eu-west-1"
+}
+
 module "core" {
-  source = "../../modules/stamp"
-  core_resource_group_name = "cwc-core"
+  source = "../../modules/aws-stamp"
   environment = "dev"
   resource_prefix = "cwc-dev"
-  location = "North Europe"
   tags = {
       environment = "Dev"
       tier = "Web"
