@@ -67,6 +67,9 @@ resource "aws_cloudfront_origin_access_identity" "example" {
 }
 
 resource "aws_cloudfront_distribution" "s3_distribution" {
+  depends_on = [
+    aws_acm_certificate_validation.cert_validation
+  ]
   origin {
     domain_name = aws_s3_bucket.main_stg.website_endpoint
     origin_id = local.resource_prefix_no_dashes
@@ -150,4 +153,9 @@ resource "azurerm_dns_cname_record" "ssl_validation" {
   resource_group_name = var.core_resource_group_name
   record              = each.value.record
   ttl                 = 300
+}
+
+resource "aws_acm_certificate_validation" "cert_validation" {
+  certificate_arn         = aws_acm_certificate.cert.arn
+  validation_record_fqdns = [for record in azurerm_dns_cname_record.ssl_validation : record.fqdn]
 }
