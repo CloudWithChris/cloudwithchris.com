@@ -61,5 +61,5 @@ resource "azurerm_dns_cname_record" "aws_record" {
   zone_name           = data.azurerm_dns_zone.cloudwithchris.name
   resource_group_name = var.core_resource_group_name
   ttl                 = 300
-  record              = aws_s3_bucket.main_stg.website_domain
+  record              = "${aws_s3_bucket.main_stg.name}.${aws_s3_bucket.main_stg.website_domain}"
 }
