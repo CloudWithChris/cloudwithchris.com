@@ -44,22 +44,22 @@ resource "aws_s3_bucket" "main_stg" {
 resource "aws_s3_bucket_policy" "main_stg_policy" {
   bucket = aws_s3_bucket.main_stg.id
 
-  policy = jsonencode({
-    Version = "2012-10-17"
-    Id      = "${local.resource_prefix_no_dashes}readall"
-    Statement = [
+  policy = <<EOF
+  {
+    "Version": "2012-10-17",
+    "Statement": [
       {
-        Sid         = "AllowAllToRead"
-        Effect      = "Allow"
-        Principal   = "*"
-        Action      = "s3:GetObject"
-        resource    = [
-          aws_s3_bucket.main_stg.arn,
-          "${aws_s3_bucket.main_stg.arn}/*",
+        "Effect": "Allow",
+        "Principal": "*",
+        "Action": "s3:GetObject",
+        "Resource": [
+          "${aws_s3_bucket.main_stg.arn}",
+          "${aws_s3_bucket.main_stg.arn}/*"
         ]
       }
     ]
-  })
+  }
+  EOF
 }
 
 resource "aws_cloudfront_origin_access_identity" "example" {
@@ -68,7 +68,7 @@ resource "aws_cloudfront_origin_access_identity" "example" {
 
 resource "aws_cloudfront_distribution" "s3_distribution" {
   origin {
-    domain_name = "${local.resource_prefix_no_dashes}.${aws_s3_bucket.main_stg.website_domain}"
+    domain_name = "${aws_s3_bucket.main_stg.website_endpoint}"
     origin_id = local.resource_prefix_no_dashes
 
     s3_origin_config {
@@ -113,7 +113,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
 }
 
 resource "aws_acm_certificate" "cert" {
-  domain_name       = "${var.environment}.cloudwithchris.com"
+  domain_name       = "${var.environment}.aws.cloudwithchris.com"
   validation_method = "DNS"
   provider          = "aws.us-east-1" # <== Add this
 
@@ -141,7 +141,7 @@ resource "azurerm_dns_cname_record" "ssl_validation" {
     }
   }
 
-  name                = each.value.name
+  name                = trimsuffix(each.value.name, ".")
   zone_name           = data.azurerm_dns_zone.cloudwithchris.name
   resource_group_name = var.core_resource_group_name
   record              = each.value.record
