@@ -81,6 +81,12 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
 
   aliases = ["${var.environment}.aws.cloudwithchris.com"]
 
+  restrictions {
+    geo_restriction {
+      restriction_type = "none"
+    }
+  }
+
   default_cache_behavior {
     allowed_methods  = ["GET", "HEAD"]
     cached_methods   = ["GET", "HEAD"]
@@ -93,6 +99,8 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
         forward = "none"
       }
     }
+
+    viewer_protocol_policy = "redirect-to-https"
   }
 
   viewer_certificate {
