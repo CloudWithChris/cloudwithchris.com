@@ -148,8 +148,8 @@ resource "azurerm_dns_cname_record" "ssl_validation" {
     }
   }
 
-  name                        = trimsuffix(each.value.name, ".")
-  zone_name                   = trimsuffix(data.azurerm_dns_zone.cloudwithchris.name, ".cloudwithchris.com")
+  name                        = trimsuffix(each.value.name, ".cloudwithchris.com.")
+  zone_name                   = data.azurerm_dns_zone.cloudwithchris.name
   resource_group_name         = var.core_resource_group_name
   record                      = each.value.record
   ttl                         = 300
