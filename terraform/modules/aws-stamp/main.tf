@@ -221,7 +221,7 @@ resource "azurerm_dns_cname_record" "cloudfront_dns_bind" {
 resource "aws_iam_user" "devops_user" {
   name = "${core_resource_group_name}-${environment}-devops"
 
-  tags = tags
+  # tags = tags
 }
 
 # Create and associate a policy with that user.
@@ -256,5 +256,5 @@ EOF
 # Ensure that there is an access key resource,
 # so that this can be used in the DevOps process.
 resource "aws_iam_access_key" "devops_user" {
-  user = aws_iam_user.lb.name
+  user = aws_iam_user.devops_user.name
 }
