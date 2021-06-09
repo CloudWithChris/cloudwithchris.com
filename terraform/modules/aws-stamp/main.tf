@@ -45,21 +45,21 @@ resource "aws_s3_bucket_policy" "main_stg_policy" {
   bucket = aws_s3_bucket.main_stg.id
 
   policy = <<EOF
-  {
-    "Version": "2012-10-17",
-    "Statement": [
-      {
-        "Effect": "Allow",
-        "Principal": "*",
-        "Action": "s3:GetObject",
-        "Resource": [
-          "${aws_s3_bucket.main_stg.arn}",
-          "${aws_s3_bucket.main_stg.arn}/*"
-        ]
-      }
-    ]
-  }
-  EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": [
+        "${aws_s3_bucket.main_stg.arn}",
+        "${aws_s3_bucket.main_stg.arn}/*"
+      ]
+    }
+  ]
+}
+EOF
 }
 
 resource "aws_cloudfront_origin_access_identity" "example" {
@@ -68,11 +68,15 @@ resource "aws_cloudfront_origin_access_identity" "example" {
 
 resource "aws_cloudfront_distribution" "s3_distribution" {
   origin {
-    domain_name = "${aws_s3_bucket.main_stg.website_endpoint}"
+    domain_name = aws_s3_bucket.main_stg.website_endpoint
     origin_id = local.resource_prefix_no_dashes
 
-    s3_origin_config {
-      origin_access_identity = "origin-access-identity/cloudfront/${aws_cloudfront_origin_access_identity.example.id}" 
+    custom_origin_config {
+      origin_protocol_policy = "http-only"
+      # The protocol policy that you want CloudFront to use when fetching objects from the origin server (a.k.a S3 in our situation). HTTP Only is the default setting when the origin is an Amazon S3 static website hosting endpoint, because Amazon S3 doesn’t support HTTPS connections for static website hosting endpoints.
+      http_port            = 80
+      https_port           = 443
+      origin_ssl_protocols = ["TLSv1.2", "TLSv1.1", "TLSv1"]
     }
   }
 
