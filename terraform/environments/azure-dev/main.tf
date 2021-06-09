@@ -13,12 +13,14 @@ provider "azurerm" {
 }
 
 module "core" {
-  source = "../../modules/core"
-  resource_prefix = "cwc-core"
+  source = "../../modules/azure-stamp"
+  core_resource_group_name = "cwc-core"
+  environment = "dev"
+  resource_prefix = "cwc-dev"
   location = "North Europe"
   tags = {
-      environment = "Production"
-      tier = "Core"
+      environment = "Dev"
+      tier = "Web"
       project = "Cloud With Chris"
   }
 }
