@@ -18,9 +18,7 @@ provider "azurerm" {
 }
 
 # Configure the AWS Provider
-provider "aws" {
-  region = "eu-west-1"
-}
+provider "aws" { }
 
 module "core" {
   source = "../../modules/aws-stamp"
