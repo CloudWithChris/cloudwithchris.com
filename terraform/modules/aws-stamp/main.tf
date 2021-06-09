@@ -67,7 +67,7 @@ resource "aws_cloudfront_origin_access_identity" "example" {
 
 resource "aws_cloudfront_distribution" "s3_distribution" {
   origin {
-    domain_name = "${aws_s3_bucket.main_stg.name}.${aws_s3_bucket.main_stg.website_domain}"
+    domain_name = "${local.resource_prefix_no_dashes}.${aws_s3_bucket.main_stg.website_domain}"
     origin_id = local.resource_prefix_no_dashes
 
     s3_origin_config {
@@ -100,7 +100,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
     ssl_support_method = "sni-only"
   }
 
-  tags = tags
+  #tags = tags
 }
 
 resource "aws_acm_certificate" "cert" {
@@ -108,7 +108,7 @@ resource "aws_acm_certificate" "cert" {
   validation_method = "DNS"
   provider          = "aws.us-east-1" # <== Add this
 
-  #tags              = tags
+  tags              = tags
 
   lifecycle {
     create_before_destroy = true
