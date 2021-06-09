@@ -104,11 +104,11 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
 }
 
 resource "aws_acm_certificate" "cert" {
-  domain_name       = "${environment}.cloudwithchris.com"
+  domain_name       = "${var.environment}.cloudwithchris.com"
   validation_method = "DNS"
   provider          = "aws.us-east-1" # <== Add this
 
-  tags              = tags
+  #tags              = tags
 
   lifecycle {
     create_before_destroy = true
