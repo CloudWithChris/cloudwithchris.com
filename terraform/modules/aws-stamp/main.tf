@@ -108,7 +108,7 @@ resource "aws_acm_certificate" "cert" {
   validation_method = "DNS"
   provider          = "aws.us-east-1" # <== Add this
 
-  tags              = tags
+  #tags              = tags
 
   lifecycle {
     create_before_destroy = true
