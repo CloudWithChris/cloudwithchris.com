@@ -247,3 +247,458 @@ az eventgrid topic create --name rb-arc-aks-sample-topic \
                         --extended-location-type customLocation \
                         --input-schema CloudEventSchemaV1_0
 ```
+
+Mention something about having to recreate my cluster mid-way through writing the blog post
+
+![TBC](/img/blog/azure-arc-for-apps-part-6/azure-arc-event-grid-create-topic-complete.png)
+
+
+Let's explore what CRDs are within the Kubernetes Cluster...
+
+```bash
+kubectl get crd
+NAME                                                   CREATED AT
+approutes.k8se.microsoft.com                           2021-06-10T13:13:06Z
+apps.k8se.microsoft.com                                2021-06-10T13:13:06Z
+azureclusteridentityrequests.clusterconfig.azure.com   2021-06-10T13:02:55Z
+azureextensionidentities.clusterconfig.azure.com       2021-06-10T13:02:55Z
+bgpconfigurations.crd.projectcalico.org                2021-06-10T12:41:00Z
+bgppeers.crd.projectcalico.org                         2021-06-10T12:41:00Z
+blockaffinities.crd.projectcalico.org                  2021-06-10T12:41:00Z
+clusterinformations.crd.projectcalico.org              2021-06-10T12:41:00Z
+clustertriggerauthentications.keda.sh                  2021-06-10T13:13:07Z
+components.dapr.io                                     2021-06-10T13:13:06Z
+configurations.dapr.io                                 2021-06-10T13:13:06Z
+connectedclusters.arc.azure.com                        2021-06-10T13:02:55Z
+customlocationsettings.clusterconfig.azure.com         2021-06-10T13:02:55Z
+eventsubscriptions.eventgrid.microsoft.com             2021-06-10T13:51:11Z
+extensionconfigs.clusterconfig.azure.com               2021-06-10T13:02:55Z
+felixconfigurations.crd.projectcalico.org              2021-06-10T12:41:00Z
+gitconfigs.clusterconfig.azure.com                     2021-06-10T13:02:55Z
+globalnetworkpolicies.crd.projectcalico.org            2021-06-10T12:41:00Z
+globalnetworksets.crd.projectcalico.org                2021-06-10T12:41:00Z
+healthstates.azmon.container.insights                  2021-06-10T12:40:58Z
+hostendpoints.crd.projectcalico.org                    2021-06-10T12:41:00Z
+imagesets.operator.tigera.io                           2021-06-10T12:41:00Z
+installations.operator.tigera.io                       2021-06-10T12:41:00Z
+ipamblocks.crd.projectcalico.org                       2021-06-10T12:41:00Z
+ipamconfigs.crd.projectcalico.org                      2021-06-10T12:41:00Z
+ipamhandles.crd.projectcalico.org                      2021-06-10T12:41:00Z
+ippools.crd.projectcalico.org                          2021-06-10T12:41:00Z
+kubecontrollersconfigurations.crd.projectcalico.org    2021-06-10T12:41:00Z
+networkpolicies.crd.projectcalico.org                  2021-06-10T12:41:00Z
+networksets.crd.projectcalico.org                      2021-06-10T12:41:00Z
+placeholdertemplates.k8se.microsoft.com                2021-06-10T13:13:07Z
+scaledjobs.keda.sh                                     2021-06-10T13:13:07Z
+scaledobjects.keda.sh                                  2021-06-10T13:13:07Z
+subscriptions.dapr.io                                  2021-06-10T13:13:06Z
+tigerastatuses.operator.tigera.io                      2021-06-10T12:41:00Z
+topics.eventgrid.microsoft.com                         2021-06-10T13:51:11Z
+triggerauthentications.keda.sh                         2021-06-10T13:13:07Z
+virtualapps.k8se.microsoft.com                         2021-06-10T13:13:07Z
+volumesnapshotclasses.snapshot.storage.k8s.io          2021-06-10T12:40:58Z
+volumesnapshotcontents.snapshot.storage.k8s.io         2021-06-10T12:40:58Z
+volumesnapshots.snapshot.storage.k8s.io                2021-06-10T12:40:58Z
+workerapps.k8se.microsoft.com                          2021-06-10T13:13:07Z
+```
+
+Okay, let's see the topics created...
+
+```bash
+kubectl get topics.eventgrid.microsoft.com --all-namespaces
+NAMESPACE   NAME                      TOPICENDPOINT                                                                                           PROVISIONINGSTATE   FAILUREREASON   OPERATIONID
+eventgrid   sample-arc-aks-eg-topic   http://eventgrid.eventgrid-system:80/topics/sample-arc-aks-eg-topic/api/events?api-version=2018-01-01   Succeeded                           109A0C70-B159-4202-BF8E-2451025CC320
+```
+
+Right, now we understand that, let's go and create some subscriptions!s
+
+![TBC](/img/blog/azure-arc-for-apps-part-6/azure-arc-event-grid-create-subscription1.png)
+
+![TBC](/img/blog/azure-arc-for-apps-part-6/azure-arc-event-grid-create-subscription-event-handler.png)
+
+At this point, call out that I've created a Service Bus queue for the purposes of the blog post. Though you could use a webhook, or something similar. I don't have one deployed locally, so I'll just use a Service Bus.
+
+![TBC](/img/blog/azure-arc-for-apps-part-6/service-bus-queue.png)
+
+
+![TBC](/img/blog/azure-arc-for-apps-part-6/azure-arc-event-grid-create-subscription-event-handler2.png)
+```bash
+kubectl get eventsubscriptions.eventgrid.microsoft.com --all-namespaces
+NAMESPACE   NAME                             PROVISIONINGSTATE   FAILUREREASON   OPERATIONID
+eventgrid   sample-arc-aks-eg-subscription   Succeeded                           568FB02F-7BC5-4002-85BA-506378CB59AF
+```
+
+
+![TBC](/img/blog/azure-arc-for-apps-part-6/service-bus-no-messages.png)
+
+
+## Sending to Event Grid
+
+
+```bash
+az eventgrid topic show --name sample-arc-aks-eg-topic -g rb-arc-rg --query "endpoint" --output tsv
+http://eventgrid.eventgrid-system:80/topics/sample-arc-aks-eg-topic/api/events?api-version=2018-01-01
+```
+
+
+
+```bash
+az eventgrid topic key list --name sample-arc-aks-eg-topic -g rb-arc-rg --query "key1" --output tsv
+```
+
+
+**ADD EMPTY BUS SCREENSHOT HERE**
+
+Now, note the IP endpoint for the event grid is private...
+
+Now let's try again...
+
+```bash
+kubectl run curl --image=curlimages/curl --restart=Never -it --rm -- /bin/sh
+
+curl  -k -X POST -H "Content-Type: application/cloudevents-batch+json" -H "aeg-sas-key: <EnterYourKey>" -g <EnterYourURL> \
+-d  '[{ 
+      "specversion": "1.0",
+      "type": "blogPublished",
+      "source": "CloudWithChris/content",
+      "id": "eventId-n",
+      "time": "2020-12-25T20:54:07+00:00",
+      "subject": "blog/azure-arc-for-apps-part-6",
+      "dataSchema": "1.0",
+      "data" : {
+         "mediumUrl": "https://cloudwithchris.medium.com",
+         "devtoUrl": "https://dev.to/cloudwithchris"
+      }
+}]'
+```
+
+Ah, but look. The type of the event being sent is blogPublished. We didn't have that in the filter to eventtypes list. let's change that.
+
+![TBC](/img/blog/azure-arc-for-apps-part-6/azure-arc-event-grid-subscription-update.jpg)
+
+
+```bash
+kubectl run curl --image=curlimages/curl --restart=Never -it --rm -- /bin/sh
+
+curl  -k -X POST -H "Content-Type: application/cloudevents-batch+json" -H "aeg-sas-key: <EnterYourKey>" -g <EnterYourURL> \
+-d  '[{ 
+      "specversion": "1.0",
+      "type": "blogPublished",
+      "source": "CloudWithChris/content",
+      "id": "eventId-n",
+      "time": "2020-12-25T20:54:07+00:00",
+      "subject": "blog/azure-arc-for-apps-part-6",
+      "dataSchema": "1.0",
+      "data" : {
+         "mediumUrl": "https://cloudwithchris.medium.com",
+         "devtoUrl": "https://dev.to/cloudwithchris"
+      }
+}]'
+```
+
+Great, the event sent once again. Let's see if the subscription picked up the event this time.
+
+![TBC](/img/blog/azure-arc-for-apps-part-6/service-bus-1-message.png)
+
+![TBC](/img/blog/azure-arc-for-apps-part-6/service-bus-peak-message.png)
+
+```bash
+kubectl describe eventsubscriptions.eventgrid.microsoft.com sample-arc-aks-eg-subscription -n eventgrid
+Name:         sample-arc-aks-eg-subscription
+Namespace:    eventgrid
+Labels:       eventgrid.microsoft.com/Topic=sample-arc-aks-eg-topic
+Annotations:  eventgrid.microsoft.com/activityId: 85e44ef7-e688-4545-9127-0e42fbcaeb29
+              eventgrid.microsoft.com/operationId: FE5AB17C-AE80-412D-9E7D-E0AB9208106E
+API Version:  eventgrid.microsoft.com/v1alpha1
+Kind:         EventSubscription
+Metadata:
+  Creation Timestamp:  2021-06-10T14:15:07Z
+  Finalizers:
+    eventsubscription.finalizer
+  Generation:  4
+  Managed Fields:
+    API Version:  eventgrid.microsoft.com/v1alpha1
+    Fields Type:  FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:finalizers:
+          .:
+          v:"eventsubscription.finalizer":
+        f:labels:
+          .:
+          f:eventgrid.microsoft.com/Topic:
+        f:ownerReferences:
+          .:
+          k:{"uid":"3ece6103-c1fe-4844-86f4-2301e644bd1a"}:
+            .:
+            f:apiVersion:
+            f:kind:
+            f:name:
+            f:uid:
+      f:spec:
+        f:properties:
+          f:persistencePolicy:
+      f:status:
+        .:
+        f:operationId:
+        f:provisioningState:
+    Manager:      manager
+    Operation:    Update
+    Time:         2021-06-10T14:30:49Z
+    API Version:  eventgrid.microsoft.com/v1alpha1
+    Fields Type:  FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .:
+          f:eventgrid.microsoft.com/activityId:
+          f:eventgrid.microsoft.com/operationId:
+      f:spec:
+        .:
+        f:properties:
+          .:
+          f:destination:
+            .:
+            f:endpointType:
+            f:properties:
+              .:
+              f:connectionString:
+          f:eventDeliverySchema:
+          f:filter:
+            .:
+            f:includedEventTypes:
+            f:isSubjectCaseSensitive:
+          f:retryPolicy:
+            .:
+            f:eventExpiryInMinutes:
+            f:maxDeliveryAttempts:
+          f:topic:
+    Manager:    unknown
+    Operation:  Update
+    Time:       2021-06-10T14:30:49Z
+  Owner References:
+    API Version:     eventgrid.microsoft.com/v1alpha1
+    Kind:            Topic
+    Name:            sample-arc-aks-eg-topic
+    UID:             3ece6103-c1fe-4844-86f4-2301e644bd1a
+  Resource Version:  37787
+  UID:               ed3baa7c-2530-4b54-a7a0-f1e37e106f4d
+Spec:
+  Properties:
+    Destination:
+      Endpoint Type:  ServiceBusQueue
+      Properties:
+        Connection String:  Endpoint=sb://cloudwithchris.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=Tb0qPnSHY/2iwq9KZeqbTE7oCJae9fIpcoV4r67oF4Q=;EntityPath=eg-aks
+    Event Delivery Schema:  CloudEventSchemaV1_0
+    Filter:
+      Included Event Types:
+        myevent
+        myotherevent
+        blogPublished
+      Is Subject Case Sensitive:  false
+    Persistence Policy:
+    Retry Policy:
+      Event Expiry In Minutes:  1440
+      Max Delivery Attempts:    30
+    Topic:                      sample-arc-aks-eg-topic
+Status:
+  Operation Id:        FE5AB17C-AE80-412D-9E7D-E0AB9208106E
+  Provisioning State:  Succeeded
+Events:                <none>
+```
+
+
+
+
+
+
+
+
+
+```bash
+kubectl logs eventgrid-broker-6fff87f477-cdktx -n eventgrid-system
+2021-06-10 13:51:53.087+00:00:[INF] - [EventGridCoreHost:.ctor@55] 
+****************************************************************************************************************************
+|  _______                                   __________                      _____       _________        _____ _________  |
+|  ___    |__________  _______________       ___  ____/___   _______ _______ __  /_      __  ____/___________(_)______  /  |
+|  __  /| |___  /_  / / /__  ___/_  _ \      __  __/   __ | / /_  _ \__  __ \_  __/      _  / __  __  ___/__  / _  __  /   |
+|  _  ___ |__  /_/ /_/ / _  /    /  __/      _  /___   __ |/ / /  __/_  / / // /_        / /_/ /  _  /    _  /  / /_/ /    |
+|  /_/  |_|_____/\__,_/  /_/     \___/       /_____/   _____/  \___/ /_/ /_/ \__/        \____/   /_/     /_/   \__,_/     |
+|                                                                                                                          |
+****************************************************************************************************************************
+2021-06-10 13:51:53.430+00:00:[INF] - [BaseEnvironment:SetupInboundServerAuthAsync@109] Starting. inbound:serverAuth={
+  "tlsPolicy": "Disabled",
+  "serverCert": {
+    "source": "File",
+    "certFile": "",
+    "keyFile": "",
+    "caFile": ""
+  }
+}
+2021-06-10 13:51:53.430+00:00:[INF] - [BaseEnvironment:SetupInboundServerAuthAsync@114] Completed. inbound:serverAuth:tlsPolicy=disabled, nothing more to do.
+2021-06-10 13:51:53.435+00:00:[INF] - [BaseEnvironment:SetupInboundClientAuthAsync@186] Starting. inbound:clientAuth={
+  "sasKeys": {
+    "enabled": false,
+    "key1": "<redacted>",
+    "key2": "<redacted>"
+  },
+  "clientCert": {
+    "enabled": false,
+    "source": "File",
+    "caFile": "",
+    "allowUnknownCA": false
+  }
+}
+2021-06-10 13:51:53.435+00:00:[INF] - [BaseEnvironment:SetupInboundClientAuthAsync@204] Completed. inbound:clientAuth:clientCert:enabled=false, nothing more to do.
+2021-06-10 13:51:53.437+00:00:[INF] - [BaseEnvironment:SetupOutboundClientAuthAsync@246] Starting. outbound:clientAuth={
+  "clientCert": {
+    "enabled": false,
+    "source": "File",
+    "allowUnknownCA": false
+  }
+}
+2021-06-10 13:51:53.437+00:00:[INF] - [BaseEnvironment:SetupOutboundClientAuthAsync@251] Completed. outbound:clientAuth:clientCert:enabled=false, nothing more to do.
+2021-06-10 13:51:53.439+00:00:[INF] - [BaseEnvironment:SetupOutboundDestinationConfiguration@274] outbound:webhook={
+  "httpsOnly": false,
+  "skipServerCertValidation": false,
+  "allowUnknownCA": false,
+  "skipEventGridUrlValidation": true
+}
+2021-06-10 13:51:53.440+00:00:[INF] - [BaseEnvironment:SetupOutboundDestinationConfiguration@275] outbound:eventgrid={
+  "httpsOnly": false,
+  "allowInvalidHostnames": true
+}
+2021-06-10 13:51:53.451+00:00:[INF] - [Metric:Initialize@43] MetricOptions: {
+  "reporterType": "Prometheus",
+  "reportingIntervalInSeconds": 60,
+  "context": "",
+  "telegraf": {
+    "telegrafUdpAddress": "",
+    "telegrafUdpPort": 0,
+    "failuresBeforeBackoff": 5,
+    "timeoutInSeconds": 30,
+    "backoffPeriodInSeconds": 5
+  },
+  "prometheus": {
+    "environmentInfoEndpointEnabled": false,
+    "metricsEndpointEnabled": true,
+    "metricsTextEndpointEnabled": false
+  },
+  "azureMonitor": {
+    "instrumentationKey": ""
+  }
+}
+2021-06-10 13:51:55.224+00:00:[INF] - [RocksDbFactory:GetOrCreateRocksDbInstance@44] Opened rocksDB database at path 'metadataDb/' with columnFamilies 'default'.
+2021-06-10 13:51:55.986+00:00:[INF] - [ApiBuilder:GetHostBuilder@47] ApiOptions: {
+  "maxTopicNameLength": 128,
+  "maxContentLengthInBytes": 1058576,
+  "logLevel": "Information",
+  "requestTimeoutInSeconds": 30,
+  "httpPort": 5888,
+  "httpsPort": 4438,
+  "retryPolicyLimits": {
+    "minExpirationTimeInMinutes": 1,
+    "maxExpirationTimeInMinutes": 1440,
+    "maxDeliveryAttempts": 30
+  },
+  "deliveryPolicyLimits": {
+    "maxPreferredBatchSizeInKilobytes": 1033,
+    "maxEventsPerBatch": 50
+  },
+  "health": {
+    "httpProbe": {
+      "enabled": true
+    }
+  }
+}
+2021-06-10 13:51:55.986+00:00:[INF] - [ApiBuilder:GetHostBuilder@50] KestrelUrls: http://*:5888
+2021-06-10 13:51:56.005+00:00:[INF] - [EventGridBrokerBuilder:Build@81] BrokerOptions: {
+  "startTimeoutInSeconds": 120,
+  "stopTimeoutInSeconds": 120,
+  "maxReadBatchSize": 200,
+  "maxConcurrentDeliveries": 100,
+  "logLevel": "Information",
+  "logDeliverySuccess": false,
+  "logDeliveryFailure": true,
+  "logEventExpiry": true,
+  "deliverTimeoutInSeconds": 60,
+  "defaultMaxDeliveryAttempts": 30,
+  "defaultEventTimeToLiveInSeconds": 7200,
+  "defaultMaxBatchSizeInBytes": 1058576,
+  "defaultMaxEventsPerBatch": 10,
+  "maxSubscriptionCacheStalenessInSeconds": 3,
+  "backoffIntervals": [
+    "00:01:00",
+    "00:10:00"
+  ],
+  "defaultIsPersisted": true,
+  "backoffIsPersisted": true,
+  "commitDelayInMs": 1,
+  "stopDispatchers": false
+}
+2021-06-10 13:51:56.131+00:00:[INF] - [FasterEventLogFactory:.ctor@40] FasterOptions: {
+  "eventLogBasePath": "eventsDb",
+  "pageSizeBits": 22,
+  "memorySizeBits": 25,
+  "segmentSizeBits": 26,
+  "enablePerEntryChecksums": true,
+  "disposalDelayInSeconds": 60,
+  "pendingCheckpointMaxCount": 131072,
+  "maxInflightWrites": 0,
+  "checkpointCoalesceWaitIntervalInMilliseconds": 100
+}
+2021-06-10 13:51:56.243+00:00:[INF] - [EventGridDesiredConfigProcessor:GetDesiredConfigAsync@32] GetDesiredConfigAsync check if there's any default configuration specified.
+2021-06-10 13:51:56.244+00:00:[INF] - [EventGridDesiredConfigProcessor:ReadConfigFromEnvVar@64] ReadConfigFromEnvVar checking if configuration specified in environment variable desired_config.
+2021-06-10 13:51:56.244+00:00:[INF] - [EventGridDesiredConfigProcessor:ReadConfigFromEnvVar@69] ReadConfigFromEnvVar no configuration specified in environment variable desired_config.
+2021-06-10 13:51:56.245+00:00:[INF] - [EventGridDesiredConfigProcessor:ReadConfigFromFileAsync@87] ReadConfigFromFileAsync checking if configuration specified in environment variable desired_config_file.
+2021-06-10 13:51:56.245+00:00:[INF] - [EventGridDesiredConfigProcessor:ReadConfigFromFileAsync@92] ReadConfigFromFileAsync no file specified in environment variable desired_config_file.
+2021-06-10 13:51:56.249+00:00:[INF] - [EventGridBroker:Broker:OpenAsync:Starting] 
+2021-06-10 13:51:56.260+00:00:[INF] - [ServiceObjectManager(EventGridBroker):Broker:OpenAsync:Starting] 
+2021-06-10 13:51:56.264+00:00:[INF] - [MetadataCache:Broker:OpenAsync:Starting] 
+2021-06-10 13:51:56.269+00:00:[INF] - [EventLogManager:Broker:OpenAsync:Starting] 
+2021-06-10 13:51:56.269+00:00:[INF] - [SharedBackoffManager:Broker:OpenAsync:Starting] 
+2021-06-10 13:51:56.339+00:00:[INF] - [FasterEventLogFactory:Faster:CreateAsync:Succeeded] Created event log with id=__BACKOFF_1_1MINS metadata={"EventLogBasePath":"eventsDb","PageSizeBits":22,"MemorySizeBits":25,"SegmentSizeBits":26,"EnablePerEntryChecksums":true,"DisposalDelayInSeconds":60,"PendingCheckpointMaxCount":131072,"MaxInflightWrites":0,"CheckpointCoalesceWaitIntervalInMilliseconds":100}.
+2021-06-10 13:51:56.350+00:00:[INF] - [FasterEventLogFactory:Faster:CreateAsync:Succeeded] Created event log with id=__BACKOFF_2_10MINS metadata={"EventLogBasePath":"eventsDb","PageSizeBits":22,"MemorySizeBits":25,"SegmentSizeBits":26,"EnablePerEntryChecksums":true,"DisposalDelayInSeconds":60,"PendingCheckpointMaxCount":131072,"MaxInflightWrites":0,"CheckpointCoalesceWaitIntervalInMilliseconds":100}.
+2021-06-10 13:51:56.350+00:00:[INF] - [ServiceObjectManager(SharedBackoffManager):Broker:OpenAsync:Starting] 
+2021-06-10 13:51:56.350+00:00:[INF] - [FasterEventLog(__BACKOFF_1_1MINS):Faster:OpenAsync:Starting] 
+2021-06-10 13:51:56.408+00:00:[INF] - [ServiceObjectManager(FasterEventLog(__BACKOFF_1_1MINS)):Faster:OpenAsync:Starting] 
+2021-06-10 13:51:56.408+00:00:[INF] - [FasterEventLogCheckpointer(__BACKOFF_1_1MINS):Faster:OpenAsync:Starting] 
+2021-06-10 13:51:56.408+00:00:[INF] - [FasterEventLogReader(__BACKOFF_1_1MINS):Faster:OpenAsync:Starting] 
+2021-06-10 13:51:56.410+00:00:[INF] - [FasterEventLogWriter(__BACKOFF_1_1MINS):Faster:OpenAsync:Starting] 
+2021-06-10 13:51:56.410+00:00:[INF] - [CheckpointWorker<OutputEvent>:Delivery:OpenAsync:Starting] 
+2021-06-10 13:51:56.410+00:00:[INF] - [SharedBackoffDispatcher-00:01:00:Broker:OpenAsync:Starting] 
+2021-06-10 13:51:56.411+00:00:[INF] - [FasterEventLog(__BACKOFF_2_10MINS):Faster:OpenAsync:Starting] 
+2021-06-10 13:51:56.442+00:00:[INF] - [ServiceObjectManager(FasterEventLog(__BACKOFF_2_10MINS)):Faster:OpenAsync:Starting] 
+2021-06-10 13:51:56.442+00:00:[INF] - [FasterEventLogCheckpointer(__BACKOFF_2_10MINS):Faster:OpenAsync:Starting] 
+2021-06-10 13:51:56.442+00:00:[INF] - [FasterEventLogReader(__BACKOFF_2_10MINS):Faster:OpenAsync:Starting] 
+2021-06-10 13:51:56.442+00:00:[INF] - [FasterEventLogWriter(__BACKOFF_2_10MINS):Faster:OpenAsync:Starting] 
+2021-06-10 13:51:56.442+00:00:[INF] - [CheckpointWorker<OutputEvent>:Delivery:OpenAsync:Starting] 
+2021-06-10 13:51:56.442+00:00:[INF] - [SharedBackoffDispatcher-00:10:00:Broker:OpenAsync:Starting] 
+2021-06-10 13:51:56.443+00:00:[INF] - [SharedBackoffManager:Broker:OnOpenAsync:Succeeded] Started shared backoff queue(s) for intervals:00:01:00,00:10:00
+2021-06-10 13:51:56.443+00:00:[INF] - [DedicatedQueueManager:Broker:OpenAsync:Starting] 
+2021-06-10 13:51:56.448+00:00:[INF] - [SharedBackoffDispatcher-00:01:00:Broker:OnRunAsync:InProgress] Starting, now that dedicated queues have been setup.
+2021-06-10 13:51:56.454+00:00:[INF] - [SharedBackoffDispatcher-00:10:00:Broker:OnRunAsync:InProgress] Starting, now that dedicated queues have been setup.
+2021-06-10 13:51:56.454+00:00:[INF] - [MetadataChangeListener:Broker:OpenAsync:Starting] 
+warn: Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository[60]
+      Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+warn: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[35]
+      No XML encryptor configured. Key {5475ef00-481b-432b-bd83-f7954e5aa761} may be persisted to storage in unencrypted form.
+2021-06-10 13:56:28.988+00:00:[INF] - [TopicsApiService:Management:PutAsync:Starting] Creating topic with TopicName: sample-arc-aks-eg-topic
+2021-06-10 13:56:29.424+00:00:[INF] - [TopicsApiService:Management:PutAsync:Succeeded] Created topic with TopicName: sample-arc-aks-eg-topic
+2021-06-10 14:15:07.900+00:00:[INF] - [EventSubscriptionsApiService:Management:PutAsync:Starting] Putting eventSubscription with Name: sample-arc-aks-eg-subscription
+2021-06-10 14:15:07.986+00:00:[INF] - [FasterEventLogFactory:Faster:CreateAsync:Succeeded] Created event log with id=SAMPLE-ARC-AKS-EG-SUBSCRIPTION-C9B6020D030A43BFAC785A3ECDB46B62 metadata={"EventLogBasePath":"eventsDb","PageSizeBits":22,"MemorySizeBits":25,"SegmentSizeBits":26,"EnablePerEntryChecksums":true,"DisposalDelayInSeconds":60,"PendingCheckpointMaxCount":131072,"MaxInflightWrites":0,"CheckpointCoalesceWaitIntervalInMilliseconds":100}.
+2021-06-10 14:15:08.014+00:00:[INF] - [ServiceObjectManager(DedicatedQueue SubId=SAMPLE-ARC-AKS-EG-SUBSCRIPTION-C9B6020D030A43BFAC785A3ECDB46B62):Broker:OpenAsync:Starting] 
+2021-06-10 14:15:08.014+00:00:[INF] - [FasterEventLog(SAMPLE-ARC-AKS-EG-SUBSCRIPTION-C9B6020D030A43BFAC785A3ECDB46B62):Faster:OpenAsync:Starting] 
+2021-06-10 14:15:08.048+00:00:[INF] - [ServiceObjectManager(FasterEventLog(SAMPLE-ARC-AKS-EG-SUBSCRIPTION-C9B6020D030A43BFAC785A3ECDB46B62)):Faster:OpenAsync:Starting] 
+2021-06-10 14:15:08.048+00:00:[INF] - [FasterEventLogCheckpointer(SAMPLE-ARC-AKS-EG-SUBSCRIPTION-C9B6020D030A43BFAC785A3ECDB46B62):Faster:OpenAsync:Starting] 
+2021-06-10 14:15:08.048+00:00:[INF] - [FasterEventLogReader(SAMPLE-ARC-AKS-EG-SUBSCRIPTION-C9B6020D030A43BFAC785A3ECDB46B62):Faster:OpenAsync:Starting] 
+2021-06-10 14:15:08.048+00:00:[INF] - [FasterEventLogWriter(SAMPLE-ARC-AKS-EG-SUBSCRIPTION-C9B6020D030A43BFAC785A3ECDB46B62):Faster:OpenAsync:Starting] 
+2021-06-10 14:15:08.048+00:00:[INF] - [CheckpointWorker<OutputEvent>:Delivery:OpenAsync:Starting] 
+2021-06-10 14:15:08.048+00:00:[INF] - [SharedPostponeWorker:Delivery:OpenAsync:Starting] 
+2021-06-10 14:15:08.048+00:00:[INF] - [DeliveryAgent:Delivery:OpenAsync:Starting] 
+2021-06-10 14:15:08.048+00:00:[INF] - [DedicatedQueueDispatcher (SubscriptionId=SAMPLE-ARC-AKS-EG-SUBSCRIPTION-C9B6020D030A43BFAC785A3ECDB46B62):Delivery:OpenAsync:Starting] 
+2021-06-10 14:15:08.049+00:00:[INF] - [DedicatedQueueManager:Broker:CreateIfNotExistsAsync:Succeeded] Started dedicated dispatcher for topicId=SAMPLE-ARC-AKS-EG-TOPIC-BEDA9774F38E45128E2B46C65453CF69 subscriptionId=SAMPLE-ARC-AKS-EG-SUBSCRIPTION-C9B6020D030A43BFAC785A3ECDB46B62 with persistenceMode=Disk.
+2021-06-10 14:15:08.053+00:00:[INF] - [EventSubscriptionsApiService:Management:PutAsync:Succeeded] Created eventSubscription with Name: sample-arc-aks-eg-subscription
+2021-06-10 14:15:08.103+00:00:[INF] - [EventSubscriptionsApiService:Management:PutAsync:Starting] Putting eventSubscription with Name: sample-arc-aks-eg-subscription
+2021-06-10 14:15:08.154+00:00:[INF] - [EventSubscriptionsApiService:Management:PutAsync:Succeeded] Created eventSubscription with Name: sample-arc-aks-eg-subscription
+```
