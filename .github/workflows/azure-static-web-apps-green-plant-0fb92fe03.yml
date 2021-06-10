@@ -38,9 +38,6 @@ jobs:
         name: website
         path: ${{ github.workspace }}/public
   deploy_job:  
-    environment:
-      name: production.azure
-      url: https://www.cloudwithchris.com  
     runs-on: ubuntu-latest
     needs: build
     name: Build and Deploy Job
