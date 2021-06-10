@@ -23,24 +23,26 @@ In [part 1](/blog/azure-arc-for-apps-part-1) of this *Using Azure Arc for Apps* 
 
 > **Tip:** [Part 1](/blog/azure-arc-for-apps-part-1) is a pre-requisite to working through this blog post, if you plan to get hands on. As noted above, an Azure Arc enabled Kubernetes cluster is a pre-requisite in the scenario we're walking through.
 >
-> **Note:** Parts 2, 3, 5 and 5 are not pre-requisites to completing this blog post if you are following along and completing the series.
+> **Note:** Parts 2, 3, 4 and 5 are not pre-requisites to completing this blog post if you are following along and completing the series.
 
 ## What is Event Grid?
 
 Before we talk about Event Grid on Kubernetes with Azure Arc, it's worth us understanding the idea behind Event Grid. Event Grid is an event broker and is commonly used to integrate different services in an event-driven architecture.
 
-In the past, you may have had consumers of a services in a loop, either polling or seeking for changes and to take action. Event-driven architectures are different. Event-driven programming (sometimes known as reactive programming), allows us to react to the events as they occur. This event-driven approach can be very common in the popular microservices architecture pattern.
+In the past, you may have had consumers of services in a loop, either polling or seeking for changes to take action. Event-driven architectures are different. Event-driven architectures (sometimes known as event-driven programming or reactive programming), allows us to react to the events as they occur. This approach can be very common in the popular microservices architecture pattern.
 
-> **Tip:** It's important to understand the difference between a message and an event in this context. An event is a notification of a state change. Imagine this like a broadcast saying, "Hey, I just published this new file!". You don't typically have any expectations on whether anyone is listening (or what they'll do with that information). The event will contain lightweight information about what happened.
+> **Tip:** It's important to understand the difference between a message and an event.
+>
+> An event is a notification of a state change. Imagine this like a broadcast saying, "Hey, I just published this new file!". You don't typically have any expectations on whether anyone is listening (or what they'll do with that information). The event will contain lightweight information about what happened.
 >
 > Conversely, messages contain the entire payload of information. When a message is sent, typically the publisher expects the consumer to do something with that information. For example, analysing the contents of the message and saving the analysis to an end-location.
 
-The above definition of messages/events is important, as event Grid operates using a publish / subscriber model. It has no understanding of the upstream source that is generating / sending the events.
+The above definition of messages / events is important to understand. Event Grid operates using a publish / subscriber model and has no understanding of the upstream source that is generating / sending the events.
 
-We'll be using a few terms throughout this blog post -
+We'll be using a few terms consistently throughout this blog post -
 
 * **Event publisher** - The entity that sends events to Event Grid
-* **Topic** - An input channel used by an event publisher to send events to Event Grid.
+* **Event Topic** - An input channel used by an event publisher to send events to Event Grid.
 * **Event subscription** - An Event Grid resource that contains settings on filtering and routing events to a destination (i.e. an event subscriber or event handler).
   * **Note:** Not all events need to be delivered to all subscribers.
 * **Event subscriber** (Sometimes referred to as an **Event handler**) -  An entity that is listening to an Event Subscription for events and takes action by reacting to those events.
@@ -51,30 +53,30 @@ The latest and greatest information will be in [The Azure Docs](https://docs.mic
 
 At time of writing, the docs mention the following -
 
-Through Webhooks, Event Grid supports the following destinations hosted on a Kubernetes cluster:
+> Through Webhooks, Event Grid supports the following destinations hosted on a Kubernetes cluster:
+>
+> * Azure App Service on Kubernetes with Azure Arc.
+> * Azure Functions on Kubernetes with Azure Arc.
+> * Azure Logic Apps on Kubernetes with Azure Arc.
+>
+> In addition to Webhooks, Event Grid on Kubernetes can send events to the following destinations hosted on Azure:
+>
+> * Azure Event Grid using Webhooks
+> * Azure Functions using Webhooks only
+> * Azure Event Hubs using its Azure Resource Manager resource ID
+> * Azure Service Bus topics or queues using its Azure Resource Manager resource ID
+> * Azure Storage queue using its Azure Resource Manager resource ID
 
-* Azure App Service on Kubernetes with Azure Arc.
-* Azure Functions on Kubernetes with Azure Arc.
-* Azure Logic Apps on Kubernetes with Azure Arc.
+Once again, I encourage you to familiarise yourself with [the Azure Doc](https://docs.microsoft.com/en-us/azure/event-grid/kubernetes/event-handlers).
 
-In addition to Webhooks, Event Grid on Kubernetes can send events to the following destinations hosted on Azure:
-
-* Azure Event Grid using Webhooks
-* Azure Functions using Webhooks only
-* Azure Event Hubs using its Azure Resource Manager resource ID
-* Azure Service Bus topics or queues using its Azure Resource Manager resource ID
-* Azure Storage queue using its Azure Resource Manager resource ID
-
-Once again, I encourage you to familiarise yourself with [the Azure Doc](https://docs.microsoft.com/en-us/azure/event-grid/kubernetes/event-handlers). 
-
-* If you've previously used Azure Event Grid, you'll likely know that there are various Event Schemas that can be used. In Event Grid for Kubernetes, only the Cloud Events 1.0 schema is supported (at time of writing).
+* If you've already used Azure Event Grid, you'll likely know that there are a couple of Event Schemas that can be used. In Event Grid for Kubernetes, only the Cloud Events 1.0 schema is supported (at time of writing).
 * You may also be aware that Azure Functions has an Event Grid trigger. You cannot use this trigger an Azure Function to Event Grid for Kubernetes. Instead, you'll need to use the webhook trigger.
 
-These are two examples where there are feature differences, and worth exploring the Azure Doc for completeness.
+These are two examples where there are feature differences, though worth exploring the Azure Doc referenced above for completeness.
 
 ## Installing the Event Grid on Kubernetes extension to an Azure Arc enabled Kubernetes Cluster
 
-If you've been following the series, you will have seen that the Azure Extensions can be installed in several ways. In this post, we'll work through the Azure CLI and the Azure Portal methods.
+If you've been following this series on Azure Arc for Apps, you'll have seen that the Azure Extensions can be installed in several ways. In this post, we'll work through the Azure Portal method. I've also included a section to the Azure Docs if you'd prefer the Azure CLI route.
 
 ### Installing the Event Grid on Kubernetes extension through the Azure Portal
 
@@ -96,7 +98,7 @@ Note the following on the **Basics** tab:
 
 * The **Project Details** section shows read-only subscription and resource group values because Azure Arc extensions are deployed under the same Azure subscription and resource group of the connected cluster on which they're installed.
 * The **Event Grid extension Name** is the name of the extension as it will be installed in your Azure Arc Cluster Resource. This must be unique across all extensions in your Azure Arc enabled Kubernetes Cluster.
-* The **Release namespace** is the namespace in your Azure Arc enabled Kubernetes Cluster in which you want to deploy your Azure Event Grid resources.
+* The **Release namespace** is the namespace in your Azure Arc enabled Kubernetes Cluster in which you want to deploy your Event Grid resources.
 * The **Service type** relates to the type of Kubernetes Service that you want to use to expose the Event Grid resources. Only ClusterIP is supported during the preview, which means we'll only be able to call that service from within the cluster, unless we expose it through an ingress point or some other means.
 * The **Static IP** is used to map a custom domain for the event grid to an ingress point into the cluster. I used the Public IP address for my Azure Kubernetes Service (AKS) cluster.
 * The **Storage class name** may be quite an involved explanation. But in a nutshell, this is the name of the storage class on your Kubernetes cluster that you wish to use. This will vary depending upon how you're running your cluster (e.g. Azure Kubernetes Service (AKS), Elastic Kubernetes Service (EKS), Google Kubernetes Engine (GKE) or some kind of bring your own solution). You may need to research which storage classes are available for your cluster, but this is [well-defined for AKS](https://docs.microsoft.com/en-us/azure/aks/concepts-storage#storage-classes). I'll be using ``azurefile``.
@@ -167,17 +169,17 @@ Once complete, you should see the Extension Install status change from **Pending
 
 ### Installing the Event Grid on Kubernetes extension through the Azure CLI
 
-If you prefer, there is an [alternative experience documented in the Azure Docs using Azure CLI](https://docs.microsoft.com/en-us/azure/event-grid/kubernetes/install-k8s-extension#install-using-azure-cli).
+If you prefer, there is an [alternative experience documented in the Azure Docs using the Azure CLI](https://docs.microsoft.com/en-us/azure/event-grid/kubernetes/install-k8s-extension#install-using-azure-cli).
 
 I personally found the Portal Experience incredibly intuitive, so didn't revisit this through the Azure CLI. I'll leave this as an exercise to follow the Azure Doc above if you prefer.
 
 ## Creating a Custom Location
 
-Whenever we create an Azure Resource, we need to specify a location. Though, our location will not be in an Azure Region. Instead, when we create Event Grid topics, we'll want to create them on our Azure Arc enabled Kubernetes cluster instead of an Azure Region. To provide Azure with the ability to create resources on our cluster, we'll need to create a Custom Location (which is just another resource type) in Azure. This will effectively allow Azure to "route" the creation request to the appropriate location (i.e. a namespace on our cluster).
+Whenever we create an Azure Resource, we need to specify a location. For an Event Grid on Kubernetes resource, our location will not be an Azure Region. Instead, when we create Event Grid topics/subscriptions, we'll want to create them on our Azure Arc enabled Kubernetes cluster instead of an Azure Region. We'll need to create a Custom Location (which is just another resource type) in Azure to provide Azure the ability to create resources on our cluster. This will effectively allow Azure to "route" the creation request to the appropriate location (i.e. a namespace on our cluster).
 
-> **Tip:** I did wonder how we would approach this in a production situation, i.e. would we share the same Custom Location across different extensions.
+> **Tip:** Before I began writing the series, I wondered how we would approach this in a production situation, i.e. would we share the same Custom Location across different extensions.
 >
-> It looks as though a namespace-scoped cluster extensions cannot be added to a custom location associated with a different namespace. This restriction does not apply to cluster-scoped extensions (Taken directly from the Azure Portal). To me, this makes sense. This starts aligning us to the principal of least privilege and separation of concerns (i.e. logical separation within a Kubernetes cluster, and then assigning access on a namespace basis, as we are commonly used to in a multi-tenant Kubernetes environment.). Therefore, we may want to have separate namespaces for our separate extensions.
+> It appears as though namespace-scoped cluster extensions cannot be added to a custom location that is associated with a different namespace. The Azure portal notes that this restriction does not apply to cluster-scoped extensions. To me, this makes sense. This starts aligning us to the principal of least privilege and separation of concerns (i.e. logical separation within a Kubernetes cluster, and providing on a namespace basis. This is a concept we're familiar with in a multi-tenant Kubernetes environment). Therefore, we may want to consider separate namespaces for separate extensions.
 
 Right then - Let's go ahead and create a custom location.
 
@@ -198,12 +200,12 @@ connectedClusterId=$(az connectedk8s show --resource-group $arcResourceGroupName
 
 # Set the extension ID
 extensionId=$(az k8s-extension show \
---cluster-type connectedClusters \
---cluster-name $arcClusterName \
---resource-group $arcResourceGroupName \
---name $extensionName \
---query id \
---output tsv)
+    --cluster-type connectedClusters \
+    --cluster-name $arcClusterName \
+    --resource-group $arcResourceGroupName \
+    --name $extensionName \
+    --query id \
+    --output tsv)
 
 # Now create a custom location based upon that information
 az customlocation create \
@@ -220,7 +222,8 @@ customLocationId=$(az customlocation show \
     --query id \
     --output tsv)
 ```
-Excellent. At this point, we have bound the Custom Location resource to the Azure Arc extension and namespace that we'll want to deploy into. We can now go ahead and create an Event Grid Topic!
+
+Excellent. At this point, we have bound the Custom Location resource to the Azure Arc extension that we created through the portal. We've also bound it to a namespace in our Kubernetes Cluster, where we want the Event Grid resources to be deployed. With that in place, we can now go ahead and create an Event Grid Topic hosted on our Azure Arc enabled Kubernetes cluster!
 
 ## Creating an Event Grid Topic on Event Grid for Kubernetes in our Azure Arc Enabled Kubernetes Cluster
 
@@ -228,32 +231,93 @@ We have several options to create our Event Grid Topic. We'll review the Azure P
 
 ### Creating an Event Grid Topic through the Azure Portal
 
-We'll navigate to the Azure Portal and create a new Event Grid Topic. Give your Event Grid topic a name, and select a region. Notice that the Custom Location that you created earlier is available as an option.
+We'll navigate to the Azure Portal and create a new Event Grid Topic. Give your Event Grid topic a name, and select a region. Notice that the Custom Location that you created in the previous step is now available as an option.
 
 ![Screenshot showing the Azure Portal experience to create an Event Grid Topic, showing custom locations](/img/blog/azure-arc-for-apps-part-6/azure-arc-event-grid-create-topic.jpg)
 
-Click Next, and move on to the **Advanced** tab. Notice that the **Events Schema** and **Enable system assigned identity** options are both disabled. As noted earlier, **Cloud Event Schema v1.0** is the only supported Event Schema in Event Grid for Kubernetes. Likewise, system assigned identities are not supported in Event Grid for Kubernetes at this time.
+Click Next to move on to the **Advanced** tab. Notice that the **Events Schema** and **Enable system assigned identity** options are both disabled. 
+
+> **Tip:** As noted earlier, **Cloud Event Schema v1.0** is the only supported Event Schema in Event Grid for Kubernetes. Likewise, system assigned identities are not supported in Event Grid for Kubernetes at this time.
 
 ![Screenshot showing the Azure Portal experience to create an Event Grid Topic, showing event schema as CloudEvents 1.0 only](/img/blog/azure-arc-for-apps-part-6/azure-arc-event-grid-create-topic2.jpg)
 
-### Creating an Event Grid Topic through the Azure CLI
-
-```bash
-az eventgrid topic create --name rb-arc-aks-sample-topic \
-                        --resource-group $arcResourceGroupName \
-                        --location "westeurope" \
-                        --kind azurearc \
-                        --extended-location-name /subscriptions/0d9fd97f-71f6-4b7b-adbb-3a654846e587/resourceGroups/rb-arc-rg/providers/Microsoft.ExtendedLocation/customLocations/rb-arc-aks-eg \
-                        --extended-location-type customLocation \
-                        --input-schema CloudEventSchemaV1_0
-```
-
-Mention something about having to recreate my cluster mid-way through writing the blog post
+With that, feel free to go ahead and assign Azure Resource Tags to your Event Grid Topic, and proceed to the Review + create tab. After a few moments, you should find that your deployment has completed successfully.
 
 ![TBC](/img/blog/azure-arc-for-apps-part-6/azure-arc-event-grid-create-topic-complete.png)
 
+> **Note:** You eagle-eyed readers may have noticed that the Resource Group that I'm using changed in the above screenshot. I had to tear down my cluster for some customer-facing demos, which meant that I needed to restart from scratch. I wanted to call this out to avoid any confusion!
 
-Let's explore what CRDs are within the Kubernetes Cluster...
+### Creating an Event Grid Topic through the Azure CLI
+
+Unsurprisingly, the Azure CLI route requires you to submit a similar set of information.
+
+Pay particular attention to the fact that we still specify a location for the Azure Resource. We pass in a reference to the Custom Location through the extended-location-name property.
+
+```bash
+az eventgrid topic create --name rb-arc-aks-sample-topic \
+    --resource-group $arcResourceGroupName \
+    --location "westeurope" \
+    --kind azurearc \
+    --extended-location-name /subscriptions/0d9fd97f-71f6-4b7b-adbb-3a654846e587/resourceGroups/rb-arc-rg/providers/Microsoft.ExtendedLocation/customLocations/rb-arc-eg \
+    --extended-location-type customLocation \
+    --input-schema CloudEventSchemaV1_0
+
+Finished ..
+{
+  "endpoint": "http://eventgrid.eventgrid-system:80/topics/rb-arc-aks-sample-topic/api/events?api-version=2018-01-01",
+  "extendedLocation": {
+    "name": "/subscriptions/0d9fd97f-71f6-4b7b-adbb-3a654846e587/resourceGroups/rb-arc-rg/providers/Microsoft.ExtendedLocation/customLocations/rb-arc-eg",
+    "type": "customLocation"
+  },
+  "id": "/subscriptions/0d9fd97f-71f6-4b7b-adbb-3a654846e587/resourceGroups/rb-arc-rg/providers/Microsoft.EventGrid/topics/rb-arc-aks-sample-topic",
+  "identity": null,
+  "inboundIpRules": null,
+  "inputSchema": "CloudEventSchemaV1_0",
+  "inputSchemaMapping": null,
+  "kind": "AzureArc",
+  "location": "westeurope",
+  "metricResourceId": null,
+  "name": "rb-arc-aks-sample-topic",
+  "privateEndpointConnections": null,
+  "provisioningState": "Succeeded",
+  "publicNetworkAccess": "Enabled",
+  "resourceGroup": "rb-arc-rg",
+  "sku": {
+    "name": "Basic"
+  },
+  "systemData": null,
+  "tags": {
+    "environment": "dev"
+  },
+  "type": "Microsoft.EventGrid/topics"
+}
+```
+
+## We created an Event Grid Topic. But what was created on the Kubernetes Cluster?
+
+First, let's take a look at all of the Kubernetes objects that are located in our eventgrid-system namespace on the Azure Arc enabled Kubernetes cluster.
+
+```bash
+kubectl get all -n eventgrid-system
+NAME                                      READY   STATUS    RESTARTS   AGE
+pod/eventgrid-broker-6fff87f477-cdktx     1/1     Running   0          5h56m
+pod/eventgrid-operator-6c4c6c675d-557lp   1/1     Running   0          5h56m
+
+NAME                TYPE        CLUSTER-IP    EXTERNAL-IP   PORT(S)   AGE
+service/eventgrid   ClusterIP   10.0.64.179   <none>        80/TCP    5h56m
+
+NAME                                 READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/eventgrid-broker     1/1     1            1           5h56m
+deployment.apps/eventgrid-operator   1/1     1            1           5h56m
+
+NAME                                            DESIRED   CURRENT   READY   AGE
+replicaset.apps/eventgrid-broker-6fff87f477     1         1         1       5h56m
+replicaset.apps/eventgrid-operator-6c4c6c675d   1         1         1       5h56m
+```
+
+These resources were all installed on the Kubernetes cluster when we installed the Azure Arc extension. So, what actually happened when we created the Event Grid Topic resource? Let's do a bit more digging.
+
+Next up, let's explore the Custom Resource Definitions that are available in our Kubernetes cluster.
 
 ```bash
 kubectl get crd
@@ -302,105 +366,134 @@ volumesnapshots.snapshot.storage.k8s.io                2021-06-10T12:40:58Z
 workerapps.k8se.microsoft.com                          2021-06-10T13:13:07Z
 ```
 
-Okay, let's see the topics created...
+Right, now we can see a few Custom Resource Definitions of interest:
+
+* ``eventsubscriptions.eventgrid.microsoft.com``
+* ``topics.eventgrid.microsoft.com``
+
+We'll continue using ``kubectl`` to explore these objects. As we created an Event Grid Topic, let's take a look at what objects are available on the Kubernetes cluster. We can do this by running ``kubectl get topics.eventgrid.microsoft.com --all-namespaces``.
+
+> **Tip:** I'm showcasing the steps that I used while I was exploring the cluster. I used the ``--all-namespaces`` flag, to determine whether resources may have been created elsewhere. Unsurprisingly, they were created in the eventgrid namespace.
+>
+> Why ``eventgrid``? That's the namespace that we mapped to in our Custom Location. The ``eventgrid-system`` namespace is what we mapped the Event Grid for Kubernetes Azure Arc extension to. I suspect we could install these all in the same namespace if we preferred. However, we may want to consider separation of roles (i.e. Cluster Operator who installs the Azure Arc extension and operates the underlying deployment), as opposed to application developers who leverage the Event Grid Topics / Subscriptions within their applications.
 
 ```bash
 kubectl get topics.eventgrid.microsoft.com --all-namespaces
+
 NAMESPACE   NAME                      TOPICENDPOINT                                                                                           PROVISIONINGSTATE   FAILUREREASON   OPERATIONID
 eventgrid   sample-arc-aks-eg-topic   http://eventgrid.eventgrid-system:80/topics/sample-arc-aks-eg-topic/api/events?api-version=2018-01-01   Succeeded                           109A0C70-B159-4202-BF8E-2451025CC320
 ```
 
-Right, now we understand that, let's go and create some subscriptions!s
+And for completeness, let's inspect that resource. We can use the command ``kubectl describe topics.eventgrid.microsoft.com sample-arc-aks-eg-topic -n eventgrid``. Of course, replace the name of the Event Grid Topic and your Kubernetes namespace as appropriate.
 
-![TBC](/img/blog/azure-arc-for-apps-part-6/azure-arc-event-grid-create-subscription1.png)
+```bash
+kubectl describe topics.eventgrid.microsoft.com sample-arc-aks-eg-topic -n eventgrid
+Name:         sample-arc-aks-eg-topic
+Namespace:    eventgrid
+Labels:       <none>
+Annotations:  eventgrid.microsoft.com/activityId: b1e10d5f-5358-4952-9ad5-cabd775c992e
+              eventgrid.microsoft.com/operationId: 109A0C70-B159-4202-BF8E-2451025CC320
+API Version:  eventgrid.microsoft.com/v1alpha1
+Kind:         Topic
+Metadata:
+  Creation Timestamp:  2021-06-10T13:56:28Z
+  Generation:          1
+  Managed Fields:
+    API Version:  eventgrid.microsoft.com/v1alpha1
+    Fields Type:  FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .:
+          f:eventgrid.microsoft.com/activityId:
+          f:eventgrid.microsoft.com/operationId:
+      f:spec:
+        .:
+        f:properties:
+          .:
+          f:inputSchema:
+          f:sasKeysSecretName:
+    Manager:      unknown
+    Operation:    Update
+    Time:         2021-06-10T13:56:28Z
+    API Version:  eventgrid.microsoft.com/v1alpha1
+    Fields Type:  FieldsV1
+    fieldsV1:
+      f:status:
+        .:
+        f:endpoint:
+        f:operationId:
+        f:provisioningState:
+    Manager:         manager
+    Operation:       Update
+    Time:            2021-06-10T13:56:29Z
+  Resource Version:  26983
+  UID:               3ece6103-c1fe-4844-86f4-2301e644bd1a
+Spec:
+  Properties:
+    Input Schema:          CloudEventSchemaV1_0
+    Sas Keys Secret Name:  sample-arc-aks-eg-topic
+Status:
+  Endpoint:            http://eventgrid.eventgrid-system:80/topics/sample-arc-aks-eg-topic/api/events?api-version=2018-01-01
+  Operation Id:        109A0C70-B159-4202-BF8E-2451025CC320
+  Provisioning State:  Succeeded
+Events:                <none>
+```
 
-![TBC](/img/blog/azure-arc-for-apps-part-6/azure-arc-event-grid-create-subscription-event-handler.png)
+That all seems to make sense so far. We've created an Event Grid Topic, and have been able to find the URL that we'll need to call. Note that the endpoint is an internal DNS (``eventgrid.eventgrid-system:80...``). Let's remember that for later, as we'll need to make a call to the Topic Endpoint from inside the cluster.
 
-At this point, call out that I've created a Service Bus queue for the purposes of the blog post. Though you could use a webhook, or something similar. I don't have one deployed locally, so I'll just use a Service Bus.
+## Create an Event Grid Subscription
 
-![TBC](/img/blog/azure-arc-for-apps-part-6/service-bus-queue.png)
+We have an Event Grid Topic created. Now, to route those events to Event Handlers, we need to create an Event Grid Subscription.
 
+> **Tip:** Remember that the Event Grid Subscription contains settings on filtering and routing events to a destination (i.e. an event subscriber or event handler).
+>
+> This is effectively how we can configure Event Grid to 'listen' for specific events and route them in a given direction.
 
-![TBC](/img/blog/azure-arc-for-apps-part-6/azure-arc-event-grid-create-subscription-event-handler2.png)
+Let's navigate to the Event Grid Topic that we created, and click subscriptions. From there, we can create a new Event Subscription.
+
+![Create Event Subscription experience in Azure Portal](/img/blog/azure-arc-for-apps-part-6/azure-arc-event-grid-create-subscription1.png)
+
+You'll notice we have several configuration options including:
+
+* **Name:** Name of the Event Subscription
+* **Event Schema:** This option is disabled, and is pre-selected to the Cloud Event Schema v1.0.
+* **Topic Details:** This information is pre-configured, as we have created the Event Subscription within an Event Grid Topic.
+* **Event Types:** Remember that we need to specify which events this subscription is interested in. Effectively, a way for us to filter out events that we don't care about. Events that match our interests will be routed to our **Event Handler**.
+
+Speaking of which, let's recap on the Event Handler:
+
+> **Tip:** We sometimes refer to an Event Handler as an Event subscriber. This is an entity that is listening to an Event Subscription (the resource we're in the middle of configuring!) for events and takes action by reacting to those events.
+
+Below, you can see that we can send our Events to a ``Web Hook``, ``Storage Queue``, ``Event Hub``, ``Service Bus Queue`` and ``Service Bus Topic``. 
+
+> **Note:** If you've used Azure Event Grid, you may be aware of additional Event Handlers including Azure Automation, Azure Functions, Relay Hybrid Connections, Logic Apps and Power Automate. These are unsupported.
+>
+> **However**, it is possible to route to Azure App Service, Azure Functions or Azure Logic Apps that are hosted on an Azure Arc Enabled Kubernetes cluster. This can be achieved by using the **Webhooks**.
+
+![Screenshot showing the example Event Handler types available for Event Grid on Kubernetes](/img/blog/azure-arc-for-apps-part-6/azure-arc-event-grid-create-subscription-event-handler.png)
+
+As an aside, I have a Service Bus Namespace that I'm using as part of a broader Cloud with Chris integration platform. I decided to create a Service Bus Queue in that Service Bus Namespace to act as the Event Handler for this writeup.
+
+![Screenshot showing a Service Bus Queue called eg-aks in the cloudwithchris Service Bus Namespace](/img/blog/azure-arc-for-apps-part-6/service-bus-queue.png)
+
+After selecting Service Bus Queue from the Endpoint Details dropdown list, we'll be guided to select an endpoint. A blade will pop out and guide you to select the appropriate ``Subscription``, ``Resource Group``, ``Service Bus Namespace`` and ``Service Bus Queue`` that you plan to route to.
+
+> **Tip:** You don't have to use a Service Bus Queue if you're following along. This just happens to be a resource I had to hand for the purposes of the write-up. Feel free to choose something else. The [Azure Docs showcase a Webhook example](https://docs.microsoft.com/en-us/azure/event-grid/kubernetes/create-topic-subscription) if you prefer.
+
+![Screenshot showing the Select Service Bus Queue blade in the Create Event Subscription experinece](/img/blog/azure-arc-for-apps-part-6/azure-arc-event-grid-create-subscription-event-handler2.png)
+
+After confirming the Event Handler of choice, we'll proceed to create the Event Subscription. That means we'll leave the **Filters** and **Additional Features** tabs as their default options.
+
+So, what happens once we hit create? You've guessed it. It's time to get back to Kubernetes and inspect what's going on! Let's first use ``kubectl get eventsubscriptions.eventgrid.microsoft.com`` to list out the resources that exist. Don't forget to specify a namespace or use the ``--all-namespaces`` flag.
+
 ```bash
 kubectl get eventsubscriptions.eventgrid.microsoft.com --all-namespaces
 NAMESPACE   NAME                             PROVISIONINGSTATE   FAILUREREASON   OPERATIONID
 eventgrid   sample-arc-aks-eg-subscription   Succeeded                           568FB02F-7BC5-4002-85BA-506378CB59AF
 ```
 
-
-![TBC](/img/blog/azure-arc-for-apps-part-6/service-bus-no-messages.png)
-
-
-## Sending to Event Grid
-
-
-```bash
-az eventgrid topic show --name sample-arc-aks-eg-topic -g rb-arc-rg --query "endpoint" --output tsv
-http://eventgrid.eventgrid-system:80/topics/sample-arc-aks-eg-topic/api/events?api-version=2018-01-01
-```
-
-
-
-```bash
-az eventgrid topic key list --name sample-arc-aks-eg-topic -g rb-arc-rg --query "key1" --output tsv
-```
-
-
-**ADD EMPTY BUS SCREENSHOT HERE**
-
-Now, note the IP endpoint for the event grid is private...
-
-Now let's try again...
-
-```bash
-kubectl run curl --image=curlimages/curl --restart=Never -it --rm -- /bin/sh
-
-curl  -k -X POST -H "Content-Type: application/cloudevents-batch+json" -H "aeg-sas-key: <EnterYourKey>" -g <EnterYourURL> \
--d  '[{ 
-      "specversion": "1.0",
-      "type": "blogPublished",
-      "source": "CloudWithChris/content",
-      "id": "eventId-n",
-      "time": "2020-12-25T20:54:07+00:00",
-      "subject": "blog/azure-arc-for-apps-part-6",
-      "dataSchema": "1.0",
-      "data" : {
-         "mediumUrl": "https://cloudwithchris.medium.com",
-         "devtoUrl": "https://dev.to/cloudwithchris"
-      }
-}]'
-```
-
-Ah, but look. The type of the event being sent is blogPublished. We didn't have that in the filter to eventtypes list. let's change that.
-
-![TBC](/img/blog/azure-arc-for-apps-part-6/azure-arc-event-grid-subscription-update.jpg)
-
-
-```bash
-kubectl run curl --image=curlimages/curl --restart=Never -it --rm -- /bin/sh
-
-curl  -k -X POST -H "Content-Type: application/cloudevents-batch+json" -H "aeg-sas-key: <EnterYourKey>" -g <EnterYourURL> \
--d  '[{ 
-      "specversion": "1.0",
-      "type": "blogPublished",
-      "source": "CloudWithChris/content",
-      "id": "eventId-n",
-      "time": "2020-12-25T20:54:07+00:00",
-      "subject": "blog/azure-arc-for-apps-part-6",
-      "dataSchema": "1.0",
-      "data" : {
-         "mediumUrl": "https://cloudwithchris.medium.com",
-         "devtoUrl": "https://dev.to/cloudwithchris"
-      }
-}]'
-```
-
-Great, the event sent once again. Let's see if the subscription picked up the event this time.
-
-![TBC](/img/blog/azure-arc-for-apps-part-6/service-bus-1-message.png)
-
-![TBC](/img/blog/azure-arc-for-apps-part-6/service-bus-peak-message.png)
+Now, let's go ahead and describe that resource.
 
 ```bash
 kubectl describe eventsubscriptions.eventgrid.microsoft.com sample-arc-aks-eg-subscription -n eventgrid
@@ -488,7 +581,219 @@ Spec:
     Destination:
       Endpoint Type:  ServiceBusQueue
       Properties:
-        Connection String:  Endpoint=sb://cloudwithchris.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=Tb0qPnSHY/2iwq9KZeqbTE7oCJae9fIpcoV4r67oF4Q=;EntityPath=eg-aks
+        Connection String:  **Obfuscated**
+    Event Delivery Schema:  CloudEventSchemaV1_0
+    Filter:
+      Included Event Types:
+        myevent
+        myotherevent
+      Is Subject Case Sensitive:  false
+    Persistence Policy:
+    Retry Policy:
+      Event Expiry In Minutes:  1440
+      Max Delivery Attempts:    30
+    Topic:                      sample-arc-aks-eg-topic
+Status:
+  Operation Id:        FE5AB17C-AE80-412D-9E7D-E0AB9208106E
+  Provisioning State:  Succeeded
+Events:                <none>
+```
+
+Ok, that looks good! I've obfuscated the Connection String from the above output (for obvious reasons)! Notice that it also contains the Event Types that we're looking for - ``myevent`` and ``myotherevent``. That means, if an event doesn't match that, then the Event Handler (the Service Bus Queue) shouldn't receive it.
+
+![Screenshot showing an empty Service Bus Queue](/img/blog/azure-arc-for-apps-part-6/service-bus-no-messages.png)
+
+Let's take stock. We have an Event Grid Topic. We also have an Event Grid Subscription which is filtering on events with the event type ``myevent`` or ``myotherevent`` coming from that topic. The Event Handler configured against our subscription is a Service Bus Queue.
+
+Sounds like there's only one thing to do now. We need to send some events.
+
+## Sending events to Event Grid
+
+In this next section, we'll be sending an event to the Event Grid on Kubernetes Topic Endpoint. Keep in mind that this endpoint is private, so we'll need to make a request to the endpoint within the cluster. More on that later!
+
+First, there are a couple of items that we'll need to make the call. First, the Event Grid Topic Endpoint. You eagle eyed viewers may have spotted this in one of the Kubernetes outputs further up in this post. However, there's a useful command that we can use - ``az eventgrid topic show --name <name> -g <resourcegroup> --query "endpoint" --output tsv``.
+
+```bash
+az eventgrid topic show --name sample-arc-aks-eg-topic -g rb-arc-rg --query "endpoint" --output tsv
+http://eventgrid.eventgrid-system:80/topics/sample-arc-aks-eg-topic/api/events?api-version=2018-01-01
+```
+
+We also need an access key to send to the Event Grid Topic. This is accessible through the ``az eventgrid topic key list`` Azure CLI command. You can find an example below.
+
+```bash
+az eventgrid topic key list --name sample-arc-aks-eg-topic -g rb-arc-rg --query "key1" --output tsv
+**The output would be displayed here, but removed for obvious reasons :)**
+```
+
+At this point, we have the information needed to make a request to the Event Grid Topic. We can create a **curl** container in the Kubernetes cluster and use that to make a request to the local endpoint. You can likely guess what tool the [curl container image](https://hub.docker.com/r/curlimages/curl) contains!
+
+```bash
+kubectl run curl --image=curlimages/curl --restart=Never -it --rm -- /bin/sh
+
+curl  -k -X POST -H "Content-Type: application/cloudevents-batch+json" -H "aeg-sas-key: <EnterYourKey>" -g <EnterYourURL> \
+-d  '[{ 
+      "specversion": "1.0",
+      "type": "blogPublished",
+      "source": "CloudWithChris/content",
+      "id": "eventId-n",
+      "time": "2020-12-25T20:54:07+00:00",
+      "subject": "blog/azure-arc-for-apps-part-6",
+      "dataSchema": "1.0",
+      "data" : {
+         "mediumUrl": "https://cloudwithchris.medium.com",
+         "devtoUrl": "https://dev.to/cloudwithchris"
+      }
+}]'
+```
+
+You can of course adjust the JSON to suit your own example! But notice an interesting point about the event I'm emitting. It has the type ``blogPublished``. That is not one of the types that the Event Subscription was filtering on.
+
+As expected, the Service Bus Queue remains at zero messages.
+
+![Screenshot showing an empty Service Bus Queue](/img/blog/azure-arc-for-apps-part-6/service-bus-no-messages.png)
+
+Let's fix that, we'll go ahead and update the Event Grid Subscription using the Azure Portal. We'll add the ``blogPublished`` type to the Filter to Event Types property and save the resource.
+
+![Screenshot showing the Azure Portal UI experience to update an Event Subscription](/img/blog/azure-arc-for-apps-part-6/azure-arc-event-grid-subscription-update.png)
+
+We'll once again use a container based upon the ``curlimages/curl`` container image to send a request to the local Event Grid Topic Endpoint.
+
+```bash
+kubectl run curl --image=curlimages/curl --restart=Never -it --rm -- /bin/sh
+
+curl  -k -X POST -H "Content-Type: application/cloudevents-batch+json" -H "aeg-sas-key: <EnterYourKey>" -g <EnterYourURL> \
+-d  '[{ 
+      "specversion": "1.0",
+      "type": "blogPublished",
+      "source": "CloudWithChris/content",
+      "id": "eventId-n",
+      "time": "2020-12-25T20:54:07+00:00",
+      "subject": "blog/azure-arc-for-apps-part-6",
+      "dataSchema": "1.0",
+      "data" : {
+         "mediumUrl": "https://cloudwithchris.medium.com",
+         "devtoUrl": "https://dev.to/cloudwithchris"
+      }
+}]'
+```
+
+Great, the event sent once again. Let's see if the subscription picked up the event this time. We'll go ahead and take a look at the Service Bus Queue.
+
+![Screenshot of the Service Bus Queue overview page, showing that there is now 1 Active Message on the Queue](/img/blog/azure-arc-for-apps-part-6/service-bus-1-message.png)
+
+Excellent! If you're following along, you should hopefully see that 1 message is now showing as Active on the queue - just like the screenshot above.
+
+We can go ahead to the **Service Bus Explorer** menu item and peek the message on the queue.
+
+```json
+{ 
+      "specversion": "1.0",
+      "type": "blogPublished",
+      "source": "CloudWithChris/content",
+      "id": "eventId-n",
+      "time": "2020-12-25T20:54:07+00:00",
+      "subject": "blog/azure-arc-for-apps-part-6",
+      "dataSchema": "1.0",
+      "data" : {
+         "mediumUrl": "https://cloudwithchris.medium.com",
+         "devtoUrl": "https://dev.to/cloudwithchris"
+      }
+}
+```
+
+You'll notice that the message contents are exactly the same as the event that we had emitted. I haven't configured any consumers of the Service Bus Queue, so we'll expect the message to stay until it reaches it's Ttl (assuming that no consumers try to receive the message).
+
+![Screenshot showing that there is now one message on the queue](/img/blog/azure-arc-for-apps-part-6/service-bus-peak-message.png)
+
+As a sanity check, let's once again use the ``kubectl describe`` command to describe the eventsubscription that we updated. Notice that the Included Event Types Filter is now updated to include the ``blogPublished`` event type that we added in the portal earlier.
+
+```bash
+kubectl describe eventsubscriptions.eventgrid.microsoft.com sample-arc-aks-eg-subscription -n eventgrid
+Name:         sample-arc-aks-eg-subscription
+Namespace:    eventgrid
+Labels:       eventgrid.microsoft.com/Topic=sample-arc-aks-eg-topic
+Annotations:  eventgrid.microsoft.com/activityId: 85e44ef7-e688-4545-9127-0e42fbcaeb29
+              eventgrid.microsoft.com/operationId: FE5AB17C-AE80-412D-9E7D-E0AB9208106E
+API Version:  eventgrid.microsoft.com/v1alpha1
+Kind:         EventSubscription
+Metadata:
+  Creation Timestamp:  2021-06-10T14:15:07Z
+  Finalizers:
+    eventsubscription.finalizer
+  Generation:  4
+  Managed Fields:
+    API Version:  eventgrid.microsoft.com/v1alpha1
+    Fields Type:  FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:finalizers:
+          .:
+          v:"eventsubscription.finalizer":
+        f:labels:
+          .:
+          f:eventgrid.microsoft.com/Topic:
+        f:ownerReferences:
+          .:
+          k:{"uid":"3ece6103-c1fe-4844-86f4-2301e644bd1a"}:
+            .:
+            f:apiVersion:
+            f:kind:
+            f:name:
+            f:uid:
+      f:spec:
+        f:properties:
+          f:persistencePolicy:
+      f:status:
+        .:
+        f:operationId:
+        f:provisioningState:
+    Manager:      manager
+    Operation:    Update
+    Time:         2021-06-10T14:30:49Z
+    API Version:  eventgrid.microsoft.com/v1alpha1
+    Fields Type:  FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .:
+          f:eventgrid.microsoft.com/activityId:
+          f:eventgrid.microsoft.com/operationId:
+      f:spec:
+        .:
+        f:properties:
+          .:
+          f:destination:
+            .:
+            f:endpointType:
+            f:properties:
+              .:
+              f:connectionString:
+          f:eventDeliverySchema:
+          f:filter:
+            .:
+            f:includedEventTypes:
+            f:isSubjectCaseSensitive:
+          f:retryPolicy:
+            .:
+            f:eventExpiryInMinutes:
+            f:maxDeliveryAttempts:
+          f:topic:
+    Manager:    unknown
+    Operation:  Update
+    Time:       2021-06-10T14:30:49Z
+  Owner References:
+    API Version:     eventgrid.microsoft.com/v1alpha1
+    Kind:            Topic
+    Name:            sample-arc-aks-eg-topic
+    UID:             3ece6103-c1fe-4844-86f4-2301e644bd1a
+  Resource Version:  37787
+  UID:               ed3baa7c-2530-4b54-a7a0-f1e37e106f4d
+Spec:
+  Properties:
+    Destination:
+      Endpoint Type:  ServiceBusQueue
+      Properties:
+        Connection String:  **Obfuscated**
     Event Delivery Schema:  CloudEventSchemaV1_0
     Filter:
       Included Event Types:
@@ -507,13 +812,13 @@ Status:
 Events:                <none>
 ```
 
+## What's going on behind the scenes?
 
+For your readers that are familiar with Kubernetes, you may have noticed that there are no other resources in the ``eventgrid`` namespace. Only the ``topics.eventgrid.microsoft.com`` object representing an Event Grid Topic and the ``eventsubscriptions.eventgrid.microsoft.com`` object representing an Event Subscription.
 
+At this point, I began snooping around the ``eventgrid-system`` namespace to understand what the Event Grid System resources may be doing in this scenario.
 
-
-
-
-
+First, I used ``kubectl logs`` to attempt to gain insights into what's going on.
 
 ```bash
 kubectl logs eventgrid-broker-6fff87f477-cdktx -n eventgrid-system
@@ -702,3 +1007,301 @@ warn: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[35]
 2021-06-10 14:15:08.103+00:00:[INF] - [EventSubscriptionsApiService:Management:PutAsync:Starting] Putting eventSubscription with Name: sample-arc-aks-eg-subscription
 2021-06-10 14:15:08.154+00:00:[INF] - [EventSubscriptionsApiService:Management:PutAsync:Succeeded] Created eventSubscription with Name: sample-arc-aks-eg-subscription
 ```
+
+Notice that after Event Grid seems to have initialised, that there are some logs about Event Grid Topics / Event Grid Subscriptions being created. We also see logs relating to the creation of an event for a given subscription.
+
+There was an ``Event Grid Operator`` resource as well as the broker, so let's use ``kubectl logs`` to identify what's happening in there as well.
+
+```bash
+kubectl logs eventgrid-operator-6c4c6c675d-557lp -n eventgrid-system
+I0610 13:51:25.947781       1 request.go:645] Throttling request took 1.045265588s, request: GET:https://10.0.0.1:443/apis/authorization.k8s.io/v1beta1?timeout=32s
+2021-06-10T13:51:26.002Z        INFO    controller-runtime.metrics      metrics server is starting to listen    {"addr": ":8080"}
+2021-06-10T13:51:26.002Z        INFO    setup   starting manager
+2021-06-10T13:51:26.003Z        INFO    controller-runtime.manager      starting metrics server {"path": "/metrics"}
+2021-06-10T13:51:26.003Z        INFO    controller-runtime.manager.controller.topic     Starting EventSource    {"reconciler group": "eventgrid.microsoft.com", "reconciler kind": "Topic", "source": "kind source: /, Kind="}
+2021-06-10T13:51:26.003Z        INFO    controller-runtime.manager.controller.eventsubscription Starting EventSource    {"reconciler group": "eventgrid.microsoft.com", "reconciler kind": "EventSubscription", "source": "kind source: /, Kind="}
+2021-06-10T13:51:26.103Z        INFO    controller-runtime.manager.controller.topic     Starting Controller     {"reconciler group": "eventgrid.microsoft.com", "reconciler kind": "Topic"}
+2021-06-10T13:51:26.103Z        INFO    controller-runtime.manager.controller.topic     Starting workers        {"reconciler group": "eventgrid.microsoft.com", "reconciler kind": "Topic", "worker count": 1}
+2021-06-10T13:51:26.103Z        INFO    controller-runtime.manager.controller.eventsubscription Starting Controller     {"reconciler group": "eventgrid.microsoft.com", "reconciler kind": "EventSubscription"}
+2021-06-10T13:51:26.103Z        INFO    controller-runtime.manager.controller.eventsubscription Starting workers        {"reconciler group": "eventgrid.microsoft.com", "reconciler kind": "EventSubscription", "worker count": 1}
+2021-06-10T13:56:28.666Z        INFO    controllers.Topic       Start reconciling topic {"topic": "eventgrid/sample-arc-aks-eg-topic"}
+2021-06-10T13:56:28.666Z        INFO    controllers.Topic       Start getting topic's managment endpoint.       {"topic": "eventgrid/sample-arc-aks-eg-topic", "ActivityId": "b1e10d5f-5358-4952-9ad5-cabd775c992e", "OperationId": "109A0C70-B159-4202-BF8E-2451025CC320"}
+2021-06-10T13:56:28.666Z        INFO    controllers.Topic       Start getting eventgrid k8s service's url.      {"topic": "eventgrid/sample-arc-aks-eg-topic", "ActivityId": "b1e10d5f-5358-4952-9ad5-cabd775c992e", "OperationId": "109A0C70-B159-4202-BF8E-2451025CC320"}
+2021-06-10T13:56:28.766Z        INFO    controllers.Topic       End getting eventgrid k8s service's url.        {"topic": "eventgrid/sample-arc-aks-eg-topic", "ActivityId": "b1e10d5f-5358-4952-9ad5-cabd775c992e", "OperationId": "109A0C70-B159-4202-BF8E-2451025CC320"}
+2021-06-10T13:56:28.766Z        INFO    controllers.Topic       End getting topic's managment endpoint. {"topic": "eventgrid/sample-arc-aks-eg-topic", "ActivityId": "b1e10d5f-5358-4952-9ad5-cabd775c992e", "OperationId": "109A0C70-B159-4202-BF8E-2451025CC320"}
+2021-06-10T13:56:28.766Z        INFO    controllers.Topic       Found eventgrid service's mgmt endpoint.        {"topic": "eventgrid/sample-arc-aks-eg-topic", "ActivityId": "b1e10d5f-5358-4952-9ad5-cabd775c992e", "OperationId": "109A0C70-B159-4202-BF8E-2451025CC320", "endpoint": "http://eventgrid.eventgrid-system:80/topics/sample-arc-aks-eg-topic?api-version=2019-01-01-preview"}
+2021-06-10T13:56:28.766Z        INFO    controllers.Topic       Start updating topic's status.  {"topic": "eventgrid/sample-arc-aks-eg-topic", "ActivityId": "b1e10d5f-5358-4952-9ad5-cabd775c992e", "OperationId": "109A0C70-B159-4202-BF8E-2451025CC320"}
+2021-06-10T13:56:28.778Z        INFO    controllers.Topic       End updating topic's status.    {"topic": "eventgrid/sample-arc-aks-eg-topic", "ActivityId": "b1e10d5f-5358-4952-9ad5-cabd775c992e", "OperationId": "109A0C70-B159-4202-BF8E-2451025CC320"}
+2021-06-10T13:56:28.778Z        INFO    controllers.Topic       Start processing topic's create/update request. {"topic": "eventgrid/sample-arc-aks-eg-topic", "ActivityId": "b1e10d5f-5358-4952-9ad5-cabd775c992e", "OperationId": "109A0C70-B159-4202-BF8E-2451025CC320"}
+2021-06-10T13:56:28.778Z        INFO    controllers.Topic       Start preparing k8s topic to sync.      {"topic": "eventgrid/sample-arc-aks-eg-topic", "ActivityId": "b1e10d5f-5358-4952-9ad5-cabd775c992e", "OperationId": "109A0C70-B159-4202-BF8E-2451025CC320"}
+2021-06-10T13:56:28.778Z        INFO    controllers.Topic       Start getting topic sas-keys secret from api server.    {"topic": "eventgrid/sample-arc-aks-eg-topic", "ActivityId": "b1e10d5f-5358-4952-9ad5-cabd775c992e", "OperationId": "109A0C70-B159-4202-BF8E-2451025CC320"}
+2021-06-10T13:56:28.879Z        INFO    controllers.Topic       End getting topic sas-keys secret from api server.      {"topic": "eventgrid/sample-arc-aks-eg-topic", "ActivityId": "b1e10d5f-5358-4952-9ad5-cabd775c992e", "OperationId": "109A0C70-B159-4202-BF8E-2451025CC320"}
+2021-06-10T13:56:28.879Z        INFO    controllers.Topic       End preparing k8s topic to sync.        {"topic": "eventgrid/sample-arc-aks-eg-topic", "ActivityId": "b1e10d5f-5358-4952-9ad5-cabd775c992e", "OperationId": "109A0C70-B159-4202-BF8E-2451025CC320"}
+2021-06-10T13:56:28.879Z        INFO    controllers.Topic       Start creating/updating topic in broker.        {"topic": "eventgrid/sample-arc-aks-eg-topic", "ActivityId": "b1e10d5f-5358-4952-9ad5-cabd775c992e", "OperationId": "109A0C70-B159-4202-BF8E-2451025CC320"}
+2021-06-10T13:56:28.879Z        INFO    controllers.Topic       Start sending PUT request       {"topic": "eventgrid/sample-arc-aks-eg-topic", "ActivityId": "b1e10d5f-5358-4952-9ad5-cabd775c992e", "OperationId": "109A0C70-B159-4202-BF8E-2451025CC320", " url: ": "http://eventgrid.eventgrid-system:80/topics/sample-arc-aks-eg-topic?api-version=2019-01-01-preview"}
+2021-06-10T13:56:29.441Z        INFO    controllers.Topic       End sending PUT request {"topic": "eventgrid/sample-arc-aks-eg-topic", "ActivityId": "b1e10d5f-5358-4952-9ad5-cabd775c992e", "OperationId": "109A0C70-B159-4202-BF8E-2451025CC320", " url: ": "http://eventgrid.eventgrid-system:80/topics/sample-arc-aks-eg-topic?api-version=2019-01-01-preview"}
+2021-06-10T13:56:29.441Z        INFO    controllers.Topic       End creating/updating topic in broker.  {"topic": "eventgrid/sample-arc-aks-eg-topic", "ActivityId": "b1e10d5f-5358-4952-9ad5-cabd775c992e", "OperationId": "109A0C70-B159-4202-BF8E-2451025CC320"}
+2021-06-10T13:56:29.441Z        INFO    controllers.Topic       End processing topic's create/update request.   {"topic": "eventgrid/sample-arc-aks-eg-topic", "ActivityId": "b1e10d5f-5358-4952-9ad5-cabd775c992e", "OperationId": "109A0C70-B159-4202-BF8E-2451025CC320"}
+2021-06-10T13:56:29.441Z        INFO    controllers.Topic       Successfully processed created/updated topic request.   {"topic": "eventgrid/sample-arc-aks-eg-topic", "ActivityId": "b1e10d5f-5358-4952-9ad5-cabd775c992e", "OperationId": "109A0C70-B159-4202-BF8E-2451025CC320", "endpoint": "http://eventgrid.eventgrid-system:80/topics/sample-arc-aks-eg-topic/api/events?api-version=2018-01-01"}
+2021-06-10T13:56:29.441Z        INFO    controllers.Topic       Start updating topic's status.  {"topic": "eventgrid/sample-arc-aks-eg-topic", "ActivityId": "b1e10d5f-5358-4952-9ad5-cabd775c992e", "OperationId": "109A0C70-B159-4202-BF8E-2451025CC320"}
+2021-06-10T13:56:29.456Z        INFO    controllers.Topic       End updating topic's status.    {"topic": "eventgrid/sample-arc-aks-eg-topic", "ActivityId": "b1e10d5f-5358-4952-9ad5-cabd775c992e", "OperationId": "109A0C70-B159-4202-BF8E-2451025CC320"}
+2021-06-10T13:56:29.456Z        INFO    controllers.Topic       End reconciling topic.  {"topic": "eventgrid/sample-arc-aks-eg-topic", "ActivityId": "b1e10d5f-5358-4952-9ad5-cabd775c992e", "OperationId": "109A0C70-B159-4202-BF8E-2451025CC320"}
+2021-06-10T14:15:07.815Z        INFO    controllers.EventSubscription   Start reconciling eventsubscription.    {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription"}
+2021-06-10T14:15:07.815Z        INFO    controllers.EventSubscription   Start getting eventsubscription's managment endpoint.   {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "d9488b3d-a5fd-40f7-bcf9-8c091918d44f", "OperationId": "568FB02F-7BC5-4002-85BA-506378CB59AF"}
+2021-06-10T14:15:07.815Z        INFO    controllers.EventSubscription   Start getting eventgrid k8s service's url.      {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "d9488b3d-a5fd-40f7-bcf9-8c091918d44f", "OperationId": "568FB02F-7BC5-4002-85BA-506378CB59AF"}
+2021-06-10T14:15:07.815Z        INFO    controllers.EventSubscription   End getting eventgrid k8s service's url.        {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "d9488b3d-a5fd-40f7-bcf9-8c091918d44f", "OperationId": "568FB02F-7BC5-4002-85BA-506378CB59AF"}
+2021-06-10T14:15:07.815Z        INFO    controllers.EventSubscription   End getting eventsubscription's managment endpoint.     {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "d9488b3d-a5fd-40f7-bcf9-8c091918d44f", "OperationId": "568FB02F-7BC5-4002-85BA-506378CB59AF"}
+2021-06-10T14:15:07.815Z        INFO    controllers.EventSubscription   Found eventgrid service's mgmt endpoint.,       {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "d9488b3d-a5fd-40f7-bcf9-8c091918d44f", "OperationId": "568FB02F-7BC5-4002-85BA-506378CB59AF", "endpoint": "http://eventgrid.eventgrid-system:80/topics/sample-arc-aks-eg-topic/eventSubscriptions/sample-arc-aks-eg-subscription?api-version=2019-01-01-preview"}
+2021-06-10T14:15:07.830Z        INFO    controllers.EventSubscription   Start updating eventsubscription's status.      {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "d9488b3d-a5fd-40f7-bcf9-8c091918d44f", "OperationId": "568FB02F-7BC5-4002-85BA-506378CB59AF"}
+2021-06-10T14:15:07.841Z        INFO    controllers.EventSubscription   End updating eventsubscription's status.        {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "d9488b3d-a5fd-40f7-bcf9-8c091918d44f", "OperationId": "568FB02F-7BC5-4002-85BA-506378CB59AF"}
+2021-06-10T14:15:07.841Z        INFO    controllers.EventSubscription   Start creating/updating eventsubscription in broker.    {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "d9488b3d-a5fd-40f7-bcf9-8c091918d44f", "OperationId": "568FB02F-7BC5-4002-85BA-506378CB59AF"}
+2021-06-10T14:15:07.841Z        INFO    controllers.EventSubscription   Start sending PUT request       {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "d9488b3d-a5fd-40f7-bcf9-8c091918d44f", "OperationId": "568FB02F-7BC5-4002-85BA-506378CB59AF", " url: ": "http://eventgrid.eventgrid-system:80/topics/sample-arc-aks-eg-topic/eventSubscriptions/sample-arc-aks-eg-subscription?api-version=2019-01-01-preview"}
+2021-06-10T14:15:08.063Z        INFO    controllers.EventSubscription   End sending PUT request {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "d9488b3d-a5fd-40f7-bcf9-8c091918d44f", "OperationId": "568FB02F-7BC5-4002-85BA-506378CB59AF", " url: ": "http://eventgrid.eventgrid-system:80/topics/sample-arc-aks-eg-topic/eventSubscriptions/sample-arc-aks-eg-subscription?api-version=2019-01-01-preview"}
+2021-06-10T14:15:08.064Z        INFO    controllers.EventSubscription   End creating/updating eventsubscription in broker.      {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "d9488b3d-a5fd-40f7-bcf9-8c091918d44f", "OperationId": "568FB02F-7BC5-4002-85BA-506378CB59AF"}
+2021-06-10T14:15:08.064Z        INFO    controllers.EventSubscription   Successfully created/updated eventsubscription in the requested namespace {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "d9488b3d-a5fd-40f7-bcf9-8c091918d44f", "OperationId": "568FB02F-7BC5-4002-85BA-506378CB59AF"}
+2021-06-10T14:15:08.064Z        INFO    controllers.EventSubscription   Start updating eventsubscription's status.      {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "d9488b3d-a5fd-40f7-bcf9-8c091918d44f", "OperationId": "568FB02F-7BC5-4002-85BA-506378CB59AF"}
+2021-06-10T14:15:08.076Z        INFO    controllers.EventSubscription   End updating eventsubscription's status.        {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "d9488b3d-a5fd-40f7-bcf9-8c091918d44f", "OperationId": "568FB02F-7BC5-4002-85BA-506378CB59AF"}
+2021-06-10T14:15:08.076Z        INFO    controllers.EventSubscription   Successfully updated status to Succeeded.       {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "d9488b3d-a5fd-40f7-bcf9-8c091918d44f", "OperationId": "568FB02F-7BC5-4002-85BA-506378CB59AF"}
+2021-06-10T14:15:08.076Z        INFO    controllers.EventSubscription   Updating TopicLabel and OwnerReference. {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "d9488b3d-a5fd-40f7-bcf9-8c091918d44f", "OperationId": "568FB02F-7BC5-4002-85BA-506378CB59AF"}
+2021-06-10T14:15:08.086Z        INFO    controllers.EventSubscription   End reconciling eventsubscription.      {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "d9488b3d-a5fd-40f7-bcf9-8c091918d44f", "OperationId": "568FB02F-7BC5-4002-85BA-506378CB59AF"}
+2021-06-10T14:15:08.086Z        INFO    controllers.EventSubscription   Start reconciling eventsubscription.    {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription"}
+2021-06-10T14:15:08.086Z        INFO    controllers.EventSubscription   Start getting eventsubscription's managment endpoint.   {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "d9488b3d-a5fd-40f7-bcf9-8c091918d44f", "OperationId": "568FB02F-7BC5-4002-85BA-506378CB59AF"}
+2021-06-10T14:15:08.086Z        INFO    controllers.EventSubscription   Start getting eventgrid k8s service's url.      {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "d9488b3d-a5fd-40f7-bcf9-8c091918d44f", "OperationId": "568FB02F-7BC5-4002-85BA-506378CB59AF"}
+2021-06-10T14:15:08.086Z        INFO    controllers.EventSubscription   End getting eventgrid k8s service's url.        {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "d9488b3d-a5fd-40f7-bcf9-8c091918d44f", "OperationId": "568FB02F-7BC5-4002-85BA-506378CB59AF"}
+2021-06-10T14:15:08.086Z        INFO    controllers.EventSubscription   End getting eventsubscription's managment endpoint.     {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "d9488b3d-a5fd-40f7-bcf9-8c091918d44f", "OperationId": "568FB02F-7BC5-4002-85BA-506378CB59AF"}
+2021-06-10T14:15:08.086Z        INFO    controllers.EventSubscription   Found eventgrid service's mgmt endpoint.,       {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "d9488b3d-a5fd-40f7-bcf9-8c091918d44f", "OperationId": "568FB02F-7BC5-4002-85BA-506378CB59AF", "endpoint": "http://eventgrid.eventgrid-system:80/topics/sample-arc-aks-eg-topic/eventSubscriptions/sample-arc-aks-eg-subscription?api-version=2019-01-01-preview"}
+2021-06-10T14:15:08.086Z        INFO    controllers.EventSubscription   Start updating eventsubscription's status.      {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "d9488b3d-a5fd-40f7-bcf9-8c091918d44f", "OperationId": "568FB02F-7BC5-4002-85BA-506378CB59AF"}
+2021-06-10T14:15:08.100Z        INFO    controllers.EventSubscription   End updating eventsubscription's status.        {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "d9488b3d-a5fd-40f7-bcf9-8c091918d44f", "OperationId": "568FB02F-7BC5-4002-85BA-506378CB59AF"}
+2021-06-10T14:15:08.100Z        INFO    controllers.EventSubscription   Start creating/updating eventsubscription in broker.    {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "d9488b3d-a5fd-40f7-bcf9-8c091918d44f", "OperationId": "568FB02F-7BC5-4002-85BA-506378CB59AF"}
+2021-06-10T14:15:08.100Z        INFO    controllers.EventSubscription   Start sending PUT request       {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "d9488b3d-a5fd-40f7-bcf9-8c091918d44f", "OperationId": "568FB02F-7BC5-4002-85BA-506378CB59AF", " url: ": "http://eventgrid.eventgrid-system:80/topics/sample-arc-aks-eg-topic/eventSubscriptions/sample-arc-aks-eg-subscription?api-version=2019-01-01-preview"}
+2021-06-10T14:15:08.155Z        INFO    controllers.EventSubscription   End sending PUT request {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "d9488b3d-a5fd-40f7-bcf9-8c091918d44f", "OperationId": "568FB02F-7BC5-4002-85BA-506378CB59AF", " url: ": "http://eventgrid.eventgrid-system:80/topics/sample-arc-aks-eg-topic/eventSubscriptions/sample-arc-aks-eg-subscription?api-version=2019-01-01-preview"}
+2021-06-10T14:15:08.155Z        INFO    controllers.EventSubscription   End creating/updating eventsubscription in broker.      {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "d9488b3d-a5fd-40f7-bcf9-8c091918d44f", "OperationId": "568FB02F-7BC5-4002-85BA-506378CB59AF"}
+2021-06-10T14:15:08.155Z        INFO    controllers.EventSubscription   Successfully created/updated eventsubscription in the requested namespace {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "d9488b3d-a5fd-40f7-bcf9-8c091918d44f", "OperationId": "568FB02F-7BC5-4002-85BA-506378CB59AF"}
+2021-06-10T14:15:08.155Z        INFO    controllers.EventSubscription   Start updating eventsubscription's status.      {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "d9488b3d-a5fd-40f7-bcf9-8c091918d44f", "OperationId": "568FB02F-7BC5-4002-85BA-506378CB59AF"}
+2021-06-10T14:15:08.167Z        INFO    controllers.EventSubscription   End updating eventsubscription's status.        {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "d9488b3d-a5fd-40f7-bcf9-8c091918d44f", "OperationId": "568FB02F-7BC5-4002-85BA-506378CB59AF"}
+2021-06-10T14:15:08.167Z        INFO    controllers.EventSubscription   Successfully updated status to Succeeded.       {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "d9488b3d-a5fd-40f7-bcf9-8c091918d44f", "OperationId": "568FB02F-7BC5-4002-85BA-506378CB59AF"}
+2021-06-10T14:15:08.167Z        INFO    controllers.EventSubscription   End reconciling eventsubscription.      {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "d9488b3d-a5fd-40f7-bcf9-8c091918d44f", "OperationId": "568FB02F-7BC5-4002-85BA-506378CB59AF"}
+2021-06-10T14:30:49.793Z        INFO    controllers.EventSubscription   Start reconciling eventsubscription.    {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription"}
+2021-06-10T14:30:49.793Z        INFO    controllers.EventSubscription   Start getting eventsubscription's managment endpoint.   {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "85e44ef7-e688-4545-9127-0e42fbcaeb29", "OperationId": "FE5AB17C-AE80-412D-9E7D-E0AB9208106E"}
+2021-06-10T14:30:49.793Z        INFO    controllers.EventSubscription   Start getting eventgrid k8s service's url.      {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "85e44ef7-e688-4545-9127-0e42fbcaeb29", "OperationId": "FE5AB17C-AE80-412D-9E7D-E0AB9208106E"}
+2021-06-10T14:30:49.794Z        INFO    controllers.EventSubscription   End getting eventgrid k8s service's url.        {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "85e44ef7-e688-4545-9127-0e42fbcaeb29", "OperationId": "FE5AB17C-AE80-412D-9E7D-E0AB9208106E"}
+2021-06-10T14:30:49.794Z        INFO    controllers.EventSubscription   End getting eventsubscription's managment endpoint.     {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "85e44ef7-e688-4545-9127-0e42fbcaeb29", "OperationId": "FE5AB17C-AE80-412D-9E7D-E0AB9208106E"}
+2021-06-10T14:30:49.794Z        INFO    controllers.EventSubscription   Found eventgrid service's mgmt endpoint.,       {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "85e44ef7-e688-4545-9127-0e42fbcaeb29", "OperationId": "FE5AB17C-AE80-412D-9E7D-E0AB9208106E", "endpoint": "http://eventgrid.eventgrid-system:80/topics/sample-arc-aks-eg-topic/eventSubscriptions/sample-arc-aks-eg-subscription?api-version=2019-01-01-preview"}
+2021-06-10T14:30:49.804Z        INFO    controllers.EventSubscription   Start updating eventsubscription's status.      {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "85e44ef7-e688-4545-9127-0e42fbcaeb29", "OperationId": "FE5AB17C-AE80-412D-9E7D-E0AB9208106E"}
+2021-06-10T14:30:49.812Z        INFO    controllers.EventSubscription   End updating eventsubscription's status.        {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "85e44ef7-e688-4545-9127-0e42fbcaeb29", "OperationId": "FE5AB17C-AE80-412D-9E7D-E0AB9208106E"}
+2021-06-10T14:30:49.813Z        INFO    controllers.EventSubscription   Start creating/updating eventsubscription in broker.    {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "85e44ef7-e688-4545-9127-0e42fbcaeb29", "OperationId": "FE5AB17C-AE80-412D-9E7D-E0AB9208106E"}
+2021-06-10T14:30:49.813Z        INFO    controllers.EventSubscription   Start sending PUT request       {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "85e44ef7-e688-4545-9127-0e42fbcaeb29", "OperationId": "FE5AB17C-AE80-412D-9E7D-E0AB9208106E", " url: ": "http://eventgrid.eventgrid-system:80/topics/sample-arc-aks-eg-topic/eventSubscriptions/sample-arc-aks-eg-subscription?api-version=2019-01-01-preview"}
+2021-06-10T14:30:49.862Z        INFO    controllers.EventSubscription   End sending PUT request {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "85e44ef7-e688-4545-9127-0e42fbcaeb29", "OperationId": "FE5AB17C-AE80-412D-9E7D-E0AB9208106E", " url: ": "http://eventgrid.eventgrid-system:80/topics/sample-arc-aks-eg-topic/eventSubscriptions/sample-arc-aks-eg-subscription?api-version=2019-01-01-preview"}
+2021-06-10T14:30:49.862Z        INFO    controllers.EventSubscription   End creating/updating eventsubscription in broker.      {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "85e44ef7-e688-4545-9127-0e42fbcaeb29", "OperationId": "FE5AB17C-AE80-412D-9E7D-E0AB9208106E"}
+2021-06-10T14:30:49.862Z        INFO    controllers.EventSubscription   Successfully created/updated eventsubscription in the requested namespace {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "85e44ef7-e688-4545-9127-0e42fbcaeb29", "OperationId": "FE5AB17C-AE80-412D-9E7D-E0AB9208106E"}
+2021-06-10T14:30:49.862Z        INFO    controllers.EventSubscription   Start updating eventsubscription's status.      {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "85e44ef7-e688-4545-9127-0e42fbcaeb29", "OperationId": "FE5AB17C-AE80-412D-9E7D-E0AB9208106E"}
+2021-06-10T14:30:49.873Z        INFO    controllers.EventSubscription   End updating eventsubscription's status.        {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "85e44ef7-e688-4545-9127-0e42fbcaeb29", "OperationId": "FE5AB17C-AE80-412D-9E7D-E0AB9208106E"}
+2021-06-10T14:30:49.873Z        INFO    controllers.EventSubscription   Successfully updated status to Succeeded.       {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "85e44ef7-e688-4545-9127-0e42fbcaeb29", "OperationId": "FE5AB17C-AE80-412D-9E7D-E0AB9208106E"}
+2021-06-10T14:30:49.873Z        INFO    controllers.EventSubscription   Updating TopicLabel and OwnerReference. {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "85e44ef7-e688-4545-9127-0e42fbcaeb29", "OperationId": "FE5AB17C-AE80-412D-9E7D-E0AB9208106E"}
+2021-06-10T14:30:49.882Z        INFO    controllers.EventSubscription   End reconciling eventsubscription.      {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "85e44ef7-e688-4545-9127-0e42fbcaeb29", "OperationId": "FE5AB17C-AE80-412D-9E7D-E0AB9208106E"}
+2021-06-10T14:30:49.882Z        INFO    controllers.EventSubscription   Start reconciling eventsubscription.    {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription"}
+2021-06-10T14:30:49.882Z        INFO    controllers.EventSubscription   Start getting eventsubscription's managment endpoint.   {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "85e44ef7-e688-4545-9127-0e42fbcaeb29", "OperationId": "FE5AB17C-AE80-412D-9E7D-E0AB9208106E"}
+2021-06-10T14:30:49.882Z        INFO    controllers.EventSubscription   Start getting eventgrid k8s service's url.      {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "85e44ef7-e688-4545-9127-0e42fbcaeb29", "OperationId": "FE5AB17C-AE80-412D-9E7D-E0AB9208106E"}
+2021-06-10T14:30:49.882Z        INFO    controllers.EventSubscription   End getting eventgrid k8s service's url.        {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "85e44ef7-e688-4545-9127-0e42fbcaeb29", "OperationId": "FE5AB17C-AE80-412D-9E7D-E0AB9208106E"}
+2021-06-10T14:30:49.882Z        INFO    controllers.EventSubscription   End getting eventsubscription's managment endpoint.     {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "85e44ef7-e688-4545-9127-0e42fbcaeb29", "OperationId": "FE5AB17C-AE80-412D-9E7D-E0AB9208106E"}
+2021-06-10T14:30:49.882Z        INFO    controllers.EventSubscription   Found eventgrid service's mgmt endpoint.,       {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "85e44ef7-e688-4545-9127-0e42fbcaeb29", "OperationId": "FE5AB17C-AE80-412D-9E7D-E0AB9208106E", "endpoint": "http://eventgrid.eventgrid-system:80/topics/sample-arc-aks-eg-topic/eventSubscriptions/sample-arc-aks-eg-subscription?api-version=2019-01-01-preview"}
+2021-06-10T14:30:49.882Z        INFO    controllers.EventSubscription   Start updating eventsubscription's status.      {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "85e44ef7-e688-4545-9127-0e42fbcaeb29", "OperationId": "FE5AB17C-AE80-412D-9E7D-E0AB9208106E"}
+2021-06-10T14:30:49.891Z        ERROR   controllers.EventSubscription   Failed update eventsubscription's status to 'Updating'. {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "85e44ef7-e688-4545-9127-0e42fbcaeb29", "OperationId": "FE5AB17C-AE80-412D-9E7D-E0AB9208106E", "error": "Operation cannot be fulfilled on eventsubscriptions.eventgrid.microsoft.com \"sample-arc-aks-eg-subscription\": the object has been modified; please apply your changes to the latest version and try again"}
+github.com/go-logr/zapr.(*zapLogger).Error
+        /home/vsts/go/pkg/mod/github.com/go-logr/zapr@v0.2.0/zapr.go:132
+msazure.visualstudio.com/One/_git/Azure-EventGrid-IoT-Edge/controllers.(*EventSubscriptionReconciler).Reconcile
+        /home/vsts/work/1/s/src/K8sOperator/controllers/eventsubscription_controller.go:154
+sigs.k8s.io/controller-runtime/pkg/internal/controller.(*Controller).reconcileHandler
+        /home/vsts/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.7.0/pkg/internal/controller/controller.go:263
+sigs.k8s.io/controller-runtime/pkg/internal/controller.(*Controller).processNextWorkItem
+        /home/vsts/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.7.0/pkg/internal/controller/controller.go:235
+sigs.k8s.io/controller-runtime/pkg/internal/controller.(*Controller).Start.func1.1
+        /home/vsts/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.7.0/pkg/internal/controller/controller.go:198
+k8s.io/apimachinery/pkg/util/wait.JitterUntilWithContext.func1
+        /home/vsts/go/pkg/mod/k8s.io/apimachinery@v0.19.2/pkg/util/wait/wait.go:185
+k8s.io/apimachinery/pkg/util/wait.BackoffUntil.func1
+        /home/vsts/go/pkg/mod/k8s.io/apimachinery@v0.19.2/pkg/util/wait/wait.go:155
+k8s.io/apimachinery/pkg/util/wait.BackoffUntil
+        /home/vsts/go/pkg/mod/k8s.io/apimachinery@v0.19.2/pkg/util/wait/wait.go:156
+k8s.io/apimachinery/pkg/util/wait.JitterUntil
+        /home/vsts/go/pkg/mod/k8s.io/apimachinery@v0.19.2/pkg/util/wait/wait.go:133
+k8s.io/apimachinery/pkg/util/wait.JitterUntilWithContext
+        /home/vsts/go/pkg/mod/k8s.io/apimachinery@v0.19.2/pkg/util/wait/wait.go:185
+k8s.io/apimachinery/pkg/util/wait.UntilWithContext
+        /home/vsts/go/pkg/mod/k8s.io/apimachinery@v0.19.2/pkg/util/wait/wait.go:99
+2021-06-10T14:30:49.891Z        ERROR   controller-runtime.manager.controller.eventsubscription Reconciler error        {"reconciler group": "eventgrid.microsoft.com", "reconciler kind": "EventSubscription", "name": "sample-arc-aks-eg-subscription", "namespace": "eventgrid", "error": "Operation cannot be fulfilled on eventsubscriptions.eventgrid.microsoft.com \"sample-arc-aks-eg-subscription\": the object has been modified; please apply your changes to the latest version and try again"}
+github.com/go-logr/zapr.(*zapLogger).Error
+        /home/vsts/go/pkg/mod/github.com/go-logr/zapr@v0.2.0/zapr.go:132
+sigs.k8s.io/controller-runtime/pkg/internal/controller.(*Controller).reconcileHandler
+        /home/vsts/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.7.0/pkg/internal/controller/controller.go:267
+sigs.k8s.io/controller-runtime/pkg/internal/controller.(*Controller).processNextWorkItem
+        /home/vsts/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.7.0/pkg/internal/controller/controller.go:235
+sigs.k8s.io/controller-runtime/pkg/internal/controller.(*Controller).Start.func1.1
+        /home/vsts/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.7.0/pkg/internal/controller/controller.go:198
+k8s.io/apimachinery/pkg/util/wait.JitterUntilWithContext.func1
+        /home/vsts/go/pkg/mod/k8s.io/apimachinery@v0.19.2/pkg/util/wait/wait.go:185
+k8s.io/apimachinery/pkg/util/wait.BackoffUntil.func1
+        /home/vsts/go/pkg/mod/k8s.io/apimachinery@v0.19.2/pkg/util/wait/wait.go:155
+k8s.io/apimachinery/pkg/util/wait.BackoffUntil
+        /home/vsts/go/pkg/mod/k8s.io/apimachinery@v0.19.2/pkg/util/wait/wait.go:156
+k8s.io/apimachinery/pkg/util/wait.JitterUntil
+        /home/vsts/go/pkg/mod/k8s.io/apimachinery@v0.19.2/pkg/util/wait/wait.go:133
+k8s.io/apimachinery/pkg/util/wait.JitterUntilWithContext
+        /home/vsts/go/pkg/mod/k8s.io/apimachinery@v0.19.2/pkg/util/wait/wait.go:185
+k8s.io/apimachinery/pkg/util/wait.UntilWithContext
+        /home/vsts/go/pkg/mod/k8s.io/apimachinery@v0.19.2/pkg/util/wait/wait.go:99
+2021-06-10T14:30:49.896Z        INFO    controllers.EventSubscription   Start reconciling eventsubscription.    {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription"}
+2021-06-10T14:30:49.896Z        INFO    controllers.EventSubscription   Start getting eventsubscription's managment endpoint.   {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "85e44ef7-e688-4545-9127-0e42fbcaeb29", "OperationId": "FE5AB17C-AE80-412D-9E7D-E0AB9208106E"}
+2021-06-10T14:30:49.896Z        INFO    controllers.EventSubscription   Start getting eventgrid k8s service's url.      {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "85e44ef7-e688-4545-9127-0e42fbcaeb29", "OperationId": "FE5AB17C-AE80-412D-9E7D-E0AB9208106E"}
+2021-06-10T14:30:49.896Z        INFO    controllers.EventSubscription   End getting eventgrid k8s service's url.        {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "85e44ef7-e688-4545-9127-0e42fbcaeb29", "OperationId": "FE5AB17C-AE80-412D-9E7D-E0AB9208106E"}
+2021-06-10T14:30:49.897Z        INFO    controllers.EventSubscription   End getting eventsubscription's managment endpoint.     {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "85e44ef7-e688-4545-9127-0e42fbcaeb29", "OperationId": "FE5AB17C-AE80-412D-9E7D-E0AB9208106E"}
+2021-06-10T14:30:49.897Z        INFO    controllers.EventSubscription   Found eventgrid service's mgmt endpoint.,       {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "85e44ef7-e688-4545-9127-0e42fbcaeb29", "OperationId": "FE5AB17C-AE80-412D-9E7D-E0AB9208106E", "endpoint": "http://eventgrid.eventgrid-system:80/topics/sample-arc-aks-eg-topic/eventSubscriptions/sample-arc-aks-eg-subscription?api-version=2019-01-01-preview"}
+2021-06-10T14:30:49.897Z        INFO    controllers.EventSubscription   Start updating eventsubscription's status.      {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "85e44ef7-e688-4545-9127-0e42fbcaeb29", "OperationId": "FE5AB17C-AE80-412D-9E7D-E0AB9208106E"}
+2021-06-10T14:30:49.907Z        INFO    controllers.EventSubscription   End updating eventsubscription's status.        {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "85e44ef7-e688-4545-9127-0e42fbcaeb29", "OperationId": "FE5AB17C-AE80-412D-9E7D-E0AB9208106E"}
+2021-06-10T14:30:49.907Z        INFO    controllers.EventSubscription   Start creating/updating eventsubscription in broker.    {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "85e44ef7-e688-4545-9127-0e42fbcaeb29", "OperationId": "FE5AB17C-AE80-412D-9E7D-E0AB9208106E"}
+2021-06-10T14:30:49.907Z        INFO    controllers.EventSubscription   Start sending PUT request       {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "85e44ef7-e688-4545-9127-0e42fbcaeb29", "OperationId": "FE5AB17C-AE80-412D-9E7D-E0AB9208106E", " url: ": "http://eventgrid.eventgrid-system:80/topics/sample-arc-aks-eg-topic/eventSubscriptions/sample-arc-aks-eg-subscription?api-version=2019-01-01-preview"}
+2021-06-10T14:30:49.923Z        INFO    controllers.EventSubscription   End sending PUT request {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "85e44ef7-e688-4545-9127-0e42fbcaeb29", "OperationId": "FE5AB17C-AE80-412D-9E7D-E0AB9208106E", " url: ": "http://eventgrid.eventgrid-system:80/topics/sample-arc-aks-eg-topic/eventSubscriptions/sample-arc-aks-eg-subscription?api-version=2019-01-01-preview"}
+2021-06-10T14:30:49.923Z        INFO    controllers.EventSubscription   End creating/updating eventsubscription in broker.      {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "85e44ef7-e688-4545-9127-0e42fbcaeb29", "OperationId": "FE5AB17C-AE80-412D-9E7D-E0AB9208106E"}
+2021-06-10T14:30:49.923Z        INFO    controllers.EventSubscription   Successfully created/updated eventsubscription in the requested namespace {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "85e44ef7-e688-4545-9127-0e42fbcaeb29", "OperationId": "FE5AB17C-AE80-412D-9E7D-E0AB9208106E"}
+2021-06-10T14:30:49.923Z        INFO    controllers.EventSubscription   Start updating eventsubscription's status.      {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "85e44ef7-e688-4545-9127-0e42fbcaeb29", "OperationId": "FE5AB17C-AE80-412D-9E7D-E0AB9208106E"}
+2021-06-10T14:30:49.949Z        INFO    controllers.EventSubscription   End updating eventsubscription's status.        {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "85e44ef7-e688-4545-9127-0e42fbcaeb29", "OperationId": "FE5AB17C-AE80-412D-9E7D-E0AB9208106E"}
+2021-06-10T14:30:49.949Z        INFO    controllers.EventSubscription   Successfully updated status to Succeeded.       {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "85e44ef7-e688-4545-9127-0e42fbcaeb29", "OperationId": "FE5AB17C-AE80-412D-9E7D-E0AB9208106E"}
+2021-06-10T14:30:49.949Z        INFO    controllers.EventSubscription   End reconciling eventsubscription.      {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "85e44ef7-e688-4545-9127-0e42fbcaeb29", "OperationId": "FE5AB17C-AE80-412D-9E7D-E0AB9208106E"}
+2021-06-10T14:32:43.189Z        INFO    controllers.EventSubscription   Start reconciling eventsubscription.    {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription"}
+2021-06-10T14:32:43.189Z        INFO    controllers.EventSubscription   Start getting eventsubscription's managment endpoint.   {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "1ca11967-178c-4d22-91a0-f5da8804f03e", "OperationId": "8E70BC51-1AC6-4654-998B-A9D26015FF01"}
+2021-06-10T14:32:43.189Z        INFO    controllers.EventSubscription   Start getting eventgrid k8s service's url.      {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "1ca11967-178c-4d22-91a0-f5da8804f03e", "OperationId": "8E70BC51-1AC6-4654-998B-A9D26015FF01"}
+2021-06-10T14:32:43.189Z        INFO    controllers.EventSubscription   End getting eventgrid k8s service's url.        {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "1ca11967-178c-4d22-91a0-f5da8804f03e", "OperationId": "8E70BC51-1AC6-4654-998B-A9D26015FF01"}
+2021-06-10T14:32:43.189Z        INFO    controllers.EventSubscription   End getting eventsubscription's managment endpoint.     {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "1ca11967-178c-4d22-91a0-f5da8804f03e", "OperationId": "8E70BC51-1AC6-4654-998B-A9D26015FF01"}
+2021-06-10T14:32:43.189Z        INFO    controllers.EventSubscription   Found eventgrid service's mgmt endpoint.,       {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "1ca11967-178c-4d22-91a0-f5da8804f03e", "OperationId": "8E70BC51-1AC6-4654-998B-A9D26015FF01", "endpoint": "http://eventgrid.eventgrid-system:80/topics/sample-arc-aks-eg-topic/eventSubscriptions/sample-arc-aks-eg-subscription?api-version=2019-01-01-preview"}
+2021-06-10T14:32:43.199Z        INFO    controllers.EventSubscription   Start updating eventsubscription's status.      {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "1ca11967-178c-4d22-91a0-f5da8804f03e", "OperationId": "8E70BC51-1AC6-4654-998B-A9D26015FF01"}
+2021-06-10T14:32:43.207Z        INFO    controllers.EventSubscription   End updating eventsubscription's status.        {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "1ca11967-178c-4d22-91a0-f5da8804f03e", "OperationId": "8E70BC51-1AC6-4654-998B-A9D26015FF01"}
+2021-06-10T14:32:43.207Z        INFO    controllers.EventSubscription   Start creating/updating eventsubscription in broker.    {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "1ca11967-178c-4d22-91a0-f5da8804f03e", "OperationId": "8E70BC51-1AC6-4654-998B-A9D26015FF01"}
+2021-06-10T14:32:43.207Z        INFO    controllers.EventSubscription   Start sending PUT request       {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "1ca11967-178c-4d22-91a0-f5da8804f03e", "OperationId": "8E70BC51-1AC6-4654-998B-A9D26015FF01", " url: ": "http://eventgrid.eventgrid-system:80/topics/sample-arc-aks-eg-topic/eventSubscriptions/sample-arc-aks-eg-subscription?api-version=2019-01-01-preview"}
+2021-06-10T14:32:43.242Z        INFO    controllers.EventSubscription   End sending PUT request {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "1ca11967-178c-4d22-91a0-f5da8804f03e", "OperationId": "8E70BC51-1AC6-4654-998B-A9D26015FF01", " url: ": "http://eventgrid.eventgrid-system:80/topics/sample-arc-aks-eg-topic/eventSubscriptions/sample-arc-aks-eg-subscription?api-version=2019-01-01-preview"}
+2021-06-10T14:32:43.243Z        INFO    controllers.EventSubscription   End creating/updating eventsubscription in broker.      {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "1ca11967-178c-4d22-91a0-f5da8804f03e", "OperationId": "8E70BC51-1AC6-4654-998B-A9D26015FF01"}
+2021-06-10T14:32:43.243Z        INFO    controllers.EventSubscription   Successfully created/updated eventsubscription in the requested namespace {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "1ca11967-178c-4d22-91a0-f5da8804f03e", "OperationId": "8E70BC51-1AC6-4654-998B-A9D26015FF01"}
+2021-06-10T14:32:43.243Z        INFO    controllers.EventSubscription   Start updating eventsubscription's status.      {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "1ca11967-178c-4d22-91a0-f5da8804f03e", "OperationId": "8E70BC51-1AC6-4654-998B-A9D26015FF01"}
+2021-06-10T14:32:43.252Z        INFO    controllers.EventSubscription   End updating eventsubscription's status.        {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "1ca11967-178c-4d22-91a0-f5da8804f03e", "OperationId": "8E70BC51-1AC6-4654-998B-A9D26015FF01"}
+2021-06-10T14:32:43.252Z        INFO    controllers.EventSubscription   Successfully updated status to Succeeded.       {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "1ca11967-178c-4d22-91a0-f5da8804f03e", "OperationId": "8E70BC51-1AC6-4654-998B-A9D26015FF01"}
+2021-06-10T14:32:43.252Z        INFO    controllers.EventSubscription   Updating TopicLabel and OwnerReference. {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "1ca11967-178c-4d22-91a0-f5da8804f03e", "OperationId": "8E70BC51-1AC6-4654-998B-A9D26015FF01"}
+2021-06-10T14:32:43.261Z        INFO    controllers.EventSubscription   End reconciling eventsubscription.      {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "1ca11967-178c-4d22-91a0-f5da8804f03e", "OperationId": "8E70BC51-1AC6-4654-998B-A9D26015FF01"}
+2021-06-10T14:32:43.261Z        INFO    controllers.EventSubscription   Start reconciling eventsubscription.    {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription"}
+2021-06-10T14:32:43.261Z        INFO    controllers.EventSubscription   Start getting eventsubscription's managment endpoint.   {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "1ca11967-178c-4d22-91a0-f5da8804f03e", "OperationId": "8E70BC51-1AC6-4654-998B-A9D26015FF01"}
+2021-06-10T14:32:43.262Z        INFO    controllers.EventSubscription   Start getting eventgrid k8s service's url.      {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "1ca11967-178c-4d22-91a0-f5da8804f03e", "OperationId": "8E70BC51-1AC6-4654-998B-A9D26015FF01"}
+2021-06-10T14:32:43.262Z        INFO    controllers.EventSubscription   End getting eventgrid k8s service's url.        {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "1ca11967-178c-4d22-91a0-f5da8804f03e", "OperationId": "8E70BC51-1AC6-4654-998B-A9D26015FF01"}
+2021-06-10T14:32:43.262Z        INFO    controllers.EventSubscription   End getting eventsubscription's managment endpoint.     {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "1ca11967-178c-4d22-91a0-f5da8804f03e", "OperationId": "8E70BC51-1AC6-4654-998B-A9D26015FF01"}
+2021-06-10T14:32:43.262Z        INFO    controllers.EventSubscription   Found eventgrid service's mgmt endpoint.,       {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "1ca11967-178c-4d22-91a0-f5da8804f03e", "OperationId": "8E70BC51-1AC6-4654-998B-A9D26015FF01", "endpoint": "http://eventgrid.eventgrid-system:80/topics/sample-arc-aks-eg-topic/eventSubscriptions/sample-arc-aks-eg-subscription?api-version=2019-01-01-preview"}
+2021-06-10T14:32:43.262Z        INFO    controllers.EventSubscription   Start updating eventsubscription's status.      {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "1ca11967-178c-4d22-91a0-f5da8804f03e", "OperationId": "8E70BC51-1AC6-4654-998B-A9D26015FF01"}
+2021-06-10T14:32:43.269Z        ERROR   controllers.EventSubscription   Failed update eventsubscription's status to 'Updating'. {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "1ca11967-178c-4d22-91a0-f5da8804f03e", "OperationId": "8E70BC51-1AC6-4654-998B-A9D26015FF01", "error": "Operation cannot be fulfilled on eventsubscriptions.eventgrid.microsoft.com \"sample-arc-aks-eg-subscription\": the object has been modified; please apply your changes to the latest version and try again"}
+github.com/go-logr/zapr.(*zapLogger).Error
+        /home/vsts/go/pkg/mod/github.com/go-logr/zapr@v0.2.0/zapr.go:132
+msazure.visualstudio.com/One/_git/Azure-EventGrid-IoT-Edge/controllers.(*EventSubscriptionReconciler).Reconcile
+        /home/vsts/work/1/s/src/K8sOperator/controllers/eventsubscription_controller.go:154
+sigs.k8s.io/controller-runtime/pkg/internal/controller.(*Controller).reconcileHandler
+        /home/vsts/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.7.0/pkg/internal/controller/controller.go:263
+sigs.k8s.io/controller-runtime/pkg/internal/controller.(*Controller).processNextWorkItem
+        /home/vsts/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.7.0/pkg/internal/controller/controller.go:235
+sigs.k8s.io/controller-runtime/pkg/internal/controller.(*Controller).Start.func1.1
+        /home/vsts/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.7.0/pkg/internal/controller/controller.go:198
+k8s.io/apimachinery/pkg/util/wait.JitterUntilWithContext.func1
+        /home/vsts/go/pkg/mod/k8s.io/apimachinery@v0.19.2/pkg/util/wait/wait.go:185
+k8s.io/apimachinery/pkg/util/wait.BackoffUntil.func1
+        /home/vsts/go/pkg/mod/k8s.io/apimachinery@v0.19.2/pkg/util/wait/wait.go:155
+k8s.io/apimachinery/pkg/util/wait.BackoffUntil
+        /home/vsts/go/pkg/mod/k8s.io/apimachinery@v0.19.2/pkg/util/wait/wait.go:156
+k8s.io/apimachinery/pkg/util/wait.JitterUntil
+        /home/vsts/go/pkg/mod/k8s.io/apimachinery@v0.19.2/pkg/util/wait/wait.go:133
+k8s.io/apimachinery/pkg/util/wait.JitterUntilWithContext
+        /home/vsts/go/pkg/mod/k8s.io/apimachinery@v0.19.2/pkg/util/wait/wait.go:185
+k8s.io/apimachinery/pkg/util/wait.UntilWithContext
+        /home/vsts/go/pkg/mod/k8s.io/apimachinery@v0.19.2/pkg/util/wait/wait.go:99
+2021-06-10T14:32:43.269Z        ERROR   controller-runtime.manager.controller.eventsubscription Reconciler error        {"reconciler group": "eventgrid.microsoft.com", "reconciler kind": "EventSubscription", "name": "sample-arc-aks-eg-subscription", "namespace": "eventgrid", "error": "Operation cannot be fulfilled on eventsubscriptions.eventgrid.microsoft.com \"sample-arc-aks-eg-subscription\": the object has been modified; please apply your changes to the latest version and try again"}
+github.com/go-logr/zapr.(*zapLogger).Error
+        /home/vsts/go/pkg/mod/github.com/go-logr/zapr@v0.2.0/zapr.go:132
+sigs.k8s.io/controller-runtime/pkg/internal/controller.(*Controller).reconcileHandler
+        /home/vsts/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.7.0/pkg/internal/controller/controller.go:267
+sigs.k8s.io/controller-runtime/pkg/internal/controller.(*Controller).processNextWorkItem
+        /home/vsts/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.7.0/pkg/internal/controller/controller.go:235
+sigs.k8s.io/controller-runtime/pkg/internal/controller.(*Controller).Start.func1.1
+        /home/vsts/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.7.0/pkg/internal/controller/controller.go:198
+k8s.io/apimachinery/pkg/util/wait.JitterUntilWithContext.func1
+        /home/vsts/go/pkg/mod/k8s.io/apimachinery@v0.19.2/pkg/util/wait/wait.go:185
+k8s.io/apimachinery/pkg/util/wait.BackoffUntil.func1
+        /home/vsts/go/pkg/mod/k8s.io/apimachinery@v0.19.2/pkg/util/wait/wait.go:155
+k8s.io/apimachinery/pkg/util/wait.BackoffUntil
+        /home/vsts/go/pkg/mod/k8s.io/apimachinery@v0.19.2/pkg/util/wait/wait.go:156
+k8s.io/apimachinery/pkg/util/wait.JitterUntil
+        /home/vsts/go/pkg/mod/k8s.io/apimachinery@v0.19.2/pkg/util/wait/wait.go:133
+k8s.io/apimachinery/pkg/util/wait.JitterUntilWithContext
+        /home/vsts/go/pkg/mod/k8s.io/apimachinery@v0.19.2/pkg/util/wait/wait.go:185
+k8s.io/apimachinery/pkg/util/wait.UntilWithContext
+        /home/vsts/go/pkg/mod/k8s.io/apimachinery@v0.19.2/pkg/util/wait/wait.go:99
+2021-06-10T14:32:43.274Z        INFO    controllers.EventSubscription   Start reconciling eventsubscription.    {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription"}
+2021-06-10T14:32:43.274Z        INFO    controllers.EventSubscription   Start getting eventsubscription's managment endpoint.   {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "1ca11967-178c-4d22-91a0-f5da8804f03e", "OperationId": "8E70BC51-1AC6-4654-998B-A9D26015FF01"}
+2021-06-10T14:32:43.274Z        INFO    controllers.EventSubscription   Start getting eventgrid k8s service's url.      {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "1ca11967-178c-4d22-91a0-f5da8804f03e", "OperationId": "8E70BC51-1AC6-4654-998B-A9D26015FF01"}
+2021-06-10T14:32:43.274Z        INFO    controllers.EventSubscription   End getting eventgrid k8s service's url.        {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "1ca11967-178c-4d22-91a0-f5da8804f03e", "OperationId": "8E70BC51-1AC6-4654-998B-A9D26015FF01"}
+2021-06-10T14:32:43.274Z        INFO    controllers.EventSubscription   End getting eventsubscription's managment endpoint.     {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "1ca11967-178c-4d22-91a0-f5da8804f03e", "OperationId": "8E70BC51-1AC6-4654-998B-A9D26015FF01"}
+2021-06-10T14:32:43.274Z        INFO    controllers.EventSubscription   Found eventgrid service's mgmt endpoint.,       {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "1ca11967-178c-4d22-91a0-f5da8804f03e", "OperationId": "8E70BC51-1AC6-4654-998B-A9D26015FF01", "endpoint": "http://eventgrid.eventgrid-system:80/topics/sample-arc-aks-eg-topic/eventSubscriptions/sample-arc-aks-eg-subscription?api-version=2019-01-01-preview"}
+2021-06-10T14:32:43.274Z        INFO    controllers.EventSubscription   Start updating eventsubscription's status.      {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "1ca11967-178c-4d22-91a0-f5da8804f03e", "OperationId": "8E70BC51-1AC6-4654-998B-A9D26015FF01"}
+2021-06-10T14:32:43.282Z        INFO    controllers.EventSubscription   End updating eventsubscription's status.        {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "1ca11967-178c-4d22-91a0-f5da8804f03e", "OperationId": "8E70BC51-1AC6-4654-998B-A9D26015FF01"}
+2021-06-10T14:32:43.282Z        INFO    controllers.EventSubscription   Start creating/updating eventsubscription in broker.    {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "1ca11967-178c-4d22-91a0-f5da8804f03e", "OperationId": "8E70BC51-1AC6-4654-998B-A9D26015FF01"}
+2021-06-10T14:32:43.282Z        INFO    controllers.EventSubscription   Start sending PUT request       {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "1ca11967-178c-4d22-91a0-f5da8804f03e", "OperationId": "8E70BC51-1AC6-4654-998B-A9D26015FF01", " url: ": "http://eventgrid.eventgrid-system:80/topics/sample-arc-aks-eg-topic/eventSubscriptions/sample-arc-aks-eg-subscription?api-version=2019-01-01-preview"}
+2021-06-10T14:32:43.299Z        INFO    controllers.EventSubscription   End sending PUT request {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "1ca11967-178c-4d22-91a0-f5da8804f03e", "OperationId": "8E70BC51-1AC6-4654-998B-A9D26015FF01", " url: ": "http://eventgrid.eventgrid-system:80/topics/sample-arc-aks-eg-topic/eventSubscriptions/sample-arc-aks-eg-subscription?api-version=2019-01-01-preview"}
+2021-06-10T14:32:43.299Z        INFO    controllers.EventSubscription   End creating/updating eventsubscription in broker.      {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "1ca11967-178c-4d22-91a0-f5da8804f03e", "OperationId": "8E70BC51-1AC6-4654-998B-A9D26015FF01"}
+2021-06-10T14:32:43.299Z        INFO    controllers.EventSubscription   Successfully created/updated eventsubscription in the requested namespace {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "1ca11967-178c-4d22-91a0-f5da8804f03e", "OperationId": "8E70BC51-1AC6-4654-998B-A9D26015FF01"}
+2021-06-10T14:32:43.299Z        INFO    controllers.EventSubscription   Start updating eventsubscription's status.      {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "1ca11967-178c-4d22-91a0-f5da8804f03e", "OperationId": "8E70BC51-1AC6-4654-998B-A9D26015FF01"}
+2021-06-10T14:32:43.308Z        INFO    controllers.EventSubscription   End updating eventsubscription's status.        {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "1ca11967-178c-4d22-91a0-f5da8804f03e", "OperationId": "8E70BC51-1AC6-4654-998B-A9D26015FF01"}
+2021-06-10T14:32:43.308Z        INFO    controllers.EventSubscription   Successfully updated status to Succeeded.       {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "1ca11967-178c-4d22-91a0-f5da8804f03e", "OperationId": "8E70BC51-1AC6-4654-998B-A9D26015FF01"}
+2021-06-10T14:32:43.309Z        INFO    controllers.EventSubscription   End reconciling eventsubscription.      {"eventsubscription": "eventgrid/sample-arc-aks-eg-subscription", "ActivityId": "1ca11967-178c-4d22-91a0-f5da8804f03e", "OperationId": "8E70BC51-1AC6-4654-998B-A9D26015FF01"}
+2021-06-10T19:44:54.697Z        INFO    controllers.Topic       Start reconciling topic {"topic": "eventgrid/rb-arc-aks-sample-topic"}
+2021-06-10T19:44:54.698Z        INFO    controllers.Topic       Start getting topic's managment endpoint.       {"topic": "eventgrid/rb-arc-aks-sample-topic", "ActivityId": "d4ea6b2f-41fb-458d-9c56-87185d2c66f8", "OperationId": "DBE937DC-D978-45EE-B1C2-235E07686CB1"}
+2021-06-10T19:44:54.699Z        INFO    controllers.Topic       Start getting eventgrid k8s service's url.      {"topic": "eventgrid/rb-arc-aks-sample-topic", "ActivityId": "d4ea6b2f-41fb-458d-9c56-87185d2c66f8", "OperationId": "DBE937DC-D978-45EE-B1C2-235E07686CB1"}
+2021-06-10T19:44:54.699Z        INFO    controllers.Topic       End getting eventgrid k8s service's url.        {"topic": "eventgrid/rb-arc-aks-sample-topic", "ActivityId": "d4ea6b2f-41fb-458d-9c56-87185d2c66f8", "OperationId": "DBE937DC-D978-45EE-B1C2-235E07686CB1"}
+2021-06-10T19:44:54.699Z        INFO    controllers.Topic       End getting topic's managment endpoint. {"topic": "eventgrid/rb-arc-aks-sample-topic", "ActivityId": "d4ea6b2f-41fb-458d-9c56-87185d2c66f8", "OperationId": "DBE937DC-D978-45EE-B1C2-235E07686CB1"}
+2021-06-10T19:44:54.699Z        INFO    controllers.Topic       Found eventgrid service's mgmt endpoint.        {"topic": "eventgrid/rb-arc-aks-sample-topic", "ActivityId": "d4ea6b2f-41fb-458d-9c56-87185d2c66f8", "OperationId": "DBE937DC-D978-45EE-B1C2-235E07686CB1", "endpoint": "http://eventgrid.eventgrid-system:80/topics/rb-arc-aks-sample-topic?api-version=2019-01-01-preview"}
+2021-06-10T19:44:54.699Z        INFO    controllers.Topic       Start updating topic's status.  {"topic": "eventgrid/rb-arc-aks-sample-topic", "ActivityId": "d4ea6b2f-41fb-458d-9c56-87185d2c66f8", "OperationId": "DBE937DC-D978-45EE-B1C2-235E07686CB1"}
+2021-06-10T19:44:54.708Z        INFO    controllers.Topic       End updating topic's status.    {"topic": "eventgrid/rb-arc-aks-sample-topic", "ActivityId": "d4ea6b2f-41fb-458d-9c56-87185d2c66f8", "OperationId": "DBE937DC-D978-45EE-B1C2-235E07686CB1"}
+2021-06-10T19:44:54.708Z        INFO    controllers.Topic       Start processing topic's create/update request. {"topic": "eventgrid/rb-arc-aks-sample-topic", "ActivityId": "d4ea6b2f-41fb-458d-9c56-87185d2c66f8", "OperationId": "DBE937DC-D978-45EE-B1C2-235E07686CB1"}
+2021-06-10T19:44:54.708Z        INFO    controllers.Topic       Start preparing k8s topic to sync.      {"topic": "eventgrid/rb-arc-aks-sample-topic", "ActivityId": "d4ea6b2f-41fb-458d-9c56-87185d2c66f8", "OperationId": "DBE937DC-D978-45EE-B1C2-235E07686CB1"}
+2021-06-10T19:44:54.708Z        INFO    controllers.Topic       Start getting topic sas-keys secret from api server.    {"topic": "eventgrid/rb-arc-aks-sample-topic", "ActivityId": "d4ea6b2f-41fb-458d-9c56-87185d2c66f8", "OperationId": "DBE937DC-D978-45EE-B1C2-235E07686CB1"}
+2021-06-10T19:44:54.708Z        INFO    controllers.Topic       End getting topic sas-keys secret from api server.      {"topic": "eventgrid/rb-arc-aks-sample-topic", "ActivityId": "d4ea6b2f-41fb-458d-9c56-87185d2c66f8", "OperationId": "DBE937DC-D978-45EE-B1C2-235E07686CB1"}
+2021-06-10T19:44:54.708Z        INFO    controllers.Topic       End preparing k8s topic to sync.        {"topic": "eventgrid/rb-arc-aks-sample-topic", "ActivityId": "d4ea6b2f-41fb-458d-9c56-87185d2c66f8", "OperationId": "DBE937DC-D978-45EE-B1C2-235E07686CB1"}
+2021-06-10T19:44:54.708Z        INFO    controllers.Topic       Start creating/updating topic in broker.        {"topic": "eventgrid/rb-arc-aks-sample-topic", "ActivityId": "d4ea6b2f-41fb-458d-9c56-87185d2c66f8", "OperationId": "DBE937DC-D978-45EE-B1C2-235E07686CB1"}
+2021-06-10T19:44:54.708Z        INFO    controllers.Topic       Start sending PUT request       {"topic": "eventgrid/rb-arc-aks-sample-topic", "ActivityId": "d4ea6b2f-41fb-458d-9c56-87185d2c66f8", "OperationId": "DBE937DC-D978-45EE-B1C2-235E07686CB1", " url: ": "http://eventgrid.eventgrid-system:80/topics/rb-arc-aks-sample-topic?api-version=2019-01-01-preview"}
+2021-06-10T19:44:55.363Z        INFO    controllers.Topic       End sending PUT request {"topic": "eventgrid/rb-arc-aks-sample-topic", "ActivityId": "d4ea6b2f-41fb-458d-9c56-87185d2c66f8", "OperationId": "DBE937DC-D978-45EE-B1C2-235E07686CB1", " url: ": "http://eventgrid.eventgrid-system:80/topics/rb-arc-aks-sample-topic?api-version=2019-01-01-preview"}
+2021-06-10T19:44:55.364Z        INFO    controllers.Topic       End creating/updating topic in broker.  {"topic": "eventgrid/rb-arc-aks-sample-topic", "ActivityId": "d4ea6b2f-41fb-458d-9c56-87185d2c66f8", "OperationId": "DBE937DC-D978-45EE-B1C2-235E07686CB1"}
+2021-06-10T19:44:55.364Z        INFO    controllers.Topic       End processing topic's create/update request.   {"topic": "eventgrid/rb-arc-aks-sample-topic", "ActivityId": "d4ea6b2f-41fb-458d-9c56-87185d2c66f8", "OperationId": "DBE937DC-D978-45EE-B1C2-235E07686CB1"}
+2021-06-10T19:44:55.364Z        INFO    controllers.Topic       Successfully processed created/updated topic request.   {"topic": "eventgrid/rb-arc-aks-sample-topic", "ActivityId": "d4ea6b2f-41fb-458d-9c56-87185d2c66f8", "OperationId": "DBE937DC-D978-45EE-B1C2-235E07686CB1", "endpoint": "http://eventgrid.eventgrid-system:80/topics/rb-arc-aks-sample-topic/api/events?api-version=2018-01-01"}
+2021-06-10T19:44:55.364Z        INFO    controllers.Topic       Start updating topic's status.  {"topic": "eventgrid/rb-arc-aks-sample-topic", "ActivityId": "d4ea6b2f-41fb-458d-9c56-87185d2c66f8", "OperationId": "DBE937DC-D978-45EE-B1C2-235E07686CB1"}
+2021-06-10T19:44:55.375Z        INFO    controllers.Topic       End updating topic's status.    {"topic": "eventgrid/rb-arc-aks-sample-topic", "ActivityId": "d4ea6b2f-41fb-458d-9c56-87185d2c66f8", "OperationId": "DBE937DC-D978-45EE-B1C2-235E07686CB1"}
+2021-06-10T19:44:55.375Z        INFO    controllers.Topic       End reconciling topic.  {"topic": "eventgrid/rb-arc-aks-sample-topic", "ActivityId": "d4ea6b2f-41fb-458d-9c56-87185d2c66f8", "OperationId": "DBE937DC-D978-45EE-B1C2-235E07686CB1"}
+```
+
+It looks as though Event Grid is using the usual Kubernetes Operator pattern to manage the Event Grid Service, and enable the Event Grid Broker pod.
+
+### Closing Thoughts
+
+Overall, I thought this was an elegant solution and was pleased to see how seamlessly it works.
+
+You may be thinking about 'why' would you want to do this. After all, in this example I sent my events back to an Azure Service Bus. I can see this being particularly useful in a scenario where you want to use an Event Driven Architecture within a Kubernetes cluster, and using a Webhook Event Handler to easily pass on the events to services within your cluster. That could feasibly include services like App Services / Logic Apps / Azure Functions hosted in an App Service Kubernetes Environment. Maybe they'd even be behind a self-host API Management Gateway in your Azure Arc Enabled Kubernetes Cluster?
+
+Overall, I can see how this end-to-end App Services story in Azure Arc is coming together. I'm excited by it - I think there's some great potential here to have an overall unified deployment mechanism directly to Azure Platform as a Service (PaaS) hosting models, as well as Kubernetes clusters that may be in Azure, AWS, Google Cloud or on-premises.
+
+I do have some remaining questions on Event Grid for Kubernetes.
+
+* How does it actually work behind the scenes? (Though I suspect I may not find the answer to that one!)
+* What is the Azure Location used for when creating an Event Grid Topic? (Remember that we had to specify West Europe **as well as** the custom location? This is a slightly different experience to App Service and API Management)
+
+That concludes our series... For the time being, that is! If there's interest, I can go into deeper scenarios - potentially even an end-to-end scenario as well, piecing together these various components.
+
+I hope that you've enjoyed this series. I've thoroughly enjoyed writing it, and sharing what I'm learning with you! Let's continue the discussion on [Twitter](https://twitter.com/reddobowen). What excites you about Azure Arc for these Application Services, and building Cloud Native Applications Anywhere? Are there certain scenarios that you're looking to try out? Let me know!
+
+Thank you for making it all the way to part 6 of this series. If you haven't seen the other posts yet, you should definitely check them out!
+
+* [Part 1 - Setting up an Azure Arc enabled Kubernetes cluster](/blog/azure-arc-for-apps-part-1)
+* [Part 2 - Deploying App Services to Kubernetes](/blog/azure-arc-for-apps-part-2)
+* [Part 3 - Deploying Azure Functions into an App Service Kubernetes Environment](/blog/azure-arc-for-apps-part-3)
+* [Part 4 - Deploying Logic Apps into your App Services Kubernetes Environment](/blog/azure-arc-for-apps-part-4)
+* [Part 5 - Deploying an Azure API Management gateway to an Azure Arc enabled Kubernetes Cluster](/blog/azure-arc-for-apps-part-5)
+
+Otherwise, thanks for reading. Until the next blog post, bye for now!
