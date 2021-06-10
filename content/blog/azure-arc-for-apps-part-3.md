@@ -620,6 +620,6 @@ With that, any comments and feedback are always appreciated over on [Twitter, @r
 * [Part 2 - Deploying App Services to Kubernetes](/blog/azure-arc-for-apps-part-2)
 * [Part 4 - Deploying Logic Apps into your App Services Kubernetes Environment](/blog/azure-arc-for-apps-part-4)
 * [Part 5 - Deploying an Azure API Management gateway to an Azure Arc enabled Kubernetes Cluster](/blog/azure-arc-for-apps-part-5)
-* Part 6 (Coming Soon)
+* [Part 6 - Setting up Event Grid on Kubernetes with Azure Arc](/blog/azure-arc-for-apps-part-6)
 
  I hope that you'll continue on with the series, in which case - read on! Otherwise, until the next blog post - Thanks for reading, and bye for now!

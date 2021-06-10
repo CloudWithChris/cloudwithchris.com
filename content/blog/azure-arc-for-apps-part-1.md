@@ -233,6 +233,6 @@ That is out of scope for this particular blog series, so we won't be running thr
 * [Part 3 - Deploying Azure Functions into an App Service Kubernetes Environment](/blog/azure-arc-for-apps-part-3)
 * [Part 4 - Deploying Logic Apps into your App Services Kubernetes Environment](/blog/azure-arc-for-apps-part-4)
 * [Part 5 - Deploying an Azure API Management gateway to an Azure Arc enabled Kubernetes Cluster](/blog/azure-arc-for-apps-part-5)
-* Part 6 (Coming soon)
+* [Part 6 - Setting up Event Grid on Kubernetes with Azure Arc](/blog/azure-arc-for-apps-part-6)
 
 With that, thank you for reading. I'd love to hear if this content was useful. Please let me know over on [Twitter, @reddobowen](https://twitter.com/reddobowen). I hope that you'll continue on with the series, in which case - read on! Otherwise, until the next blog post - Thanks for reading, and bye for now!
