@@ -24,7 +24,7 @@ jobs:
         echo "$fileschanged" > files.txt
         cd $subfolder
 
-        escaped_subfolder=$(printf '%s\n' "$subfolder" | sed 's:[][\\/.^$*]:\\&:g')
+        escaped_subfolder=$(printf '%s\n' "$subfolder/" | sed 's:[][\\/.^$*]:\\&:g')
         sed -i -e "s/$escaped_subfolder//g" ../../files.txt
         for i in *; do
             if ! grep -qxFe "$i" ../../files.txt
@@ -57,7 +57,7 @@ jobs:
         fileschanged=$(git diff --name-only ${{ github.event.inputs.earliestCommit }} ${{ github.event.inputs.latestCommit }} -- "$subfolder/*.md")
         echo "$fileschanged" > files.txt
         cd $subfolder
-        escaped_subfolder=$(printf '%s\n' "$subfolder" | sed 's:[][\\/.^$*]:\\&:g')
+        escaped_subfolder=$(printf '%s\n' "$subfolder/" | sed 's:[][\\/.^$*]:\\&:g')
         sed -i -e "s/$escaped_subfolder//g" ../../files.txt
         for i in *; do
             if ! grep -qxFe "$i" ../../files.txt
