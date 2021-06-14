@@ -38,7 +38,6 @@ jobs:
         name: website
         path: ${{ github.workspace }}/public
   deploy_job:  
-    url: https://www.cloudwithchris.
     runs-on: ubuntu-latest
     needs: build
     name: Build and Deploy Job
