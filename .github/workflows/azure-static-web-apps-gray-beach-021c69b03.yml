@@ -29,7 +29,7 @@ jobs:
         tokenSuffix: '}#'
         files: '["config.yaml"]'
       env:
-        hostname: 'http://gray-beach-021c69b03.azurestaticapps.net'
+        hostname: 'https://www.cloudwithchris.com'
     - name: "Build and Minify Hugo Contents"
       run: hugo --minify    
     - name: "Upload Generated Static Content as Website Artifact"
