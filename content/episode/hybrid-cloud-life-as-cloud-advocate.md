@@ -19,10 +19,8 @@ podcast_file: "Hybrid Cloud Update and Life as a Cloud Advocate.mp3"
 series:
 - Podcast Episodes
 tags:
-- Architecture
 - Hybrid
 - Azure Stack
-- Requirements
 - Azure Arc
 - Developer Advocate
 - Cloud Advocate
