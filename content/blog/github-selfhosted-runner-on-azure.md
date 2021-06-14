@@ -614,7 +614,7 @@ jobs:
           az group list
 ```
 
-I suppose the ``Azure/login`` task provides us some convenience, though I'd love to hear more if there are perspectives that I hadn't yet considered. 
+I suppose the ``Azure/login`` task provides us some convenience, though I'd love to hear more if there are perspectives that I hadn't yet considered.
 
 There are some additional considerations from an operational perspective -
 
