@@ -1,25 +1,27 @@
 ---
 Date: "2021-06-16T18:00:00Z"
-Description: "In this session, Chris is joined by Shannon Kuehn, a Senior Cloud Advocate at Microsoft. In this Livestream, they'll talk all about, Azure and VMWare and what this combination means for your cloud deployments!"
+Description: "In this session, Chris is joined by Shannon Kuehn, a Senior Cloud Advocate at Microsoft. In this Livestream, they talk all about, Azure and VMWare and what this combination means for your cloud deployments!"
 PublishDate: "2021-06-16T18:00:00Z"
 Title: Azure & VMWare - A Discussion with Shannon Kuehn
 episode: ""
-image: img/cloudwithchrislogo.png
+image: img/episodes/azure-and-vmware.jpg
 explicit: "no"
 hosts:
 - chrisreddington
 guests:
 - shannonkuehn
 images:
+- img/episodes/azure-and-vmware.jpg
 - img/cloudwithchris.png
-# podcast_bytes: "53415936"
-# podcast_duration: "55:42.000"
-# podcast_file: 25 - A conversation on mental health.mp3
+podcast_bytes: "64055818"
+podcast_duration: "01:06:42.000"
+podcast_file: Azure & VMWare - A Discussion with Shannon Kuehn.mp3
 tags:
 - Azure
 - Infrastructure
 - VMWare
-youtube: vvfp21gmZn4
-upcoming: true
+- Operations
+- DevOps
+youtube: _z2EpMyUrac
 ---
-In this session, Chris is joined by Shannon Kuehn, a Senior Cloud Advocate at Microsoft. In this Livestream, they'll talk all about, Azure and VMWare and what this combination means for your cloud deployments!
+In this session, Chris is joined by Shannon Kuehn, a Senior Cloud Advocate at Microsoft. In this Livestream, they talk all about, Azure and VMWare and what this combination means for your cloud deployments!
