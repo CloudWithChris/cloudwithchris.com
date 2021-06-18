@@ -235,7 +235,7 @@ We'll navigate to the Azure Portal and create a new Event Grid Topic. Give your 
 
 ![Screenshot showing the Azure Portal experience to create an Event Grid Topic, showing custom locations](/img/blog/azure-arc-for-apps-part-6/azure-arc-event-grid-create-topic.jpg)
 
-Click Next to move on to the **Advanced** tab. Notice that the **Events Schema** and **Enable system assigned identity** options are both disabled. 
+Click Next to move on to the **Advanced** tab. Notice that the **Events Schema** and **Enable system assigned identity** options are both disabled.
 
 > **Tip:** As noted earlier, **Cloud Event Schema v1.0** is the only supported Event Schema in Event Grid for Kubernetes. Likewise, system assigned identities are not supported in Event Grid for Kubernetes at this time.
 
@@ -465,7 +465,7 @@ Speaking of which, let's recap on the Event Handler:
 
 > **Tip:** We sometimes refer to an Event Handler as an Event subscriber. This is an entity that is listening to an Event Subscription (the resource we're in the middle of configuring!) for events and takes action by reacting to those events.
 
-Below, you can see that we can send our Events to a ``Web Hook``, ``Storage Queue``, ``Event Hub``, ``Service Bus Queue`` and ``Service Bus Topic``. 
+Below, you can see that we can send our Events to a ``Web Hook``, ``Storage Queue``, ``Event Hub``, ``Service Bus Queue`` and ``Service Bus Topic``.
 
 > **Note:** If you've used Azure Event Grid, you may be aware of additional Event Handlers including Azure Automation, Azure Functions, Relay Hybrid Connections, Logic Apps and Power Automate. These are unsupported.
 >
