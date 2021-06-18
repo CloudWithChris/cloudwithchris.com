@@ -24,8 +24,7 @@ jobs:
         echo "$fileschanged" > files.txt
         cd $subfolder
 
-        escaped_subfolder=$(printf '%s\n' "$subfolder/" | sed 's:[][\\/.^$*]:\\&:g')
-        sed -i -e "s/$escaped_subfolder//g" ../../files.txt
+        sed -i -e "s#$subfolder##g" ../../files.txt
         for i in *; do
             if ! grep -qxFe "$i" ../../files.txt
             then
@@ -58,7 +57,7 @@ jobs:
         echo "$fileschanged" > files.txt
         cd $subfolder
         escaped_subfolder=$(printf '%s\n' "$subfolder/" | sed 's:[][\\/.^$*]:\\&:g')
-        sed -i -e "s/$escaped_subfolder//g" ../../files.txt
+        sed -i -e "s#$subfolder##g" ../../files.txt
         for i in *; do
             if ! grep -qxFe "$i" ../../files.txt
             then
