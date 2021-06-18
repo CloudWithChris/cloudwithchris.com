@@ -1,6 +1,6 @@
 ---
 Author: chrisreddington
-Description: ""
+Description: "You may have heard about ARM Templates. You may have heard about Project Bicep. What are they, how do they differ? Why would I use one over the other? That's exactly what we'll be exploring throughout this blog post!"
 PublishDate: "2021-06-18T12:00:00Z"
 image: img/cloudwithchrislogo.png
 date: "2021-06-18T12:00:00Z"
@@ -15,6 +15,8 @@ tags:
 - DevSecOps
 title: 'Introduction to Project Bicep - The evolution of ARM Templates'
 ---
+You may have heard about ARM Templates. You may have heard about Project Bicep. What are they, how do they differ? Why would I use one over the other? That's exactly what we'll be exploring throughout this blog post!
+
 ## Introducing Azure Resource Manager (ARM) and ARM templates
 
 Whether you've been working with Azure for some time, or only recently started - You will have likely heard of Azure Resource Manager (ARM) Templates.
