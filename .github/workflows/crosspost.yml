@@ -51,7 +51,7 @@ jobs:
     steps:
     - name: Download markdown files that are different from prior commit
       run: |
-        subfolder='content/blog'
+        subfolder='content/blog/'
         git clone --config lfs.fetchexclude="/podcast_audio" https://github.com/CloudWithChris/cloudwithchris.com.git ./
         fileschanged=$(git diff --name-only ${{ github.event.inputs.earliestCommit }} ${{ github.event.inputs.latestCommit }} -- "$subfolder/*.md")
         echo "$fileschanged" > files.txt
