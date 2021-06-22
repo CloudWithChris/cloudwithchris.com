@@ -24,8 +24,7 @@ jobs:
         echo "$fileschanged" > files.txt
         cd $subfolder
 
-        escaped_subfolder=$(printf '%s\n' "$subfolder/" | sed 's:[][\\/.^$*]:\\&:g')
-        sed -i -e "s/$escaped_subfolder//g" ../../files.txt
+        sed -i -e "s#$subfolder##g" ../../files.txt
         for i in *; do
             if ! grep -qxFe "$i" ../../files.txt
             then
@@ -52,13 +51,13 @@ jobs:
     steps:
     - name: Download markdown files that are different from prior commit
       run: |
-        subfolder='content/blog'
+        subfolder='content/blog/'
         git clone --config lfs.fetchexclude="/podcast_audio" https://github.com/CloudWithChris/cloudwithchris.com.git ./
         fileschanged=$(git diff --name-only ${{ github.event.inputs.earliestCommit }} ${{ github.event.inputs.latestCommit }} -- "$subfolder/*.md")
         echo "$fileschanged" > files.txt
         cd $subfolder
         escaped_subfolder=$(printf '%s\n' "$subfolder/" | sed 's:[][\\/.^$*]:\\&:g')
-        sed -i -e "s/$escaped_subfolder//g" ../../files.txt
+        sed -i -e "s#$subfolder##g" ../../files.txt
         for i in *; do
             if ! grep -qxFe "$i" ../../files.txt
             then
