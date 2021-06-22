@@ -60,8 +60,8 @@ The consumer may depend on the publisher's APIs for their own business processes
 
 You'll likely see that we're piecing a few requirements together here -
 
-* Use a facade to decouple the client from the backend. That means that backends can be mocked, so that there isn't a hard dependency on a specific implementation. Likewise, the backend implementation may be able to change as long as the expected 'contract' remains the same. 
-    * If it doesn't, then we can use API versioning to tackle this. More on that later!
+* Use a facade to decouple the client from the backend. That means that backends can be mocked, so that there isn't a hard dependency on a specific implementation. Likewise, the backend implementation may be able to change as long as the expected 'contract' remains the same.
+  * If it doesn't, then we can use API versioning to tackle this. More on that later!
 * The ability to verify the caller's authenticity
 * To have a Facade in place that enables versioning of APIs, while providing a consistent endpoint for consumers to call.
 * To deliver a developer portal to document the APIs available so that consumers can easily adopt the platform.
