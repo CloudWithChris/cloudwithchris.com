@@ -23,6 +23,6 @@ tags:
 - GitHub
 - Community
 - Blogging
-youtube: Q0b3tOFeJlI
+youtube: KN4UaSMhoic
 ---
 In this video, Chris sails the seas on Sea of Thieves with some interdispersed updates on Azure DevOps, Azure and GitHub. This sets the stage for a regular bi-weekly gaming session and tech update, with the other week being a usual technology update!
