@@ -1,8 +1,8 @@
 ---
 Date: "2021-07-11T09:30:00Z"
-Description: "In this video, chris provides another update on Cloud with Chris, updates on what's coming soon and Azure related news!"
+Description: "In this session, Chris provides a series of updates focused around Azure, DevOps, GitHub and Cloud With Chris, while gaming with the Cloud Family Community."
 PublishDate: "2021-07-11T09:30:00Z"
-Title: "V028 - Weekly Technology Vlog #28"
+Title: "V028 - Weekly Technology Vlog #28 and Gaming Session"
 episode: V028
 image: img/cloudwithchrislogo.png # img/vlog/v002.jpg
 explicit: "no"
@@ -18,11 +18,13 @@ images:
 series:
 - Weekly Vlog
 tags:
-#- Podcast
-#- Sessionize
-#- Azure
-#- Community
-# youtube: VyQI5SOsw3M
+- Azure
+- AzureDevOps
+- GitHub
+- Community
+- Blogging
+- Gaming
+youtube: X0A8OvRgBf8
 upcoming: true
 ---
-In this video, chris provides another update on Cloud with Chris, updates on what's coming soon and Azure related news!
+In this session, Chris provides a series of updates focused around Azure, DevOps, GitHub and Cloud With Chris, while gaming with the Cloud Family Community.
