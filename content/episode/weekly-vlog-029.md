@@ -1,6 +1,6 @@
 ---
 Date: "2021-07-18T09:30:00Z"
-Description: "In this video, chris provides another update on Cloud with Chris, updates on what's coming soon and Azure related news!"
+Description: "In this session, Chris provides a series of updates focused around Azure, DevOps, GitHub and Cloud With Chris"
 PublishDate: "2021-07-18T09:30:00Z"
 Title: "V029 - Weekly Technology Vlog #29"
 episode: V029
@@ -18,11 +18,12 @@ images:
 series:
 - Weekly Vlog
 tags:
-#- Podcast
-#- Sessionize
-#- Azure
-#- Community
-# youtube: VyQI5SOsw3M
+- Azure
+- AzureDevOps
+- GitHub
+- Community
+- Blogging
+youtube: CrKOU3ORQTs
 upcoming: true
 ---
-In this video, chris provides another update on Cloud with Chris, updates on what's coming soon and Azure related news!
+In this session, Chris provides a series of updates focused around Azure, DevOps, GitHub and Cloud With Chris
