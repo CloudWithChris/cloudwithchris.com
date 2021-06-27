@@ -1,8 +1,8 @@
 ---
 Date: "2021-06-20T09:30:00Z"
-Description: "In this video, chris provides another update on Cloud with Chris, updates on what's coming soon and Azure related news!"
+Description: "In this video, Chris sails the seas on Sea of Thieves with some interdispersed updates on Azure DevOps, Azure and GitHub. This sets the stage for a regular bi-weekly gaming session and tech update, with the other week being a usual technology update!"
 PublishDate: "2021-06-20T09:30:00Z"
-Title: "V025 - Weekly Technology Vlog #25"
+Title: "V025 - Weekly Vlog #25 (Sailing the seas on Sea of Thieves)"
 episode: V025
 image: img/cloudwithchrislogo.png # img/vlog/v002.jpg
 explicit: "no"
@@ -18,11 +18,11 @@ images:
 series:
 - Weekly Vlog
 tags:
-#- Podcast
-#- Sessionize
-#- Azure
-#- Community
-# youtube: VyQI5SOsw3M
-upcoming: true
+- Azure
+- AzureDevOps
+- GitHub
+- Community
+- Blogging
+youtube: KN4UaSMhoic
 ---
-In this video, chris provides another update on Cloud with Chris, updates on what's coming soon and Azure related news!
+In this video, Chris sails the seas on Sea of Thieves with some interdispersed updates on Azure DevOps, Azure and GitHub. This sets the stage for a regular bi-weekly gaming session and tech update, with the other week being a usual technology update!
