@@ -18,7 +18,7 @@ We [recently introduced you to API Management, how it maps to architectural prin
 
 ## An introduction to API Management Policies
 
-Azure API Management Policies are a way to implement configuration which changes the behaviour of an API Operation or set of APIs. These policies are executed sequentially in either the request to or response from an API. Consider the API Management as a broker between the client and the API, acting a little like a gatekeeper. This means that policies have the potential to be used in a variety of scenarios, e.g. rate limiting, conversion from XML to JSON or validate a JavaScript Web Token (JWT), which is a common activity for Authentication/Authorization in modern web applications. In this blog post, I'm going to assume that you have a working understanding of these concepts (otherwise the blog post would become too large!)
+Azure API Management Policies are a way to implement configuration which changes the behaviour of an API Operation or set of APIs. These policies are executed sequentially in either the request to or response from an API. Consider the API Management as a broker between the client and the API, acting a little like a gatekeeper. This means that policies have the potential to be used in a variety of scenarios, e.g. rate limiting, conversion from XML to JSON or validate a JSON Web Token (JWT), which is a common activity for Authentication/Authorization in modern web applications. In this blog post, I'm going to assume that you have a working understanding of these concepts (otherwise the blog post would become too large!)
 
 Let's first navigate to the Azure Resource that we created in the previous blog post. You may notice from the below screenshot that it's in a different subscription. This is the same resource, though I have been doing a bit of tidying up of my Azure Subscriptions.
 
@@ -59,7 +59,7 @@ I'm sure you'll agree - plenty to get you started with your scenario! So much so
 </validate-jwt>
 ```
 
-What is the above policy doing? Effectively, we're looking for a JavaScript Web Token that has been provided by the cloudwithchris.com tenant in Azure Active Directory. That token must have an audience with the id ``d3414b61-53f8-4ad5-aa1d-1e2a15579f60``. This means that I have an App Registration in Azure Active Directory with the Client ID ``d3414b61-53f8-4ad5-aa1d-1e2a15579f60``. Of course, if you're working through this blog post from beginning to end - you may not have an App Registration.
+What is the above policy doing? Effectively, we're looking for a JSON Web Token that has been provided by the cloudwithchris.com tenant in Azure Active Directory. That token must have an audience with the id ``d3414b61-53f8-4ad5-aa1d-1e2a15579f60``. This means that I have an App Registration in Azure Active Directory with the Client ID ``d3414b61-53f8-4ad5-aa1d-1e2a15579f60``. Of course, if you're working through this blog post from beginning to end - you may not have an App Registration.
 
 Let's go ahead and do that now.
 
@@ -88,7 +88,7 @@ For the time being, we're assuming in this scenario that only users from the sam
 
 > **Tip:** I'll only be creating a single app registration. However, if you had a user interface (e.g. Single Page Application), that interacted with multiple backend APIs, then it's likely you would have multiple app registrations. You would have a registration for the Single Page App (SPA) frontend, and separate app registrations for the custom-built APIs that you will be accessing. (I say custom-built, as there are built-in APIs available for access to Microsoft Services, such as the Microsoft Graph API).
 >
-> Then it's a case of exposing an API from the app registration that is associated to your backend API, and granting API permissions to the app registration that is aligned to your Single Page App. When you expose the API, you provide it a name (e.g. myapi.read). That is then the scope that you would pass in when you acquire the access token for the call. [This example](https://docs.microsoft.com/en-us/azure/active-directory/develop/scenario-spa-overview) shows how to do this for a Single Page Application calling the Microsoft Graph (so, not a custom API - which is the slight difference in what we described here). This is commonly referred to as the on-behalf-of flow. A thorough explanation / reference is available [in the Azure Docs here](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow).
+> Then it's a case of exposing an API from the app registration that is associated to your backend API, and granting API permissions to the app registration that is aligned to your Single Page App. When you expose the API, you provide it a name (e.g. myapi.read). That is then the scope that you would pass in when you acquire the access token for the call. [This example](https://docs.microsoft.com/en-us/azure/active-directory/develop/scenario-spa-overview) shows how to do this for a Single Page Application calling the Microsoft Graph (so, not a custom API - which is the slight difference in what we described here).
 >
 > Why all of this complexity? Because, we don't necessarily want to grant one application access to all other applications. Likewise, as an organization - we may not want to grant admin consent to this, and in fact give this freedom of choice back to the end-user. Remember those dialogues when you use a social identity provider to login to a site? You're commonly told they'll access your User Name, E-Mail, etc.? This is the similar concept to consider with API permissions.
 >
@@ -152,7 +152,7 @@ Once you execute the request, you'll hopefully receive an ``HTTP Status 200 OK``
 
 Copy the value associated with the ``access_token`` property key. You'll need this as we call our API Management resource.
 
-> **Tip:** What is that long token value anyway? It's a JavaScript Web Token, and is a common transfer format to show a claims of a given entity, commonly used in OAuth workflows. You can actually look inside the contents of those files using tools like [jwt.ms/](https://jwt.ms/).
+> **Tip:** What is that long token value anyway? It's a JSON Web Token, and is a common transfer format to show a claims of a given entity, commonly used in OAuth workflows. You can actually look inside the contents of those files using tools like [jwt.ms/](https://jwt.ms/).
 >
 > Hopefully this comes as an obvious health warning. **Be careful** on where you share your Bearer token. The idea of **Bearer Authentication** is **give access to the bearer of this token**. It comes from the same concept as a bearer cheque if you have heard of that previously. In which case, like any secrets - please don't share your Bearer token's openly!
 
@@ -170,7 +170,7 @@ Now for the moment of truth. Let's navigate back to our Azure API Management ser
 > * **All operations** - A policy which applies to **all** operations associated with a specific API.
 > * **Individual operation** - A policy which applies to a specific API operation only.
 
-I applied my policy at the **All operations** level of my **original** version API. Therefore, any operation that I request within that API version now has to have an appropriate JavaScript Web Token (JWT) to be called appropriately.
+I applied my policy at the **All operations** level of my **original** version API. Therefore, any operation that I request within that API version now has to have an appropriate JSON Web Token (JWT) to be called appropriately.
 
 Let's prove this out. You can see in the below screenshot that I am calling my GetSessions API through the Test tab of API Management. This just returns a collection of sessions that are available within the conference. However, notice that we are not passing in any additional headers to the API. You'll see that the API returns with an ``HTTP 401 Unauthorized`` error, and a message of Unauthorized. Access token is missing or invalid.
 
@@ -201,7 +201,9 @@ Which scenarios should you consider? Well, it depends! If you're restricting acc
 * Likewise, what happens if the networking rules are misconfigured, and in fact you're allowing **any** internal traffic to access the backend?
   * Depending on your requirements, you may be okay with any internal traffic accessing the backend API. But what about a zero-trust model?
 
-This is where you may also want to consider validating a token on the backend API. It doesn't necessarily need to be **the same** token as what we passed in to API Management though. We could even use API Management to pass a new token to the Backend API for verification. This is exactly what we'll be doing in the next blog post, by replacing our backend API with a different Azure Function and controlling the authorization.
+This is where you may also want to consider validating a token on the backend API. Typically it would be **the same** token as what we passed into API Management, as we don't want to lose the original user context. However, we could use API Management to pass a new token to the Backend API for verification. From chatting with a friend on this (Thanks Jelle!), this *could* be useful for a legacy API which is expecting app tokens, rather than end-user tokens. But, passing the end-user token to the backend as well is common. 
+
+Why use the same token in both APIM and the backend? How do you implement this? This is exactly what we'll be doing in the next blog post (considering zero trust / defence in depth), replacing our backend API with a different Azure Function and controlling the authorization.
 
 ## Wrap-up
 
