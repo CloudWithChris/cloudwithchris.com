@@ -3,7 +3,7 @@ Date: "2021-07-02T15:30:00Z"
 Description: "In this episode, Chris is joined by Mert Yeter, a software engineer with 16 years of experience in .NET and Microsoft technologies. We'll be talking all things DevOps on Azure, including Azure Container Registry, Azure Container Instances and Azure Kubernetes Service. We'll also get a chance to talk about Traefik and how it's pluggable middleware can help you with your Kubernetes ingresses! Tune in to find out more!"
 PublishDate: "2021-07-02T15:30:00Z"
 Title: 41 - DevOps on Azure
-episode: "40"
+episode: "41"
 image: img/episodes/devops-on-azure.jpg
 explicit: "no"
 hosts:
