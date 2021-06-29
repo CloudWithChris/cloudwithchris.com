@@ -23,8 +23,8 @@ tags:
 - Kubernetes
 - Prometheus
 - CNCF
-youtube: R4td5SxS9UM
+youtube: V2z1NhNWdVc
 ---
-The Cloud Native Computing Foundation (CNCF) bought you such fan favourites like Kubernetes & Prometheus. In this talk Annie Talvasto will introduce you the most interesting and coolest upcoming CNCF tools and projects.
+The Cloud Native Computing Foundation (CNCF) brought you such fan favourites like Kubernetes & Prometheus. In this talk Annie Talvasto will introduce you the most interesting and coolest upcoming CNCF tools and projects.
 
 This compact and demo-filled talk will give you ideas and inspiration that you can 1) discover new technologies and tools to use in your future projects as well as 2) be the coolest kid in the block, by being up to date with the latest and greatest.
