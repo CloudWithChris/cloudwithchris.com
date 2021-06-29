@@ -4,24 +4,26 @@ Description: "The Cloud Native Computing Foundation (CNCF) bought you such fan f
 PublishDate: "2021-06-30T18:00:00Z"
 Title: Top new CNCF projects to look out for
 episode: ""
-image: img/cloudwithchrislogo.png
+image: img/episodes/top-new-cncf-projects.jpg
 explicit: "no"
 hosts:
 - chrisreddington
 guests:
 - annietalvasto
 images:
+- img/episodes/top-new-cncf-projects.jpg
 - img/cloudwithchris.png
-# podcast_bytes: "53415936"
-# podcast_duration: "55:42.000"
-# podcast_file: 25 - A conversation on mental health.mp3
+series:
+- Tales from the Real World
+podcast_bytes: "43954236"
+podcast_duration: "45:42.000"
+podcast_file: Top new CNCF projects to look out for.mp3
 tags:
 - Cloud-Native
 - Kubernetes
 - Prometheus
 - CNCF
-# youtube: vvfp21gmZn4
-upcoming: true
+youtube: R4td5SxS9UM
 ---
 The Cloud Native Computing Foundation (CNCF) bought you such fan favourites like Kubernetes & Prometheus. In this talk Annie Talvasto will introduce you the most interesting and coolest upcoming CNCF tools and projects.
 
