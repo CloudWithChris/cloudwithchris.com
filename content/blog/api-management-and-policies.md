@@ -201,7 +201,7 @@ Which scenarios should you consider? Well, it depends! If you're restricting acc
 * Likewise, what happens if the networking rules are misconfigured, and in fact you're allowing **any** internal traffic to access the backend?
   * Depending on your requirements, you may be okay with any internal traffic accessing the backend API. But what about a zero-trust model?
 
-This is where you may also want to consider validating a token on the backend API. Typically it would be **the same** token as what we passed into API Management, as we don't want to lose the original user context. However, we could use API Management to pass a new token to the Backend API for verification. From chatting with a friend on this (Thanks Jelle!), this *could* be useful for a legacy API which is expecting app tokens, rather than end-user tokens. But, passing the end-user token to the backend as well is common. 
+This is where you may also want to consider validating a token on the backend API. Typically it would be **the same** token as what we passed into API Management, as we don't want to lose the original user context. However, we could use API Management to pass a new token to the Backend API for verification. From chatting with a friend on this (Thanks Jelle!), this *could* be useful for a legacy API which is expecting app tokens, rather than end-user tokens. But, passing the end-user token to the backend as well is common.
 
 Why use the same token in both APIM and the backend? How do you implement this? This is exactly what we'll be doing in the next blog post (considering zero trust / defence in depth), replacing our backend API with a different Azure Function and controlling the authorization.
 
