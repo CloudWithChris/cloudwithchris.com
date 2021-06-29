@@ -5,7 +5,7 @@ You will attract and relate to customers how look like you. They will understand
 PublishDate: "2021-07-06T18:00:00Z"
 Title: Why a Diverse Team is Crucial to Startup Success
 episode: ""
-image: img/cloudwithchrislogo.png
+image: img/episodes/diverse-team-crucial-to-startup-success.jpg
 explicit: "no"
 series:
 - Tales from the Real World
@@ -14,16 +14,17 @@ hosts:
 guests:
 - melissajurkoic
 images:
+- img/episodes/diverse-team-crucial-to-startup-success.jpg
 - img/cloudwithchris.png
-# podcast_bytes: "53415936"
-# podcast_duration: "55:42.000"
-# podcast_file: 25 - A conversation on mental health.mp3
+podcast_bytes: "51140210"
+podcast_duration: "53:11.000"
+podcast_file: Why a Diverse Team is Crucial to Startup Success.mp3
 tags:
 - Diversity
+- Inclusion
 - Startup
 - People
-# youtube: vvfp21gmZn4
-upcoming: true
+youtube: LnMZsNidlCM
 ---
 Team diversity refers to differences between members of startup team. Those differences can include demographic differences (like age, race, sex, ethnicity), personality (extrovert, introvert, and differing Myers-Briggs types) and functional (as in skill sets, like engineering, design, copywriting, and marketing).
 
