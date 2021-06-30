@@ -126,13 +126,13 @@ At this point, I have opened [Postman](https://www.postman.com/) so that I can c
 
 I've set my postman request up with the following details:
 
-* A **GET** request to ``https://login.microsoftonline.com/cloudwithchris.com/oauth2/token``
+* A **GET** request to ``https://login.microsoftonline.com/cloudwithchris.com/oauth2/v2.0/token``
 * Added a **Content-Type** header with the value ``application/x-www-form-urlencoded``
 * Added the following items as **form-data** to the **request body**:
   * Set grant_type as client_credentials
   * Set client_id as the Client ID from the app registration
   * Set client_secret as the Client Secret from the app registration
-  * Set resource as the Client ID from the app registration
+  * Set scope as the Client ID with ``/.default`` appended to the end, e.g. ``d3414b61-53f8-4ad5-aa1d-1e2a15579f60/.default``.
   
 ![Screenshot showing Postman sending a request to Azure Active Directory for an authentication token](/img/blog/api-management-and-policies/apim-6.jpg)
 
@@ -146,7 +146,7 @@ Once you execute the request, you'll hopefully receive an ``HTTP Status 200 OK``
     "expires_on": "1624882328",
     "not_before": "1624878428",
     "resource": "d3414b61-53f8-4ad5-aa1d-1e2a15579f60",
-    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im5PbzNaRHJPRFhFSzFqS1doWHNsSFJfS1hFZyIsImtpZCI6Im5PbzNaRHJPRFhFSzFqS1doWHNsSFJfS1hFZyJ9...A Load of extra characters here
+    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im5PbzNaRHJPRFhFSzFqS1doWHNsSFJfS1hFZyIsImtpZCI6Im5PbzNaRHJPRFhFSzFqS1doWHNsSFJfS1hFZyJ...A Load of extra characters here"
 }
 ```
 
