@@ -1,9 +1,9 @@
 ---
 Author: chrisreddington
-Description: ""
-PublishDate: "2021-07-05T12:00:00Z"
+Description: "Inspired by the recent episode with Annie Talvasto, I wanted to put together a blog post that will introduce an ongoing series on Cloud With Chris. Before we introduce that series though, it's important that we first introduce the Cloud Native Compute Foundation (more commonly known as CNCF)."
+PublishDate: "2021-07-05T09:00:00Z"
 image: img/cloudwithchrislogo.png
-date: "2021-07-05T12:00:00Z"
+date: "2021-07-05T09:00:00Z"
 images:
 - img/cloudwithchrislogo.png
 tags:
@@ -11,6 +11,8 @@ tags:
 - Cloud Native
 - Kubernetes
 - Open Source
+- CNCF
+- Cloud Native Compute Foundation
 title: 'Introducing the Cloud Native Compute Foundation (CNCF)'
 series: 
 - "CNCF Projects"
