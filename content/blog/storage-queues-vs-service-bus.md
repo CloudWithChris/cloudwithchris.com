@@ -36,7 +36,7 @@ So, what are the differences between the two services? And what are the key deci
 
 Let's review some of the key decision points -
 
-* **Delivery Guarantee** (i.e. will the consuming application be guaranteed to receive the message)? 
+* **Delivery Guarantee** (i.e. will the consuming application be guaranteed to receive the message)?
   * **Azure Storage Queues** guarantees at least once delivery.
   * **Azure Service Bus Queues** can provide at least once delivery using a PeekLock receive mode (more on that in a moment), or **At-most-once** by using ReceiveandDelete mode.
 * **Ordering Guarantee** (i.e. are messages received in the order in which they were sent)
