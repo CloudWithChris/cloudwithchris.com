@@ -10,6 +10,19 @@ blockquote {
   background-color: white;
 }
 
+.bg-info {
+  background-color: $cloud-with-chris-blue !important;
+  color: #FFFFFF !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #FFFFFF;
+}
+
+code {
+  color: #B12074;
+}
+
 footer {
   padding-top:20px;
   background-color: $footer-blue;
@@ -61,7 +74,7 @@ footer a {
 }
 
 main a {
-  color: $cloud-with-chris-blue;
+  color: #0C62A8;
   text-decoration: none;
 }
 
@@ -85,6 +98,10 @@ main a:hover {
   .column {
     width: 100%;
   }
+}
+
+.text-muted {
+  color: #336296 !important;
 }
 
 //Pagination
@@ -442,11 +459,11 @@ main a:hover {
 }
 
 .btn-nav {
-  color: $main-blue;
+  color: #FFFFFF;
 }
 
 .btn-nav:hover {
-  background-color: $main-blue;
+  background-color: #FFFFFF;
   color: $cloud-with-chris-blue;
 }
 

@@ -6,7 +6,6 @@
   <div class="row g-0">
     <div class="col-3 col-sm-4">
       <p>
-        
         {{ if eq .Section "talk" }}
           {{ if .Params.externalLink }}
             <a href="{{ .Params.externalLink }}"><img src="{{ .Params.image | absURL }}" class="rounded-circle z-depth-2 align-middle person-image" width="100" title="{{ .Title }}" alt="{{ .Title }}" /></a>
@@ -14,15 +13,13 @@
             <a href="{{ .Permalink }}"><img src="{{ .Params.image | absURL }}" class="rounded-circle z-depth-2 align-middle person-image" width="100" title="{{ .Title }}" alt="{{ .Title }}" /></a>
           {{ end }}
         {{ else }}       
-          <a href="{{ .Permalink }}">
             {{ if eq .Section "episode" }}
-              <img src="{{ .Params.image | absURL }}" class="rounded-circle z-depth-2 align-middle person-image" width="100" title="{{ .Title }}" alt="{{ .Title }}" />
+              <a href="{{ .Permalink }}"><img src="{{ .Params.image | absURL }}" class="rounded-circle z-depth-2 align-middle person-image" width="100" title="{{ .Title }}" alt="{{ .Title }}" /></a>
             {{ else if eq .Section "blog" }}
-              <img src="{{ .Params.image | absURL }}" class="rounded-circle z-depth-2 align-middle person-image" width="100" title="{{ .Title }}" alt="{{ .Title }}" />
+              <a href="{{ .Permalink }}"><img src="{{ .Params.image | absURL }}" class="rounded-circle z-depth-2 align-middle person-image" width="100" title="{{ .Title }}" alt="{{ .Title }}" /></a>
             {{ end }}
-            </p>
-          </a>
         {{ end }}
+      </p>
         <p>
           {{ if eq .Section "talk" }}
             <span class="badge bg-warning text-dark d-inline pull-right">{{ .Params.talkType | humanize }}</span>

@@ -45,27 +45,27 @@ Chris is no stranger to speaking in podcasts or recording videos content. Aside 
 </div>
 
 ### Azure Mythbusters: You don’t need requirements in the Cloud… Or do you?
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ObeO6-jsfP8?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ObeO6-jsfP8?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Azure Mythbusters: You don’t need requirements in the Cloud... Or do you?"></iframe>
 
 ### Azure Mythbusters: Azure is Magical! Management in the cloud compared with on-premises
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Dby4BcWbeng" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Dby4BcWbeng" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Azure Mythbusters: Azure is Magical! Management in the cloud compared with on-premises"></iframe>
 
 ### Azure Mythbusters: Cloud is expensive
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/8IqpT8zBN-w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8IqpT8zBN-w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Azure Mythbusters: Cloud is expensive"></iframe>
 
-### Azure Mythbusters: Cloud is new, so there are no clear archietcture patterns
+### Azure Mythbusters: Cloud is new, so there are no clear architecture patterns
 
 * [Click here for the writeup](https://cloudblogs.microsoft.com/industry-blog/en-gb/technetuk/2020/01/28/azure-Mythbusters-cloud-is-new-so-there-are-no-clear-architecture-patterns/)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Z9MHRdAsG8E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Z9MHRdAsG8E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Azure Mythbusters: Cloud is new, so there are no clear architecture patterns"></iframe>
 
 ### Azure Mythbusters: I can choose any Azure Compute Service to solve any problem
 
 * [Azure Mythbusters: I can choose any Azure Compute Service to solve any problem!](https://cloudblogs.microsoft.com/industry-blog/en-gb/technetuk/2020/02/04/azure-Mythbusters-i-can-choose-any-azure-compute-service-to-solve-any-problem/)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/-o5OWSbeNbs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-o5OWSbeNbs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Azure Mythbusters: I can choose any Azure Compute Service to solve any problem"></iframe>
 
 By night, Chris is a Musical Theatre Enthusiast. He has sat as committee member for Reading Operatic Society and also performed in a number of recent productions, including;
 

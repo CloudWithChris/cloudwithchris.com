@@ -21,7 +21,7 @@
 {{ define "top" }}
 {{ $site := .Site }}
 {{ $scratch := .Scratch }}
-
+{{ $title := .Title }}
   <section class="py-5 container" align="center">
     <div class="col">
       <div class="row">
@@ -77,7 +77,7 @@
       
       {{- with .Params.youtube -}}
       <div class="row youtube embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ . }}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ . }}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="{{ $title }}"></iframe>
       </div>
       {{- end -}}
     </div>

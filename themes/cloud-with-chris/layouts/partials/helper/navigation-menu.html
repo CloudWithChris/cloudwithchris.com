@@ -4,8 +4,8 @@
 {{ with $context }}
   {{ if.HasChildren }}
     <li class="nav-item dropdown {{ if $currentPage.HasMenuCurrent "main" . }}active{{ end }}">
-      <a class="nav-link dropdown-toggle" href="{{ .URL }}" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ .Name }}</a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+      <a class="nav-link dropdown-toggle" href="{{ .URL }}" id="{{ .Name | urlize }}navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ .Name }}</a>
+      <div class="dropdown-menu" aria-labelledby="{{ .Name | urlize }}navbarDropdownMenuLink">
         {{ range .Children }}
           <a class="dropdown-item" href="{{ .URL }}">{{ .Name }}</a>
         {{ end }}
