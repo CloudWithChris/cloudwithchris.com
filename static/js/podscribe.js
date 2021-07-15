@@ -18,7 +18,7 @@ var podscribeEmbedVars = {
   rssUrl: 'https://www.cloudwithchris.com/episode/index.xml',
   backgroundColor: '#CFDCE1',
   font: undefined,
-  fontColor: undefined,
+  fontColor: '#000000',
   speakerFontColor: '#25A6D9',
   height: '1000px',
   showEditButton: true,
