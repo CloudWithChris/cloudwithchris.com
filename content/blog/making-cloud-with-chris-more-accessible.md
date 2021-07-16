@@ -1,6 +1,6 @@
 ---
 Author: chrisreddington
-Description: ""
+Description: "I've recently been on a journey. I've recently come across a number of accessibility issues on cloudwithchris.com. I've been working on making the site more accessible, and I've also been working on making it more inclusive. In this blog post, I'm going to outline some of my findings, the tools that I used to identify those, and how I've worked to fix them. This is an ongoing project, so I'll provide further posts as it makes sense."
 PublishDate: "2021-07-16T12:00:00Z"
 image: img/cloudwithchrislogo.png
 date: "2021-07-16T12:00:00Z"
