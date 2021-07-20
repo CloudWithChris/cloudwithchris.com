@@ -18,6 +18,5 @@ tags:
 - Deployment
 - GitHub Actions
 - Static Content
-upcoming: true
 ---
 Chris is a Cloud Solution Architect at Microsoft. He'll provide an overview of GitHub and explore how GitHub Actions can be used to build and deploy your own static websites (or other apps!) to Azure.
