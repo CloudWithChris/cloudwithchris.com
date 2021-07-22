@@ -1,7 +1,7 @@
 ---
-Date: "2021-07-28T18:00:00Z"
+Date: "2021-11-12T18:00:00Z"
 Description: "In this session, Chris is joined by Michael Levan, CTO & Senior Partner at CloudSkills.io. Chris and Michael chat about how to get properly educated with cloud and DevOps. Not just about taking a course - but - how to get a job and put skills to use."
-PublishDate: "2021-07-28T18:00:00Z"
+PublishDate: "2021-11-12T18:00:00Z"
 Title: Education Mindset In The Cloud
 episode: ""
 image: img/cloudwithchrislogo.png
