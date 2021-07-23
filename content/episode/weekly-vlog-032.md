@@ -1,8 +1,8 @@
 ---
 Date: "2021-08-08T09:30:00Z"
-Description: "In this video, chris provides another update on Cloud with Chris, updates on what's coming soon and Azure related news!"
+Description: "In this session, Chris provides a series of updates focused around Azure, DevOps, GitHub and Cloud With Chris, while gaming with the Cloud Family Community."
 PublishDate: "2021-08-08T09:30:00Z"
-Title: "V032 - Weekly Technology Vlog #32"
+Title: "V032 - Weekly Technology Vlog #32 and Gaming Session"
 episode: V032
 image: img/cloudwithchrislogo.png # img/vlog/v002.jpg
 explicit: "no"
@@ -25,4 +25,4 @@ tags:
 # youtube: VyQI5SOsw3M
 upcoming: true
 ---
-In this video, chris provides another update on Cloud with Chris, updates on what's coming soon and Azure related news!
+In this session, Chris provides a series of updates focused around Azure, DevOps, GitHub and Cloud With Chris, while gaming with the Cloud Family Community.
