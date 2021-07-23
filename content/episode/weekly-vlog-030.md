@@ -1,6 +1,6 @@
 ---
 Date: "2021-07-25T09:30:00Z"
-Description: "In this session, Chris provides a series of updates focused around Azure, DevOps, GitHub and Cloud With Chris"
+Description: "In this session, Chris provides a series of updates focused around Azure, DevOps, GitHub and Cloud With Chris, while gaming with the Cloud Family Community."
 PublishDate: "2021-07-25T09:30:00Z"
 Title: "V030 - Weekly Technology Vlog #30 and Gaming Session"
 episode: V030
@@ -27,4 +27,4 @@ tags:
 youtube: e3mviJqA_BY
 upcoming: true
 ---
-In this session, Chris provides a series of updates focused around Azure, DevOps, GitHub and Cloud With Chris
+In this session, Chris provides a series of updates focused around Azure, DevOps, GitHub and Cloud With Chris, while gaming with the Cloud Family Community.

@@ -49,7 +49,7 @@ jobs:
     - name: "Setup Hugo on Runner"
       uses: peaceiris/actions-hugo@v2
       with:
-        hugo-version: '0.82.1'
+        hugo-version: '0.86.0'
         extended: true
     - name: "Replace tokens in Configuration"
       uses: cschleiden/replace-tokens@v1.0
