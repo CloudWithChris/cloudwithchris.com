@@ -1,8 +1,8 @@
 ---
-Date: "2021-08-11T18:30:00Z"
+Date: "2021-08-04T18:30:00Z"
 Description: "In this session, Chris is joined by Vanessa Bruwer - Senior Engineer on the FastTrack for Azure team. Vanessa talks how the FastTrack for Azure team deliver monitoring sessions; teaching customers to fish, taking them from knowing nothing about Azure Monitor to being able to configure monitoring for any service in a few focussed sessions. Ready to go from Zero to Hero on Azure Monitor? Then come along and join us!"
-PublishDate: "2021-08-11T18:30:00Z"
-Title: "Azure Monitor: Zero to Hero in 6 Sessions"
+PublishDate: "2021-08-04T18:30:00Z"
+Title: "How to be successful with monitoring in Azure"
 image: img/cloudwithchrislogo.png
 explicit: "no"
 hosts:
