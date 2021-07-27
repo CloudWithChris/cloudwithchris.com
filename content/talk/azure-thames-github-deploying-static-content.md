@@ -11,7 +11,8 @@ images:
 - img/cloudwithchris.png
 talkType: "Meetup"
 eventName: "Azure Thames Valley"
-externalLink: https://www.meetup.com/en-AU/Azure-Thames-Valley/events/277008305/
+# externalLink: https://www.meetup.com/en-AU/Azure-Thames-Valley/events/277008305/
+youtube: "1JYdGHMC9ic"
 tags:
 - DevOps
 - GitHub
