@@ -26,7 +26,7 @@ Azure Static Web Apps was launched as a preview service in May 2020, and went Ge
 
 * Ability to quickly create a GitHub Action Workflow or integration with Azure Pipelines
 * Automatic provisioning of staging environments
-* Free SSL Certificates 
+* Free SSL Certificates
 * Ability to associate custom domains
 * Ability to deploy Azure Functions as part of your Static Web App deployment, for a true serverless website
 * Ability to easily integrate Authentication and Authorization capabilities into your website
