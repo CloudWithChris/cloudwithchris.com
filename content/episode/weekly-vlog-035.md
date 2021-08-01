@@ -22,7 +22,7 @@ tags:
 #- Sessionize
 #- Azure
 #- Community
-# youtube: VyQI5SOsw3M
+youtube: wSs20nnk6qk
 upcoming: true
 ---
 In this video, chris provides another update on Cloud with Chris, updates on what's coming soon and Azure related news!
