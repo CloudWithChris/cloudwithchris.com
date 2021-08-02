@@ -1,6 +1,6 @@
 ---
 Author: chrisreddington
-Description: "TBC"
+Description: "I've written blog posts previously around Azure Service Bus vs Azure Storage Queues, as well as an introduction to Azure Logic Apps and how I used it at the time. Back then, my use-case was fairly rudimentary and focused on a specific scenario. In this blog post, I explain the changes that I have made and how I've used common cloud design / integration patterns to implement a more robust solution."
 PublishDate: "2021-08-02T09:00:00Z"
 image: img/cloudwithchrislogo.png
 date: "2021-08-02T09:00:00Z"
