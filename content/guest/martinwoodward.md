@@ -12,4 +12,4 @@ Type: guest
 Website: ""
 YouTube: ""
 ---
-Martin is the Senior Director of DevRel for GitHub. He was previously the Group Principal Program Manager for Azure DevOps helping provide the tooling for engineering teams inside and outside the company. Before that Martin was Executive Director of the .NET Foundation helping drive Microsoft’s move towards open source. He was the original creator Microsoft's home on GitHub and helped introduce Git into Microsoft.
+Martin is the Senior Director for Developer Relations at GitHub where he helps open source communities and developers to be successful. Before that Martin was Executive Director of the .NET Foundation helping drive Microsoft’s move towards open source. He was the original creator Microsoft’s home on GitHub and helped introduce Git into Microsoft. He also was on the team responsible for DevOps tooling for developers both inside and outside Microsoft. He lives in rural Northern Ireland where he has worked remotely for the past 16 years.
