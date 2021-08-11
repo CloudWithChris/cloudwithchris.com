@@ -1,6 +1,6 @@
 ---
 Author: chrisreddington
-Description: "I recently gave a talk on my journey into the Azure Technical Community. While my day job is working for Microsoft, I get a lot of energy through blogging, podcasting and vlogging - ultimately, helping others grow, inspiring and encourage them along their own technical journey. In this blog, I write about why I got involved with the technical community, some of my reflections on the journey and what I continue to look forward to."
+Description: "I recently gave a talk on my journey into the Azure Technical Community. While my day job is working for Microsoft, I get a lot of energy through blogging, podcasting and vlogging - ultimately, helping others grow, inspiring and encouraging them along their own technical journey. In this blog, I write about why I got involved with the technical community, some of my reflections on the journey and what I continue to look forward to."
 PublishDate: "2021-08-11T07:00:00Z"
 image: img/cloudwithchrislogo.png
 date: "2021-08-11T07:00:00Z"
@@ -14,7 +14,7 @@ tags:
 - DevRel
 title: Why you should get involved in the Tech Community
 ---
-I recently gave a talk on my journey into the Azure Technical Community. While my day job is working for Microsoft, I get a lot of energy through blogging, podcasting and vlogging - ultimately, helping others grow, inspiring and encourage them along their own technical journey. In this blog, I write about why I got involved with the technical community, some of my reflections on the journey and what I continue to look forward to.
+I recently gave a talk on my journey into the Azure Technical Community. While my day job is working for Microsoft, I get a lot of energy through blogging, podcasting and vlogging - ultimately, helping others grow, inspiring and encouraging them along their own technical journey. In this blog, I write about why I got involved with the technical community, some of my reflections on the journey and what I continue to look forward to.
 
 ## How's the journey been so far?
 
@@ -26,7 +26,7 @@ Of course, COVID-19 then had a big impact upon all of us. Throughout that period
 
 After working through my challenges, I properly returned to the podcasting again in October. Interestingly, this return coincided with my first release of video content. It was at this point that I started releasing video and audio content simultaneously.
 
-In November 2020, I then got in touch with Richard Benwell who was listed as the organizer of Azure Thames Valley on [meetup.com](https://www.meetup.com/Azure-Thames-Valley/). The group seemed active, so I was curious on what the plans were for the group. We then got talking about how to re-invigorate the group and kick things off once again. This led to the group re-launching in Feburary 2021, and we're still on our growth journey, as we gain more regular members in our community.
+In November 2020, I then got in touch with Richard Benwell who was listed as the organizer of Azure Thames Valley on [meetup.com](https://www.meetup.com/Azure-Thames-Valley/). The group seemed inactive, so I was curious on what the plans were for the group. We then got talking about how to re-invigorate the group and kick things off once again. This led to the group re-launching in February 2021, and we're still on our growth journey, as we gain more regular members in our community.
 
 Jumping back to Cloud With Chris, let's progress towards 2021. I had some extended vacation in December 2020, which meant that I could use it as an opportunity to plan my aims for community contributions. This resulted in -
 
