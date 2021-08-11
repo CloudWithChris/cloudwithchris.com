@@ -59,11 +59,11 @@ I have sessions scheduled on Cloud With Chris until almost the end of 2021. Some
 
 This is why it's important to be  clear on what you want to get out of it. Is it to help grow the skills of others? Is it to work as part of a development team and contribute to an open source project? Or create a new open source project, and grow a community based around it? 
 
-For me, I'm passionate about helping others learn, grow and increase their capabilities. Not just a subset of people, but doing this out in the open, at scale. Not limited to a subset of people, with any biases, being inclusive. If you've been following me for a while, you'll know about some of the accessibility changes that I've recently made to the website. This is a journey I continue to go along, and hopefully now makes a bit more sense on why this is important to me.
+For me, I'm passionate about helping others learn, grow and increase their capabilities. Not just a subset of people, but doing this out in the open, at scale. Not limited to a subset of people, without any bias, being inclusive and accessible for all. If you've been following me for a while, you'll know about some of the accessibility changes that I've recently made to the website. This is a journey I continue to go along, and hopefully now makes a bit more sense on why this is important to me.
 
 ## What is your reason?
 
-So, what is your reason for getting involved in the community? That question is not intended to sound like a 'gatekeeping' question that you must have a reason before you start. But, in the fast-paced world that we're all operating in, it's very easy for us to say 'yes' to things which take energy from us, rather than give us energy.
+So, what is your reason for getting involved in the community? That question is not intended to sound like a gatekeeping question that "you must" have a reason before you start. But, in this fast-paced world that we're all operating in - it's very easy for us to say 'yes' to things which take energy from us, rather than give us energy.
 
 Something that I learned from The Coaching Habit (an excellent book, that I thoroughly recommend if you're interested in coaching/mentoring) - When you say yes to something, what are you saying no to? We have a finite amount of time, so when you say yes to something - you're really saying no to something else. 
 
