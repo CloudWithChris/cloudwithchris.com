@@ -6,7 +6,7 @@ on:
 jobs:
   crosspost-episode:   
     runs-on: ubuntu-latest
-    if: "contains(githuv.event.head_commit.message, '[crosspost])"
+    if: "contains(github.event.head_commit.message, '[crosspost]')"
     environment:
       name: production.crosspost
     steps:
