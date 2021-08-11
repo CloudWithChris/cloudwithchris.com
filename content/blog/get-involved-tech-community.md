@@ -53,11 +53,11 @@ And I can wholeheartedly say that the reality matches the expectations. There ar
 
 Like anything, it's important to make sure that you get the right balance for yourself, and are clear on the reasons on why **you** want to start **your own** community journey. Is it to help your career development? Is it to meet new people and network with others in the industry? is it to increase your technical capability? Or to help others grow? It could be all of these, just like it was for me.
 
-But, what are your indicators on whether it's giving you energy? What are your indicators if it's taking energy away from you? 
+But, what are your indicators on whether it's giving you energy? What are your indicators if it's taking energy away from you?
 
 I have sessions scheduled on Cloud With Chris until almost the end of 2021. Something that is incredibly top of mind for me is to reflect on the last year, and whether it has given me as much energy as I've put into it all. If there are areas that have taken energy away, why is that?
 
-This is why it's important to be  clear on what you want to get out of it. Is it to help grow the skills of others? Is it to work as part of a development team and contribute to an open source project? Or create a new open source project, and grow a community based around it? 
+This is why it's important to be  clear on what you want to get out of it. Is it to help grow the skills of others? Is it to work as part of a development team and contribute to an open source project? Or create a new open source project, and grow a community based around it?
 
 For me, I'm passionate about helping others learn, grow and increase their capabilities. Not just a subset of people, but doing this out in the open, at scale. Not limited to a subset of people, without any bias, being inclusive and accessible for all. If you've been following me for a while, you'll know about some of the accessibility changes that I've recently made to the website. This is a journey I continue to go along, and hopefully now makes a bit more sense on why this is important to me.
 
@@ -65,7 +65,7 @@ For me, I'm passionate about helping others learn, grow and increase their capab
 
 So, what is your reason for getting involved in the community? That question is not intended to sound like a gatekeeping question that "you must" have a reason before you start. But, in this fast-paced world that we're all operating in - it's very easy for us to say 'yes' to things which take energy from us, rather than give us energy.
 
-Something that I learned from The Coaching Habit (an excellent book, that I thoroughly recommend if you're interested in coaching/mentoring) - When you say yes to something, what are you saying no to? We have a finite amount of time, so when you say yes to something - you're really saying no to something else. 
+Something that I learned from The Coaching Habit (an excellent book, that I thoroughly recommend if you're interested in coaching/mentoring) - When you say yes to something, what are you saying no to? We have a finite amount of time, so when you say yes to something - you're really saying no to something else.
 
 So, with that - How are you taking your next steps in the community? What will you be saying yes to? And therefore, what will you be saying no to?
 
