@@ -1,18 +1,12 @@
 name: Cross Poster
 on: 
-  workflow_dispatch:
-    inputs:
-      earliestCommit:
-        description: 'The workflow will compare the changes between two diffs. This is the earlier of the two commit SHA.'     
-        required: true
-        default: 'HEAD^'
-      latestCommit:
-        description: 'The workflow will compare the changes between two diffs. This is the later of the two commit SHA.'     
-        required: true
-        default: 'HEAD'
+  push:
+    branches:
+      - main
 jobs:
   crosspost-episode:   
     runs-on: ubuntu-latest
+    if: "contains(githuv.event.head_commit.message, '[crosspost])"
     environment:
       name: production.crosspost
     steps:
