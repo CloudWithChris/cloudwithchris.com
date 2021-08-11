@@ -14,7 +14,7 @@ jobs:
       run: |
         subfolder='content/episode/'
         git clone --config lfs.fetchexclude="/podcast_audio" https://github.com/CloudWithChris/cloudwithchris.com.git ./
-        fileschanged=$(git diff --name-only ${{ github.event.inputs.earliestCommit }} ${{ github.event.inputs.latestCommit }} -- "$subfolder/*.md")
+        fileschanged=$(git diff --name-only HEAD^ HEAD -- "$subfolder/*.md")
         echo "$fileschanged" > files.txt
         cd $subfolder
 
@@ -39,6 +39,7 @@ jobs:
         mediumToken: ${{ secrets.MEDIUM_TOKEN }}
         protocol: 'https'
   crosspost-blog:   
+    if: "contains(github.event.head_commit.message, '[crosspost]')"
     runs-on: ubuntu-latest
     environment:
       name: production.crosspost
@@ -47,7 +48,7 @@ jobs:
       run: |
         subfolder='content/blog/'
         git clone --config lfs.fetchexclude="/podcast_audio" https://github.com/CloudWithChris/cloudwithchris.com.git ./
-        fileschanged=$(git diff --name-only ${{ github.event.inputs.earliestCommit }} ${{ github.event.inputs.latestCommit }} -- "$subfolder/*.md")
+        fileschanged=$(git diff --name-only HEAD^ HEAD -- "$subfolder/*.md")
         echo "$fileschanged" > files.txt
         cd $subfolder
         escaped_subfolder=$(printf '%s\n' "$subfolder/" | sed 's:[][\\/.^$*]:\\&:g')
