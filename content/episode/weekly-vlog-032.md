@@ -18,11 +18,12 @@ images:
 series:
 - Weekly Vlog
 tags:
-#- Podcast
-#- Sessionize
-#- Azure
-#- Community
+- Azure
+- Azure DevOps
+- GitHub
+- Community
+- Blogging
+- Gaming
 youtube: BYy3oBLh2Mk
-upcoming: true
 ---
 In this session, Chris provides a series of updates focused around Azure, DevOps, GitHub and Cloud With Chris, while gaming with the Cloud Family Community.
