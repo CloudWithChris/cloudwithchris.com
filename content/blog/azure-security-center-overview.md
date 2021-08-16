@@ -60,7 +60,7 @@ An initiative in the context of Azure Policy is a collection of Azure Policies t
 
 The Secure Score in Azure Security Center is then calculated based off the outstanding recommendations that are present in the scope that you're viewing (e.g. subscription, set of subscriptions, etc.)
 
-> **Note:** Something that I learned while reading [the Azure Docs](https://docs.microsoft.com/en-us/azure/security-center/secure-score-security-controls#which-recommendations-are-included-in-the-secure-score-calculations) and pulling together relevant references for this post, is that preview recommendations do not count towards your secure score. 
+> **Note:** Something that I learned while reading [the Azure Docs](https://docs.microsoft.com/en-us/azure/security-center/secure-score-security-controls#which-recommendations-are-included-in-the-secure-score-calculations) and pulling together relevant references for this post, is that preview recommendations do not count towards your secure score.
 
 ## But wait, I've heard of Azure Sentinel. How does that compare?
 
