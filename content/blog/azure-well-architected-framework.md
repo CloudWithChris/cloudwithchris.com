@@ -23,14 +23,14 @@ So, what is the Azure Well-Architected Framework? Rather than re-explaining an e
 
 So, The Azure Well-Architected Framework isn't some kind of Azure Service that you can spin up, or a built-in Azure service/tool. It's a framework that you can use to help you consider the core design requirements of your solution. Best part? It's absolutely free, so is an incredibly accessible way for you to design, build and operate confidently.
 
-Azure Well-Architected effectively comes in two parts - 
+Azure Well-Architected effectively comes in two parts -
 
 * [The framework aspect](https://docs.microsoft.com/en-us/azure/architecture/framework/) (i.e. the recommended practices that you'll want to consider following)
 * [The review aspect](https://docs.microsoft.com/en-us/assessments/?id=azure-architecture-review&mode=pre-assessment) (i.e. the tool that helps you understand your current posture)
 
 As you would hope, the framework and the review work hand-in-hand. All of the questions in the assessment relate back to tangible recommendations, patterns and practices that are available in the well-Architected Framework documentation.
 
-As you may have suspected by now, the questions align to the pillars of the Azure Well-Architected framework. Those frameworks being - 
+As you may have suspected by now, the questions align to the pillars of the Azure Well-Architected framework. Those frameworks being -
 
 * Cost Optimization (How can you achieve your non-functional requirements while keeping cost low?)
 * Operation Excellence (Technical architecture is one aspect of your solution, but are you prepared to monitor and run the system when it goes live?)
@@ -73,7 +73,7 @@ Once you have completed an additional milestone assessment, you will be able to 
 
 ![Screenshot showing the Azure Advisor Recommendation trends over time](/img/blog/azure-well-architected-framework/azure-waf-assessment-trends.png)
 
-Let's consider those points again. 
+Let's consider those points again.
 
 * Azure Well-Architected a framework and an assessment that's available online to anyone.
 * Azure Well-Architected is free.
