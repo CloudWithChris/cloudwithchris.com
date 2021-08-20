@@ -1,66 +1,159 @@
 name: Azure Static Web Apps CI/CD
-#dummy
+
+# This GitHub Action workflow triggers in two scenarios - 
+# 1. When a push is made to the master branch
+# 2. When a pull request is either opened, synchronized, reopened,
+#    or closed, and the target is the master branch. If the change
+#    is just to the podcast_audio file, then it is ignored.
+
 on:
   push:
     branches:
       - master
+    paths-ignore:
+      - 'podcast_audio/**'
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
       - master
+    paths-ignore:
+      - 'podcast_audio/**'
+
+# The workflow has several phases. Phases 1, 2 and 3 run on a push, or if the pull request activity
+# type is not 'closed'.
+#
+# 1.  A validation phase, which is split into two separate jobs that run in parallel.
+# 1.1 A set of steps that compress images
+# 1.2 A set of steps that lint the markdown contents of the website
+#
+# 2.  Build the Static Website by using the Hugo CLI.
+#
+# 3.  Deploy the website to Azure Static Web Apps
+# 3.1 If the workflow was triggered by a pull request (not a closed activity), then publish the static assets
+#     to the static web app. This is associated with the GitHub Actions staging.azure environment.
+# 3.2 If the workflow was triggered by a push to master, then publish the static assets to the static
+#     web app. This is associated with the GitHub Actions production.azure environment, so requires manual approval.
+#
+# 4   If the workflow was triggered by a Pull Request close event, then close the staging sites which are open.
+
+# Environment variables used for consistency across the workflow.
+env:
+  HUGO_VERSION: '0.87.0'
 
 jobs:
+  # A set of steps used to compress the images, making sure that images are compressed ahead of publishing to the site.
+  # This is done to make sure that the browsing experience remains speedy.
+  compressor:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+    name: Compress Images
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+      - name: Compress Images
+        id: calibre
+        uses: calibreapp/image-actions@main
+        with:
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          compressOnly: true
+      - name: Create New Pull Request If Needed
+        if: steps.calibre.outputs.markdown != ''
+        uses: peter-evans/create-pull-request@v3
+        with:
+          title: Compressed Images
+          branch-suffix: timestamp
+          commit-message: Compressed Images
+          body: ${{ steps.calibre.outputs.markdown }}
+  # A set of steps used to lint the markdown files used to generate the content.
+  # This is done to make sure there are consistent standards being adopted when writing the material.
+  # These standards are configured in the /.github/linters folder of the repository.
+  lint:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+    name: Lint Code Base
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+      - name: Lint Code Base
+        uses: github/super-linter@v4
+        env:
+          FILTER_REGEX_INCLUDE: .*content/.*
+          DEFAULT_BRANCH: master
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_JSCPD: false
+  # A set of steps used to render the website from the markdown, theme and assets into the HTML, CSS, JS and images that are delivered to a user.
   build:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+    needs: [compressor, lint]
     runs-on: ubuntu-latest
     steps:            
     - uses: actions/checkout@v2
-    - name: "Install Node Dependencies"
+    - name: 'Install Node Dependencies'
       run: npm ci    
-    - name: "Setup Hugo on Runner"
+    - name: 'Setup Hugo on Runner'
       uses: peaceiris/actions-hugo@v2
       with:
-        hugo-version: '0.82.1'
+        hugo-version: ${{ env.HUGO_VERSION }}
         extended: true
-    - name: "Replace tokens in Configuration"
-      uses: cschleiden/replace-tokens@v1.0
+    - name: 'Replace tokens in Configuration'
+      uses: cschleiden/replace-tokens@v1.1
       with:
         tokenPrefix: '#{'
         tokenSuffix: '}#'
         files: '["config.yaml"]'
       env:
         hostname: 'https://www.cloudwithchris.com'
-    - name: "Build and Minify Hugo Contents"
+    - name: 'Build and Minify Hugo Contents'
       run: hugo --minify    
-    - name: "Upload Generated Static Content as Website Artifact"
+    - name: 'Upload Generated Static Content as Website Artifact'
       uses: actions/upload-artifact@v1
       with:
         name: website
         path: ${{ github.workspace }}/public
-  deploy_job:  
+  deploy_preview:  
+    if: (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
     needs: build
-    name: Build and Deploy Job
+    name: Deploy (Preview)
+    environment:
+      name: staging.azure
     steps:
-      - name: "Download Website Artifact"
+      - name: 'Download Website Artifact'
         uses: actions/download-artifact@v1
         with:
           name: website
       - name: Build And Deploy
         id: builddeploy
-        uses: Azure/static-web-apps-deploy@v0.0.1-preview
+        uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_GRAY_BEACH_021C69B03 }}
-          repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
-          action: "upload"
-          ###### Repository/Build Configurations - These values can be configured to match you app requirements. ######
-          # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
-          app_location: "website" # App source code path
-          # api_location: "api" # Api source code path - optional
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          action: 'upload'
+          app_location: 'website'
           skip_app_build: true
-          # output_location: "public" # Built app content directory - optional
-          ###### End of Repository/Build Configurations ######
-
+  deploy_prod:  
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    needs: build
+    name: Deploy (Prod)
+    environment:
+      name: production.azure
+      url: https://www.cloudwithchris.com  
+    steps:
+      - name: 'Download Website Artifact'
+        uses: actions/download-artifact@v1
+        with:
+          name: website
+      - name: Build And Deploy
+        id: builddeploy
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_GRAY_BEACH_021C69B03 }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          action: 'upload'
+          app_location: 'website'
+          skip_app_build: true
+  # A set of steps used to close old staging sites that are no longer needed, as the PR has now been merged.
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
     runs-on: ubuntu-latest
@@ -68,7 +161,7 @@ jobs:
     steps:
       - name: Close Pull Request
         id: closepullrequest
-        uses: Azure/static-web-apps-deploy@v0.0.1-preview
+        uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_GRAY_BEACH_021C69B03 }}
-          action: "close"
+          action: 'close'

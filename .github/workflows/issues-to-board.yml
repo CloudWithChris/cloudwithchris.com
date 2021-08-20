@@ -1,0 +1,23 @@
+name: 'Add Issues to Project Board'
+on:
+  issues:
+    types: [opened]
+jobs:
+  github-actions-automate-projects:
+    runs-on: ubuntu-latest
+    steps:       
+    - name: If issue contains Episode Suggestion, add it to Episode Project Board
+      uses: docker://takanabe/github-actions-automate-projects:v0.0.1
+      if: github.event_name == 'issues' && contains(github.event.issue.title, 'Episode Suggestion')
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_PROJECT_URL: https://github.com/CloudWithChris/cloudwithchris.com/projects/1
+        GITHUB_PROJECT_COLUMN_NAME: To do
+    - name: If issue contains blog, add it to Blog Project Board
+      uses: docker://takanabe/github-actions-automate-projects:v0.0.1
+      if: github.event_name == 'issues' && contains(github.event.issue.title, 'Blog')
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_PROJECT_URL: https://github.com/CloudWithChris/cloudwithchris.com/projects/6
+        GITHUB_PROJECT_COLUMN_NAME: To do
+
