@@ -4,25 +4,26 @@ Description: "In this talk, Asanka will introduce the 'cell-based' reference arc
 PublishDate: "2021-08-20T03:30:00Z"
 Title: "43 - A Decentralized Reference Architecture for Cloud-native Applications"
 episode: "43"
-image: img/cloudwithchrislogo.png
+image: img/episodes/decentralised-reference-architecture-cloud-native.jpg
 explicit: "no"
 guests:
 - asankaabeysinghe
 hosts:
 - chrisreddington
 images:
+- img/episodes/decentralised-reference-architecture-cloud-native.jpg
 - img/default-social.png
 series:
 - Architecting for the Cloud, one pattern at a time
-#podcast_bytes: "35356672"
-#podcast_duration: "0:34:43.000"
-#podcast_file: 19 - The Event Sourcing, Materialized View and CQRS Patterns.mp3
+podcast_bytes: "43810816"
+podcast_duration: "0:45:32.000"
+podcast_file: 43 - A Decentralized Reference Architecture for Cloud-native Applications.mp3
 tags:
 - Microservices
 - APIs
 - Monitoring
-#youtube: 0s3yjmJ0ksA
-upcoming: true
+- Cloud Architecture
+youtube: SrJMqU_vHhA
 ---
 The number of microservices running in enterprises increases daily. As a result, service composition, governance, security, and observability are becoming a challenge to implement and incorporate. A "cell-based" architecture is an approach that can be applied to current or desired development and technologies to address these issues. This technology-neutral approach helps cloud-native dev teams become more efficient, act in a more self-organized manner, and speed overall release times.
 
