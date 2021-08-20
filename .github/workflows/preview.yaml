@@ -1,82 +1,82 @@
-name: Preview
-on:
-  pull_request:
-    branches: 
-      - dev
-jobs:
-  compressor:
-    name: calibreapp/image-actions
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v2
-      - name: Create New Pull Request If Needed
-        if: steps.calibre.outputs.markdown != ''
-        uses: peter-evans/create-pull-request@v3
-        with:
-          title: Compressed Images
-          branch-suffix: timestamp
-          commit-message: Compressed Images
-          body: ${{ steps.calibre.outputs.markdown }}
-  lint:
-    name: Lint Code Base
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - name: Lint Code Base
-        uses: github/super-linter@v3
-        env:
-          FILTER_REGEX_INCLUDE: .*content/.*
-          DEFAULT_BRANCH: master
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VALIDATE_JSCPD: false
-  build:
-    needs: [lint, compressor]
-    runs-on: ubuntu-latest
-    steps:            
-    - uses: actions/checkout@v2
-    - name: "Install Node Dependencies"
-      run: npm ci    
-    - name: "Setup Hugo on Runner"
-      uses: peaceiris/actions-hugo@v2
-      with:
-        hugo-version: '0.86.0'
-        extended: true
-    - name: "Replace tokens in Configuration"
-      uses: cschleiden/replace-tokens@v1.0
-      with:
-        tokenPrefix: '#{'
-        tokenSuffix: '}#'
-        files: '["config.yaml"]'
-      env:
-        hostname: 'https://preview.cloudwithchris.com/${{ github.head_ref }}'
-    - name: "Build and Minify Hugo Contents"
-      run: hugo --minify --buildFuture  
-    - name: "Upload Generated Static Content as Website Artifact"
-      uses: actions/upload-artifact@v1
-      with:
-        name: website
-        path: ${{ github.workspace }}/public
-  publish:  
-    environment:
-      name: preview.azure  
-    runs-on: ubuntu-latest
-    needs: build
-    steps:    
-    - name: "Download Website Artifact"
-      uses: actions/download-artifact@v1
-      with:
-        name: website
-    - name: "Login to Azure"
-      uses: azure/login@v1
-      with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}     
-    - name: "Upload Static Content to Storage"
-      uses: azure/CLI@v1
-      with:
-        azcliversion: 2.20.0
-        inlineScript: |
-          az storage blob upload-batch --account-name cloudwithchrispreview -d '$web/${{ github.head_ref }}' -s 'website' --auth-mode login
+# name: Preview
+# on:
+#   pull_request:
+#     branches: 
+#       - dev
+# jobs:
+#   compressor:
+#     name: calibreapp/image-actions
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout Repo
+#         uses: actions/checkout@v2
+#       - name: Create New Pull Request If Needed
+#         if: steps.calibre.outputs.markdown != ''
+#         uses: peter-evans/create-pull-request@v3
+#         with:
+#           title: Compressed Images
+#           branch-suffix: timestamp
+#           commit-message: Compressed Images
+#           body: ${{ steps.calibre.outputs.markdown }}
+#   lint:
+#     name: Lint Code Base
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout Code
+#         uses: actions/checkout@v2
+#         with:
+#           fetch-depth: 0
+#       - name: Lint Code Base
+#         uses: github/super-linter@v3
+#         env:
+#           FILTER_REGEX_INCLUDE: .*content/.*
+#           DEFAULT_BRANCH: master
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#           VALIDATE_JSCPD: false
+#   build:
+#     needs: [lint, compressor]
+#     runs-on: ubuntu-latest
+#     steps:            
+#     - uses: actions/checkout@v2
+#     - name: "Install Node Dependencies"
+#       run: npm ci    
+#     - name: "Setup Hugo on Runner"
+#       uses: peaceiris/actions-hugo@v2
+#       with:
+#         hugo-version: '0.86.0'
+#         extended: true
+#     - name: "Replace tokens in Configuration"
+#       uses: cschleiden/replace-tokens@v1.0
+#       with:
+#         tokenPrefix: '#{'
+#         tokenSuffix: '}#'
+#         files: '["config.yaml"]'
+#       env:
+#         hostname: 'https://preview.cloudwithchris.com/${{ github.head_ref }}'
+#     - name: "Build and Minify Hugo Contents"
+#       run: hugo --minify --buildFuture  
+#     - name: "Upload Generated Static Content as Website Artifact"
+#       uses: actions/upload-artifact@v1
+#       with:
+#         name: website
+#         path: ${{ github.workspace }}/public
+#   publish:  
+#     environment:
+#       name: preview.azure  
+#     runs-on: ubuntu-latest
+#     needs: build
+#     steps:    
+#     - name: "Download Website Artifact"
+#       uses: actions/download-artifact@v1
+#       with:
+#         name: website
+#     - name: "Login to Azure"
+#       uses: azure/login@v1
+#       with:
+#         creds: ${{ secrets.AZURE_CREDENTIALS }}     
+#     - name: "Upload Static Content to Storage"
+#       uses: azure/CLI@v1
+#       with:
+#         azcliversion: 2.20.0
+#         inlineScript: |
+#           az storage blob upload-batch --account-name cloudwithchrispreview -d '$web/${{ github.head_ref }}' -s 'website' --auth-mode login
