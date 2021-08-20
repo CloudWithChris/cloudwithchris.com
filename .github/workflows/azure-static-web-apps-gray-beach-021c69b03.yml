@@ -11,13 +11,13 @@ on:
     branches:
       - master
     paths-ignore:
-      - "podcast_audio/**'
+      - 'podcast_audio/**'
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
       - master
     paths-ignore:
-      - "podcast_audio/**'
+      - 'podcast_audio/**'
 
 # The workflow has several phases. Phases 1, 2 and 3 run on a push, or if the pull request activity
 # type is not 'closed'.
