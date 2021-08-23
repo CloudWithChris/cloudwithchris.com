@@ -2,7 +2,7 @@
 Date: "2021-07-18T09:30:00Z"
 Description: "In this session, Chris provides a series of updates focused around Azure, DevOps, GitHub and Cloud With Chris"
 PublishDate: "2021-07-18T09:30:00Z"
-Title: "V029 - Weekly Technology Vlog #29 and Gaming Session"
+Title: "V029 - Sailing the Sea of Thieves while talking Cloud"
 episode: V029
 image: img/vlog/v029.jpg
 explicit: "no"

@@ -4,7 +4,7 @@ Description: "In this session, Chris is joined by Martin Woodward - Director of 
 PublishDate: "2021-08-27T15:30:00Z"
 Title: "Getting into DevRel"
 episode: ""
-image: img/cloudwithchris.png
+image: img/cloudwithchrislogo.png
 explicit: "no"
 hosts:
 - chrisreddington

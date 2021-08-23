@@ -2,7 +2,7 @@
 Date: "2021-08-22-T09:30:00Z"
 Description: "In this session, Chris provides a series of updates focused around Azure, DevOps, GitHub and Cloud With Chris, while gaming with the Cloud Family Community."
 PublishDate: "2021-08-22T09:30:00Z"
-Title: "V034 - Weekly Technology Vlog #34 and Gaming Session"
+Title: "V034 - Sailing the Sea of Thieves while talking Cloud"
 episode: V034
 image: img/vlog/sot.jpg
 explicit: "no"
@@ -18,10 +18,12 @@ images:
 series:
 - Weekly Vlog
 tags:
-#- Podcast
-#- Sessionize
-#- Azure
-#- Community
+- Gaming
+- Community
+- Azure
+- Azure DevOps
+- GitHub
+- Sea Of Thieves
 youtube: ETfUmpepr0Q
 upcoming: true
 ---
