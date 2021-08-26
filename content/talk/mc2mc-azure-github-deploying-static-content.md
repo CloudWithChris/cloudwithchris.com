@@ -16,6 +16,5 @@ tags:
 - Architecture
 - Requirements
 - Cloud Design Patterns
-upcoming: true
 ---
 Chris is a Cloud Solution Architect at Microsoft. He'll explore how GitHub Actions can be used to deploy your own static websites (or other apps!) to Azure.
