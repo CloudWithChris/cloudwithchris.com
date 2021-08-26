@@ -19,17 +19,17 @@ Azure Front Door - It's an Azure Service that has been generally available for q
 
 Let's first set the scene, making sure we're all on the same page. What even is Azure Front Door? If you haven't deployed it for your own solution, it's quite likely that you've used it as a consumer. There is a great case study on how [LinkedIn uses Azure Front Door](https://customers.microsoft.com/en-gb/story/841393-linkedin-professional-services-azure-front-door-service) as part of their own infrastructure stack. Not a LinkedIn user? Well, the [original Azure Front Door general availability blog post](https://azure.microsoft.com/en-gb/blog/azure-front-door-service-is-now-generally-available/) notes that Office 365, Xbox Live, MSN and Azure DevOps had all adopted Azure Front Door. So, like I mentioned - if you haven't already deployed it - it's quite likely you've already used it!
 
-Azure Front Door is a global service, which is typically used as an entry point for web applications. It's well-suited for this task, as it operates at Layer 7 (HTTP/HTTPS-based) of the networking stack. However, calling it a load balancer would be underselling it. Azure Front Door uses the Microsoft Global Edge network to accept traffic from end-users. You can associate a Web Application Firewall (WAF) with it, to protect your applications from potential threats. 
+Azure Front Door is a global service, which is typically used as an entry point for web applications. It's well-suited for this task, as it operates at Layer 7 (HTTP/HTTPS-based) of the networking stack. However, calling it a load balancer would be underselling it. Azure Front Door uses the Microsoft Global Edge network to accept traffic from end-users. You can associate a Web Application Firewall (WAF) with it, to protect your applications from potential threats.
 
-> **Note:** There are different types of Load Balancing options. For example, Azure Load Balancer operates at Layer 4. Azure Traffic Manager is a DNS based load balancer. The difference between these is where they operate in the networking stack. Layer 4 is the transport layer, whereas Layer 7 is the application layer. 
+> **Note:** There are different types of Load Balancing options. For example, Azure Load Balancer operates at Layer 4. Azure Traffic Manager is a DNS based load balancer. The difference between these is where they operate in the networking stack. Layer 4 is the transport layer, whereas Layer 7 is the application layer.
 >
 > Therefore, the decisions that can be made at Layer 4 are typically based around the TCP and UDP protocols. There is no context or option to make decisions based upon information at the application level (e.g. Path based filtering, etc.). Layer 7 load balancing allows you to make load balancing decisions based upon some information/context from the application. Think about aspects like Request Headers, Request Paths, etc. A good comparison would be Azure Load Balancer (Layer 4) vs Azure Application Gateway (Layer 7).
 >
-> You can find some additional information on Layer 4 vs Layer 7 load balancing on the [NGINX Website](https://www.nginx.com/resources/glossary/layer-7-load-balancing/). 
+> You can find some additional information on Layer 4 vs Layer 7 load balancing on the [NGINX Website](https://www.nginx.com/resources/glossary/layer-7-load-balancing/).
 
 ## How do Azure Front Door Classic, Standard and Premium compare?
 
-Azure Front Door Standard and Premium [went into preview in February 2021](https://azure.microsoft.com/en-us/updates/azure-front-door-standard-and-premium-now-in-public-preview/). The explanation of Azure Front Door in the previous section is true for Azure Front Door (Classic), as well as Azure Front Door Standard and Premium. 
+Azure Front Door Standard and Premium [went into preview in February 2021](https://azure.microsoft.com/en-us/updates/azure-front-door-standard-and-premium-now-in-public-preview/). The explanation of Azure Front Door in the previous section is true for Azure Front Door (Classic), as well as Azure Front Door Standard and Premium.
 
 However, Azure Front Door Standard and Premium has additional enhancements. Depending on the type of traffic - You can either accelerate traffic by using Dynamic Site Acceleration (DSA) to the appropriate source, or serve up cached contents through it's Content Delivery Network functionality. In the Standard and Premium SKUs, Azure Front Door combines the capabilities of Azure Front Door, Azure CDN and Azure Web Application Firewall (WAF).
 
@@ -45,7 +45,7 @@ Both Azure Front Door Standard and Premium contain several common features, incl
 * Enhanced Metrics and diagnostics
 * Traffic report
 
-Azure Front Door premium contains the following features, in addition to the previous list - 
+Azure Front Door premium contains the following features, in addition to the previous list -
 
 * Private Origin (Private Link)
 * Web Application Firewall (WAF) support
@@ -72,7 +72,7 @@ Based on the previous section, you've likely noticed that Azure Front Door (Stan
 
 If you've previously used Azure Front Door (Classic), then you may have previously had an architecture that used both Azure Front Door as well as Azure CDN. However, even Azure Front Door (Classic) had [caching capabilities built-in as per the Azure Docs](https://docs.microsoft.com/en-us/azure/frontdoor/front-door-caching).
 
-You'll notice that the adjustments for Azure Front Door Standard and Premium, make this feel like a much more integrated experience, as it is part of the setup process of your new Azure Front Door Resource (as explained in the [blog post announcing Azure Front Door Standard and Premium](https://azure.microsoft.com/en-gb/blog/azure-front-door-enhances-secure-cloud-cdn-with-intelligent-threat-protection/)). The idea behind this new Azure Front Door experience is a single unified platform to accelerate static and dynamic content acceleration. All that, with the combined functionality of Web Application Firewall (as explained in the opening of this post). 
+You'll notice that the adjustments for Azure Front Door Standard and Premium, make this feel like a much more integrated experience, as it is part of the setup process of your new Azure Front Door Resource (as explained in the [blog post announcing Azure Front Door Standard and Premium](https://azure.microsoft.com/en-gb/blog/azure-front-door-enhances-secure-cloud-cdn-with-intelligent-threat-protection/)). The idea behind this new Azure Front Door experience is a single unified platform to accelerate static and dynamic content acceleration. All that, with the combined functionality of Web Application Firewall (as explained in the opening of this post).
 
 > **Note:** What is the difference between Static Content/Site Acceleration and Dynamic Content/Site Acceleration?
 >
@@ -94,7 +94,7 @@ One of the configuration options that you have in Azure Front Door is adjust the
 
 Why is this important? As Azure Front Door is global, it's going to have many of these edge environments all across the globe. That means that each of those edge environments will be sending a health probe at some point. If you're particularly aggressive with your probe timeout settings (e.g. every few seconds), then this will cause a significant increase in the requests to your backend origin.
 
-> **Note:** This is particularly important to consider if your origin wasn't designed for scale, and you may need to consider the additional load from these probes. 
+> **Note:** This is particularly important to consider if your origin wasn't designed for scale, and you may need to consider the additional load from these probes.
 >
 > Alternatively, if you are using a serverless tier (based on pay-per-execution), then your health probe configuration will have a tangible impact on your costs.
 
