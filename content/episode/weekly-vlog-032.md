@@ -2,7 +2,7 @@
 Date: "2021-08-08T09:30:00Z"
 Description: "In this session, Chris provides a series of updates focused around Azure, DevOps, GitHub and Cloud With Chris, while gaming with the Cloud Family Community."
 PublishDate: "2021-08-08T09:30:00Z"
-Title: "V032 - Weekly Technology Vlog #32 and Gaming Session"
+Title: "V032 - Talking cloud and playing Among Us with the community"
 episode: V032
 image: img/vlog/among-us.jpg
 explicit: "no"
@@ -18,11 +18,12 @@ images:
 series:
 - Weekly Vlog
 tags:
-#- Podcast
-#- Sessionize
-#- Azure
-#- Community
+- Gaming
+- Community
+- Azure
+- Azure DevOps
+- GitHub
+- Among Us
 youtube: BYy3oBLh2Mk
-upcoming: true
 ---
 In this session, Chris provides a series of updates focused around Azure, DevOps, GitHub and Cloud With Chris, while gaming with the Cloud Family Community.
