@@ -7,10 +7,11 @@ date: "2021-08-30T07:00:00Z"
 images:
 - img/cloudwithchrislogo.png
 tags:
-- Architecture
-- Azure
-- Azure
-- Resilience
+- DevOps
+- GitHub
+- Developer
+- DevSecOps
+- Cloud
 title: Shift Left and Increase your Code Quality with GitHub Branch Protection Rules
 ---
 ## What are Branch Protection Rules?
