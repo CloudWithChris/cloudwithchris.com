@@ -82,7 +82,7 @@ As an example, I made some changes to my master branch protection policy. I now 
 
 After navigating to my readme.md, and wanting to make a dummy change - You will notice that I am prevented from making the change.
 
-![Arrow pointing to the line item that shows 'You can't commit to master because it is a protected branch'](/img/blog/use-github-branch-protection-rules/branch-protection-rules-main.png)
+![Arrow pointing to the line item that shows 'You can't commit to master because it is a protected branch'](/img/blog/use-github-branch-protection-rules/protected-branch-github.png)
 
 > **Tip:** A word of warning. If you're working on a pet project where it's mainly yourself contributing (e.g. Cloud With Chris). If you enable the require pull requests before merging, **and** apply restrictions to all administrators, then you will have to wait for someone else to review your Pull Request. There is no ability for a Pull Request author to approve their own changes. If you disable the ``Require all restrictions to apply to administrators``, then you will be able to merge the pull request (though this would be true for any other administrators of your repository as well).
 
