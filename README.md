@@ -41,5 +41,3 @@ This podcast relies upon contributions from the community to keep going. We love
 Thank you to all of my guests for their ongoing support. Your great insights and disussions in Cloud With Chris help add an incredible amount of variety and interest to the show!
 
 A big thank you also to [Matt Stratton](http://github.com/mattstratton/), who buit the [Hugo Castanet](https://github.com/mattstratton/castanet) theme that was being used on the site for some time. The recent CloudWithChris redesign borrows some of the foundational structures of the Hugo Castanet theme (e.g. episode markdown structures, RSS feed generation), to ensure continuity from moving from the Castanet theme into the rebranded Cloud With Chris site.
-
-Attempt change
