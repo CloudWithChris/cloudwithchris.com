@@ -4,7 +4,7 @@ Description: "In this session Chris is joined by Ivo who will explain how Telco 
 PublishDate: "2021-09-03T15:30:00Z"
 Title: "Tales from the Real World - Leveraging Azure as a Telco provider"
 episode: "35"
-image: img/cloudwithchrislogo.png
+image: img/episodes/leveraging-azure-as-telco-provider.jpg
 explicit: "no"
 hosts:
 - chrisreddington
@@ -13,15 +13,15 @@ guests:
 series:
 - "Tales from the Real World"
 images:
+- img/episodes/leveraging-azure-as-telco-provider.jpg
 - img/cloudwithchris.png
-# podcast_bytes: "53415936"
-# podcast_duration: "55:42.000"
-# podcast_file: 25 - A conversation on mental health.mp3
+podcast_bytes: "37535744"
+podcast_duration: "39:01.000"
+podcast_file: Tales from the Real World - Leveraging Azure as a Telco provider.mp3
 tags:
 - Cloud
 - Azure
 - Telco
-youtube: ""
-upcoming: true
+youtube: "dmVfw4PPE0s"
 ---
 In this session Chris is joined by Ivo who will explain how Telco providers are leveraging Azure to offer services to their customers. He will explain how they transform and what the future will be. He will also cover the benefits and struggles that they faced on the way.
