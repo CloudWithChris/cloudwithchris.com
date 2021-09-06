@@ -11,7 +11,7 @@ tags:
 - Developer
 - Windows Terminal
 - Command-Line
-title: Fix for .bashrc not executing on startup in Windows Subsystem for Linux
+title: Fix for .bashrc not executing on startup in Ubuntu on Windows Subsystem for Linux
 ---
 In case you haven't heard, I'm planning to do some livestreams in the near future which are focused on live development / building in the cloud. I'm working on a few ideas, but if you have any suggestions - please throw them my way! To prepare for this, I've recently spent some time making sure my local development environment is in order. Windows Terminal and Windows Subsystem for Linux (WSL) are a couple of the key tools in my local development environment. Windows Subsystem for Linux is the focus for this post.
 
@@ -25,7 +25,7 @@ My goal was to have a consistent usability experience configured across the Powe
 
 > **Tip:** If you haven't heard of ohmyposh, then it's worth looking into. [Scott Hanselman has done a brilliant write-up](https://www.hanselman.com/blog/my-ultimate-powershell-prompt-with-oh-my-posh-and-the-windows-terminal) on how you can get this setup in your environment.
 
-I was following one of his posts, but couldn't seem to get the prompt working successfully. Scott's guidance and posts are awesome. I've followed the same post before, so I know that it works. There had to be something else going on. I made the changes to my ``~\.bashrc`` file as suggested throughout several blog posts and docs, but nothing seemed to reflect the modifications to ``~\.bashrc`` when a new shell was created.
+I was following one of his posts, but couldn't seem to get the prompt working successfully. Scott's guidance and posts are awesome. I've followed the same post before, so I know that it works. There had to be something else going on in my environment. I made the changes to my ``~\.bashrc`` file as suggested throughout several blog posts and docs, but nothing seemed to reflect the modifications to ``~\.bashrc`` when a new shell was created. There was no pretty prompt, and my aliases were not working.
 
 ![Windows Terminal not showing any ohmyposh configuration](/img/blog/fix-bashrc-not-executing-wsl/terminal-misconfigured.jpg)
 
@@ -47,7 +47,7 @@ The series of echo statements printed into the terminal immediately. I was also 
 
 ![Windows Terminal showing the ohmyposh configuration alongside the printed echo statements](/img/blog/fix-bashrc-not-executing-wsl/terminal-configured.jpg)
 
-This led onto the next line of investigation. Why was it not executing? As it turns out, there's a fairly simple explanation. The summary on the [man pages for bash](https://www.man7.org/linux/man-pages/man1/bash.1.html) gives us a clearer understanding of the potential problem (quoted below).
+This led onto the next line of investigation. Why was it not executing on start up? As it turns out, there's a fairly simple explanation. The summary on the [man pages for bash](https://www.man7.org/linux/man-pages/man1/bash.1.html) gives us a clearer understanding of the potential problem (quoted below).
 
 > When bash is invoked as an interactive login shell, or as a non-interactive shell with the ``--login`` option, it first reads and executes commands from the file ``/etc/profile``, if that file exists.  After reading that file, it looks for ``~/.bash_profile``, ``~/.bash_login``, and ``~/.profile``, in that order, and reads and executes commands from the first one that exists and is readable. The ``--noprofile`` option may be used when the shell is started to inhibit this behavior.
 
@@ -67,7 +67,7 @@ fi
 
 As a next step, I investigated the other files available in the home directory. I noticed that a ``~/.bash_profile`` file exists (which would have taken precedence over the other files). At some point, I must have followed a set of instructions to install some software and mistakenly created a .bash_profile file instead of putting it into the ``~/.bashrc`` file, as there was only one line (which was also present in my ``~/.bashrc`` file).
 
-I then removed the ``~/.bash_profile`` file and used the ``wsl.exe --shutdown`` command to shutdown the WSL environment, so that I can determine whether this fixed the execution problem by creating a fresh environment. Guess what? It was the problem! After removing the superfluous ``~/.bash_profile`` file, the ``~/.bashrc`` file executed without any problems - The echo statements, ohmyposh, and all of the aliases that I had expected to be configured.
+I then removed the ``~/.bash_profile`` file and used the ``wsl.exe --shutdown`` command to shutdown the WSL environment, so that I can determine whether this fixed the execution problem by launching a fresh environment. Guess what? It was the problem! After removing the superfluous ``~/.bash_profile`` file, the ``~/.bashrc`` file executed without any problems - The echo statements, ohmyposh, and all of the aliases that I had expected to be configured.
 
 ![After shutting down the WSL environment, relaunching the Windows Terminal gives the expected results](/img/blog/fix-bashrc-not-executing-wsl/terminal-startup-correctly-configured.jpg)
 
