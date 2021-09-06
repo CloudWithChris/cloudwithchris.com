@@ -153,16 +153,6 @@ jobs:
           action: 'upload'
           app_location: 'website'
           skip_app_build: true
-      - name: "Login to Azure"
-        uses: azure/login@v1
-        with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}     
-      - name: "Purge CDN"
-        uses: azure/CLI@v1
-        with:
-          azcliversion: 2.20.0
-          inlineScript: |
-            az cdn endpoint purge --content-paths  "/*" --profile-name "cloudwithchris" --name "cloudwithchris" --resource-group "cloudwithchris"
   # A set of steps used to close old staging sites that are no longer needed, as the PR has now been merged.
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
