@@ -8,7 +8,7 @@ images:
 - img/cloudwithchrislogo.png
 tags:
 - DevOps
-- GitHub
+- Azure DevOps
 - Developer
 - DevSecOps
 - Cloud
