@@ -1,0 +1,42 @@
+name: Episode
+description: Add an episode to the backlog
+title: "[Episode] Enter your title"
+labels: [Episode]
+assignees:
+  - chrisreddington
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to add an episode to the backlog! Here is a summary of the different types of episodes you can add:
+
+        * **Architecting for the Cloud One Pattern at a Time**  - A series focused entirely around Cloud Architecture. This could be Cloud Design Patterns, foundational architectural concepts, requirements driven discussions and more. Have something architectural to discuss? Then this is likely the series for you!
+        * Cloud Drops  - Not everyone can afford 30+ minutes of time to listen to a podcast or YouTube video. That's why we're making Cloud Drops, a new series focused all around bite-sized content - Less than 5 minutes long! Passionate about a specific topic and want to share with the community? Then this series is for you!
+        * **Cloud Gaming Notes**  - Many of us have grown up with gaming in one form of another. But have you ever thought about what it takes to host a game in the #Cloud​? Well, this is the series for you! On the first Wednesday of every month, we explore Cloud Concepts that impact your journey to a connected multiplayer #gaming​ experience!
+        * **Main Podcast Series** - This is where Cloud with Chris originated, content without any particular theme or agenda! If you can't find a series that fits with what you want to talk about - That's okay! Submit it in this series, and we can work it out from there!
+        * **Tales from the Real World** - Technology is great, but sometimes when we apply it to real world scenarios there can be challenges. There might be people/process challenges, or issues trying to bring different types of technology together. We also need to make considerations around security and many other cross-cutting concerns. This is less about the theory, and the technology - focusing more on the stories 
+  - type: dropdown
+    id: category
+    attributes:
+      label: Which episode are you suggesting?
+      multiple: false
+      options:
+        - Architecting for the Cloud One Pattern at a Time
+        - Cloud Drops
+        - Cloud Gaming Notes
+        - Main Podcast Series
+        - Tales from the Real World
+  - type: textarea
+    id: summary
+    attributes:
+      label: Video Summary
+      description: What should the video be about?
+      placeholder: GitHub Actions Overview for those with an operations background.
+      value: "GitHub Actions Overview for those with an operations background."
+    validations:
+      required: true
+  - type: textarea
+    id: audience
+    attributes:
+      label: Target Audience
+      description: Who should the video be aimed at? (e.g. developers, IT Pros, Architects, Execs, etc.)
