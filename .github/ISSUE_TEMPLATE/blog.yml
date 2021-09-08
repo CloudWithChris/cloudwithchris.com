@@ -1,0 +1,25 @@
+name: Blog
+description: Add a back to backlog
+title: "[Blog] Enter your title"
+labels: [Blog]
+assignees:
+  - chrisreddington
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to suggest a blog post!
+  - type: textarea
+    id: summary
+    attributes:
+      label: Post Summary
+      description: What should the post be about?
+      placeholder: GitHub Actions Overview for those with an operations background.
+      value: "GitHub Actions Overview for those with an operations background."
+    validations:
+      required: true
+  - type: textarea
+    id: audience
+    attributes:
+      label: Target Audience
+      description: Who should the post be aimed at? (e.g. developers, IT Pros, Architects, Execs, etc.)
