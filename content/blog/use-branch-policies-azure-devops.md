@@ -1,9 +1,9 @@
 ---
 Author: chrisreddington
 Description: "This post is similar to another I recently wrote on using Branch Protection Rules in GitHub. Instead of focusing on GitHub, we'll be looking at how you can use Branch Policies in Azure DevOps (specifically, Azure Repos). If you're using Azure Repos, but not using Branch Policies - I'd encourage you to start using them! I hope this post helps you learn how!"
-PublishDate: "2021-09-08T07:00:00Z"
+PublishDate: "2021-09-09T07:00:00Z"
 image: img/cloudwithchrislogo.png
-date: "2021-09-08T07:00:00Z"
+date: "2021-09-09T07:00:00Z"
 images:
 - img/cloudwithchrislogo.png
 tags:
