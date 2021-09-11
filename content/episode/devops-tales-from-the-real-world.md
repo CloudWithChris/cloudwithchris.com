@@ -1,7 +1,7 @@
 ---
-Date: "2021-09-15T15:30:00Z"
+Date: "2021-09-17T15:30:00Z"
 Description: "Listen in to this session as Chris is joined by Thomas Thornton, as they talk about DevOps in real-world scenarios."
-PublishDate: "2021-09-15T15:30:00Z"
+PublishDate: "2021-09-17T15:30:00Z"
 Title: "Tales from the Real World on DevOps"
 episode: ""
 image: img/cloudwithchrislogo.png

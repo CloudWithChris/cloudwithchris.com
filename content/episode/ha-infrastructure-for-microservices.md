@@ -1,7 +1,7 @@
 ---
-Date: "2021-10-01T15:30:00Z"
+Date: "2021-10-08T15:30:00Z"
 Description: "In this episode, Chris is joined by Mirza Dautbegovic, DevOps Engineer, passionate about Cloud technologies and DevOps culture. This topic will cover Mirza's journey from monolithic app to microservices, and how the DevOps path and how DevOps culture helped to achieve a highly availabile and fault tolerant architecture. Spoiler - They learnt from this migration that - without DevOps - it's much more harder to get everything done in deadline."
-PublishDate: "2021-10-01T15:30:00Z"
+PublishDate: "2021-10-08T15:30:00Z"
 Title: "HA infrastructure for microservices - lesson learned from field"
 episode: "TBC"
 image: img/cloudwithchrislogo.png
