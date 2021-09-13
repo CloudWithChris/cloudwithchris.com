@@ -8,7 +8,7 @@
     }
   },
   "globalHeaders": {
-    "content-security-policy": "script-src 'self' https://www.google-analytics.com https://www.youtube.com sha256-Nw67x33pAOXEHa+vcp9nkwC9GrgAbz6RBAHKMo22bJE=; img-src 'self' https://www.google-analytics.com https://app.podscribe.ai; connect-src 'self' https://www.google-analytics.com https://backend.poscribe.ai; child-src https://www.youtube.com; object-src none",
+    "content-security-policy": "script-src 'self' https://www.google-analytics.com https://www.youtube.com 'sha256-Nw67x33pAOXEHa+vcp9nkwC9GrgAbz6RBAHKMo22bJE=' 'sha256-NXx57fNMaN9TT2cgFK8Ru1vmqGOIU4eXDaDLY/cEyuo='; img-src 'self' https://www.google-analytics.com https://app.podscribe.ai; connect-src 'self' https://www.google-analytics.com https://backend.podscribe.ai; child-src https://www.youtube.com; object-src none",
     "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
     "X-Frame-Options": "SAMEORIGIN",
     "X-Content-Type-Options": "nosniff",
