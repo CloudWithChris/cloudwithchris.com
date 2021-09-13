@@ -12,17 +12,17 @@ hosts:
 images:
 - img/default-social.png
 - img/vlog/v037.jpg
-# podcast_bytes: "13803520"
-# podcast_duration: "14:19.000"
-# podcast_file: V002 - Weekly Technology Vlog.mp3
+podcast_bytes: "31807880"
+podcast_duration: "33:07.000"
+podcast_file: V037 - Weekly Technology Vlog.mp3
 series:
 - Weekly Vlog
 tags:
-#- Podcast
-#- Sessionize
-#- Azure
-#- Community
-youtube: TV_yR_x0yRc
-upcoming: true
+- Azure
+- AzureDevOps
+- GitHub
+- Community
+- Blogging
+youtube: ppVVGV93g4A
 ---
 In this video, chris provides another update on Cloud with Chris, updates on what's coming soon and Azure related news! We'll also be walking through the new GitHub Issues Beta!
