@@ -1,11 +1,26 @@
 {{ define "main" }}
   <div class="container">
     <div class="row g-2">
-    {{- range (where ( where .Site.RegularPages "Type" "in" "episode") ".Params.upcoming" "!=" true ) -}}
-      {{ if in .Params.hosts $.File.BaseFileName }}
+      {{ $upcomingEpisodes:= where (where (where .Site.RegularPages "Type" "in" "episode") ".Params.upcoming" "==" true) ".Params.hosts" "intersect" (slice $.File.BaseFileName) }}
+      {{ $pastEpisodes:= where (where (where .Site.RegularPages "Type" "in" "episode") ".Params.upcoming" "!=" true) ".Params.hosts" "intersect" (slice $.File.BaseFileName) }}
+
+      {{ if gt (len $upcomingEpisodes) 0}}
+      <h2>Upcoming Episodes</h2>
+      {{- range first 4 $upcomingEpisodes.ByDate -}}
         {{- partial "cards/episode-card.html" . -}}
       {{ end }}
-    {{ end }}
+    {{ end}}
+
+    <div class="col-12">
+      <p>See <a href="/upcoming">all upcoming episodes</a></p>
+    </div>
+
+    {{ if gt (len $pastEpisodes) 0}}
+      <h2>Past Episodes</h2>
+      {{- range $pastEpisodes -}}
+        {{- partial "cards/episode-card.html" . -}}
+      {{ end }}
+    {{ end}}
     </div>
   </div>
 {{ end }}
