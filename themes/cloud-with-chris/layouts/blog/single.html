@@ -88,6 +88,20 @@
 
 <div class="py-5 container" align="center">
     <div class="col">
+      <div class="row">
+        <script src="https://giscus.app/client.js"
+        data-repo="{{ .Site.Params.giscus.repository }}"
+        data-repo-id="{{ .Site.Params.giscus.repository_id }}"
+        data-category="{{ .Site.Params.giscus.category }}"
+        data-category-id="{{ .Site.Params.giscus.category_id }}"
+        data-mapping="{{ .Site.Params.giscus.mapping }}"
+        data-reactions-enabled="{{ .Site.Params.giscus.reactions_enabled }}"
+        data-emit-metadata="{{ .Site.Params.giscus.emit_metadata }}"
+        data-theme="{{ .Site.Params.giscus.theme }}"
+        crossorigin="anonymous"
+        async>
+        </script>
+      </div>
       <div class="row float-center">
         {{ $related := .Site.RegularPages.Related . | first 4 }}
           {{ with $related }}

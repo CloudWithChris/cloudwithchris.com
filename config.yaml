@@ -135,6 +135,15 @@ params:
     itunes_second_sub_category: "Software How-To"
     language: "en-gb"
     explicit: "no"
+  giscus:
+    repository: "CloudWithChris/cloudwithchris.com"
+    repository_id: "MDEwOlJlcG9zaXRvcnkyNDE0OTQ5NTY"
+    category: "Content Discussion"
+    category_id: "DIC_kwDODmTrrM4B-kuQ"
+    mapping: "pathname"
+    reactions_enabled: 1
+    emit_metadata: 0
+    theme: "light"
 
   keywords:
   - cloud
