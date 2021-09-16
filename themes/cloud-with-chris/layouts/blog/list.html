@@ -7,6 +7,19 @@
         <li class="breadcrumb-item active" aria-current="page">Blog</li>
       </ol>
     </nav>
+
+    <div class="row float-center">
+      {{ $upcomingTalks := first 3 (shuffle (where $.Site.RegularPages "Section" "blog")) }}
+      {{ $count := len $upcomingTalks }}
+      {{ range $upcomingTalks }}   
+        {{- partial "random-blog.html" (dict "count" $count "value" . "site" $.Site ) -}}
+      {{ end }}
+    </div>  
+
+    
+    <div class="row text-center">
+      <p>Working through a challenge, and can't quite solve it? Think it could make a good blog post idea? I'd love to hear! Make a suggestion over on the <a href="https://github.com/CloudWithChris/cloudwithchris.com/issues/new?assignees=chrisreddington&labels=Blog&template=blog.yml&title=%5BBlog%5D+Enter+your+title">cloudwithchris.com GitHub repository</a></p> 
+      </div> 
   </div>
 </div>
 {{ end }}

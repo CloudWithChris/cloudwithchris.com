@@ -1,0 +1,58 @@
+{{ $value := .value }}
+{{ $count := .count }}
+{{ $site := .site }}
+{{ $scratch := .Scratch }}
+
+<div class="col-12 col-xl-{{ div 12 $count }}">    
+  <div class="container">
+    <div class="row g-0">
+      <div class="col-12 col-sm-3 col-md-2 col-xl-4 text-center">
+          <p><a href="{{ $value.Params.externalLink }}"><img src="{{ $value.Params.image | absURL }}" class="rounded-circle z-depth-2 align-middle" width="100" title="{{ $value.Title }}" alt="{{ $value.Title }}" /></a></p>
+      </div>
+      <div class="col-12 col-sm-9 col-md-10 col-xl-8">
+        <div class="card-body episode-card">         
+          
+        
+          <a href="{{ $value.Permalink }}"><h2 class="card-title">{{ $value.Title }}</h3></a>
+        {{ with $value.Params.eventName }}<h3>{{ . }}</h3>{{ end }}
+        <p class="card-text">{{ $value.Content | truncate 300}}</p>
+        
+        {{ with $value.Params.tags }}
+          <p>{{ partial "tags.html" (dict "taxo" "tags" "value" . "site" $site ) }}</p>
+        {{ end }}
+        {{ with $value.Params.Series }}
+          <p>
+            <p>{{ partial "series.html" (dict "taxo" "series" "value" . "site" $site ) }}</p>
+          </p>
+        {{ end }}
+        <p class="card-text">
+          
+          {{ with $value.Params.hosts }}              
+          {{ range $name := . }}
+            {{- range where $site.Pages "Type" "host" -}}
+              {{- if eq .File.TranslationBaseName ($name | urlize) -}} 
+                  <a href="{{ .Permalink | absURL}}"><img src="{{ .Params.image | absURL}}" width="50" class="rounded-circle z-depth-2" alt="{{ .Title }}" title="{{ .Title }}" /></a>
+              {{ end }}
+            {{- end -}}
+          {{ end }}
+        {{ end }}
+    
+        {{ with $value.Params.guests }}              
+          {{ range $name := . }}
+            {{ $scratch.Set "person" ($name | urlize) }}
+            {{- range where $site.Pages "Type" "guest" -}}
+              {{- if eq .File.TranslationBaseName ($scratch.Get "person") -}}
+                {{- $scratch.Set "guest-exist" "true" -}}     
+                    <a href="{{ $value.Permalink | absURL}}"><img src="{{ $value.Params.image | absURL}}" width="50" class="rounded-circle z-depth-2" alt="{{ $value.Title }}" title="{{ $value.Title }}" /></a>
+                {{- $scratch.Set "guest-exist" "false" -}}
+              {{ end }}
+            {{- end -}}
+          {{ end }}
+        {{ end }}
+
+          <small class="text-muted">{{ if eq $value.Params.upcoming true }}Scheduled {{ else }}Published on {{ end }}{{ $value.Date.Format "Mon, Jan 2, 2006" }}</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
