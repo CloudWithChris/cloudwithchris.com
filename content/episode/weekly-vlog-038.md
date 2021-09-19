@@ -1,7 +1,7 @@
 ---
-Date: "2021-09-19-T09:30:00Z"
+Date: "2021-09-22-T09:30:00Z"
 Description: "In this session, Chris provides a series of updates focused around Azure, DevOps, GitHub and Cloud With Chris, while gaming with the Cloud Family Community."
-PublishDate: "2021-09-19T09:30:00Z"
+PublishDate: "2021-09-22T09:30:00Z"
 Title: "V038 - Weekly Technology Vlog #38"
 episode: V038
 image: img/cloudwithchrislogo.png
