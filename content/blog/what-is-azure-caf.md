@@ -25,7 +25,7 @@ The Azure Cloud Adoption Framework may look a little overwhelming and intimidati
 
 ### Getting started
 
-To start, take a look through the [Get Started with the Cloud Adoption Framework](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/get-started/#cloud-adoption-scenarios) documentation. This will give you an idea on the appropriate starting point for your adoption journey. 
+To start, take a look through the [Get Started with the Cloud Adoption Framework](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/get-started/#cloud-adoption-scenarios) documentation. This will give you an idea on the appropriate starting point for your adoption journey.
 
 If you've already taken your first steps, then you may want to consider:
 
