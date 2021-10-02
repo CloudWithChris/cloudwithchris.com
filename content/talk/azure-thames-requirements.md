@@ -1,16 +1,17 @@
 ---
-Date: "2021-09-27T18:00:00Z"
+Date: "2021-10-28T18:30:00Z"
 Description: "In this session, we'll navigate through a typical real-world architecture of a solution and consider the decisions that we may wish to make at various stages. Alongside that, we'll factor in how requirements and design patterns can help influence our overall design, based on learnings from Chris' 5+ year journey taking customers to production on Azure."
-PublishDate: "2021-09-27T15:30:00Z"
+PublishDate: "2021-10-28T18:30:00Z"
 Title: "Requirements, Design Patterns, Cloud Architecture... Oh My"
-image: img/talks/dotnet-notts.jpg
+image: img/talks/azurethamesvalley.jpg
 hosts:
 - chrisreddington
 images:
-- img/talks/dotnet-notts.jpg
+- img/talks/azurethamesvalley.jpg
+- img/cloudwithchris.png
 talkType: "Meetup"
-eventName: ".NET Notts"
-externalLink: "https://www.meetup.com/dotnetnotts/events/280416093/"
+eventName: "Azure Thames Valley"
+externalLink: https://www.meetup.com/Azure-Thames-Valley/events/279802550/
 tags:
 - Cloud
 - Architecture
