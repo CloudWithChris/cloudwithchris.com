@@ -22,7 +22,7 @@ tags:
 #- Sessionize
 #- Azure
 #- Community
-# youtube: VyQI5SOsw3M
+youtube: YlrF3dX1C5Q
 upcoming: true
 ---
 In this session, Chris provides a series of updates focused around Azure, DevOps, GitHub and Cloud With Chris, while gaming with the Cloud Family Community.

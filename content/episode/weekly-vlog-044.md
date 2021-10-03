@@ -25,7 +25,7 @@ tags:
 - Azure DevOps
 - GitHub
 - Among Us
-# youtube: VyQI5SOsw3M
+youtube: 6C359lj5tSY
 upcoming: true
 ---
 In this session, Chris provides a series of updates focused around Azure, DevOps, GitHub and Cloud With Chris, while gaming with the Cloud Family Community.

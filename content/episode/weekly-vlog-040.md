@@ -1,10 +1,10 @@
 ---
 Date: "2021-10-03-T09:30:00Z"
-Description: "In this session, Chris provides a series of updates focused around Azure, DevOps, GitHub and Cloud With Chris, while gaming with the Cloud Family Community."
+Description: "In this session, Chris provides a series of updates focused around Azure, DevOps, GitHub and Cloud With Chris."
 PublishDate: "2021-10-03T09:30:00Z"
-Title: "V040 - Talking cloud and playing Among Us with the community"
+Title: "V040 - Weekly Technology Vlog #40"
 episode: V040
-image: img/vlog/among-us.jpg
+image: img/cloudwithchrislogo.png
 explicit: "no"
 guests: []
 hosts:
@@ -27,4 +27,4 @@ tags:
 youtube: BtVX9s5wvRo
 upcoming: true
 ---
-In this session, Chris provides a series of updates focused around Azure, DevOps, GitHub and Cloud With Chris, while gaming with the Cloud Family Community.
+In this session, Chris provides a series of updates focused around Azure, DevOps, GitHub and Cloud With Chris.
