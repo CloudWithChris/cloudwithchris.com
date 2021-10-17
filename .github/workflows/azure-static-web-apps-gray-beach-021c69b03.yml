@@ -84,7 +84,6 @@ jobs:
   # A set of steps used to render the website from the markdown, theme and assets into the HTML, CSS, JS and images that are delivered to a user.
   build:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
-    needs: [compressor, lint]
     runs-on: ubuntu-latest
     steps:            
     - uses: actions/checkout@v2
@@ -113,7 +112,7 @@ jobs:
   deploy_preview:  
     if: (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
-    needs: build
+    needs: [compressor, lint, build]
     name: Deploy (Preview)
     environment:
       name: staging.azure
