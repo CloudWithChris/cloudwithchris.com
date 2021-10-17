@@ -18,11 +18,10 @@ images:
 series:
 - Weekly Vlog
 tags:
-#- Podcast
-#- Sessionize
-#- Azure
-#- Community
-youtube: _u7bBziGJw4
-upcoming: true
+- Podcast
+- Sessionize
+- Azure
+- Community
+youtube: VyQI5SOsw3M
 ---
 In this session, Chris provides a series of updates focused around Azure, DevOps, GitHub and Cloud With Chris.

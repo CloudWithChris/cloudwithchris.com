@@ -1,7 +1,7 @@
 ---
-Date: "2021-10-20T18:00:00Z"
+Date: "2021-10-22T18:00:00Z"
 Description: "This is an overview session to describe what Azure Synapse Analytics is and where it fits in the Azure cloud architecture. We will also discuss various solutions it provides."
-PublishDate: "2021-10-20T18:00:00Z"
+PublishDate: "2021-10-22T18:00:00Z"
 Title: Introduction of Azure Synapse Analytics
 episode: ""
 image: img/cloudwithchrislogo.png
