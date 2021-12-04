@@ -1,7 +1,7 @@
 ---
-Date: "2021-11-24T15:30:00Z"
+Date: "2022-02-25T15:30:00Z"
 Description: "In this episode, Chris is joined by Svitlana Samko and Sagar Saxene. Svitlana and Sagar will discuss Utilising Artificial Intelligence in tracking Health and Fitness levels of an individual using certain biomarkers. This is an example of applied AI, focusing on data gathering and different neutral architectures used to process the data and provide an inference."
-PublishDate: "2021-11-24T15:30:00Z"
+PublishDate: "2022-02-25T15:30:00Z"
 Title: "Artificial Intelligence in Health and Fitness"
 episode: ""
 image: img/cloudwithchrislogo.png

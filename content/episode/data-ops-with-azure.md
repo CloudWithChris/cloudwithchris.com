@@ -1,7 +1,7 @@
 ---
-Date: "2021-12-15T18:30:00Z"
+Date: "2022-03-04T18:30:00Z"
 Description: "In this session, we will take a closer look at the promises of DataOps that would let us balance out the need of the developer towards environment builds that keep data static and the resources interchangeable, and for the data engineers and scientists that wish to create stable environments where data can be transformed and processed. Looking at an example build upon Azure DevOps, ADF, ADLS, Synapse, and Databricks, we will look into the complexity arising from performing version control with ADF, and how DataOps can help."
-PublishDate: "2021-12-158T18:30:00Z"
+PublishDate: "2022-03-0458T18:30:00Z"
 Title: DataOps with Azure - Data Architecture for DevOps and Data Science
 episode: "TBC"
 image: img/cloudwithchrislogo.png

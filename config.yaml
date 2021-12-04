@@ -116,6 +116,7 @@ params:
   language_name: "English"
   media_prefix: "https://podcasts.cloudwithchris.com/"
   ogimage: "/img/cloudwithchrislogo.png"
+  audio_player: "default" #default, podscribe
 
   channels:
     apple: "https://podcasts.apple.com/gb/podcast/cloud-with-chris/id1499633784"

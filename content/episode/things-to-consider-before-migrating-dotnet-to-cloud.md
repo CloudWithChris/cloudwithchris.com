@@ -1,7 +1,7 @@
 ---
-Date: "2021-10-27T15:30:00Z"
+Date: "2022-01-14T15:30:00Z"
 Description: "Jonah Andersson shares her past experience and important lessons learned about migrating and developing old .NET applications to the Azure cloud. Find out how that project turn into a fiasco not because of Azure but of other factors. Never make the same mistakes."
-PublishDate: "2021-10-27T15:30:00Z"
+PublishDate: "2022-01-14T15:30:00Z"
 Title: "Things to Consider Before Migrating Old .NET Applications to Cloud"
 episode: ""
 image: img/cloudwithchrislogo.png
