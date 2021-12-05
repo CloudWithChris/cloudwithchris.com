@@ -33,7 +33,7 @@ To call an API, we typically make a request to a specific endpoint. There are ma
 
 > **Tip:** In case you're new to HTTP Request Methods - The GET, POST, PUT, PATCH and DELETE (among others) are well defined method that indicate the desired action when you make an HTTP request to a URL. Look at the list above, and you'll notice that there are a few URLs that are identical.
 >
-> The HTTP Request Method helps inform the API the intent of the request (i.e. are we creating/updating data, retrieving data, or deleting data). This then helps the backend API determine how to handle the request, and what action to take.
+> The HTTP Request Method helps inform the API the intent of the request (i.e. are we creating/updating data, retrieving data, or deleting data). This then helps the back-end API determine how to handle the request, and what action to take.
 >
 > You can find more information at the [Mozilla Developer Network docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods).
 
@@ -62,17 +62,17 @@ The consumer may depend on the publisher's APIs for their own business processes
 
 You'll likely see that we're piecing a few requirements together here -
 
-* Use a facade to decouple the client from the backend. That means that backends can be mocked, so that there isn't a hard dependency on a specific implementation. Likewise, the backend implementation may be able to change as long as the expected 'contract' remains the same.
+* Use a facade to decouple the client from the back-end. That means that backends can be mocked, so that there isn't a hard dependency on a specific implementation. Likewise, the back-end implementation may be able to change as long as the expected 'contract' remains the same.
   * If it doesn't, then we can use API versioning to tackle this. More on that later!
 * The ability to verify the caller's authenticity
 * To have a Facade in place that enables versioning of APIs, while providing a consistent endpoint for consumers to call.
 * To deliver a developer portal to document the APIs available so that consumers can easily adopt the platform.
 
-This is typically where a Facade can be introduced into the picture. In this instance, the Azure API Management resource could act as our Facade, as the broker between the consuming client and the backend APIs that are being served up. This design approach helps us introduce several architectural patterns into our design -
+This is typically where a Facade can be introduced into the picture. In this instance, the Azure API Management resource could act as our Facade, as the broker between the consuming client and the back-end APIs that are being served up. This design approach helps us introduce several architectural patterns into our design -
 
 * [Facade Pattern](https://pages.apigee.com/rs/apigee/images/api-facade-pattern-ebook-2012-06.pdf) - Apigee have published an ebook on the API Facade Pattern. They comment that Facades can be useful when back-end systems are too complex to expose directly to application developers. Complexity is one aspect, but there may be other concerns (e.g. pinning to a specific version of an API).
 * [Gatekeeper Pattern](https://docs.microsoft.com/en-us/azure/architecture/patterns/gatekeeper) - Protect applications and services by using a dedicated host instance that acts as a broker between clients and the application or service, validates and sanitizes requests, and passes requests and data between them. This can provide an additional layer of security, and limit the attack surface of the system.
-* [Gateway Aggregation Pattern](https://docs.microsoft.com/en-us/azure/architecture/patterns/gateway-aggregation) - Use a gateway to aggregate multiple individual requests into a single request. This pattern is useful when a client must make multiple calls to different backend systems to perform an operation.
+* [Gateway Aggregation Pattern](https://docs.microsoft.com/en-us/azure/architecture/patterns/gateway-aggregation) - Use a gateway to aggregate multiple individual requests into a single request. This pattern is useful when a client must make multiple calls to different back-end systems to perform an operation.
 * [Gateway Offloading Pattern](https://docs.microsoft.com/en-us/azure/architecture/patterns/gateway-offloading) - Offload shared or specialized service functionality to a gateway proxy. This pattern can simplify application development by moving shared service functionality, such as the use of SSL certificates, from other parts of the application into the gateway.
 * [Gateway Routing pattern](https://docs.microsoft.com/en-us/azure/architecture/patterns/gateway-routing) - Route requests to multiple services using a single endpoint.
 
@@ -88,7 +88,7 @@ To start, you'll need to provide some basic information about your API Managemen
 * **Resource Group** to deploy your API Management instance into
 * **Region** to deploy your API Management instance into
 * **Resource name** of your API Management resource. This will also form part of the domain of your API management instance, e.g. ``{{resourcename}}.azure-api.net``.
-* **Organization Name** which is used in the developer portal (if using an appropriate SKU) and sender of notification e-mails.
+* **Organization Name** which is used in the developer portal (if using an appropriate SKU) and sender of notification emails.
 * **Administrator email** where any notifications from API Management will be sent.
 
 ![Create an Azure API Management Resource](/img/blog/introduction-to-api-management/create-apim-1.png)
@@ -122,7 +122,7 @@ Next up is the managed identity tab. Like many Azure Resources, it's possible to
 Why would you want to do that?
 
 * You may want to [obtain certificates for TLS/SSL from an Azure Key Vault](https://docs.microsoft.com/en-us/azure/api-management/api-management-howto-use-managed-service-identity#use-ssl-tls-certificate-from-azure-key-vault)
-* You may want to [authenticate to a backend resource by using an API Management system-assigned identity](https://docs.microsoft.com/en-us/azure/api-management/api-management-authentication-policies#ManagedIdentity)
+* You may want to [authenticate to a back-end resource by using an API Management system-assigned identity](https://docs.microsoft.com/en-us/azure/api-management/api-management-authentication-policies#ManagedIdentity)
 * You may want to [connect to Azure Resources behind firewalls using an API Management system-assigned identity](https://docs.microsoft.com/en-us/azure/api-management/api-management-howto-use-managed-service-identity#apim-as-trusted-service)
 
 > **Note:** We won't really be using the system-assigned managed identity in this blog post. However, we may use it in future posts relating to this series.
@@ -135,9 +135,9 @@ This is supported in the Developer and Production SKUs. If you configure this op
 
 ![Virtual network is not supported in the Basic, Standard, and Consumption tiers.](/img/blog/introduction-to-api-management/create-apim-6.png)
 
-The final API Management configuration option is to do with Protocol settings. This relates to the Client-side protocols, transport security and backend-side transport security.
+The final API Management configuration option is to do with Protocol settings. This relates to the Client-side protocols, transport security and back-end-side transport security.
 
-![Protocol settings - Client-side protocols, client-side transport security, backend-side transport security](/img/blog/introduction-to-api-management/create-apim-7.png)
+![Protocol settings - Client-side protocols, client-side transport security, back-end-side transport security](/img/blog/introduction-to-api-management/create-apim-7.png)
 
 As with the majority of Azure Resources, you can go ahead and associate Azure Resource Tags. Once you've reviewed the resource configuration and are comfortable, go ahead and create.
 
@@ -157,7 +157,7 @@ API Management is made up a few components, including -
 
 We've started introducing a few concepts such as APIs, Products and more. Let's explore those a little more thoroughly -
 
-* An **API** represents a set of operations available to developers. It's comprised of a backend service(s), and **operations** that map to operations or methods in the backend service.
+* An **API** represents a set of operations available to developers. It's comprised of a back-end service(s), and **operations** that map to operations or methods in the back-end service.
 * A **Product** is how an API is exposed to the API consumers. A product is associated with one or many APIs. Products can either be *open* or *protected*. The protected products must be subscribed to. These can be approved by administrator, or be auto approved.
 * **Groups** are used to manage visibility of products to consumers. There are 3 basic groups, **Administrators**, **Developers** and **Guests** (clearly documented [here](https://docs.microsoft.com/en-us/azure/api-management/api-management-key-concepts#--groups)). Custom groups can also be added, as well as associating identity providers, e.g. AAD for access as well.
 * **Policies** are the *magic* behind API Management (in my opinion, anyway!). Policies allow you to define expected behaviour at an API Level, Operation Level or Product Level. Example policies include JWT authorization, transforming data format from XML to JSON, restricting calls based upon rate limiting and many many more. Policies could be a blog post in their own right, and we'll likely explore several policies over the course of several blog posts. As such, we'll not explore them much further in this one.
@@ -182,7 +182,7 @@ It's available at ``https://conferenceapi.azurewebsites.net?format=json``.
 
 Once complete, you should notice that your API list now has an API available. If you imported an existing API, then you may now have several API operations that appear for you.
 
-> **Tip:** Feel free to explore the user interface at this point. It's worthwhile becoming familiar with the different levels that you can operate at (e.g. All APIs, All Operations, Specific Operations), as you can associate policies and change the backend details at each of these levels.
+> **Tip:** Feel free to explore the user interface at this point. It's worthwhile becoming familiar with the different levels that you can operate at (e.g. All APIs, All Operations, Specific Operations), as you can associate policies and change the back-end details at each of these levels.
 
 ![Screenshot showing a new API defined and the associated API operations, as well as configuration options](/img/blog/introduction-to-api-management/apim-3.png)
 
@@ -200,7 +200,7 @@ You can go ahead and click the test button, specifying any required query parame
 
 Earlier on in the blog post, I mentioned that non-brittle APIs (i.e. no breaking changes) is an important aspect for consumers. That means, we need to consider how we version our APIs.
 
-As an API publisher - If we change the API definition, do we risk breaking the integration experience for our consumers? This is where the value of the facade can come in. Having a broker in between the client and the backend system, which can translate requests, allow us to specify versions of an API, so that we can evolve it over time.
+As an API publisher - If we change the API definition, do we risk breaking the integration experience for our consumers? This is where the value of the facade can come in. Having a broker in between the client and the back-end system, which can translate requests, allow us to specify versions of an API, so that we can evolve it over time.
 
 With that thought, we'll talk about revisions and versions within API Management. Let's start off with revisions.
 
@@ -234,7 +234,7 @@ Once again, the [Azure Docs explain these very well](https://docs.microsoft.com/
 
 > Versions and revisions are distinct features. Each version can have multiple revisions, just like a non-versioned API. You can use revisions without using versions, or the other way around. Typically versions are used to separate API versions with breaking changes, while revisions can be used for minor and non-breaking changes to an API.
 
-This gives you the flexibility to split up the implementation of your different API versions. However, the consumer doesn't see that. The consumer continues interacting with the API Management as a facade, and will simply specify which version of the API they wish to interact with. They should have no idea (or even care!) if they're talking to the same backend or an entirely separate backend.
+This gives you the flexibility to split up the implementation of your different API versions. However, the consumer doesn't see that. The consumer continues interacting with the API Management as a facade, and will simply specify which version of the API they wish to interact with. They should have no idea (or even care!) if they're talking to the same back-end or an entirely separate back-end.
 
 Let's first navigate to an API in our API Management instance. Click on the ellipsis and select Add version.
 
@@ -278,7 +278,7 @@ This blog post is a little longer than initially planned. However, we've managed
 * A brief look into the challenges of APIs from the publisher and consumer's perspective
 * Mapping the Cloud Design Patterns to the above challenges and tying this to API Management
 * A quick tour of the core concepts of API Management
-* A brief walk-through of the Azure API Management creation experience, and setting up a basic API
+* A brief walkthrough of the Azure API Management creation experience, and setting up a basic API
 
 We'll be continuing this series on in future posts. I'd like to explore different policies that could be used to achieve specific objectives. I may be granular and have a separate post per policy, which gives us the opportunity to go into some depth in each post.
 

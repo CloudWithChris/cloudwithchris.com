@@ -68,7 +68,7 @@ Instead, I chose to use a project called kind. Kind is an abbreviation for Kuber
 
 > **Tip:** kind is a "sig" (Special Interest Group) of the Kubernetes project. These groups have existed since around the 1.0 release of Kubernetes, and are there to support the community of developers and operators in specific areas of the Kubernetes project.
 
-All being well, you should have successfully installed kind on your machine. The simplest way to create a new Kubernetes cluster is by using ``kind create cluster``, which I believe creates a single node cluster for you.
+All being well, you should have successfully installed kind on your machine. The simplest way to create a new Kubernetes cluster is by using ``kind create cluster``, which I believe creates a single-node cluster for you.
 
 What if you want to have a multi-node cluster experience? Well, kind has you covered. You can go ahead and define a YAML file (of course, just like most objects in the world of Kubernetes) which defines how your cluster should be configured. You can find an example for a multi-node cluster in the snippet below.
 

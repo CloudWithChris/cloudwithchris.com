@@ -18,7 +18,7 @@ I recently encountered a scenario that I wanted to spend some time writing up. I
 
 * The application must require Azure Active Directory Authentication.
 * The web application must not be accessible **directly** across the public internet.
-* An end-user should be able to connect to the web app using a Public DNS record, so that they feel that it is an authentic experience.
+* An end user should be able to connect to the web app using a Public DNS record, so that they feel that it is an authentic experience.
 
 ## Considerations
 
@@ -63,7 +63,7 @@ Create a new Identity Provider -
   * Depending on your scenario, choose whichever is appropriate. We didn't have any specific requirements for users outside of our tenant, so we'll leave the setting as the default.
 * **Authentication**: Require Authentication
   * This will allow us to meet the initial requirement that we had set out.
-* **Unauthenticated Requests**: HTTP 302 Found redirect: recommended for websites
+* **Unauthenticated Requests**: HTTP 302 Found redirect: recommended for sites
   * We'll leave this as the default. However, there are other options including HTTP 401 or HTTP 403.
 * **Token store:** We'll leave this as the default (enabled).
 
@@ -346,8 +346,8 @@ So there we go! With that, we've been able to fulfil our requirements -
   * **This is achieved by using Easy Auth in App Service**
 * The web application must not be accessible **directly** across the public internet.
   * **This is achieved by using App Service Access Restrictions to only allow traffic from an Application Gateway.**.
-* An end-user should be able to connect to the web app using a Public DNS record, so that they feel that it is an authentic experience.
-  * **This is achieved by binding a custom domain to the App Service, so that we can transparently pass the hostname from our Application Gateway multi site listener to the back end app service instance.**
+* An end user should be able to connect to the web app using a Public DNS record, so that they feel that it is an authentic experience.
+  * **This is achieved by binding a custom domain to the App Service, so that we can transparently pass the hostname from our Application Gateway multi site listener to the backend app service instance.**
     * **This reduces any complexity in needing to use Rewrite Rules or similar, and keeps the solution simple and manageable.**
   * **We are using an App Service Managed Certificate to enable HTTPS on the App Service.**
   * **We are using an SSL certificate generated elsewhere (in my case, from ZeroSSL) in the App Gateway to enable HTTPS traffic.**

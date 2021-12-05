@@ -17,7 +17,7 @@ In case you haven't heard, I'm planning to do some livestreams in the near futur
 
 Windows Terminal is an awesome tool. I've written [another blog post](/blog/windows-terminal-productive-azure) on how it can make you productive with Azure. If you aren't familiar with it, or want some productivity tips - I definitely recommend checking out the post!
 
-For my local development, I typically use Ubuntu in Windows Subsystem for Linux. From my university days, the computer terminals were all Linux-based (I think a flavour of Debian?), and I used a Macbook Pro throughout my time at university as well. I've built up a bit of a natural preference for the Linux command-line over that time, so it now comes more naturally to me. Hence why Windows Subsystem for Linux, Windows Terminal and Ubuntu are my go-to local command-line tools.
+For my local development, I typically use Ubuntu in Windows Subsystem for Linux. From my university days, the computer terminals were all Linux-based (I think a flavour of Debian?), and I used a MacBook Pro throughout my time at university as well. I've built up a bit of a natural preference for the Linux command-line over that time, so it now comes more naturally to me. Hence why Windows Subsystem for Linux, Windows Terminal and Ubuntu are my go-to local command-line tools.
 
 As you'll have guest from the title of this post, I've been having some issues with my Ubuntu environment. Nothing significant, but several papercuts that kept getting in the way of my productivity. I'll talk about other issues that I've been working on fixing in separate blog posts.
 

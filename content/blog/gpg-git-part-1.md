@@ -22,11 +22,11 @@ So first off, what is GPG? It's sometimes also known as GnuPG, or the GNU Privac
 
 According to the GnuPG site, they explain GPG as the following -
 
-_"GnuPG is a complete and free implementation of the OpenPGP standard as defined by RFC4880 (also known as PGP). GnuPG allows you to encrypt and sign your data and communications; it features a versatile key management system, along with access modules for all kinds of public key directories. GnuPG, also known as GPG, is a command line tool with features for easy integration with other applications. A wealth of frontend applications and libraries are available. GnuPG also provides support for S/MIME and Secure Shell (ssh)."_
+_"GnuPG is a complete and free implementation of the OpenPGP standard as defined by RFC4880 (also known as PGP). GnuPG allows you to encrypt and sign your data and communications; it features a versatile key management system, along with access modules for all kinds of public key directories. GnuPG, also known as GPG, is a command-line tool with features for easy integration with other applications. A wealth of frontend applications and libraries are available. GnuPG also provides support for S/MIME and Secure Shell (ssh)."_
 
 Now we're getting into the world of security and cryptography. Think of the scenarios where you want to send a message to a user, but the receiver wants to ensure that the message is genuinely from you. Or perhaps, as the sender, you only want the receiver to be able to see it, and not get intercepted by any eavesdroppers (Alice, Bob, Eve anyone?). GPG aims to help you solve this problem.
 
-So why is this important in the context of the Git scenario? At this point, I am assuming that you at least know the fundamentals of Git. As a quick primer/refresher, Git is a distributed version control system. Each commit has some metadata associate with it, including a name as well as an e-mail address. That metadata is not linked back to some authoritative source, or verified in any way. For this scenario, let's assume that we have {Alice, Bob, Eve} @ contoso.com, who were introduced earlier in the article. In Git, it's very easy to spoof another user. It's even possible to rewrite history (though I don't recommend you trying this in any live environments if you don't know what you're doing!).
+So why is this important in the context of the Git scenario? At this point, I am assuming that you at least know the fundamentals of Git. As a quick primer/refresher, Git is a distributed version control system. Each commit has some metadata associate with it, including a name as well as an email address. That metadata is not linked back to some authoritative source, or verified in any way. For this scenario, let's assume that we have {Alice, Bob, Eve} @ contoso.com, who were introduced earlier in the article. In Git, it's very easy to spoof another user. It's even possible to rewrite history (though I don't recommend you trying this in any live environments if you don't know what you're doing!).
 
 Now, with that context. Let's consider an example of how easy it is to impersonate those other users or potentially rewrite the history.
 
@@ -111,7 +111,7 @@ fi
 
 ![Git log showing that all commits now belong to Alice](/img/blog/gpg-git-part-1/git-status-5.jpg)
 
-See the problem? We have no guarantee on the authenticity of those commits. Are any of those people Alice, Bob or Eve? Are all of the commits potentially fake? Without having some kind of signed commit, we have no certainty. And this is where the value of GPG keys lie in this particular scenario. Being able to showcase that the changes committed have been signed by someone with a key that matches user metadata (e.g. e-mail address).
+See the problem? We have no guarantee on the authenticity of those commits. Are any of those people Alice, Bob or Eve? Are all of the commits potentially fake? Without having some kind of signed commit, we have no certainty. And this is where the value of GPG keys lie in this particular scenario. Being able to showcase that the changes committed have been signed by someone with a key that matches user metadata (e.g. email address).
 
 There's also another potential scenario. If you plan to contribute into Open Source, then some projects may require a Developer Certificate of Origin (DCO)., i.e. some kind of verification that you have made these changes (as well as an agreement that you have the right to commit that code, not stealing / re-using it from elsewhere). Again, GPG signing can be vital in this scenario to prove your authenticity.
 
@@ -119,7 +119,7 @@ GPG keys are based on some common security principals - e.g. Asymmetric key pair
 
 So, let's take stock. We so far know that -
 - GnuPG / GPG / GNU Privacy Guard is there to allow you to encrypt/sign your data or communications
-- When making changes to a Git Repository, you associate metadata (Name and E-mail address) with each commit. This is unverified metadata, and is unsigned by default.
+- When making changes to a Git Repository, you associate metadata (Name and email address) with each commit. This is unverified metadata, and is unsigned by default.
 - We may want to verify that the commits are genuine, for example - if committing to an open source project, or working in some kind of compliant industry.
 - GPG could help us in this scenario, as we could sign our commits with these GPG Keys. We would need to share the public portion of our signing key with other users (we'll explore in a later blog post how this is achieved on GitHub), so that they can verify it is us who signed the commits. If we sent encrypted information, then instead of a public/private key pair for signing, we would need a public/private key pair for encryption. But again, we'll explore the types of actions in another blog post
 

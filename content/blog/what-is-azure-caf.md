@@ -38,9 +38,9 @@ If you've already taken your first steps, then you may want to consider:
 
 ### Using the framework over time
 
-The Cloud Adoption Framework is split into several categories, which makes it simpler for you to digest as an end-user.
+The Cloud Adoption Framework is split into several categories, which makes it simpler for you to digest as an end user.
 
-Organizations will be at different stages of their adoption journey, which is why the Cloud Adoption Framework is built in this modular approach. Different areas of the framework may be a priority for you at different times of your own journey. These categories are -
+Organizations will be at different stages of their adoption journey, which is why the Cloud Adoption Framework is built-in this modular approach. Different areas of the framework may be a priority for you at different times of your own journey. These categories are -
 
 * [Strategy](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/strategy/) - Making sure that your business strategy on the drivers/purpose of moving to the cloud is clearly documented and understood.
 * [Plan](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/plan/) - Convert the strategic goals into an actionable plan that can be understood by implementation teams.

@@ -17,7 +17,7 @@ Following on from my [recent post](/blog/using-schema-org-for-seo) where I discu
 
 What is Crossposting? It's the idea that you'll post your content in multiple locations (e.g. [medium.com](https://cloudwithchris.medium.com/) or [dev.to](https://dev.to/cloudwithchris)) to broaden your reach. One of the main  benefits is that these sites are a platform for many bloggers. So if you use the appropriate tags and titles, you may be able to draw in additional members to your audience. It's not quite as easy as that though. If you post your content without appropriately linking back to your original content, you could be damaging yourself from an SEO perspective (e.g. is someone copying/plagiarizing content? What is the original source?). So let's cover this in al little more detail.
 
-Fortunately, it's quite a simple fix. You can use a canonical tag, as explained [over here on moz.com](https://moz.com/learn/seo/canonicalization). Ultimately, it's a tag to tell search engines which URL you want to appear to end-users when they retrieve their search results.
+Fortunately, it's quite a simple fix. You can use a canonical tag, as explained [over here on moz.com](https://moz.com/learn/seo/canonicalization). Ultimately, it's a tag to tell search engines which URL you want to appear to end users when they retrieve their search results.
 
 So, why is this important in the context of third party sites like medium or dev.to? Observe a couple of screenshots below. Notice how each of the platforms have an option to set a canonical URL?
 
@@ -33,7 +33,7 @@ I investigated the medium.com tool, and found that it wasn't perfect. It require
 
 Scouring the internet, it seemed that some folks had tried to solve this, but the projects were either abandoned or no longer active. My option was becoming even more clear as I researched further. This is going to become my next pet project... and that's exactly what happened!
 
-Introducing you to the [Hugo Crossposter](https://github.com/chrisreddington/hugocrossposter), which is an open source contribution to the community based upon .NET 5. It is still a work in progress. I am considering renaming the project, as it's not just about Hugo, but currently focuses on markdown with a YAML frontmatter overall. I have left the door open to some extensibility options for additional content formats.
+Introducing you to the [Hugo Crossposter](https://github.com/chrisreddington/hugocrossposter), which is an open source contribution to the community based upon .NET 5. It is still a work in progress. I am considering renaming the project, as it's not just about Hugo, but currently focuses on Markdown with a YAML frontmatter overall. I have left the door open to some extensibility options for additional content formats.
 
 All of the articles that you see on dev.to and medium.com have been converted and posted to the third party sites using this tool. I did make some slight tweaks once uploaded, so that it's clear some of the content is older (i.e. This post was originally published on DATE at cloudwithchris.com). However, writing this blog post - it has become clear that this aspect could be an additional feature in the tool, and is something I'll be working on!
 
@@ -42,7 +42,7 @@ All of the articles that you see on dev.to and medium.com have been converted an
 Reflecting back on my [contributing to open source](/blog/contributing-to-open-source) article, I'd love to have additional support on the project if this is something you're interested in. By no means is my implementation perfect, but it solves the immediate problem that I have. I can see this becoming an incredibly valuable tool for content creators though. It already sows the seeds to be a reliable tool to build upon, including:
 
 * Ability to detect if a YouTube property exists in the frontmatter, and append the appropriate YouTube embedding code for either platform.
-* Ability to detect local URLs within the markdown and convert those hyperlinks to the full canonical URLs of the content, to point back to your original content.
+* Ability to detect local URLs within the Markdown and convert those hyperlinks to the full canonical URLs of the content, to point back to your original content.
 * Ability to cross post to either medium.com or dev.to. One of my next priority items is to generate a local copy instead of posting to a third party, e.g. if you wanted to see a draft before running.
 * Ability to calculate the Canonical URL based upon the baseURL, and the path to your appropriate content directory/subdirectory.
 * Ability to import the first n tags from your frontmatter property list as a list of tags to be used in medium.com or dev.to.
@@ -56,7 +56,7 @@ Reflecting back on my [contributing to open source](/blog/contributing-to-open-s
 There is so much more that can be done here. I think that this could be a valuable tool for content creators that are running their own static sites and wanting to expand their reach through third party services such as dev.to and medium.com. Some of the ideas for the future include -
 
 * Validating that this works across additional static site generators, not just Hugo. Yes, the content output will be very similar, but there may be some differences needed in reading files/calculating canonical URLs, etc. based upon the structure of other generators.
-* Detecting if there are YouTube videos within the markdown itself, so that they can be converted to the appropriate syntax for their platform (e.g. medium.com or dev.to)
+* Detecting if there are YouTube videos within the Markdown itself, so that they can be converted to the appropriate syntax for their platform (e.g. medium.com or dev.to)
 * Expanding to additional third party blogging platforms
 * Refactoring the getTags functionality, so that a list of comma separated strings can be equally parsed as an array of items in YAML
 * Adding support for additional content types (e.g. Markdown with TOML Frontmatter, HTML and others?)

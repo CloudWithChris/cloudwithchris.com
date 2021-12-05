@@ -70,7 +70,7 @@ If you prefer, go ahead and do that. However, I'm going to move straight on to t
 
 Let's go ahead and deploy something to our Logic App! You may recall that we have a couple of options for deploying to a Logic App. Either deploying a code-based approach or deploying a Docker container image.
 
-We'll walk through both options below.
+We'll walkthrough both options below.
 
 ### Deploying code representing a Logic App Workflow to a Logic App in an App Service Kubernetes Environment
 
@@ -82,11 +82,11 @@ I navigated to the Deployment Center tab of my Logic and configured the source t
 
 ![Screenshot showing the deployment center configuration for a Logic App (code) Resource](/img/blog/azure-arc-for-apps-part-4/app-service-on-kubernetes-logic-apps-deploymentcenter-code.jpg)
 
-Once saved, navigate over to your GitHub repository. You'll notice that there is a GitHub Action workflow file created for you. It performs a checkout of your GitHub repository, sets up a node environment, resolves the needed dependencies through NPM and then runs the Azure Function GitHub Action.
+Once saved, navigate over to your GitHub repository. You'll notice that there is a GitHub Action workflow file created for you. It performs a checkout of your GitHub repository, sets up a Node.js environment, resolves the needed dependencies through npm and then runs the Azure Function GitHub Action.
 
 ![Screenshot showing the GitHub Action workflow file deployed to the repository on our behalf](/img/blog/azure-arc-for-apps-part-4/app-service-on-kubernetes-logic-apps-deploymentcenter-workflow.jpg)
 
-This didn't work as expected. The GitHub Action workflow file failed with an error relating to package.json. This makes sense, as there's no package.json (which is a requirement when trying to restore packages for node projects) in the repository.
+This didn't work as expected. The GitHub Action workflow file failed with an error relating to package.json. This makes sense, as there's no package.json (which is a requirement when trying to restore packages for Node.js projects) in the repository.
 
 > **Tip:** After some digging, I found the [Azure/LogicApps repository which has a github-sample](https://github.com/Azure/logicapps/tree/master/github-sample) which contains an example of a Logic App workflow and deploying that using GitHub Actions. The GitHub Action workflow file used looks significantly different (i.e. no restoring node dependencies, and instead - just copies the files from the Repository to a subfolder and publishes that artifact for release as a zip).
 >

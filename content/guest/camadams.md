@@ -12,4 +12,4 @@ Type: guest
 Website: ""
 YouTube: ""
 ---
-Cam Adams is an engineering manager within the FastTrack for Azure team. He is a career .Net developer dating back to the pre-release days. Cam has a particular interest in testing, scale and security which combined gives him excuse to DDoS websites in the name of science. #firethelaser
+Cam Adams is an engineering manager within the FastTrack for Azure team. He is a career .Net developer dating back to the prerelease days. Cam has a particular interest in testing, scale and security which combined gives him excuse to DDoS sites in the name of science. #firethelaser

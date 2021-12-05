@@ -18,7 +18,7 @@ The usual theme has crept up, around recommended practices, and where to go for 
 
 Azure Best Practice Checklists and Guidance
 
-- There are a number of best practice checklists available on the Azure.com website. Navigate to the Documentation Tab, and find the Best Practice subsection. You can find a number of different checklists, to use against your own solution!
+- There are a number of best practice checklists available on the Azure.com site. Navigate to the Documentation Tab, and find the Best Practice subsection. You can find a number of different checklists, to use against your own solution!
 
 Azure Cloud Design Practices Infographic
 

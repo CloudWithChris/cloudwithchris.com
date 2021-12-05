@@ -1,6 +1,6 @@
 ---
 Author: chrisreddington
-Description: "One of my recent tasks for Cloud with Chris was to investigate some additional areas for SEO optimisation. If you're unaware, SEO stands for Search Engine Optimization; a set of practices to improve your ranking in search engines such as Google, Bing and others when they crawl and index your website. I was already in a good position, but there were some things that were frustrating me, we'll explore those in this blog post."
+Description: "One of my recent tasks for Cloud with Chris was to investigate some additional areas for SEO optimisation. If you're unaware, SEO stands for Search Engine Optimization; a set of practices to improve your ranking in search engines such as Google, Bing and others when they crawl and index your site. I was already in a good position, but there were some things that were frustrating me, we'll explore those in this blog post."
 PublishDate: "2021-05-03T8:00:00Z"
 image: img/cloudwithchrislogo.png
 date: "2021-05-03T8:00:00Z"
@@ -12,7 +12,7 @@ tags:
 - Web Development
 title: Using schema.org for SEO optimisation
 ---
-One of my recent tasks for Cloud with Chris was to investigate some additional areas for SEO improvements. If you're unaware, SEO stands for Search Engine Optimization; a set of practices to improve your ranking in search engines such as Google, Bing and others when they crawl and index your website. I was already in a good position, but there were some things that were frustrating me, we'll explore those in this blog post.
+One of my recent tasks for Cloud with Chris was to investigate some additional areas for SEO improvements. If you're unaware, SEO stands for Search Engine Optimization; a set of practices to improve your ranking in search engines such as Google, Bing and others when they crawl and index your site. I was already in a good position, but there were some things that were frustrating me, we'll explore those in this blog post.
 
 From the screenshot below, you'll notice a few interesting details among the results -
 * There are a series of **smart links** which appear directly the main cloudwithchris.com result. One for about, and one for a certain podcast episode.

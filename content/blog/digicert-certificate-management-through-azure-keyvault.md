@@ -34,7 +34,7 @@ Azure’s Key Vault can help in this area. Recently, at Microsoft Ignite 2016–
 
 **b.**  $apiKey – You need to create an API Key through DigiCert CertCentral interface. The API key is a relatively long alphanumeric string.
 
-**c.**  $accountId – This is the id of your DigiCert account.
+**c.**  $accountId – This is the ID of your DigiCert account.
 
 **d.**  $issuerName – Something that makes sense to you, for the issuer of your certificate with the Certificate Authority. In my case, I have used DigiCert and my initials, as it relates to my personal domain.
 

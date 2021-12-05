@@ -1,8 +1,8 @@
 ---
 Date: "2021-10-16T17:00:00Z"
-Description: "Did you know that Static Websites can help you build performant websites that easily scale globally? Better yet, they can be incredibly cost-effective!"
+Description: "Did you know that Static Sites can help you build performant sites that easily scale globally? Better yet, they can be incredibly cost-effective!"
 PublishDate: "2021-10-16T15:30:00Z"
-Title: "Deploying Static Websites to Azure the cheap and performant way"
+Title: "Deploying Static Sites to Azure the cheap and performant way"
 image: img/talks/southcoastsummit.jpg
 hosts:
 - chrisreddington
@@ -21,9 +21,9 @@ tags:
 - Azure Static Web Apps
 externalLink: https://www.southcoastsummit.com/speakers/
 ---
-Did you know that Static Websites can help you build performant websites that easily scale globally? Better yet, they can be incredibly cost-effective!
+Did you know that Static Sites can help you build performant sites that easily scale globally? Better yet, they can be incredibly cost-effective!
 
 Join Chris, as he talks through -
 * The Jamstack (not related to Paddington bear, we promise!) and why you should care about it
-* Combining Static Websites with Serverless APIs
+* Combining Static Sites with Serverless APIs
 * Using Azure Static Web Apps to host a low-cost, performant site in Azure

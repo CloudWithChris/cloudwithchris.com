@@ -31,7 +31,7 @@ Once installed, you'll see a new icon in the top right of the address bar. Click
 
 This FastPass feature scans your site, and in less than 5 minutes will identify some of the common accessibility issues which exist on your site. Fortunately for me, I built the Cloud With Chris theme, so I can actually take action on the issues that I'm seeing. If you're using a theme made by someone else, you may have less control (but could be a great contribution, if they'll allow it!)
 
-Not only does the FastPass feature list the issues with the web page, it also visualizes them on your website, by putting boxes around the offending website elements. Some of my findings included -
+Not only does the FastPass feature list the issues with the web page, it also visualizes them on your site, by putting boxes around the offending site elements. Some of my findings included -
 
 * Colour contrast issues
 * Links not accessible for screen readers
@@ -62,11 +62,11 @@ Why is that? Well, assistive technologies rely upon object names and other metad
 
 This was a very small code change, with a big impact. Below is an example;
 
-From using an id on the anchor tag, and aria-labelledby on the unordered list with a value of ``navbarDropdownMenuLink`` (which was used across all dropdown lists on the website).
+From using an ID on the anchor tag, and aria-labelledby on the unordered list with a value of ``navbarDropdownMenuLink`` (which was used across all dropdown lists on the site).
 
 ```html
 <li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+  <a class="nav-link dropdown-toggle" href="#" ID="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Series
   </a>
   <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">                      
@@ -79,11 +79,11 @@ From using an id on the anchor tag, and aria-labelledby on the unordered list wi
 </li>
 ```
 
-To using an id on the anchor tag, and aria-labelledby on the unordered list with a value specific to that menu. For my series dropdown, this became ``seriesNavbarDropdownMenuLink``. Other dropdowns have a different name, e.g. ``episodeNavbarDropdownMenuLink``.
+To using an ID on the anchor tag, and aria-labelledby on the unordered list with a value specific to that menu. For my series dropdown, this became ``seriesNavbarDropdownMenuLink``. Other dropdowns have a different name, e.g. ``episodeNavbarDropdownMenuLink``.
 
 ```html
 <li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle" href="#" id="seriesNavbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+  <a class="nav-link dropdown-toggle" href="#" ID="seriesNavbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Series
   </a>             
   <ul class="dropdown-menu" aria-labelledby="seriesNavbarDropdownMenuLink">                
@@ -100,7 +100,7 @@ To using an id on the anchor tag, and aria-labelledby on the unordered list with
 
 Similar to the link issues, I had some videos on my site that were using the ``<iframe>`` tag to embed YouTube videos. These videos were not accessible for assistive technologies. There is [another example](https://accessibilityinsights.io/info-examples/web/frame-title/) for frames or iFrames, and shows that a property of either title, aria-label or aria-labelledby needs to be added.
 
-YouTube videos are embedded on the website using iFrames. For each episode, I store the YouTube video id in episode's YAML frontmatter (e.g. metadata). This is used in the theme's episode layout pages to render the YouTube video if the YouTube property exists and the episode is published.
+YouTube videos are embedded on the site using iFrames. For each episode, I store the YouTube video ID in episode's YAML frontmatter (e.g. metadata). This is used in the theme's episode layout pages to render the YouTube video if the YouTube property exists and the episode is published.
 
 This means, I could make a single fix in one place, and it would affect all episodes on the site.  It was once again a simple tweak. After adding a variable for the title of the episode, I had to change a single line of code in the episode layout.
 
@@ -120,7 +120,7 @@ This was once again a simple fix, with a big impact. I'm happy with it.
 
 This was an interesting one to solve. I begun thinking through this problem by looking at the code blocks on my site. I was not aware that assistive technologies would not be able to read the code blocks. I quickly realised that this may be a little out of my control. When using a code block, I need to add three backticks (```) before and after the code block. I also need to add a language attribute to the code block. This informs Hugo to render the code block as code.
 
-So, the problem isn't with my website design at this point, but is in fact how Hugo generates codeblocks. From looking into the [accessibility insights explanation](https://accessibilityinsights.io/info-examples/web/scrollable-region-focusable/), it looked like a fairly simple fix (adding tabindex="0" to any generated codeblocks). While it's a simple fix, there is a problem. I don't know the Hugo codebase, so I'm not sure where the fix would be best applied.
+So, the problem isn't with my site design at this point, but is in fact how Hugo generates codeblocks. From looking into the [accessibility insights explanation](https://accessibilityinsights.io/info-examples/web/scrollable-region-focusable/), it looked like a fairly simple fix (adding tabindex="0" to any generated codeblocks). While it's a simple fix, there is a problem. I don't know the Hugo codebase, so I'm not sure where the fix would be best applied.
 
 As a good open source citizen, I felt it was my responsibility to at least raise this as a [GitHub issue](https://github.com/gohugoio/hugo/issues/8758) in the Hugo project. I'm pleased that within hours of it being raised, I was told that there is already an issue being tracked (my bad for not finding that one!). Not only an issue being tracked, but a Pull Request had been created by another community contributor to fix the problem. Going one step further, the maintainer of the project merged the request soon after the discussion on my issue took palce.
 

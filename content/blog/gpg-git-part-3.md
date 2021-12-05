@@ -19,7 +19,7 @@ Okay, part 3! At this point, I'm assuming that you have already familiarised you
 
 By the end of this post, we should be able to use GPG Keys to sign our commits with a GPG Key from our machine. We won't introduce YubiKeys into the equation just yet, and we'll leave that for a part 4 post. In part 2, we generated a GPG master key for certification, and a subkey for signing. We'll be focusing on the signing subkey for the majority of this particular article. As a reminder, your keyring should only have the secret subkey imported, and not contain the private master key (Keep in mind principle of least privilege / separation of concerns!).
 
-Let's navigate to the repository that we were using. In the folder of your local Git repository, use your command line window to enter the following:
+Let's navigate to the repository that we were using. In the folder of your local Git repository, use your command-line window to enter the following:
 
 ```bash
 git config --local user.email "alice@contoso.com"
@@ -90,9 +90,9 @@ Date:   Mon Mar 8 20:28:40 2021 +0000
 
 What does the above tell us? It tells us that the latest commit used was indeed signed with a GPG Key. Great! So that means we're done right, and we can finish this blog series? Not quite. Review the warning - "The key is not certified with a trusted signature! There is no indication that the signature belongs to the owner." This is where the GitHub GPG Key verification functionality comes into play.
 
-Now, for the rest of this blog post I'm going to stop speaking from Alice's perspective and showcase the rest as myself (primarily because I don't have access to alice@contoso.com or have that e-mail address associated with my GitHub account, so any examples demonstrating this on GitHub would not be marked as verified).
+Now, for the rest of this blog post I'm going to stop speaking from Alice's perspective and showcase the rest as myself (primarily because I don't have access to alice@contoso.com or have that email address associated with my GitHub account, so any examples demonstrating this on GitHub would not be marked as verified).
 
-For these next steps to work, you will need to make sure that one of the e-mail addresses used in the GPG Key is also associated with your GitHub account. You can verify that and make the necessary adjustments over on your [GitHub Settings > Emails](https://github.com/settings/emails). As a reminder, there is an option in the E-Mail settings page that says **Keep my email address private**. This allows you to use a no-reply e-mail from GitHub to obscure your personal e-mail address and avoid any privacy issues (remember that when using ``git log`` we can see the commiter's username and e-mail address). If you want to use this no-reply e-mail for the GPG Signing key, then you need to make sure that you have updated your git config user.email to use the no-reply e-mail address, and also included it as as an e-mail address within your key (e.g. Alice's digits+githubusername@users.noreply.github.com).
+For these next steps to work, you will need to make sure that one of the email addresses used in the GPG Key is also associated with your GitHub account. You can verify that and make the necessary adjustments over on your [GitHub Settings > Emails](https://github.com/settings/emails). As a reminder, there is an option in the email settings page that says **Keep my email address private**. This allows you to use a no-reply email from GitHub to obscure your personal email address and avoid any privacy issues (remember that when using ``git log`` we can see the commiter's username and email address). If you want to use this no-reply email for the GPG Signing key, then you need to make sure that you have updated your git config user.email to use the no-reply email address, and also included it as as an email address within your key (e.g. Alice's digits+githubusername@users.noreply.github.com).
 
 ![GitHub Email Settings Example](/img/blog/gpg-git-part-3/github-email.jpg)
 

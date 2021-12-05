@@ -27,15 +27,15 @@ Interestingly, there are a number of trends that seem to repeat. Customer X aims
 
 Consider an e-commerce site. It has users on a 24x7 basis, potentially 365 days a year. It cannot afford downtime, as that has a direct loss of profitability to the business. Potentially millions.
 
-Conversely, consider an internal HR portal for a small business. It is likely used predominantly within working hours, and has a limited user-base.
+Conversely, consider an internal HR portal for a small business. It is likely used predominantly within working hours, and has a limited user base.
 
-Each of these scenarios will have very different requirements, both from a functional and non-functional perspective. This is important, perhaps even more so when considering the cloud as your next step. You need to think of the whole setup, end to end and not just the architecture. Think People, Processes AND technology - [ITIL](https://en.wikipedia.org/wiki/ITIL) anyone?
+Each of these scenarios will have very different requirements, both from a functional and non-functional perspective. This is important, perhaps even more so when considering the cloud as your next step. You need to think of the whole setup, end-to-end and not just the architecture. Think People, Processes AND technology - [ITIL](https://en.wikipedia.org/wiki/ITIL) anyone?
 
 Thinking solely technical architecture is a very easy trap to fall into, when transitioning into the cloud.
 
 - What happens if there is a disaster, for example - a datacentre outage?
 - What happens if our data leaks - How will we respond as an organisation?
-- How will we support our users to provide a great end-user experience?
+- How will we support our users to provide a great end user experience?
 - How do we ensure consistency and continuity across our cloud resources, and the mechanisms that we use to deploy them?
 
 Consider the supporting operations. The innovation of cloud technologies is rapid, and keeping up can be tough. But you need to ensure that your processes safeguard you. It is part of the mindset of transitioning from product to service...

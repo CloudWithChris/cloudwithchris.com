@@ -12,9 +12,9 @@ tags:
 - DevOps
 title: Making a GitHub Action with Docker and .NET Core
 ---
-As you may have read previously, my site [cloudwithchris.com](http://cloudchris.ws/2x) is hosted using Azure Storage Static Websites. A common pattern when building static websites is to version control the assets and use Continuous Integration and Continuous Delivery to deliver the rendered compiled website to Azure. I've recently started creating an open source .NET Core command-line application which can take Hugo YAML files an input, convert the file contents to the appropriate markdown for supported third-party services (currently [dev.to](http://cloudchris.ws/2y) and [medium.com](http://cloudchris.ws/2z)) by replacing local URLs, adding appropriate YouTube/Tweet rendering shortcodes and then posting directly to the API.
+As you may have read previously, my site [cloudwithchris.com](http://cloudchris.ws/2x) is hosted using Azure Storage Static sites. A common pattern when building static sites is to version control the assets and use Continuous Integration and Continuous Delivery to deliver the rendered compiled site to Azure. I've recently started creating an open source .NET Core command-line application which can take Hugo YAML files an input, convert the file contents to the appropriate Markdown for supported third-party services (currently [dev.to](http://cloudchris.ws/2y) and [medium.com](http://cloudchris.ws/2z)) by replacing local URLs, adding appropriate YouTube/Tweet rendering shortcodes and then posting directly to the API.
 
-You may be able to see where this is going. As I have a Continuous Integration (CI) and Continuous Deployment (CD) process to deploy my production website to Azure, I also want to integrate cross-posting to third party blogging services into that process. That's why I decided on a .NET Core command-line application, so that the resulting executable can run cross-platform. It also means that I could feasibly run that executable within a deployment pipeline, whether that is in Azure Pipelines, GitHub Actions, Jenkins, GitLab, etc. As I'm using GitHub Actions to deploy my site to Azure, it made sense for me to build a GitHub action that I can use within my GitHub Actions workflow. That's exactly what I'll be talking about in this blog post!
+You may be able to see where this is going. As I have a Continuous Integration (CI) and Continuous Deployment (CD) process to deploy my production site to Azure, I also want to integrate cross-posting to third party blogging services into that process. That's why I decided on a .NET Core command-line application, so that the resulting executable can run cross-platform. It also means that I could feasibly run that executable within a deployment pipeline, whether that is in Azure Pipelines, GitHub Actions, Jenkins, GitLab, etc. As I'm using GitHub Actions to deploy my site to Azure, it made sense for me to build a GitHub action that I can use within my GitHub Actions workflow. That's exactly what I'll be talking about in this blog post!
 
 In case you didn't already know, each GitHub Action is effectively just another GitHub repository. So whenever you use the actions/checkout action, you're actually referring to the [github.com/actions/checkout](http://cloudchris.ws/20) repository. Each of these "action repositories" will have an action.yml file at the repository root, to inform GitHub that it represents a GitHub action - more on that later though!
 
@@ -28,7 +28,7 @@ The ``JavaScript action`` could potentially work, though I had already begun bui
 
 Next up, the ``Composite run action``. This is a fancy way of saying "run a series of steps on the command-line". This could be an option as .NET Core applications can be executed on the command-line. The challenge with this approach is that we're at the mercy of whichever dependencies are installed on the GitHub Action Runner at a given point in time, not least if someone is running a self-hosted runner which would have a different set of dependencies and versions. I want the maintenance of this project to be as simple as possible. So, for that reason - I had ruled out the composite run action.
 
-Finally, the ``Docker container action``. This is the option that I ultimately chose. If you're familiar with containers as a technology, you'll be aware that they can in consistent execution (rather than shipping just the application, or application delta, you also ship the container dependencies in the container image, which provides the consistency). A key point to note - the Docker Container action only works on a Linux GitHub Action runner as [documented here](http://cloudchris.ws/26). This isn't a significant problem, as I wanted to ensure the program executable is able to run cross-platform, not the GitHub action necessarily. So, this gives end-users an option to run the command-line application on any platform manually. Alternatively, they can use the GitHub action in a job that uses a Linux runner. If an end-user's GitHub action workflow is primarily Windows or Mac based, that's not a problem. They can define a new job specifically for the cross-posting aspects.
+Finally, the ``Docker container action``. This is the option that I ultimately chose. If you're familiar with containers as a technology, you'll be aware that they can in consistent execution (rather than shipping just the application, or application delta, you also ship the container dependencies in the container image, which provides the consistency). A key point to note - the Docker Container action only works on a Linux GitHub Action runner as [documented here](http://cloudchris.ws/26). This isn't a significant problem, as I wanted to ensure the program executable is able to run cross-platform, not the GitHub action necessarily. So, this gives end users an option to run the command-line application on any platform manually. Alternatively, they can use the GitHub action in a job that uses a Linux runner. If an end user's GitHub action workflow is primarily Windows or Mac based, that's not a problem. They can define a new job specifically for the cross-posting aspects.
 
 Great, so we have a decision on how to orchestrate the command-line application. What's next? For the Docker container action, we need two files - a ``Dockerfile`` and an ``Action metadata file``, also known as the ``action.yml`` file.
 
@@ -105,7 +105,7 @@ inputs:
     default: 'false'
   originalPostInformation:
     description:
-      'Boolean (True/False) on whether the details of the original post (date/time, and canonical URL) should be included in the rendered markdown.'
+      'Boolean (True/False) on whether the details of the original post (date/time, and canonical URL) should be included in the rendered Markdown.'
     required: false
     default: 'false'
   logPayloadOutput:
@@ -120,7 +120,7 @@ inputs:
     default: '*.md'
   baseUrl:
     description:
-      'Base URL of the website, not including protocol. e.g. www.cloudwithchris.com. This is used for converting any relative links to the original source, including the canonical URL.'
+      'Base URL of the site, not including protocol. e.g. www.cloudwithchris.com. This is used for converting any relative links to the original source, including the canonical URL.'
     required: true
     default: 'www.cloudwithchris.com'
   devtoToken:
@@ -141,7 +141,7 @@ inputs:
     required: false
   protocol:
     description:
-      'Protocol used on the website. Options are either HTTP or HTTPS. This is used for converting any relative links to the original source, including the canonical URL.'
+      'Protocol used on the site. Options are either HTTP or HTTPS. This is used for converting any relative links to the original source, including the canonical URL.'
     required: false
 runs:
   using: 'docker'
@@ -175,7 +175,7 @@ And that is ultimately the magic behind creating your own GitHub action. You nee
 
 There are a couple of things to keep in mind as an author of a GitHub Action. I have no doubt that you plan to be a great open source citizen and want to maintain your open sourced GitHub Action. What happens if you update your GitHub Action and make some breaking changes, how do you make sure you don't break your consumers' workflows? Just like any other dependency, we use versioning. As the changes are being made within a Git repository, we're able to tag the commit hashes with a version number as needed. This is explained thoroughly in the [Using release management for actions](http://cloudchris.ws/3a) section in the GitHub docs.
 
-If you have used any GitHub actions before, you may have noticed that some actions specify a number after the action name. For example, ``uses: actions/checkout@v2`` or ``uses: azure/login@v1``. This simply refers to the Git tag in the repo. You'll be able to see this in the releases section of a repository for a GitHub action (e.g. [actions/checkout releases](http://cloudchris.ws/3b) or [azure/login releases](http://cloudchris.ws/3c)).
+If you have used any GitHub actions before, you may have noticed that some actions specify a number after the action name. For example, ``uses: actions/checkout@v2`` or ``uses: azure/login@v1``. This simply refers to the Git tag in the repository. You'll be able to see this in the releases section of a repository for a GitHub action (e.g. [actions/checkout releases](http://cloudchris.ws/3b) or [azure/login releases](http://cloudchris.ws/3c)).
 
 Additionally, it's typically recommended to create a new GitHub action in a new GitHub repository. As taken from the GitHub docs - *If you're developing an action for other people to use, we recommend keeping the action in its own repository instead of bundling it with other application code. This allows you to version, track, and release the action just like any other software.*.
 

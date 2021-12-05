@@ -1,6 +1,6 @@
 ---
 Date: "2021-08-26T18:00:00Z"
-Description: "Chris is a Cloud Solution Architect at Microsoft. He'll explore how GitHub Actions can be used to deploy your own static websites (or other apps!) to Azure."
+Description: "Chris is a Cloud Solution Architect at Microsoft. He'll explore how GitHub Actions can be used to deploy your own static sites (or other apps!) to Azure."
 PublishDate: "2021-08-26T15:30:00Z"
 Title: "How GitHub can help in planning, building and deploying a Podcast/Blog site"
 image: img/talks/mc2mc.jpg
@@ -17,4 +17,4 @@ tags:
 - Requirements
 - Cloud Design Patterns
 ---
-Chris is a Cloud Solution Architect at Microsoft. He'll explore how GitHub Actions can be used to deploy your own static websites (or other apps!) to Azure.
+Chris is a Cloud Solution Architect at Microsoft. He'll explore how GitHub Actions can be used to deploy your own static sites (or other apps!) to Azure.

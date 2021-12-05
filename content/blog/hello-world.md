@@ -13,7 +13,7 @@ title: System.out.println('Hello World');
 
 Surely, a "Hello World" post is a right of passage for technical bloggers?
 
-Welcome to my blog, and of course - My first blog post! But first, who am I? I'm Christian Reddington (in case you couldn't tell by the domain name, or website title!) - and I'm a technology enthusiast (Read: Geek/Nerd, delete as appropriate). I have a development background and have most recently been involved within Microsoft Azure projects lately.
+Welcome to my blog, and of course - My first blog post! But first, who am I? I'm Christian Reddington (in case you couldn't tell by the domain name, or site title!) - and I'm a technology enthusiast (Read: Geek/Nerd, delete as appropriate). I have a development background and have most recently been involved within Microsoft Azure projects lately.
 
 Over time, I intend to write posts on a number of topics. These will range from technical topics (things that I have learnt throughout my role and in my spread time!), in addition to things which interest me - Personal Development, Music, Innovation and More!
 

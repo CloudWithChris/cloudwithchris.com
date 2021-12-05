@@ -59,7 +59,7 @@ I'm sure you'll agree - plenty to get you started with your scenario! So much so
 </validate-jwt>
 ```
 
-What is the above policy doing? Effectively, we're looking for a JSON Web Token that has been provided by the cloudwithchris.com tenant in Azure Active Directory. That token must have an audience with the id ``d3414b61-53f8-4ad5-aa1d-1e2a15579f60``. This means that I have an App Registration in Azure Active Directory with the Client ID ``d3414b61-53f8-4ad5-aa1d-1e2a15579f60``. Of course, if you're working through this blog post from beginning to end - you may not have an App Registration.
+What is the above policy doing? Effectively, we're looking for a JSON Web Token that has been provided by the cloudwithchris.com tenant in Azure Active Directory. That token must have an audience with the ID ``d3414b61-53f8-4ad5-aa1d-1e2a15579f60``. This means that I have an App Registration in Azure Active Directory with the Client ID ``d3414b61-53f8-4ad5-aa1d-1e2a15579f60``. Of course, if you're working through this blog post from beginning to end - you may not have an App Registration.
 
 Let's go ahead and do that now.
 
@@ -90,7 +90,7 @@ For the time being, we're assuming in this scenario that only users from the sam
 >
 > Then it's a case of exposing an API from the app registration that is associated to your backend API, and granting API permissions to the app registration that is aligned to your Single Page App. When you expose the API, you provide it a name (e.g. myapi.read). That is then the scope that you would pass in when you acquire the access token for the call. [This example](https://docs.microsoft.com/en-us/azure/active-directory/develop/scenario-spa-overview) shows how to do this for a Single Page Application calling the Microsoft Graph (so, not a custom API - which is the slight difference in what we described here).
 >
-> Why all of this complexity? Because, we don't necessarily want to grant one application access to all other applications. Likewise, as an organization - we may not want to grant admin consent to this, and in fact give this freedom of choice back to the end-user. Remember those dialogues when you use a social identity provider to login to a site? You're commonly told they'll access your User Name, E-Mail, etc.? This is the similar concept to consider with API permissions.
+> Why all of this complexity? Because, we don't necessarily want to grant one application access to all other applications. Likewise, as an organization - we may not want to grant admin consent to this, and in fact give this freedom of choice back to the end user. Remember those dialogues when you use a social identity provider to login to a site? You're commonly told they'll access your User Name, E-Mail, etc.? This is the similar concept to consider with API permissions.
 >
 > If there is interest, I can write a blog post up on this topic. However, the purpose of this blog post is really to introduce the concept and power of API Management policies. This scenario could be a blog post in its own right.
 
@@ -116,13 +116,13 @@ Once created, the Client Secret is now available that can be used in postman for
 
 ## Obtaining an Access Token
 
-At this point, we have the details needed to obtain an Access Token from Azure Active Directory. This is not a flow that an end-user would typically use, as explained over in the [Azure Docs](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-client-creds-grant-flow). This is about enabling a web service (or confidential client) to use its own credentials when calling another web service. For the purposes of demonstration in this blog post, it allows us to easily generate a bearer token that can be used as part of our API Management demonstration.
+At this point, we have the details needed to obtain an Access Token from Azure Active Directory. This is not a flow that an end user would typically use, as explained over in the [Azure Docs](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-client-creds-grant-flow). This is about enabling a web service (or confidential client) to use its own credentials when calling another web service. For the purposes of demonstration in this blog post, it allows us to easily generate a bearer token that can be used as part of our API Management demonstration.
 
 > **Tip:** If you are new to identity, it's certainly worth reviewing the [OAuth 2.0 and OpenID Connect protocols](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-protocols). It's important to understand the different type of flows, and which one makes the most sense in your scenario.
 >
 > For example, it was common for interactive user logins to use the [implicit grant flow](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-implicit-grant-flow). However, the strong recommendation is to use [authorization code flow](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow), especially for Single Page Applications.
 
-At this point, I have opened [Postman](https://www.postman.com/) so that I can call the token endpoint and receive the needed bearer token (In this case, I'm simulating a service. As a reminder, this is **not** what you would typically do in an end-user scenario).
+At this point, I have opened [Postman](https://www.postman.com/) so that I can call the token endpoint and receive the needed bearer token (In this case, I'm simulating a service. As a reminder, this is **not** what you would typically do in an end user scenario).
 
 I've set my postman request up with the following details:
 
@@ -201,7 +201,7 @@ Which scenarios should you consider? Well, it depends! If you're restricting acc
 * Likewise, what happens if the networking rules are misconfigured, and in fact you're allowing **any** internal traffic to access the backend?
   * Depending on your requirements, you may be okay with any internal traffic accessing the backend API. But what about a zero-trust model?
 
-This is where you may also want to consider validating a token on the backend API. Typically it would be **the same** token as what we passed into API Management, as we don't want to lose the original user context. However, we could use API Management to pass a new token to the Backend API for verification. From chatting with a friend on this (Thanks Jelle!), this *could* be useful for a legacy API which is expecting app tokens, rather than end-user tokens. But, passing the end-user token to the backend as well is common.
+This is where you may also want to consider validating a token on the backend API. Typically it would be **the same** token as what we passed into API Management, as we don't want to lose the original user context. However, we could use API Management to pass a new token to the Backend API for verification. From chatting with a friend on this (Thanks Jelle!), this *could* be useful for a legacy API which is expecting app tokens, rather than end user tokens. But, passing the end user token to the backend as well is common.
 
 Why use the same token in both APIM and the backend? How do you implement this? This is exactly what we'll be doing in the next blog post (considering zero trust / defence in depth), replacing our backend API with a different Azure Function and controlling the authorization.
 

@@ -358,7 +358,7 @@ Hopefully that gives you a peak into the simplicity of the Project Bicep Domain 
 
 ### Re-working the ARM Template into the Bicep DSL
 
-I've taken some time to re-write the above template as an Azure Bicep template. I used Visual Studio Code and the [VSCode Bicep Extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-bicep). It took me about 20 minutes from start-to-finish, without knowing a great deal of the new template language to get a completed template. This was with thanks to the amazing intellisense functionality that is built-in to the extension.
+I've taken some time to rewrite the above template as an Azure Bicep template. I used Visual Studio Code and the [VSCode Bicep Extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-bicep). It took me about 20 minutes from start-to-finish, without knowing a great deal of the new template language to get a completed template. This was with thanks to the amazing intellisense functionality that is built-in to the extension.
 
 Here's an example of the template using the Bicep DSL -
 
