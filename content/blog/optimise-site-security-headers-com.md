@@ -33,13 +33,13 @@ In case you're unable to read the image, the headers and descriptions are as fol
 * **Referrer-Policy** - Referrer-Policy is a new header that allows a site to control how much information the browser includes with navigations away from a document and should be set by all sites.
 * **Permissions-Policy** - Permissions-Policy is a new header that allows a site to control which features and APIs can be used in the browser.
 
-So, we can now understand the problem. From a risk perspective, I perceived the impact as medium/low and the likelihood of abuse to be low. particularly due to the early phase of my platform, and volume of users that I currently have visiting. However, with that said though, I want to ensure that I'm providing an accessible, secure and easy to use platform for my endusers to use. So within a few days, I made sure that each of these items were resolved.
+So, we can now understand the problem. From a risk perspective, I perceived the impact as medium/low and the likelihood of abuse to be low. particularly due to the early phase of my platform, and volume of users that I currently have visiting. However, with that said though, I want to ensure that I'm providing an accessible, secure and easy to use platform for my end users to use. So within a few days, I made sure that each of these items were resolved.
 
 ## How to resolve these items?
 
-Given that I'm deploying static content to an Azure Storage Account, my first thought was around how to ensure that the site is responding to the enduser with the appropriate headers (evaluating the options). I was aware that Azure Front Door and Azure Application Gateway may be able to help in this scenario, but both would add significant cost quickly (in comparison to the current cost of my entire pltform being less than £5/month). Though, there was one other trick up my sleeve.
+Given that I'm deploying static content to an Azure Storage Account, my first thought was around how to ensure that the site is responding to the end users with the appropriate headers (evaluating the options). I was aware that Azure Front Door and Azure Application Gateway may be able to help in this scenario, but both would add significant cost quickly (in comparison to the current cost of my entire pltform being less than £5/month). Though, there was one other trick up my sleeve.
 
-I'm using the Microsoft CDN flavour of the Azure CDN to act as a caching layer in front of the backing storage. This comes with a [Rules Engine](https://docs.microsoft.com/en-us/azure/cdn/cdn-standard-rules-engine-reference) capability, that allows you to add either global or conditional rules that can be processed as part of the response to the enduser. These could include redirection, forcing a given protocol, or appending / setting headers! I was already using this functionality to force any HTTP traffic to use the HTTPS version of the site, so this was a natural option to progress with.
+I'm using the Microsoft CDN flavour of the Azure CDN to act as a caching layer in front of the backing storage. This comes with a [Rules Engine](https://docs.microsoft.com/en-us/azure/cdn/cdn-standard-rules-engine-reference) capability, that allows you to add either global or conditional rules that can be processed as part of the response to the end users. These could include redirection, forcing a given protocol, or appending / setting headers! I was already using this functionality to force any HTTP traffic to use the HTTPS version of the site, so this was a natural option to progress with.
 
 Below, you can find an image which shows the configuration of modifying the response headers by using the Azure CDN rules engine global rules:
 
@@ -94,7 +94,7 @@ Unfortunately, this won't be recognised by securityheaders.com as a fix. However
 
 Great, so with that - We've gone ahead and strengthened the security posture of the site against potential areas of abuse, such as cross-site scripting, forcing browsers to realise they must only use an encrypted medium of transfer, and more. In fairness, the risks are very low for my site. There is no user interaction to any backend system, and is primarily a 'brochureware' type of site. However, I want to make sure that if there is the potential for any risk, that it is mitigated and addressed.
 
-In a scenario where a site takes enduser input (e.g. Static Website, calling several backend API functions), then this is something I would certainly look to implement without a doubt.
+In a scenario where a site takes end users input (e.g. Static Website, calling several backend API functions), then this is something I would certainly look to implement without a doubt.
 
 With that, I hope that this blog post has helped you learn something! And a big thank you to Scott Hanselman for pointing out securityheaders.com as one of the tools that he has used to optimise his own site. Hopefully this gives you some insight into how I took those recommendations and addressed them using the Azure CDN rules engine.
 

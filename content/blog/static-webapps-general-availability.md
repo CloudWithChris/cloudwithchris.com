@@ -18,9 +18,9 @@ But hold on, if Azure Storage is an option already - Why am I so excited about t
 
 There is a reason that I have two separate talks on this. First, I have a session which is focused on how to use Hugo and the architecture behind [cloudwithchris.com](https://www.cloudwithchris.com). Secondly, I have a session which is focused on how to deploy that architecture to as a storage using GitHub Actions. Azure Static Web Apps were not an option when I began my journey creating Cloud with Chris, but would have made it a significantly simpler process.
 
-Azure Static Web Apps provides an ability to easily create a hosting platform for your static content based websites. This includes static site generators such as Gatsby, Hugo, Jekyll, Next.js, Nuxt.js and VuePress. It also includes frameworks such as Angular, React and Vue, as well as standard (often referred to as vanilla) JavaScript websites as well.
+Azure Static Web Apps provides an ability to easily create a hosting platform for your static content based sites. This includes static site generators such as Gatsby, Hugo, Jekyll, Next.js, Nuxt.js and VuePress. It also includes frameworks such as Angular, React and Vue, as well as standard (often referred to as vanilla) JavaScript sites as well.
 
-Now, one of the main points that I raise in my usual talk on hosting websites using the Static Content Hosting pattern is the significant cost-benefit of doing this. In an average month, I spend less than £5 for the entire end-to-end running of my environments. Yes, environments plural - that includes Preview, Staging and production, and also includes the cost of streaming my audio files to third party platforms like Apple Podcasts, Google Podcasts, Spotify and consumed directly from [www.cloudwithchris.com](https://www.cloudwithchris.com).
+Now, one of the main points that I raise in my usual talk on hosting sites using the Static Content Hosting pattern is the significant cost-benefit of doing this. In an average month, I spend less than £5 for the entire end-to-end running of my environments. Yes, environments plural - that includes Preview, Staging and production, and also includes the cost of streaming my audio files to third party platforms like Apple Podcasts, Google Podcasts, Spotify and consumed directly from [www.cloudwithchris.com](https://www.cloudwithchris.com).
 
 So, what's the cost of Azure Static Web Apps? Or rather, how is it billed? There are two options -
 
@@ -31,7 +31,7 @@ So, what's the cost of Azure Static Web Apps? Or rather, how is it billed? There
 
 > **TIP:** It's always worth checking the [Azure Pricing Calculator](https://azure.microsoft.com/en-gb/pricing/calculator/) or the relevant [Azure Pricing Page](https://azure.microsoft.com/en-gb/pricing/details/app-service/static/) for the latest and greatest pricing details, as it can change over time!
 
-Now we have the service tiers / pricing thoughts out of the way, let's go ahead and take a look at the creation experience. Remember how I mentioned that Azure Static Web Apps makes it a significantly easier experience to deploy our static websites earlier? I meant it. First off, we'll find the usual details that we'd expect to see, including pricing tier, region to host the application, etc.
+Now we have the service tiers / pricing thoughts out of the way, let's go ahead and take a look at the creation experience. Remember how I mentioned that Azure Static Web Apps makes it a significantly easier experience to deploy our static sites earlier? I meant it. First off, we'll find the usual details that we'd expect to see, including pricing tier, region to host the application, etc.
 
 ![Screenshot of the Azure Static Web Apps creation process - part 1](/img/blog/static-webapps-general-availability/static-webapp-portal-create1.png)
 

@@ -6,7 +6,7 @@ This privacy policy ("Policy") describes how the personally identifiable informa
 Automatic collection of information
 -----------------------------------
 
-When you open the Site, our servers automatically record information that your browser sends. This data may include information such as your device's IP address, browser type and version, operating system type and version, language preferences or the webpage you were visiting before you came to the Site and Services, pages of the Site and Services that you visit, the time spent on those pages, information you search for on the Site, access times and dates, and other statistics.
+When you open the Site, our servers automatically record information that your browser sends. This data may include information such as your device's IP address, browser type and version, operating system type and version, language preferences or the web page you were visiting before you came to the Site and Services, pages of the Site and Services that you visit, the time spent on those pages, information you search for on the Site, access times and dates, and other statistics.
 
 Information collected automatically is used only to identify potential cases of abuse and establish statistical information regarding the usage and traffic of the Site and Services. This statistical information is not otherwise aggregated in such a way that would identify any particular user of the system.
 
@@ -96,7 +96,7 @@ You can learn more about our [Cookie Policy here](/cookie-policy)
 Do Not Track signals
 --------------------
 
-Some browsers incorporate a Do Not Track feature that signals to websites you visit that you do not want to have your online activity tracked. Tracking is not the same as using or collecting information in connection with a site. For these purposes, tracking refers to collecting personally identifiable information from consumers who use or visit a site or online service as they move across different websites over time. The Site and Services do not track its visitors over time and across third party websites. However, some third party sites may keep track of your browsing activities when they serve you content, which enables them to tailor what they present to you.
+Some browsers incorporate a Do Not Track feature that signals to sites you visit that you do not want to have your online activity tracked. Tracking is not the same as using or collecting information in connection with a site. For these purposes, tracking refers to collecting personally identifiable information from consumers who use or visit a site or online service as they move across different sites over time. The Site and Services do not track its visitors over time and across third party sites. However, some third party sites may keep track of your browsing activities when they serve you content, which enables them to tailor what they present to you.
 
 Links to other resources
 ------------------------

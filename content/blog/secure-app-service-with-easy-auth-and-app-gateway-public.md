@@ -273,8 +273,8 @@ At first, create a Health Probe which resembles the out of the box health probe 
 * **Protocol:** HTTPS
   * As we're had setup HTTPS on the backend (App Service instance), let's make sure that we're testing that with our health probe.
 * **Host:** Enter the hostname of your custom domain.
-  * This is the Hostname that will be sent in the request to your App Service. This field will disappear if you set Pick host name from backend settings to yes.
-* **Pick host name from backend settings:** No
+  * This is the Hostname that will be sent in the request to your App Service. This field will disappear if you set Pick hostname from backend settings to yes.
+* **Pick hostname from backend settings:** No
   * I prefer to be explicit in this configuration for the avoidance of doubt. As we're routing to App Service, I want to be sure that the azurewebsites.net domain is not being picked up by our health probe. Instead, I override the hostname in this health probe with the custom domain that we had setup.
 * **Path:** /
   * In a real-world implementation, I would hope to see the [Health Endpoint Monitoring Pattern](https://docs.microsoft.com/en-us/azure/architecture/patterns/health-endpoint-monitoring) used. However, we'll just try and probe the root of the site for the purposes of this post.

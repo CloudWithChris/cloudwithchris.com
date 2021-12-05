@@ -51,7 +51,7 @@ Initially, some of the content in my metadata partial built upon existing exampl
 
 This is an interesting snippet of code. What is it doing? Well, this is the magic that tells search engines how to display our listings, combined with the metadata that we mentioned earlier (Title, Description, etc.).
 
-So, what is schema.org? According to the schema.org site *Schema.org is a collaborative, community activity with a mission to create, maintain, and promote schemas for structured data on the Internet, on web pages, in email messages, and beyond... Founded by Google, Microsoft, Yahoo and Yandex, Schema.org vocabularies are developed by an open community process, using the public-schemaorg@w3.org mailing list and through GitHub.*
+So, what is schema.org? According to the schema.org site *Schema.org is a collaborative, community activity with a mission to create, maintain, and promote schemas for structured data on the internet, on web pages, in email messages, and beyond... Founded by Google, Microsoft, Yahoo and Yandex, Schema.org vocabularies are developed by an open community process, using the public-schemaorg@w3.org mailing list and through GitHub.*
 
 As you'll probably gauge from the above, schema.org is an open specification to provide structured data so that the search engines understand the desired listing for our search results. Once again, if you're interested you can find how I've implemented these standards in my [metadata partial template](https://github.com/chrisreddington/cloudwithchris.com/blob/master/themes/cloud-with-chris/layouts/partials/seo/meta.html).
 

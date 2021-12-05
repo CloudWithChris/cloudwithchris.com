@@ -46,7 +46,7 @@ Why should we care? The web is a visual medium, and colour is important. We ofte
 
 There are contrast ratings available between a foreground colour and a background colour. For small text, you're looking for a contrast ratio of 4.5:1, whereas for large text you need a contrast ratio of 3:1. I'm sure there's a lot more to it, and I'm simplifying things here - but this has been my interpretation of the information provided on contrast ratio. I aimed for a ratio of 4.5:1 for all text on the page.
 
-This information is fully documented over on the [Accessibility Insights](https://accessibilityinsights.io/info-examples/web/color-contrast/) webpage.
+This information is fully documented over on the [Accessibility Insights](https://accessibilityinsights.io/info-examples/web/color-contrast/) web page.
 
 Now that raises the question, how do you evaluate the contrast ratio? And more importantly, how can you find colours that will work for your site, while still maintaining the contrast ratio? This I found a little tricky, but after some digging I found [this tool](https://contrast-finder.tanaguru.com), which allows you to test the contrast ratio of any foreground and background colour based either on RGB or Hexadecimal. You can then specify whether you want the Foreground Colour to change, or the Background Colour to change.
 

@@ -38,7 +38,7 @@ As is usual good practice, the example below uses a multi-stage build to ensure 
 
 In summary, the following Dockerfile will run a multi-stage build -
 * The first stage will:
-  * Use the .NET Core SDK Docker Image as a base (This image will have all of the necessary tools needed to build a .NET Core application, so will be larger than the run-time image that will be used later on). An alias of ``build-env`` is provided for ease of reference later in the Dockerfile
+  * Use the .NET Core SDK Docker Image as a base (This image will have all of the necessary tools needed to build a .NET Core application, so will be larger than the runtime image that will be used later on). An alias of ``build-env`` is provided for ease of reference later in the Dockerfile
   * Copy the files from the local directory into the work-in-progress container image.
   * Run the ``dotnet publish`` command
   * Label the container with appropriate metadata (Which is a [best practice for writing Dockerfiles](http://cloudchris.ws/27))

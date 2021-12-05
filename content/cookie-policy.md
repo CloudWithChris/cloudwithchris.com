@@ -6,13 +6,13 @@ This cookie policy ("Policy") describes what cookies are and how and they're bei
 
 ## What are cookies?
 
-Cookies are small pieces of data stored in text files that are saved on your computer or other devices when websites are loaded in a browser. They are widely used to remember you and your preferences, either for a single visit (through a "session cookie") or for multiple repeat visits (using a "persistent cookie").
+Cookies are small pieces of data stored in text files that are saved on your computer or other devices when sites are loaded in a browser. They are widely used to remember you and your preferences, either for a single visit (through a "session cookie") or for multiple repeat visits (using a "persistent cookie").
 
 Session cookies are temporary cookies that are used during the course of your visit to the site, and they expire when you close the web browser.
 
 Persistent cookies are used to remember your preferences within our site and remain on your desktop or mobile device even after you close your browser or restart your computer. They ensure a consistent and efficient experience for you while visiting the site and Services.
 
-Cookies may be set by the site ("first-party cookies"), or by third parties, such as those who serve content or provide advertising or analytics services on the site ("third party cookies"). These third parties can recognize you when you visit our site and also when you visit certain other websites.
+Cookies may be set by the site ("first-party cookies"), or by third parties, such as those who serve content or provide advertising or analytics services on the site ("third party cookies"). These third parties can recognize you when you visit our site and also when you visit certain other sites.
 
 ## What type of cookies do we use?
 

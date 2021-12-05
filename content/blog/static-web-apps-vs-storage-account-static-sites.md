@@ -18,7 +18,7 @@ The [Static Content Hosting Pattern](https://docs.microsoft.com/en-us/azure/arch
 
 This pattern lends itself well to the modern web development paradigm of JAMStack. The JAM in JAMStack stands for Javascript, APIs and Markup (hence JAM). Ultimately, this relies on a number of modern development practices (such as version controlled source files; a build pipeline to ensure the raw Markdown files can be compiled into the final HTML, CSS, JavaScript and images that are ultimately served up to an end-user's web browser).
 
-Now given that context, what are our options to deploy a Static Website onto Azure? There are of course more options than the initial two which we'll focus on, but these two are some great candidates to begin with.
+Now given that context, what are our options to deploy a Static Site onto Azure? There are of course more options than the initial two which we'll focus on, but these two are some great candidates to begin with.
 
 ## Azure Static Web Apps
 
@@ -43,13 +43,13 @@ Any files that are available in the ``$web`` container can be served up through 
 
 While the functionality in Azure Storage is basic (in comparison to Azure Static Web Apps), that doesn't mean that it's impossible to replicate the functionality available in Azure Static Web Apps. You could consider Azure Static Web Apps as a turnkey approach for Single Page Applications, whereas Static sites on Azure Storage requires some additional work.
 
-For example, the site you're reading (Cloud With Chris) is - and has been - hosted using the Static sites on Azure Storage approach since March 2020. As an end-user, when you navigate to [www.cloudwithchris.com](https://www.cloudwithchris.com), you'll be routed to an Azure CDN instance that is fronting the Azure Storage Account which hosts the production Static Website. The CDN is how I'm able to have an SSL Certificate mapped against a Custom Domain, otherwise that wouldn't be possible directly on the storage account (as there's no way to map a custom SSL certificate in that way directly).
+For example, the site you're reading (Cloud With Chris) is - and has been - hosted using the Static sites on Azure Storage approach since March 2020. As an end-user, when you navigate to [www.cloudwithchris.com](https://www.cloudwithchris.com), you'll be routed to an Azure CDN instance that is fronting the Azure Storage Account which hosts the production Static Site. The CDN is how I'm able to have an SSL Certificate mapped against a Custom Domain, otherwise that wouldn't be possible directly on the storage account (as there's no way to map a custom SSL certificate in that way directly).
 
 I also have a capability to render staging instances of my site. Just take a look over at [https://staging.cloudwithchris.com](https://staging.cloudwithchris.com) or [https://preview.cloudwithchris.com](https://preview.cloudwithchris.com). As you would expect, each of these instances are behind a CDN endpoint. Once again though, this is not a turn key solution. This has been a significant amount of work.
 
 First, piecing together my own deployment pipeline. The first step of my process is triggered when a Pull Request is created to merge a preview branch into dev. This creates a new subdirectory in the ``$web`` container of my Cloud With Chris preview storage account. Once approved and merged to dev, then the next step is to upload the assets to the Cloud With Chris Staging Storage Account (aka my dev environment, ready for go-live). Once all checked and ready to go, these changes are merged to the main branch. This triggers a release to the Cloud With Chris production storage account, and purges the CDN endpoint for production.
 
-Authentication and Authorization could be added to my Static Website hosted in Azure Storage, but this require upfront planning in terms of identity providers, a service to enable that and then adding the functionality into the application. With Azure Static Web Apps, there is a streamlined experience to set this experience up and enable it within your application.
+Authentication and Authorization could be added to my Static Site hosted in Azure Storage, but this require upfront planning in terms of identity providers, a service to enable that and then adding the functionality into the application. With Azure Static Web Apps, there is a streamlined experience to set this experience up and enable it within your application.
 
 ## So, which one is right for me?
 
