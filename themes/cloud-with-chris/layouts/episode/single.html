@@ -4,17 +4,33 @@
 
   <div class="dropdown-divider"></div>
 
-  {{ with .Params.podcast_file }}
-    <div id="podscribe-embed-root"></div>
-    <script type="application/json" data-cwc-selector="episode-data">
-      {
-        "epGuid": "https://podcasts.cloudwithchris.com/{{ . }}",
-      }
-      </script>
-      <script src="{{ "js/podscribe.js" | absURL }}" cookie-consent="strictly-necessary"></script>
-    
-    <script cookie-consent="tracking" src="{{ "js/embed.js" | absURL }}"></script>
+
+  {{ if eq .Site.Params.audio_player "podscribe" }}
+    {{ with .Params.podcast_file }}
+      <div id="podscribe-embed-root"></div>
+      <script type="application/json" data-cwc-selector="episode-data">
+        {
+          "epGuid": "https://podcasts.cloudwithchris.com/{{ . }}",
+        }
+        </script>
+        <script src="{{ "js/podscribe.js" | absURL }}" cookie-consent="strictly-necessary"></script>
+      
+      <script cookie-consent="tracking" src="{{ "js/embed.js" | absURL }}"></script>
+    {{ end }}
+  {{ else }}
+    {{ with .Params.podcast_file }}
+      <div align="center">
+        <audio
+            controls
+            src="https://podcasts.cloudwithchris.com/{{ . }}">
+                Your browser does not support the
+                <code>audio</code> element.
+                Here is a <a href="https://podcasts.cloudwithchris.com/{{ . }}">link to download the audio</a> instead.
+        </audio>
+      </div>
+    {{ end }}
   {{ end }}
+  
 </div>
 {{ end }}
 

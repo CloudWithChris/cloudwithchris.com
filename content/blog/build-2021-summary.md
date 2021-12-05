@@ -25,7 +25,7 @@ The conference itself was split into several key pillars -
 * Build **differentiated SaaS apps** with the Microsoft cloud
 * Building **digital twins, mixed reality and metaverse** apps
 
-As you can likely gauge, there's something for everyone in the above list of topics! Announcements ranged from GitHub integrations with Azure, through to more Azure technologies being available through Azure Arc, and many enhancements to existing services. Let's walk through those areas in some further detail. I've done my best to pull together the Azure Updates, Azure Blog Posts and Microsoft //Build sessions based upon those key pillars.
+As you can likely gauge, there's something for everyone in the above list of topics! Announcements ranged from GitHub integrations with Azure, through to more Azure technologies being available through Azure Arc, and many enhancements to existing services. Let's walkthrough those areas in some further detail. I've done my best to pull together the Azure Updates, Azure Blog Posts and Microsoft //Build sessions based upon those key pillars.
 
 ## Build cloud-native applications that run anywhere
 
@@ -191,7 +191,7 @@ This could open up some incredible hybrid scenarios where certain applications a
 
 ## Converging the physical and digital with digital twins, mixed reality, and metaverse apps
 
-[Sam George discussed the possibilities of connected environments](https://azure.microsoft.com/en-us/blog/converging-the-physical-and-digital-with-digital-twins-mixed-reality-and-metaverse-apps/) by combining technology with complex environments, such as a retail-store to enhance the shopping experience, converging the physical and digital worlds. Sam discusses that Metaverse apps are the culmination of the intelligent cloud and intelligent edge working in harmony together—at their foundation is digital twins. Key technologies in this category are Digital Twins, Internet of Things (IoT), Azure Maps, Azure Synapse Analytics, Microsoft Power Platform and Microsoft Mesh & Hololens.
+[Sam George discussed the possibilities of connected environments](https://azure.microsoft.com/en-us/blog/converging-the-physical-and-digital-with-digital-twins-mixed-reality-and-metaverse-apps/) by combining technology with complex environments, such as a retail-store to enhance the shopping experience, converging the physical and digital worlds. Sam discusses that Metaverse apps are the culmination of the intelligent cloud and intelligent edge working in harmony together—at their foundation is digital twins. Key technologies in this category are Digital Twins, internet of things (IoT), Azure Maps, Azure Synapse Analytics, Microsoft Power Platform and Microsoft Mesh & Hololens.
 
 * **Azure Updates**
   * [Azure IoT Verified telemetry is now in public preview](https://azure.microsoft.com/en-gb/updates/azure-iot-verified-telemetry-is-now-in-public-preview/)

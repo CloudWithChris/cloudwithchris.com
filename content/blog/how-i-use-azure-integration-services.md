@@ -76,7 +76,7 @@ Some technologies are re-used within this architecture from the first iteration 
 
 * [Azure Logic Apps](https://docs.microsoft.com/en-us/azure/logic-apps/logic-apps-overview) is used as the processing engine to detect new content in RSS feeds. It's also used to listen to the various Azure Service Bus Topic Subscriptions and take appropriate action.
 * [Azure Table Storage](https://docs.microsoft.com/en-us/azure/storage/tables/table-storage-overview) is used to persist the content which is pending manual approval from the user.
-* [Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/functions-overview) is used to generate the Static Website dynamically. The Durable Functions capability of Azure Functions is used to take an approved message, retrieve a shortened URL and transform the message to be sent to the Service Bus Topic, as well as sending the actual message.
+* [Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/functions-overview) is used to generate the Static site dynamically. The Durable Functions capability of Azure Functions is used to take an approved message, retrieve a shortened URL and transform the message to be sent to the Service Bus Topic, as well as sending the actual message.
 * [Azure Service Bus](https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-messaging-overview) is used as the main messaging mechanism. The standard SKU of Azure Service Bus is being used, as it unlocks the Topic / Subscription functionality, which is what enables the routing to an appropriate Logic App processor, allowing for future extensibility of the system.
 
 ## Exploring the Ingestion Phase

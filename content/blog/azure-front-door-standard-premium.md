@@ -19,7 +19,7 @@ Azure Front Door - It's an Azure Service that has been generally available for q
 
 Let's first set the scene, making sure we're all on the same page. What even is Azure Front Door? If you haven't deployed it for your own solution, it's quite likely that you've used it as a consumer. There is a great case study on how [LinkedIn uses Azure Front Door](https://customers.microsoft.com/en-gb/story/841393-linkedin-professional-services-azure-front-door-service) as part of their own infrastructure stack. Not a LinkedIn user? Well, the [original Azure Front Door general availability blog post](https://azure.microsoft.com/en-gb/blog/azure-front-door-service-is-now-generally-available/) notes that Office 365, Xbox Live, MSN and Azure DevOps had all adopted Azure Front Door. So, like I mentioned - if you haven't already deployed it - it's quite likely you've already used it!
 
-Azure Front Door is a global service, which is typically used as an entry point for web applications. It's well-suited for this task, as it operates at Layer 7 (HTTP/HTTPS-based) of the networking stack. However, calling it a load balancer would be underselling it. Azure Front Door uses the Microsoft Global Edge network to accept traffic from end-users. You can associate a Web Application Firewall (WAF) with it, to protect your applications from potential threats.
+Azure Front Door is a global service, which is typically used as an entry point for web applications. It's well-suited for this task, as it operates at Layer 7 (HTTP/HTTPS-based) of the networking stack. However, calling it a load balancer would be underselling it. Azure Front Door uses the Microsoft Global Edge network to accept traffic from end users. You can associate a Web Application Firewall (WAF) with it, to protect your applications from potential threats.
 
 > **Note:** There are different types of Load Balancing options. For example, Azure Load Balancer operates at Layer 4. Azure Traffic Manager is a DNS based load balancer. The difference between these is where they operate in the networking stack. Layer 4 is the transport layer, whereas Layer 7 is the application layer.
 >
@@ -81,6 +81,8 @@ You'll notice that the adjustments for Azure Front Door Standard and Premium, ma
 > But what about Dynamic Site Acceleration? The fact that it's dynamic means that we can't cache the content, as it's likely going to change over time. That strategy may not work here. Fundamentally, the internet is an unreliable place. Routes become unavailable, transient issues can impact our path. Dynamic Site Acceleration uses route optimization techniques to choose the most optimal path to the origin, so that users can be sent  via the fastest and most reliable route possible.
 >
 > Dynamic Site Acceleration can often use additional TCP optimizations to ensure the traffic is routed efficiently and effectively. For example, eliminating TCP slow start, leveraging persistent connections and tuning TCP packet parameters are just some typical examples (these are general examples to illustrate the point, and not specific to Azure Front Door).
+
+**Update 5th December 2021:** It is also worth noting that whilst both custom and managed rules are supported on Azure Front Door, only custom rules are supported on Azure Front Door Standard. Azure Front Door Premium supports both custom and managed rules, where custom rules are evaluated first. Many thanks to my colleague Ben G for the recommendation to add this!
 
 ## How does Azure Front Door work?
 

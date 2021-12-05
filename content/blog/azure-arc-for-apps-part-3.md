@@ -361,7 +361,7 @@ I plan to revisit this section once again in a fresh environment, as I wasn't aw
 
 Now, it's time for us to deploy something to our Function App! You may recall that we have a couple of options for deploying an Azure Function. Either deploying a function project (a code-based approach) or deploying a Docker container image.
 
-We'll walk through both options below.
+We'll walkthrough both options below.
 
 ### Deploying a function project to a Function App in an App Service Kubernetes Environment
 

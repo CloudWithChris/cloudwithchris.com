@@ -1,6 +1,6 @@
 ---
 Author: chrisreddington
-Description: "One of my recent tasks for Cloud with Chris was to investigate some additional areas for SEO optimisation. If you're unaware, SEO stands for Search Engine Optimization; a set of practices to improve your ranking in search engines such as Google, Bing and others when they crawl and index your website. I was already in a good position, but there were some things that were frustrating me, we'll explore those in this blog post."
+Description: "One of my recent tasks for Cloud with Chris was to investigate some additional areas for SEO optimisation. If you're unaware, SEO stands for Search Engine Optimization; a set of practices to improve your ranking in search engines such as Google, Bing and others when they crawl and index your site. I was already in a good position, but there were some things that were frustrating me, we'll explore those in this blog post."
 PublishDate: "2021-05-03T8:00:00Z"
 image: img/cloudwithchrislogo.png
 date: "2021-05-03T8:00:00Z"
@@ -12,7 +12,7 @@ tags:
 - Web Development
 title: Using schema.org for SEO optimisation
 ---
-One of my recent tasks for Cloud with Chris was to investigate some additional areas for SEO improvements. If you're unaware, SEO stands for Search Engine Optimization; a set of practices to improve your ranking in search engines such as Google, Bing and others when they crawl and index your website. I was already in a good position, but there were some things that were frustrating me, we'll explore those in this blog post.
+One of my recent tasks for Cloud with Chris was to investigate some additional areas for SEO improvements. If you're unaware, SEO stands for Search Engine Optimization; a set of practices to improve your ranking in search engines such as Google, Bing and others when they crawl and index your site. I was already in a good position, but there were some things that were frustrating me, we'll explore those in this blog post.
 
 From the screenshot below, you'll notice a few interesting details among the results -
 * There are a series of **smart links** which appear directly the main cloudwithchris.com result. One for about, and one for a certain podcast episode.
@@ -51,7 +51,7 @@ Initially, some of the content in my metadata partial built upon existing exampl
 
 This is an interesting snippet of code. What is it doing? Well, this is the magic that tells search engines how to display our listings, combined with the metadata that we mentioned earlier (Title, Description, etc.).
 
-So, what is schema.org? According to the schema.org site *Schema.org is a collaborative, community activity with a mission to create, maintain, and promote schemas for structured data on the Internet, on web pages, in email messages, and beyond... Founded by Google, Microsoft, Yahoo and Yandex, Schema.org vocabularies are developed by an open community process, using the public-schemaorg@w3.org mailing list and through GitHub.*
+So, what is schema.org? According to the schema.org site *Schema.org is a collaborative, community activity with a mission to create, maintain, and promote schemas for structured data on the internet, on web pages, in email messages, and beyond... Founded by Google, Microsoft, Yahoo and Yandex, Schema.org vocabularies are developed by an open community process, using the public-schemaorg@w3.org mailing list and through GitHub.*
 
 As you'll probably gauge from the above, schema.org is an open specification to provide structured data so that the search engines understand the desired listing for our search results. Once again, if you're interested you can find how I've implemented these standards in my [metadata partial template](https://github.com/chrisreddington/cloudwithchris.com/blob/master/themes/cloud-with-chris/layouts/partials/seo/meta.html).
 

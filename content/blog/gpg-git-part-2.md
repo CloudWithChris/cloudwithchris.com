@@ -14,17 +14,17 @@ tags:
 - Windows Terminal
 title: Using GPG Keys to sign Git Commits - Part 2
 ---
-Hopefully by now you've had a chance to read [part 1](./blog/gpg-git-part-1) of this series, which explains why you may be interested in using GPG keys to sign your commits. Congratulations on getting to the second part! In part two, we're going to focus on how I worked through setting up GPG in my Windows environment, and generating a set of keys for use. There were some challenges/hurdles along the way, and we'll talk through those too! I may do another separate blog post at a later point on setting this up within Windows Subsystem for Linux. However, there are plenty of articles that already focus on MacOS / Native Linux, so it isn't really the focus of this post.
+Hopefully by now you've had a chance to read [part 1](./blog/gpg-git-part-1) of this series, which explains why you may be interested in using GPG keys to sign your commits. Congratulations on getting to the second part! In part two, we're going to focus on how I worked through setting up GPG in my Windows environment, and generating a set of keys for use. There were some challenges/hurdles along the way, and we'll talk through those too! I may do another separate blog post at a later point on setting this up within Windows Subsystem for Linux. However, there are plenty of articles that already focus on macOS / Native Linux, so it isn't really the focus of this post.
 
 In this post, I am making an assumption that you are brand new to using GPG Keys and do not yet have a master key, or any other keys in place.
 
 As a reminder, we'll be focusing on setting this up in a Windows environment. As a first step, I downloaded [GPG4win](https://www.gpg4win.org/about.html). This contains several useful components, including Kleopatra, which exposes a number of the commands that we'll be using in the blog post through an intuitive User Interface as an alternative if you prefer.
 
-Once installed, open up a command prompt window. While not required, if you haven't used it before - I'd encourage you to try out the [Windows Terminal](https://aka.ms/terminal) which is available through the Windows Store. It's a great piece of software, which allows you to interact with several command line environments (e.g. PowerShell, PowerShell Core, Command Prompt, Several distributions of Windows Subsystem, Azure Cloud Shell, and even [connect directly to VMs in the cloud](https://www.thomasmaurer.ch/2020/05/how-to-ssh-into-an-azure-vm-from-windows-terminal-menu/)). This isn't required though, as you can just use the native command line prompt application.
+Once installed, open up a command prompt window. While not required, if you haven't used it before - I'd encourage you to try out the [Windows Terminal](https://aka.ms/terminal) which is available through the Windows Store. It's a great piece of software, which allows you to interact with several command-line environments (e.g. PowerShell, PowerShell Core, Command Prompt, Several distributions of Windows Subsystem, Azure Cloud Shell, and even [connect directly to VMs in the cloud](https://www.thomasmaurer.ch/2020/05/how-to-ssh-into-an-azure-vm-from-windows-terminal-menu/)). This isn't required though, as you can just use the native command-line prompt application.
 
 **Important: Not using command prompt was one of my main hurdles when setting up in my own environment. My local preference is to use PowerShell rather than Command Prompt. After spending a lot of time digging into this, I discovered (with thanks to [this helpful gist](https://gist.github.com/chrisroos/1205934#gistcomment-2862988)) that PowerShell may impact the encoding of the output file, which causes later issues. I'll explain a little later - but keep this in mind if you do insist on using PowerShell.**
 
-In your command line, type the below:
+In your command-line, type the below:
 
 ```bash
 gpg --list-keys
@@ -51,7 +51,7 @@ The --expert flag gives us access to several additional configuration options, i
 * Additional options for the type of key we want
 * Ability to granularly select the capabilities of the key (**S**ign, **C**ertify, **E**ncrypt and **A**uthenticate
 
-Then, we will of course need to associate some information about the user with that key (Name, E-mail Address, etc.)
+Then, we will of course need to associate some information about the user with that key (Name, email Address, etc.)
 
 ```bash
 C:\Users\chris>gpg --full-generate-key --expert
@@ -147,9 +147,9 @@ A couple of observations -
   * In general, the bit size was another gotcha that caused me to lose a fair bit of time, so do be aware of any limitations on your YubiKey for the keys that will be transferred.
 * We set the valid timeframe of this key to 0, i.e. it should never expire. You'll want to consider the most appropriate length, based upon the type of key you're generating. As this is my master key and will be used to certify other subkeys, I don't want it to expire, as I'll be storing it away securely with locked down access. You may choose a different length based upon your scenario. Ultimately, make sure you have a process in place to revoke the key if there is a breach (though, you would then need to set your entire chain again from scratch).
 
-Now, in a real world scenario - we may need to add an additional uid (User ID) for our Git signing. As an example, GitHub [provides a capability](https://docs.github.com/en/github/setting-up-and-managing-your-github-user-account/blocking-command-line-pushes-that-expose-your-personal-email-address) where you can block any Git command line pushes that expose your personal e-mail address. Instead, you can use a no-reply e-mail alias from GitHub, ensuring your personal details remain private. For me (Speaking as Chris, and not Alice at this point!) - this is a step that I took when setting up my own signing process.
+Now, in a real world scenario - we may need to add an additional uid (User ID) for our Git signing. As an example, GitHub [provides a capability](https://docs.github.com/en/github/setting-up-and-managing-your-github-user-account/blocking-command-line-pushes-that-expose-your-personal-email-address) where you can block any Git command-line pushes that expose your personal email address. Instead, you can use a no-reply email alias from GitHub, ensuring your personal details remain private. For me (Speaking as Chris, and not Alice at this point!) - this is a step that I took when setting up my own signing process.
 
-Let's go ahead and add the new uid. Notice in the below that we have a hexadecimal string? That is the ID of the key that we generated in the previous step. You'll need to replace the key id in the first line below with the key ID that you generated in the previous step (and all relevant future steps).
+Let's go ahead and add the new uid. Notice in the below that we have a hexadecimal string? That is the ID of the key that we generated in the previous step. You'll need to replace the key ID in the first line below with the key ID that you generated in the previous step (and all relevant future steps).
 
 ```bash
 C:\Users\chris>gpg --edit-key  --expert 6E7ECB409742866910B10197A0B82563C344D4AA
@@ -202,7 +202,7 @@ sec  rsa2048/A0B82563C344D4AA
 gpg> save
 ```
 
-**Notice the little asterix after you type uid 1 into the GPG command prompt, next to the first user id? That's used when you type in your next command. When you type 'primary' you are specifying that you want uid 1 to be the primary identifier for this key.**.
+**Notice the little asterix after you type uid 1 into the GPG command prompt, next to the first user ID? That's used when you type in your next command. When you type 'primary' you are specifying that you want uid 1 to be the primary identifier for this key.**.
 
 At this point, it's probably a good time to create a backup of your master key. There are two commands to be aware of here, gpg --export which exports your **public key** (the one that you can share with others) and gpg --export-secret-key which exports your **private key** (the one that you should not share with anyone, and should store securely).
 
@@ -319,7 +319,7 @@ A couple of observations once again -
     * sec (Secret Key / Private Key)
     * ssb (Secret Subkey / Private Subkey)
   * The [Debian Wiki](https://wiki.debian.org/Subkeys) also has a good explanation around subkeys if you're interested.
-* Notice how we are not asked to confirm the name or e-mail address of the associated user? This is associated with our original primary key (remember that we've generated a subkey), we do not need to go ahead and enter this information once again.
+* Notice how we are not asked to confirm the name or email address of the associated user? This is associated with our original primary key (remember that we've generated a subkey), we do not need to go ahead and enter this information once again.
 
 Now, let's export the subkey so that we have a backup available. I could have used the longform text output of the key ID, but wanted to also show that you can use the short form that was generated in the previous example. Notice how these 16 hexadecimal values are the final 16 from the longform identifier.
 

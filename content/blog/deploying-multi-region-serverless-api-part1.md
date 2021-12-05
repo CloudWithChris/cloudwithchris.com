@@ -24,7 +24,7 @@ I've recently re-architected the project to align to a serverless technology sta
 
 * A set of **core global services**, such as -
   * A Single Page App hosted on Azure Blob Storage
-  * Azure Front Door that sits in front of the blob storage, as well as the back-end API services
+  * Azure Front Door that sits in front of the blob storage, as well as the backend API services
 * A number of **core regional resources** that exist in each region and are used across the suite of microservices -
   * An API Management instance deployed in the Consumption Tier
   * An App Insights resource used as a sink for all telemetry within a regional deployment
@@ -56,7 +56,7 @@ Notice that the template takes two parameters, a location and a namePrefix. This
 
 Also note that the parameters defined in the template are limited. This is a core recommended practice for Infrastructure as Code, ensuring that the template is deterministic (predictable). Imagine the scenario from a live operational perspective. If you have 20 different parameters that can be tweaked, the resulting deployment may be less predictable and prone to accidental misconfiguration due to human error. To gain the flexibility of different environment configurations, you could consider the "T-Shirt sizing" approach. This is where you would have a parameter that drives the resulting configuration (e.g. environmentName mapping to dev or prod), which then adjusts the variables used for the number of units to be deployed, SKUs, etc.
 
-We mentioned above that the deployment lifecycle of the separate layers has influenced the ARM template design. There is a separate Linked Template that deploys the back-end resources that host the Microservice. It also deploys the APIs onto the API Management resource which was previously deployed, and maps those APIs to the back-end resources hosting the Microservice. Notice how some of those resources defined in the below template also specify a resource group name. This shows how we can trigger deployments across a number of resource groups.  
+We mentioned above that the deployment lifecycle of the separate layers has influenced the ARM template design. There is a separate Linked Template that deploys the backend resources that host the Microservice. It also deploys the APIs onto the API Management resource which was previously deployed, and maps those APIs to the backend resources hosting the Microservice. Notice how some of those resources defined in the below template also specify a resource group name. This shows how we can trigger deployments across a number of resource groups.  
 
 <script src="https://gist.github.com/christianreddington/3e777fdfb3deada8b03a4f1f215dc7b2.js"></script>
 

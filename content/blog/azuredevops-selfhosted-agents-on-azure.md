@@ -72,7 +72,7 @@ At this point, go ahead and select the Azure Virtual Machine Scale Set option. T
 * **Azure Subscription** - Which Azure Subscription your Virtual Machine Scale Set is in.
 * **Virtual Machine Scale Set** - The Virtual Machine Scale Set you want to use.
 * **Name** - The name of the agent pool (used for easy reference when selecting which pipeline to use in your Azure Pipelines)
-* **Description** - Some supporting information on the agent pool. It supports markdown, so perhaps you could contain relevant information about the configuration of the scale set, or useful information for the end-user.
+* **Description** - Some supporting information on the agent pool. It supports markdown, so perhaps you could contain relevant information about the configuration of the scale set, or useful information for the end user.
 * **Pool Options** - There are several options that you can set for the agent pool, including -
   * **Automatically tear down virtual machines after every use** - This will ensure that the Virtual Machines are re-imaged after each run.
   * **Maximum number of virtual machines in the scale set** - This is the maximum number of Virtual Machines that will be provisioned in the scale set (i.e. the **limit** of virtual machine instances in the scale set).
@@ -88,7 +88,7 @@ Now, you can navigate to one of your Azure Pipelines and use the agent pool you 
 
 However, if you were previously deploying to a Public App Service Web App using the App Service Deployment Task, but you've then made that App Service private (e.g. using Private Endpoints) then you shouldn't need to change the configuration of your pipeline. The name of the App Service would not change, so as long as the Virtual Machine Scale Set has 'line of sight' to the Private Endpoint (i.e. The Scale Set Agents have some form of route to the Private Endpoint, e.g. peered virtual networks, the same virtual network, etc.), then you shouldn't need to change anything.
 
-Do bare in mind one point. The Virtual Machine Scale Set **must** have the needed software dependencies installed on the machine (e.g. Node.js, NPM, etc.). If you are using a self-hosted agent, then you will need to install the dependencies yourself. I have seen several solutions for this, including use of a custom VM Image or Infrastructure & Configuration as Code.
+Do bare in mind one point. The Virtual Machine Scale Set **must** have the needed software dependencies installed on the machine (e.g. Node.js, npm, etc.). If you are using a self-hosted agent, then you will need to install the dependencies yourself. I have seen several solutions for this, including use of a custom VM Image or Infrastructure & Configuration as Code.
 
 Some of the Azure DevOps tasks have an installer option that will install the dependencies for you. You could even consider using the command-line to install dependencies onto the Virtual Machine Scale Set as part of the CI/CD pipeline. While this works, this will increase the time it takes to deploy your pipeline. This might be fine for uncommon dependencies, but you may want to adopt a more effective strategy to reduce the deployment pipeline. Likewise, some dependencies may be very large, so you may want to consider some of those earlier examples.
 

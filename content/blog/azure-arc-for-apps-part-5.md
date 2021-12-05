@@ -110,7 +110,7 @@ After you've executed the command, navigate over to your Azure Arc resource in t
 
 ## Watching the Kubernetes Cluster when the extension is created
 
-I had the ``kubectl get po --watch -n apim`` command ready to go in the command line to understand what is being deployed into the namespace that we specified.
+I had the ``kubectl get po --watch -n apim`` command ready to go in the command-line to understand what is being deployed into the namespace that we specified.
 
 ```bash
 kubectl get po --watch -n apim

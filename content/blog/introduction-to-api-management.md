@@ -70,7 +70,7 @@ You'll likely see that we're piecing a few requirements together here -
 
 This is typically where a Facade can be introduced into the picture. In this instance, the Azure API Management resource could act as our Facade, as the broker between the consuming client and the backend APIs that are being served up. This design approach helps us introduce several architectural patterns into our design -
 
-* [Facade Pattern](https://pages.apigee.com/rs/apigee/images/api-facade-pattern-ebook-2012-06.pdf) - Apigee have published an ebook on the API Facade Pattern. They comment that Facades can be useful when back-end systems are too complex to expose directly to application developers. Complexity is one aspect, but there may be other concerns (e.g. pinning to a specific version of an API).
+* [Facade Pattern](https://pages.apigee.com/rs/apigee/images/api-facade-pattern-ebook-2012-06.pdf) - Apigee have published an ebook on the API Facade Pattern. They comment that Facades can be useful when backend systems are too complex to expose directly to application developers. Complexity is one aspect, but there may be other concerns (e.g. pinning to a specific version of an API).
 * [Gatekeeper Pattern](https://docs.microsoft.com/en-us/azure/architecture/patterns/gatekeeper) - Protect applications and services by using a dedicated host instance that acts as a broker between clients and the application or service, validates and sanitizes requests, and passes requests and data between them. This can provide an additional layer of security, and limit the attack surface of the system.
 * [Gateway Aggregation Pattern](https://docs.microsoft.com/en-us/azure/architecture/patterns/gateway-aggregation) - Use a gateway to aggregate multiple individual requests into a single request. This pattern is useful when a client must make multiple calls to different backend systems to perform an operation.
 * [Gateway Offloading Pattern](https://docs.microsoft.com/en-us/azure/architecture/patterns/gateway-offloading) - Offload shared or specialized service functionality to a gateway proxy. This pattern can simplify application development by moving shared service functionality, such as the use of SSL certificates, from other parts of the application into the gateway.
@@ -88,7 +88,7 @@ To start, you'll need to provide some basic information about your API Managemen
 * **Resource Group** to deploy your API Management instance into
 * **Region** to deploy your API Management instance into
 * **Resource name** of your API Management resource. This will also form part of the domain of your API management instance, e.g. ``{{resourcename}}.azure-api.net``.
-* **Organization Name** which is used in the developer portal (if using an appropriate SKU) and sender of notification e-mails.
+* **Organization Name** which is used in the developer portal (if using an appropriate SKU) and sender of notification emails.
 * **Administrator email** where any notifications from API Management will be sent.
 
 ![Create an Azure API Management Resource](/img/blog/introduction-to-api-management/create-apim-1.png)
@@ -278,7 +278,7 @@ This blog post is a little longer than initially planned. However, we've managed
 * A brief look into the challenges of APIs from the publisher and consumer's perspective
 * Mapping the Cloud Design Patterns to the above challenges and tying this to API Management
 * A quick tour of the core concepts of API Management
-* A brief walk-through of the Azure API Management creation experience, and setting up a basic API
+* A brief walkthrough of the Azure API Management creation experience, and setting up a basic API
 
 We'll be continuing this series on in future posts. I'd like to explore different policies that could be used to achieve specific objectives. I may be granular and have a separate post per policy, which gives us the opportunity to go into some depth in each post.
 

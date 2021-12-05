@@ -16,7 +16,7 @@ I'm sat writing this blog post about 4 months after writing my [2021 kick off bl
 
 {{< tweet 1345748585443454978 >}}
 
-I set out 2021 to achieve 500 subscribers by the end of the year, and had ideas of creating brand new types of content. When I created Cloud with Chris back in March 2020, I started it off as a podcast. Later in 2020, I decided to add the video content to the mix. Then, as we entered 2021, I brought my old blog posts from my personal website onto Cloud with Chris, and started off a weekly blog.
+I set out 2021 to achieve 500 subscribers by the end of the year, and had ideas of creating brand new types of content. When I created Cloud with Chris back in March 2020, I started it off as a podcast. Later in 2020, I decided to add the video content to the mix. Then, as we entered 2021, I brought my old blog posts from my personal site onto Cloud with Chris, and started off a weekly blog.
 
 I then began the journey of evolving my content over time, by -
 
@@ -25,7 +25,7 @@ I then began the journey of evolving my content over time, by -
 * Kicking off a weekly vlog (Yes, there have been 20 of those so far!)
 * Starting off releasing a weekly blog, but now adjusting to a cadence of producing two blog posts per week (This is blog post #25 from 2021!)
 * Bringing more guests onto the show, and making the sessionize more discoverable to bring in a diverse and global set of guests
-* Improving upon the Search Engine Optimization (SEO) of the website to increase the audience that are accessing the content.
+* Improving upon the Search Engine Optimization (SEO) of the site to increase the audience that are accessing the content.
 
 All of that effort has clearly been worth it! Over the weekend (I believe 15th May was the date), I managed to hit the magic 500 subscribers mark on YouTube, **way** ahead of schedule.
 

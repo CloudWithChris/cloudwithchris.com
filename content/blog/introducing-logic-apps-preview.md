@@ -29,12 +29,12 @@ Ok, great. With that context, let's explore creating a new Logic App (preview) l
   * [C# Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)
   * [Azure Logic Apps Preview Extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurelogicapps) (I understand that the Logic Apps and Logic Apps preview extensions can live side-by-side within VSCode)
 * [Azure Functions Core Tools](https://github.com/Azure/azure-functions-core-tools/) (The docs specify version 3.0.3245 or later is required)
-* Azure Storage is a required dependency for Azure Functions to run. Typically, the [Azure Storage Emulator](https://docs.microsoft.com/en-us/azure/storage/common/storage-use-emulator) is used for local debugging in Windows environments. However, that is not available for MacOS and Linux environments. If this is you, then you will need to create a Storage Account and use those details for your Logic App.
+* Azure Storage is a required dependency for Azure Functions to run. Typically, the [Azure Storage Emulator](https://docs.microsoft.com/en-us/azure/storage/common/storage-use-emulator) is used for local debugging in Windows environments. However, that is not available for macOS and Linux environments. If this is you, then you will need to create a Storage Account and use those details for your Logic App.
 * [.NET Core SDK](https://dotnet.microsoft.com/download)
 
 Once you have installed those extensions, make sure that you are logged in to the appropriate Azure Account that you wish to use for this demo.
 
-  > You can sign in to another Azure Account by using the [Visual Studio Code Command Palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette). Once you have the VS Code command Palette opened (Ctrl + Shift + P on Windows, Cmd + Shift + P on MacOS), you can type Azure: Sign In or Azure: Sign Out if you have the Azure Account extension installed.
+  > You can sign in to another Azure Account by using the [Visual Studio Code Command Palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette). Once you have the VS Code command Palette opened (Ctrl + Shift + P on Windows, Cmd + Shift + P on macOS), you can type Azure: Sign In or Azure: Sign Out if you have the Azure Account extension installed.
 
 Once you have successfully signed in, you should be able to see a list of subscriptions underneath the Logic Apps (Preview) section of the Azure VSCode Extension.
 
@@ -75,9 +75,9 @@ Navigate back to the workflow.json file in Visual Studio Code (viewing it as cod
 
 ![Screenshot of the Logic Apps Preview in VSCode with the workflow.json code for a HTTP Request Trigger and an HTTP Response](/img/blog/introducing-logic-apps-preview/vscode-logicapp-http-request-response-code.png)
 
-Now, you'll be able to go ahead into the "Run and Debug" section and run the Logic Apps Workflow. Before doing that, if you are using MacOS or Linux, you will need to make sure that you have updated your ``AzureWebJobsStorage`` property in your ``local.settings.json`` file to a connection string for an Azure Storage Account if you don't have the Azure Storage Emulator available locally.
+Now, you'll be able to go ahead into the "Run and Debug" section and run the Logic Apps Workflow. Before doing that, if you are using macOS or Linux, you will need to make sure that you have updated your ``AzureWebJobsStorage`` property in your ``local.settings.json`` file to a connection string for an Azure Storage Account if you don't have the Azure Storage Emulator available locally.
 
-  > As a reminder, the Azure Storage Emulator does not run on MacOS or Linux. As the Azure Functions runtime has a dependency on Azure Storage and I'm creating this example from a MacBook, I'll need to change the ``AzureWebJobsStorage`` property in my ``local.settings.json``.
+  > As a reminder, the Azure Storage Emulator does not run on macOS or Linux. As the Azure Functions runtime has a dependency on Azure Storage and I'm creating this example from a MacBook, I'll need to change the ``AzureWebJobsStorage`` property in my ``local.settings.json``.
 
 With the Logic Apps workflow running locally, right click on the workflow.json file in your navigation pane and select **overview**. You should see the callback URL available for the Logic App workflow which is running. Feel free to call this endpoint using your usual tool of choice, e.g. Visual Studio Code REST extensions, Postman, Web Browser, etc. For completeness (and the sake of a screenshot for this blog post), I edited my workflow to respond with a JSON body, as can be seen in the below screenshot.
 

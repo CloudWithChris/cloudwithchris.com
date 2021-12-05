@@ -1,28 +1,31 @@
 ---
-Date: "2021-10-24-T09:30:00Z"
+Date: "2021-12-19-T09:30:00Z"
 Description: "In this session, Chris provides a series of updates focused around Azure, DevOps, GitHub and Cloud With Chris, while gaming with the Cloud Family Community."
-PublishDate: "2021-10-24T09:30:00Z"
-Title: "V043 - Weekly Technology Vlog #43 and Gaming Session"
+PublishDate: "2021-12-19T09:30:00Z"
+Title: "V043 - Talking cloud and playing Among Us with the community"
 episode: V043
-image: img/cloudwithchrislogo.png # img/vlog/v002.jpg
+image: img/vlog/among-us.jpg
 explicit: "no"
 guests: []
 hosts:
 - chrisreddington
 images:
 - img/default-social.png
+- img/vlog/among-us.jpg
 # - img/vlog/v002.jpg
-# podcast_bytes: "14303520"
+# podcast_bytes: "15003520"
 # podcast_duration: "14:19.000"
 # podcast_file: V002 - Weekly Technology Vlog.mp3
 series:
 - Weekly Vlog
 tags:
-#- Podcast
-#- Sessionize
-#- Azure
-#- Community
-youtube: YlrF3dX1C5Q
+- Gaming
+- Community
+- Azure
+- Azure DevOps
+- GitHub
+- Among Us
+# youtube: VyQI5SOsw3M
 upcoming: true
 ---
 In this session, Chris provides a series of updates focused around Azure, DevOps, GitHub and Cloud With Chris, while gaming with the Cloud Family Community.

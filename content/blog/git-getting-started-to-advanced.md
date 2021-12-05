@@ -29,13 +29,13 @@ Why Git? Before we address that point, let's make sure that you and I are on the
 
 With that context, let's move on. Firstly, Git is not new. It was initially released back in 2005 - but over recent years has picked up a lot of traction and interest. It was originally created by Linus Torvalds (yes, the same Linus Torvalds that created Linux). You may have heard about other version control systems before like SVN (Subversion), TFVC (Team Foundation Version Control) and others. These version control systems don't all work the same though. Some work in a centralized model, some work in a de-centralized model and some work in a distributed model.
 
-Git works in a distributed model. What does this mean for you as an end-user? You have a copy of the full source code and history of changes on the local machine where you're working. It also then impacts the way in which you collaborate with other users. A centralised system may lock files, so that other users can't edit and make changes on the central server while you're working on them. Git deals with these changes by comparing the diffs of files, merging them where it can, and asking you as an end-user for assistance when it cannot do it automatically (We'll likely cover this in another blog post at some point!).
+Git works in a distributed model. What does this mean for you as an end user? You have a copy of the full source code and history of changes on the local machine where you're working. It also then impacts the way in which you collaborate with other users. A centralised system may lock files, so that other users can't edit and make changes on the central server while you're working on them. Git deals with these changes by comparing the diffs of files, merging them where it can, and asking you as an end user for assistance when it cannot do it automatically (We'll likely cover this in another blog post at some point!).
 
 Git is optimised to be light-weight and performant. For those of you interested in the 'behind-the-scenes' view, you'll be able to glean a bit of insight into this from the **Behind the scenes (Not essential to the Git Foundations)** callouts as you read this blog. One of these considerations though, is how to deal with separation of concerns in your codebase. What if you're working on a certain set of features, and don't want to impact the main codebase? Surely the answer is that you'll need to take another copy of the codebase and work on that in isolation? Not quite. Git has a concept called 'branching' where you can work in an isolated area, or environment. We'll touch upon branching and what it is in this article, but won't be exploring it in depth. It is at least worth being aware of the concept here, and that this is one of the features that makes Git so powerful and as popular as it is today.
 
 ## Getting started with Git
 
-Now we've set the scene, where do we start? First, we'll need to install the Git client on our local machine. The exact approach that you'll need to take will depend on which Operating System you're using. For example, in Windows - it's as simple as navigating to the [Git Homepage](https://git-scm.com/), downloading and using the installer to install Git onto your system. On Linux and MacOS based systems, you'll be able to use your local package management options (either apt-get or brew respectively) to install Git onto your system. Once you've done that, go ahead and run ``git --version`` and you should receive a message on the version of Git that is now installed on your system.
+Now we've set the scene, where do we start? First, we'll need to install the Git client on our local machine. The exact approach that you'll need to take will depend on which Operating System you're using. For example, in Windows - it's as simple as navigating to the [Git Homepage](https://git-scm.com/), downloading and using the installer to install Git onto your system. On Linux and macOS based systems, you'll be able to use your local package management options (either apt-get or brew respectively) to install Git onto your system. Once you've done that, go ahead and run ``git --version`` and you should receive a message on the version of Git that is now installed on your system.
 
 ```bash
 git --version
@@ -106,7 +106,7 @@ Initialized empty Git repository in D:/temp/mynewfolder/.git/
   1. **Stage** the changes by using ``git add``. This is effectively saying "Hey Git, these are the files that I want to add to my local repository as part of my next set of updates".
       * You can use ``git add .`` to add the entire contents (and subdirectories) of the folder which you're currently in.
       * Alternatively, you can use ``git add helloworld.php`` to add only the helloworld.php file to the staging area.
-      * There are tools such as [Visual Studio Code](https://code.visualstudio.com/) which also have Git integration built in, and take away some of the overhead of working on the command line.
+      * There are tools such as [Visual Studio Code](https://code.visualstudio.com/) which also have Git integration built in, and take away some of the overhead of working on the command-line.
   2. **Commit** the changes by using ``git commit -m "Your Commit Message Here"``. This is the step that adds the staged files to the local Git repository.
       * It is a common practice to make smaller commits often. If you're working on a feature update, make incremental changes with a larger amount of commits. This will give you the opportunity to revert to previous versions of the codebase if needed at a later point. When you combine this with a Continuous Integration (CI) system, this also allows you to get quick feedback through approaches like unit testing.
 
@@ -321,8 +321,8 @@ Now, let's take stock. We've committed the change to our local repository, but w
 Once you've hit create, you should be redirected to your newly created repository. You'll notice that you have a couple of options to initialise your repository -
 
 * You can use existing tools like GitHub Desktop
-* You can create a new repository on the command line and push that up
-* You can push an existing repository from the command line (that's what we'll be doing here!)
+* You can create a new repository on the command-line and push that up
+* You can push an existing repository from the command-line (that's what we'll be doing here!)
 * You can import code from another repository, such as Subversion, Mercurial or TFVC.
 
 Fortunately, GitHub makes it very easy for us and provides us the commands needed to push up our local repository to the remote location. The commands below follows a few easy steps (Please don't copy/paste these from this blog post, but instead copy/paste from your GitHub repository - as your Remote Git Repository URL will be different to mine!) -
@@ -528,7 +528,7 @@ git clone https://github.com/chrisreddington/potential-garbanzo
 > **TIP:**
 > Notice that the default command of ``git clone`` creates a new folder with the name of the repository? You can change that behaviour by specifying a name after the URL, e.g.     ``git clone https://github.com/chrisreddington/potential-garbanzo mynewrepo2``
 
-If you change into that newly created directory, you will find that you have the files from the remote Git repository, as well as a .git folder! (I'm using PowerShell as my Command Line for this post, rather than Linux. You may want to use ``ls -la`` if you are using Linux to verify the below.)
+If you change into that newly created directory, you will find that you have the files from the remote Git repository, as well as a .git folder! (I'm using PowerShell as my command-line for this post, rather than Linux. You may want to use ``ls -la`` if you are using Linux to verify the below.)
 
 ```bash
 ls -Force

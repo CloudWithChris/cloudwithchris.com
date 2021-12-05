@@ -64,7 +64,7 @@ Analyse the dependencies across your solution; cloud, on-premises and third part
 
 By this stage, you would have some form of architecture diagram, or a strong understanding of how your solution ties together.
 
-Walk through that solution diagram, and component by component review:
+Walkthrough that solution diagram, and component by component review:
 
 - Whether that component hits your non-functional requirements
 

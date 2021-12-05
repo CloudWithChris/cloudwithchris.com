@@ -18,7 +18,7 @@ I recently encountered a scenario that I wanted to spend some time writing up. I
 
 * The application must require Azure Active Directory Authentication.
 * The web application must not be accessible **directly** across the public internet.
-* An end-user should be able to connect to the web app using a Public DNS record, so that they feel that it is an authentic experience.
+* An end user should be able to connect to the web app using a Public DNS record, so that they feel that it is an authentic experience.
 
 ## Considerations
 
@@ -63,7 +63,7 @@ Create a new Identity Provider -
   * Depending on your scenario, choose whichever is appropriate. We didn't have any specific requirements for users outside of our tenant, so we'll leave the setting as the default.
 * **Authentication**: Require Authentication
   * This will allow us to meet the initial requirement that we had set out.
-* **Unauthenticated Requests**: HTTP 302 Found redirect: recommended for websites
+* **Unauthenticated Requests**: HTTP 302 Found redirect: recommended for sites
   * We'll leave this as the default. However, there are other options including HTTP 401 or HTTP 403.
 * **Token store:** We'll leave this as the default (enabled).
 
@@ -273,8 +273,8 @@ At first, create a Health Probe which resembles the out of the box health probe 
 * **Protocol:** HTTPS
   * As we're had setup HTTPS on the backend (App Service instance), let's make sure that we're testing that with our health probe.
 * **Host:** Enter the hostname of your custom domain.
-  * This is the Hostname that will be sent in the request to your App Service. This field will disappear if you set Pick host name from backend settings to yes.
-* **Pick host name from backend settings:** No
+  * This is the Hostname that will be sent in the request to your App Service. This field will disappear if you set Pick hostname from backend settings to yes.
+* **Pick hostname from backend settings:** No
   * I prefer to be explicit in this configuration for the avoidance of doubt. As we're routing to App Service, I want to be sure that the azurewebsites.net domain is not being picked up by our health probe. Instead, I override the hostname in this health probe with the custom domain that we had setup.
 * **Path:** /
   * In a real-world implementation, I would hope to see the [Health Endpoint Monitoring Pattern](https://docs.microsoft.com/en-us/azure/architecture/patterns/health-endpoint-monitoring) used. However, we'll just try and probe the root of the site for the purposes of this post.
@@ -346,8 +346,8 @@ So there we go! With that, we've been able to fulfil our requirements -
   * **This is achieved by using Easy Auth in App Service**
 * The web application must not be accessible **directly** across the public internet.
   * **This is achieved by using App Service Access Restrictions to only allow traffic from an Application Gateway.**.
-* An end-user should be able to connect to the web app using a Public DNS record, so that they feel that it is an authentic experience.
-  * **This is achieved by binding a custom domain to the App Service, so that we can transparently pass the hostname from our Application Gateway multi site listener to the back end app service instance.**
+* An end user should be able to connect to the web app using a Public DNS record, so that they feel that it is an authentic experience.
+  * **This is achieved by binding a custom domain to the App Service, so that we can transparently pass the hostname from our Application Gateway multi site listener to the backend app service instance.**
     * **This reduces any complexity in needing to use Rewrite Rules or similar, and keeps the solution simple and manageable.**
   * **We are using an App Service Managed Certificate to enable HTTPS on the App Service.**
   * **We are using an SSL certificate generated elsewhere (in my case, from ZeroSSL) in the App Gateway to enable HTTPS traffic.**
