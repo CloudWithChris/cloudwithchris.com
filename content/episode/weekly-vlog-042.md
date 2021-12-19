@@ -1,7 +1,7 @@
 ---
-Date: "2021-12-19-T09:30:00Z"
+Date: "2022-01-02-T09:30:00Z"
 Description: "In this session, Chris provides a series of updates focused around Azure, DevOps, GitHub and Cloud With Chris."
-PublishDate: "2021-12-19T09:30:00Z"
+PublishDate: "2022-01-02T09:30:00Z"
 Title: "V042 - Weekly Technology Vlog #42"
 episode: V042
 image: img/cloudwithchrislogo.png # img/vlog/v002.jpg

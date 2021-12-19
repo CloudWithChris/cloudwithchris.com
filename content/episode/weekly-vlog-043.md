@@ -1,7 +1,7 @@
 ---
-Date: "2022-01-02-T09:30:00Z"
+Date: "2022-01-09-T09:30:00Z"
 Description: "In this session, Chris provides a series of updates focused around Azure, DevOps, GitHub and Cloud With Chris, while gaming with the Cloud Family Community."
-PublishDate: "2022-01-02T09:30:00Z"
+PublishDate: "2022-01-09T09:30:00Z"
 Title: "V043 - Talking cloud and playing Among Us with the community"
 episode: V043
 image: img/vlog/among-us.jpg
