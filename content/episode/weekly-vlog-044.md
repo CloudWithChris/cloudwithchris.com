@@ -1,7 +1,7 @@
 ---
-Date: "2022-01-09-T09:30:00Z"
+Date: "2022-01-16-T09:30:00Z"
 Description: "In this session, Chris provides a series of updates focused around Azure, DevOps, GitHub and Cloud With Chris, while gaming with the Cloud Family Community."
-PublishDate: "2022-01-09T09:30:00Z"
+PublishDate: "2022-01-16T09:30:00Z"
 Title: "V044 - Technology Vlog #44"
 episode: V044
 image: img/cloudwithchrislogo.png # img/vlog/v002.jpg
