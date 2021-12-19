@@ -72,7 +72,7 @@ This time, it was much easier to see the signs and identify that I wasn't okay. 
 
 However, it was clear that my mind was not in the right place for work. I initially took a few days off, and planned to return the next week. I did my best, I tried - but it still wasn't right. I'm thankful to have friends that can play excellent devil's advocates, and act as a voice of reason. You'll see Glen and I talk about it in [this episode](/episode/your-career-and-your-mental-health/). I was challenged by the question - How would I handle one of 'those days' where things don't go right? Instantly I knew, it was too soon for me to return.
 
-Now, it's time for us to address another of these stigmas which surrounds mental health. I took several weeks off work. I remember this part clearly. My mind was 'wrestling with itself' is the best description I can give. On one hand, I knew that I had to take the time off to get better. On the other hand, I felt that I had to get back to work as soon as possible. 
+Now, it's time for us to address another of these stigmas which surrounds mental health. I took several weeks off work. I remember this part clearly. My mind was 'wrestling with itself' is the best description I can give. On one hand, I knew that I had to take the time off to get better. On the other hand, I felt that I had to get back to work as soon as possible.
 
 Dear rational reader. You can likely observe that the two scenarios above directly contradict each other.
 
@@ -130,7 +130,7 @@ During that time, I made sure to focus on hobbies and making myself feel good. W
 
 Now of course, the recovery process is not all positive. Once again, I had side effects from Sertraline. The tremors came back across the first few weeks, but are not that regular anymore. I still have incredibly vivid dreams nightly, and I'm 'activated', so wake up regularly during the night. But again, it's a case of balancing the side effects against the positives of the treatment. And for me, there's no question - They are a significant help towards me getting better.
 
-I've been teasing something throughout this blog post. In the 'first challenge' section, I mentioned that I had thought it was my first time experiencing problems with mental health. One of the symptoms that I experienced this time was an incredibly sharp pain in my stomach. 
+I've been teasing something throughout this blog post. In the 'first challenge' section, I mentioned that I had thought it was my first time experiencing problems with mental health. One of the symptoms that I experienced this time was an incredibly sharp pain in my stomach.
 
 Interestingly, I recognised this pain. I experienced a similar pain in my late teens. It was sharp, and painful. I was hospitalized with it. Many studies were done, with it being suspected appendisitis. In the end, it appeared to be Irritable Bowel Syndrome (IBS). There were several things on my mind back then, focusing on achieving the right grades at A-Levels for university, relationships and friendships, work, etc. I won't delve into those, but similar to the theme in the other sections, there was a self-imposed stress/angst at that time.
 
@@ -154,7 +154,7 @@ Now, with all this being said - I completely acknowledge that I am in a position
 
 If you are struggling, please know you're not alone. You're not the first, and you won't be the last.
 
-There are people who are there to help, and people who are there to listen. I'm always here if you need someone to talk with. 
+There are people who are there to help, and people who are there to listen. I'm always here if you need someone to talk with.
 
 Please be strong and acknowledge the challenges that you are facing. It is okay to not be okay. It is not a sign of weakness to get the help you need, but rather an act of strength.
 
