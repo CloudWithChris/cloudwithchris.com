@@ -67,7 +67,7 @@ I was surprised to see that the dev.to and medium.com views and engagement numbe
 
 On the flip side, I did invest in my SEO (Search Engine Optimization) throughout the year (In case you missed it, [I wrote about part of that journey here](/blog/using-schema-org-for-seo/)). Not from a monetary perspective, but making sure that the Cloud With Chris site is doing all of the right things to naturally return higher in search results. This has had some good results, sometimes beating even the Microsoft Docs in search results.
 
-From a content perspective, the lengthier blog posts performed better on my main website. There are some long lengthier posts in my top posts on medium.com and dev.to, but they seem shorter than the ones on my site. It may be down to the type of content (or the topic), rather than the length of the post (i.e. correlation vs causation), but thought it was an interesting observation.
+From a content perspective, the lengthier blog posts performed better on my main site. There are some long lengthier posts in my top posts on medium.com and dev.to, but they seem shorter than the ones on my site. It may be down to the type of content (or the topic), rather than the length of the post (i.e. correlation vs causation), but thought it was an interesting observation.
 
 ## Events
 
