@@ -1,9 +1,9 @@
 ---
 Author: chrisreddington
 Description: "It's hard to believe that 2021 is done, and we're now in 2022. In one sense, it feels like a 'blink and you miss it' year. In another way, it feels as though it's been one of the longest years to have passed us by. It's fair to say that 2021 has had its challenges, not least in the backdrop of the ongoing COVID-19 pandemic. You may have caught my recent blog post on my mental health challenges. Practicing mindfulness and gratitude are excellent approaches for me to keep my overall mental health in balance. So, this post is just as much for me as anyone else. I want to highlight the achievements from the last year or so. I won't be setting any resolutions for 2021, but want to build upon what I've learned in 2021."
-PublishDate: "2021-12-310T09:00:00Z"
+PublishDate: "2022-01-010T09:00:00Z"
 image: img/cloudwithchrislogo.png
-date: "2021-12-31T09:00:00Z"
+date: "2022-01-01T09:00:00Z"
 images:
 - img/cloudwithchrislogo.png
 tags:
