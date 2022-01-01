@@ -17,7 +17,7 @@ It's hard to believe that 2021 is done, and we're now in 2022. In one sense, it 
 
 It's fair to say that 2021 has had its challenges, not least in the backdrop of the ongoing COVID-19 pandemic. You may have caught [my recent blog post on my mental health challenges](/blog/im-back-lets-talk). Practicing mindfulness and gratitude are excellent approaches for me to keep my overall mental health in balance. So, this post is just as much for me as anyone else. I want to highlight the achievements from the last year or so. I won't be setting any resolutions for 2021, but want to build upon what I've learned in 2021.
 
-I like numbers and statistics, so I'll be highlighting some of the best performing content, which channels have performed well, and more. 
+I like numbers and statistics, so I'll be highlighting some of the best performing content, which channels have performed well, and more.
 
 ## Blogs
 
@@ -29,7 +29,7 @@ I've received 6,644 post views on dev.to and 195 total post reactions. By compar
 
 ### Top performing posts per platform
 
-From cloudwithchris.com (blog posts only) - 
+From cloudwithchris.com (blog posts only) -
 
 * [Using the GitHub self-hosted runner and Azure Virtual Machines to login with a System Assigned Managed Identity](/blog/github-selfhosted-runner-on-azure/) (2,167 views)
 * [Securing App Service with Easy Auth behind a Public Application Gateway](/blog/secure-app-service-with-easy-auth-and-app-gateway-public/) (1,678 views)
@@ -37,7 +37,7 @@ From cloudwithchris.com (blog posts only) -
 * [Why you should care about Azure Front Door Standard and Premium](/blog/azure-front-door-standard-premium/) (1,250 views)
 * [Using Azure Arc for Apps - Part 1 - Setting up an Azure Arc enabled Kubernetes Cluster](/blog/azure-arc-for-apps-part-1/) (1,226 views)
 
-On dev.to, from a views perspective - 
+On dev.to, from a views perspective -
 
 * [Building an Event-Driven workflow with Azure Event Grid](https://dev.to/cloudwithchris/building-an-event-driven-workflow-with-event-grid-26l7) (580 views)
 * [Making a GitHub Action with Docker and .NET Core](https://dev.to/cloudwithchris/making-a-github-action-with-docker-and-net-core-cfj) (492 views)
@@ -45,7 +45,7 @@ On dev.to, from a views perspective -
 * [Using Azure DevOps REST APIs to automatically create Team Iterations](https://dev.to/cloudwithchris/using-azure-devops-rest-apis-to-automatically-create-team-iterations-32l8) (244 views)
 * [GitHub Actions and Azure - Deploying .NET Core code to Azure App Service](https://dev.to/cloudwithchris/github-actions-and-azure-deploying-net-core-code-to-azure-app-service-p14) (218 views)
 
-However, from a reactions perspective - 
+However, from a reactions perspective -
 
 * [Azure YAML Pipelines Tips](https://dev.to/cloudwithchris/azure-pipelines-tips-4a2b) (9 reactions)
 * [Why use Git, How it Works and what's going on behind the scenes?](https://dev.to/cloudwithchris/why-use-git-how-it-works-and-what-s-going-on-behind-the-scenes-20d0) (8 reactions)
@@ -53,7 +53,7 @@ However, from a reactions perspective -
 * [Using GPG Keys to sign Git Commits - Part 1](https://dev.to/cloudwithchris/using-gpg-keys-to-sign-git-commits-part-1-8mi) (7 reactions)
 * [Using Azure Arc for Apps - Part 1 - Setting up an Azure Arc enabled Kubernetes Cluster](https://dev.to/cloudwithchris/using-azure-arc-for-apps-part-1-setting-up-an-azure-arc-enabled-kubernetes-cluster-3738) (7 reactions)
 
-From medium.com - 
+From medium.com -
 
 * [Azure Pipelines Tips](https://cloudwithchris.medium.com/azure-pipelines-tips-ef053a871b30) (229 views)
 * [How to use the Azure Well-Architected Framework](https://cloudwithchris.medium.com/how-to-use-the-azure-well-architected-framework-in-your-projects-71f785c2a106) (115 views)
@@ -98,7 +98,7 @@ A large portion of this content format is driven from me hosting guests on the s
 
 ### Top performing content per platform
 
-From YouTube - 
+From YouTube -
 
 * [Introducing and Setting up Git LFS (Large File Storage)](https://www.youtube.com/watch?v=4WftZfn9L_I) (1.8K views)
 * [28 - Introduction to Landing Zones](https://www.youtube.com/watch?v=HLgljLsK79E) (1.4K views)
@@ -106,7 +106,7 @@ From YouTube -
 * [How does Git work behind the scenes?](https://www.youtube.com/watch?v=tXTTPbTbwRg) (833 views)
 * [Cloud Gaming Notes - Using Azure to host a Minecraft Game Server](https://www.youtube.com/watch?v=VdiqtCRK6jQ) (769 views)
 
-From cloudwithchris.com - 
+From cloudwithchris.com -
 
 * [28 - Intro to Landing Zones](/episode/intro-to-landing-zones/) (185 views)
 * [GitHub Actions and Azure - Using Environments with GitHub Actions](/episode/github-actions-multiple-environments/) (167 views)
