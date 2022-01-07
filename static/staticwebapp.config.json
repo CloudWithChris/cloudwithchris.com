@@ -8,7 +8,7 @@
     }
   },
   "globalHeaders": {
-    "content-security-policy": "script-src 'self' https://www.google-analytics.com https://www.youtube.com https://giscus.app https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.min.js https://www.clarity.ms/tag/a32lpsz3a1 https://d.clarity.ms/s/0.6.31/clarity.js https://f.clarity.ms/s/0.6.31/clarity.js 'sha256-Nw67x33pAOXEHa+vcp9nkwC9GrgAbz6RBAHKMo22bJE=' 'sha256-Nw67x33pAOXEHa+vcp9nkwC9GrgAbz6RBAHKMo22bJE=' 'sha256-RilkGqtMfgOO6v29lT1Q0gFfXbq8GNwu8PiDpbiriTU=' 'sha256-NXx57fNMaN9TT2cgFK8Ru1vmqGOIU4eXDaDLY/cEyuo='; img-src 'self' https://www.google-analytics.com https://app.podscribe.ai https://is5-ssl.mzstatic.com; connect-src 'self' https://www.google-analytics.com https://backend.podscribe.ai; child-src https://www.youtube.com https://giscus.app; object-src none",
+    "content-security-policy": "script-src 'self' https://www.google-analytics.com https://www.youtube.com https://giscus.app https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.min.js https://*.clarity.ms 'sha256-Nw67x33pAOXEHa+vcp9nkwC9GrgAbz6RBAHKMo22bJE=' 'sha256-Nw67x33pAOXEHa+vcp9nkwC9GrgAbz6RBAHKMo22bJE=' 'sha256-RilkGqtMfgOO6v29lT1Q0gFfXbq8GNwu8PiDpbiriTU=' 'sha256-NXx57fNMaN9TT2cgFK8Ru1vmqGOIU4eXDaDLY/cEyuo='; img-src 'self' https://www.google-analytics.com https://app.podscribe.ai https://is5-ssl.mzstatic.com https://c.bing.com https://c.clarity.ms; connect-src 'self' https://www.google-analytics.com https://backend.podscribe.ai; child-src https://www.youtube.com https://giscus.app; object-src none",
     "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
     "X-Frame-Options": "SAMEORIGIN",
     "X-Content-Type-Options": "nosniff",
