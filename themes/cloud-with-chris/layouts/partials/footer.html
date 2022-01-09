@@ -29,6 +29,7 @@
       </div>
       <div class="d-flex">
         <ul class="nav">
+          <li class="nav-item"><a class="nav-link" href="#" id="changePreferences">Cookie Preferences</a></li>
           {{ $currentPage := . }}
             {{ range .Site.Menus.footer }}
               {{ partial "helper/navigation-menu.html" (dict "context" . "currentPage" $currentPage) }}
@@ -48,11 +49,14 @@
   
 <!-- Cookie Consent by https://www.PrivacyPolicies.com -->
 <script type="text/javascript" src="{{ "js/cookie-consent.js" | absURL }}"></script>
+
+
+
 <script type="text/javascript">
-document.addEventListener('DOMContentLoaded', function () {
-cookieconsent.run({"notice_banner_type":"headline","consent_type":"express","palette":"light","language":"en","website_name":"Cloud With Chris","change_preferences_selector":"#changePreferences","cookies_policy_url":"https://www.cloudwithchris.com/cookie-policy"});
-});
-</script>
+  document.addEventListener('DOMContentLoaded', function () {
+  cookieconsent.run({"notice_banner_type":"headline","consent_type":"express","palette":"light","language":"en","website_name":"Cloud With Chris","change_preferences_selector":"#changePreferences","cookies_policy_url":"https://www.cloudwithchris.com/cookie-policy"});
+  });
+  </script>
 
 <script type="text/javascript" cookie-consent="tracking">
   (function(c,l,a,r,i,t,y){
