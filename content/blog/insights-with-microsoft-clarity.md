@@ -16,7 +16,7 @@ I love learning. Especially when it's about brand new things that I wasn't aware
 
 ## What is Microsoft Clarity?
 
-Microsoft Clarity is a tool that allows you to understand how people use your website. 
+Microsoft Clarity is a tool that allows you to understand how people use your website.
 
 At this point, you're probably shouting - "Okay, Chris - how is this different to Google Analytics or Application Insights? They gives me all of the insight that I need!". Sure, they give you statistics around user engagement, but do they allow you to **see** how users interact with it?
 
@@ -41,13 +41,13 @@ We can break down the functionality into a few key areas -
 ![Screenshot showing an example recording view](/img/blog/insights-with-microsoft-clarity/recordings.png)
 
 * **Heatmaps** - Session Recordings are great to understand engagement on a case-by-case basis. Heatmaps allow you to understand an aggregated view of user engagement based on Clicks, Area and Scroll depth per page. These are visual charts layered over a render of your site, exactly what you think of when you think of the term 'heatmap'.
-  * Where do your users frequently click? 
+  * Where do your users frequently click?
   * What percentage of your users scroll down to a certain part of your site?
   * Even, down to specific HTML elements. You can filter these heatmaps based upon the captured segment information, compare those across user segments and then share that with other members of your team
 
 ![Screenshot showing an example heatmap](/img/blog/insights-with-microsoft-clarity/heatmaps.png)
 
-* **Google Analytics Integration** - If you were in the camp "I'm already using Google Analytics", well, that's great news - Microsoft Clarity integrates with Google Analytics. Let's understand this a bit further - 
+* **Google Analytics Integration** - If you were in the camp "I'm already using Google Analytics", well, that's great news - Microsoft Clarity integrates with Google Analytics. Let's understand this a bit further -
   * *Google Analytics Segments* - Suppose that you have set up your own [Google Analytics Segments](https://support.google.com/analytics/answer/3123951?hl=en#zippy=%2Cin-this-article), e.g. users from a given city, or in a certain demographic. These segments are automatically imported into Microsoft Clarity, so that you can filter down on them in the generated heatmaps and session recordings.
   * *Enhance Google Analytics* - We mentioned that session recordings are a built-in feature of Microsoft Clarity. If you use Google Analytics as your daily insights driver, then that's no problem - You can view session recordings directly within Google Analytics.
   * *Or, bring Google Analytics to Microsoft Clarity* - Likewise, there is a dashboard in Microsoft Clarity for you to analyse, visualize and explore your Google Analytics metrics.
@@ -74,7 +74,7 @@ In addition, the [Microsoft Clarity Terms of Use](https://clarity.microsoft.com/
 
 > Lawful Basis of Processing. To the extent that You are required by Data Protection Laws to have a lawful basis of Processing Personal Data, such as consent or legitimate interests, Your Processing of Personal Data will be consistent with that lawful basis. If Your lawful basis of Processing is consent, You will obtain consent consistent with applicable Data Protection Law and the scope of the consent you obtain will enable Microsoft to use the Personal Data it collects for the purposes described in this Section. For example, for individuals in the European Union, you must obtain consent for your use of cookies or other local storage, retain records of consent, and provide individuals with a clear means to revoke consent.
 
-What does that mean? If you want to use Microsoft Clarity on your own site, then you must have some form of opt-in process for cookies prior to you using the service. 
+What does that mean? If you want to use Microsoft Clarity on your own site, then you must have some form of opt-in process for cookies prior to you using the service.
 
 Fortunately, I already had that in place for Cloud With Chris. I used the [Cookie Consent Generator on PrivacyPolicies.com](https://www.privacypolicies.com/cookie-consent/). This site is a third party and has no association with Microsoft or Microsoft Clarity. It was actually a handy tool that I discovered some time ago when I added Google Analytics to Cloud With Chris.
 
@@ -94,7 +94,7 @@ Right. So what if you fit into an allowed usecase, but want to ensure private da
 
 You can choose from several masking modes (Strict, Balanced and Relaxed) to control what text is sent to the Microsoft Clarity servers. You can also use CSS selectors, or attributes in an HTML element to control whether text should be masked or unmasked. Full details are once again available on the [Microsoft Clarity Documentation](https://docs.microsoft.com/en-us/clarity/clarity-masking).
 
-One final point, we referred to a Content Security Policy earlier. If you haven't adopted Content Security Policies (i.e. controlling what external images, scripts, etc. are allowed to be displayed on your site), then Microsoft Clarity should work fairly painlessly. If you have adopted Content Security Policies, then you'll need to [add additional domains](https://docs.microsoft.com/en-us/clarity/clarity-csp) to the appropriate CSP. 
+One final point, we referred to a Content Security Policy earlier. If you haven't adopted Content Security Policies (i.e. controlling what external images, scripts, etc. are allowed to be displayed on your site), then Microsoft Clarity should work fairly painlessly. If you have adopted Content Security Policies, then you'll need to [add additional domains](https://docs.microsoft.com/en-us/clarity/clarity-csp) to the appropriate CSP.
 
 > I stumbled upon [csplite.com](https://csplite.com/csp/svc146/) while setting Clarity up on Cloud With Chris. This is another third party site, but looks like it could be a useful reference if you need to adopt several dependencies, but want to use Content Security Policies.
 
