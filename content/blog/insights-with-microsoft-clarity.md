@@ -16,7 +16,7 @@ I love learning. Especially when it's about brand new things that I wasn't aware
 
 ## What is Microsoft Clarity?
 
-Microsoft Clarity is a tool that allows you to understand how people use your website.
+Microsoft Clarity is a tool that allows you to understand how people use your site.
 
 At this point, you're probably shouting - "Okay, Chris - how is this different to Google Analytics or Application Insights? They gives me all of the insight that I need!". Sure, they give you statistics around user engagement, but do they allow you to **see** how users interact with it?
 
@@ -78,17 +78,17 @@ What does that mean? If you want to use Microsoft Clarity on your own site, then
 
 Fortunately, I already had that in place for Cloud With Chris. I used the [Cookie Consent Generator on PrivacyPolicies.com](https://www.privacypolicies.com/cookie-consent/). This site is a third party and has no association with Microsoft or Microsoft Clarity. It was actually a handy tool that I discovered some time ago when I added Google Analytics to Cloud With Chris.
 
-It allows you to select your compliance preference (ePrivacy Directive or GDPR & ePrivacy Directive), Customize the end-user consent experience and add your JavaScript scripts by type (Strictly Necessary, Functionality, Tracking & Performance, Targeting & Advertising). Then, it's as simple as copying the generated code to your site.
+It allows you to select your compliance preference (ePrivacy Directive or GDPR & ePrivacy Directive), Customize the end user consent experience and add your JavaScript scripts by type (Strictly Necessary, Functionality, Tracking & Performance, Targeting & Advertising). Then, it's as simple as copying the generated code to your site.
 
 > I went one step further, and took a copy of the ``cookie-consent.js`` which the generated script depends on, and stored it in my site's assets. Why? Because I wanted to limit the number of external calls on my site. This would aid with page load times and help make my site's Content Security Policies (CSP) more manageable. On that note, if you haven't heard of Content Security Policies, I'd encourage you to check [another of my blog posts](/blog/optimise-site-security-headers-com/), where I talk through ways to optimize the security posture by using securityheaders.com.
 
-But wait a second. Isn't there a problem here? Some websites will capture personal data. This could include usernames, e-mail addresses, passwords, addresses, social security numbers, credit card details, and more! Fortunately, that's not the case on Cloud With Chris. But, what if you have those requirements?
+But wait a second. Isn't there a problem here? Some sites will capture personal data. This could include usernames, email addresses, passwords, addresses, social security numbers, credit card details, and more! Fortunately, that's not the case on Cloud With Chris. But, what if you have those requirements?
 
 The [Clarity FAQs](https://docs.microsoft.com/en-us/clarity/faq) call out certain scenarios where it should not be used -
 
 > Clarity should not be used on sites that contain Sensitive Data including user health care, financial services or government-related information.
 
-Right. So what if you fit into an allowed usecase, but want to ensure private data is not being captured? The service has a concept of [masking content](https://docs.microsoft.com/en-us/clarity/clarity-masking) built in.
+Right. So what if you fit into an allowed usecase, but want to ensure private data is not being captured? The service has a concept of [masking content](https://docs.microsoft.com/en-us/clarity/clarity-masking) built-in.
 
 ![Screenshot showing the masking options within Microsoft Clarity](/img/blog/insights-with-microsoft-clarity/masking.png)
 
