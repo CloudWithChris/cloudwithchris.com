@@ -48,17 +48,16 @@
 
   
 <!-- Cookie Consent by https://www.PrivacyPolicies.com -->
-<script type="text/javascript" src="{{ "js/cookie-consent.js" | absURL }}"></script>
+<script type="text/javascript" src="{{ "js/cookie-consent.js" | absURL }}" charset="UTF-8"></script>
 
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({"notice_banner_type":"interstitial","consent_type":"express","palette":"light","language":"en","page_load_consent_levels":["strictly-necessary"],"notice_banner_reject_button_hide":false,"preferences_center_close_button_hide":false,"page_refresh_confirmation_buttons":false,"website_name":"Cloud With Chris","open_preferences_center_selector":"#changePreferences","website_privacy_policy_url":"https://www.cloudwithchris.com/privacy-policy"});
+});
+</script>
 
-
-<script type="text/javascript">
-  document.addEventListener('DOMContentLoaded', function () {
-  cookieconsent.run({"notice_banner_type":"headline","consent_type":"express","palette":"light","language":"en","website_name":"Cloud With Chris","change_preferences_selector":"#changePreferences","cookies_policy_url":"https://www.cloudwithchris.com/cookie-policy"});
-  });
-  </script>
-
-<script type="text/javascript" cookie-consent="tracking">
+{{ if not .Site.IsServer }}
+<script type="text/plain" cookie-consent="tracking">
   (function(c,l,a,r,i,t,y){
     c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
     t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
@@ -71,7 +70,7 @@
 {{- $pc := .Site.Config.Privacy.GoogleAnalytics -}}
 {{- if not $pc.Disable -}}
   {{ with .Site.GoogleAnalytics }}
-    <script type="application/javascript" cookie-consent="tracking">
+    <script type="text/plain" cookie-consent="tracking">
     {{ template "__ga_js_set_doNotTrack" $ }}
     if (!doNotTrack) {
       window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
@@ -93,7 +92,8 @@
       ga('send', 'pageview');
     }
     </script>
-    <script async src="{{ "js/analytics.js" | absURL }}" cookie-consent="tracking"></script>
+    <script type="text/plain" async src="{{ "js/analytics.js" | absURL }}" cookie-consent="tracking"></script>
+    {{ end }}
   {{ end }}
 {{- end -}}
 <!-- end of Google Analytics-->

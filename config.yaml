@@ -292,7 +292,7 @@ params:
 
 privacy:
   googleAnalytics:
-    anonymizeIP: false
+    anonymizeIP: true
     disable: false
     respectDoNotTrack: true
     useSessionStorage: false
