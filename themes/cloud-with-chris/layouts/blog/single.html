@@ -65,6 +65,15 @@
 {{ $scratch := .Scratch }}
 
 <div class="container">
+
+  {{ if ge (len .TableOfContents) 50 }}
+
+  <h2>Contents</h2>
+  <p>
+    {{ .TableOfContents }}
+  </p>
+  {{ end }}
+
   <p>{{ .Content }}</p>
   <p></p>
   <ul class="list-group">
