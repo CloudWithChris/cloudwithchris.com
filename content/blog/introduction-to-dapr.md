@@ -1,9 +1,9 @@
 ---
 Author: chrisreddington
-Description: ""
-PublishDate: "2022-01-12T09:00:00Z"
+Description: "In this post, we're going to explore the Open Source project known as Dapr (The Distributed Application Runtime). This post is primarily aimed at those who already have an understanding of Containers, Kubernetes and Microservices. However, if you're not familiar with these topics - I'll do my best to set the right context and background without making the blog too lengthy!"
+PublishDate: "2022-01-13T09:00:00Z"
 image: img/cloudwithchrislogo.png
-date: "2022-01-12T09:00:00Z"
+date: "2022-01-13T09:00:00Z"
 images:
 - img/cloudwithchrislogo.png
 tags:
@@ -11,6 +11,7 @@ tags:
 - Kubernetes
 - Microservices
 - Open Source
+- Development
 series: 
 - "CNCF Projects"
 title: Introduction to The Distributed Application Runtime (Dapr)
@@ -62,6 +63,8 @@ This is where Dapr fits in. Dapr aims to solve several of the challenges that I 
 ### The sidecar concept
 
 Conceptually, Dapr works by using the [sidecar pattern](https://www.cloudwithchris.com/episode/sidecar-and-ambassador/). A sidecar is a secondary piece of software that is deployed alongside the primary application, typically in a separate process.
+
+![Image showing the concept of an Application and a Sidecar as two pieces of the same puzzle. The application is the logic and functionality that you have created. The sidecar process/container is the software that works transparently alongside the app, e.g. logging. The application and sidecar share the same lifecycle. They are deployed and scaled as a unit.](/img/blog/introduction-to-dapr/sidecar.png "Image showing the concept of an Application and a Sidecar as two pieces of the same puzzle. The application is the logic and functionality that you have created. The sidecar process/container is the software that works transparently alongside the app, e.g. logging. The application and sidecar share the same lifecycle. They are deployed and scaled as a unit.")
 
 In a Kubernetes environment - this could be achieved by deploying two containers (the primary application container, and the sidecar container, e.g. an agent which intercepts network calls) in a single pod. The application and the sidecar typically share the same lifecycle, so would scale out/in together as well. The idea is that the sidecar's software works transparently alongside the application, providing supporting functionality to it.
 
@@ -131,7 +134,22 @@ At this point, we should be able to have the Dapr sidecar running alongside our 
 
 We haven't configured those, or told our application how to interact with them. Let's take a look at those next.
 
-## Dapr Components
+## Dapr Building Blocks and Components
+
+Dapr provides several modular building blocks that provide the common best practices for building microservices. These building blocks are exposed over HTTP or gRPC.
+
+There are several building block types, including -
+
+* **Actors** - Actors are a way of managing state across multiple partitions as reusable objects.
+* **Bindings (Input/Output)** - Build event-driven applications based on the pluggable and modular Dapr component interface.
+* **Configuration** - Used to easily share application configuration changes, and provide notifications of configuration changes.
+* **Observability** - Used for diagnostics and tracing  across the components and applications deployed with a Dapr sidecar.
+* **Publish and Subscribe** - Ability to decouple components by using Pub/Sub brokers between services.
+* **Secret stores** - Used to securely store secrets in a secure way (i.e. not plain text!), and allow your application to access those securely.
+* **Service-to-service invocation** - Used in combination with the service invocation capabilities of Dapr. This may vary depending on the underlying hosting option (e.g. self-hosted, Kubernetes or a cluster of machines).
+* **State management** - Enables you to create services that can persist state.
+
+These building blocks (consider them like interfaces) are implemented as components. These components are pluggable, so you could easily switch these out with different implementations. For example, switching a messaging broker dependency from Azure Storage Queues, Azure Service Bus Queues, Amazon SQS, Apache Kafka, etc. by changing the configuration file for the component. The building blocks may use a combination of components (e.g. both Actors and State Management use state components).
 
 ### What are Dapr components?
 
@@ -139,15 +157,15 @@ The [Dapr docs](https://docs.dapr.io/concepts/terminology/) describe components 
 
 Effectively, they are a way to take the 'common denominator' approach to building your dependencies as building blocks. Your application shouldn't need to worry or care whether it's talking to a specific type of queue. It talks to a Pub/Sub component, and Dapr (as well as your Dapr configuration) deals with the rest.
 
-There are several types of components, including -
-
-* **Bindings** - Build event-driven applications based on the pluggable and modular Dapr component interface. Each binding's properties will be different, based upon the underlying service (e.g. AWS S3, Azure Storage Queues, Cron etc.)
-* **Configuration Stores** - Used for persisting application state, to easily share application configuration changes or for startup.
+* **Bindings (Input/Output)** - Build event-driven applications based on the pluggable and modular Dapr component interface. Each binding's properties will be different, based upon the underlying service (e.g. AWS S3, Azure Storage Queues, Cron etc.)
+* **Configuration** - Used for persisting application state, to easily share application configuration changes or for startup.
 * **Middleware** - Plug in custom middleware into the HTTP pipeline, such as authentication or message transformation.
 * **Name resolution** - Used in combination with the service invocation capabilities of Dapr. This may vary depending on the underlying hosting option (e.g. self-hosted, Kubernetes or a cluster of machines).
 * **Pub/sub brokers** - Ability to pass messages to/from pub/sub providers such as Apache Kafka, Azure Service Bus or GCP Pub/Sub.
 * **Secret stores** - As you would expect, a secret store is used to offload secrets into a trusted environment, so that you don't need to reference them in plain text. Consider services such as Hashicorp Vault, Azure KeyVault, AWS Secrets Manager, etc.
 * **State stores** - Applications these days typically hold and interact with some form of state (e.g. records applications, inventory, etc.). The state store gives us a pluggable way of interacting with data stores such as databases, files, memory caches, etc.
+
+![Image showing the dapr run command being used, and how it relates to the Actor placement, zipkin tracing and redis state store that are created in a self-hosted docker environment. It also shows that the Dapr sidecar is able to use the various Dapr components that are available. Image Credit: Official Dapr Docs (docs.dapr.io)](/img/blog/introduction-to-dapr/overview_local.png "Image showing the dapr run command being used, and how it relates to the Actor placement, zipkin tracing and redis state store that are created in a self-hosted docker environment. It also shows that the Dapr sidecar is able to use the various Dapr components that are available. Image Credit: Official Dapr Docs (docs.dapr.io)")
 
 You can find a list to each of the component specs in the [Dapr components reference documentation](https://docs.dapr.io/reference/components-reference/).
 
@@ -173,6 +191,8 @@ The dapr-operator, dapr-placement,  dapr-sidecar-injector and dapr-sentry Kubern
 * **dapr-sentry:** Acts as a certificate authority, enabling mTLS between your deployed microservices.
 
 Once you have the control plane in place, you can begin deploying your workload by using Kubernetes manifests as you usually would. To leverage the Dapr building blocks, you'll also need to deploy any required Dapr component configurations (which can also be achieved using yaml files and ``kubectl apply``).
+
+!["Image which shows the application deployed in a Kubernetes pod, which has the Dapr sidecar injected by the Dapr runtime injector. It shows the components that enable Dapr to run in a Kubernetes environment (dapr-placement, dapr-sentry, dapr-operator, dapr-sidecar-injector).  It also shows that the Dapr sidecar is able to use the various Dapr components that are available. Image Credit: Official Dapr Docs (docs.dapr.io)"](/img/blog/introduction-to-dapr/overview_kubernetes.png "Image which shows the application deployed in a Kubernetes pod, which has the Dapr sidecar injected by the Dapr runtime injector. It shows the components that enable Dapr to run in a Kubernetes environment (dapr-placement, dapr-sentry, dapr-operator, dapr-sidecar-injector).  It also shows that the Dapr sidecar is able to use the various Dapr components that are available. Image Credit: Official Dapr Docs (docs.dapr.io)")
 
 I'll cover this in more detail in a separate blog post. I'll also post another writeup on using DAPR (and KEDA) in Azure Container Apps.
 
