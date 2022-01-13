@@ -43,6 +43,11 @@
       {{ end }}
 
       <p></p>
+      {{ with .Params.Series }}
+        <p>
+          <p>{{ partial "series.html" (dict "taxo" "series" "value" . "site" $.Site ) }}</p>
+        </p>
+      {{ end }}
       <ul class="list-group">
       {{ $series := .Params.Series }}
       {{ range where .Site.Pages ".Params.series" "intersect" $series }}
@@ -65,6 +70,15 @@
 {{ $scratch := .Scratch }}
 
 <div class="container">
+
+  {{ if ge (len .TableOfContents) 50 }}
+
+  <h2>Contents</h2>
+  <p>
+    {{ .TableOfContents }}
+  </p>
+  {{ end }}
+
   <p>{{ .Content }}</p>
   <p></p>
   <ul class="list-group">
