@@ -43,6 +43,11 @@
       {{ end }}
 
       <p></p>
+      {{ with .Params.Series }}
+        <p>
+          <p>{{ partial "series.html" (dict "taxo" "series" "value" . "site" $.Site ) }}</p>
+        </p>
+      {{ end }}
       <ul class="list-group">
       {{ $series := .Params.Series }}
       {{ range where .Site.Pages ".Params.series" "intersect" $series }}
