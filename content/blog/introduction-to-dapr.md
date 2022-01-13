@@ -77,7 +77,7 @@ When using Dapr, you deploy a Dapr sidecar alongside your application. This is w
 
 To get started with Dapr in a local environment, you'll need to use the Dapr Command-Line Interface (CLI).
 
-You can download the CLI in several ways, all of which are well documented on the [Dapr Docs](https://docs.dapr.io/getting-started/install-dapr-cli/) for Linux, MacOS and Windows.
+You can download the CLI in several ways, all of which are well documented on the [Dapr Docs](https://docs.dapr.io/getting-started/install-dapr-cli/) for Linux, macOS and Windows.
 
 Dapr can be configured to run in a self-hosted mode, deployed in Kubernetes, or onto a serverless solution such as Azure Container Apps. The preferred self-hosted option depends on Docker Containers, but *can* run without Docker.
 
@@ -124,7 +124,7 @@ It boils down to a few key aspects (``dapr run [flags] [command]``).
 
 * ``flags`` are clearly documented on the reference page noted earlier.
 * ``Command`` is the CLI input that you would use to execute your application.
-  * In **Node JS** it could be something like ``dapr run --app-id MyNodeApp node app.js``
+  * In **Node.js** it could be something like ``dapr run --app-id MyNodeApp node app.js``
   * In **.NET Core** it could be something like ``dapr run --app-id MyDotnetApp dotnet run``
 
 At this point, we should be able to have the Dapr sidecar running alongside our application. A lot of the value with Dapr comes from the abstraction of the components that we'd interact with (e.g. State Stores, Secret Stores, Bindings, Configurations, Pub Sub providers, etc.).
