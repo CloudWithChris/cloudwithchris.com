@@ -63,7 +63,7 @@ This is where Dapr fits in. Dapr aims to solve several of the challenges that I 
 
 Conceptually, Dapr works by using the [sidecar pattern](https://www.cloudwithchris.com/episode/sidecar-and-ambassador/). A sidecar is a secondary piece of software that is deployed alongside the primary application, typically in a separate process.
 
-In a Kubernetes environment - this could be achieved by deploying two containers (the primary application container, and the sidecar container, e.g. an agent which intercepts network calls) in a single pod. The application and the sidecar typically share the same lifecycle, so would scale out/in together as well. The idea is that the sidecar's software works transparently alongside the application, providing supporting functionality to it. 
+In a Kubernetes environment - this could be achieved by deploying two containers (the primary application container, and the sidecar container, e.g. an agent which intercepts network calls) in a single pod. The application and the sidecar typically share the same lifecycle, so would scale out/in together as well. The idea is that the sidecar's software works transparently alongside the application, providing supporting functionality to it.
 
 > If you prefer analogies, consider a motorbike with a sidecar (this is where the term comes from!). The sidecar does not ride on its own, but enhances the motorbike (e.g. increases the capacity of the motorbike).
 >
@@ -89,13 +89,13 @@ Dapr can be configured to run in a self-hosted mode, deployed in Kubernetes, or 
 
 The first step is running the ``dapr init`` command. This [initializes your Dapr environment](https://docs.dapr.io/operations/hosting/self-hosted/self-hosted-with-docker/#initialize-dapr-environment).
 
-It will create the Dapr control plane in your local environment. In the docker hosting method, it will also create the following components - 
+It will create the Dapr control plane in your local environment. In the docker hosting method, it will also create the following components -
 
 * A docker container running an instance of Redis. The purpose is to have a default **component** for state management and pub/sub.
   * We'll cover the concept of components a bit later.
 * A docker container running an instance of Zipkin. Zipkin is a separate OSS project which aims to solve the problem of distributed tracing (more information available on [their site](https://zipkin.io/)). Dapr uses this this for diagnostics and tracing across the deployed apps (microservices).
 * Several Dapr configurations and components are installed in a .dapr directory on the local machine. The exact location depends on the Operating System that you're using.
-* An additional service ``dapr-placement`` is created only if your application uses the Actor framework. 
+* An additional service ``dapr-placement`` is created only if your application uses the Actor framework.
   * If there's interest, please let me know! I can write up a separate blog post on the Actors framework and how to implement in Dapr.
 
 > A more detailed explanation of this hosting method can be found on the [Dapr docs - How-To: Run Dapr in self-hosted mode with Docker](https://docs.dapr.io/operations/hosting/self-hosted/self-hosted-with-docker/).
@@ -114,11 +114,11 @@ There are some slight differences in what you get as a result of this command -
 
 ### Running your application locally
 
-Once you have the CLI setup and initialised Dapr on your local machine, you can begin to execute Dapr alongside your application! The deployment steps will differ when you're deploying it into a live environment, such as Dev, QA or Prod (Dapr is typically hosted in Kubernetes in these types of environments, but more on that later). 
+Once you have the CLI setup and initialised Dapr on your local machine, you can begin to execute Dapr alongside your application! The deployment steps will differ when you're deploying it into a live environment, such as Dev, QA or Prod (Dapr is typically hosted in Kubernetes in these types of environments, but more on that later).
 
 > As usual, it would be recommended to have a separate non-production environment to test your deployment procedures ahead of a production rollout.
 
-To run the Dapr sidecar and your application side-by-side, you'll need to use the ``dapr run`` command. The CLI has a full reference [available here](https://docs.dapr.io/reference/cli/dapr-run/). 
+To run the Dapr sidecar and your application side-by-side, you'll need to use the ``dapr run`` command. The CLI has a full reference [available here](https://docs.dapr.io/reference/cli/dapr-run/).
 
 It boils down to a few key aspects (``dapr run [flags] [command]``).
 
@@ -135,7 +135,7 @@ We haven't configured those, or told our application how to interact with them. 
 
 ### What are Dapr components?
 
-The [Dapr docs](https://docs.dapr.io/concepts/terminology/) describe components as 	*Modular types of functionality that are used either individually or with a collection of other components, by a Dapr building block*.
+The [Dapr docs](https://docs.dapr.io/concepts/terminology/) describe components as *Modular types of functionality that are used either individually or with a collection of other components, by a Dapr building block*.
 
 Effectively, they are a way to take the 'common denominator' approach to building your dependencies as building blocks. Your application shouldn't need to worry or care whether it's talking to a specific type of queue. It talks to a Pub/Sub component, and Dapr (as well as your Dapr configuration) deals with the rest.
 
@@ -157,9 +157,9 @@ To avoid this post becoming too long, we'll create an end-to-end example in a se
 
 ## Running Dapr in a remote environment
 
-You're most probably targeting a Kubernetes environment for your remote Dapr deployment. 
+You're most probably targeting a Kubernetes environment for your remote Dapr deployment.
 
-The initialisation process using the Dapr CLI is very similar to the local version. Rather than just using ``dapr init``, you'll need to append the ``-k`` flag. 
+The initialisation process using the Dapr CLI is very similar to the local version. Rather than just using ``dapr init``, you'll need to append the ``-k`` flag.
 
 > **Important:** Before running the ``dapr init -k`` command, make sure that you have the correct context set in kubectl.
 
@@ -176,7 +176,7 @@ Once you have the control plane in place, you can begin deploying your workload 
 
 I'll cover this in more detail in a separate blog post. I'll also post another writeup on using DAPR (and KEDA) in Azure Container Apps.
 
-> **Note:** If you're intrigued and plan to get the control plane configured, there are some [production guidelines](https://docs.dapr.io/operations/hosting/kubernetes/kubernetes-production/) available on the Dapr docs as well. 
+> **Note:** If you're intrigued and plan to get the control plane configured, there are some [production guidelines](https://docs.dapr.io/operations/hosting/kubernetes/kubernetes-production/) available on the Dapr docs as well.
 
 ## What is the state of Dapr at time of writing?
 
