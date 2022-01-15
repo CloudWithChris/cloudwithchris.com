@@ -16,7 +16,7 @@ podcast_bytes: "29936196"
 podcast_duration: "31:14.000"
 podcast_file: V018 - Weekly Technology Vlog.mp3
 series:
-- Weekly Vlog
+- Tech Roundup
 tags:
 - Azure
 - AzureDevOps

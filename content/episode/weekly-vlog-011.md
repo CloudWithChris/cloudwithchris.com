@@ -15,7 +15,7 @@ podcast_bytes: "22949888"
 podcast_duration: "23:49.000"
 podcast_file: V011 - Weekly Technology Vlog.mp3
 series:
-- Weekly Vlog
+- Tech Roundup
 tags:
 - Podcast
 - Sessionize

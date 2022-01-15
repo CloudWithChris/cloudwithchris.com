@@ -16,7 +16,7 @@ podcast_bytes: "89554944"
 podcast_duration: "01:33:16.000"
 podcast_file: V036 - Weekly Technology Vlog.mp3
 series:
-- Weekly Vlog
+- Tech Roundup
 tags:
 - Gaming
 - Community

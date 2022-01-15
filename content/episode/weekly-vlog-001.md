@@ -18,7 +18,7 @@ podcast_bytes: "24547328"
 podcast_duration: "25:31.000"
 podcast_file: V001 - Weekly Technology Vlog.mp3
 series:
-- Weekly Vlog
+- Tech Roundup
 tags:
 - Open Source
 - Hugo

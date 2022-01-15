@@ -16,7 +16,7 @@ podcast_bytes: "33836611"
 podcast_duration: "35:13.000"
 podcast_file: V022 - Weekly Technology Vlog.mp3
 series:
-- Weekly Vlog
+- Tech Roundup
 tags:
 - Azure
 - Microsoft Build

@@ -16,7 +16,7 @@ podcast_bytes: "25g935872"
 podcast_duration: "27:00.000"
 podcast_file: V008 - Weekly Technology Vlog.mp3
 series:
-- Weekly Vlog
+- Tech Roundup
 tags:
 - Career
 - Cloud

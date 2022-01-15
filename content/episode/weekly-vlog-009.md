@@ -16,7 +16,7 @@ podcast_bytes: "23048192"
 podcast_duration: "23:59.000"
 podcast_file: V009 - Weekly Technology Vlog.mp3
 series:
-- Weekly Vlog
+- Tech Roundup
 tags:
 - Podcast
 - Ignite

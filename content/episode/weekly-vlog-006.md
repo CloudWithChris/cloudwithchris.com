@@ -16,7 +16,7 @@ podcast_bytes: "28209152"
 podcast_duration: "29:26.000"
 podcast_file: V006 - Weekly Technology Vlog.mp3
 series:
-- Weekly Vlog
+- Tech Roundup
 tags:
 - Mental Health
 - Gaming

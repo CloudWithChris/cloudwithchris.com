@@ -16,7 +16,7 @@ podcast_bytes: "15577088"
 podcast_duration: "16:10.000"
 podcast_file: V005 - Weekly Technology Vlog.mp3
 series:
-- Weekly Vlog
+- Tech Roundup
 tags:
 - Mental Health
 - Azure

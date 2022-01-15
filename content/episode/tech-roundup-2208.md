@@ -1,9 +1,9 @@
 ---
-Date: "2021-10-10-T09:30:00Z"
+Date: "2022-08-28T10:00:00Z"
 Description: "In this session, Chris provides a series of updates focused around Azure, DevOps, GitHub and Cloud With Chris."
-PublishDate: "2021-10-10T09:30:00Z"
-Title: "V041 - Weekly Technology Vlog #41"
-episode: V041
+PublishDate: "2022-08-28T10:00:00Z"
+Title: "Cloud Tech Roundup - August 2022 update"
+episode: CTR2208
 image: img/cloudwithchrislogo.png # img/vlog/v002.jpg
 explicit: "no"
 guests: []
@@ -12,16 +12,17 @@ hosts:
 images:
 - img/default-social.png
 # - img/vlog/v002.jpg
-# podcast_bytes: "14103520"
+# podcast_bytes: "15103520"
 # podcast_duration: "14:19.000"
 # podcast_file: V002 - Weekly Technology Vlog.mp3
 series:
 - Tech Roundup
 tags:
-- Podcast
-- Sessionize
-- Azure
-- Community
-youtube: u7bBziGJw4
+#- Podcast
+#- Sessionize
+#- Azure
+#- Community
+# youtube: VyQI5SOsw3M
+upcoming: true
 ---
 In this session, Chris provides a series of updates focused around Azure, DevOps, GitHub and Cloud With Chris.
