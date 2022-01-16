@@ -14,5 +14,13 @@
     "X-Content-Type-Options": "nosniff",
     "Referrer-Policy": "strict-origin",
     "Permissions-Policy": "geolocation=(), camera=(), fullscreen=('https://youtube.com'), microphone=(), accelerometer=()"
+  },
+  "forwardingGateway": {
+    "allowedForwardedHosts": [
+      "cloudwithchris.com",
+      "www.cloudwithchris.com",
+      "staging.cloudwithchris.com",
+      "dev.cloudwithchris.com
+    ]
   }
 }
