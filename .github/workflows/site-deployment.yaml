@@ -124,7 +124,7 @@ jobs:
   deploy_prod:  
     if: github.event_name == 'push'
     runs-on: ubuntu-latest
-    needs: [compressor, lint, build]
+    needs: [lint, build]
     name: Deploy (Prod)
     environment:
       name: production.azure
