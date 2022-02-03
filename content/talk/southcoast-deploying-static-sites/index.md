@@ -3,11 +3,11 @@ Date: "2021-10-16T17:00:00Z"
 Description: "Did you know that Static Sites can help you build performant sites that easily scale globally? Better yet, they can be incredibly cost-effective!"
 PublishDate: "2021-10-16T15:30:00Z"
 Title: "Deploying Static Sites to Azure the cheap and performant way"
-image: img/talks/southcoastsummit.jpg
+image: images/southcoastsummit.jpg
 hosts:
 - chrisreddington
 images:
-- img/talks/southcoastsummit.jpg
+- images/southcoastsummit.jpg
 - img/cloudwithchris.png
 talkType: "Conference"
 eventName: "South Coast Summit"

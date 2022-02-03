@@ -4,14 +4,14 @@ Description: "In this video, chris provides another update on Cloud with Chris, 
 PublishDate: "2021-09-12T09:30:00Z"
 Title: "V037 - Weekly Technology Vlog #37 (GitHub Issues Beta Special!)"
 episode: V037
-image: img/vlog/v037.jpg
+image: images/v037.jpg
 explicit: "no"
 guests: []
 hosts:
 - chrisreddington
 images:
 - img/default-social.png
-- img/vlog/v037.jpg
+- images/v037.jpg
 podcast_bytes: "31807880"
 podcast_duration: "33:07.000"
 podcast_file: V037 - Weekly Technology Vlog.mp3

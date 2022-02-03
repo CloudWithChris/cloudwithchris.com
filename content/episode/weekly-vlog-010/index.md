@@ -4,14 +4,14 @@ Description: "In this video, Chris updates on the Cloud With Chris content over 
 PublishDate: "2021-03-08T09:30:00Z"
 Title: 'V010 - Weekly Technology Vlog #10 (Episode backlog until Mid-July! New Microphone, Ignite Content!)'
 episode: V010
-image: img/vlog/v010.jpg
+image: images/v010.jpg
 explicit: "no"
 guests: []
 hosts:
 - chrisreddington
 images:
 - img/default-social.png
-- img/vlog/v010.jpg
+- images/v010.jpg
 podcast_bytes: "27938816"
 podcast_duration: "29:03.000"
 podcast_file: V010 - Weekly Technology Vlog.mp3

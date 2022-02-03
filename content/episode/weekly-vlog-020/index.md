@@ -4,14 +4,14 @@ Description: "Welcome to weekly Vlog #20! This one will start off focusing on Cl
 PublishDate: "2021-05-16T09:30:00Z"
 Title: "V020 - Weekly Technology Vlog #20"
 episode: V020
-image: img/vlog/v020.jpg
+image: images/v020.jpg
 explicit: "no"
 guests: []
 hosts:
 - chrisreddington
 images:
 - img/default-social.png
-- img/vlog/v020.jpg
+- images/v020.jpg
 podcast_bytes: "24965120"
 podcast_duration: "25:59.000"
 podcast_file: V020 - Weekly Technology Vlog.mp3

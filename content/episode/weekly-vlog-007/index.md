@@ -4,14 +4,14 @@ Description: "In this video, Chris updates on cloud with Chris from the recent w
 PublishDate: "2021-02-15T09:30:00Z"
 Title: 'V007 - Weekly Technology Vlog #7 (Recap, NEW SITE, NEWS!)'
 episode: V007
-image: img/vlog/v007.jpg
+image: images/v007.jpg
 explicit: "no"
 guests: []
 hosts:
 - chrisreddington
 images:
 - img/default-social.png
-- img/vlog/v007.jpg
+- images/v007.jpg
 podcast_bytes: "27189248"
 podcast_duration: "28:22.000"
 podcast_file: V007 - Weekly Technology Vlog.mp3

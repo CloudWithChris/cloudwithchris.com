@@ -4,14 +4,14 @@ Description: "In this video, chris provides another update on Cloud with Chris, 
 PublishDate: "2021-08-01T09:30:00Z"
 Title: "V031 - Weekly Technology Vlog #31"
 episode: V031
-image: img/vlog/v031.jpg
+image: images/v031.jpg
 explicit: "no"
 guests: []
 hosts:
 - chrisreddington
 images:
 - img/default-social.png
-- img/vlog/v031.jpg
+- images/v031.jpg
 podcast_bytes: "32473088"
 podcast_duration: "33:46.000"
 podcast_file: V031 - Weekly Technology Vlog.mp3

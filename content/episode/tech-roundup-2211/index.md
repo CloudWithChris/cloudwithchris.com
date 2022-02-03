@@ -4,14 +4,14 @@ Description: "In this session, Chris provides a series of updates focused around
 PublishDate: "2022-11-27T10:00:00Z"
 Title: "Cloud Tech Roundup - November 2022 update"
 episode: CTR2211
-image: img/cloudwithchrislogo.png # img/vlog/v002.jpg
+image: img/cloudwithchrislogo.png # images/v002.jpg
 explicit: "no"
 guests: []
 hosts:
 - chrisreddington
 images:
 - img/default-social.png
-# - img/vlog/v002.jpg
+# - images/v002.jpg
 # podcast_bytes: "15103520"
 # podcast_duration: "14:19.000"
 # podcast_file: V002 - Weekly Technology Vlog.mp3

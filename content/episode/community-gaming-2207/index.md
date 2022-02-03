@@ -4,15 +4,15 @@ Description: "Join members of the cloud community as they talk through what's to
 PublishDate: "2022-07-06T19:00:00Z"
 Title: "Community Gaming - Sea of Thieves"
 episode: CG2207
-image: img/cloudwithchrislogo.png # img/vlog/v002.jpg
+image: img/cloudwithchrislogo.png # images/v002.jpg
 explicit: "no"
 guests: []
 hosts:
 - chrisreddington
 images:
 - img/default-social.png
-# - img/vlog/among-us.jpg
-# - img/vlog/v002.jpg
+# - images/among-us.jpg
+# - images/v002.jpg
 # podcast_bytes: "15003520"
 # podcast_duration: "14:19.000"
 # podcast_file: V002 - Weekly Technology Vlog.mp3

@@ -4,14 +4,14 @@ Description: "In this video, chris provides another update on Cloud with Chris, 
 PublishDate: "2021-09-26T09:30:00Z"
 Title: "V038 / V039 - Weekly Technology Vlog #38 and #39"
 episode: V038-39
-image: img/cloudwithchrislogo.png # img/vlog/v002.jpg
+image: img/cloudwithchrislogo.png # images/v002.jpg
 explicit: "no"
 guests: []
 hosts:
 - chrisreddington
 images:
 - img/default-social.png
-# - img/vlog/v002.jpg
+# - images/v002.jpg
 # podcast_bytes: "13803520"
 # podcast_duration: "14:19.000"
 # podcast_file: V002 - Weekly Technology Vlog.mp3

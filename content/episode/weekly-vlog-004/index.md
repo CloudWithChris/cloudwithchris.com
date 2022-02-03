@@ -4,14 +4,14 @@ Description: "In this video, Chris updates on Cloud With Chris from the last wee
 PublishDate: "2021-01-25T09:30:00Z"
 Title: 'V004 - Weekly Technology Vlog #4 (JamStack + Cloud, Upcoming Talks and Tech News)'
 episode: V004
-image: img/vlog/v004.jpg
+image: images/v004.jpg
 explicit: "no"
 guests: []
 hosts:
 - chrisreddington
 images:
 - img/default-social.png
-- img/vlog/v004.jpg
+- images/v004.jpg
 podcast_bytes: "22503424"
 podcast_duration: "23:22.000"
 podcast_file: V004 - Weekly Technology Vlog.mp3

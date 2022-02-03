@@ -4,13 +4,13 @@ Description: "In this video, Chris provides another update (Update #16!) on Clou
 PublishDate: "2021-04-19T09:30:00Z"
 Title: "V016 - Weekly Technology Vlog #16"
 episode: V016
-image: img/vlog/v016.jpg
+image: images/v016.jpg
 explicit: "no"
 guests: []
 hosts:
 - chrisreddington
 images:
-- img/vlog/v016.jpg
+- images/v016.jpg
 - img/default-social.png
 podcast_bytes: "30806016"
 podcast_duration: "32:09.000"

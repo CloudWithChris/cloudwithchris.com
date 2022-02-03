@@ -4,14 +4,14 @@ Description: "Welcome to weekly Vlog #19! We'll be covering the latest from Azur
 PublishDate: "2021-05-09T09:30:00Z"
 Title: "V019 - Weekly Technology Vlog #19"
 episode: V019
-image: img/vlog/v019.jpg
+image: images/v019.jpg
 explicit: "no"
 guests: []
 hosts:
 - chrisreddington
 images:
 - img/default-social.png
-- img/vlog/v019.jpg
+- images/v019.jpg
 podcast_bytes: "23564288"
 podcast_duration: "24:30.000"
 podcast_file: V019 - Weekly Technology Vlog.mp3

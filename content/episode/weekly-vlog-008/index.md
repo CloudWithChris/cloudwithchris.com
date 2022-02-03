@@ -4,14 +4,14 @@ Description: "In this video, Chris recaps the events over the last week, includi
 PublishDate: "2021-02-22T09:30:00Z"
 Title: 'V008 - Weekly Technology Vlog #8 (Changing Role, Guest Appearances, LOTS of Azure News)'
 episode: V008
-image: img/vlog/v008.jpg
+image: images/v008.jpg
 explicit: "no"
 guests: []
 hosts:
 - chrisreddington
 images:
 - img/default-social.png
-- img/vlog/v008.jpg
+- images/v008.jpg
 podcast_bytes: "25g935872"
 podcast_duration: "27:00.000"
 podcast_file: V008 - Weekly Technology Vlog.mp3

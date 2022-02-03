@@ -4,14 +4,14 @@ Description: "In this video, Chris updates on Cloud With Chris from the last wee
 PublishDate: "2021-01-18T09:30:00Z"
 Title: 'V003 - Weekly Technology Vlog #3 (Contributing to OSS, Azure Thames Valley and Tech News)'
 episode: V003
-image: img/vlog/v003.jpg
+image: images/v003.jpg
 explicit: "no"
 guests: []
 hosts:
 - chrisreddington
 images:
 - img/default-social.png
-- img/vlog/v003.jpg
+- images/v003.jpg
 podcast_bytes: "18407424"
 podcast_duration: "19:07.000"
 podcast_file: V003 - Weekly Technology Vlog.mp3

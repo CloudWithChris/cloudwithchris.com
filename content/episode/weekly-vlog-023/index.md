@@ -4,14 +4,14 @@ Description: "In this video, Chris provides another update on Cloud with Chris, 
 PublishDate: "2021-06-06T09:30:00Z"
 Title: "V023 - Weekly Technology Vlog #23"
 episode: V023
-image: img/vlog/v023.jpg
+image: images/v023.jpg
 explicit: "no"
 guests: []
 hosts:
 - chrisreddington
 images:
 - img/default-social.png
-- img/vlog/v023.jpg
+- images/v023.jpg
 podcast_bytes: "33189888"
 podcast_duration: "34:32.000"
 podcast_file: V023 - Weekly Technology Vlog.mp3

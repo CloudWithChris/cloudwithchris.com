@@ -4,7 +4,7 @@ Description: "ToolUp Tuesday is all about showing the thought process and decisi
 PublishDate: "2022-02-08T19:30:00Z"
 Title: "ToolUp Tuesday - February 2022"
 episode: TT2202
-image: img/cloudwithchrislogo.png # img/vlog/v002.jpg
+image: img/cloudwithchrislogo.png # images/v002.jpg
 explicit: "no"
 guests: []
 hosts:
@@ -12,7 +12,7 @@ hosts:
 - mattfortunka
 images:
 - img/default-social.png
-# - img/vlog/v002.jpg
+# - images/v002.jpg
 # podcast_bytes: "15103520"
 # podcast_duration: "14:19.000"
 # podcast_file: V002 - Weekly Technology Vlog.mp3

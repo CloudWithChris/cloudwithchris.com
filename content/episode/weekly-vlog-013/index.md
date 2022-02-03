@@ -4,14 +4,14 @@ Description: "In this video, Chris provides an update on the Azure Blogs (lots o
 PublishDate: "2021-03-28T09:30:00Z"
 Title: "V013 - Weekly Technology Vlog #13 (Lots of Azure, DevOps & GitHub) Blogs, Quick-fire Azure Updates"
 episode: V013
-image: img/vlog/v013.jpg
+image: images/v013.jpg
 explicit: "no"
 guests: []
 hosts:
 - chrisreddington
 images:
 - img/default-social.png
-- img/vlog/v013.jpg
+- images/v013.jpg
 podcast_bytes: "28598272"
 podcast_duration: 29:42.000"
 podcast_file: V013 - Weekly Technology Vlog.mp3

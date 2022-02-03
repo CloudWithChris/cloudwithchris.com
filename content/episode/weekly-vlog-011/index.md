@@ -4,13 +4,13 @@ Description: "Almost 3 months of vlogging! Chris talks about his recent episodes
 PublishDate: "2021-03-15T09:30:00Z"
 Title: 'V011 - Weekly Technology Vlog #11'
 episode: V011
-image: img/vlog/v011.jpg
+image: images/v011.jpg
 explicit: "no"
 guests: []
 hosts:
 - chrisreddington
 images:
- - img/vlog/v011.jpg
+ - images/v011.jpg
 podcast_bytes: "22949888"
 podcast_duration: "23:49.000"
 podcast_file: V011 - Weekly Technology Vlog.mp3

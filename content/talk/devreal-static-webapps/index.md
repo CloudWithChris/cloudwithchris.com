@@ -4,11 +4,11 @@ Description: "We often hear about Kubernetes, App Services, VMs and more. What a
 We will get hands-on, showing how these resources come together into a Cloud Architecture."
 PublishDate: "2021-06-09T15:30:00Z"
 Title: "Static Web Apps in Azure | DEVREAL.io"
-image: img/talks/devreal-io.jpg
+image: images/devreal-io.jpg
 hosts:
 - chrisreddington
 images:
-- img/talks/devreal-io.jpg
+- images/devreal-io.jpg
 - img/cloudwithchris.png
 talkType: "Meetup"
 eventName: "DEVREAL.io"

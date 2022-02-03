@@ -4,14 +4,14 @@ Description: "In this video, chris provides another update on Cloud with Chris, 
 PublishDate: "2021-08-30T09:30:00Z"
 Title: "V035 - Weekly Technology Vlog #35"
 episode: V035
-image: img/vlog/v035.jpg
+image: images/v035.jpg
 explicit: "no"
 guests: []
 hosts:
 - chrisreddington
 images:
 - img/default-social.png
-- img/vlog/v035.jpg
+- images/v035.jpg
 podcast_bytes: "33620989"
 podcast_duration: "35:00.000"
 podcast_file: V035 - Weekly Technology Vlog.mp3

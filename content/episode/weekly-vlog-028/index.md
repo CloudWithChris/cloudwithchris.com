@@ -4,14 +4,14 @@ Description: "In this session, Chris provides a series of updates focused around
 PublishDate: "2021-07-11T09:30:00Z"
 Title: "V028 - Weekly Technology Vlog #28"
 episode: V028
-image: img/vlog/v028.jpg
+image: images/v028.jpg
 explicit: "no"
 guests: []
 hosts:
 - chrisreddington
 images:
 - img/default-social.png
-- img/vlog/v028.jpg
+- images/v028.jpg
 podcast_bytes: "37081088"
 podcast_duration: "38:35.000"
 podcast_file: V028 - Weekly Technology Vlog.mp3

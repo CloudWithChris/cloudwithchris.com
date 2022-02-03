@@ -4,14 +4,14 @@ Description: "In this video, Chris lays out his second weekly technology vlog up
 PublishDate: "2021-01-11T09:30:00Z"
 Title: 'V002 - Weekly Technology Vlog #2 (Show Updates, Azure Updates, CloudFamily.info)'
 episode: V002
-image: img/vlog/v002.jpg
+image: images/v002.jpg
 explicit: "no"
 guests: []
 hosts:
 - chrisreddington
 images:
 - img/default-social.png
-- img/vlog/v002.jpg
+- images/v002.jpg
 podcast_bytes: "13803520"
 podcast_duration: "14:19.000"
 podcast_file: V002 - Weekly Technology Vlog.mp3

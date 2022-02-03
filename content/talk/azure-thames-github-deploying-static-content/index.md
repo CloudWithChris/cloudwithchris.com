@@ -3,11 +3,11 @@ Date: "2021-07-20T18:30:00Z"
 Description: "Chris is a Cloud Solution Architect at Microsoft. He'll provide an overview of GitHub and explore how GitHub Actions can be used to build and deploy your own static sites (or other apps!) to Azure."
 PublishDate: "2021-07-20T18:30:00Z"
 Title: "How GitHub Actions can help in building and deploying a static website and more"
-image: img/talks/azurethamesvalley.jpg
+image: images/azurethamesvalley.jpg
 hosts:
 - chrisreddington
 images:
-- img/talks/azurethamesvalley.jpg
+- images/azurethamesvalley.jpg
 - img/cloudwithchris.png
 talkType: "Meetup"
 eventName: "Azure Thames Valley"

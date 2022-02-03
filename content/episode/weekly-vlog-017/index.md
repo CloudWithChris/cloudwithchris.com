@@ -4,14 +4,14 @@ Description: "Welcome to weekly Vlog #17! We'll be covering the latest from Azur
 PublishDate: "2021-04-26T09:30:00Z"
 Title: "V017 - Weekly Technology Vlog #17"
 episode: V017
-image: img/vlog/v017.jpg
+image: images/v017.jpg
 explicit: "no"
 guests: []
 hosts:
 - chrisreddington
 images:
 - img/default-social.png
-- img/vlog/v017.jpg
+- images/v017.jpg
 podcast_bytes: "27856896"
 podcast_duration: "29:00.000"
 podcast_file: V017 - Weekly Technology Vlog.mp3

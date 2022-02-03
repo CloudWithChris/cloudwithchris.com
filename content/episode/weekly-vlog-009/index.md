@@ -4,14 +4,14 @@ Description: "In this video, Chris recaps over the last week, including The GitH
 PublishDate: "2021-03-01T09:30:00Z"
 Title: 'V009 - Weekly Technology Vlog #9 (1 year of Cloud With Chris, Azure Retirements, Microsoft Ignite)'
 episode: V009
-image: img/vlog/v009.jpg
+image: images/v009.jpg
 explicit: "no"
 guests: []
 hosts:
 - chrisreddington
 images:
 - img/default-social.png
-- img/vlog/v009.jpg
+- images/v009.jpg
 podcast_bytes: "23048192"
 podcast_duration: "23:59.000"
 podcast_file: V009 - Weekly Technology Vlog.mp3

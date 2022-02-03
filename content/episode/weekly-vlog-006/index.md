@@ -4,14 +4,14 @@ Description: "In this video, Chris updates on cloud with Chris from the recent w
 PublishDate: "2021-02-08T09:30:00Z"
 Title: 'V006 - Weekly Technology Vlog #6 (Recap, Coming Up and NEWS!)'
 episode: V006
-image: img/vlog/v006.png
+image: images/v006.png
 explicit: "no"
 guests: []
 hosts:
 - chrisreddington
 images:
 - img/default-social.png
-- img/vlog/v006.png
+- images/v006.png
 podcast_bytes: "28209152"
 podcast_duration: "29:26.000"
 podcast_file: V006 - Weekly Technology Vlog.mp3

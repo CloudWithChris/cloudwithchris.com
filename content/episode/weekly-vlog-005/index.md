@@ -4,14 +4,14 @@ Description: "In this video, Chris updates on cloud with Chris from the recent w
 PublishDate: "2021-02-01T09:30:00Z"
 Title: 'V005 - Weekly Technology Vlog #5 (My Setup, Architecture Patterns, Mental Health and NEWS)'
 episode: V005
-image: img/vlog/v005.jpg
+image: images/v005.jpg
 explicit: "no"
 guests: []
 hosts:
 - chrisreddington
 images:
 - img/default-social.png
-- img/vlog/v005.jpg
+- images/v005.jpg
 podcast_bytes: "15577088"
 podcast_duration: "16:10.000"
 podcast_file: V005 - Weekly Technology Vlog.mp3

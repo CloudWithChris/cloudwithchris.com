@@ -11,7 +11,7 @@ hosts:
 - chrisreddington
 images:
 - img/default-social.png
-- img/vlog/among-us.jpg
+- images/among-us.jpg
 # podcast_bytes: "14003520"
 # podcast_duration: "14:19.000"
 # podcast_file: V002 - Weekly Technology Vlog.mp3
