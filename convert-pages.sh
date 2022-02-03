@@ -1,6 +1,7 @@
 #!/bin/bash
 # content_directory ${1:-content}
-subdirectories=("blog" "episode" "person" "series" "talk")
+# subdirectories=("blog" "episode" "person" "series" "talk")
+subdirectories=("person")
 
 # Loop through each subfolder
 for subfolder in ${subdirectories[@]}; do
@@ -34,12 +35,12 @@ for subfolder in ${subdirectories[@]}; do
 
       if [ -d $images_folder ]; then
         echo "${section} ${folder_name} exists"
-        mv "${images_folder}/*" "${directory}/${folder_name}/images"
+        mv "${images_folder}" "${directory}/${folder_name}/images"
       fi
 
       if [ -f $image_in_static_folder ]; then
         echo "${section} ${image_in_static_folder} exists"
-        mv "${image_in_static_folder}/*" "${directory}/${folder_name}/images"
+        mv "${image_in_static_folder}" "${directory}/${folder_name}/images"
       fi
 
       rm $f
