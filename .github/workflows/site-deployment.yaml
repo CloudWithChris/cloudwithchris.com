@@ -94,7 +94,7 @@ jobs:
         tokenSuffix: '}#'
         files: '["config.yaml"]'
       env:
-        hostname: 'https://www.cloudwithchris.com'
+        hostname: ''
     - name: 'Build and Minify Hugo Contents'
       run: hugo --minify    
     - name: 'Upload Generated Static Content as Website Artifact'

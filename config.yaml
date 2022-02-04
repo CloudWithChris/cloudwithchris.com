@@ -2,7 +2,7 @@
 # Core Site Settings
 #####
 
-baseURL: "#{hostname}#" # BaseURL of the website, used in RSS feeds and site rendering
+# baseURL: "#{hostname}#" # BaseURL of the website, used in RSS feeds and site rendering
 buildFuture: true         # Include content with publishdate in the future
 enableRobotsTXT: true     # Generate a customized robots.txt
 languageCode: "en-gb"     # Used as part of the XML generation
