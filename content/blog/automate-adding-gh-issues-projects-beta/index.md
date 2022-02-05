@@ -102,7 +102,7 @@ You may recall that we triggered the GitHub Action workflow when an issue was op
 
 We once again use the ``gh api graphql`` command to query the GitHub API. Rather than using a query, we're using a mutation. The mutation is used to add an issue to a project.
 
-> **Note:** Queries and mutations are different. A query is used to get data from the API. A mutation is used to add data to the API. These are both concepts in GraphQL. Futher details are available on the [GraphQL Docs](https://graphql.org/learn/queries-mutations/).
+> **Note:** Queries and mutations are different. A query is used to get data from the API. A mutation is used to add data to the API. These are both concepts in GraphQL. Further details are available on the [GraphQL Docs](https://graphql.org/learn/queries-mutations/).
 
 The syntax of the command is very similar to the query syntax. The main difference is that the mutation is prefixed with ``mutation``. We still pass in parameters. This time, we're passing in the project ID and the issue ID.
 
@@ -191,4 +191,3 @@ Now take a step back and think about the steps you've taken to get to this point
 ![Example of a GitHub Project Board with different states. Some of the GitHub issues have been manually moved between the states (based on progression of the issues). The Pull Request was automatically added, due to another very similar workflow that I have provisioned on the repository.](images/github-projects-workflows.jpg "Example of a GitHub Project Board with different states. Some of the GitHub issues have been manually moved between the states (based on progression of the issues). The Pull Request was automatically added, due to another very similar workflow that I have provisioned on the repository.")
 
 So there you have it. GitHub Actions are awesome! It's not just about CI/CD, but can also be used to react to GitHub events. From a Project Management standpoint, it's a great tool to have in your toolbox! I'm already using it in my projects, and I'm excited to see how it can be used in the future. I'd love to hear your thoughts on this! Are you using GitHub Actions to help with project management? Let me know in the comments below!
-
