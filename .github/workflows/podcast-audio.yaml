@@ -2,7 +2,7 @@ name: "Podcast Audio Upload"
 on: 
   push:
       branches:
-        - master
+        - main
       paths:
         - "podcast_audio/**"
 jobs:

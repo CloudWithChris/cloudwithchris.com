@@ -2,7 +2,7 @@ name: Cross Poster
 on: 
   push:
     branches:
-      - master
+      - main
 jobs:
   crosspost-episode:   
     runs-on: ubuntu-latest

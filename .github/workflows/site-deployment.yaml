@@ -1,21 +1,21 @@
 name: Azure Static Web Apps CI/CD
 
 # This GitHub Action workflow triggers in two scenarios - 
-# 1. When a push is made to the master branch
+# 1. When a push is made to the main branch
 # 2. When a pull request is either opened, synchronized, reopened,
-#    or closed, and the target is the master branch. If the change
+#    or closed, and the target is the main branch. If the change
 #    is just to the podcast_audio file, then it is ignored.
 
 on:
   push:
     branches:
-      - master
+      - main
     paths-ignore:
       - 'podcast_audio/**'
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
-      - master
+      - main
     paths-ignore:
       - 'podcast_audio/**'
 
@@ -31,7 +31,7 @@ on:
 # 3.  Deploy the website to Azure Static Web Apps
 # 3.1 If the workflow was triggered by a pull request (not a closed activity), then publish the static assets
 #     to the static web app. This is associated with the GitHub Actions staging.azure environment.
-# 3.2 If the workflow was triggered by a push to master, then publish the static assets to the static
+# 3.2 If the workflow was triggered by a push to main, then publish the static assets to the static
 #     web app. This is associated with the GitHub Actions production.azure environment, so requires manual approval.
 #
 # 4   If the workflow was triggered by a Pull Request close event, then close the staging sites which are open.
@@ -70,7 +70,7 @@ jobs:
         env:
           VALIDATE_ALL_CODEBASE: false
           FILTER_REGEX_INCLUDE: .*content/.*
-          DEFAULT_BRANCH: master
+          DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VALIDATE_JSCPD: false
   # A set of steps used to render the website from the markdown, theme and assets into the HTML, CSS, JS and images that are delivered to a user.
