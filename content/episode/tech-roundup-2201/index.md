@@ -22,7 +22,6 @@ tags:
 #- Sessionize
 #- Azure
 #- Community
-# youtube: VyQI5SOsw3M
-upcoming: true
+youtube: d6EO8ZoP29w
 ---
 In this session, Chris provides a series of updates focused around Azure, DevOps, GitHub and Cloud With Chris.

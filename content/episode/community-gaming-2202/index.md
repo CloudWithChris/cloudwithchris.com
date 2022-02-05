@@ -25,7 +25,6 @@ tags:
 - Azure DevOps
 - GitHub
 - Among Us
-# youtube: VyQI5SOsw3M
-upcoming: true
+youtube: -54DkRL24aA
 ---
 Join members of the cloud community as they talk through what's top of mind, the latest trends, and have a bit of fun in a game or two! This takes place on the first Wednesday of each month
