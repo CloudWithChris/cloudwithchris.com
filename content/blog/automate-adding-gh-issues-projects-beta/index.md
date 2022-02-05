@@ -50,7 +50,7 @@ For this scenario, I'll be using a GitHub Action workflow that is triggered when
 
 A GitHub Action Job is a set of steps that are executed in a GitHub Action workflow. A GitHub Action workflow can have multiple jobs. Each step is either a GitHub Action or a shell command. Each job is effectively ran on a different machine, so you need to be careful about how you set up your jobs.
 
-GitHub provides a number of hosted runners to run your GitHub Actions in a managed environment. These runners are available for free on Open Source repositories, and there is a number of minutes provided to you to run your GitHub Actions in a private repository. These hosted runners are available on Windows, Linux, and MacOS.
+GitHub provides a number of hosted runners to run your GitHub Actions in a managed environment. These runners are available for free on Open Source repositories, and there is a number of minutes provided to you to run your GitHub Actions in a private repository. These hosted runners are available on Windows, Linux, and macOS.
 
 A job contains a step property, which is an array of steps. Each step is either a GitHub Action or a shell command.
 
