@@ -33,7 +33,7 @@ I wanted to quickly and easily replace all of the images referenced with the `![
 
 Fortunately, Visual Studio Code [Find/Replace](https://code.visualstudio.com/docs/editor/codebasics#_advanced-find-and-replace-options) has some advanced functionality that allows you to use Regular Expressions when using the Find/Replace feature. This means that you can not only use regular expressions to find certain patterns, but can use capture groups to extract specific parts of the pattern. You can then use those capture groups to replace the pattern with the desired outcome.
 
-That's exactly what I did with my images. I used a regex to identify all images using the `![](image.png)` syntax, and used a capture group to extract the descriptions already in place for those images. I then referenced the variable of that capture group, to output the text as a caption.
+That's exactly what I did with my images. I used a regular expression to identify all images using the `![](image.png)` syntax, and used a capture group to extract the descriptions already in place for those images. I then referenced the variable of that capture group, to output the text as a caption.
 
 It took me less than five minutes or so to do this. Don't worry, I'm not a regular expression expert! But there are some great tools out there to help you with regular expressions. One of my personal favourites is [Regex101](https://regex101.com/). It has personally been helpful for me when I'm trying to figure out a pattern.
 
