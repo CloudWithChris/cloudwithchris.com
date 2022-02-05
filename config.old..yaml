@@ -1,0 +1,311 @@
+baseURL: "#{hostname}#"
+buildFuture: true
+googleAnalytics: "UA-185951371-1"
+languageCode: "en-gb"
+theme: "hugo-creator"
+title: "Cloud With Chris"
+enableRobotsTXT: true
+
+related:
+  includeNewer: false
+  indices:
+  - name: tags
+    weight: 100
+  - name: title
+    weight: 10
+  - name: date
+    weight: 20
+  threshold: 80
+  toLower: true
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+menu:
+  footer:
+    - name: "Get Involved"
+      weight: 1
+      url: "https://sessionize.com/CloudWithChris"
+    - name: "Code of Conduct"
+      weight: 1
+      url: "/code-of-conduct"
+    - name: "Privacy"
+      weight: 2
+      url: "/privacy-policy"
+    - name: "Cookies"
+      weight: 3
+      url: "/cookie-policy"
+  main:
+    - name: "Home"
+      weight: 1
+      url: "/"
+    - name: "About"
+      weight: 2
+      url: "/about"
+    - name: "Episodes"
+      identifier: "episodes"
+      weight: 3
+      url: "#"
+    - name: "Past"
+      url: "/episode"
+      weight: 1
+      parent: "episodes"
+    - name: "Upcoming"
+      url: "/upcoming"
+      weight: 2
+      parent: "episodes"
+    - name: "Blog"
+      weight: 4
+      url: "/Blog"
+    - name: "Talks"
+      weight: 5
+      url: "/talk"
+    - name: "People"
+      weight: 6
+      url: "/person"
+    - name: "Series"
+      weight: 7
+      url: "/series"
+
+module:
+  mounts:
+    - source: "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+      target: "assets/js/bootstrap.bundle.min.js"
+    - source: "node_modules/bootstrap/scss"
+      target: "assets/sass/bootstrap"
+    - source: "./node_modules/@fortawesome/fontawesome-free/scss"
+      target: "assets/sass/fontawesome"
+    - source: "./node_modules/@fortawesome/fontawesome-free/webfonts"
+      target: "static/webfonts"
+    - source: content
+      target: content
+    - source: static
+      target: static
+    - source: layouts
+      target: layouts
+    - source: data
+      target: data
+    - source: assets
+      target: assets
+    - source: i18n
+      target: i18n
+    - source: archetypes
+      target: archetypes
+
+outputs:
+  home:
+    - "HTML"
+    - "RSS"
+    - "JSON"
+
+params:
+  about_logo: "/img/cloudwithchrislogo.png"
+  author: "Chris Reddington"
+  copyright:
+    established: "2020"
+    notice: "[Chris Reddington](https://www.christianreddington.co.uk). Proudly running using [Hugo](https://gohugo.io/)."
+    additional_information: "Theme created by Chris Reddington, building upon [Matt Stratton's Castanet Theme](https://github.com/mattstratton/castanet)"
+  itunes_subscribe: "https://podcasts.apple.com/gb/podcast/cloud-with-chris/id1499633784"
+  spotify_subscribe: "https://open.spotify.com/show/3oBrdKm5grzl58GBiV0j2y"
+  google_play_subscribe: "https://podcasts.google.com/feed/aHR0cHM6Ly93d3cuY2xvdWR3aXRoY2hyaXMuY29tL2VwaXNvZGUvaW5kZXgueG1s?sa=X&ved=0CAMQ4aUDahcKEwiwsr2N1ePtAhUAAAAAHQAAAAAQBA"
+  stitcher_subscribe: "https://www.stitcher.com/s?fid=507667&refid=stpr"
+  pocketcasts_subscribe: "https://pca.st/u5t985sn"
+  description: "Exploring Cloud concepts with Chris Reddington (Welsh Tech Geek, Cloud Advocate, Musical Theatre Enthusiast and Improving Improviser!). We will regularly invite guests to talk about their experiences with the cloud and hear about some of the lessons learned around their cloud journey. Cloud with Chris is a community-driven personal podcast. Content from episodes do not represent the views of any company or organisation."
+  language_name: "English"
+  media_prefix: "https://podcasts.cloudwithchris.com/"
+  ogimage: "/img/cloudwithchrislogo.png"
+  audio_player: "default" #default, podscribe
+
+  channels:
+    apple: "https://podcasts.apple.com/gb/podcast/cloud-with-chris/id1499633784"
+    google: "https://podcasts.google.com/feed/aHR0cHM6Ly93d3cuY2xvdWR3aXRoY2hyaXMuY29tL2VwaXNvZGUvaW5kZXgueG1s?sa=X&ved=0CAMQ4aUDahcKEwiwsr2N1ePtAhUAAAAAHQAAAAAQBA"
+    spotify: "https://open.spotify.com/show/3oBrdKm5grzl58GBiV0j2y"
+
+  feed:
+    copyright: "Copyright 2020 Chris Reddington" #do not use markdown in this field; it is used in the feed
+    itunes_subtitle: "Exploring Cloud concepts with Chris Reddington!" #no markdown or HTML
+    itunes_author: "Chris Reddington" #no markdown or HTML
+    itunes_summary: "Exploring Cloud concepts with Chris Reddington (Welsh Tech Geek, Cloud Advocate, Musical Theatre Enthusiast and Improving Improviser!). We will regularly invite guests to talk about their experiences with the cloud and hear about some of the lessons learned around their cloud journey."
+    itunes_owner_name: "Chris Reddington"
+    itunes_owner_email: "chris@cloudwithchris.com" #contains the e-mail address that will be used to contact the owner of the Podcast for communication specifically about their Podcast on iTunes. It will not be publicly displayed on iTunes.
+    itunes_image: "https://www.cloudwithchris.com/img/cloudwithchrislogo.png" #fqdn to the image art for your podcast
+    itunes_top_category: "Technology"
+    itunes_first_sub_category: "Podcasting"
+    itunes_second_sub_category: "Software How-To"
+    language: "en-gb"
+    explicit: "no"
+  giscus:
+    repository: "CloudWithChris/cloudwithchris.com"
+    repository_id: "MDEwOlJlcG9zaXRvcnkyNDE0OTQ5NTY"
+    category: "Content Discussion"
+    category_id: "DIC_kwDODmTrrM4B-kuQ"
+    mapping: "pathname"
+    reactions_enabled: 1
+    emit_metadata: 0
+    theme: "light"
+
+  keywords:
+  - cloud
+  - azure
+  - gcp
+  - aws
+  - chris reddington
+  - cloud tutorials
+  - cloud design patterns
+  - devops how to
+  - how to deploy using github actions
+  - how to design for the cloud
+  - cloud architecture
+  - azure architecture center
+  - google cloud platform
+  - amazon web services
+  - christian reddington
+  - github
+  - github actions
+  - github discussions
+  - microsoft
+  - github issues
+  - amazon
+  - google
+  - SLO
+  - SLA
+  - RTO
+  - RPO
+  - non-functional requirements
+  - functional requirements
+  - requirements
+  - cost management
+  - cloud governance
+  - cost control
+  - resource governance
+  - cloud recommended practices
+  - cloud best practices
+  - learn cloud
+  - learn Azure
+  - Microsoft Azure
+  - how to get started with azure
+  - how to keep up to date with azure
+  - technology podcast
+  - technology vlog
+  - azure vlog
+  - azure podcast
+  - cloud podcast
+  - cloud vlog
+  - cloud content
+  - azure content
+  - github content
+  - github podcast
+  - github vlog
+  - azure design patterns
+  - kubernetes
+  - azure kubernetes service
+  - azure app service
+  - platform as a service
+  - infrastructure as a service
+  - software as a service
+  - cloud gaming
+  - gaming
+  - game server
+  - application development
+  - software development
+  - devops
+  - liveops
+  - Continuous Integration
+  - Continuous Deployment
+  - azure updates
+  - azure blog
+  - cloud blog
+  - github blog
+  - devops blog
+  - meetup speaker
+  - technology speaker
+  - keynote speaker
+  - technology keynote
+  - conference speaker
+  - technology conference speaker
+  - cloud gaming technology
+  - how cloud is influencing gaming
+  - cloud drops
+  - architecting for the cloud one pattern at a time
+  - tales from the real world
+  - cloud gaming notes
+  - tech roundup
+  - static websites
+  - hugo
+  - hugo on azure
+  - static content
+  - azure static web apps
+  - logic apps
+  - iPaas
+  - serverless
+  - Azure Functions
+  - key vault
+  - azure key vault
+  - CosmosDB
+  - Git
+  - version control
+  - .net
+  - dotnet
+  - terraform
+  - arm templates
+  - bicep
+  - cloud monitoring
+  - azure monitor
+  - azure governance
+  - compute resource consolidation
+  - queueing
+  - messaging
+  - publish subscriber patterns
+  - priority queue patterns
+  - pipes and filters pattern
+  - geode pattern
+  - health endpoint monitoring pattern
+  - gatekeeper pattern
+  - valet key pattern
+  - JAMStack
+  - static content hosting pattern
+  - github codespaces
+  - anti-corruption layer pattern
+  - gateway aggregation pattern
+  - gateway routing pattern
+  - event sourcing pattern
+  - cqrs pattern
+  - command query responsibility segregation pattern
+  - throttling pattern
+  - retry pattern
+  - circuit breaker pattern
+  - backends for frontends pattern
+  - sharding pattern
+  - index table pattern
+  - deployment stamps pattern
+  - cloud security
+  - devsecops
+
+  security:
+    csp:
+      scriptsrc: "'self' 'sha256-gGfpY7dnPWk8HlkvDWrera71KsSc8ykZzjfrSK5v0Uc=' 'sha256-h6mPt+zTGV05j1t+taNKqUJ7mJwkdlQodKeB8515jDk=' 'sha256-405OKKOPsTDkYfHPxU7K8FdsW9hddFr+bP1nUeMlKOY=' 'sha256-uIsijWsN0t6gAHj+NFdaZFGFvFHjycBuRTq0J4MJNqc=' 'sha256-uIsijWsN0t6gAHj+NFdaZFGFvFHjycBuRTq0J4MJNqc=' https://*.clarity.ms google-analytics.com https://ssl.google-analytics.com www.google-analytics.com https://giscus.app"
+      imgsrc: "'self' https://*.clarity.ms www.google-analytics.com https://www.google.com/ads/ga-audiences https://stats.g.doubleclick.net/r/collect"
+      connectsrc: "'self' www.google-analytics.com https://ampcid.google.com https://stats.g.doubleclick.net/j/collect https://*.clarity.ms"
+      framesrc: "https://*.youtube.com https://giscus.app"
+      childsrc: "none"
+      objectsrc: ""
+
+  social:
+    facebook: "CloudWithChris"
+    github: "chrisreddington/cloudwithchris.com"
+    twitter: "reddobowen"
+    twitter_domain: "cloudwithchris.com" # This domain shows in twitter cards as "View on `twitter_domain`"
+    youtube: "CloudWithChris"
+
+privacy:
+  googleAnalytics:
+    anonymizeIP: true
+    disable: false
+    respectDoNotTrack: true
+    useSessionStorage: false
+
+taxonomies:
+  tag: "tags"
+  series: "series"

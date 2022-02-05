@@ -4,7 +4,4 @@ sitemap:
   priority : 0.1
 layout: "search"
 ---
-
-Nothing on this page will be visible. This file exists solely to respond to /search URL.
-
-Setting a very low sitemap priority will tell search engines this is not important content.
+Use this page to search through the content available on Cloud With Chris. If you have submitted a search query, then your results will be displayed below.
