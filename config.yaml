@@ -9,6 +9,15 @@ languageCode: "en-gb"     # Used as part of the XML generation
 theme: "hugo-creator"     # Name of the theme. Don't change this from hugo-creator.
 title: "Cloud With Chris" # Title of the website
 
+#####
+# This is required to render the raw HTML on the
+# about us page.
+#####
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
 ##### 
 # Menu Display
 ##### 
