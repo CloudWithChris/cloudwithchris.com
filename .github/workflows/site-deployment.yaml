@@ -78,6 +78,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:            
     - uses: actions/checkout@v2
+      with:
+        submodules: 'true'
     - name: 'Install Node Dependencies'
       run: npm ci    
     - name: 'Setup Hugo on Runner'
@@ -85,14 +87,6 @@ jobs:
       with:
         hugo-version: ${{ env.HUGO_VERSION }}
         extended: true
-    - name: 'Replace tokens in Configuration'
-      uses: cschleiden/replace-tokens@v1.1
-      with:
-        tokenPrefix: '#{'
-        tokenSuffix: '}#'
-        files: '["config.yaml"]'
-      env:
-        hostname: 'https://www.cloudwithchris.com'
     - name: 'Build and Minify Hugo Contents'
       run: hugo --minify    
     - name: 'Upload Generated Static Content as Website Artifact'

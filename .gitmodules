@@ -1,0 +1,3 @@
+[submodule "themes/hugo-creator"]
+	path = themes/hugo-creator
+	url = https://github.com/CloudWithChris/hugo-creator.git
