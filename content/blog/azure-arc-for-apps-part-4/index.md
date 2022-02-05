@@ -39,7 +39,7 @@ The creation experience of a Logic App in an App Service Kubernetes Environment 
 * The Custom Location item will be an option in the region dropdown. We'll be deploying into that, so that the Logic App is created in our App Service Kubernetes Environment.
 On the **Hosting** tab, you'll be able to configure the Azure Storage Account used by the Azure Logic App.
 
-![Screenshot showing the First tab of the Logic App (Standard) Creation Experience](images/azure-arc-for-apps-part-4/app-service-on-kubernetes-logic-apps-standard-create-1.jpg)
+![Screenshot showing the First tab of the Logic App (Standard) Creation Experience](images/azure-arc-for-apps-part-4/app-service-on-kubernetes-logic-apps-standard-create-1.jpg "Screenshot showing the First tab of the Logic App (Standard) Creation Experience")
 
 > Azure Storage is a pre-requisite for the Azure Functions tooling. As Azure Logic Apps standard builds upon the Azure Functions Runtime, I suspect that this is why the storage account is required.
 >
@@ -47,11 +47,11 @@ On the **Hosting** tab, you'll be able to configure the Azure Storage Account us
 
 As with Azure Functions, you can configure Application Insights through the creation experience as well. We'll leave this as the default (enabled), and progress towards the Review and Create stage.
 
-![Screenshot showing the Logic App Create  Final Page on Arc-Enabled Kubernetes Cluster through Azure Portal](images/azure-arc-for-apps-part-4/app-service-on-kubernetes-logic-apps-standard-create-final.jpg)
+![Screenshot showing the Logic App Create  Final Page on Arc-Enabled Kubernetes Cluster through Azure Portal](images/azure-arc-for-apps-part-4/app-service-on-kubernetes-logic-apps-standard-create-final.jpg "Screenshot showing the Logic App Create  Final Page on Arc-Enabled Kubernetes Cluster through Azure Portal")
 
 And in Parallel, I've also been creating a Logic App based upon a docker deployment method as well.
 
-![Screenshot showing the Logic App (Container) Create Final Page on Arc-Enabled Kubernetes Cluster through Azure Portal](images/azure-arc-for-apps-part-4/app-service-on-kubernetes-logic-apps-standard-create-final-container.jpg)
+![Screenshot showing the Logic App (Container) Create Final Page on Arc-Enabled Kubernetes Cluster through Azure Portal](images/azure-arc-for-apps-part-4/app-service-on-kubernetes-logic-apps-standard-create-final-container.jpg "Screenshot showing the Logic App (Container) Create Final Page on Arc-Enabled Kubernetes Cluster through Azure Portal")
 
 ## Logic App Workflows
 
@@ -59,11 +59,11 @@ In the Azure Portal, you will see that there is a **workflows** item on the left
 
 This message will appear regardless of your chosen deployment model (i.e. Code or Docker).
 
-![Screenshot showing the Logic App Docker / Zip Deployment Requirements on Arc-Enabled Kubernetes Cluster through Azure Portal](images/azure-arc-for-apps-part-4/app-service-on-kubernetes-logic-apps-container-or-zip.jpg)
+![Screenshot showing the Logic App Docker / Zip Deployment Requirements on Arc-Enabled Kubernetes Cluster through Azure Portal](images/azure-arc-for-apps-part-4/app-service-on-kubernetes-logic-apps-container-or-zip.jpg "Screenshot showing the Logic App Docker / Zip Deployment Requirements on Arc-Enabled Kubernetes Cluster through Azure Portal")
 
 We could use the Logic Apps Visual Studio Code tooling to build our Logic Apps workflow and then deploy to the code-based Logic App deployment.
 
-![Screenshot showing the VSCode Logic App Designer mid-publishing step](images/azure-arc-for-apps-part-4/app-service-on-kubernetes-logic-apps-vscode-publish.jpg)
+![Screenshot showing the VSCode Logic App Designer mid-publishing step](images/azure-arc-for-apps-part-4/app-service-on-kubernetes-logic-apps-vscode-publish.jpg "Screenshot showing the VSCode Logic App Designer mid-publishing step")
 
 If you prefer, go ahead and do that. However, I'm going to move straight on to the Deployment Center approach.
 
@@ -77,15 +77,15 @@ We'll walkthrough both options below.
 
 Before we start, I've gone ahead and created a Logic App through the Visual Studio Code tooling. I then committed the code to a Git repository and pushed to GitHub. If you're interested in how you can use the VSCode tooling to create a Logic App workflow file, I'd encourage you to [review the documentation](https://docs.microsoft.com/en-us/azure/logic-apps/create-single-tenant-workflows-visual-studio-code), which is an excellent resource for this.
 
-![Screenshot showing the GitHub repo containing the code for our Logic App Workflow](images/azure-arc-for-apps-part-4/app-service-on-kubernetes-logic-apps-deploymentcenter-repo.jpg)
+![Screenshot showing the GitHub repo containing the code for our Logic App Workflow](images/azure-arc-for-apps-part-4/app-service-on-kubernetes-logic-apps-deploymentcenter-repo.jpg "Screenshot showing the GitHub repo containing the code for our Logic App Workflow")
 
 I navigated to the Deployment Center tab of my Logic and configured the source to be GitHub. I went ahead and configured the settings so that they matched up to the GitHub repository that I showed in the screenshot above.
 
-![Screenshot showing the deployment center configuration for a Logic App (code) Resource](images/azure-arc-for-apps-part-4/app-service-on-kubernetes-logic-apps-deploymentcenter-code.jpg)
+![Screenshot showing the deployment center configuration for a Logic App (code) Resource](images/azure-arc-for-apps-part-4/app-service-on-kubernetes-logic-apps-deploymentcenter-code.jpg "Screenshot showing the deployment center configuration for a Logic App (code) Resource")
 
 Once saved, navigate over to your GitHub repository. You'll notice that there is a GitHub Action workflow file created for you. It performs a checkout of your GitHub repository, sets up a Node.js environment, resolves the needed dependencies through npm and then runs the Azure Function GitHub Action.
 
-![Screenshot showing the GitHub Action workflow file deployed to the repository on our behalf](images/azure-arc-for-apps-part-4/app-service-on-kubernetes-logic-apps-deploymentcenter-workflow.jpg)
+![Screenshot showing the GitHub Action workflow file deployed to the repository on our behalf](images/azure-arc-for-apps-part-4/app-service-on-kubernetes-logic-apps-deploymentcenter-workflow.jpg "Screenshot showing the GitHub Action workflow file deployed to the repository on our behalf")
 
 This didn't work as expected. The GitHub Action workflow file failed with an error relating to package.json. This makes sense, as there's no package.json (which is a requirement when trying to restore packages for Node.js projects) in the repository.
 
@@ -105,7 +105,7 @@ Just like Azure Functions, you can deploy a Logic App using a Docker Container I
 
 We'll configure the Registry settings in Deployment Center to match with the Azure Container Registry, as well as the image that we have pushed up.
 
-![Screenshot showing the Deployment Center settings for the Docker-based Logic App](images/azure-arc-for-apps-part-4/app-service-on-kubernetes-logic-apps-deploymentcenter-docker.jpg)
+![Screenshot showing the Deployment Center settings for the Docker-based Logic App](images/azure-arc-for-apps-part-4/app-service-on-kubernetes-logic-apps-deploymentcenter-docker.jpg "Screenshot showing the Deployment Center settings for the Docker-based Logic App")
 
 Before hitting save, I had my ``kubectl get po -n appservice --watch`` command ready to go. The result is exactly as you would expect. A new pod gets deployed, while the previous instance (logic-app-k8s-docker-75cb6b5486-t9dtf) is terminated.
 
@@ -144,7 +144,7 @@ It is possible to use Application Insights to collect data from a Logic App in a
 
 You will have likely configured this as **enabled** when you created your Logic App (I did, at least). Once again, the experience is no different to what we would expect of a Function App in the multi-tenanted hosting model.
 
-![Screenshot showing the App Insights configuration experience for a Logic App in an Application Service Kubernetes Environment](images/azure-arc-for-apps-part-4/app-service-on-kubernetes-logic-apps-appinsights.jpg)
+![Screenshot showing the App Insights configuration experience for a Logic App in an Application Service Kubernetes Environment](images/azure-arc-for-apps-part-4/app-service-on-kubernetes-logic-apps-appinsights.jpg "Screenshot showing the App Insights configuration experience for a Logic App in an Application Service Kubernetes Environment")
 
 Just to investigate, I went ahead and disabled Application Insights within the Logic App blade as shown above. I immediately received a pop up, asking as below -
 
@@ -158,13 +158,13 @@ I'd be interested to understand what actually happens when enabling / disabling 
 
 I navigated to the Application Insights resource for my Logic App deployed using a Docker container method. I can see that the logs are appearing within Application Insights as expected.
 
-![Screenshot showing the App Insights output a Logic App deployed using the Docker Method in an Application Service Kubernetes Environment](images/azure-arc-for-apps-part-4/app-service-on-kubernetes-logic-apps-appinsights-output-docker.jpg)
+![Screenshot showing the App Insights output a Logic App deployed using the Docker Method in an Application Service Kubernetes Environment](images/azure-arc-for-apps-part-4/app-service-on-kubernetes-logic-apps-appinsights-output-docker.jpg "Screenshot showing the App Insights output a Logic App deployed using the Docker Method in an Application Service Kubernetes Environment")
 
 ## Configuring Custom Domains
 
 Custom domains is an available option in the left hand menu, though as with Azure Functions and App Services, I encountered issues as shown in the screenshot below.
 
-![Screenshot showing the Custom Domain Validation for a Function App in an Application Service Kubernetes Environment](images/azure-arc-for-apps-part-4/app-service-on-kubernetes-logic-apps-custom-domain-validation.jpg)
+![Screenshot showing the Custom Domain Validation for a Function App in an Application Service Kubernetes Environment](images/azure-arc-for-apps-part-4/app-service-on-kubernetes-logic-apps-custom-domain-validation.jpg "Screenshot showing the Custom Domain Validation for a Function App in an Application Service Kubernetes Environment")
 
 This is one that I plan to investigate further, and determine whether this is a user interface challenge (e.g. should custom domains actually be grayed out as it's unsupported, or is the validation experience not available through the user interface).
 
@@ -172,7 +172,7 @@ This is one that I plan to investigate further, and determine whether this is a 
 
 As is the case with many Platform as a Service (PaaS) services, scaling is as easy as adjusting a slider. This is no different when using an App Service Kubernetes environment. We can go ahead and adjust the slider to represent the maximum number of instances that we would like to scale to. Then, App Service for Kubernetes deals with creating the additional instances (Kubernetes pods) of our function app behind the scenes as needed.
 
-![Screenshot showing the Scaling out Functionality for a Logic App hosted in App Service on Kubernetes through Azure Portal](images/azure-arc-for-apps-part-4/app-service-on-kubernetes-logic-apps-scale-out.jpg)
+![Screenshot showing the Scaling out Functionality for a Logic App hosted in App Service on Kubernetes through Azure Portal](images/azure-arc-for-apps-part-4/app-service-on-kubernetes-logic-apps-scale-out.jpg "Screenshot showing the Scaling out Functionality for a Logic App hosted in App Service on Kubernetes through Azure Portal")
 
 If you have your Kubernetes-thinking hat on, then you'll probably be able to determine where this is going. Before saving the new scale out configuration, I once again ran the command ``kubectl get po -n appservice --watch``. You'll notice that Kubernetes maintains the replicaset (i.e. logic-app-k8s-5fb47788b5-6vp9w), but adds two additional pods to the replicaset. Again, this is unsurprising and in-line with how we'd expect Kubernetes to handle a scale out event for any Kubernetes workload.
 
@@ -376,7 +376,7 @@ We can identify some information about the scale options that have been set with
 
 That's another whistle stop tour of a service deployed in Kubernetes. Unsurprisingly (if you've followed the other posts), the resources deployed in the Azure Resource Group don't look particularly different to what we would deploy into the multi-tenanted environment.
 
-![Screenshot showing the App deployed in the Azure Portal](images/azure-arc-for-apps-part-4/app-service-on-kubernetes-apps-resource-group.jpg)
+![Screenshot showing the App deployed in the Azure Portal](images/azure-arc-for-apps-part-4/app-service-on-kubernetes-apps-resource-group.jpg "Screenshot showing the App deployed in the Azure Portal")
 
 ## Summary
 

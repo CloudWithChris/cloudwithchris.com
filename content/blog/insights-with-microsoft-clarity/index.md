@@ -32,28 +32,28 @@ We can break down the functionality into a few key areas -
   * Filter recordings based on sessions where JavaScript errors had been encountered. This allows you to see what the user was doing, before any issues were seen! (Again, getting that balance between stats and understanding of user behaviour).
   * Filter data based on many different filters (e.g. user location, browser session, etc.). You can then utilise this for ongoing tracking by saving this as a segment.
 
-![Screenshot showing insights in an overall dashboard](images/insights-with-microsoft-clarity/dashboard.png)
+![Screenshot showing insights in an overall dashboard](images/insights-with-microsoft-clarity/dashboard.png "Screenshot showing insights in an overall dashboard")
 
 * **Session Recordings** - Statistics are great, but wouldn't it be better if you could see how users are interacting with your site? That's exactly what session recordings enable you to do!
   * The recordings are anonymized, and all data captured is GDPR compliant (more on that later, as there are some considerations that you must make!). You can watch those recordings back in different speeds (just like a YouTube recording).
   * This allows you to understand any points of frustration. Does the user keep clicking on a certain area of your page, so they're expecting a response? Could that be a bug that you had missed?
   * Once again, filter data based on many different filters (e.g. user location, browser session, etc.).
 
-![Screenshot showing an example recording view](images/insights-with-microsoft-clarity/recordings.png)
+![Screenshot showing an example recording view](images/insights-with-microsoft-clarity/recordings.png "Screenshot showing an example recording view")
 
 * **Heatmaps** - Session Recordings are great to understand engagement on a case-by-case basis. Heatmaps allow you to understand an aggregated view of user engagement based on Clicks, Area and Scroll depth per page. These are visual charts layered over a render of your site, exactly what you think of when you think of the term 'heatmap'.
   * Where do your users frequently click?
   * What percentage of your users scroll down to a certain part of your site?
   * Even, down to specific HTML elements. You can filter these heatmaps based upon the captured segment information, compare those across user segments and then share that with other members of your team
 
-![Screenshot showing an example heatmap](images/insights-with-microsoft-clarity/heatmaps.png)
+![Screenshot showing an example heatmap](images/insights-with-microsoft-clarity/heatmaps.png "Screenshot showing an example heatmap")
 
 * **Google Analytics Integration** - If you were in the camp "I'm already using Google Analytics", well, that's great news - Microsoft Clarity integrates with Google Analytics. Let's understand this a bit further -
   * *Google Analytics Segments* - Suppose that you have set up your own [Google Analytics Segments](https://support.google.com/analytics/answer/3123951?hl=en#zippy=%2Cin-this-article), e.g. users from a given city, or in a certain demographic. These segments are automatically imported into Microsoft Clarity, so that you can filter down on them in the generated heatmaps and session recordings.
   * *Enhance Google Analytics* - We mentioned that session recordings are a built-in feature of Microsoft Clarity. If you use Google Analytics as your daily insights driver, then that's no problem - You can view session recordings directly within Google Analytics.
   * *Or, bring Google Analytics to Microsoft Clarity* - Likewise, there is a dashboard in Microsoft Clarity for you to analyse, visualize and explore your Google Analytics metrics.
 
-![Screenshot showing an example of the Google Analytics integration built in to Microsoft Clarity](images/insights-with-microsoft-clarity/google-analytics.png)
+![Screenshot showing an example of the Google Analytics integration built in to Microsoft Clarity](images/insights-with-microsoft-clarity/google-analytics.png "Screenshot showing an example of the Google Analytics integration built in to Microsoft Clarity")
 
 And the best bit? All of this is **free**. Best to check the [official pricing page](https://clarity.microsoft.com/pricing) in case this ever changes in the future, but it's certainly true at time of writing!
 
@@ -91,7 +91,7 @@ The [Clarity FAQs](https://docs.microsoft.com/en-us/clarity/faq) call out certai
 
 Right. So what if you fit into an allowed usecase, but want to ensure private data is not being captured? The service has a concept of [masking content](https://docs.microsoft.com/en-us/clarity/clarity-masking) built-in.
 
-![Screenshot showing the masking options within Microsoft Clarity](images/insights-with-microsoft-clarity/masking.png)
+![Screenshot showing the masking options within Microsoft Clarity](images/insights-with-microsoft-clarity/masking.png "Screenshot showing the masking options within Microsoft Clarity")
 
 You can choose from several masking modes (Strict, Balanced and Relaxed) to control what text is sent to the Microsoft Clarity servers. You can also use CSS selectors, or attributes in an HTML element to control whether text should be masked or unmasked. Full details are once again available on the [Microsoft Clarity Documentation](https://docs.microsoft.com/en-us/clarity/clarity-masking).
 

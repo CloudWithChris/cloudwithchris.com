@@ -49,7 +49,7 @@ git push origin main
 
 As you'll likely know already - my [remote repository is hosted on GitHub](https://github.com/chrisreddington/cloudwithchris.com/). You'll be able to see an example of what this looks like [here](https://github.com/chrisreddington/cloudwithchris.com/blob/master/podcast_audio/31%20-%20Deploying%20to%20Azure%20through%20Terraform%20Cloud.mp3), but also including an example image below for readability. Notice that the file in GitHub now states **Stored with Git LFS**? That's how we know we've set it up appropriately!
 
-![GitHub Page showing that the file is Stored with Git LFS](images/git-lfs-for-podcast-audio/git-lfs-in-github.jpg)
+![GitHub Page showing that the file is Stored with Git LFS](images/git-lfs-for-podcast-audio/git-lfs-in-github.jpg "GitHub Page showing that the file is Stored with Git LFS")
 
 Great, that's step 1 done - getting the files into the repository. Now what about the process of uploading those to my storage account, for [www.cloudwithchris.com](https://www.cloudwithchris.com)? Well, once again - this is quite an easy problem to solve. We can use the usual approach that we have with GitHub actions, e.g. a push or pull rrquest trigger into a branch of our choice. After all, as we talked through earlier - we'll be able to detect that there are file changes in the repository (the text pointer files).
 
@@ -90,7 +90,7 @@ jobs:
 
 Chris, that looks to do the job. You're triggering the workflow run when there is a change in the podcast_audio folder pushed to the master branch. You've also enabled the lfs flag, so that the runner will go ahead and pull down the binary files as needed. Why is that a naïve implementation? I'm glad you asked! As a GitHub user you have a storage and bandwidth quota for Git LFS data. You can find this in the [billing section](https://github.com/settings/billing) of your GitHub account.
 
-![Example of the Git LFS Data Quota in GitHub Billing](images/git-lfs-for-podcast-audio/git-lfs-quota-github.jpg)
+![Example of the Git LFS Data Quota in GitHub Billing](images/git-lfs-for-podcast-audio/git-lfs-quota-github.jpg "Example of the Git LFS Data Quota in GitHub Billing")
 
 After my initial push, I pretty much wiped out my entire quota from a storage and bandwidth perspective. As you'll notice from the screenshot - I pay $5 a month for 1 data pack. For me, the benefit of streamlining my process and added cost is worth the extra time investment of dealing with manual uploads. I actually missed uploading quite a few episodes mp3 files over time! Remember, that I also have YouTube and other platforms to take care of, and this is all done in my spare time and community effort!
 

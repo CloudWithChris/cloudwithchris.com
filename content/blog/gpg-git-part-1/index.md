@@ -52,7 +52,7 @@ echo "Hello World";
 ```
 Now if we run git status, we can see that the file is untracked.
 
-![Git Status showing file untracked](images/gpg-git-part-1/git-status-1.jpg)
+![Git Status showing file untracked](images/gpg-git-part-1/git-status-1.jpg "Git Status showing file untracked")
 
 This means that the version control is aware that the file exists, but hasn't been formally recognised/versioned within Git. We need to go ahead and first add the file to the staging environment, and then commit the file to the version control.
 
@@ -61,7 +61,7 @@ git add myfile.php
 git commit -m "My Hello World Sample"
 ```
 
-![Git Log showing Alice's Commit](images/gpg-git-part-1/git-status-2.jpg)
+![Git Log showing Alice's Commit](images/gpg-git-part-1/git-status-2.jpg "Git Log showing Alice's Commit")
 
 Now we can see that a change has been made by Alice! Or at least, it appears to be made by Alice. Do you recall us logging in, authenticating or verifying who we are at any point? For now, let's assume that it's a genuine commit by Alice. Let's change our context and become Bob.
 
@@ -72,7 +72,7 @@ git config --local user.name "Bob"
 
 Bob wants to enhance the sample by making it relevant to the company. He changes the sample to echo "Hello Contoso" instead. After making the change, he enters Git status to confirm the file has changes, before staging his changes or making the commit.
 
-![Git status showing Bob's Commit](images/gpg-git-part-1/git-status-3.jpg)
+![Git status showing Bob's Commit](images/gpg-git-part-1/git-status-3.jpg "Git status showing Bob's Commit")
 
 Now, Bob runs the following commands -
 
@@ -83,7 +83,7 @@ git commit -m "Adjust to Hello Contoso"
 
 Now, "Alice" or "Bob" can go ahead and use git pull to ensure they have the latest version of the repository (or any other user with appropriate access). If they use the ``git log`` command, they will see that there are changes made by two users. Alice, and Bob. Again, it __appears__ as though the changes have been made by two users. Again, bear in mind that we haven't had to prove that we are either Alice, or Bob.
 
-![Git log showing Alice and Bob's commits](images/gpg-git-part-1/git-status-4.jpg)
+![Git log showing Alice and Bob's commits](images/gpg-git-part-1/git-status-4.jpg "Git log showing Alice and Bob's commits")
 
 Now one final scenario, remember Eve? Well, Eve has become interested in the project and wants to give credit for the great work back to Alice, and remove Bob from the picture.
 
@@ -110,7 +110,7 @@ fi
 ' --tag-name-filter cat -- --branches --tags
 ```
 
-![Git log showing that all commits now belong to Alice](images/gpg-git-part-1/git-status-5.jpg)
+![Git log showing that all commits now belong to Alice](images/gpg-git-part-1/git-status-5.jpg "Git log showing that all commits now belong to Alice")
 
 See the problem? We have no guarantee on the authenticity of those commits. Are any of those people Alice, Bob or Eve? Are all of the commits potentially fake? Without having some kind of signed commit, we have no certainty. And this is where the value of GPG keys lie in this particular scenario. Being able to showcase that the changes committed have been signed by someone with a key that matches user metadata (e.g. email address).
 

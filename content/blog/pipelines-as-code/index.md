@@ -40,27 +40,27 @@ Can you see the benefits over using a User Interface approach directly, and it b
 
 With that, let's continue our journey with pipelines as code. First off, I start with a brand new Azure DevOps project in my Azure DevOps Organization.
 
-![Screenshot showing a new Azure DevOps project](images/pipelines-as-code/new-project.jpg)
+![Screenshot showing a new Azure DevOps project](images/pipelines-as-code/new-project.jpg "Screenshot showing a new Azure DevOps project")
 
 We'll first need to have an initialised Git repository available before we can create a pipeline as code. For the purposes of this post, I'll be initialising the default Git repository in my Azure DevOps project.
 
 Let's first navigate to the repository and initialise it with a README file.
 
-![Initialise the default repository in our Azure DevOps project](images/pipelines-as-code/initialise-repo.jpg)
+![Initialise the default repository in our Azure DevOps project](images/pipelines-as-code/initialise-repo.jpg "Initialise the default repository in our Azure DevOps project")
 
 Now that's completed, let's go ahead and create a pipeline. To do that, we'll navigate to the Azure Pipelines tab, and select pipelines. Go ahead and click the **New Pipeline** button to begin the process.
 
 In the first stage of the pipeline creation process, you'll see that we're not just limited to storing the code in Azure Repos. We can also store the code in Bitbucket Cloud, GitHub and GitHub Enterprise server as well. We'll select Azure Repos Git, and the repository that we initialised a few moments ago.
 
-![Screenshot showing the version control options - Bitbucket Cloud, GitHub, GitHub Enterprise Server and Azure Repos](images/pipelines-as-code/versioncontrol-options.jpg)
+![Screenshot showing the version control options - Bitbucket Cloud, GitHub, GitHub Enterprise Server and Azure Repos](images/pipelines-as-code/versioncontrol-options.jpg "Screenshot showing the version control options - Bitbucket Cloud, GitHub, GitHub Enterprise Server and Azure Repos")
 
 On the next page, you'll see that we have options to configure the pipeline. Not only can we create a starter pipeline, or use an existing Azure Pipelines YAML file, but we can also create a pipeline file based upon several samples pipeline configurations. For the purposes of this post, we'll be creating a starter pipeline. Hopefully this gives a bit of insight on how you can get started quickly defining an initial pipeline depending upon your scenario.
 
-![Screenshot showing starter pipeline, existing yaml file and several example samples](images/pipelines-as-code/sample-pipelines.jpg)
+![Screenshot showing starter pipeline, existing yaml file and several example samples](images/pipelines-as-code/sample-pipelines.jpg "Screenshot showing starter pipeline, existing yaml file and several example samples")
 
 Now, we'll see the pipeline editor. We're not going to make any changes at this stage. Instead, we're going to hit the dropdown option on the Save and Run button, and just click save. You'll notice that we have to commit the changes to a specific branch in a Git repository. For now, we'll store this in the main branch.
 
-![Screenshot showing a starter YAML pipeline being saved to the main branch](images/pipelines-as-code/save-main.jpg)
+![Screenshot showing a starter YAML pipeline being saved to the main branch](images/pipelines-as-code/save-main.jpg "Screenshot showing a starter YAML pipeline being saved to the main branch")
 
 ## What about our branching strategy and pull requests?
 
@@ -73,13 +73,13 @@ For the purposes of the blog post, I configured the following policies:
 * Require a minimum number of reviewers to 1
 * Allow requestor to approve their own changes
 
-![Screenshot showing the main branch policy configuration of reviewers as 1, and allowing requestors to approve their own changes](images/pipelines-as-code/branch-policy-config.jpg)
+![Screenshot showing the main branch policy configuration of reviewers as 1, and allowing requestors to approve their own changes](images/pipelines-as-code/branch-policy-config.jpg "Screenshot showing the main branch policy configuration of reviewers as 1, and allowing requestors to approve their own changes")
 
 In a real-world scenario, I would likely not allow a requestor to approve their own changes, and would have minimum number of reviewers set to at least 2 (depending on the size of the project team). I'd likely also have Build Validation configured with a set of unit tests, and check for comment resolution as well. This ensures that there's a certain level of rigor before any code is allowed in our production codebase.
 
 With that in place, once we navigate across to the Azure Pipeline and attempt to save a change directly to the main branch, we'll encounter a failure because of the branch policy.
 
-![Screenshot showing a failed update to the main branch](images/pipelines-as-code/save-main-fail.jpg)
+![Screenshot showing a failed update to the main branch](images/pipelines-as-code/save-main-fail.jpg "Screenshot showing a failed update to the main branch")
 
 Switching the branch to another branch allows us to save the changes. You can do that by selecting the **Create a new branch for this commit** option and enter a branch name of your choice.
 
@@ -183,7 +183,7 @@ steps:
 
 Notice how the single parameter of ``yesNo`` is defined? It's a Boolean, and is set to a default of false. That means that we don't need to specify a value in the main YAML pipeline, but can override it if needed. This gives us the consistency we need across environments, but flexibility of configuration per environment.
 
-![Screenshot showing the new template file, also showing the Git repository directory structure](images/pipelines-as-code/template-directory-structure.jpg)
+![Screenshot showing the new template file, also showing the Git repository directory structure](images/pipelines-as-code/template-directory-structure.jpg "Screenshot showing the new template file, also showing the Git repository directory structure")
 
 ## Azure Pipelines - Environments (Approvals and Checks)
 
@@ -194,25 +194,25 @@ Okay, great - we have a multi-stage pipeline and are using a template to allow f
 
 To demonstrate this, click on the environment that you defined and has been created for you. Select the ellipsis (three dots) and hit **Approvals and checks**. This is where you can add the manual or automated approvals. Add an **approval**, and configure the approval steps to your liking.
 
-![Screenshot showing the approvals experience in the environments section of Azure Pipelines](images/pipelines-as-code/approvals-screenshot.jpg)
+![Screenshot showing the approvals experience in the environments section of Azure Pipelines](images/pipelines-as-code/approvals-screenshot.jpg "Screenshot showing the approvals experience in the environments section of Azure Pipelines")
 
 Once you've completed that, navigate to your pipeline and trigger a new pipeline run. Wait for the pipeline to reach the stage which had your environment defined. In my example, that was dev. You should notice that the pipeline will now pause, awaiting a manual approval.
 
-![Screenshot showing the pending approval in our dev environment](images/pipelines-as-code/approval-pending.jpg)
+![Screenshot showing the pending approval in our dev environment](images/pipelines-as-code/approval-pending.jpg "Screenshot showing the pending approval in our dev environment")
 
 ## Looks good to me - Pull Request and Merge
 
 Now, to complete the story - We need to merge our changes back into our production codebase. We may have created a pull request earlier on. If that's still open, go ahead and merge that one. Alternatively, head to the Azure Repos section of your Azure DevOps project, and click on **Pull Requests**. Create a new pull request if you don't have an existing one in place.
 
-![Screenshot showing list of active pull requests](images/pipelines-as-code/pull-request-list.jpg)
+![Screenshot showing list of active pull requests](images/pipelines-as-code/pull-request-list.jpg "Screenshot showing list of active pull requests")
 
 Progress through the pull request flow, providing your approval and merge the changes to main.
 
-![Screenshot showing the merge of the pull rerquest](images/pipelines-as-code/pull-request-merge.jpg)
+![Screenshot showing the merge of the pull rerquest](images/pipelines-as-code/pull-request-merge.jpg "Screenshot showing the merge of the pull rerquest")
 
 Finally, head back to Azure Pipelines. Notice that your pipeline has been triggered based upon a CI/CD trigger (i.e. the merge commit to our main branch).
 
-![Screenshot showing the pipeline being triggered by a commit to the main branch](images/pipelines-as-code/pipeline-trigger-ci-main.jpg)
+![Screenshot showing the pipeline being triggered by a commit to the main branch](images/pipelines-as-code/pipeline-trigger-ci-main.jpg "Screenshot showing the pipeline being triggered by a commit to the main branch")
 
 And that's it! That's an end-to-end view of using pipelines a code, branch policies, environments, pull requests and more. If you've version controlled your application code or infrastructure code previously, you should be able to draw parallels with some of the themes in this blog post (e.g. branch policies and pull requests to ensure quality in our production codebase, using a Continuous Integration (CI) or Continuous Deployment (CD) process to progress our pipeline changes, and the ability to work on the pipeline code in parallel while developers may be making changes in their own branches).
 

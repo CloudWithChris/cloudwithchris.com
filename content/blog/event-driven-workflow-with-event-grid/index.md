@@ -25,7 +25,7 @@ With that context out of the way, let's start building out our scenario! We're g
 
 From the above, you should be able to identify that the source of our process is a blob being uploaded to a storage account. As a result, we'll need to create an Azure storage account. In the example below, you can see that I've included the term ``source`` in the name to make it easily identifiable that this is the source of our workflow. This is just my own naming convention for this example, but it's worth calling out naming conventions are vital in any architecture. Aside from the storage account name, region and redundancy options, the remaining options will stay as the defaults.
 
-![Screenshot showing the Source storage account Creation process](images/event-driven-workflow-with-event-grid/source-storageaccount-creation.jpg)
+![Screenshot showing the Source storage account Creation process](images/event-driven-workflow-with-event-grid/source-storageaccount-creation.jpg "Screenshot showing the Source storage account Creation process")
 
 We mentioned in the original context that we have a requirement of 'guaranteed processing' on each file that is uploaded to the blob storage.
 
@@ -51,19 +51,19 @@ So instead, let's consider sending the message directly to a queue of some sorts
 
 But for that, we'll need a storage account to create those storage queues. While the first storage account is creating, we'll ahead and create a second storage account. The reason that we're not sharing a single storage account is so that we ensure that the source and the queue can each reach the IOPS limit of a storage account, without being impacted by the other component (i.e. one starving the other of IOPs).
 
-![Screenshot showing the queue storage account Creation process](images/event-driven-workflow-with-event-grid/queue-storageaccount-creation.jpg)
+![Screenshot showing the queue storage account Creation process](images/event-driven-workflow-with-event-grid/queue-storageaccount-creation.jpg "Screenshot showing the queue storage account Creation process")
 
 While the second storage account (the one which will hold the storage queues) is being created, we'll go ahead and create a couple of storage containers in the source blob storage account. One container which will hold the original **source** images and another which would hold the **processed** images. In this example I've named it thumbnails, though we won't be generating any thumbnails in this example, this is just to help the example.
 
-![Screenshot showing contains created in the Source storage account](images/event-driven-workflow-with-event-grid/source-storageaccount-containers.jpg)
+![Screenshot showing contains created in the Source storage account](images/event-driven-workflow-with-event-grid/source-storageaccount-containers.jpg "Screenshot showing contains created in the Source storage account")
 
 We'll navigate back to the second storage account (the one which will hold the storage queues), and create a new queue to hold the messages. I called mine ``workinprogress``.
 
-![Screenshot showing queue created in the queue storage account](images/event-driven-workflow-with-event-grid/queue-storageaccount-queue.jpg)
+![Screenshot showing queue created in the queue storage account](images/event-driven-workflow-with-event-grid/queue-storageaccount-queue.jpg "Screenshot showing queue created in the queue storage account")
 
 At this point, we have everything that we need to begin creating the event-driven workflow. We'll navigate to our source storage account, and click on the events item on the left hand side of the screen.
 
-![Screenshot showing the events section of the source storage account](images/event-driven-workflow-with-event-grid/source-storageaccount-events.jpg)
+![Screenshot showing the events section of the source storage account](images/event-driven-workflow-with-event-grid/source-storageaccount-events.jpg "Screenshot showing the events section of the source storage account")
 
 We'll go ahead and select the **Event Subscription** creation option. This is where we can create a new Event Grid System Topic and Event Grid Subscription. First, let's run through some concepts or terms (though you can find a [fuller set of descriptions on the Azure Docs](https://docs.microsoft.com/en-us/azure/event-grid/concepts)) -
 
@@ -86,7 +86,7 @@ With that context, we can now proceed in creating our Event Grid System Topic an
   * Notice that we have several event handler options, including Azure Functions, Web Hook, Storage Queues, Event Hubs, Hybrid Connections, Service Bus Queue and Service Bus Topics.
 * Use system assigned identity: Enabled
 
-![Screenshot showing the creation experience for the event subscription and System Topic](images/event-driven-workflow-with-event-grid/source-storageaccount-events-subscription1.jpg)
+![Screenshot showing the creation experience for the event subscription and System Topic](images/event-driven-workflow-with-event-grid/source-storageaccount-events-subscription1.jpg "Screenshot showing the creation experience for the event subscription and System Topic")
 
 We will also click on the ``Filters`` tab. This allows us to apply additional filters, so that only events matching the filter will get delivered.
 
@@ -95,7 +95,7 @@ We will also click on the ``Filters`` tab. This allows us to apply additional fi
 
 > **TIP:** The above filter ensures that event grid will only send the blob creation events for the images container. Events will not be delivered when images are uploaded to the thumbnails container that we also created.
 
-![Screenshot showing the creation experience for the event subscription and System Topic (Filters Tab)](images/event-driven-workflow-with-event-grid/source-storageaccount-events-subscription2.jpg)
+![Screenshot showing the creation experience for the event subscription and System Topic (Filters Tab)](images/event-driven-workflow-with-event-grid/source-storageaccount-events-subscription2.jpg "Screenshot showing the creation experience for the event subscription and System Topic (Filters Tab)")
 
 There are additional tabs which focused around **Additional Features** to configure dead-lettering, retry policies and an expiration time for the event subscription. Note that [Event Grid doesn't turn on dead-lettering by default](https://docs.microsoft.com/en-us/azure/event-grid/delivery-and-retry#dead-letter-events), so you will need to configure this as needed. However, there are a set of [retry policies configured by default](https://docs.microsoft.com/en-us/azure/event-grid/delivery-and-retry#retry-schedule-and-duration).
 
@@ -105,23 +105,23 @@ Before we create the event subscription. Notice that in the **Basic** tab we als
 
 It may take a few moments for the resources to be created. Once created, we'll now need to assign that Event Grid System Topic access to send messages to the Storage Queue. You'll hopefully be aware from my recent blog post, that we now have Azure RBAC capabilities at the data-plane for Azure Storage. And that's what we'll be assigning to the Event Grid System Topic. We'll be assigning the Storage Queue Data Message Sender permission, so that the Event Grid System Topic can send messages to the queue in the storage account we setup. It will have no other permissions, so adheres well to the principal of least privilege model.
 
-![Screenshot showing Storage Queue Data Message Sender permission being assigned to the Event Grid System Topic](images/event-driven-workflow-with-event-grid/eg-systemtopic-permissions.jpg)
+![Screenshot showing Storage Queue Data Message Sender permission being assigned to the Event Grid System Topic](images/event-driven-workflow-with-event-grid/eg-systemtopic-permissions.jpg "Screenshot showing Storage Queue Data Message Sender permission being assigned to the Event Grid System Topic")
 
 After some time, hit refresh and you will see that the permission was assigned successfully.
 
-![Screenshot showing Storage Queue Data Message Sender permission was assigned to the Event Grid System Topic](images/event-driven-workflow-with-event-grid/eg-systemtopic-permissions2.jpg)
+![Screenshot showing Storage Queue Data Message Sender permission was assigned to the Event Grid System Topic](images/event-driven-workflow-with-event-grid/eg-systemtopic-permissions2.jpg "Screenshot showing Storage Queue Data Message Sender permission was assigned to the Event Grid System Topic")
 
 Now for the first test! Let's go ahead and navigate across to our source storage account, and upload a file to the **images** blob container. Once complete, navigate back across to the storage account containing the queue, and take a look at the queue. You should now see a message on the queue.
 
-![Screenshot showing a single message contained in the Azure Storage Queue](images/event-driven-workflow-with-event-grid/queue-storageaccount-message1.jpg)
+![Screenshot showing a single message contained in the Azure Storage Queue](images/event-driven-workflow-with-event-grid/queue-storageaccount-message1.jpg "Screenshot showing a single message contained in the Azure Storage Queue")
 
 Now for the second test! Navigate back to the source storage account, and upload a file to the **thumbnails** blob container. Once complete, navigate back across to the storage account containing the queue, and take a look at the queue. You should still see that there is a single message on the queue.
 
-![Screenshot showing a single message contained in the Azure Storage Queue](images/event-driven-workflow-with-event-grid/queue-storageaccount-message1.jpg)
+![Screenshot showing a single message contained in the Azure Storage Queue](images/event-driven-workflow-with-event-grid/queue-storageaccount-message1.jpg "Screenshot showing a single message contained in the Azure Storage Queue")
 
 Brilliant, so we now have events being generated and sent to the Azure Storage queue when a new file is uploaded to the container. Let's now create a consumer of that storage queue. We'll create an Azure Function to process these messages. If you're following along, I won't be deploying any 'real' code into this function. This is purely for end-to-end demonstration purposes, so feel free to select the Azure Function configuration that you're most comfortable with. Make sure that you have Application Insights enabled as part of the creation process.
 
-![Screenshot showing the Azure Function Creation output](images/event-driven-workflow-with-event-grid/function-initial-creation.jpg)
+![Screenshot showing the Azure Function Creation output](images/event-driven-workflow-with-event-grid/function-initial-creation.jpg "Screenshot showing the Azure Function Creation output")
 
 > **TIP:** Azure Functions is an event-driven serverless service. It works based upon triggers, inputs and output bindings. When using Azure Functions, you need to make sure that you thoroughly understand these bindings and how they work. Some of you may be wondering why we didn't directly bind the Azure Function directly to Azure Blob storage events (which is indeed possible). Take a look at the [Azure Docs](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-storage-blob-trigger?tabs=csharp) to find out more details.
 >
@@ -133,31 +133,31 @@ Notice that we have several triggers available in Azure Functions? For example, 
 
 We'll select the Azure Queue Storage trigger. Make sure to correctly enter the Queue Name that you used earlier, and setup the connection to the appropriate storage account (the one that was holding the queue).
 
-![Screenshot showing example Azure Function templates/bindings](images/event-driven-workflow-with-event-grid/function-bindings.jpg)
+![Screenshot showing example Azure Function templates/bindings](images/event-driven-workflow-with-event-grid/function-bindings.jpg "Screenshot showing example Azure Function templates/bindings")
 
 We can go ahead and create the Azure Function. I didn't make any changes to the Azure Function, aside from adding some comments of what I would intend for the Function to do (e.g. inspect the data in the message, use that data to determine which blob file to read, perform the required process, and store the output in the thumbnails container).
 
-![Screenshot showing the code for the Azure Function](images/event-driven-workflow-with-event-grid/function-code.jpg)
+![Screenshot showing the code for the Azure Function](images/event-driven-workflow-with-event-grid/function-code.jpg "Screenshot showing the code for the Azure Function")
 
 When we navigate to the queue, we'll see that the queue is now empty.
 
-![Screenshot showing zero messages contained in the Azure Storage Queue](images/event-driven-workflow-with-event-grid/queue-storageaccount-message0.jpg)
+![Screenshot showing zero messages contained in the Azure Storage Queue](images/event-driven-workflow-with-event-grid/queue-storageaccount-message0.jpg "Screenshot showing zero messages contained in the Azure Storage Queue")
 
 Now for the third test! Navigate back to the source storage account, and upload a file to the **images** blob container. Once complete, navigate back across to the storage account containing the queue, and take a look at the queue. You should see that there are no messages on the queue. That's because the Azure Function has already detected the new message and has reacted to it, executing the code in the function.
 
-![Screenshot showing zero messages contained in the Azure Storage Queue](images/event-driven-workflow-with-event-grid/queue-storageaccount-message0.jpg)
+![Screenshot showing zero messages contained in the Azure Storage Queue](images/event-driven-workflow-with-event-grid/queue-storageaccount-message0.jpg "Screenshot showing zero messages contained in the Azure Storage Queue")
 
 To sanity check this, we can navigate to our source Storage Account and browse to the events menu item. Under Event Subscriptions, we should see that the metric graphs displays that two events have been successfully delivered.
 
-![Screenshot showing the Azure Application Insights performance view, showing 2 executions](images/event-driven-workflow-with-event-grid/source-events-metric.jpg)
+![Screenshot showing the Azure Application Insights performance view, showing 2 executions](images/event-driven-workflow-with-event-grid/source-events-metric.jpg "Screenshot showing the Azure Application Insights performance view, showing 2 executions")
 
 As another sanity check, we can open up Application Insights and inspect the operations that have taken place. This will show us the performance metrics / logs relating to the Azure Function specifically.
 
-![Screenshot showing the Azure Application Insights performance view, showing 2 executions](images/event-driven-workflow-with-event-grid/appinsights-performance.jpg)
+![Screenshot showing the Azure Application Insights performance view, showing 2 executions](images/event-driven-workflow-with-event-grid/appinsights-performance.jpg "Screenshot showing the Azure Application Insights performance view, showing 2 executions")
 
 We can also use Application Insights to inspect the logs that have been outputted from the Azure Function. This could be particularly useful after we enhanced our function to do something a little more real-world, helping us identify if the process is working as expected.
 
-![Screenshot showing the Azure Application Transaction search view, showing logs outputted from the Azure Function](images/event-driven-workflow-with-event-grid/appinsights-search.jpg)
+![Screenshot showing the Azure Application Transaction search view, showing logs outputted from the Azure Function](images/event-driven-workflow-with-event-grid/appinsights-search.jpg "Screenshot showing the Azure Application Transaction search view, showing logs outputted from the Azure Function")
 
 And finally, for completeness - let's once again take a look at the overall resource group - so that you can see the resources that have been created.
 
@@ -167,7 +167,7 @@ You will find -
 * An Event Grid System Topic that also has a Managed Service Identity associated with it, with the Storage Queue Data Message Sender permission to the Storage Account containing the queue.
 * An App Service Plan, Function App, Application Insights and Storage Account for the Azure Function which is acting as a consumer/receiver/processor of the messages which are pushed onto the Storage Queue.
 
-![Screenshot showing the Azure Application Transaction search view, showing logs outputted from the Azure Function](images/event-driven-workflow-with-event-grid/appinsights-search.jpg)
+![Screenshot showing the Azure Application Transaction search view, showing logs outputted from the Azure Function](images/event-driven-workflow-with-event-grid/appinsights-search.jpg "Screenshot showing the Azure Application Transaction search view, showing logs outputted from the Azure Function")
 
 And that is it, that is our event-driven architecture which is kick-started with Azure Event Grid! The aim of this post was to showcase how Azure Event Grid can help in these event-driven workflows, though did also feature another event-driven service - Azure Functions.
 

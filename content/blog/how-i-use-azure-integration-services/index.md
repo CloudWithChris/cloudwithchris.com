@@ -28,7 +28,7 @@ This lack of long-term thinking meant that I accumulated technical debt quickly 
 
 This time around, I opted to do some up front planning on the long-term vision for the design, and my requirements. I've said it on the channel several times previously; failing to plan is planning to fail. During this process, I went through several iterations of an initial design. The most recent version looks similar to the below.
 
-![Architecture Diagram of Cloud With Chris Integration Platform](images/how-i-use-azure-integration-services/architecture-diagram.png)
+![Architecture Diagram of Cloud With Chris Integration Platform](images/how-i-use-azure-integration-services/architecture-diagram.png "Architecture Diagram of Cloud With Chris Integration Platform")
 
 Let's begin by describing the main phases of the integration process flow.
 

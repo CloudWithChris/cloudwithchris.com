@@ -46,7 +46,7 @@ Before you can deploy the Azure API Management Gateway into your Azure Arc enabl
 
 I've included a screenshot below of the **Basics** tap of my API Management Resource Creation Experience.
 
-![Screenshot showing the App Service Kubernetes environment resource in the Azure Portal](images/azure-arc-for-apps-part-5/arc-apim-create-apim-resource.jpg)
+![Screenshot showing the App Service Kubernetes environment resource in the Azure Portal](images/azure-arc-for-apps-part-5/arc-apim-create-apim-resource.jpg "Screenshot showing the App Service Kubernetes environment resource in the Azure Portal")
 
 For the purposes of the blog post, I'm keeping the deployment of the Azure API Management resource simple. I'm enabling Application Insights, assigning a System Assigned Identity, not associating the resource with a virtual network and keeping the protocol settings as default.
 
@@ -68,11 +68,11 @@ Next up, go ahead to your API Management Resource and select the **Gateways** it
 
 Click on your newly created Gateway Object, and you should see a screen similar to the below.
 
-![Screenshot showing the newly created self-hosted gateway in the Azure Portal](images/azure-arc-for-apps-part-5/arc-apim-create-apim-gw-self-hosted.jpg)
+![Screenshot showing the newly created self-hosted gateway in the Azure Portal](images/azure-arc-for-apps-part-5/arc-apim-create-apim-gw-self-hosted.jpg "Screenshot showing the newly created self-hosted gateway in the Azure Portal")
 
 Navigate to the **Deployments** item, and take note of the Gateway Endpoint and Gateway Auth Key. You'll need it for the next step.
 
-![Screenshot showing the Gateway Endpoint and Token information in the Azure Portal](images/azure-arc-for-apps-part-5/arc-apim-create-apim-gw-self-hosted-deployment.jpg)
+![Screenshot showing the Gateway Endpoint and Token information in the Azure Portal](images/azure-arc-for-apps-part-5/arc-apim-create-apim-gw-self-hosted-deployment.jpg "Screenshot showing the Gateway Endpoint and Token information in the Azure Portal")
 
 Navigate to your command prompt, and use the following command (replacing your information within the command).
 
@@ -90,23 +90,23 @@ az k8s-extension create --cluster-type connectedClusters --cluster-name rb-arc-a
 ```
 After you've executed the command, navigate over to your Azure Arc resource in the Azure Portal. Click on the **Extensions** menu item. You should see that a microsoft.apimanagement.gateway extension is installing.
 
-![Screenshot showing the API Management Gateway Extension installing to the Azure Arc enabled Kubernetes Cluster](images/azure-arc-for-apps-part-5/arc-apim-create-apim-gw-extension-installing.jpg)
+![Screenshot showing the API Management Gateway Extension installing to the Azure Arc enabled Kubernetes Cluster](images/azure-arc-for-apps-part-5/arc-apim-create-apim-gw-extension-installing.jpg "Screenshot showing the API Management Gateway Extension installing to the Azure Arc enabled Kubernetes Cluster")
 
 ### Setting up the API Management gateway extension using the Azure Portal
 
 If you prefer the Azure Portal, then there is an option to install the API Management gateway extension through the Azure Portal.
 
-![Screenshot showing the API Management Gateway Extension creation process through the Azure Portal](images/azure-arc-for-apps-part-5/arc-apim-create-apim-gw-extension-portal.jpg)
+![Screenshot showing the API Management Gateway Extension creation process through the Azure Portal](images/azure-arc-for-apps-part-5/arc-apim-create-apim-gw-extension-portal.jpg "Screenshot showing the API Management Gateway Extension creation process through the Azure Portal")
 
 There is a separate page to configure the Log Analytics workspace. This is optional.
 
-![Screenshot showing the API Management Gateway Extension creation process through the Azure Portal](images/azure-arc-for-apps-part-5/arc-apim-create-apim-gw-extension-portal-2.jpg)
+![Screenshot showing the API Management Gateway Extension creation process through the Azure Portal](images/azure-arc-for-apps-part-5/arc-apim-create-apim-gw-extension-portal-2.jpg "Screenshot showing the API Management Gateway Extension creation process through the Azure Portal")
 
 > **Tip:** As a reminder, you'll begin seeing an additional charge once you create the API Management Gateway extension in the Azure Portal. This is because a Gateway object has been created under your API Management service instance. This is expected, and is the self-hosted gateway charge which is documented on the pricing page.
 
 After you've executed the command, navigate over to your Azure Arc resource in the Azure Portal. Click on the **Extensions** menu item. You should see that a microsoft.apimanagement.gateway extension is installing.
 
-![Screenshot showing the API Management Gateway Extension installing to the Azure Arc enabled Kubernetes Cluster](images/azure-arc-for-apps-part-5/arc-apim-create-apim-gw-extension-installing.jpg)
+![Screenshot showing the API Management Gateway Extension installing to the Azure Arc enabled Kubernetes Cluster](images/azure-arc-for-apps-part-5/arc-apim-create-apim-gw-extension-installing.jpg "Screenshot showing the API Management Gateway Extension installing to the Azure Arc enabled Kubernetes Cluster")
 
 
 ## Watching the Kubernetes Cluster when the extension is created
@@ -138,7 +138,7 @@ The API Management instance deployed already has an API available, the Echo API.
 
 You'll see that the Self Hosted Gateway should now be associated with the API that you selected. See an example in the screenshot below.
 
-![Screenshot showing the API now associated with the self-hosted gateway](images/azure-arc-for-apps-part-5/arc-apim-create-apim-gw-self-hosted-apis.jpg)
+![Screenshot showing the API now associated with the self-hosted gateway](images/azure-arc-for-apps-part-5/arc-apim-create-apim-gw-self-hosted-apis.jpg "Screenshot showing the API now associated with the self-hosted gateway")
 
 At this point, we'll want to go ahead and call the API! However, you'll remember that I created a service with a ClusterIP, so is only internally accessible within the Kubernetes cluster and is not exposed.
 
@@ -350,7 +350,7 @@ This is something that I plan to dig into further. I'm curious whether there is 
 
 Though, I can confirm that the self-hosted gateway container is deployed and configured correctly. I am seeing heartbeat information for the gateway under my API Management Instance in the Azure Portal, and also see the failed requests.
 
-![Screenshot showing the metrics available in the API Management Service Azure Portal blade for the self-hosted gateway](images/azure-arc-for-apps-part-5/arc-apim-gw-self-hosted-summary.jpg)
+![Screenshot showing the metrics available in the API Management Service Azure Portal blade for the self-hosted gateway](images/azure-arc-for-apps-part-5/arc-apim-gw-self-hosted-summary.jpg "Screenshot showing the metrics available in the API Management Service Azure Portal blade for the self-hosted gateway")
 
 ## Custom Resource Definitions in Kubernetes
 
@@ -362,11 +362,11 @@ The deployment is fairly simple, focusing on a Kubernetes Pod (This could be plu
 
 Similarly, the API Management self-hosted gateway is a concept that exists within an API Management Instance. As a result, the resource that you will see in your Azure Resource Group or Azure Subscription is the Azure API Management service itself.
 
-![Screenshot showing the resources available in the Azure Portal, focusing on the API Management instance](images/azure-arc-for-apps-part-5/arc-apim-rg.jpg)
+![Screenshot showing the resources available in the Azure Portal, focusing on the API Management instance](images/azure-arc-for-apps-part-5/arc-apim-rg.jpg "Screenshot showing the resources available in the Azure Portal, focusing on the API Management instance")
 
 To find the self-hosted gateway, you will need to look under the API Management instance for the **Gateways** menu item, as we saw in the blog post a little earlier.
 
-![Screenshot showing the Gateways listed within an Azure API Management Service Instance](images/azure-arc-for-apps-part-5/arc-apim-gateways.jpg)
+![Screenshot showing the Gateways listed within an Azure API Management Service Instance](images/azure-arc-for-apps-part-5/arc-apim-gateways.jpg "Screenshot showing the Gateways listed within an Azure API Management Service Instance")
 
 ## Summary
 

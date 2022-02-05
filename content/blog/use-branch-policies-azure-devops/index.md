@@ -27,7 +27,7 @@ This is where Branch Policies come in. Branch Policies are used to enforce workf
 
 > **Tip:** To control who which users or groups can Edit Branch Policies, in addition to other repository-level actions, navigate to your Azure DevOps **Project Settings**. Under the Project Settings, you will see a section for **Repos**, and an item called **Repositories**. You can specify permissions across all repositories within the project, or a specific repository. This can be achieved by specifying Azure DevOps Groups or individual users, and then selecting the appropriate permissions for them. You can find an example in the screenshot below.
 >
-> ![Screenshot showing the user interface to update permissions for Azure DevOps Groups within a repository](images/use-branch-policies-azure-devops/azdo-repos-settings-permissions.jpg)
+> ![Screenshot showing the user interface to update permissions for Azure DevOps Groups within a repository](images/use-branch-policies-azure-devops/azdo-repos-settings-permissions.jpg "Screenshot showing the user interface to update permissions for Azure DevOps Groups within a repository")
 
 In essence, before you commit to a certain branch (or a set of branches), you need to fulfil a set of conditions. If you don't, then you won't be able to commit to that branch. These conditions include:
 
@@ -41,7 +41,7 @@ In essence, before you commit to a certain branch (or a set of branches), you ne
 
 > **Tip:** Branch policies can be configured from the Branches page under Azure Repos. You can action these by hitting the ellipses (three dots) on the branch that you would like to protect. In the screenshot below, you can see that the main branch has been protected as it has a small icon (which looks a little like a medal), next to the branch name.
 >
-> ![Screenshot showing the Branch Protection Rules configured for the main branch of the cloudwithchris.com repository. It shows that signed commits are required. It showed that require pull request reviews before merging, require status checks to pass before merging, require conversation resolution before merging, require linear history and include administrators are not required.](images/use-branch-policies-azure-devops/azdo-branches-overview.jpg)
+> ![Screenshot showing the Branch Protection Rules configured for the main branch of the cloudwithchris.com repository. It shows that signed commits are required. It showed that require pull request reviews before merging, require status checks to pass before merging, require conversation resolution before merging, require linear history and include administrators are not required.](images/use-branch-policies-azure-devops/azdo-branches-overview.jpg "Screenshot showing the Branch Protection Rules configured for the main branch of the cloudwithchris.com repository. It shows that signed commits are required. It showed that require pull request reviews before merging, require status checks to pass before merging, require conversation resolution before merging, require linear history and include administrators are not required.")
 
 So, in summary - you need to have a set of conditions that you can fulfil before you can commit to a branch. If you don't, then you won't be able to commit to that branch.
 
@@ -51,15 +51,15 @@ So, in summary - you need to have a set of conditions that you can fulfil before
 
 2. Make sure that you have the appropriate repository selected at the very top of the page. (You can house several Git repositories within the same Azure DevOps project, so it's important to ensure you're working in the appropriate context!)
 
-![Screenshot showing multiple options for the Git Repository in the dropdown at the top of the Branches page in Azure Repos](images/use-branch-policies-azure-devops/azdo-branches-repo-dropdown.jpg)
+![Screenshot showing multiple options for the Git Repository in the dropdown at the top of the Branches page in Azure Repos](images/use-branch-policies-azure-devops/azdo-branches-repo-dropdown.jpg "Screenshot showing multiple options for the Git Repository in the dropdown at the top of the Branches page in Azure Repos")
 
 3. Hover over the appropriate branch, and select the ellipsis (three dots) on the right hand side. Select the Branch Policies option.
 
-![Screenshot showing multiple options for the Git Repository in the dropdown at the top of the Branches page in Azure Repos](images/use-branch-policies-azure-devops/azdo-branches-ellipsis.jpg)
+![Screenshot showing multiple options for the Git Repository in the dropdown at the top of the Branches page in Azure Repos](images/use-branch-policies-azure-devops/azdo-branches-ellipsis.jpg "Screenshot showing multiple options for the Git Repository in the dropdown at the top of the Branches page in Azure Repos")
 
 4. You will see a list of settings, some of which will have subsettings within them This is the list of branch policies that you can configure for the branch that you wish to protect. There is no save button on this form, as the options are saved automatically.
 
-![Screenshot showing several Branch Policy configuration options, which include a minimum number of reviewer count of 1, allowing requestors to approve their own changes. It also includes a requirement for linked work items, and for all comments to be resolved before a Pull Request can be merged.](images/use-branch-policies-azure-devops/azdo-branch-policy-1.jpg)
+![Screenshot showing several Branch Policy configuration options, which include a minimum number of reviewer count of 1, allowing requestors to approve their own changes. It also includes a requirement for linked work items, and for all comments to be resolved before a Pull Request can be merged.](images/use-branch-policies-azure-devops/azdo-branch-policy-1.jpg "Screenshot showing several Branch Policy configuration options, which include a minimum number of reviewer count of 1, allowing requestors to approve their own changes. It also includes a requirement for linked work items, and for all comments to be resolved before a Pull Request can be merged.")
 
 5. Configure the rules as appropriate for your branch. I typically configure some variation of the following: ``Require a minimum number of reviewers``, ``Check for linked work items``, ``Check for comment resolution`` and ``Build validation``.
 
@@ -67,33 +67,33 @@ So, in summary - you need to have a set of conditions that you can fulfil before
 
 6. Navigate back to the branches page under Azure Repos. If you did not previously have a Branch Policy configured, you should now notice a small icon (which looks a little like a medal) next to the branch name.
 
-![Screenshot showing that a branch policy has been configured on the main branch.](images/use-branch-policies-azure-devops/azdo-branch-policy-configured.jpg)
+![Screenshot showing that a branch policy has been configured on the main branch.](images/use-branch-policies-azure-devops/azdo-branch-policy-configured.jpg "Screenshot showing that a branch policy has been configured on the main branch.")
 
 As an example, I made some changes to my master branch protection policy. I now have the ``Require a minimum number of reviewers`` set to 1, and ``allow requestors to approve their own changes`` enabled. Consider this a warning - this configuration means that I can review my own PRs and approve them, somewhat defeating the point of a Pull Request workflow. However, given it's just myself that works on the project - It makes some sense here. I have set ``Check for linked work items`` to on, and ``Check for comment resolution`` to on as well.
 
 > **Tip:** You aren't limited to applying branch policies to individual repositories. You can navigate to the Project Settings, and navigate to the Repositories option underneath the Repos section. Click on the policies tab, and you will see a section for Branch Policies. Here, it says that you can "Protect important branch namespaces across all repositories in this project"
 >
-> ![Screenshot showing that branch protection can be configured at a project level. This can be done on a default branch, or branches matching a specified naming pattern.](images/use-branch-policies-azure-devops/project-wide-policies.jpg)
+> ![Screenshot showing that branch protection can be configured at a project level. This can be done on a default branch, or branches matching a specified naming pattern.](images/use-branch-policies-azure-devops/project-wide-policies.jpg "Screenshot showing that branch protection can be configured at a project level. This can be done on a default branch, or branches matching a specified naming pattern.")
 
 Now, we'll want to check whether our Branch Policies are working! After navigating to my readme.md, and wanting to make a dummy change - You will notice that I am prevented from committing the change to the main branch.
 
-![Screenshot showing that a commit directly to the main branch is no longer allowed. Instead, a Pull Request must be used to pass an update to that branch.](images/use-branch-policies-azure-devops/failed-commit.jpg)
+![Screenshot showing that a commit directly to the main branch is no longer allowed. Instead, a Pull Request must be used to pass an update to that branch.](images/use-branch-policies-azure-devops/failed-commit.jpg "Screenshot showing that a commit directly to the main branch is no longer allowed. Instead, a Pull Request must be used to pass an update to that branch.")
 
 Instead, we can use the same User Interface to commit the change in a new branch and raise a Pull Request. Pull Requests can also be raised under the Azure Repos section, by clicking on the Pull Requests item.
 
-![Screenshot showing that a commit is being made against a new branch called feature/readme-adjustment, and a Pull Request is being immediately created.](images/use-branch-policies-azure-devops/readme-edit.jpg)
+![Screenshot showing that a commit is being made against a new branch called feature/readme-adjustment, and a Pull Request is being immediately created.](images/use-branch-policies-azure-devops/readme-edit.jpg "Screenshot showing that a commit is being made against a new branch called feature/readme-adjustment, and a Pull Request is being immediately created.")
 
 After creating a Pull Request with the default settings, you can see that I have been taken to the Pull Request page to review the changes. Based on the settings that I had configured, even if I approve the Pull Request, I will not be able to merge the changes. This is because I have not linked a work item to the changes, and therefore have not met the conditions to merge.
 
-![Screenshot showing a Pull Request which requires a work item to be linked, 1 reviewer and 1 reviewer to approve.](images/use-branch-policies-azure-devops/pr-1.jpg)
+![Screenshot showing a Pull Request which requires a work item to be linked, 1 reviewer and 1 reviewer to approve.](images/use-branch-policies-azure-devops/pr-1.jpg "Screenshot showing a Pull Request which requires a work item to be linked, 1 reviewer and 1 reviewer to approve.")
 
 At this stage, I have now proceeded to link a work item with the Pull Request. You can see that the Pull Request now just requires 1 reviewer to approve.
 
-![Screenshot showing a Pull Request which requires 1 reviewer and 1 reviewer to approve.](images/use-branch-policies-azure-devops/pr-2.jpg)
+![Screenshot showing a Pull Request which requires 1 reviewer and 1 reviewer to approve.](images/use-branch-policies-azure-devops/pr-2.jpg "Screenshot showing a Pull Request which requires 1 reviewer and 1 reviewer to approve.")
 
 Finally, after approving the Pull Request, I can now merge the changes.
 
-![Screenshot showing that the pull request has completed all checks and is ready to be merged into the main branch.](images/use-branch-policies-azure-devops/pr-3.jpg)
+![Screenshot showing that the pull request has completed all checks and is ready to be merged into the main branch.](images/use-branch-policies-azure-devops/pr-3.jpg "Screenshot showing that the pull request has completed all checks and is ready to be merged into the main branch.")
 
 ## Summary
 

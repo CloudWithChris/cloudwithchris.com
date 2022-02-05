@@ -41,15 +41,15 @@ As you may have suspected by now, the questions align to the pillars of the Azur
 
 This also means that the review itself is split into these different pillars. When you load up the Azure Well-Architected Review, you will be prompted to choose the pillars that you want to assess.
 
-![Screenshot showing an example Azure Well-Architected Framework assessment](images/azure-well-architected-framework/azure-waf-assessment-intro.png)
+![Screenshot showing an example Azure Well-Architected Framework assessment](images/azure-well-architected-framework/azure-waf-assessment-intro.png "Screenshot showing an example Azure Well-Architected Framework assessment")
 
 As you progress through the questions, you'll find that some of them may have supporting materials (such as videos) in line with the question. These questions are typically multiple choice, so you can select the answers which are most appropriate.
 
-![Screenshot showing an example question from the Azure Well-Architected Framework assessment](images/azure-well-architected-framework/azure-waf-assessment-question.png)
+![Screenshot showing an example question from the Azure Well-Architected Framework assessment](images/azure-well-architected-framework/azure-waf-assessment-question.png "Screenshot showing an example question from the Azure Well-Architected Framework assessment")
 
 Once complete, you will have a list of recommendations based upon the questions that you have answered. You may also notice that it gives you a score for those pillars, as well as an overall score.
 
-![Screenshot showing an example set of recommendations from the Azure Well-Architected Framework assessment](images/azure-well-architected-framework/azure-waf-assessment-recommendation.png)
+![Screenshot showing an example set of recommendations from the Azure Well-Architected Framework assessment](images/azure-well-architected-framework/azure-waf-assessment-recommendation.png "Screenshot showing an example set of recommendations from the Azure Well-Architected Framework assessment")
 
 ## How can you use the Azure Well-Architected Framework for your project?
 
@@ -60,19 +60,19 @@ Let's take a few steps back. Consider that -
 
 Not only that, but you can sign in when using the Azure Well-Architected Assessment! And do you know what that means? it means you can save your results! That means that this assessment doesn't need to be a one-time activity. It can be used an ongoing activity, starting from a baseline and re-evaluated to measure your progress. Ideally, this would be carried out at some point in your project lifecycle where you can make factor in tangible-changes as a result of the review.
 
-![Screenshot showing the option to sign in to the Azure Well-Architected Framework assessment](images/azure-well-architected-framework/azure-waf-assessment-signin.png)
+![Screenshot showing the option to sign in to the Azure Well-Architected Framework assessment](images/azure-well-architected-framework/azure-waf-assessment-signin.png "Screenshot showing the option to sign in to the Azure Well-Architected Framework assessment")
 
 The experience changes when you are logged with a user account. You'll notice that instead of creating a brand new assessment, you can create a milestone for an existing assessment (allowing you to see the continuation of any existing trends).
 
-![Screenshot showing the option to create a milestone for an existing assessment](images/azure-well-architected-framework/azure-waf-assessment-milestone.png)
+![Screenshot showing the option to create a milestone for an existing assessment](images/azure-well-architected-framework/azure-waf-assessment-milestone.png "Screenshot showing the option to create a milestone for an existing assessment")
 
 Taking things one step further, if you complete the assessment when you're signed in, then you can link your Azure Advisor recommendations to the assessment.
 
-![Screenshot showing the option to associate Azure Advisor recommendations to an assessment](images/azure-well-architected-framework/azure-waf-assessment-advisor.png)
+![Screenshot showing the option to associate Azure Advisor recommendations to an assessment](images/azure-well-architected-framework/azure-waf-assessment-advisor.png "Screenshot showing the option to associate Azure Advisor recommendations to an assessment")
 
 Once you have completed an additional milestone assessment, you will be able to see how your results are trending across those assessments.
 
-![Screenshot showing the Azure Advisor Recommendation trends over time](images/azure-well-architected-framework/azure-waf-assessment-trends.png)
+![Screenshot showing the Azure Advisor Recommendation trends over time](images/azure-well-architected-framework/azure-waf-assessment-trends.png "Screenshot showing the Azure Advisor Recommendation trends over time")
 
 Let's consider those points again.
 

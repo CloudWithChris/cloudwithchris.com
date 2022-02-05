@@ -27,15 +27,15 @@ Go ahead and navigate over to [Microsoft Learn](https://docs.microsoft.com/en-us
 * **Modules** - A series of related articles, videos and labs/exercises to help you increase your skills on a given topic. Modules are split up into *units*, allowing you to consume content in a bite-sized way - no matter how much time you have available!
 * **Learning Paths** - A collection of modules, typically organised under some role-based or technology-based scenario.
 
-![Microsoft Learn Catalog](images/get-started-azure-microsoft-learn/MicrosoftLearn-Catalog.png)
+![Microsoft Learn Catalog](images/get-started-azure-microsoft-learn/MicrosoftLearn-Catalog.png "Microsoft Learn Catalog")
 
 The best bit? You may not appreciate this until you sign up or login, but Microsoft Learn is gamified! As you complete a unit, you gain XP. As you complete a module, you not only learn additional skills but also gain a badge. Continue along a learning path and you earn a trophy. If learning some new skills wasn't enough, then yes - you can absolutely challenge yourself to achieving new levels on Microsoft Learn if you work well by setting goals/challenges!
 
-![Microsoft Learn Profile](images/get-started-azure-microsoft-learn/MicrosoftLearn-Profile.png)
+![Microsoft Learn Profile](images/get-started-azure-microsoft-learn/MicrosoftLearn-Profile.png "Microsoft Learn Profile")
 
 Now I mentioned a bit earlier that in some cases, you may consume content through labs or exercises. You don't necessarily need to have access to / use your own Azure Subscription for these exercises. In these scenarios, you typically use the "Microsoft Learn Sandbox" to complete these exercises, so that you can complete your learning without having to install a series of tools, and accrue cost on your Azure subscriptions.
 
-![Microsoft Learn Sandbox](images/get-started-azure-microsoft-learn/MicrosoftLearn-Sandbox.png)
+![Microsoft Learn Sandbox](images/get-started-azure-microsoft-learn/MicrosoftLearn-Sandbox.png "Microsoft Learn Sandbox")
 
 So, we have a free online learning platform, that is gamified, with content broken down into units / modules / learning paths so that we can learn based upon the amount of time we have available? Yep, that's exactly right.
 

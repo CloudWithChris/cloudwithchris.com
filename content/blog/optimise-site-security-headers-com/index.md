@@ -22,7 +22,7 @@ In my blog post earlier this week, I mentioned that I recently spoke at the Nort
 
 As any engaged listener does, I took note of the tools that he used, and added them to my cloudwithchris.com backlog during the talk. When I later investigated the initial rating of the site, I received a score of an F - which appears to be the lowest possible score that you can receive! Given that I only allow HTTPS traffic to my site, I was surprised by this - so I begun looking into the recommendations further.
 
-![Output from Missing Security Headers on securityheaders.com](images/optimise-site-security-headers-com/missing-headers.png)
+![Output from Missing Security Headers on securityheaders.com](images/optimise-site-security-headers-com/missing-headers.png "Output from Missing Security Headers on securityheaders.com")
 
 The grades that you can achieve range from an A+ to an F. You can also receive an R grade if the site provides a redirect. From what I can tell, the grading system gives you an F by default if you do not pass any of the headers. Then for each header that you turn green, you improve by a grade.
 
@@ -44,7 +44,7 @@ I'm using the Microsoft CDN flavour of the Azure CDN to act as a caching layer i
 
 Below, you can find an image which shows the configuration of modifying the response headers by using the Azure CDN rules engine global rules:
 
-![Rules Engine configuration for www.cloudwithchris.com](images/optimise-site-security-headers-com/rules-engine-config.png)
+![Rules Engine configuration for www.cloudwithchris.com](images/optimise-site-security-headers-com/rules-engine-config.png "Rules Engine configuration for www.cloudwithchris.com")
 
 Again, for readability -
 
@@ -62,7 +62,7 @@ Again, for readability -
 
 Okay, great - that's some progress. After saving the configuration and waiting for the CDN rules engine to update across the Points of Presence, I revisited securityheaders.com to determine the impact of the changes.
 
-![Cloud With Chris rating after the CDN adjustments](images/optimise-site-security-headers-com/cloudwithchris-review.png)
+![Cloud With Chris rating after the CDN adjustments](images/optimise-site-security-headers-com/cloudwithchris-review.png "Cloud With Chris rating after the CDN adjustments")
 
 Great! The site has gone from an F to an A, but it looks like there's still a change needed for the Content-Security-Policy header. We have a problem though, there is a limit of 5 global rules per CDN endpoint, which I've already used as you'll see from the above.
 

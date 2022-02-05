@@ -28,7 +28,7 @@ The CNCF is most commonly known for the [Kubernetes project](https://github.com/
 * **Incubating Projects**: These are projects that are still under development but are not yet ready to be considered production-ready.
 * **Sandbox Projects**: These are projects in their early stages and not considered production-ready.
 
-![CNCF Projects](images/intro-to-cncf/cncf-project-types.jpg)
+![CNCF Projects](images/intro-to-cncf/cncf-project-types.jpg "CNCF Projects")
 
 In the episode with Annie, she gave a great overview of the CNCF and a handful of projects that she's excited about. Those include [Helm](https://helm.sh/), [Linkerd](https://linkerd.io/), [Kudo](https://kudo.dev/), [Keda](https://keda.sh/) and [Artifact Hub](https://artifacthub.io/). I gave a bonus example of the [Service Mesh Interface project](https://smi-spec.io/).
 

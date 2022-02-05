@@ -315,7 +315,7 @@ Initialized empty Git repository in D:/temp/mynewfolder/.git/
 
 Now, let's take stock. We've committed the change to our local repository, but we're not yet able to collaborate with anyone as it's on our local machine. This is where we'll need to use one of those "Garage Instances" or hosting providers that we talked about in the beginning of the blog. In this example, we'll use [GitHub](https://github.com/). If you have a GitHub account already, you can [Create a new repository](https://github.com/new). The repository name does not need to be the same as the folder that you created earlier. You are of course welcome to use an alternate provider if you have access to one, or can create a GitHub account and follow these steps!
 
-![Create a GitHub repository](images/git-getting-started-to-advanced/create-github-repo.jpg)
+![Create a GitHub repository](images/git-getting-started-to-advanced/create-github-repo.jpg "Create a GitHub repository")
   
   > **TIP**: When using these hosting providers, you'll often be asked if you want to initialize the repository with a README file, .gitignore file or potentially other options. If you're pushing an existing repository up (like we are in this instance), then you probably don't want to select those options, otherwise it will cause pain for you to try and merge those two repositories together. Instead, you could consider making those manually in your local repository as needed, and pushing those up to the remote repository.
 
@@ -472,7 +472,7 @@ So now we have managed to **push** the local repository to the remote location. 
 
 Let's first simulate a remote change by editing the file on GitHub directly.
 
-![Edit the Hello World File](images/git-getting-started-to-advanced/helloworld-edit.jpg)
+![Edit the Hello World File](images/git-getting-started-to-advanced/helloworld-edit.jpg "Edit the Hello World File")
 
 If we first run ``git status``, the local repository doesn't know about the remote repository updates.
 

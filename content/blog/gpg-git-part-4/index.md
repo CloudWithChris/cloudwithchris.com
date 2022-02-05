@@ -116,11 +116,11 @@ PIN changed.
 
 Now, go ahead and try to make a signed commit in your local Git repository. I am making an assumption that you still have the [Git configuration in place from part 3](./blog/gpg-git-part-3) which forces all commits to be signed by the signing GPG Key (as you specified the Key ID). Before making the commit, remove the YubiKey from your machine. Now make a change, stage it and commit it to your repository locally. You should see a slightly different prompt. I see something similar to the below -
 
-![Git Commit requires a Smartcard](images/gpg-git-part-4/card-prompt.jpg)
+![Git Commit requires a Smartcard](images/gpg-git-part-4/card-prompt.jpg "Git Commit requires a Smartcard")
 
 Once you've inserted the YubiKey, you should then see a prompt to unlock the smartcard. Your prompts may look slightly different, depending upon what tool/executable is configured on your system to handle the pin entry.
 
-![Git Commit requires Smartcard Unlock to access key](images/gpg-git-part-4/card-unlock.jpg)
+![Git Commit requires Smartcard Unlock to access key](images/gpg-git-part-4/card-unlock.jpg "Git Commit requires Smartcard Unlock to access key")
 
 Success! You've now used the GPG signing key that you [generated in part 2](./blog/gpg-git-part-2), transferred it onto a YubiKey device and generated a signed commit as a result. At this stage, you may want to generate separate signing keys for different machines/different YubiKeys so that a compromise doesn't impact multiple devices. But, I will leave that to your discretion dear reader.
 

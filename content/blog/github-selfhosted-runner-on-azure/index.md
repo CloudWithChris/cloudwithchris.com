@@ -29,13 +29,13 @@ I'm going to create an **Ubuntu Server 18.04 LTS - Gen 1**. For the purposes of 
 
 I've also selected the SSH public key authentication type and supplied my usual SSH public key, so that I can go ahead and easily authenticate using an existing public/private key pair from my local machine.
 
-![Screenshot showing the initial Virtual Machine creation blade in the Azure Portal](images/github-selfhosted-runner-on-azure/vm-create-1.jpg)
+![Screenshot showing the initial Virtual Machine creation blade in the Azure Portal](images/github-selfhosted-runner-on-azure/vm-create-1.jpg "Screenshot showing the initial Virtual Machine creation blade in the Azure Portal")
 
 Being cost conscious, I also decided to change the **OS disk type** to ``Standard SSD (locally-redundant storage)``.
 
 > **Tip:** You can find a [comparison of the disk options in the Azure Docs](https://docs.microsoft.com/en-us/azure/virtual-machines/disks-types#disk-comparison). This gives me the benefit of having a cost-efficient option, while having **consistent** performance at a lower level of IOPS. That's perfectly fine for my requirements.
 
-![Screenshot showing the initial Virtual Machine creation blade in the Azure Portal](images/github-selfhosted-runner-on-azure/vm-create-2.jpg)
+![Screenshot showing the initial Virtual Machine creation blade in the Azure Portal](images/github-selfhosted-runner-on-azure/vm-create-2.jpg "Screenshot showing the initial Virtual Machine creation blade in the Azure Portal")
 
 Overall, we'll need to make sure that we have access to the Virtual Machine. If you already have access to a jump box or Azure Bastion Host, then you could keep the virtual machine deployment as private, and login through that approach. If not (like my test environment), then you could opt for a Public IP. Though, be aware of the security risks that this brings - especially opening up port 22 to the public internet.
 
@@ -43,7 +43,7 @@ Overall, we'll need to make sure that we have access to the Virtual Machine. If 
 >
 > You should not need inbound connection to the Azure Virtual Machine from GitHub. Please review the [required GitHub URLs](https://docs.github.com/en/actions/hosting-your-own-runners/about-self-hosted-runners#communication-between-self-hosted-runners-and-github) that are needed to communicate back to GitHub. This is a very similar approach to Azure DevOps (e.g. 443 outbound to certain endpoints) if you have used a self-hosted agent in the past.
 
-![Screenshot showing the initial Virtual Machine creation blade in the Azure Portal](images/github-selfhosted-runner-on-azure/vm-create-3.jpg)
+![Screenshot showing the initial Virtual Machine creation blade in the Azure Portal](images/github-selfhosted-runner-on-azure/vm-create-3.jpg "Screenshot showing the initial Virtual Machine creation blade in the Azure Portal")
 
 Next up, you will notice several **management** related options. The one that we're particularly interested in on this page is ``System-assigned managed identity``. This gives our Virtual Machine the capability of having an Azure Identity associated with it as an object. When the Virtual Machine is deleted, the System-assigned managed identity is also deleted.
 
@@ -51,11 +51,11 @@ Next up, you will notice several **management** related options. The one that we
 >
 > **Note:** I created this Virtual Machine **without** the System-assigned managed identity created. I could have set it up in this step, but I'll show you this in another section of the Azure Portal. This may be useful for existing Virtual Machines.
 
-![Screenshot showing the initial Virtual Machine creation blade in the Azure Portal](images/github-selfhosted-runner-on-azure/vm-create-4.jpg)
+![Screenshot showing the initial Virtual Machine creation blade in the Azure Portal](images/github-selfhosted-runner-on-azure/vm-create-4.jpg "Screenshot showing the initial Virtual Machine creation blade in the Azure Portal")
 
 The final tab is related to **Advanced** functionality. This includes custom configuration, agents, scripting or data that we want to install on the VM in the provisioning and post-deployment stages. This is good to be aware of, though is not required for our scenario. We'll keep these as the defaults.
 
-![Screenshot showing the initial Virtual Machine creation blade in the Azure Portal](images/github-selfhosted-runner-on-azure/vm-create-5.jpg)
+![Screenshot showing the initial Virtual Machine creation blade in the Azure Portal](images/github-selfhosted-runner-on-azure/vm-create-5.jpg "Screenshot showing the initial Virtual Machine creation blade in the Azure Portal")
 
 Finally, associate any Resource Tags as needed and then complete the Create Virtual Machine through the Azure Portal creation experience.
 
@@ -300,7 +300,7 @@ On the left hand side of the Azure Virtual Machine resource, you will see an opt
 
 Change the status of the System-assigned managed identity to On.
 
-![Screenshot showing the configuration of a System Assigned Identity in the Azure VM Resource in Azure Portal](images/github-selfhosted-runner-on-azure/vm-msi-setup.jpg)
+![Screenshot showing the configuration of a System Assigned Identity in the Azure VM Resource in Azure Portal](images/github-selfhosted-runner-on-azure/vm-msi-setup.jpg "Screenshot showing the configuration of a System Assigned Identity in the Azure VM Resource in Azure Portal")
 
 Now, let's go back and try to complete the GitHub Actions workflow once again.
 
@@ -319,15 +319,15 @@ A different error! We're making progress, but not quite able to complete the Git
 
 Fortunately (once again!) - it's a very simple fix. We need to once again navigate to the **Identity** section of our Azure Virtual Machine resource. Notice that it has a button for ``Azure role assignments`` underneath the Object ID and permissions subheading? We need to assign some permissions directly to the System-assigned managed identity which is associated with the Azure Virtual Machine.
 
-![Screenshot showing the configuration of a System Assigned Identity in the Azure VM Resource in Azure Portal](images/github-selfhosted-runner-on-azure/vm-msi-setup.jpg)
+![Screenshot showing the configuration of a System Assigned Identity in the Azure VM Resource in Azure Portal](images/github-selfhosted-runner-on-azure/vm-msi-setup.jpg "Screenshot showing the configuration of a System Assigned Identity in the Azure VM Resource in Azure Portal")
 
 For now, I'll go ahead and configure Reader permissions at the Subscription level.
 
-![Screenshot showing that Reader level subscription access has been granted to the Azure Virtual Machine](images/github-selfhosted-runner-on-azure/vm-permissions-configure.jpg)
+![Screenshot showing that Reader level subscription access has been granted to the Azure Virtual Machine](images/github-selfhosted-runner-on-azure/vm-permissions-configure.jpg "Screenshot showing that Reader level subscription access has been granted to the Azure Virtual Machine")
 
 Once you're happy, hit save. After a few moments, you should see that the associated permissions table updates with the information that you had just submitted.
 
-![Screenshot showing that Reader level subscription access has been granted to the Azure Virtual Machine](images/github-selfhosted-runner-on-azure/vm-permissions-configure-2.jpg)
+![Screenshot showing that Reader level subscription access has been granted to the Azure Virtual Machine](images/github-selfhosted-runner-on-azure/vm-permissions-configure-2.jpg "Screenshot showing that Reader level subscription access has been granted to the Azure Virtual Machine")
 
 ## Running our GitHub Action workflow
 

@@ -92,7 +92,7 @@ To start, you'll need to provide some basic information about your API Managemen
 * **Organization Name** which is used in the developer portal (if using an appropriate SKU) and sender of notification emails.
 * **Administrator email** where any notifications from API Management will be sent.
 
-![Create an Azure API Management Resource](images/introduction-to-api-management/create-apim-1.png)
+![Create an Azure API Management Resource](images/introduction-to-api-management/create-apim-1.png "Create an Azure API Management Resource")
 
 Finally, you will also be prompted to choose a pricing tier for your API Management instance. There are five tiers; Consumption, Developer, Basic, Standard and Premium.
 
@@ -100,13 +100,13 @@ There are some tangible differences between the tiers, which are [very well docu
 
 > **Tip:** Your requirements will truly influence which SKU fits your needs best. Make sure to review the different tiers and feature comparison, so that you can choose appropriately. For the purposes of this blog post, we'll stick with the consumption tier.
 
-![Showcasing the API Management Pricing Tier options](images/introduction-to-api-management/create-apim-2.png)
+![Showcasing the API Management Pricing Tier options](images/introduction-to-api-management/create-apim-2.png "Showcasing the API Management Pricing Tier options")
 
 Next up, you'll be asked to confirm whether the API Management instance should be linked with Application Insights. This allows you to enable logging of the API calls that pass through your API Management Gateway.
 
 > **Tip:** Once the logger has been associated with your API Management instance, this can be enabled on an API by API basis.
 
-![Associating Application Insights with the API Management Resource](images/introduction-to-api-management/create-apim-3.png)
+![Associating Application Insights with the API Management Resource](images/introduction-to-api-management/create-apim-3.png "Associating Application Insights with the API Management Resource")
 
 The next tab in the creation experience is scale. Scaling is possible in the Basic, Standard and Premium tiers, but is unavailable in the Developer tier.
 
@@ -116,7 +116,7 @@ Scaling is handled automatically in the consumption tier.
 >
 > Alternatively, you could deploy it into a Consumption plan which scales automatically, and you are charged based upon usage.
 
-![Scale units are not supported for Developer or Consumption Tier API Management resources](images/introduction-to-api-management/create-apim-4.png)
+![Scale units are not supported for Developer or Consumption Tier API Management resources](images/introduction-to-api-management/create-apim-4.png "Scale units are not supported for Developer or Consumption Tier API Management resources")
 
 Next up is the managed identity tab. Like many Azure Resources, it's possible to associate a System-assigned managed identity with an API Management instance.
 
@@ -128,23 +128,23 @@ Why would you want to do that?
 
 > **Note:** We won't really be using the system-assigned managed identity in this blog post. However, we may use it in future posts relating to this series.
 
-![Enable system-assigned managed identity](images/introduction-to-api-management/create-apim-5.png)
+![Enable system-assigned managed identity](images/introduction-to-api-management/create-apim-5.png "Enable system-assigned managed identity")
 
 Virtual Network is the next configuration item. This is not supported in the Basic, Standard or Consumption tiers.
 
 This is supported in the Developer and Production SKUs. If you configure this option, then the API Management instance is deployed directly into the Azure Virtual Network (as opposed to a multi-tenant deployment using private endpoints, for example).
 
-![Virtual network is not supported in the Basic, Standard, and Consumption tiers.](images/introduction-to-api-management/create-apim-6.png)
+![Virtual network is not supported in the Basic, Standard, and Consumption tiers.](images/introduction-to-api-management/create-apim-6.png "Virtual network is not supported in the Basic, Standard, and Consumption tiers.")
 
 The final API Management configuration option is to do with Protocol settings. This relates to the Client-side protocols, transport security and backend-side transport security.
 
-![Protocol settings - Client-side protocols, client-side transport security, backend-side transport security](images/introduction-to-api-management/create-apim-7.png)
+![Protocol settings - Client-side protocols, client-side transport security, backend-side transport security](images/introduction-to-api-management/create-apim-7.png "Protocol settings - Client-side protocols, client-side transport security, backend-side transport security")
 
 As with the majority of Azure Resources, you can go ahead and associate Azure Resource Tags. Once you've reviewed the resource configuration and are comfortable, go ahead and create.
 
 > **Note:** As we're creating an API Management resource under the consumption tier, it should only take a few minutes to create. The other tiers (Developer, Basic, Standard and Premium) all take a longer period of time to spin up the underlying infrastructure.
 
-![API Management Resource in the Azure Portal](images/introduction-to-api-management/apim-1.png)
+![API Management Resource in the Azure Portal](images/introduction-to-api-management/apim-1.png "API Management Resource in the Azure Portal")
 
 ## Azure API Management Concepts
 
@@ -179,23 +179,23 @@ If you're following along, then I chose to use the Demo Conference API which is 
 
 It's available at ``https://conferenceapi.azurewebsites.net?format=json``.
 
-![Import an Open API Spec into API Management](images/introduction-to-api-management/apim-2.png)
+![Import an Open API Spec into API Management](images/introduction-to-api-management/apim-2.png "Import an Open API Spec into API Management")
 
 Once complete, you should notice that your API list now has an API available. If you imported an existing API, then you may now have several API operations that appear for you.
 
 > **Tip:** Feel free to explore the user interface at this point. It's worthwhile becoming familiar with the different levels that you can operate at (e.g. All APIs, All Operations, Specific Operations), as you can associate policies and change the backend details at each of these levels.
 
-![Screenshot showing a new API defined and the associated API operations, as well as configuration options](images/introduction-to-api-management/apim-3.png)
+![Screenshot showing a new API defined and the associated API operations, as well as configuration options](images/introduction-to-api-management/apim-3.png "Screenshot showing a new API defined and the associated API operations, as well as configuration options")
 
 Select one of your API operations. On the top menu, you'll notice that there is a tab called **test**. Click on that. You'll see that you can now go ahead and interact with that API.
 
-![Screenshot showing the test tab of an API operation](images/introduction-to-api-management/apim-4.png)
+![Screenshot showing the test tab of an API operation](images/introduction-to-api-management/apim-4.png "Screenshot showing the test tab of an API operation")
 
 You can go ahead and click the test button, specifying any required query parameters, request headers, or request body.
 
 > **Tip:** This is a quick and easy way to test your APIs, including the policies that are applied to your API operations. For example, if JWT Authorization is specified for an API operation, then an Authorization header would be expected, otherwise you would see a failure from API management.
 
-![Screenshot showing a successful test of an API operation](images/introduction-to-api-management/apim-5.png)
+![Screenshot showing a successful test of an API operation](images/introduction-to-api-management/apim-5.png "Screenshot showing a successful test of an API operation")
 
 ## Gaining value from the Facade - High Cohesion, Low Coupling - Revisions and Versions
 
@@ -213,21 +213,21 @@ The important aspect to understand is that revisions are typically used when the
 
 Click on one of your APIs and then select revisions. You should see that there is one revision listed.
 
-![Screenshot showing the revisions tab of an API in API Management](images/introduction-to-api-management/apim-6.png)
+![Screenshot showing the revisions tab of an API in API Management](images/introduction-to-api-management/apim-6.png "Screenshot showing the revisions tab of an API in API Management")
 
 Let's go ahead and click **Add revision**.
 
-![Screenshot showing the Add revision creation experience](images/introduction-to-api-management/apim-7.png)
+![Screenshot showing the Add revision creation experience](images/introduction-to-api-management/apim-7.png "Screenshot showing the Add revision creation experience")
 
 At this point, you should notice that you can change between different revisions of your API. Remember that only one of these revisions are considered as **production**. You can reach the revisions by specifying them in the request URL, typically with a syntax such as ``;rev=2`` after the API Management instance domain name.
 
 Go ahead and make a non-breaking change to your API. I added a new POST operation called Test. It doesn't actually do anything, but equally - it doesn't break the existing API implementation, so could be considered a revision.
 
-![Example showing a new revision with a new API Operation created](images/introduction-to-api-management/apim-8.png)
+![Example showing a new revision with a new API Operation created](images/introduction-to-api-management/apim-8.png "Example showing a new revision with a new API Operation created")
 
 Let's switch back to the previous revision. You'll notice from the screenshot below that the Test Operation that we created is no longer showing. This means that the Test Operation is not yet available in our production API.
 
-![Screenshot showing that the revision is reverted to revision 1, and no longer contains the Test operation](images/introduction-to-api-management/apim-9.png)
+![Screenshot showing that the revision is reverted to revision 1, and no longer contains the Test operation](images/introduction-to-api-management/apim-9.png "Screenshot showing that the revision is reverted to revision 1, and no longer contains the Test operation")
 
 This works well when you are making non-breaking changes. But of course, there may be occasions where you need to make a breaking change to an API. How do you achieve that? That's where versions come into the picture!
 
@@ -239,7 +239,7 @@ This gives you the flexibility to split up the implementation of your different 
 
 Let's first navigate to an API in our API Management instance. Click on the ellipsis and select Add version.
 
-![Screenshot showing the Add version option for an API](images/introduction-to-api-management/apim-10.png)
+![Screenshot showing the Add version option for an API](images/introduction-to-api-management/apim-10.png "Screenshot showing the Add version option for an API")
 
 We have several options when creating a new API version. We can allow the consumer to specify which API version they're intending to use by either -
 
@@ -251,7 +251,7 @@ We have several options when creating a new API version. We can allow the consum
 >
 > Do remember that the developer portal is not an available option in the Consumption mode.
 
-![Screenshot showing the creation experience for a new API version](images/introduction-to-api-management/apim-11.png)
+![Screenshot showing the creation experience for a new API version](images/introduction-to-api-management/apim-11.png "Screenshot showing the creation experience for a new API version")
 
 ## Creating Products in API Management
 
@@ -265,11 +265,11 @@ First, head over to the **Products** section of your API Management instance and
 
 This was purely for demonstration purposes, but please go ahead with something that's a little more representative for your scenario.
 
-![Screenshot showing an example list of products in an API Management instance](images/introduction-to-api-management/apim-12.png)
+![Screenshot showing an example list of products in an API Management instance](images/introduction-to-api-management/apim-12.png "Screenshot showing an example list of products in an API Management instance")
 
 Click on one of the Products. You'll notice in the blade that opens, there is an **APIs** menu item. This is how we can go ahead and associate multiple APIs, or indeed - versions of an API - to a given product. This is what then 'lights up' the functionality to a given set of consumers.
 
-![Screenshot showing the APIs being associated to an API Management Product](images/introduction-to-api-management/apim-13.png)
+![Screenshot showing the APIs being associated to an API Management Product](images/introduction-to-api-management/apim-13.png "Screenshot showing the APIs being associated to an API Management Product")
 
 ## Wrap-up and Closing Thoughts
 

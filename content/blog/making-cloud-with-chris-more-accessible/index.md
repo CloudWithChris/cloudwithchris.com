@@ -51,7 +51,7 @@ This information is fully documented over on the [Accessibility Insights](https:
 
 Now that raises the question, how do you evaluate the contrast ratio? And more importantly, how can you find colours that will work for your site, while still maintaining the contrast ratio? This I found a little tricky, but after some digging I found [this tool](https://contrast-finder.tanaguru.com), which allows you to test the contrast ratio of any foreground and background colour based either on RGB or Hexadecimal. You can then specify whether you want the Foreground Colour to change, or the Background Colour to change.
 
-![Contrast Suggestions from the Tanaguru Contrast-Finder tool showing that the initial contrast had a ratio of 2.7 compared with a minimum of 4.5](images/making-cloud-with-chris-more-accessible/contrast-suggestions.jpg)
+![Contrast Suggestions from the Tanaguru Contrast-Finder tool showing that the initial contrast had a ratio of 2.7 compared with a minimum of 4.5](images/making-cloud-with-chris-more-accessible/contrast-suggestions.jpg "Contrast Suggestions from the Tanaguru Contrast-Finder tool showing that the initial contrast had a ratio of 2.7 compared with a minimum of 4.5")
 
 I navigated through various pages, hunting down any colour combinations that were lower than the minimum contrast ratio of 4.5:1. This included individual code snippets (not code blocks); the pink colour on the background didn't have a high enough contrast to the background. I believe I have caught all of these now, so this should now be fixed.
 

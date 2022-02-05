@@ -48,7 +48,7 @@ The agent software is available across MacOS, Linux, and Windows. There is also 
 
 > **Tip:** If you are using Azure Virtual Machines, then you can use the [Azure Virtual Machine Extensions](https://docs.microsoft.com/en-us/azure/virtual-machines/extensions/overview) to install the agent on your Virtual Machine.
 >
-> ![Screenshot showing the Azure DeVOps Extension for a Linux Machine as well as a Windows Machine](images/azuredevops-selfhosted-agents-on-azure/azdo-vmextension-both.jpg)
+> ![Screenshot showing the Azure DeVOps Extension for a Linux Machine as well as a Windows Machine](images/azuredevops-selfhosted-agents-on-azure/azdo-vmextension-both.jpg "Screenshot showing the Azure DeVOps Extension for a Linux Machine as well as a Windows Machine")
 
 Let's focus on the Azure Virtual Machine Scale Set option. While you could create your own Virtual Machine Scale Set, you would have to manage the number of instances in that set (i.e. scale out when more agents are needed, scale in when fewer are needed). Wouldn't it be great if Azure DevOps could scale out and in for you (e.g. if there are no jobs, have no VMs running to control unnecessary costs)?
 
@@ -62,11 +62,11 @@ Before enabling the functionality, you need to have a Virtual Machine Scale Set 
 
 At that point, you can create a new Azure Virtual Machine Scale Set Agent pool from your Azure DevOps project. You can do this by navigating to an Azure DevOps Project, clicking **Project Settings** and then **Agent Pools** under the Pipelines section.
 
-![Screenshot showing the Agent Pools available for a project in Azure DevOps. It highlights the Agent Pools item under the Pipelines subsection, as well as the Add Pool button to create a new agent pool.](images/azuredevops-selfhosted-agents-on-azure/azdo-agentpools.jpg)
+![Screenshot showing the Agent Pools available for a project in Azure DevOps. It highlights the Agent Pools item under the Pipelines subsection, as well as the Add Pool button to create a new agent pool.](images/azuredevops-selfhosted-agents-on-azure/azdo-agentpools.jpg "Screenshot showing the Agent Pools available for a project in Azure DevOps. It highlights the Agent Pools item under the Pipelines subsection, as well as the Add Pool button to create a new agent pool.")
 
 From here, you can select the **Add pool** option.
 
-![Screenshot showing the Add agent pool flyout. This contains an option to select a self-hosted pool or an Azure virtual machine scale set](images/azuredevops-selfhosted-agents-on-azure/azdo-add-agentpool.jpg)
+![Screenshot showing the Add agent pool flyout. This contains an option to select a self-hosted pool or an Azure virtual machine scale set](images/azuredevops-selfhosted-agents-on-azure/azdo-add-agentpool.jpg "Screenshot showing the Add agent pool flyout. This contains an option to select a self-hosted pool or an Azure virtual machine scale set")
 
 At this point, go ahead and select the Azure Virtual Machine Scale Set option. There are several configuration options to set -
 
@@ -81,7 +81,7 @@ At this point, go ahead and select the Azure Virtual Machine Scale Set option. T
   * **Delay in minutes before deleting excess idle agents** - This is the amount of time that will be waited before deleting Virtual Machines that are no longer being used for a job. Consider this like the 'time until a scale in' number.
   * **Grant access permissions to all pipelines** - Typically, you have to authorize the agent pool to access the pipelines that you want to use (as [shown here](https://docs.microsoft.com/en-us/azure/devops/pipelines/policies/permissions?view=azure-devops#why-do-i-see-the-message-that-i-need-to-authorize-a-resource-before-the-run-can-continue)). This option will grant access to all pipelines in your Azure DevOps project. If you are security conscious, then you may want to do this on a pipeline by pipeline basis by using the linked documentation.
 
-![Screenshot showing the Add agent pool flyout, including the configuration options shown above](images/azuredevops-selfhosted-agents-on-azure/azdo-add-agentpool-2.jpg)
+![Screenshot showing the Add agent pool flyout, including the configuration options shown above](images/azuredevops-selfhosted-agents-on-azure/azdo-add-agentpool-2.jpg "Screenshot showing the Add agent pool flyout, including the configuration options shown above")
 
 Once you've configured the agent pool, you can click the **Save** button to save the configuration.
 

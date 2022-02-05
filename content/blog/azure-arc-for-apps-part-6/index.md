@@ -85,15 +85,15 @@ Navigate to your Kubernetes - Azure Arc resource in the Azure Portal. On the lef
 
 You should see a list of the extensions that are already installed on your cluster.
 
-![Screenshot showing the Azure Arc Extensions installed so far (Which displays the Application Services Extension)](images/azure-arc-for-apps-part-6/arc-extensions.jpg)
+![Screenshot showing the Azure Arc Extensions installed so far (Which displays the Application Services Extension)](images/azure-arc-for-apps-part-6/arc-extensions.jpg "Screenshot showing the Azure Arc Extensions installed so far (Which displays the Application Services Extension)")
 
 Click the Add button, and you'll see a list of the extensions which are available for installation.
 
-![Screenshot showing the available extensions to install onto an Azure Arc managed cluster](images/azure-arc-for-apps-part-6/arc-extensions-options.jpg)
+![Screenshot showing the available extensions to install onto an Azure Arc managed cluster](images/azure-arc-for-apps-part-6/arc-extensions-options.jpg "Screenshot showing the available extensions to install onto an Azure Arc managed cluster")
 
 Select the Event Grid on Kubernetes extension. You'll reach a page which looks similar to the below screenshot.
 
-![Screenshot showing the Event Grid on Kubernetes Extension creation experience in the Azure Portal](images/azure-arc-for-apps-part-6/azure-arc-event-grid-creation.jpg)
+![Screenshot showing the Event Grid on Kubernetes Extension creation experience in the Azure Portal](images/azure-arc-for-apps-part-6/azure-arc-event-grid-creation.jpg "Screenshot showing the Event Grid on Kubernetes Extension creation experience in the Azure Portal")
 
 Note the following on the **Basics** tab:
 
@@ -112,15 +112,15 @@ Note the following on the **Basics** tab:
 
 Let's move on to the **Configuration** tab. In this section, we configure the certificates used to establish a TLS session between the Event Grid operator and an Event Grid broker. As this is a demonstration environment, I'll be ticking the box for ``Enable HTTP (not secure) communication``. However, this is something you'll want to review for a production environment.
 
-![Screenshot showing the second stage of the Event Grid on Kubernetes Extension creation experience in the Azure Portal - Configuring either HTTP or HTTPS (This shows the options for HTTPS)](images/azure-arc-for-apps-part-6/azure-arc-event-grid-creation-2-https.jpg)
+![Screenshot showing the second stage of the Event Grid on Kubernetes Extension creation experience in the Azure Portal - Configuring either HTTP or HTTPS (This shows the options for HTTPS)](images/azure-arc-for-apps-part-6/azure-arc-event-grid-creation-2-https.jpg "Screenshot showing the second stage of the Event Grid on Kubernetes Extension creation experience in the Azure Portal - Configuring either HTTP or HTTPS (This shows the options for HTTPS)")
 
 Finally, the **Monitoring** tab allows you to enable collection of metrics from the dataplane. This includes items such as the number of events that have been received, delivery success count and more. I'll be keeping this flag set as enabled.
 
-![Screenshot showing the third stage of the Event Grid on Kubernetes Extension creation experience in the Azure Portal - Configuring monitoring)](images/azure-arc-for-apps-part-6/azure-arc-event-grid-creation-3.jpg)
+![Screenshot showing the third stage of the Event Grid on Kubernetes Extension creation experience in the Azure Portal - Configuring monitoring)](images/azure-arc-for-apps-part-6/azure-arc-event-grid-creation-3.jpg "Screenshot showing the third stage of the Event Grid on Kubernetes Extension creation experience in the Azure Portal - Configuring monitoring)")
 
 At this point, we've fully configured the extension. Let's review our settings and create the extension.
 
-![Screenshot showing the verification stage of the Event Grid on Kubernetes Extension creation experience in the Azure Portal](images/azure-arc-for-apps-part-6/azure-arc-event-grid-creation-final.jpg)
+![Screenshot showing the verification stage of the Event Grid on Kubernetes Extension creation experience in the Azure Portal](images/azure-arc-for-apps-part-6/azure-arc-event-grid-creation-final.jpg "Screenshot showing the verification stage of the Event Grid on Kubernetes Extension creation experience in the Azure Portal")
 
 > **Tip:** The deployment completion notification came almost immediately for me. However, the docs and the portal note that this is an asynchronous operation, and you should check the status in kubernetes. For me, I executed ``kubectl get pods -n eventgrid --watch``
 
@@ -166,7 +166,7 @@ eventgrid   ClusterIP   10.0.121.237   <none>        80/TCP    0s
 
 Once complete, you should see the Extension Install status change from **Pending** to **Installed**.
 
-![Screenshot showing the Azure Arc Extensions installed once the Event Grid for Kubernetes Extension configuration has completed](images/azure-arc-for-apps-part-6/arc-extensions-after-eg-install.jpg)
+![Screenshot showing the Azure Arc Extensions installed once the Event Grid for Kubernetes Extension configuration has completed](images/azure-arc-for-apps-part-6/arc-extensions-after-eg-install.jpg "Screenshot showing the Azure Arc Extensions installed once the Event Grid for Kubernetes Extension configuration has completed")
 
 ### Installing the Event Grid on Kubernetes extension through the Azure CLI
 
@@ -234,17 +234,17 @@ We have several options to create our Event Grid Topic. We'll review the Azure P
 
 We'll navigate to the Azure Portal and create a new Event Grid Topic. Give your Event Grid topic a name, and select a region. Notice that the Custom Location that you created in the previous step is now available as an option.
 
-![Screenshot showing the Azure Portal experience to create an Event Grid Topic, showing custom locations](images/azure-arc-for-apps-part-6/azure-arc-event-grid-create-topic.jpg)
+![Screenshot showing the Azure Portal experience to create an Event Grid Topic, showing custom locations](images/azure-arc-for-apps-part-6/azure-arc-event-grid-create-topic.jpg "Screenshot showing the Azure Portal experience to create an Event Grid Topic, showing custom locations")
 
 Click Next to move on to the **Advanced** tab. Notice that the **Events Schema** and **Enable system assigned identity** options are both disabled.
 
 > **Tip:** As noted earlier, **Cloud Event Schema v1.0** is the only supported Event Schema in Event Grid for Kubernetes. Likewise, system assigned identities are not supported in Event Grid for Kubernetes at this time.
 
-![Screenshot showing the Azure Portal experience to create an Event Grid Topic, showing event schema as CloudEvents 1.0 only](images/azure-arc-for-apps-part-6/azure-arc-event-grid-create-topic2.jpg)
+![Screenshot showing the Azure Portal experience to create an Event Grid Topic, showing event schema as CloudEvents 1.0 only](images/azure-arc-for-apps-part-6/azure-arc-event-grid-create-topic2.jpg "Screenshot showing the Azure Portal experience to create an Event Grid Topic, showing event schema as CloudEvents 1.0 only")
 
 With that, feel free to go ahead and assign Azure Resource Tags to your Event Grid Topic, and proceed to the Review + create tab. After a few moments, you should find that your deployment has completed successfully.
 
-![TBC](images/azure-arc-for-apps-part-6/azure-arc-event-grid-create-topic-complete.png)
+![TBC](images/azure-arc-for-apps-part-6/azure-arc-event-grid-create-topic-complete.png "TBC")
 
 > **Note:** You eagle-eyed readers may have noticed that the Resource Group that I'm using changed in the above screenshot. I had to tear down my cluster for some customer-facing demos, which meant that I needed to restart from scratch. I wanted to call this out to avoid any confusion!
 
@@ -453,7 +453,7 @@ We have an Event Grid Topic created. Now, to route those events to Event Handler
 
 Let's navigate to the Event Grid Topic that we created, and click subscriptions. From there, we can create a new Event Subscription.
 
-![Create Event Subscription experience in Azure Portal](images/azure-arc-for-apps-part-6/azure-arc-event-grid-create-subscription1.png)
+![Create Event Subscription experience in Azure Portal](images/azure-arc-for-apps-part-6/azure-arc-event-grid-create-subscription1.png "Create Event Subscription experience in Azure Portal")
 
 You'll notice we have several configuration options including:
 
@@ -472,17 +472,17 @@ Below, you can see that we can send our Events to a ``Web Hook``, ``Storage Queu
 >
 > **However**, it is possible to route to Azure App Service, Azure Functions or Azure Logic Apps that are hosted on an Azure Arc Enabled Kubernetes cluster. This can be achieved by using the **Webhooks**.
 
-![Screenshot showing the example Event Handler types available for Event Grid on Kubernetes](images/azure-arc-for-apps-part-6/azure-arc-event-grid-create-subscription-event-handler.png)
+![Screenshot showing the example Event Handler types available for Event Grid on Kubernetes](images/azure-arc-for-apps-part-6/azure-arc-event-grid-create-subscription-event-handler.png "Screenshot showing the example Event Handler types available for Event Grid on Kubernetes")
 
 As an aside, I have a Service Bus Namespace that I'm using as part of a broader Cloud with Chris integration platform. I decided to create a Service Bus Queue in that Service Bus Namespace to act as the Event Handler for this writeup.
 
-![Screenshot showing a Service Bus Queue called eg-aks in the cloudwithchris Service Bus Namespace](images/azure-arc-for-apps-part-6/service-bus-queue.png)
+![Screenshot showing a Service Bus Queue called eg-aks in the cloudwithchris Service Bus Namespace](images/azure-arc-for-apps-part-6/service-bus-queue.png "Screenshot showing a Service Bus Queue called eg-aks in the cloudwithchris Service Bus Namespace")
 
 After selecting Service Bus Queue from the Endpoint Details dropdown list, we'll be guided to select an endpoint. A blade will pop out and guide you to select the appropriate ``Subscription``, ``Resource Group``, ``Service Bus Namespace`` and ``Service Bus Queue`` that you plan to route to.
 
 > **Tip:** You don't have to use a Service Bus Queue if you're following along. This just happens to be a resource I had to hand for the purposes of the write-up. Feel free to choose something else. The [Azure Docs showcase a Webhook example](https://docs.microsoft.com/en-us/azure/event-grid/kubernetes/create-topic-subscription) if you prefer.
 
-![Screenshot showing the Select Service Bus Queue blade in the Create Event Subscription experinece](images/azure-arc-for-apps-part-6/azure-arc-event-grid-create-subscription-event-handler2.png)
+![Screenshot showing the Select Service Bus Queue blade in the Create Event Subscription experinece](images/azure-arc-for-apps-part-6/azure-arc-event-grid-create-subscription-event-handler2.png "Screenshot showing the Select Service Bus Queue blade in the Create Event Subscription experinece")
 
 After confirming the Event Handler of choice, we'll proceed to create the Event Subscription. That means we'll leave the **Filters** and **Additional Features** tabs as their default options.
 
@@ -602,7 +602,7 @@ Events:                <none>
 
 Ok, that looks good! I've obfuscated the Connection String from the above output (for obvious reasons)! Notice that it also contains the Event Types that we're looking for - ``myevent`` and ``myotherevent``. That means, if an event doesn't match that, then the Event Handler (the Service Bus Queue) shouldn't receive it.
 
-![Screenshot showing an empty Service Bus Queue](images/azure-arc-for-apps-part-6/service-bus-no-messages.png)
+![Screenshot showing an empty Service Bus Queue](images/azure-arc-for-apps-part-6/service-bus-no-messages.png "Screenshot showing an empty Service Bus Queue")
 
 Let's take stock. We have an Event Grid Topic. We also have an Event Grid Subscription which is filtering on events with the event type ``myevent`` or ``myotherevent`` coming from that topic. The Event Handler configured against our subscription is a Service Bus Queue.
 
@@ -651,11 +651,11 @@ You can of course adjust the JSON to suit your own example! But notice an intere
 
 As expected, the Service Bus Queue remains at zero messages.
 
-![Screenshot showing an empty Service Bus Queue](images/azure-arc-for-apps-part-6/service-bus-no-messages.png)
+![Screenshot showing an empty Service Bus Queue](images/azure-arc-for-apps-part-6/service-bus-no-messages.png "Screenshot showing an empty Service Bus Queue")
 
 Let's fix that, we'll go ahead and update the Event Grid Subscription using the Azure Portal. We'll add the ``blogPublished`` type to the Filter to Event Types property and save the resource.
 
-![Screenshot showing the Azure Portal UI experience to update an Event Subscription](images/azure-arc-for-apps-part-6/azure-arc-event-grid-subscription-update.png)
+![Screenshot showing the Azure Portal UI experience to update an Event Subscription](images/azure-arc-for-apps-part-6/azure-arc-event-grid-subscription-update.png "Screenshot showing the Azure Portal UI experience to update an Event Subscription")
 
 We'll once again use a container based upon the ``curlimages/curl`` container image to send a request to the local Event Grid Topic Endpoint.
 
@@ -680,7 +680,7 @@ curl  -k -X POST -H "Content-Type: application/cloudevents-batch+json" -H "aeg-s
 
 Great, the event sent once again. Let's see if the subscription picked up the event this time. We'll go ahead and take a look at the Service Bus Queue.
 
-![Screenshot of the Service Bus Queue overview page, showing that there is now 1 Active Message on the Queue](images/azure-arc-for-apps-part-6/service-bus-1-message.png)
+![Screenshot of the Service Bus Queue overview page, showing that there is now 1 Active Message on the Queue](images/azure-arc-for-apps-part-6/service-bus-1-message.png "Screenshot of the Service Bus Queue overview page, showing that there is now 1 Active Message on the Queue")
 
 Excellent! If you're following along, you should hopefully see that 1 message is now showing as Active on the queue - just like the screenshot above.
 
@@ -704,7 +704,7 @@ We can go ahead to the **Service Bus Explorer** menu item and peek the message o
 
 You'll notice that the message contents are exactly the same as the event that we had emitted. I haven't configured any consumers of the Service Bus Queue, so we'll expect the message to stay until it reaches it's Ttl (assuming that no consumers try to receive the message).
 
-![Screenshot showing that there is now one message on the queue](images/azure-arc-for-apps-part-6/service-bus-peak-message.png)
+![Screenshot showing that there is now one message on the queue](images/azure-arc-for-apps-part-6/service-bus-peak-message.png "Screenshot showing that there is now one message on the queue")
 
 As a sanity check, let's once again use the ``kubectl describe`` command to describe the eventsubscription that we updated. Notice that the Included Event Types Filter is now updated to include the ``blogPublished`` event type that we added in the portal earlier.
 

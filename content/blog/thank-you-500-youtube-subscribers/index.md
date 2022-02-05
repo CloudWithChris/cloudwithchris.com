@@ -30,7 +30,7 @@ I then began the journey of evolving my content over time, by -
 
 All of that effort has clearly been worth it! Over the weekend (I believe 15th May was the date), I managed to hit the magic 500 subscribers mark on YouTube, **way** ahead of schedule.
 
-![Thank you - 500 Subscribers!](images/thank-you-500-youtube-subscribers/thankyou.jpg)
+![Thank you - 500 Subscribers!](images/thank-you-500-youtube-subscribers/thankyou.jpg "Thank you - 500 Subscribers!")
 
 So, a big heart-felt thank you from me for everyone that has taken time to either read, listen or watch my content, become a guest on the show, or provide any guidance, coaching, or feedback to help me get to where I am.
 

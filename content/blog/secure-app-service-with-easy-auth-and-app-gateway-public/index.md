@@ -45,7 +45,7 @@ Being pragmatic, and wanting to talk through the process of solving this issue -
 
 Now, onto the matter at hand - Securing App Service with Easy Auth behind a Public Application Gateway. Let's first get an application deployed. Navigate over to the Azure Portal and create a new App Service (and App Service Plan if needed). In any scenario, it's best to perform a dry-run of these in a development environment, which is entirely separate to any production infrastructure to prove the concept first.
 
-![Screenshot showing the App Service settings that I used. This is for illustration purposes, and does not need to be replicated directly.](images/secure-app-service-with-easy-auth-and-app-gateway-public/appservice-create.jpg)
+![Screenshot showing the App Service settings that I used. This is for illustration purposes, and does not need to be replicated directly.](images/secure-app-service-with-easy-auth-and-app-gateway-public/appservice-create.jpg "Screenshot showing the App Service settings that I used. This is for illustration purposes, and does not need to be replicated directly.")
 
 ### Setting up Easy Auth
 
@@ -72,27 +72,27 @@ Create a new Identity Provider -
 >
 > The token store collects, stores and refreshes tokens for your application. Use of the token store is recommended for most applications but you can disable it if your app doesn't need tokens or you need to optimize performance.
 
-![Screenshot showing the App Easy Auth configuration settings that I used, as explained above](images/secure-app-service-with-easy-auth-and-app-gateway-public/appservice-easyauth.jpg)
+![Screenshot showing the App Easy Auth configuration settings that I used, as explained above](images/secure-app-service-with-easy-auth-and-app-gateway-public/appservice-easyauth.jpg "Screenshot showing the App Easy Auth configuration settings that I used, as explained above")
 
 The Web App itself is going to be the out-of-box experience from Azure App Service. So, the application itself doesn't require any specific access to the Microsoft Graph. However, if you needed to perform some functions (e.g. You're making calls to the Microsoft Graph directly from your Web App's code, rather than calling any external APIs), then you can select the permissions here. Once again, we'll leave this as default.
 
-![Screenshot showing the App Easy Auth configuration settings that I used, as explained above](images/secure-app-service-with-easy-auth-and-app-gateway-public/appservice-easyauth-2.jpg)
+![Screenshot showing the App Easy Auth configuration settings that I used, as explained above](images/secure-app-service-with-easy-auth-and-app-gateway-public/appservice-easyauth-2.jpg "Screenshot showing the App Easy Auth configuration settings that I used, as explained above")
 
 Great. We should see that the Authentication settings and Identity provider have now been configured successfully, per the screenshot below.
 
-![Screenshot showing that the Identity Provider and Authentication settings were successfully configured](images/secure-app-service-with-easy-auth-and-app-gateway-public/appservice-easyauth-3.jpg)
+![Screenshot showing that the Identity Provider and Authentication settings were successfully configured](images/secure-app-service-with-easy-auth-and-app-gateway-public/appservice-easyauth-3.jpg "Screenshot showing that the Identity Provider and Authentication settings were successfully configured")
 
 Let's first verify that everything works appropriately by navigating to the azurewebsites.net URL of our app service. All being well, we should be prompted to select a user account to authenticate with.
 
-![Screenshot showing the account selection screen](images/secure-app-service-with-easy-auth-and-app-gateway-public/webapp-auth-prompt.jpg)
+![Screenshot showing the account selection screen](images/secure-app-service-with-easy-auth-and-app-gateway-public/webapp-auth-prompt.jpg "Screenshot showing the account selection screen")
 
 Once you've selected the appropriate account, you'll then need to accept that you're happy to grant permissions for the application to a number of permissions. Those permissions may look different to my screenshot if you selected additional permissions when configuring Easy Auth.
 
-![Screenshot showing a request to accept the application permissions](images/secure-app-service-with-easy-auth-and-app-gateway-public/webapp-auth-prompt-2.jpg)
+![Screenshot showing a request to accept the application permissions](images/secure-app-service-with-easy-auth-and-app-gateway-public/webapp-auth-prompt-2.jpg "Screenshot showing a request to accept the application permissions")
 
 Again, all being well - You should now see the default App Service screen (unless you deployed a different application in the meantime of course!).
 
-![Screenshot showing the App Service default page](images/secure-app-service-with-easy-auth-and-app-gateway-public/appservice-site.jpg)
+![Screenshot showing the App Service default page](images/secure-app-service-with-easy-auth-and-app-gateway-public/appservice-site.jpg "Screenshot showing the App Service default page")
 
 ### Setting up a Custom Domain on App Service
 
@@ -107,19 +107,19 @@ You'll notice that there are two items in the blade that pops out -
 * **Hostname availability** - This is a check on whether the hostname has already been mapped in App Service. You'll only be able to map the hostname to one App Service deployment.
 * **Domain ownership** - As I hinted earlier, there are a couple of ways that we can do this. We don't need to map the CNAME record unless we want to point the domain here and route the traffic directly. As we just want to prove ownership to allow the binding, we can use the TXT record.
 
-![Screenshot showing the initial check for the hostname](images/secure-app-service-with-easy-auth-and-app-gateway-public/app-service-custom-domain.jpg)
+![Screenshot showing the initial check for the hostname](images/secure-app-service-with-easy-auth-and-app-gateway-public/app-service-custom-domain.jpg "Screenshot showing the initial check for the hostname")
 
 I have cloudwithchris.com as an Public Azure DNS Zone. So let's go ahead and add the appropriate TXT record there.
 
 As I plan to use the subdomain cwc-secured-app.cloudwithchris.com, I'll need to add a TXT record called asuid.cwc-secured-app with the verification value shown in App Service.
 
-![Screenshot showing the initial check for the hostname](images/secure-app-service-with-easy-auth-and-app-gateway-public/azuredns-validation.jpg)
+![Screenshot showing the initial check for the hostname](images/secure-app-service-with-easy-auth-and-app-gateway-public/azuredns-validation.jpg "Screenshot showing the initial check for the hostname")
 
 Navigating back to our App Service instance and running through the validation step again, you should notice that both steps (Hostname availability and domain ownership) now pass. If not, you may need to wait until App Service can detect the new TXT record. Once ready, hit Add custom domain.
 
 > **Tip:** If you want to send traffic directly to the App Service, then you'll need to update the CNAME record to point to the {mywebappname}.azurewebsites.net hostname of the App Service. Given that the traffic needs to go to an App Gateway in this scenario, we'll point it at the Application Gateway later instead.
 
-![Screenshot showing the initial check for the hostname](images/secure-app-service-with-easy-auth-and-app-gateway-public/app-service-custom-domain.jpg)
+![Screenshot showing the initial check for the hostname](images/secure-app-service-with-easy-auth-and-app-gateway-public/app-service-custom-domain.jpg "Screenshot showing the initial check for the hostname")
 
 ### Configuring SSL for App Service
 
@@ -133,23 +133,23 @@ There's some good news! If you have been keeping up to date with the [Microsoft 
 
 To start the process, navigate to TLS/SSL settings on the left hand menu and click into the Private Key Certificates (.pfx) tab. You should see an option to **Create App Service Managed Certificate**.
 
-![Screenshot showing the Private Key Certificates tab of the TLS/SSL settings page in App Service](images/secure-app-service-with-easy-auth-and-app-gateway-public/appservice-tls-ssl.jpg)
+![Screenshot showing the Private Key Certificates tab of the TLS/SSL settings page in App Service](images/secure-app-service-with-easy-auth-and-app-gateway-public/appservice-tls-ssl.jpg "Screenshot showing the Private Key Certificates tab of the TLS/SSL settings page in App Service")
 
 You'll notice that when we attempt to register the App Service Managed Certificates, it will tell us we're ineligible because the CNAME record isn't mapped to the appropriate domain. We could of course map the CNAME record to azurewebsites.net so that we can get the free SSL certificate if needed.
 
-![Screenshot showing that a CNAME record mapping is required to obtain an App Service Managed Certificate](images/secure-app-service-with-easy-auth-and-app-gateway-public/appservice-tls-ssl-ineligible.jpg)
+![Screenshot showing that a CNAME record mapping is required to obtain an App Service Managed Certificate](images/secure-app-service-with-easy-auth-and-app-gateway-public/appservice-tls-ssl-ineligible.jpg "Screenshot showing that a CNAME record mapping is required to obtain an App Service Managed Certificate")
 
 After adding a CNAME record of cwc-secured-app to point towards cwc-secured-app.azurewebsites.net, you can see that I have now kickstarted the certificate generation process.
 
-![Screenshot showing that the hostname is now eligible since we mapped the CNAME record to App Service](images/secure-app-service-with-easy-auth-and-app-gateway-public/appservice-tls-ssl-eligible.jpg)
+![Screenshot showing that the hostname is now eligible since we mapped the CNAME record to App Service](images/secure-app-service-with-easy-auth-and-app-gateway-public/appservice-tls-ssl-eligible.jpg "Screenshot showing that the hostname is now eligible since we mapped the CNAME record to App Service")
 
 And after a few moments, you should see that the certificate is now created and marked as healthy.
 
-![Screenshot showing that the certificate has now been created](images/secure-app-service-with-easy-auth-and-app-gateway-public/appservice-tls-ssl-complete.jpg)
+![Screenshot showing that the certificate has now been created](images/secure-app-service-with-easy-auth-and-app-gateway-public/appservice-tls-ssl-complete.jpg "Screenshot showing that the certificate has now been created")
 
 You'll need to navigate back to the Custom domains menu, and add a binding between the Custom Domain and the newly generated SSL Certificate.
 
-![Screenshot showing the binding process between the custom domain and the newly generated certificate](images/secure-app-service-with-easy-auth-and-app-gateway-public/app-service-custom-domain-cert.jpg)
+![Screenshot showing the binding process between the custom domain and the newly generated certificate](images/secure-app-service-with-easy-auth-and-app-gateway-public/app-service-custom-domain-cert.jpg "Screenshot showing the binding process between the custom domain and the newly generated certificate")
 
 > **Tip:** Later on in this post, we'll need to use a certificate with Application Gateway. The free App Service Managed Certificate is not exportable ([as documented here](https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-certificate#create-a-free-managed-certificate)), so you'll need to have an SSL certificated generated elsewhere to take in HTTPS traffic through the Application Gateway. I have typically used [ZeroSSL](https://zerossl.com/) in the past as they provide short-lived certificates for free. There are of course many options available, though you may already have an SSL certificate to hand! I don't plan to go into this in any depth in the post, so will leave this as a separate exercise for you.
 
@@ -163,7 +163,7 @@ At this point, it does of course mean that you could navigate to the HTTP versio
 
 You should see the prompt to select your account without any problems. However, after a redirect - you'll encounter an error. Uh-oh.
 
-![Screenshot showing an error with the reply URL mismatching.](images/secure-app-service-with-easy-auth-and-app-gateway-public/webapp-auth-redirect-problem.jpg)
+![Screenshot showing an error with the reply URL mismatching.](images/secure-app-service-with-easy-auth-and-app-gateway-public/webapp-auth-redirect-problem.jpg "Screenshot showing an error with the reply URL mismatching.")
 
 Fortunately, the error is very descriptive and makes sense. We originally set our identity provider to redirect to cwc-secured-app.azurewebsites.net. We didn't visit from that URL though. We visited from the hostname cwc-secured-app.cloudwithchris.com, so Azure AD will capture that from our request and will try to redirect us there. The Application doesn't have a Redirect URI to that custom domain (ending cloudwithchris.com), so we encounter the error that was just observed.
 
@@ -171,7 +171,7 @@ Fortunately, the error is very descriptive and makes sense. We originally set ou
 
 Let's navigate back to the Authentication menu item in our App Service instance. Next to the Microsoft Identity provider that you configured earlier, you should see a link in parentheses which is the Azure Active Directory App registration. Click on that link. You should now be in the App Registration view in your Azure Active Directory. Navigate to the Authentication menu item. You should be navigated to the App Registration view in Azure Active Directory, which looks similar to the below.
 
-![Screenshot showing the authentication tab with allowed Redirect URIs](images/secure-app-service-with-easy-auth-and-app-gateway-public/aad-app-authentication.jpg)
+![Screenshot showing the authentication tab with allowed Redirect URIs](images/secure-app-service-with-easy-auth-and-app-gateway-public/aad-app-authentication.jpg "Screenshot showing the authentication tab with allowed Redirect URIs")
 
 In the screenshot above, you'll notice that I have added an additional redirect URI. This is the redirect URI using the new custom domain that I had setup. Given that we won't be using the azurewebsites.net URI, we could consider removing the azurewebsites.net URI from the list. That's actually what I did after the screenshot, to be sure that authentications are only coming from our custom domain route and producing an error otherwise.
 
@@ -179,7 +179,7 @@ In the screenshot above, you'll notice that I have added an additional redirect 
 
 Now, try going to your HTTPS custom domain endpoint again. After logging in with the appropriate account, you should notice that you'll be redirected and successfully authenticated.
 
-![Screenshot showing the App Service default page](images/secure-app-service-with-easy-auth-and-app-gateway-public/appservice-site.jpg)
+![Screenshot showing the App Service default page](images/secure-app-service-with-easy-auth-and-app-gateway-public/appservice-site.jpg "Screenshot showing the App Service default page")
 
 > **Tip:** Trying to build in a methodical approach is sensible. Build yourself an ordered task list, and follow it. If you think about it, this is what Infrastructure as Code does.
 >
@@ -195,7 +195,7 @@ It's common to share an Application Gateway across several components (which is 
 
 > **Tip:** [Check out the Azure Docs](https://docs.microsoft.com/en-us/azure/application-gateway/configuration-infrastructure#virtual-network-and-dedicated-subnet) for additional guidance on recommended network configurations.
 
-![Screenshot showing the Basics tab of the Application Gateway creation experience](images/secure-app-service-with-easy-auth-and-app-gateway-public/appgw-step1.jpg)
+![Screenshot showing the Basics tab of the Application Gateway creation experience](images/secure-app-service-with-easy-auth-and-app-gateway-public/appgw-step1.jpg "Screenshot showing the Basics tab of the Application Gateway creation experience")
 
 ### Application Gateway - Frontends
 
@@ -207,7 +207,7 @@ For the Private IP address - If you setup an Application Gateway with the Standa
 
 > **Tip:** In case you didn't know, 5 IP addresses are reserved in each subnet. Details on that can be found [here](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq#are-there-any-restrictions-on-using-ip-addresses-within-these-subnets).
 
-![Screenshot showing the Frontends tab of the application gateway creation experience](images/secure-app-service-with-easy-auth-and-app-gateway-public/appgw-step2.jpg)
+![Screenshot showing the Frontends tab of the application gateway creation experience](images/secure-app-service-with-easy-auth-and-app-gateway-public/appgw-step2.jpg "Screenshot showing the Frontends tab of the application gateway creation experience")
 
 ### Application Gateway - Backends
 
@@ -217,7 +217,7 @@ On to Step 3, Backends. We may have many backend pools that we want to route to 
 
 Give your backend pool a name. Select App Services in the Target Type dropdown. Finally, select the App Service that you created earlier on as your Target app.
 
-![Screenshot showing the the backend pool configuration in the application gateway creation experience](images/secure-app-service-with-easy-auth-and-app-gateway-public/appgw-step3.jpg)
+![Screenshot showing the the backend pool configuration in the application gateway creation experience](images/secure-app-service-with-easy-auth-and-app-gateway-public/appgw-step3.jpg "Screenshot showing the the backend pool configuration in the application gateway creation experience")
 
 ### Application Gateway - Routing Rules
 
@@ -237,7 +237,7 @@ Give your rule a name, and then do the same for your listener. We'll be listenin
 
 As I selected a multi site listener, I also need to specify the hostname that is being sent to the backend pool. In this case, we will be sending the custom domain that we configured on the App Service.
 
-![Screenshot showing the the listener configuration in the Routing Rule setup experience](images/secure-app-service-with-easy-auth-and-app-gateway-public/appgw-step4-listener.jpg)
+![Screenshot showing the the listener configuration in the Routing Rule setup experience](images/secure-app-service-with-easy-auth-and-app-gateway-public/appgw-step4-listener.jpg "Screenshot showing the the listener configuration in the Routing Rule setup experience")
 
 #### Configuring a backend target for the Routing Rule
 
@@ -245,11 +245,11 @@ Now for the second part of our routing rule, the backend targets. We'll first se
 
 We haven't yet created HTTP Settings for the backend pool, so let's create that. The HTTP settings define the port number and protocol used to send the traffic to the backend pools. They can also be used to determine whether user sessions should be kept to the same server by using cookie-based session affinity; whether you want to gracefully remove backend pool members by using connection draining or whether you want to use custom health probes (e.g. if you want to specify your own timeout intervals, override hostnames / paths to probe, or successful response codes).
 
-![Screenshot showing the the HTTP Settings configuration in the Backend setup experience](images/secure-app-service-with-easy-auth-and-app-gateway-public/appgw-step4-http.jpg)
+![Screenshot showing the the HTTP Settings configuration in the Backend setup experience](images/secure-app-service-with-easy-auth-and-app-gateway-public/appgw-step4-http.jpg "Screenshot showing the the HTTP Settings configuration in the Backend setup experience")
 
 Finally, we can add additional path-based routing if required. Otherwise, we can go ahead and add the routing rule. You should now return to that diagram which shows all of the components you're creating. This time, it also shows the routing rule that is being created.
 
-![Screenshot showing the the components that are being configured](images/secure-app-service-with-easy-auth-and-app-gateway-public/appgw-step4-routing.jpg)
+![Screenshot showing the the components that are being configured](images/secure-app-service-with-easy-auth-and-app-gateway-public/appgw-step4-routing.jpg "Screenshot showing the the components that are being configured")
 
 ### Application Gateway - Final creation steps
 
@@ -290,7 +290,7 @@ That makes it a lot clearer, we can see that we need to include a 401 as a valid
 
 Navigate to your Health probe settings, set the ``Use probe matching conditions`` to yes and add 401 to the list for ``HTTP response status codes to match`` (200-399,401 is how I set it for my configuration, as shown in the following screenshot). Test the probe again. This time, it should return successfully. Finally, click the add button at the bottom of the screen to associate the custom health probe with the HTTP Settings that you configured earlier on.
 
-![Screenshot showing the the Custom Health Probe being configured for our existing HTTP Setting](images/secure-app-service-with-easy-auth-and-app-gateway-public/appgw-healthprobe.jpg)
+![Screenshot showing the the Custom Health Probe being configured for our existing HTTP Setting](images/secure-app-service-with-easy-auth-and-app-gateway-public/appgw-healthprobe.jpg "Screenshot showing the the Custom Health Probe being configured for our existing HTTP Setting")
 
 ### Confirm Authentication Flow works through Application Gateway
 
@@ -302,7 +302,7 @@ Right, we're nearly there on the requirements! We now just need to make sure tha
 
 First, navigate to your Application Gateway and note down the Public IP address that is being used. Once complete, navigate to your App Service instance in the Azure Portal and select Networking. Navigate to Access Restrictions.
 
-![Screenshot showing the Networking (preview) UI within the App Service that we have been working on](images/secure-app-service-with-easy-auth-and-app-gateway-public/appservice-networking-preview.jpg)
+![Screenshot showing the Networking (preview) UI within the App Service that we have been working on](images/secure-app-service-with-easy-auth-and-app-gateway-public/appservice-networking-preview.jpg "Screenshot showing the Networking (preview) UI within the App Service that we have been working on")
 
 > **Tip:** For this blog post, I'm using the Networking (preview) option instead. I much prefer the visual / diagram nature of this UI, and find it much more intuitive. Feel free to use whichever option you prefer.
 
@@ -325,21 +325,21 @@ We'll go ahead and create an Access Restriction rule as follows -
 
 With that in place, go ahead and click Add Rule.
 
-![Screenshot showing the Access Restriction Rule being configured](images/secure-app-service-with-easy-auth-and-app-gateway-public/appservice-accessrestrictions.jpg)
+![Screenshot showing the Access Restriction Rule being configured](images/secure-app-service-with-easy-auth-and-app-gateway-public/appservice-accessrestrictions.jpg "Screenshot showing the Access Restriction Rule being configured")
 
 Once complete, you should notice that a Deny All rule has been automatically created with a Priority number that is very high (meaning that it is the last rule to be processed.
 
 > **Tip:** Remember that these rules are processed from lower numbers to higher numbers). In other words, if the IP address matches our Application Gateway's IP address, then traffic is allowed. Otherwise, it is denied.
 
-![Screenshot showing the that one rule is allowed from the Application Gateway IP address, as well as a Deny All rule which is automatically created for us](images/secure-app-service-with-easy-auth-and-app-gateway-public/appservice-accessrestrictions2.jpg)
+![Screenshot showing the that one rule is allowed from the Application Gateway IP address, as well as a Deny All rule which is automatically created for us](images/secure-app-service-with-easy-auth-and-app-gateway-public/appservice-accessrestrictions2.jpg "Screenshot showing the that one rule is allowed from the Application Gateway IP address, as well as a Deny All rule which is automatically created for us")
 
 Now, once more - navigate to the original URL of your App Service instance (the one ending in azurewebsites.net). You should notice that it's no longer accessible. Instead, we receive an Error 403 - Forbidden.
 
-![Screenshot showing the webapp is not accessible through the azurewebsites.net address, as that is being directly routed rather than through the App Gateway](images/secure-app-service-with-easy-auth-and-app-gateway-public/webapp-forbidden.jpg)
+![Screenshot showing the webapp is not accessible through the azurewebsites.net address, as that is being directly routed rather than through the App Gateway](images/secure-app-service-with-easy-auth-and-app-gateway-public/webapp-forbidden.jpg "Screenshot showing the webapp is not accessible through the azurewebsites.net address, as that is being directly routed rather than through the App Gateway")
 
 Navigating to your custom domain, you'll see that the application continues working as expected (as the traffic is hitting the App Service instance through the Application Gateway transparently).
 
-![Screenshot showing the App Service default page](images/secure-app-service-with-easy-auth-and-app-gateway-public/appservice-site.jpg)
+![Screenshot showing the App Service default page](images/secure-app-service-with-easy-auth-and-app-gateway-public/appservice-site.jpg "Screenshot showing the App Service default page")
 
 So there we go! With that, we've been able to fulfil our requirements -
 

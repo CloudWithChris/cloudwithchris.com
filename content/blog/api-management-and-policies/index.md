@@ -23,11 +23,11 @@ Azure API Management Policies are a way to implement configuration which changes
 
 Let's first navigate to the Azure Resource that we created in the previous blog post. You may notice from the below screenshot that it's in a different subscription. This is the same resource, though I have been doing a bit of tidying up of my Azure Subscriptions.
 
-![Screenshot showing the API Management Service Resource in the Azure Portal](images/api-management-and-policies/apim-1.jpg)
+![Screenshot showing the API Management Service Resource in the Azure Portal](images/api-management-and-policies/apim-1.jpg "Screenshot showing the API Management Service Resource in the Azure Portal")
 
 Click on the **APIs** menu item on the left hand menu in the Azure Portal. You'll be directed to a familiar looking page, that we reviewed in the first blog post.
 
-![Screenshot showing two API versions available, and several API Operations](images/api-management-and-policies/apim-2.jpg)
+![Screenshot showing two API versions available, and several API Operations](images/api-management-and-policies/apim-2.jpg "Screenshot showing two API versions available, and several API Operations")
 
 Let's draw our attention to the **Inbound Processing** and **Outbound Processing** areas of the page. This is where you define your API Management Policies. You can do that by either clicking the **Add policy** button (which will show you the user interface directly below the next tip), or you can edit the code directly using the **</>** button.
 
@@ -41,11 +41,11 @@ Let's draw our attention to the **Inbound Processing** and **Outbound Processing
 >
 > You can even apply policies to **Backends**, so that you can enforce certain requirements when communicating with your backend APIs (e.g. conversion from XML to JSON). You can also apply policies to the **Products** that you have configured within the API Management service. We won't be exploring this in the blog post, but do feel free to explore if you may have a valid use case (e.g. enforcing certain requirements based upon a product that a user has access to).
 
-![Screenshot showing the options available in the Azure Portal to add inbound policy to an API Operation or API](images/api-management-and-policies/apim-3.jpg)
+![Screenshot showing the options available in the Azure Portal to add inbound policy to an API Operation or API](images/api-management-and-policies/apim-3.jpg "Screenshot showing the options available in the Azure Portal to add inbound policy to an API Operation or API")
 
 Each of these API Management policies are clearly documented, with a [reference available in the Azure Docs](https://docs.microsoft.com/en-us/azure/api-management/api-management-policies). The UI gives you a way to set policies without having to use the XML Code representation of the policies if preferred. However, the docs provide example snippets for a variety of scenarios to get you going very quickly.
 
-![Screenshot showing an example API Management Policy configuration page for JWT Validation](images/api-management-and-policies/apim-4.jpg)
+![Screenshot showing an example API Management Policy configuration page for JWT Validation](images/api-management-and-policies/apim-4.jpg "Screenshot showing an example API Management Policy configuration page for JWT Validation")
 
 As an example, you'll see that the above screenshot is the user interface to configure a JWT Validation Policy. The Azure Docs have a wealth of information on the [JWT Validation Policy](https://docs.microsoft.com/en-gb/azure/api-management/api-management-access-restriction-policies#ValidateJWT), including Simple token validation, Token validation with RSA certificate, Azure Active Directory (AAD) token validation, AAD B2C token validation and Authorize access to operations based on token claims.
 
@@ -97,11 +97,11 @@ For the time being, we're assuming in this scenario that only users from the sam
 
 Depending on the application, you may need to specify the redirect URI, so that the application knows where to redirect the user (and that this is matched up correctly in the application code, and not hijacked/spoofed along the way).
 
-![Screenshot showing the AAD Application Registration page](images/api-management-and-policies/apim-5.jpg)
+![Screenshot showing the AAD Application Registration page](images/api-management-and-policies/apim-5.jpg "Screenshot showing the AAD Application Registration page")
 
 After creating your app registration, you should have a resource that looks similar to the below.
 
-![Screenshot showing the AAD Application Registration that was just created](images/api-management-and-policies/apim-51.jpg)
+![Screenshot showing the AAD Application Registration that was just created](images/api-management-and-policies/apim-51.jpg "Screenshot showing the AAD Application Registration that was just created")
 
 Purely to prove the purpose of API Management policies, I'm going to generate a Client Secret that we can use in postman to generate a Bearer token to authenticate against API Management. In a real-world scenario, you may not need to create a client secret against this resource. At least, not for the calls from a client app (e.g. Single Page Application), as that access would be granted through API Permissions in the Client's App Registration. You may need to go ahead and use Client Secrets for authorization on the backend APIs though (more on that in the next blog post though!)
 
@@ -109,11 +109,11 @@ Navigate to the **Certificates & Secrets** menu item in your App Registration. G
 
 > **Tip:** Speaking of security policy, you may notice that there's an option to upload certificates against this App Registration. Client Secrets are useful in proof of concept scenarios. Though ask yourself, how well do we typically store those passwords? How often do we rotate them? Could a certificate be more secure in this instance? For ease, I'll be obtaining my access token in postman by using a Client Secret, though you may want to consider this point in a production implementation. There's a great [stack exchange discussion](https://security.stackexchange.com/questions/3605/certificate-based-authentication-vs-username-and-password-authentication/3627#3627) on the same pros/cons of each.
 
-![Screenshot showing the Certificates & Secrets Page of the AAD Application Registration that was just created](images/api-management-and-policies/apim-52.jpg)
+![Screenshot showing the Certificates & Secrets Page of the AAD Application Registration that was just created](images/api-management-and-policies/apim-52.jpg "Screenshot showing the Certificates & Secrets Page of the AAD Application Registration that was just created")
 
 Once created, the Client Secret is now available that can be used in postman for the call to Azure Active Directory to obtain the access token.
 
-![Screenshot showing the page which will display the Client Secret for our app registration](images/api-management-and-policies/apim-53.jpg)
+![Screenshot showing the page which will display the Client Secret for our app registration](images/api-management-and-policies/apim-53.jpg "Screenshot showing the page which will display the Client Secret for our app registration")
 
 ## Obtaining an Access Token
 
@@ -135,7 +135,7 @@ I've set my postman request up with the following details:
   * Set client_secret as the Client Secret from the app registration
   * Set scope as the Client ID with ``/.default`` appended to the end, e.g. ``d3414b61-53f8-4ad5-aa1d-1e2a15579f60/.default``.
   
-![Screenshot showing Postman sending a request to Azure Active Directory for an authentication token](images/api-management-and-policies/apim-6.jpg)
+![Screenshot showing Postman sending a request to Azure Active Directory for an authentication token](images/api-management-and-policies/apim-6.jpg "Screenshot showing Postman sending a request to Azure Active Directory for an authentication token")
 
 Once you execute the request, you'll hopefully receive an ``HTTP Status 200 OK`` response! This response contains a JSON object, with an access_token property - similar to the below.
 
@@ -157,7 +157,7 @@ Copy the value associated with the ``access_token`` property key. You'll need th
 >
 > Hopefully this comes as an obvious health warning. **Be careful** on where you share your Bearer token. The idea of **Bearer Authentication** is **give access to the bearer of this token**. It comes from the same concept as a bearer cheque if you have heard of that previously. In which case, like any secrets - please don't share your Bearer token's openly!
 
-![Screenshot showing output from JWT.MS on the claims from the access token](images/api-management-and-policies/apim-61.jpg)
+![Screenshot showing output from JWT.MS on the claims from the access token](images/api-management-and-policies/apim-61.jpg "Screenshot showing output from JWT.MS on the claims from the access token")
 
 Notice the GUID that is in the aud (audience) claim type? It's the same as what we configured in our API Management resource. So, if you're still following on - you've probably guessed - this token will allow us to make a request through Azure API Management.
 
@@ -177,11 +177,11 @@ Let's prove this out. You can see in the below screenshot that I am calling my G
 
 Why did we get that error, and error message? I'll give you a hint... Take a look further up in the blog post. This is exactly what we're expecting to see, as this is what we configured in our API Management policy. Awesome!
 
-![Screenshot showing the API Operation returning a 401 unauthorized without authorization](images/api-management-and-policies/apim-7.jpg)
+![Screenshot showing the API Operation returning a 401 unauthorized without authorization](images/api-management-and-policies/apim-7.jpg "Screenshot showing the API Operation returning a 401 unauthorized without authorization")
 
 Now, let's use that access token that we received in our request when we used Postman. Make the same API call, but this time specify the ``Authorization`` as a key in the headers. The value should be ``Bearer {AccessToken}``, where you'll replace ``{AccessToken}`` (including the curly braces, with your access token from earlier).
 
-![Screenshot showing API operation returning a 200 with correct authorization](images/api-management-and-policies/apim-8.jpg)
+![Screenshot showing API operation returning a 200 with correct authorization](images/api-management-and-policies/apim-8.jpg "Screenshot showing API operation returning a 200 with correct authorization")
 
 You should now see a result with ``HTTP Status Code 200 OK`` (or whatever is appropriate for your API, if you have used a different API!). Either way, you should no longer be receiving an ``HTTP 401 Unauthorized``. If you are, you may need to check if the access token that you have provided matches against the expected details in API Management.
 

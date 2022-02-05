@@ -22,13 +22,13 @@ Fortunately, it's quite a simple fix. You can use a canonical tag, as explained 
 
 So, why is this important in the context of third party sites like medium or dev.to? Observe a couple of screenshots below. Notice how each of the platforms have an option to set a canonical URL?
 
-![Setting the Canonical URL in medium.com and dev.to](images/crossposting-content/medium-devto-canonical.jpg)
+![Setting the Canonical URL in medium.com and dev.to](images/crossposting-content/medium-devto-canonical.jpg "Setting the Canonical URL in medium.com and dev.to")
 
 On each of the platforms, you can also add tags to the post so that they are discoverable based upon the tags that users may be following. This got me thinking - there's a lot of similarity here between how I run things on cloudwithchris.com and how I see these third party content platforms running. Maybe there's a way that I can automate the posting!
 
 To start off, I began looking into any native tools that exist. Through dev.to, you can import existing posts from an RSS feed, and it will be able to update the canonical URL for you, as well as replace any self-referential links with relevant dev-community links. Medium.com has an importer tool, where you can point to an article, and it will be imported as a draft. I even tried calling directly to their import API, sending across the rendered HTML in an attempt to see if that would work well, but had similar challenges with rendering. Especially given the fact I don't just have "blog" or "article" type content, I also have YouTube videos / podcast episodes, which are equally important for me to display on these sites and grow the following.
 
-![Examples of importing the content into medium.com and dev.to](images/crossposting-content/medium-devto-import.jpg)
+![Examples of importing the content into medium.com and dev.to](images/crossposting-content/medium-devto-import.jpg "Examples of importing the content into medium.com and dev.to")
 
 I investigated the medium.com tool, and found that it wasn't perfect. It required a lot of editing after the fact to make it look decent. I assumed there may be similar on dev.to given that the screeshot also warn about this.
 
@@ -38,7 +38,7 @@ Introducing you to the [Hugo Crossposter](https://github.com/chrisreddington/hug
 
 All of the articles that you see on dev.to and medium.com have been converted and posted to the third party sites using this tool. I did make some slight tweaks once uploaded, so that it's clear some of the content is older (i.e. This post was originally published on DATE at cloudwithchris.com). However, writing this blog post - it has become clear that this aspect could be an additional feature in the tool, and is something I'll be working on!
 
-![The Hugo Crossposter GitHub Repository](images/crossposting-content/hugo-crossposter-github-repo.jpg)
+![The Hugo Crossposter GitHub Repository](images/crossposting-content/hugo-crossposter-github-repo.jpg "The Hugo Crossposter GitHub Repository")
 
 Reflecting back on my [contributing to open source](/blog/contributing-to-open-source) article, I'd love to have additional support on the project if this is something you're interested in. By no means is my implementation perfect, but it solves the immediate problem that I have. I can see this becoming an incredibly valuable tool for content creators though. It already sows the seeds to be a reliable tool to build upon, including:
 

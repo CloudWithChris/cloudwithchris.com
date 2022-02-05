@@ -54,7 +54,7 @@ git commit -m "Made additional statement change"
 
 You will notice that the commit does not happen straight away as it did previously. Instead, you are prompted to enter a passphrase. Enter the passphrase associated with the Private Key.
 
-![Git Commit requires a passphrase](images/gpg-git-part-3/commit-passphrase-prompt.jpg)
+![Git Commit requires a passphrase](images/gpg-git-part-3/commit-passphrase-prompt.jpg "Git Commit requires a passphrase")
 
 Once you've correctly entered the passphrase, the changes will be committed! But how do we know that the commit was signed? It didn't look like there was anything different in the commit process. Let's use a slight variation on a command that we've already seen. We're going to use ``git log`` once again, but this time also adding the ``--show-signature`` flag. You can likely guess what this one is going to do! Go ahead and run ``git log --show-signature``. You should see an output similar to the below.
 
@@ -98,17 +98,17 @@ Now, for the rest of this blog post I'm going to stop speaking from Alice's pers
 
 For these next steps to work, you will need to make sure that one of the email addresses used in the GPG Key is also associated with your GitHub account. You can verify that and make the necessary adjustments over on your [GitHub Settings > Emails](https://github.com/settings/emails). As a reminder, there is an option in the email settings page that says **Keep my email address private**. This allows you to use a no-reply email from GitHub to obscure your personal email address and avoid any privacy issues (remember that when using ``git log`` we can see the commiter's username and email address). If you want to use this no-reply email for the GPG Signing key, then you need to make sure that you have updated your git config user.email to use the no-reply email address, and also included it as as an email address within your key (e.g. Alice's digits+githubusername@users.noreply.github.com).
 
-![GitHub Email Settings Example](images/gpg-git-part-3/github-email.jpg)
+![GitHub Email Settings Example](images/gpg-git-part-3/github-email.jpg "GitHub Email Settings Example")
 
 Now, navigate across to [GitHub Settings > SSH and GPG Keys](https://github.com/settings/keys). You will notice that there is an option to add a New GPG Key. If you have already added any existing GPG Keys, then it will list those for you (as you'll see in the screenshot below).
 
 **When adding the GPG Key information to GitHub, make sure that you add the Public Key component and not the Private Key! You only need to share the Public Key with GitHub. This is the same case whenever you share your key information to a public lookup server for others to verify you in signing/encryption scenarios.**
 
-![GitHub GPG Keys Example](images/gpg-git-part-3/github-gpg.jpg)
+![GitHub GPG Keys Example](images/gpg-git-part-3/github-gpg.jpg "GitHub GPG Keys Example")
 
 Once you have added the Public GPG Key details to GitHub, you can now go ahead and push your local changes to GitHub by using ``git push`` (If you haven't already associated a remote location with the Git repository, then you may also need to use the ``git remote add`` command, and then use ``git push``). Assuming that the Public Key in the GPG Keys section of your GitHub account corresponds with the Private Key used to sign the commits, then you will notice that commits will be marked as verified in the GitHub user interface. See the example below from the [cloudwithchris.com Git Repository Commits page](https://github.com/chrisreddington/cloudwithchris.com/commits/master).
 
-![GitHub showing verified commits in history view](images/gpg-git-part-3/github-commits-verified.jpg)
+![GitHub showing verified commits in history view](images/gpg-git-part-3/github-commits-verified.jpg "GitHub showing verified commits in history view")
 
 At this point, we have now configured out local Git repository to use the Git signing key whenever making a new commit to our Git repository. Once those changes are pushed to GitHub, because of the link between the Public GPG Key in our GitHub account and the commits signed with the Private Key, the commits can be marked as verified in the GitHub User Interface. This gives us some reassurance that they are genuine.
 

@@ -237,7 +237,7 @@ So with that context and explanation, let's go ahead and create the App Service 
 
 Navigate to the Azure Arc Resource Group that you created earlier. You'll notice that there a new **App Service Kubernetes Environment** resource exists. It will show that there are 0 App Service Plans, and 0 Apps/Slots deployed. It will also show the "domain name" which will act as the suffix to your App Service deployments (consider this as the replacement to azurewebsites.net).
 
-![Screenshot showing the App Service Kubernetes environment resource in the Azure Portal](images/azure-arc-for-apps-part-2/app-service-kubernetes-environment.jpg)
+![Screenshot showing the App Service Kubernetes environment resource in the Azure Portal](images/azure-arc-for-apps-part-2/app-service-kubernetes-environment.jpg "Screenshot showing the App Service Kubernetes environment resource in the Azure Portal")
 
 ## Create an App Service resource in our App Service Kubernetes Environment
 
@@ -250,7 +250,7 @@ Let's go ahead and create a new application in your custom location. You can do 
 * There is no option to select an App Service Plan.
   * From what I can tell, each time you deploy a new application, a new App Service Plan is automatically created for you. I'm still working through this one though, so I'll update the blog post as I discover any further.
 
-![Screenshot showing the App Service creation experience for an App Service in an App Service Kubernetes environment](images/azure-arc-for-apps-part-2/app-service-on-kubernetes-create-appservice.jpg)
+![Screenshot showing the App Service creation experience for an App Service in an App Service Kubernetes environment](images/azure-arc-for-apps-part-2/app-service-on-kubernetes-create-appservice.jpg "Screenshot showing the App Service creation experience for an App Service in an App Service Kubernetes environment")
 
 Complete the process to create a new App Service. I created an App Service called christest (yes, very original and intuitive - I know!). Before I hit create on the App Service, I ran the command ``kubectl get po -n appservice --watch`` in my terminal (though change the -n property to the namespace variable that you had set earlier on). You should see that a new pod will get scheduled in the Kubernetes cluster. Yes, that is the App Service instance that you created through the Azure Portal using your custom location.
 
@@ -281,7 +281,7 @@ christest-7755545bfb-pjbv8                                      1/1     Running 
 
 Navigating to the Azure Portal, we can see that the resource has been created.
 
-![Screenshot showing the App deployed in the Azure Portal](images/azure-arc-for-apps-part-2/app-service-on-kubernetes-azure-portal.jpg)
+![Screenshot showing the App deployed in the Azure Portal](images/azure-arc-for-apps-part-2/app-service-on-kubernetes-azure-portal.jpg "Screenshot showing the App deployed in the Azure Portal")
 
 > **Tip:** There are a few key configuration items to observe:
 >
@@ -298,7 +298,7 @@ Navigating to the Azure Portal, we can see that the resource has been created.
 
 The experience to configure Authentication for our App Service deployment is no different to that when using the Platform as a Service (PaaS) hosted platform that we are used to. I'm going to make an assumption that you are familiar with this experience already, so it won't be the focus of this blog post (as it's already becoming quite a long one!). For completeness, you can find an example screenshot below of the Easy Auth experience. Before progressing, go ahead and configure an identity provider. I configured Azure Active Directory.
 
-![Screenshot showing the Easy Auth setup for Kubernetes on App Service](images/azure-arc-for-apps-part-2/app-service-on-kubernetes-easyauth.jpg)
+![Screenshot showing the Easy Auth setup for Kubernetes on App Service](images/azure-arc-for-apps-part-2/app-service-on-kubernetes-easyauth.jpg "Screenshot showing the Easy Auth setup for Kubernetes on App Service")
 
 Before moving on, there is one interesting point to note. Before fully configuring Easy Auth on the App Service, run the command ``kubectl get po -n appservice --watch`` (or replace the -n value with the appropriate value for your namespace). You should see that a new pod (christest-559548c65f-zf22d in the snippet below) will get scheduled in the Kubernetes cluster and contains **two** containers. You'll also notice that the previous instance of the app service (christest-7755545bfb-pjbv8) is then terminated. This is not surprising - It appears as though the Easy Auth functionality is a side car container to the main application that is running in our App Service.
 
@@ -326,7 +326,7 @@ christest-6c4dd4c6fd-dvp5l                                      1/1     Terminat
 
 If we now try navigating to the App Service (e.g. [https://christest.rb-arc-aks-appsv-gdcume5.westeurope.k4apps.io](https://christest.rb-arc-aks-appsv-gdcume5.westeurope.k4apps.io)), you should now be greeted by the Azure Active Directory account selector prompt (assuming you configured the Microsoft identity provider, at least).
 
-![Screenshot showing Easy Auth AAD Login](images/azure-arc-for-apps-part-2/app-service-on-kubernetes-aad-login.jpg)
+![Screenshot showing Easy Auth AAD Login](images/azure-arc-for-apps-part-2/app-service-on-kubernetes-aad-login.jpg "Screenshot showing Easy Auth AAD Login")
 
 ## Configuring Custom domains
 
@@ -334,13 +334,13 @@ Rather than repeating myself in each section, I'm going to make the assumption t
 
 This is one that I plan to investigate further, and determine whether this is a user interface challenge (e.g. should custom domains actually be grayed out as it's unsupported, or is the validation experience not available through the user interface).
 
-![Screenshot showing the Custom Domain Validation for the App Service on Kubernetes through Azure Portal](images/azure-arc-for-apps-part-2/app-service-on-kubernetes-custom-domain-validation.jpg)
+![Screenshot showing the Custom Domain Validation for the App Service on Kubernetes through Azure Portal](images/azure-arc-for-apps-part-2/app-service-on-kubernetes-custom-domain-validation.jpg "Screenshot showing the Custom Domain Validation for the App Service on Kubernetes through Azure Portal")
 
 ## Scaling out your App Service instance
 
 As we have become accustomed to, scaling in App Service is quite literally a slider. This is no different when using an App Service Kubernetes environment. We can go ahead and adjust the slider to represent the maximum number of instances that we would like to scale to. Then, App Service deals with adding the additional instances of our application behind the scenes.
 
-![Screenshot showing the Scaling out Functionality for App Service on Kubernetes through Azure Portal](images/azure-arc-for-apps-part-2/app-service-on-kubernetes-scale-out.jpg)
+![Screenshot showing the Scaling out Functionality for App Service on Kubernetes through Azure Portal](images/azure-arc-for-apps-part-2/app-service-on-kubernetes-scale-out.jpg "Screenshot showing the Scaling out Functionality for App Service on Kubernetes through Azure Portal")
 
 If you have your Kubernetes-thinking hat on, then you'll probably be able to determine where this is going. Before saving the new scale out configuration, I once again ran the command ``kubectl get po -n appservice --watch``. You'll notice that Kubernetes maintain the replicaset (i.e. christest-559548c65f), but adds two additional pods to it. Again, this is unsurprising and in-line with how we'd expect Kubernetes to handle a scale out event for any Kubernetes workload.
 
@@ -379,11 +379,11 @@ christest-559548c65f-wmv7p                                      2/2     Running 
 
 Deployment slots are a feature of App Service that can make it incredibly easy for us to test out a separate instance of our application. We can even consider deploying a staging version of our site, so that our application is warm before we 'swap' it into the production slot. Once again, the capability is no different within an App Service Kubernetes environment.
 
-![Screenshot showing the Deployment Slots Functionality for App Service on Kubernetes through Azure Portal](images/azure-arc-for-apps-part-2/app-service-on-kubernetes-deployment-slots.jpg)
+![Screenshot showing the Deployment Slots Functionality for App Service on Kubernetes through Azure Portal](images/azure-arc-for-apps-part-2/app-service-on-kubernetes-deployment-slots.jpg "Screenshot showing the Deployment Slots Functionality for App Service on Kubernetes through Azure Portal")
 
 Once I navigate to the staging endpoint ([https://christest-staging.rb-arc-aks-appsv-gdcume5.westeurope.k4apps.io](https://christest-staging.rb-arc-aks-appsv-gdcume5.westeurope.k4apps.io)), I can see another instance of my application. Just like in the multi-tenant Platform as a Service (PaaS) platform, you can associate variables and code with a specific staging slot.
 
-![Screenshot showing the Deployment Slots Functionality for App Service on Kubernetes through Azure Portal](images/azure-arc-for-apps-part-2/app-service-on-kubernetes-deployment-slots2.jpg)
+![Screenshot showing the Deployment Slots Functionality for App Service on Kubernetes through Azure Portal](images/azure-arc-for-apps-part-2/app-service-on-kubernetes-deployment-slots2.jpg "Screenshot showing the Deployment Slots Functionality for App Service on Kubernetes through Azure Portal")
 
 Notice that in the below snippet, we have 3 pods which have the prefix ``christest-79944ffd49``? Those are our production slot. Notice that we have one pod with a prefix of ``christest-55d5-5f775bbdd``? That is the staging slot instance.
 
@@ -526,19 +526,19 @@ It's probably about time for us to deploy something to our App Service. After al
 
 Below, you can see that I created a [GitHub repository](https://github.com/chrisreddington/dummysite) with the contents of a File > New .NET 5 MVC application
 
-![Screenshot showing a basic .NET 5 MVC Application in GitHub](images/azure-arc-for-apps-part-2/github-dummy-mvc.jpg)
+![Screenshot showing a basic .NET 5 MVC Application in GitHub](images/azure-arc-for-apps-part-2/github-dummy-mvc.jpg "Screenshot showing a basic .NET 5 MVC Application in GitHub")
 
 Navigating over to the Deployment Center tab of my App Service, I configured the source to be GitHub. I went ahead and configured the settings so that they matched up to the GitHub repository that I showed in the screenshot above.
 
-![Screenshot showing the Deployment Center Functionality for App Service on Kubernetes through Azure Portal](images/azure-arc-for-apps-part-2/app-service-on-kubernetes-deployment-center.jpg)
+![Screenshot showing the Deployment Center Functionality for App Service on Kubernetes through Azure Portal](images/azure-arc-for-apps-part-2/app-service-on-kubernetes-deployment-center.jpg "Screenshot showing the Deployment Center Functionality for App Service on Kubernetes through Azure Portal")
 
 After hitting save, I navigated over to the GitHub repository. Below is a screenshot of a commit made on my behalf. It committed a GitHub Action workflow file to my repository with the required steps to deploy the application to my App Service (again, to really keep hitting the point hope - The App Service that is running on my App Service for Kubernetes environment).
 
-![Screenshot showing a GitHub Action Workflow setup automatically by App Service's Deployment Center functionality](images/azure-arc-for-apps-part-2/github-automated-workflow-setup.jpg)
+![Screenshot showing a GitHub Action Workflow setup automatically by App Service's Deployment Center functionality](images/azure-arc-for-apps-part-2/github-automated-workflow-setup.jpg "Screenshot showing a GitHub Action Workflow setup automatically by App Service's Deployment Center functionality")
 
 Finally - navigating back to the deployment center section of my App Servrice in the Azure Portal, I can see the logs of the runs (including the time, associated Git Commit ID, Commit Author, Git Commit Message and Status).
 
-![Screenshot showing the Deployment Center Logs Section for App Service on Kubernetes through Azure Portal](images/azure-arc-for-apps-part-2/app-service-on-kubernetes-deployment-center-logs.jpg)
+![Screenshot showing the Deployment Center Logs Section for App Service on Kubernetes through Azure Portal](images/azure-arc-for-apps-part-2/app-service-on-kubernetes-deployment-center-logs.jpg "Screenshot showing the Deployment Center Logs Section for App Service on Kubernetes through Azure Portal")
 
 And of course, we've done it several times in this blog post already. Before the GitHub Action was triggered, I ran the command ``kubectl get po -n appservice --watch`` so that we can see what's happening on the cluster as a result of the change. You'll notice that a new replicaset is created (those pods with the prefix christest-79944ffd49) and that the ones from the earlier replicaset (christest-559548c65f) are terminated.
 
@@ -592,7 +592,7 @@ christest-559548c65f-wmv7p                                      0/2     Terminat
 
 And to complete the story - Once we navigate to our application in the production staging slot, we can see that it has been deployed successfully.
 
-![Screenshot showing the MVC App running on App Service on Kubernetes](images/azure-arc-for-apps-part-2/app-service-on-kubernetes-deployment-center-result.jpg)
+![Screenshot showing the MVC App running on App Service on Kubernetes](images/azure-arc-for-apps-part-2/app-service-on-kubernetes-deployment-center-result.jpg "Screenshot showing the MVC App running on App Service on Kubernetes")
 
 ## App Service Plans
 
@@ -889,7 +889,7 @@ Okay, we've had a whistle-stop tour through the many App Service features. Not o
 
 As I've been writing up this series of blog posts, I've been jumping around between creating App Services, Logic Apps and Azure Functions. But, to give you a flavour of what the resources look like within a resource group - you can check out the screenshot below. Spoiler: They don't look any different to any other App Service, Logic App or Azure Function that you would deploy in Azure.
 
-![Screenshot showing the App deployed in the Azure Portal](images/azure-arc-for-apps-part-2/app-service-on-kubernetes-apps-resource-group.jpg)
+![Screenshot showing the App deployed in the Azure Portal](images/azure-arc-for-apps-part-2/app-service-on-kubernetes-apps-resource-group.jpg "Screenshot showing the App deployed in the Azure Portal")
 
 ## Additional comments
 

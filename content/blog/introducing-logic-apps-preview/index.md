@@ -39,7 +39,7 @@ Once you have installed those extensions, make sure that you are logged in to th
 
 Once you have successfully signed in, you should be able to see a list of subscriptions underneath the Logic Apps (Preview) section of the Azure VSCode Extension.
 
-![Select an Azure Account in Visual Studio Code](images/introducing-logic-apps-preview/vscode-azure-account.png)
+![Select an Azure Account in Visual Studio Code](images/introducing-logic-apps-preview/vscode-azure-account.png "Select an Azure Account in Visual Studio Code")
 
 Next up, we'll want to create a project for our Logic Apps (preview) project. Notice in the previous screenshot that there is a small folder icon? Click on that and create a new folder in your desired directory.
 
@@ -56,25 +56,25 @@ With that context, let's continue onwards. As this is intended to be a blog on t
 
 You will then be asked to provide a name for your workflow file and confirm whether you want to open the workflow in the existing window. Great, at this point we should now have a brand new project created!
 
-![A default Stateless Workflow Project template created in Visual Studio Code](images/introducing-logic-apps-preview/vscode-logicapps-default-project.png)
+![A default Stateless Workflow Project template created in Visual Studio Code](images/introducing-logic-apps-preview/vscode-logicapps-default-project.png "A default Stateless Workflow Project template created in Visual Studio Code")
 
 Now we want to move forwards with the interesting part, and get designing! I mentioned a bit earlier that the Logic Apps team have been improving the authoring experience. If you right click on the workflow.json file, you will see several options including **Open in Designer** as demonstrated in the screenshot below. Click on that option.
 
-![Screenshot showing the menu options when right clicking the workflow.json file](images/introducing-logic-apps-preview/vscode-rightclick-workflowjson.png)
+![Screenshot showing the menu options when right clicking the workflow.json file](images/introducing-logic-apps-preview/vscode-rightclick-workflowjson.png "Screenshot showing the menu options when right clicking the workflow.json file")
 
 Assuming that you have the Azure Functions Core Tools installed, you should see the designer open within a few seconds. If you're having any issues, double check the output within VSCode. I hadn't installed the Azure Functions Core Tools before running this step, which is why I encountered some issues. Once installed and reloading VSCode, all worked as expected.
 
-![Screenshot of the Logic Apps Preview Designer in VSCode](images/introducing-logic-apps-preview/vscode-logicapp-designer.png)
+![Screenshot of the Logic Apps Preview Designer in VSCode](images/introducing-logic-apps-preview/vscode-logicapp-designer.png "Screenshot of the Logic Apps Preview Designer in VSCode")
 
 Now, let's go ahead and add a trigger for **When a HTTP request is received**. You will see that the local URL will be generated after the workflow is saved. We'll also add another step to provide an HTTP 200 response. The focus of this post isn't to demonstrate an extravagant workflow, but to demonstrate the Logic Apps preview - Hence we'll keep this as simple as possible! Once you've added the additional step, don't forget to hit save on the top left hand corner.
 
-![Screenshot of the Logic Apps Preview Designer in VSCode with a HTTP Request Trigger and an HTTP Response](images/introducing-logic-apps-preview/vscode-logicapp-http-request-response.png)
+![Screenshot of the Logic Apps Preview Designer in VSCode with a HTTP Request Trigger and an HTTP Response](images/introducing-logic-apps-preview/vscode-logicapp-http-request-response.png "Screenshot of the Logic Apps Preview Designer in VSCode with a HTTP Request Trigger and an HTTP Response")
 
 Navigate back to the workflow.json file in Visual Studio Code (viewing it as code, rather than the editor), and you will see that we now have a trigger and an action. So, if you're thinking ahead - Yes! We now have a streamlined development experience, where we can commit our Logic Apps changes to a Git repository, while still using the designer tooling that we know and love.
 
   > If you don't see any changes in the workflow.json file, make sure that you definitely saved your changes from earlier in the designer!
 
-![Screenshot of the Logic Apps Preview in VSCode with the workflow.json code for a HTTP Request Trigger and an HTTP Response](images/introducing-logic-apps-preview/vscode-logicapp-http-request-response-code.png)
+![Screenshot of the Logic Apps Preview in VSCode with the workflow.json code for a HTTP Request Trigger and an HTTP Response](images/introducing-logic-apps-preview/vscode-logicapp-http-request-response-code.png "Screenshot of the Logic Apps Preview in VSCode with the workflow.json code for a HTTP Request Trigger and an HTTP Response")
 
 Now, you'll be able to go ahead into the "Run and Debug" section and run the Logic Apps Workflow. Before doing that, if you are using macOS or Linux, you will need to make sure that you have updated your ``AzureWebJobsStorage`` property in your ``local.settings.json`` file to a connection string for an Azure Storage Account if you don't have the Azure Storage Emulator available locally.
 
@@ -82,7 +82,7 @@ Now, you'll be able to go ahead into the "Run and Debug" section and run the Log
 
 With the Logic Apps workflow running locally, right click on the workflow.json file in your navigation pane and select **overview**. You should see the callback URL available for the Logic App workflow which is running. Feel free to call this endpoint using your usual tool of choice, e.g. Visual Studio Code REST extensions, Postman, Web Browser, etc. For completeness (and the sake of a screenshot for this blog post), I edited my workflow to respond with a JSON body, as can be seen in the below screenshot.
 
-![Screenshot of the Logic Apps endpoint returning a HTTP 200 response with JSON Object](images/introducing-logic-apps-preview/logicapp-http-response-200.png)
+![Screenshot of the Logic Apps endpoint returning a HTTP 200 response with JSON Object](images/introducing-logic-apps-preview/logicapp-http-response-200.png "Screenshot of the Logic Apps endpoint returning a HTTP 200 response with JSON Object")
 
 Now for a couple of other concepts. You may have noticed the term "Built-in" connectors or the term "Managed"  (Azure) connectors. The built-in triggers/actions run natively within the Logic Apps Preview runtime environment. If you are using any managed connectors, these run on deployed into Azure.
 

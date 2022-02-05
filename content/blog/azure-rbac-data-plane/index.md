@@ -31,7 +31,7 @@ The [Azure Docs](https://docs.microsoft.com/en-us/azure/role-based-access-contro
 
 We can assign permissions at several levels of scopes, including management groups, subscriptions, resource groups and individual resources. The permissions are typically inherited from the lower levels of scope. For example, if you are a reader at a management group, then reader permissions would be assigned for all subscriptions, resource groups and resources in that hierarchy.
 
-![Example of Role Assignments for Azure RBAC at a Resource Group Level](images/azure-rbac-data-plane/azure-rbac.jpg)
+![Example of Role Assignments for Azure RBAC at a Resource Group Level](images/azure-rbac-data-plane/azure-rbac.jpg "Example of Role Assignments for Azure RBAC at a Resource Group Level")
 
 This is where roles are important. At a basic level, we have three roles that I would consider 'building blocks' -
 
@@ -45,11 +45,11 @@ Now, how does all of this apply to the data-plane? Given that the explanation fr
 
 Let's take Azure Key Vault as an example. For the majority of it's existence, Azure Key Vault's permissions model has been focused on using [access policies](https://docs.microsoft.com/en-us/azure/key-vault/general/secure-your-key-vault#data-plane-and-access-policies). Access policies was an Azure Key Vault specific implementation (unlike RBAC which is an Azure Resource Manager based concept). Access Policies are assigned at the overall vault level rather than an individual secret/key/certificate. What does this mean? If you wanted to segregate your Development, QA, Test, Production (etc.) credentials, then you would need to separate these across vaults. Typically, the guidance would have been one Azure Key Vault per environment, per application (application being quite a broad term, e.g. Microservice, etc.).
 
-![Access Policies in Azure KeyVault](images/azure-rbac-data-plane/keyvault-accesspolicies.jpg)
+![Access Policies in Azure KeyVault](images/azure-rbac-data-plane/keyvault-accesspolicies.jpg "Access Policies in Azure KeyVault")
 
 [Azure RBAC for Azure Key Vault](https://azure.microsoft.com/en-gb/updates/azure-rolebased-access-control-rbac-for-azure-key-vault-data-plane-authorization-is-now-in-preview/) was announced in September 2020. This is [very well documented](https://docs.microsoft.com/en-gb/azure/key-vault/general/rbac-guide?tabs=azure-cli) if you'd like to explore this further than this brief paragraph. There are now several roles available in Azure RBAC (Key Vault Administrator, Key Vault Certificates Officer, Key Vault Crypto Officer, Key Vault Crypto Service Encryption User, Key Vault Crypto User, Key Vault Reader, Key Vault Secrets Officer and Key Vault Secrets User).
 
-![RBAC at the data plane in Azure Key Vault](images/azure-rbac-data-plane/keyvault-rbac.jpg)
+![RBAC at the data plane in Azure Key Vault](images/azure-rbac-data-plane/keyvault-rbac.jpg "RBAC at the data plane in Azure Key Vault")
 
 What's the difference? These roles now exist in Azure RBAC, so we could apply these permissions at the scopes we mentioned earlier (management group, subscription, resource group, a specific key vault resource), or even an individual object in the vault (certificate, key or secret). [This Azure doc](https://docs.microsoft.com/en-gb/azure/key-vault/general/rbac-guide?tabs=azure-cli#secret-scope-role-assignment) shows an example of assigning the permissions at an individual secret level.
 
@@ -57,11 +57,11 @@ Remember what we said about principal of least privilege earlier? Now we're able
 
 Let's consider another example, Azure Storage. Azure Storage had typically been accessed by either using the Azure Storage Account Key or Shared Access Signatures. Using the Storage Account Key had typically been considered a bad practice, as it gives entire access to the Storage Account, so is considered "giving the keys to the kingdom". Though again, this is an service implementation specific approach. While we can't directly compare this scenario with the one above, there are similarities.
 
-![Storage Account - Access keys or Shared Access Signature options](images/azure-rbac-data-plane/stgacc-keys-sas.jpg)
+![Storage Account - Access keys or Shared Access Signature options](images/azure-rbac-data-plane/stgacc-keys-sas.jpg "Storage Account - Access keys or Shared Access Signature options")
 
 [Azure RBAC for Azure Storage](https://docs.microsoft.com/en-us/azure/storage/common/storage-auth-aad-rbac-portal#azure-roles-for-blobs-and-queues) allows us to select from several roles; Storage Blob Data Owner, Storage Blob Data Contributor, Storage Blob Data Reader, Storage Blob Delegator, Storage Queue Data Contributor, Storage Queue Data Reader, Storage Queue Data Message Processor and Storage Queue Data Message Sender. The beauty of this approach  is that we're once again able to use the power of Azure role-based access control through Azure Resource Manager to apply to our Azure Storage Account's data plane. That could be set at a management group level, subscription, resource group, storage account, or even individual queues / blob containers within a storage account.
 
-![Storage Account - Azure Role Based Access Control options](images/azure-rbac-data-plane/stg-rbac.jpg)
+![Storage Account - Azure Role Based Access Control options](images/azure-rbac-data-plane/stg-rbac.jpg "Storage Account - Azure Role Based Access Control options")
 
 And for another example, let's move on to CosmosDB. [Role-based access control with Azure AD is now in preview](https://devblogs.microsoft.com/cosmosdb/role-based-access-control-preview/) for CosmosDB. If you wanted to connect your application to CosmosDB, then you would need to use a primary key which gave broad access to a CosmosDB account. With CosmosDB, there is a little more heavy lifting needed to leverage the Azure role-based access control integration with Azure Active Directory. You'll need to follow [the documentation](https://docs.microsoft.com/en-us/azure/cosmos-db/how-to-setup-rbac) and create your own custom role, rather than leveraging a built-in role. To be fair, it's quite clear and explanatory. Just be sure to regularly maintain and monitor your API Actions for your roles. If new endpoints get added, you'll need to manage and maintain your custom roles!
 

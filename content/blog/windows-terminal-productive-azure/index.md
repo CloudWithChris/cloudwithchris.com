@@ -30,7 +30,7 @@ The preferred / recommended way of installing is by using the [Microsoft Store](
 
 When you launch the Windows Terminal, you should see a view similar to the below:
 
-![Initial View of the Windows Terminal](images/windows-terminal-productive-azure/windows-terminal-initial.jpg)
+![Initial View of the Windows Terminal](images/windows-terminal-productive-azure/windows-terminal-initial.jpg "Initial View of the Windows Terminal")
 
   > **TIP**: Remember that Windows Terminal is just that - a terminal. You can interact with shells through this application (e.g. Windows PowerShell, PowerShell Core, Windows Subsystem for Linux, Azure Cloud Shell). So, for example - if you don't yet have Windows Subsystem for Linux (WSL) installed or PowerShell Core installed on your system, then you won't see those as profile options within Windows Terminal.
   >
@@ -40,7 +40,7 @@ For me, the magic behind Windows Terminal is the profiles. You can have multiple
 
   > **TIP**: If you hold ALT while clicking on one of the profiles, then the alternate profile will open within the **same** tab. See an example below.
   >
-  > ![Multiple Profiles/Shells within a Tab](images/windows-terminal-productive-azure/windows-terminal-multishell-tab.jpg)
+  > ![Multiple Profiles/Shells within a Tab](images/windows-terminal-productive-azure/windows-terminal-multishell-tab.jpg "Multiple Profiles/Shells within a Tab")
 
 I'm writing this blog post using Windows Terminal Preview, Version 1.7.572.0, so you may see some slight differences depending upon which version of Windows Terminal you're using. The recent versions of Windows Terminal has shipped with a User Interface to edit the Windows Terminal Settings. If you don't see this, you may need to update this directly in JSON. Even with the User Interface option, you're still able to directly edit the JSON for the profiles as well if you prefer.
 
@@ -52,7 +52,7 @@ When you create a profile, you can go ahead and specify a command-line activity 
 
 Now, if you read the tip above - You'll now be realising that you in fact have a couple of ways that you can use SSH within Windows Terminal. Either by using Windows Subsystem for Linux, or directly within Windows if you have the OpenSSH optional feature installed. For you eagled eyed readers, you may have noticed in the first screenshot that I have both options configured!
 
-![Configuring a profile to connect to an Azure Virtual Machine](images/windows-terminal-productive-azure/windows-terminal-ssh-connections.jpg)
+![Configuring a profile to connect to an Azure Virtual Machine](images/windows-terminal-productive-azure/windows-terminal-ssh-connections.jpg "Configuring a profile to connect to an Azure Virtual Machine")
 
 You'll notice from the above image, that it's actually a fairly simple configuration -
 * If we have the OpenSSH optional feature on Windows 10 installed, we can just use ``ssh username@virtualmachine``
@@ -60,7 +60,7 @@ You'll notice from the above image, that it's actually a fairly simple configura
 
 The experience will work exactly as you expect. If you have a private key held in your .ssh folder, then you'll be able to use this in the respective environment. So for example, as I have both OpenSSH on Windows 10 installed, as well as Windows Subsystem for Linux, I have to have my keys available in the appropriate environment (either WSL, or Windows 10). From the screenshot below, you'll notice that I have different keys available in the different environments to illustrate the point.
 
-![Listing of .ssh directories in WSL and Windows, showing different keys](images/windows-terminal-productive-azure/windows-terminal-ssh-keys.jpg)
+![Listing of .ssh directories in WSL and Windows, showing different keys](images/windows-terminal-productive-azure/windows-terminal-ssh-keys.jpg "Listing of .ssh directories in WSL and Windows, showing different keys")
 
 Finally, you will also notice that [Azure Cloud Shell is available for you as a profile in Windows Terminal](https://devblogs.microsoft.com/commandline/the-azure-cloud-shell-connector-in-windows-terminal/).This is the same Azure Cloud Shell that you would connect to if you were in the Azure Portal, or if you connected directly to [https://shell.azure.com/](https://shell.azure.com/). The Azure Cloud Shell has [several tools installed by default](https://docs.microsoft.com/en-gb/azure/cloud-shell/features#tools) (including Git, Terraform, the Azure CLI and Kubectl).
 

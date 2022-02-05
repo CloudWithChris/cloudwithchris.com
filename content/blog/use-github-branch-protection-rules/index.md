@@ -25,7 +25,7 @@ Let me play devil's advocate for a moment. What happens if you have no barriers 
 
 This is where Branch Protection Rules come in. GitHub Branch Protection Rules are used to enforce workflows for one or more branches in your Git repository hosted on GitHub. These rules are enforced by GitHub and can be configured by the organization or individual repository owner.
 
-![Screenshot showing the Branch Protection Rules overview page for cloudwithchris.com. It contains a Branch Protection Rule for the main branch and the dev branch](images/use-github-branch-protection-rules/branch-protection-overview.png)
+![Screenshot showing the Branch Protection Rules overview page for cloudwithchris.com. It contains a Branch Protection Rule for the main branch and the dev branch](images/use-github-branch-protection-rules/branch-protection-overview.png "Screenshot showing the Branch Protection Rules overview page for cloudwithchris.com. It contains a Branch Protection Rule for the main branch and the dev branch")
 
 In essence, before you commit to a certain branch (or a set of branches), you need to fulfil a set of conditions. If you don't, then you won't be able to commit to that branch. These conditions include:
 
@@ -37,7 +37,7 @@ In essence, before you commit to a certain branch (or a set of branches), you ne
 * Ensure that all restrictions also apply to administrators.
 * Restrict which people, teams or apps can push to any branches which match the convention you've set.
 
-![Screenshot showing the Branch Protection Rules configured for the main branch of the cloudwithchris.com repository. It shows that signed commits are required. It showed that require pull request reviews before merging, require status checks to pass before merging, require conversation resolution before merging, require linear history and include administrators are not required.](images/use-github-branch-protection-rules/branch-protection-rules-main.png)
+![Screenshot showing the Branch Protection Rules configured for the main branch of the cloudwithchris.com repository. It shows that signed commits are required. It showed that require pull request reviews before merging, require status checks to pass before merging, require conversation resolution before merging, require linear history and include administrators are not required.](images/use-github-branch-protection-rules/branch-protection-rules-main.png "Screenshot showing the Branch Protection Rules configured for the main branch of the cloudwithchris.com repository. It shows that signed commits are required. It showed that require pull request reviews before merging, require status checks to pass before merging, require conversation resolution before merging, require linear history and include administrators are not required.")
 
 So, in summary - you need to have a set of conditions that you can fulfil before you can commit to a branch. If you don't, then you won't be able to commit to that branch.
 
@@ -47,19 +47,19 @@ So, in summary - you need to have a set of conditions that you can fulfil before
 
 2. Click on the **Settings** tab.
 
-  ![Arrow pointing to the settings option in the menu of the cloudwithchris.com GitHub Repository](images/use-github-branch-protection-rules/step-1.png)
+  ![Arrow pointing to the settings option in the menu of the cloudwithchris.com GitHub Repository](images/use-github-branch-protection-rules/step-1.png "Arrow pointing to the settings option in the menu of the cloudwithchris.com GitHub Repository")
 
 3. Click on the **Branches** tab.
 
-  ![Arrow pointing to the Branches option in the settings page of the cloudwithchris.com GitHub Repository](images/use-github-branch-protection-rules/step-2.png)
+  ![Arrow pointing to the Branches option in the settings page of the cloudwithchris.com GitHub Repository](images/use-github-branch-protection-rules/step-2.png "Arrow pointing to the Branches option in the settings page of the cloudwithchris.com GitHub Repository")
 
 4. Click on the **Add Rule** button.
 
-  ![Arrow pointing to the Add rule button on the Branch settings page of the cloudwithchris.com GitHub repository](images/use-github-branch-protection-rules/step-3.png)
+  ![Arrow pointing to the Add rule button on the Branch settings page of the cloudwithchris.com GitHub repository](images/use-github-branch-protection-rules/step-3.png "Arrow pointing to the Add rule button on the Branch settings page of the cloudwithchris.com GitHub repository")
 
 5. You will now see a form to create a new Branch Protection Rule. The first thing you need to do is complete a Branch name pattern. This pattern is used to match branches in your repository. For example, if you have a branch called `master`, then you would enter `master` in the pattern field. If you had several branches that start with preview, e.g. `preview/mynewfeature` or `preview/myothernewfeature`, then you would enter `preview/*` in the pattern field.
 
-  ![Arrow pointing to the Branch name pattern input box on the Add new Branch Protection Rules Page](images/use-github-branch-protection-rules/step-4.png)
+  ![Arrow pointing to the Branch name pattern input box on the Add new Branch Protection Rules Page](images/use-github-branch-protection-rules/step-4.png "Arrow pointing to the Branch name pattern input box on the Add new Branch Protection Rules Page")
 
 6. Configure the rules as appropriate for your branch. I typically configure some variation of the following: ``Require pull request reviews before merging``, ``Require status checks to pass before merging``, ``Require conversation resolution before merging``, ``Require signed commits`` and ``Require all restrictions to apply to administrators``.
 
@@ -73,21 +73,21 @@ So, in summary - you need to have a set of conditions that you can fulfil before
 
 7. Click on the **Save changes** button.
 
-  ![Arrow pointing to the Save changes button on the Add new Branch Protection Rules Page](images/use-github-branch-protection-rules/step-5.png)
+  ![Arrow pointing to the Save changes button on the Add new Branch Protection Rules Page](images/use-github-branch-protection-rules/step-5.png "Arrow pointing to the Save changes button on the Add new Branch Protection Rules Page")
 
 8. You should now see that an additional rule has been added to your Branch Protection Rules list. Repeat this as many times as you need to, so that you can set up the workflow that best suits your branching strategy.
 
-  ![Box highlighting the branch protection rules (One for master, one for dev, and one for preview/*) on the Branch Protection Rules pages](images/use-github-branch-protection-rules/step-6.png)
+  ![Box highlighting the branch protection rules (One for master, one for dev, and one for preview/*) on the Branch Protection Rules pages](images/use-github-branch-protection-rules/step-6.png "Box highlighting the branch protection rules (One for master, one for dev, and one for preview/*) on the Branch Protection Rules pages")
 
 As an example, I made some changes to my master branch protection policy. I now have the ``Require pull request reviews before merging`` set to 1 (which means I just need one review on the PR), and ``Require signed commits`` set to true. I also have the ``Require all restrictions to apply to administrators`` set to true.
 
 After navigating to my readme.md, and wanting to make a dummy change - You will notice that I am prevented from making the change.
 
-![Arrow pointing to the line item that shows 'You can't commit to master because it is a protected branch'](images/use-github-branch-protection-rules/protected-branch-github.png)
+![Arrow pointing to the line item that shows 'You can't commit to master because it is a protected branch'](images/use-github-branch-protection-rules/protected-branch-github.png "Arrow pointing to the line item that shows 'You can't commit to master because it is a protected branch'")
 
 > **Tip:** A word of warning. If you're working on a pet project where it's mainly yourself contributing (e.g. Cloud With Chris). If you enable the require pull requests before merging, **and** apply restrictions to all administrators, then you will have to wait for someone else to review your Pull Request. There is no ability for a Pull Request author to approve their own changes. If you disable the ``Require all restrictions to apply to administrators``, then you will be able to merge the pull request (though this would be true for any other administrators of your repository as well).
 
-![Arrow pointing to the popup that shows users cannot approve their own changes in a Pull Request](images/use-github-branch-protection-rules/cant-approve-own.png)
+![Arrow pointing to the popup that shows users cannot approve their own changes in a Pull Request](images/use-github-branch-protection-rules/cant-approve-own.png "Arrow pointing to the popup that shows users cannot approve their own changes in a Pull Request")
 
 ## Summary
 

@@ -20,7 +20,7 @@ From the screenshot below, you'll notice a few interesting details among the res
 * Some links contain additional 'metadata'. For example, the YouTube, Facebook and Dev.To links have a set of breadcrumbs above the link, showing an outline of the site's structure.
 * Not shown in the screenshot, but you may have noticed that some sites have an integrated search input when you're searching on your favourite search engine.
 
-![Search results for Cloud with Chris in Google](images/using-schema-org-for-seo/google-results.png)
+![Search results for Cloud with Chris in Google](images/using-schema-org-for-seo/google-results.png "Search results for Cloud with Chris in Google")
 
 Search Engine Optimisation is based on a number of factors, including -
 * Description Metadata on your pages
@@ -60,15 +60,15 @@ There are a couple of resources that were invaluable in implementing this -
 * [Using schema.org as a reference for the different schema types](https://schema.org/) - I use this to appropriately render different information (e.g. a Guest page should be a [person](https://schema.org/Person), A blog post should be an [article type](https://schema.org/BlogPosting), a podcast episode should be an [episode type](https://schema.org/PodcastEpisode), etc.)
 * [Google Search's Rich Result Test](https://search.google.com/test/rich-results) - I used this page to copy/paste the generated/rendered (i.e. when I used hugo serve in my local environment's) schema.org script/metdata. This helped me confirm whether the metadata structure is valid, and *may* be used by the search engine.
 
-![Example schema.org validation in Google Rich Results Test](images/using-schema-org-for-seo/google-richresults-test.png)
+![Example schema.org validation in Google Rich Results Test](images/using-schema-org-for-seo/google-richresults-test.png "Example schema.org validation in Google Rich Results Test")
 
 Navigating over to my Google Search Console admin center, I see a new area which focuses on enhancements. This targets the schema types that I have defined. At time of writing, this includes Breadcrumbs, Sitelinks searchbox and Videos. As an example, when we look at breadcrumbs, we can see that Google has been crawling the site and picking up the additional metadata over recent days.
 
-![Google identifying breadcrumbs enhancements over recent days](images/using-schema-org-for-seo/google-searchconsole-breadcrumbs.png)
+![Google identifying breadcrumbs enhancements over recent days](images/using-schema-org-for-seo/google-searchconsole-breadcrumbs.png "Google identifying breadcrumbs enhancements over recent days")
 
 What does that look like from a Search Result perspective? Notice that the most recent result in the list was the event sourcing and materialised view episode? Searching for that in Google gives us the following result -
 
-![Showing breadcrumbs in Google Search](images/using-schema-org-for-seo/google-breadcrumb-searchresult.png)
+![Showing breadcrumbs in Google Search](images/using-schema-org-for-seo/google-breadcrumb-searchresult.png "Showing breadcrumbs in Google Search")
 
 This can be incredibly powerful. For example, have you ever searched for 'How To' content and noticed that certain results automatically bubble up to the top of the page, with a card displaying step by step instructions? Guess how that's done... You guessed it, using a structured schema approach! Schema.org is one example of using structured data. There are others, including JSON-LD (which we've been using throughout this post, and Cloud with Chris), Microdata and RDFa. You can find further details on these, and how structured data works in general over at [Google's page - Understand how structured data works](https://developers.google.com/search/docs/guides/intro-structured-data).
 
