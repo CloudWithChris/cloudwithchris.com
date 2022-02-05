@@ -4,7 +4,7 @@ Description: "ToolUp Tuesday is all about showing the thought process and decisi
 PublishDate: "2022-02-08T19:30:00Z"
 Title: "ToolUp Tuesday - February 2022"
 episode: TT2202
-image: img/cloudwithchrislogo.png # images/v002.jpg
+image: "images/toolup-tuesday-2202.jpg"
 explicit: "no"
 guests: []
 hosts:
@@ -23,7 +23,7 @@ tags:
 #- Sessionize
 #- Azure
 #- Community
-# youtube: VyQI5SOsw3M
+youtube: lkOwQhjIbJc
 upcoming: true
 ---
 ToolUp Tuesday is all about showing the thought process and decisions made when creating an application. Join Chris and Matt as they build a new application from the ground up, including development processes, tooling, service choices and architectural decisions!

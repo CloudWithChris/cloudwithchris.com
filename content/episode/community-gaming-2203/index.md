@@ -4,7 +4,7 @@ Description: "Join members of the cloud community as they talk through what's to
 PublishDate: "2022-03-02T19:00:00Z"
 Title: "Community Gaming - Among Us"
 episode: CG2203
-image: img/cloudwithchrislogo.png # images/v002.jpg
+image: images/community-gaming-2203.jpg
 explicit: "no"
 guests: []
 hosts:
