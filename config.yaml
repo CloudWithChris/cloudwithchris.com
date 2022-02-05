@@ -288,7 +288,7 @@ params:
         - cloud security
         - devsecops
       language_name: "English"
-      logo: "/img/cloudwithchrislogo.png" # Relative path to the site's logo
+      logo: "/img/Cloud.png" # Relative path to the site's logo
       media_prefix: "https://podcasts.cloudwithchris.com/" # Media_Prefix is used when referencing podcast audio files. The media files in individual episodes will be concatenated after the media_prefix above.
       ogimage: "/img/cloudwithchrislogo.png" # Used within RSS feeds.
     social:
