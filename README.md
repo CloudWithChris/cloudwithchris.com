@@ -1,4 +1,4 @@
-[![Master](https://github.com/cloudwithchris/cloudwithchris.com/actions/workflows/site-deployment.yaml.yaml/badge.svg)](https://github.com/chrisreddington/cloudwithchris.com/actions/workflows/site-deployment.yaml.yaml)
+[![Azure Static Web Apps CI/CD](https://github.com/CloudWithChris/cloudwithchris.com/actions/workflows/site-deployment.yaml/badge.svg)](https://github.com/CloudWithChris/cloudwithchris.com/actions/workflows/site-deployment.yaml)
 
 [![Podcast Audio Upload](https://github.com/cloudwithchris/cloudwithchris.com/actions/workflows/podcast-audio.yaml/badge.svg)](https://github.com/cloudwithchris/cloudwithchris.com/actions/workflows/podcast-audio.yaml)
 
@@ -14,7 +14,7 @@ There are several series for you to tune in and watch/listen in for -
 * **CNCF Projects** - We've all heard of Kubernetes. Perhaps you've heard about Prometheus? But what about KEDA, Helm, Rook, Chaos Mesh and more? In this series, I'll explore the numerous projects that exist as part of the Cloud Native Compute Foundation landscape.
 * **Community Gaming** - Join members of the cloud community as they talk through what’s top of mind, the latest trends, and have a bit of fun in a game or two! This takes place on the first Wednesday of each month.
 
-Want to participate? Then jump onto the [Cloud With Chris Discord Channel](https://discord.gg/9FJctHP9Zv) and assign yourself the gamers role on the #role-assign channel!
+  Want to participate? Then jump onto the [Cloud With Chris Discord Channel](https://discord.gg/9FJctHP9Zv) and assign yourself the gamers role on the #role-assign channel!
 * **Main Podcast Series** - This is where Cloud with Chris originated, content without any particular theme or agenda! If you can't find a series that fits with what you want to talk about - That's okay! You may be interested in following the "main" track!
 * **Tales from the Real World** - Technology is great, but sometimes when we apply it to real world scenarios there can be challenges. There might be people/process challenges, or issues trying to bring different types of technology together. We also need to make considerations around security and many other cross-cutting concerns. This is less about the theory, and the technology - focusing more on the stories and the lessons learned from the real world. Not just on technology implementations/projects, but also understanding the journey of folks through their careers and more.
 * **Tech Roundup** - Chris provides a regular update on what's going on in Azure, Azure DevOps and GitHub from a technology and community perspective. He also updates on the recent and upcoming items on Cloud With Chris! Want to stay up to date? Then this is the series for you!
