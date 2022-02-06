@@ -89,7 +89,7 @@ jobs:
         hugo-version: ${{ env.HUGO_VERSION }}
         extended: true
     - name: 'Build and Minify Hugo Contents'
-      run: hugo --minify    
+      run: hugo --minify --baseURL 'https://www.cloudwithchris.com'
     - name: 'Upload Generated Static Content as Website Artifact'
       uses: actions/upload-artifact@v1
       with:
