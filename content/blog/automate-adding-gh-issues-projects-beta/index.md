@@ -1,6 +1,6 @@
 ---
 # Default hugo properties
-title: "Automate adding GitHub Issues to GitHub Projects (Beta)"                   # Name of the blog
+title: "Automate adding GitHub Issues to GitHub Projects (Beta) in a GitHub organisation"                   # Name of the blog
 description: "I've been following the GitHub Projects beta for a while now, and have been fortunate to be accepted as an early adopter. I'm a big fan of the direction, and the flexibility. One of the limitations I've noticed is that there's currently no built-in way to automatically add an issue to  a project board. It's on the backlog, but not yet available. Fortunately, GitHub Actions has us sorted. I'll walk you through a sample I put together to do exactly that."             # Used for SEO optimisation
 publishDate: "2022-02-05T20:00:00Z"             # TODO: Differentiate between date
 date: "2022-02-05T20:00:00Z"                            # TODO: Differentiate between PublishDate
@@ -27,6 +27,8 @@ authors:
 -  "chrisreddington"                       # An array of authors of the post (filenames in person).
 ---
 I've been following the [GitHub Projects beta](https://github.com/features/issues) for a while now, and have been fortunate to be accepted as an early adopter. I'm a big fan of the direction, and the flexibility that it provides. One of the limitations I've noticed is that there's currently no built-in way to automatically add an issue to  a project board (and [I'm not the only one!](https://github.com/github/feedback/discussions/5378)). It's [on the backlog](https://github.com/github/roadmap/issues/286) but not yet available. Fortunately, GitHub Actions has us sorted. I'll walk you through a sample that I put together to do exactly that.
+
+> **Note:** A big thank you to the KEDA project team for the recognition of this post in helping them [solve this challenge for their project](https://github.com/kedacore/keda/pull/2622#pullrequestreview-878828492))
 
 There's a [GitHub Doc](https://docs.github.com/en/issues/trying-out-the-new-projects-experience/automating-projects) that talks through automating GitHub Projects (beta). However, it mainly focuses on pull requests. I used the example in the GitHub doc as a basis to automate issues. I'll walk you through the logic that I went through to arrive at the yaml file further down in this post.
 
