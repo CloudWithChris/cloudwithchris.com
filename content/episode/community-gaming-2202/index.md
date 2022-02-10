@@ -21,9 +21,6 @@ series:
 tags:
 - Gaming
 - Community
-- Azure
-- Azure DevOps
-- GitHub
 - Halo Infinite
 youtube: -54DkRL24aA
 ---
