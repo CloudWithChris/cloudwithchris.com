@@ -19,10 +19,18 @@ images:
 series:
 - Toolup Tuesday
 tags:
-#- Podcast
-#- Sessionize
-#- Azure
-#- Community
+- Developer
+- Azure
+- GitHub
+- Visual Studio Code
+- Visual Studio
+- Coding
+- Development
+- .NET Core
+- Golang
+- Architecture
+- Developer Tools
+- DevOps
 youtube: rsqY_hGyIWE
 upcoming: true
 ---
