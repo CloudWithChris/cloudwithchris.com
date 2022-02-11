@@ -38,9 +38,9 @@ As highlighted in the previous post, the [GitHub CLI Doc](https://cli.github.com
 
 At the start of a workflow, GitHub Actions automatically creates a unique token for you. This token is set as the ``GITHUB_TOKEN`` environment variable and has a limited lifetime, with a default set of permissions. You can generate a Personal Access Token, assign the scope of the permissions needed and set that as a GitHub Secret ``GITHUB_TOKEN`` for use within your GitHub Action workflows. 
 
-> **Note:** I mentioned in my previous blog that that the default ``GITHUB_TOKEN`` did not have sufficient permissions to get the needed information. I had to [create a Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) and provide it with the **repo**, **write:org** and **read:org** scopes.
+> **Note:** I mentioned in my previous blog that that the default ``GITHUB_TOKEN`` did not have sufficient permissions to get the needed information. I had to [create a Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) and provide it with the **repo** and **read:org** scopes.
 >
-> Even though there are two permissions which relate to org, it seems as though they are also required for user-owned repositories as well.
+> Even though there is a permission which relates to orgs, it seems as though it is also required for user-owned repositories as well.
 
 The ``gh api graphql`` command from the GitHub CLI can be used to query the GitHub API.
 
