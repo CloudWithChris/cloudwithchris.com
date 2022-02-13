@@ -102,16 +102,31 @@ jobs:
     name: Deploy (Preview)
     environment:
       name: staging.azure
+    permissions:
+          id-token: write
+          contents: read
     steps:
       - name: 'Download Website Artifact'
         uses: actions/download-artifact@v1
         with:
           name: website
+      - name: 'Az CLI Login via OIDC'
+        uses: azure/login@v1
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      - name: "Get SWA Token"
+        uses: azure/CLI@v1
+        with:
+          azcliversion: 2.33.0
+          inlineScript: |
+            echo "SWA_TOKEN=${az staticwebapp secrets list -n ${{ env.SWA_NAME }} | jq -r '.properties.apiKey'}" >> $GITHUB_ENV
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
         with:
-          azure_static_web_apps_api_token: ${{ secrets.STATIC_WEB_APP_TOKEN }}
+          azure_static_web_apps_api_token: ${{ env.SWA_TOKEN }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: 'upload'
           app_location: 'website'
