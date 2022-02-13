@@ -121,7 +121,7 @@ jobs:
         with:
           azcliversion: 2.33.0
           inlineScript: |
-            echo "SWA_TOKEN=${az staticwebapp secrets list -n ${{ env.SWA_NAME }} | jq -r '.properties.apiKey'}" >> $GITHUB_ENV
+            echo "SWA_TOKEN=$(az staticwebapp secrets list -n ${{ env.SWA_NAME }} | jq -r '.properties.apiKey')" >> $GITHUB_ENV
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
