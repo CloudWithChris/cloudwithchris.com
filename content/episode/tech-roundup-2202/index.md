@@ -33,6 +33,7 @@ tags:
 - Azure DevOps Updates
 youtube: TUmETh8YB0w
 upcoming: true
+banner: images/tech-roundup.png
 ---
 Overwhelmed at keeping up to date with Azure? Or how about keeping a pulse on the Latest GitHub news, Azure DevOps and more? In this episode, Chris provides a summary of updates on the latest Azure DevOps News, GitHub updates and new announcements in Azure.
 
