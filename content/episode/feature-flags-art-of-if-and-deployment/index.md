@@ -27,7 +27,7 @@ youtube: f5AIx_90Bxo
 banner: images/banner.jpg
 upcoming: true
 ---
-In this session, Chris is joined by Chris Ayers! Chris gives insight on how you start implementing feature flags, You'll be leaving this session wanting to separate your releases from your deployments! 
+In this session, Chris is joined by Chris Ayers! Chris gives insight on how you start implementing feature flags, You'll be leaving this session wanting to separate your releases from your deployments!
 
 You will have an understanding of
 - What feature flags are
