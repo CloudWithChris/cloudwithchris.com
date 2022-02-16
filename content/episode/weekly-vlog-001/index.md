@@ -27,5 +27,6 @@ tags:
 - Azure DevOps
 - DevOps
 youtube: sNGQkuUeRCM
+banner: "images/cloud-with-chris-banner.png"
 ---
 In this video, Chris sets off his weekly technology vlog updates talking about some of the things he worked on over his December break including OSS Contributions. He also talks through some updates from the month of December across Azure, GitHub and Azure DevOps.

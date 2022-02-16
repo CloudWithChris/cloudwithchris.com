@@ -24,5 +24,6 @@ tags:
 - Performance Testing
 - Shift Left
 youtube: "icJkSBxoS3I"
+banner: "images/cloud-with-chris-banner.png"
 ---
 Perf Testing has traditionally been a higher environment activity. This leads to issues such as performance issues being identified late in the cycle, high MTTR for such issues, unplanned work, etc. However applying "Shift Left" to Performance Testing is a hard problem to solve. In this episode, Chris is joined by HariKrishnan as they talk through Hari's experience in the hurdles encountered running perf tests on local machines / lower environments.

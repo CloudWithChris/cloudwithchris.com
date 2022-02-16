@@ -14,6 +14,7 @@ tags:
 - Resilience
 - Requirements
 title: Building Solutions in the Cloud
+banner: "images/cloud-with-chris-banner.png"
 ---
 
 By now, we should be aware of the benefits that the cloud can bring to any individual or organisation. There are plenty of case studies, talking about the scalable, flexible and economic benefits (See [Azure](https://azure.microsoft.com/en-gb/case-studies/), [AWS](https://aws.amazon.com/solutions/case-studies/) or [Google](https://cloud.google.com/customers/) for more information).

@@ -13,6 +13,7 @@ tags:
 - Git
 - How To
 title: Why use Git, How it Works and what's going on behind the scenes?
+banner: "images/cloud-with-chris-banner.png"
 ---
 ## Introduction
 
@@ -52,6 +53,7 @@ cd mynewfolder
 pwd
 
 Path
+banner: "images/cloud-with-chris-banner.png"
 ----
 D:\temp\mynewfolder
 
@@ -537,6 +539,7 @@ ls -Force
     Directory: D:\temp\potential-garbanzo
 
 Mode                 LastWriteTime         Length Name
+banner: "images/cloud-with-chris-banner.png"
 ----                 -------------         ------ ----
 d--h-          31/03/2021    14:59                .git
 -a---          31/03/2021    14:57             36 helloworld.php

@@ -16,6 +16,7 @@ tags:
 series: 
 - "CNCF Projects"
 title: Introduction to The Distributed Application Runtime (Dapr)
+banner: "images/cloud-with-chris-banner.png"
 ---
 In this post, we're going to explore the Open Source project known as Dapr (The Distributed Application Runtime). This post is primarily aimed at those who already have an understanding of Containers, Kubernetes and Microservices. However, if you're not familiar with these topics - I'll do my best to set the right context and background without making the blog too lengthy!
 

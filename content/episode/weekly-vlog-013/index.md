@@ -24,5 +24,6 @@ tags:
 - DevOps
 - Community
 youtube: xiLeTkRJj5A
+banner: "images/cloud-with-chris-banner.png"
 ---
 In this video, Chris provides an update on the Azure Blogs (lots of great updates this week), a quick-fire round of Azure Technology Updates, dives into the Azure DevOps Blog and GitHub Blogs. Then we cover a VERY busy week of Cloud with Chris over the last week, and what's coming up talk-wise over April (It's looking to be a packed month!)

@@ -11,6 +11,7 @@ tags:
 - Hugo
 - Open Source
 title: Contributing to a Hugo Theme - The Castanet and  Hugo Community Themes
+banner: "images/cloud-with-chris-banner.png"
 ---
 During the 2020 Festive Break, I had a lot of time on my hands. I took 4 weeks of my Annual Leave, which meant I had the majority of December to personal time
 

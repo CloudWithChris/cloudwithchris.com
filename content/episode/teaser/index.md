@@ -13,4 +13,5 @@ images:
 podcast_bytes: "1015808"
 podcast_duration: "0:40:04"
 podcast_file: 0 - Teaser.mp3
+banner: "images/cloud-with-chris-banner.png"
 ---

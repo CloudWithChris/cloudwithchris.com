@@ -2,6 +2,7 @@
 date: "2016-09-25T02:11:48-05:00"
 description: "A list of all blogs that have been published on Cloud With Chris"
 title: Blogs
+banner: "images/cloud-with-chris-banner.png"
 ---
 Working through a challenge, and can't quite solve it? Think it could make a good blog post idea? I'd love to hear!
 

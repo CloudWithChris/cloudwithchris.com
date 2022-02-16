@@ -21,5 +21,6 @@ tags:
 - DevOps
 - Process
 youtube: Q0b3tOFeJlI
+banner: "images/cloud-with-chris-banner.png"
 ---
 In this session Erin and Chris reminisce, talking about how they met and Erin's journey into Technology. Erin talks a little bit about what Agile is, how it works in the real world, and shares some stories and anecdotes she's seen as an Agile Coach in the trenches.

@@ -25,5 +25,6 @@ tags:
 - Community
 - Azure Storage
 youtube: "qpkK_aMVXc4"
+banner: "images/cloud-with-chris-banner.png"
 ---
 In this episode, Chris is joined by Matt Bradley! Matt helped start the Public Cloud Division at UKFast. While UKFast works with both AWS and Azure, Matt's focus is on the Azure side, dealing with architecting and building solutions. Matt has delivered several talks within the community, including 'The Azure Storage Minefield'. Join Chris and Matt as they talk through some of Matt's learnings along the way and observations as he has been on his own journey with Azure and public Cloud!

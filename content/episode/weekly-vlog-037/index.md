@@ -24,5 +24,6 @@ tags:
 - Community
 - Blogging
 youtube: ppVVGV93g4A
+banner: "images/cloud-with-chris-banner.png"
 ---
 In this video, chris provides another update on Cloud with Chris, updates on what's coming soon and Azure related news! We'll also be walking through the new GitHub Issues Beta!

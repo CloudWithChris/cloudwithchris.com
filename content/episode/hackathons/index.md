@@ -24,5 +24,6 @@ tags:
 - Azure
 - Requirements
 youtube: Y24qiraX2m8
+banner: "images/cloud-with-chris-banner.png"
 ---
 Here we go - Episode #4! Have you ever had an idea, and you want to quickly prove it out? Or have you wanted to build out a scenario to expand your own skills, whether that is development, design or perhaps other skills? You've probably heard about Hackathon events in recent years, and that''s what we''ll focus on in this episode! I'm very excited to introduce my second guest of the show, Maria Vrabie, a very good friend, who has plenty of experience with Hackathons, both participating in them and organising or mentoring for them. It's a very insightful session, so let's go ahead and find out more about Maria''s experience with Hackathons.

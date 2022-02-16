@@ -14,6 +14,7 @@ tags:
 - Identity
 - Managed Service Identity
 title: Using the GitHub self-hosted runner and Azure Virtual Machines to login with a System Assigned Managed Identity
+banner: "images/cloud-with-chris-banner.png"
 ---
 I recently started thinking about the typical setup process for a GitHub Action Workflow which will requires access to Azure. Typically, the process is to use the ``Azure/login`` GitHub Action, and then use the ``azure/cli`` or another Azure GitHub Action to deploy into GitHub. This is a nice approach. However, from my initial research - I wasn't able to see a way use the ``Azure/login`` GitHub Action to deploy into Azure using a System Assigned Managed Identity. This got me wondering... Is this possible?
 
@@ -91,6 +92,7 @@ You'll then be guided through a prompt similar to the below, that guides you thr
 # Create the runner and start the configuration experience
 ./config.sh --url https://github.com/{{Yourorganization}} --token <YOURTOKENFROMGITHUB>
 
+banner: "images/cloud-with-chris-banner.png"
 --------------------------------------------------------------------------------
 |        ____ _ _   _   _       _          _        _   _                      |
 |       / ___(_) |_| | | |_   _| |__      / \   ___| |_(_) ___  _ __  ___      |
@@ -100,6 +102,7 @@ You'll then be guided through a prompt similar to the below, that guides you thr
 |                                                                              |
 |                       Self-hosted runner registration                        |
 |                                                                              |
+banner: "images/cloud-with-chris-banner.png"
 --------------------------------------------------------------------------------
 
 # Authentication

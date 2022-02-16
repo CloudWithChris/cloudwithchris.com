@@ -24,5 +24,6 @@ tags:
 - Azure
 - Azure Thames Valley
 youtube: e5_ZFHW8bbE
+banner: "images/cloud-with-chris-banner.png"
 ---
 In this video, Chris recaps the events over the last week, including his transition from FastTrack for Azure Engineer into a Cloud Solution Architect, The Compute Resource Consolidation Pattern and being "In Conversation with" JonnyChipz and the relaunch of Azure Thames Valley! This week, expect an additional blog post on GitHub and GPG, as well as an Intro to Landing Zones with Karim Fahmy. Don't forget to checkout the session with Squared Up on Thursday as well! It's a busy week! The last one has been busy for the Azure Enginering teams, as we recap some of the updates (This is one not to miss - There's a lot!)

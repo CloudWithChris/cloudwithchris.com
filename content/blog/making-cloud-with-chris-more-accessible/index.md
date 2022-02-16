@@ -13,6 +13,7 @@ tags:
 - Development
 - Web Development
 title: Making cloudwithchris.com more accessible
+banner: "images/cloud-with-chris-banner.png"
 ---
 I've recently been on a journey. I've recently come across a number of accessibility issues on [cloudwithchris.com](https://cloudwithchris.com). I've been working on making the site more accessible, and I've also been working on making it more inclusive. In this blog post, I'm going to outline some of my findings, the tools that I used to identify those, and how I've worked to fix them. This is an ongoing project, so I'll provide further posts as it makes sense.
 

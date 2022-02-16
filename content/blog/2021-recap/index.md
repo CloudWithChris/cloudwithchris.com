@@ -13,6 +13,7 @@ tags:
 - Blogging
 - Community
 title: Cloud With Chris 2021 Recap
+banner: "images/cloud-with-chris-banner.png"
 ---
 It's hard to believe that 2021 is done, and we're now in 2022. In one sense, it feels like a "blink and you miss it" year. In another way, it feels as though it's been one of the longest years to have passed us by.
 

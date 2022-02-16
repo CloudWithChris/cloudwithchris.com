@@ -17,6 +17,7 @@ tags:
 title: 'Introducing the Cloud Native Compute Foundation (CNCF)'
 series: 
 - "CNCF Projects"
+banner: "images/cloud-with-chris-banner.png"
 ---
 Inspired by the [recent episode with Annie Talvasto](/episode/top-new-cncf-projects), I wanted to put together a blog post that will introduce an ongoing series on Cloud With Chris. Before we introduce that series though, it's important that we first introduce the Cloud Native Compute Foundation (more commonly known as CNCF).
 

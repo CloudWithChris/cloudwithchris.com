@@ -17,6 +17,7 @@ tags:
 series: 
 - "Using Azure Arc for Apps"
 title: Using Azure Arc for Apps - Part 5 - Deploying an Azure API Management gateway to an Azure Arc enabled Kubernetes Cluster
+banner: "images/cloud-with-chris-banner.png"
 ---
 ## Setting up an Azure API Management Gateway on Azure Arc
 

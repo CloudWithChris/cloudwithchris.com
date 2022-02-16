@@ -23,5 +23,6 @@ tags:
 - Architecture
 - Gaming
 youtube: RxiE2NIRPKU
+banner: "images/cloud-with-chris-banner.png"
 ---
 Have you tried Flight Simulator 2020 and been impressed by how well it maps to the real world? Joined other users in the simulator on a journey and encountered other 'live' aircrafts, or changing weather conditions? This is powered by the Cloud! Join Chris and Cam as they embark on a journey of discovery, and a quick lap around the skies...

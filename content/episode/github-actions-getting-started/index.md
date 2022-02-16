@@ -22,5 +22,6 @@ tags:
 - GitHub Actions
 - DevOps
 youtube: 4HjCS4HMGCU
+banner: "images/cloud-with-chris-banner.png"
 ---
 Want to find out more about how GitHub Actions work? How about the Azure Actions that you might use in your first deployments in the platform? Then stick around, because this video is the one for you!

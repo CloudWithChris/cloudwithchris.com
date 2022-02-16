@@ -20,6 +20,7 @@ tags:
 - Managed Identities
 - RBAC
 title: Azure role-based access control (RBAC) at the data plane level
+banner: "images/cloud-with-chris-banner.png"
 ---
 Principal of least privilege is a commonly used phrase within the Technology Industry. The idea is that we'll assign permissions of what the user needs to get the job done, rather than anything broader or more privileged. This helps reduce the blast radius in the event of a compromised account. This stretches to Azure resources at the management plane, but in some cases can also stretch to the data plane of those resources. We'll be exploring these further in this blog post.
 

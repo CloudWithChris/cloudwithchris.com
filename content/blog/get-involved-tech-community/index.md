@@ -14,6 +14,7 @@ tags:
 - Developer Engagement
 - DevRel
 title: Why you should get involved in the Tech Community
+banner: "images/cloud-with-chris-banner.png"
 ---
 I recently gave a talk on my journey into the Azure Technical Community. While my day job is working for Microsoft, I get a lot of energy through blogging, podcasting and vlogging - ultimately, helping others grow, inspiring and encouraging them along their own technical journey. In this blog, I write about why I got involved with the technical community, some of my reflections on the journey and what I continue to look forward to.
 

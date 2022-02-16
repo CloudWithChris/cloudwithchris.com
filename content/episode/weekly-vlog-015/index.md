@@ -21,5 +21,6 @@ tags:
 - Azure
 - Community
 youtube: yOCmkhZsX9E
+banner: "images/cloud-with-chris-banner.png"
 ---
 Welcome to weekly Vlog #15! We'll be covering the latest from Azure, Azure DevOps, GitHub and Cloud with Chris!

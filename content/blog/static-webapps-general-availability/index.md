@@ -12,6 +12,7 @@ tags:
 - Static Content
 - Static Web Apps
 title: Azure Static Web Apps are Generally Available
+banner: "images/cloud-with-chris-banner.png"
 ---
 Great news! [Azure Static Web Apps are now Generally Available](https://azure.microsoft.com/en-gb/blog/develop-production-scale-modern-web-apps-quickly-with-azure-static-web-apps/)! Just to provide some reassurance, Static Web Apps are a concept that I'm fairly passionate about. You may have seen [this blog post](/blog/jamstack-cloud-winning-combination/) on why I think JAMStack and the cloud are a great combination. You may have seen [one of my many talks](/talk) on how I use [Hugo](https://gohugo.io/), Azure Storage, Azure CDN and GitHub to easily deploy a very cheap and scalable site into Azure.
 

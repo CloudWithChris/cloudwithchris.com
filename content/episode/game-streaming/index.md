@@ -26,5 +26,6 @@ tags:
 - Cloud
 - Azure
 youtube: T6x-53wVsE8
+banner: "images/cloud-with-chris-banner.png"
 ---
 In this session, Chris is once again joined by Lee Williams. Chris and Lee talk through industry trends around Game Streaming (i.e. streaming games to your device, rather than livestreaming what you're playing to others), and the opportunities this brings to game creators and consumers.

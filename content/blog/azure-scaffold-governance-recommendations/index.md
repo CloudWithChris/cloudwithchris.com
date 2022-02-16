@@ -17,6 +17,7 @@ tags:
 - Cloud Adoption Framework
 - Cloud Foundations
 title: Azure Scaffold - Governance Recommendations
+banner: "images/cloud-with-chris-banner.png"
 ---
 The topic seems to have come up a few times over the past few weeks, so I wanted to post a short, sharp blog about it!
 

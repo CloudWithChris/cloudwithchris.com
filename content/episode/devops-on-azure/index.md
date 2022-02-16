@@ -22,5 +22,6 @@ tags:
 - DevOps
 - Testing
 youtube: 1xyBUj72Uh4
+banner: "images/cloud-with-chris-banner.png"
 ---
 In this episode, Chris is joined by Mert Yeter, a software engineer with 16 years of experience in .NET and Microsoft technologies. We'll be talking all things DevOps on Azure, including Azure Container Registry, Azure Container Instances and Azure Kubernetes Service. We'll also get a chance to talk about Traefik and how it's pluggable middleware can help you with your Kubernetes ingresses! Tune in to find out more!

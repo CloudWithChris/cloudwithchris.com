@@ -25,5 +25,6 @@ tags:
 - Event-Driven Architecture
 - Azure Architecture Center
 youtube: 0s3yjmJ0ksA
+banner: "images/cloud-with-chris-banner.png"
 ---
 The event sourcing pattern is a well-known pattern and has been around for some time. The idea is that you use an append-only store to record the full series of actions taken on the data. This combines well with the materialized view pattern, where a pre-populated view is generated over one (or more) data stores when the data isn't in an ideal format for querying. These two patterns are common patterns used in an event-driven architecture. Join Chris and Steph as they talk about both of these patterns and how they may be able to help. This is another episode in the series of Architecting for the Cloud, one pattern at a time.

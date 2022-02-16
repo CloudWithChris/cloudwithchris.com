@@ -25,6 +25,7 @@ externalLink: ""            # Full URL to override listing links to an external 
 # Content-specific properties
 authors:
 -  "chrisreddington"                       # An array of authors of the post (filenames in person).
+banner: "images/cloud-with-chris-banner.png"
 ---
 I recently [wrote a blog post](/blog/automate-adding-gh-issues-projects-beta) on using GitHub Actions to automatically add a GitHub Issue to a [GitHub Projects (beta)](https://github.com/features/issues) when an issue is opened. I received a question from my colleague and maintainer of the [promitor](https://promitor.io/) and [KEDA](https://keda.sh/) Open Source (OSS) Projects, [Tom Kerkhove](https://twitter.com/TomKerkhove) on using the sample with a user-owned GitHub repository, rather than an organisation-owned one.
 

@@ -14,6 +14,7 @@ tags:
 - Security
 - Authentication
 title: Using GPG Keys to sign Git Commits - Part 4
+banner: "images/cloud-with-chris-banner.png"
 ---
 Part 4 - The final part (at least for now, until I find somewhere else that we can expand on with this)! This part will focus on porting the keys that we have recently generated onto our YubiKey device. I own a YubiKey NEO, so I'll be using that.
 

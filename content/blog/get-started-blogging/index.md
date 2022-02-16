@@ -11,6 +11,7 @@ tags:
 - Blogging
 - Community
 title: Tips on getting started with blogging and content creation
+banner: "images/cloud-with-chris-banner.png"
 ---
 
 ## Introduction

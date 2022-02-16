@@ -13,6 +13,7 @@ tags:
 - Content Creation
 - dotnet
 title: "Crossposting Content: A New Project"
+banner: "images/cloud-with-chris-banner.png"
 ---
 Following on from my [recent post](/blog/using-schema-org-for-seo) where I discussed using schema.org for Search Engine Optimisation (SEO), I wanted to stick with a similar theme, but a slightly different angle or topic. This time, we'll be covering the topic of crossposting content.
 

@@ -10,6 +10,7 @@ images:
 tags:
 - Blogging
 title: 'Integration Platform as a Service: Logic Apps'
+banner: "images/cloud-with-chris-banner.png"
 ---
 In case you had not already heard, [Logic Apps have now reached general availability on Azure](https://azure.microsoft.com/en-us/blog/announcing-azure-logic-apps-general-availability/) (or read [an MSDN article by Jeff Hollan](https://blogs.msdn.microsoft.com/logicapps/2016/07/27/azure-logic-apps-reaches-general-availability) on the topic).
 

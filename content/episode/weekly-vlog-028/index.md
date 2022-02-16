@@ -25,5 +25,6 @@ tags:
 - Blogging
 - Gaming
 youtube: X0A8OvRgBf8
+banner: "images/cloud-with-chris-banner.png"
 ---
 In this session, Chris provides a series of updates focused around Azure, DevOps, GitHub and Cloud With Chris, while gaming with the Cloud Family Community.

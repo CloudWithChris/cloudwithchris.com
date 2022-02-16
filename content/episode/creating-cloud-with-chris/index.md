@@ -24,5 +24,6 @@ tags:
 - Vlogging
 - Content Creation
 youtube: 4Hi-5cGJmfw
+banner: "images/cloud-with-chris-banner.png"
 ---
 We're going to go in a little bit of a different direction for this episode, and focus on the podcast itself and my podcast journey so far! Not only is this episode topic slightly different, we're running a different format as well! In this episode, I'm joined by my colleague, Fletcher Kelly - who is exploring the idea of setting up his own podcast! Instead of me being the interviewer, I'm the one who ends up in the hot seat and talk about my experience so far of setting up Cloud with Chris! Hopefully this will give you a little bit of an idea of my journey so far, and why I wanted to set the podcast up as well! So, let's go ahead and start the episode...

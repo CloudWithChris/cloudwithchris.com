@@ -24,5 +24,6 @@ tags:
 - IoT
 - Internet of Things
 youtube: "Mbkun9zYVko"
+banner: "images/cloud-with-chris-banner.png"
 ---
 In this episode, Chris is joined by Peter Gallagher, Freelance Programmer for PJG Creations, Microsoft Azure MVP, Pluralsight Author... IoT Expert, proud dad, gadget addict and Meetup organiser. Peter talks about the various IoT simulators available, Azure IoT and his experiences IoT across his career. If you're a maker or interested in IoT, then this is one not to be missed!

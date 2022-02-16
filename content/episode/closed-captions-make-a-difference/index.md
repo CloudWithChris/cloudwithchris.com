@@ -22,5 +22,6 @@ tags:
 - Diversity
 - People
 youtube: "tP2QlZZXIcY"
+banner: "images/cloud-with-chris-banner.png"
 ---
 People with hearing impairments are often overlooked, yet they are actually in greater numbers most people believe. In this talk, I'll give insight to those people. I know this of my own experience since I am deaf user with Cochlear Implants which gives me a hearing back, but it is not a full hearing as you might hope for. I also can give some insights for other people who are less impaired because I've am a co-founder of two national associations in Switzerland.

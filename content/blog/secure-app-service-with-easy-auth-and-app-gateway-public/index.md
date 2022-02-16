@@ -12,6 +12,7 @@ tags:
 - PaaS
 - Developer
 title: Securing App Service with Easy Auth behind a Public Application Gateway
+banner: "images/cloud-with-chris-banner.png"
 ---
 
 ## Setting some context

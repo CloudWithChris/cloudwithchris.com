@@ -24,5 +24,6 @@ tags:
 - .NET Core
 - App Service
 youtube: vmvr9_BDPTE
+banner: "images/cloud-with-chris-banner.png"
 ---
 You have your .NET Core code. You have your application infrastructure ready. Now, it's time for us to deploy that application to Azure using GitHub Actions!

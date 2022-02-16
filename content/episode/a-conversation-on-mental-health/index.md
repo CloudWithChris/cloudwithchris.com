@@ -21,5 +21,6 @@ tags:
 - People
 - Wellbeing
 youtube: he2x6QgbVSk
+banner: "images/cloud-with-chris-banner.png"
 ---
 Mental Health - A concept that often has stigma surrounding it, or a concept that is misunderstood. In this episode, Chris Reddington is joined by Andrew Nathan as they both talk through their own experiences of Mental Health, the importance of looking after your mental health, and being okay with not being okay.

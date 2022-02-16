@@ -21,5 +21,6 @@ tags:
 - GitHub Actions
 - cloudwithchris.com
 youtube: fxhnlNlLqcM
+banner: "images/cloud-with-chris-banner.png"
 ---
 In this session, Chris is joined by Karl Cooke - Implementation Specialist at Action Point Technology Group, Blogger at [https://irishtechie.com](https://irishtechie.com). Chris and Karl talk all about how CloudWithChris.com, diving deep into GitHub actions and some of the considerations that were made along the way.

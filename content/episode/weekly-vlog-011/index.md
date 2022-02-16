@@ -22,5 +22,6 @@ tags:
 - Azure
 - Community
 youtube: n2XCu9rvlRI
+banner: "images/cloud-with-chris-banner.png"
 ---
 Almost 3 months of vlogging! Chris talks about his recent episodes, and upcoming content. This upcoming week is full of DevOps, with the completion of the GitHub, Git and GPG Key series. On Friday, he'll be releasing an episode on using Terraform Cloud to deploy to #Azure. Lots of great community goodness this week, including an Azure Thames Valley meetup on Tuesday, and lightning talks at the Welsh Azure User Group on Thursday. All that, before we even start thinking about the Azure Blog/Updates, Azure DevOps Blog and GitHub Blog! Time to tune in and get up to date.

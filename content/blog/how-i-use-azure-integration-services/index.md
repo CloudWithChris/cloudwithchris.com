@@ -13,6 +13,7 @@ tags:
 - Integration
 - App Development
 title: How I use Azure Integration Services on Cloud With Chris
+banner: "images/cloud-with-chris-banner.png"
 ---
 ## Why was a revamp needed of the Cloud With Chris integration platform?
 

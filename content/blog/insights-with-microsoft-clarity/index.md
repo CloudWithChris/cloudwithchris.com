@@ -12,6 +12,7 @@ tags:
 - Observability
 - Monitoring
 title: Gaining insight into user behaviour with Microsoft Clarity
+banner: "images/cloud-with-chris-banner.png"
 ---
 I love learning. Especially when it's about brand new things that I wasn't aware of! For this post, I need to give a big shout out to my friend and colleague [Sam Rowe](https://twitter.com/Sam_Rowe) for the tip. It wasn't a product/service that I was aware of, but felt like something that could be useful for me on Cloud With Chris. In this post, I'll dig into what it is and how it may be able to help you.
 

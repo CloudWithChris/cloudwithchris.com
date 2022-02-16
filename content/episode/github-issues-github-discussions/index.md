@@ -22,5 +22,6 @@ tags:
 - GitHub Discussions
 - GitHub Issues
 youtube: 9Cajj3_kcos
+banner: "images/cloud-with-chris-banner.png"
 ---
 In this episode, we'll be taking a look at GitHub Issues and GitHub Discussions which recently came out at GitHub Universe. Interested? Then stick around as we find out more about both of these topics!
