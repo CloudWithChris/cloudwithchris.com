@@ -10,5 +10,6 @@ Title: Matt Bradley
 Twitter: "mbradl03"
 Website: ""
 YouTube: ""
+Description: "After 7 years working in the Enterprise Windows team at UKFast, Matt helped start their Public Cloud division. UKFast works with Azure and AWS, though Matt works on the Azure side. He deal with architecting and building solutions, migrations and ongoing consultancy/support of the Azure platform."
 ---
-After 7 years working in the Enterprise Windows team at UKFast, I helped to start their Public Cloud division. UKFast works with Azure and AWS but I work on the Azure side. I deal with architecting and building solutions, migrations and ongoing consultancy/support of the Azure platform.
+After 7 years working in the Enterprise Windows team at UKFast, Matt helped start their Public Cloud division. UKFast works with Azure and AWS, though Matt works on the Azure side. He deal with architecting and building solutions, migrations and ongoing consultancy/support of the Azure platform.
