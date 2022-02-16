@@ -82,7 +82,7 @@ git add myfile.php
 git commit -m "Adjust to Hello Contoso"
 ```
 
-Now, "Alice" or "Bob" can go ahead and use git pull to ensure they have the latest version of the repository (or any other user with appropriate access). If they use the ``git log`` command, they will see that there are changes made by two users. Alice, and Bob. Again, it __appears__ as though the changes have been made by two users. Again, bear in mind that we haven't had to prove that we are either Alice, or Bob.
+Now, "Alice" or "Bob" can go ahead and use git pull to ensure they have the latest version of the repository (or any other user with appropriate access). If they use the ``git log`` command, they will see that there are changes made by two users. Alice, and Bob. Again, it **appears** as though the changes have been made by two users. Again, bear in mind that we haven't had to prove that we are either Alice, or Bob.
 
 ![Git log showing Alice and Bob's commits](images/gpg-git-part-1/git-status-4.jpg "Git log showing Alice and Bob's commits")
 
