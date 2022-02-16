@@ -3,7 +3,6 @@ Description: "A list of the Cloud With Chris Episodes"
 PublishDate: "2021-04-07T08:00:00Z"
 date: "2021-04-08T08:00:00Z"
 title: Episodes
-banner: "images/cloud-with-chris-banner.png"
 ---
 Interested in becoming a guest on the show? [Sign up](https://www.sessionize.com/cloudwithchris/)!
 
