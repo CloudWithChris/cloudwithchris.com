@@ -10,6 +10,8 @@ guests: []
 hosts:
 - chrisreddington
 - mattfortunka
+banner: "images/banner.png"
+featured: 2
 images:
 - img/default-social.png
 # - images/v002.jpg
