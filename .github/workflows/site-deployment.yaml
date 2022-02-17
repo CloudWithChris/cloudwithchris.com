@@ -38,7 +38,7 @@ on:
 
 # Environment variables used for consistency across the workflow.
 env:
-  HUGO_VERSION: '0.92.0'
+  HUGO_VERSION: '0.92.2'
 
 jobs:
   # A set of steps used to compress the images, making sure that images are compressed ahead of publishing to the site.
@@ -89,7 +89,11 @@ jobs:
         hugo-version: ${{ env.HUGO_VERSION }}
         extended: true
     - name: 'Build and Minify Hugo Contents'
-      run: hugo --minify
+      run: hugo --minify --baseURL 'https://www.cloudwithchris.com'
+      if: (github.event.push.ref == 'refs/heads/main'
+    - name: 'Build and Minify Hugo Contents'
+      run: hugo --minify 
+      if: (github.event.push.ref != 'refs/heads/main'
     - name: 'Upload Generated Static Content as Website Artifact'
       uses: actions/upload-artifact@v1
       with:
