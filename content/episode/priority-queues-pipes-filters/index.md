@@ -25,5 +25,6 @@ tags:
 - Integration
 - Azure Architecture Center
 youtube: bDIob2h1F9U
+banner: "images/cloud-with-chris-banner.png"
 ---
 Ever wondered how complex integration systems / enterprise messaging works? Curious about whether there's a way to bypass and prioritise certain messages? Then join this episode as Chris Reddington and Will Eastbury explore the Priority Queue and Pipes and Filter patterns. Spoiler - These aren't new cloud design patterns, and are well known patterns in the messaging world!

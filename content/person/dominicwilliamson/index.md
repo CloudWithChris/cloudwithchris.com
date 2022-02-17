@@ -11,5 +11,6 @@ Twitter: "DominicWillit"
 Type: "guest"
 Website: "https://sudoku.social/"
 YouTube: ""
+Description: "Based in sunny Brisbane Australia, Dominic has been making products for the past 10 years. By day he's senior product manager for Microsoft Teams and by night manages a distributed game development studio."
 ---
 Based in sunny Brisbane Australia, Dominic has been making products for the past 10 years. By day he's senior product manager for Microsoft Teams and by night manages a distributed game development studio.

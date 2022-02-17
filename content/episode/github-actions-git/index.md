@@ -21,5 +21,6 @@ tags:
 - GitHub Actions
 - DevOps
 youtube: iS2d5EykbQY
+banner: "images/cloud-with-chris-banner.png"
 ---
 Want to automate your application deployments into Azure? Heard about Git, GitHub or GitHub actions want to find out more? I'm starting a new series on how you can use GitHub Actions to deploy your applications into Azure! Interested? Then stick around to find out more.

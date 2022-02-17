@@ -27,5 +27,6 @@ tags:
 - DDOS
 - Requirements
 youtube: 0UbMBxE-gDU
+banner: "images/cloud-with-chris-banner.png"
 ---
 In this episode, we get back to a requirements based topic, and an area that will significantly impact the design of our resulting solution architecture. That topic is security! It's one of the hot topics that organisations want to discuss when moving to the cloud. So I'm pleased to be joined in this episode by another colleague, Andrew Nathan, who has a wealth of knowledge in the cyber security space.

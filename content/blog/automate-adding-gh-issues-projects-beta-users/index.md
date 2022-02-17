@@ -25,6 +25,7 @@ externalLink: ""            # Full URL to override listing links to an external 
 # Content-specific properties
 authors:
 -  "chrisreddington"                       # An array of authors of the post (filenames in person).
+banner: "images/cloud-with-chris-banner.png"
 ---
 I recently [wrote a blog post](/blog/automate-adding-gh-issues-projects-beta) on using GitHub Actions to automatically add a GitHub Issue to a [GitHub Projects (beta)](https://github.com/features/issues) when an issue is opened. I received a question from my colleague and maintainer of the [promitor](https://promitor.io/) and [KEDA](https://keda.sh/) Open Source (OSS) Projects, [Tom Kerkhove](https://twitter.com/TomKerkhove) on using the sample with a user-owned GitHub repository, rather than an organisation-owned one.
 
@@ -36,7 +37,7 @@ Rather than repeating the entire blog post here, I'll detail the tweaks that hav
 
 As highlighted in the previous post, the [GitHub CLI Doc](https://cli.github.com/manual/gh_help_environment) shows that an authentication token (set as the ``GH_TOKEN`` or ``GITHUB_TOKEN`` environment variable) bypasses the need for an interactive login.
 
-At the start of a workflow, GitHub Actions automatically creates a unique token for you. This token is set as the ``GITHUB_TOKEN`` environment variable and has a limited lifetime, with a default set of permissions. You can generate a Personal Access Token, assign the scope of the permissions needed and set that as a GitHub Secret ``GITHUB_TOKEN`` for use within your GitHub Action workflows. 
+At the start of a workflow, GitHub Actions automatically creates a unique token for you. This token is set as the ``GITHUB_TOKEN`` environment variable and has a limited lifetime, with a default set of permissions. You can generate a Personal Access Token, assign the scope of the permissions needed and set that as a GitHub Secret ``GITHUB_TOKEN`` for use within your GitHub Action workflows.
 
 > **Note:** I mentioned in my previous blog that that the default ``GITHUB_TOKEN`` did not have sufficient permissions to get the needed information. I had to [create a Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) and provide it with the **repo** and **read:org** scopes.
 >

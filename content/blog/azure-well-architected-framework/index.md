@@ -13,6 +13,7 @@ tags:
 - Azure
 - Resilience
 title: How to use the Azure Well-Architected Framework in your projects
+banner: "images/cloud-with-chris-banner.png"
 ---
 You'll have probably spotted by now that cloud architecture is a passion area of mine, and a regular topic that features on Cloud With Chris. We've talked a lot about Cloud Design Patterns and requirements-driven engineering in the past, as well as the various pillars of software quality. But one area that hasn't been explored too much is the Azure Well-Architected Framework. So in this blog post, we'll explore that, and identify how it can be used in your own projects.
 

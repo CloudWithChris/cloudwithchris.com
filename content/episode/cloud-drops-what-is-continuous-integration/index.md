@@ -22,5 +22,6 @@ tags:
 - CI
 - Version Control
 youtube: IBtm6PwfcxM
+banner: "images/cloud-with-chris-banner.png"
 ---
 Are you now working with source code? Whether that's Application Code, Infrastructure as Code, Database Schemas or Data Science workbooks as code, you may have heard of a term 'Continuous Integration' (CI). This is the process of regularly merging code, and running a series of automated builds/tests/checks to ensure that quality remains high in your production codebase. Find out more in this video.

@@ -10,5 +10,6 @@ Title: John Lunn
 Twitter: jonnychipz
 Website: https://www.jonnychipz.com/
 YouTube: ""
+Description: "Cloud Talk with Jonnychipz / Welsh Azure User Group / Blogger / Vlogger"
 ---
 Cloud Talk with Jonnychipz / Welsh Azure User Group / Blogger / Vlogger

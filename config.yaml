@@ -321,6 +321,13 @@ params:
         reactions_enabled: 1
         emit_metadata: 0
         theme: "light"
+    # Settings related to the Call To Action bar at top of site
+    cta:
+      subscribe_twitter: 
+        enabled: true
+      subscribe_youtube: 
+        enabled: true
+        channel: "UC6KrOsGhSVJBszv_AwbcMxA"
   # Settings relating to site security. This mainly
   # comprises of Content Security Policies.
   security:

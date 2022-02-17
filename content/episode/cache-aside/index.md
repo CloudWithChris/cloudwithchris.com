@@ -20,5 +20,6 @@ tags:
 - Data
 - Azure Cache for Redis
 youtube: oo5YIkEmujk
+banner: "images/cloud-with-chris-banner.png"
 ---
 Have you implemented caching within your application and need a better way to maintain consistency between your cache and datastore? Or maybe you haven't adopted caching yet, and intrigued on what patterns you could use to do so? Then take a look in this session as Chris explores how caching can improve your access to information in your data store, using the cache aside pattern.

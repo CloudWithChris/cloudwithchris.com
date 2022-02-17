@@ -13,6 +13,7 @@ tags:
 - Community
 - How to
 title: Contributing to Open Source
+banner: "images/cloud-with-chris-banner.png"
 ---
 Contributing to Open Source Software. It sounds so formal, doesn't it? I thought that for quite a long time, and it put a bit of a mental barrier in place for me to begin my journey. I am a classic over thinker, but that's perhaps another blog in its own right!
 

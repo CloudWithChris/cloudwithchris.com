@@ -10,6 +10,7 @@ Title: Gitte Vermeiren
 Twitter: GitteTitter
 Website: http://vermegi.github.io/
 YouTube: ""
+Description: "As a Cloud Solution Architect with Microsoft, Gitte acts as a trusted advisor for highly valued customers and partners. She engage with them from pre-sales, through architecture design, proof of concept and design during implementation phase. Gitte also has experience as a Technical Architect and Team Lead."
 ---
 As a Cloud Solution Architect with Microsoft, I act as a trusted advisor for our highly valued customers and partners. I engage with them from pre-sales, through architecture design, proof of concept and design during implementation phase. I also have experience as a Technical Architect and Team Lead.
 

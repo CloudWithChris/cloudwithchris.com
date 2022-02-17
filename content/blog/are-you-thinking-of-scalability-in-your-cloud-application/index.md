@@ -15,6 +15,7 @@ tags:
 - PaaS
 - SaaS
 title: Are you thinking of scalability in your cloud application?
+banner: "images/cloud-with-chris-banner.png"
 ---
 
 Scalability is one of the common areas where I have seen common misconceptions, when customers begin building on the platform.

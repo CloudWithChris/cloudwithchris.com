@@ -15,6 +15,7 @@ tags:
 - Microservices
 - Azure
 title: Introducing Logic Apps Preview
+banner: "images/cloud-with-chris-banner.png"
 ---
 Following hot off the heels of my recent blog post [introducing Logic Apps and how I use the technology on cloudwithchris.com](/blog/introduction-to-logic-apps), I thought it made sense for the second post to continue the Logic Apps theme. This time, we'll be focusing on Logic Apps preview (sometimes referred to as Logic Apps v2) - the evolution of Logic Apps. Typically when you deploy Logic Apps, you deploy it as a multi-tenanted service. There are some benefits to that, including the serverless capability, so being able to pay per execution rather than an overall infrastructure cost. But what if cost is less of a requirement for you? What if you care more about portability, greater performance, and ultimately control over your environment?
 

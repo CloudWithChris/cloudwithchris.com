@@ -17,6 +17,7 @@ tags:
 series: 
 - "Using Azure Arc for Apps"
 title: Using Azure Arc for Apps - Part 3 - Deploying Azure Functions into an App Service Kubernetes Environment
+banner: "images/cloud-with-chris-banner.png"
 ---
 ## App Service Kubernetes Environment
 

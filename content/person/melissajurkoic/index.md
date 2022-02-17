@@ -10,6 +10,7 @@ Title: Melissa Jurkoic
 Twitter: melissa_jurkoic
 Website: http://www.melissable.com/
 YouTube: ""
+Description: "Melissa has worked in the tech industry for over 20 years in roles ranging from Junior Software Engineer to her current role as the Chief Customer Experience Officer at addapptation."
 ---
 Melissa has worked in the tech industry for over 20 years in roles ranging from Junior Software Engineer to her current role as the Chief Customer Experience Officer at addapptation. She holds a Bachelor’s in Computer Science from the University of New Hampshire, an executive certification in Management and Leadership from MIT and a SAFe Program Consultant (SPC4) certification.
 

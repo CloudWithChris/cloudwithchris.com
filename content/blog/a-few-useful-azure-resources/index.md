@@ -11,6 +11,7 @@ tags:
 - Azure
 - Architecture
 title: A few useful Azure Resources
+banner: "images/cloud-with-chris-banner.png"
 ---
 
 Over the past few weeks, I have been working on a number of projects relating to Azure.

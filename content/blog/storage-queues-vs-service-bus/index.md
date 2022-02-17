@@ -13,6 +13,7 @@ tags:
 - Integration
 - App Development
 title: Azure Storage Queues vs Azure Service Bus Queues - Which should I use when?
+banner: "images/cloud-with-chris-banner.png"
 ---
 I've recently been involved in a few integration focused discussions, where there is a requirement to bring together multiple separate systems. If you've been following the Architecting for the Cloud, one pattern at a time series, then you'll have heard Peter Piper repeat a common phrase - "High Cohesion, Low Coupling".
 

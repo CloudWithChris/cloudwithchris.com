@@ -26,5 +26,6 @@ tags:
 - Cloud
 - Azure
 youtube: kbtvX8JUwYQ
+banner: "images/cloud-with-chris-banner.png"
 ---
 Playing games has always been a social experience. Whether it's board games, sports or video games - a multiplayer component is common. We see these experiences becoming forms of entertainment (e.g. watching our favourite sports teams compete). This trend continues into the Gaming Industry, as we see the growth of Esports in Gaming, as well as streamers regularly broadcasting over on YouTube and Twitch. Chris is joined by Lee Williams, as they talk through these trends and how Cloud has enabled this transition.

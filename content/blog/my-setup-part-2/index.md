@@ -12,6 +12,7 @@ tags:
 - Podcasting
 - Setup
 title: Cloud with Chris Setup - Part 2 - Lights, Camera, Action!
+banner: "images/cloud-with-chris-banner.png"
 ---
 A few people have recently been asking about my setup, so I figured it may be a good time to start writing about it! This is the second part of the series, where I'll focus on the Lights, Recording Equipment and my overall setup. If you're interested in the PC setup, then take a look at my [previous blog post](my-setup-part-2)!
 

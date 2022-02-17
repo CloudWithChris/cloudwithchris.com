@@ -10,5 +10,6 @@ Title: "Isaac Levin"
 Twitter: "isaacrlevin"
 Website: "https://www.isaaclevin.com/"
 YouTube: ""
+Description: "Isaac Levin is a Product Marketing Manager in Azure at Microsoft. He has over 10 years of experience working as a developer for the web, mostly in the Microsoft Ecosystem."
 ---
 Isaac Levin is a Product Marketing Manager in Azure at Microsoft. He has over 10 years of experience working as a developer for the web, mostly in the Microsoft Ecosystem. When he isn't helping customers get the most of Microsoft Products, he contributes to Microsoft Documentation in the .NET and ASP.NET space as well as other open-source projects, and occasionally blogs about things that interest him. He likes to wind down from work with his wife Ariana and his 2 sons Isaac and Avery.

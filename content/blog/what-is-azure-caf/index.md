@@ -13,6 +13,7 @@ tags:
 - Cloud Migration
 - Cloud Adoption
 title: What is the Azure Cloud Adoption Framework?
+banner: "images/cloud-with-chris-banner.png"
 ---
 Migrating to the Cloud is more than just deciding which technology you want to adopt, or building out the appropriate architectures for your implementation. There is a significant amount of planning needed before you take your initial steps. For example, the initial migration process, establishing a foundation for your ongoing governance, and the wider management of expectations from your business, as well as establishing team structure and responsibilities. This is where the Azure Cloud Adoption Framework comes in.
 

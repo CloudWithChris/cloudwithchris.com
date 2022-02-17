@@ -23,5 +23,6 @@ tags:
 - Monitoring
 - Integration
 youtube: AN5XqrpTZDQ
+banner: "images/cloud-with-chris-banner.png"
 ---
 When we think about cloud, we typically think about distributed systems and somehow bringing those different components or systems together, so integrating them. But what are the common practices, or common challenges? You've probably heard of serverless, how does that fit into things? Well, I'm pleased to be joined by Ezhilarasi Chezhiyan, Product Consultant of Serverless360 at Kovai.co. So, without further ado - let's go ahead and jump straight in.

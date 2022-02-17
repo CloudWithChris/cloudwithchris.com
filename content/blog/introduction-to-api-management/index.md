@@ -14,6 +14,7 @@ tags:
 title: 'Introduction to Azure API Management'
 series: 
 - "A series on API Management"
+banner: "images/cloud-with-chris-banner.png"
 ---
 We now live in a world where multiple systems connect or integrate with each other. This is not new, and has been a technology trend for some time. But - in a world of distributed compute (on the increase, thanks to cloud), and the rise of microservices, we find that we have more and more services that we need to integrate with each other. Integration is typically handled through a couple of routes, including Enterprise Messaging (such as message brokers - which we won't cover in this blog post), as well as APIs (Application Programming Interface). There are many areas that we should consider when building our APIs, and that's what we'll give some thought to in this post.
 

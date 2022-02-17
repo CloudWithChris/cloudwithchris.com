@@ -21,5 +21,6 @@ tags:
 - Azure
 - Event-Driven Architecture
 youtube: GtjXHcVCFsY
+banner: "images/cloud-with-chris-banner.png"
 ---
 Have you heard about Azure Event Grid, but not exactly sure what it is or how you could use it? In this Cloud Drop, we'll create an event-driven process using Azure Event Grid, Azure Storage Queues and Azure Functions. Get ready to learn all about Event-Driven workflows, Event-Handlers, Topics, Subscriptions and more!

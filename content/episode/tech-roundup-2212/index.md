@@ -32,6 +32,7 @@ tags:
 - Visual Studio Updates
 - Azure DevOps Updates
 upcoming: true
+banner: "images/cloud-with-chris-banner.png"
 ---
 Overwhelmed at keeping up to date with Azure? Or how about keeping a pulse on the Latest GitHub news, Azure DevOps and more? In this episode, Chris provides a summary of updates on the latest Azure DevOps News, GitHub updates and new announcements in Azure.
 

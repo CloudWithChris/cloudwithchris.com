@@ -20,5 +20,6 @@ tags:
 - People
 - Wellbeing
 youtube: _mL-O7IqXVM
+banner: "images/cloud-with-chris-banner.png"
 ---
 MentalHealth​ - A concept that often has stigma surrounding it, or a concept that is misunderstood.  In this livestream, Chris will be joined by several friends and colleagues as they talk through their own mental health stories.

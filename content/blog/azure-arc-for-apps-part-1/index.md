@@ -17,6 +17,7 @@ tags:
 series: 
 - "Using Azure Arc for Apps"
 title: Using Azure Arc for Apps - Part 1 - Setting up an Azure Arc enabled Kubernetes Cluster
+banner: "images/cloud-with-chris-banner.png"
 ---
 
 ## Cloud Native Applications that run anywhere
@@ -168,16 +169,19 @@ You'll be waiting to see that the Resource Providers are showing as Registered, 
 ```bash
 az provider show -n Microsoft.Kubernetes -o table
 Namespace             RegistrationPolicy    RegistrationState
+banner: "images/cloud-with-chris-banner.png"
 --------------------  --------------------  -------------------
 Microsoft.Kubernetes  RegistrationRequired  Registered
 
 az provider show -n Microsoft.KubernetesConfiguration -o table
 Namespace                          RegistrationPolicy    RegistrationState
+banner: "images/cloud-with-chris-banner.png"
 ---------------------------------  --------------------  -------------------
 Microsoft.KubernetesConfiguration  RegistrationRequired  Registered
 
  az provider show -n Microsoft.ExtendedLocation -o table
 Namespace                   RegistrationPolicy    RegistrationState
+banner: "images/cloud-with-chris-banner.png"
 --------------------------  --------------------  -------------------
 Microsoft.ExtendedLocation  RegistrationRequired  Registered
 ```
@@ -190,6 +194,7 @@ arcResourceGroupLocation="westeurope"
 az group create --name $arcResourceGroupName --location $arcResourceGroupLocation --output table
 
 Location         Name
+banner: "images/cloud-with-chris-banner.png"
 ----------       ------------
 northeurope      rb-arc-rg
 ```
@@ -215,6 +220,7 @@ Now for our final trick - you can go ahead and verify that the Azure Arc resourc
 az connectedk8s list --resource-group $arcResourceGroupName --output table
 
 Name           Location     ResourceGroup
+banner: "images/cloud-with-chris-banner.png"
 -------------  -----------  ---------------
 rb-arc-aks     northeurope  rb-arc-rg
 ```

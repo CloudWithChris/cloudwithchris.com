@@ -12,6 +12,7 @@ tags:
 - ARM Templates
 - Azure Key Vault
 title: DigiCert Certificate Management through Azure Key Vault
+banner: "images/cloud-with-chris-banner.png"
 ---
 Azure Key Vault helps safeguard cryptographic keys and secrets used by cloud applications and services.  It streamlines the key management process, enabling you to maintain control of keys that access and encrypt your data.  Developers can create keys for development and testing in minutes, and then seamlessly migrate them to production keys.  Security administrators can grant (and revoke) permission to keys, as needed.
 

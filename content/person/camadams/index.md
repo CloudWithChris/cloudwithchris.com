@@ -10,5 +10,6 @@ Title: Cam Adams
 Twitter: ""
 Website: ""
 YouTube: ""
+Description: "Cam Adams is an engineering manager within the FastTrack for Azure team. He is a career .Net developer dating back to the prerelease days. Cam has a particular interest in testing, scale and security which combined gives him excuse to DDoS sites in the name of science."
 ---
 Cam Adams is an engineering manager within the FastTrack for Azure team. He is a career .Net developer dating back to the prerelease days. Cam has a particular interest in testing, scale and security which combined gives him excuse to DDoS sites in the name of science. #firethelaser

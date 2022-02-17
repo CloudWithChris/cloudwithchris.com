@@ -25,6 +25,7 @@ externalLink: ""            # Full URL to override listing links to an external 
 # Content-specific properties
 authors:
 -  "chrisreddington"                       # An array of authors of the post (filenames in person).
+banner: "images/cloud-with-chris-banner.png"
 ---
 I've been following the [GitHub Projects beta](https://github.com/features/issues) for a while now, and have been fortunate to be accepted as an early adopter. I'm a big fan of the direction, and the flexibility that it provides. One of the limitations I've noticed is that there's currently no built-in way to automatically add an issue to  a project board (and [I'm not the only one!](https://github.com/github/feedback/discussions/5378)). It's [on the backlog](https://github.com/github/roadmap/issues/286) but not yet available. Fortunately, GitHub Actions has us sorted. I'll walk you through a sample that I put together to do exactly that.
 

@@ -22,5 +22,6 @@ tags:
 - DDOS
 - Requirements
 youtube: zSObCp1GbSQ
+banner: "images/cloud-with-chris-banner.png"
 ---
 When building solutions in the cloud, security is often a pillar that we hear come up in the requirements discussion. But how does that translate into the real world? Particularly defending against DDOS attacks? Check out this episode, where Cam Adams joins Chris and talks about some of the recent work that he has been doing, helping customers defend against this.

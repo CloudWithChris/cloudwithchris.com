@@ -17,6 +17,7 @@ tags:
 series: 
 - "Using Azure Arc for Apps"
 title: Using Azure Arc for Apps - Part 6 - Setting up Event Grid on Kubernetes with Azure Arc
+banner: "images/cloud-with-chris-banner.png"
 ---
 ## Setting up Event Grid on Kubernetes with Azure Arc
 

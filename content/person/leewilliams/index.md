@@ -10,5 +10,6 @@ Title: Lee Williams
 Twitter: leewilliams
 Website: ""
 YouTube: ""
+Description: "Lee is currently a Senior Product Marketing Manager at Microsoft focusing on Game Development on Azure. Based in Seattle, he partners closely with engineering and developer advocates on leading the business strategy for game development on Microsoft Azure."
 ---
 Lee is currently a Senior Product Marketing Manager at Microsoft focusing on Game Development on Azure. Based in Seattle, he partners closely with engineering and developer advocates on leading the business strategy for game development on Microsoft Azure.

@@ -11,6 +11,7 @@ Twitter: "jamie_maguire1"
 Type: "guest"
 Website: "https://jamiemaguire.net"
 YouTube: ""
+Description: "Based in the UK, Jamie Maguire is a Software Architect, Developer, and Microsoft MVP (AI). He is a lifelong tech enthusiast with over 20 years of professional experience. He has collaborated on many projects including working with the Department of Corrections in Northern America, NHS, National Geographic, Twitter, University of Michigan, and Unilever."
 ---
 Based in the UK, Jamie Maguire is a Software Architect, Developer, and Microsoft MVP (AI). He is a lifelong tech enthusiast with over 20 years of professional experience. He has collaborated on many projects including working with the Department of Corrections in Northern America, NHS, National Geographic, Twitter, University of Michigan, and Unilever.
 

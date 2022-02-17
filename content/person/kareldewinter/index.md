@@ -10,6 +10,7 @@ Title: Karel De Winter
 Twitter: kareldewinter
 Website: "https://kareldewinter.com/"
 YouTube: ""
+Description: "Karel is a Cloud Solution Architect, Microsoft Azure MVP and Microsoft Certified Trainer, who helps customers to successfully migrate and adopt the Microsoft Azure platform within their organization."
 ---
 Karel is a Cloud Solution Architect, Microsoft Azure MVP and Microsoft Certified Trainer, who helps customers to successfully migrate and adopt the Microsoft Azure platform within their organization. He works for DexMach and helps the strategic customer projects to ensure they are successful on the Azure platform, and focuses on providing architecture and technical solutions for Azure projects.
 

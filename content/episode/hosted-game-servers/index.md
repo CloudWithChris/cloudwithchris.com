@@ -21,5 +21,6 @@ tags:
 - Architecture
 - Gaming
 youtube: VdiqtCRK6jQ
+banner: "images/cloud-with-chris-banner.png"
 ---
 Ever thought about what it takes to host a game in the Cloud? Well, this is the series for you! On the first Wednesday of every month, we explore Cloud Concepts that impact your journey to a connected multiplayer gaming experience! In this first session, we'll play some Minecraft and talk to the concept of a hosted game server.

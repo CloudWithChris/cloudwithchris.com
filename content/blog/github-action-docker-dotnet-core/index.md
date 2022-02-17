@@ -12,6 +12,7 @@ tags:
 - Blogging
 - DevOps
 title: Making a GitHub Action with Docker and .NET Core
+banner: "images/cloud-with-chris-banner.png"
 ---
 As you may have read previously, my site [cloudwithchris.com](http://cloudchris.ws/2x) is hosted using Azure Storage Static sites. A common pattern when building static sites is to version control the assets and use Continuous Integration and Continuous Delivery to deliver the rendered compiled site to Azure. I've recently started creating an open source .NET Core command-line application which can take Hugo YAML files an input, convert the file contents to the appropriate Markdown for supported third-party services (currently [dev.to](http://cloudchris.ws/2y) and [medium.com](http://cloudchris.ws/2z)) by replacing local URLs, adding appropriate YouTube/Tweet rendering shortcodes and then posting directly to the API.
 

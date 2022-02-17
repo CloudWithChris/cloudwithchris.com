@@ -14,6 +14,7 @@ tags:
 - DevSecOps
 - Cloud
 title: Shift Left and Increase your Code Quality with Azure DevOps Branch Policies
+banner: "images/cloud-with-chris-banner.png"
 ---
 ## What are Branch Policies?
 

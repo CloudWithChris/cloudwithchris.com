@@ -24,5 +24,6 @@ tags:
 - Security
 - Azure Architecture Center
 youtube: zM3hJBZu2vA
+banner: "images/cloud-with-chris-banner.png"
 ---
 You may have joined Peter and Chris in some of their previous episodes such as the API Economy, The Backends for Frontends & Strangler Pattern, or The Anti-Corruption Layer, Gateway Aggregation and Gateway Routing patterns. They'll will be continuing our journey talking about API Cloud Design Patterns, as they talk about the Gatekeeper and Valet Key Patterns in this episode of Cloud with Chris. This is another episode in the series of Architecting for the Cloud, one pattern at a time.

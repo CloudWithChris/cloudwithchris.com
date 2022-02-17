@@ -23,6 +23,7 @@ tags:
 - Among Us
 youtube: vR_I6V-DCUE
 upcoming: true
+banner: "images/cloud-with-chris-banner.png"
 ---
 Join members of the cloud community as they talk through what's top of mind, the latest trends, and have a bit of fun in a game or two! This takes place on the first Wednesday of each month
 

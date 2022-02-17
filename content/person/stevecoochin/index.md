@@ -10,5 +10,6 @@ Title: DeveloperSteve Coochin
 Twitter: developersteve
 Website: ""
 YouTube: ""
+Description: "Senior Dev Advocate @Snyksec, @Barayamal3 advisor. Prev @IBMDeveloper @telstradev @XeroAPI @PayPalDev. Dev/CTO/Maker/Geek/Speaker/MC/Hackathoner."
 ---
 Senior Dev Advocate @Snyksec, @Barayamal3 advisor. Prev @IBMDeveloper @telstradev @XeroAPI @PayPalDev. Dev/CTO/Maker/Geek/Speaker/MC/Hackathoner.
