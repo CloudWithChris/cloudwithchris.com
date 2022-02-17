@@ -13,7 +13,7 @@
     "X-Frame-Options": "SAMEORIGIN",
     "X-Content-Type-Options": "nosniff",
     "Referrer-Policy": "strict-origin",
-    "Permissions-Policy": "geolocation=(), camera=(), fullscreen=('https://youtube.com'), microphone=(), accelerometer=()"
+    "Permissions-Policy": "geolocation=(),camera=(),fullscreen=(\"https://youtube.com\"),microphone=(),accelerometer=()"
   },
   "forwardingGateway": {
     "allowedForwardedHosts": [
