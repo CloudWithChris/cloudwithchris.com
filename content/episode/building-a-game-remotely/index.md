@@ -22,6 +22,6 @@ tags:
 - Architecture
 - Gaming
 youtube: a7u5zb4F_c4
-banner: "images/cloud-with-chris-banner.png"
+banner: "images/banner.jpg"
 ---
 Over the last year, our world has changed. Many of us have had to work from home due to the ongoing Coronavirus pandemic. In this session, we'll focus on the Gaming Industry and some of the types of cloud tools/technologies that may have been used to continue their internal collaboration and ultimately deliver games to gamers!

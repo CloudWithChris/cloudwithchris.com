@@ -24,6 +24,6 @@ tags:
 - Wellbeing
 - Azure DevOps
 youtube: faQNxOeSRPw
-banner: "images/cloud-with-chris-banner.png"
+banner: "images/banner.jpg"
 ---
 In this video, Chris updates on cloud with Chris from the recent week, and what's coming up over the next week (Spoiler - This is a packed week - another blog, a new series - Cloud Gaming Notes, and an episode on Mental Health). We then explore the most recent updates from Azure Updates, Azure Architecture Center, Azure DevOps Blog and GitHub Blog.

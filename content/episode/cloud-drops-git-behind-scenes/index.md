@@ -20,6 +20,6 @@ tags:
 - Git
 - Command-Line
 youtube: tXTTPbTbwRg
-banner: "images/cloud-with-chris-banner.png"
+banner: "images/banner.jpg"
 ---
 Have you ever wondered how Git works behind the scenes? We'll go ahead, initialise an empty folder as a Git repository and explore the .Git folder that is created.

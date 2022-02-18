@@ -22,6 +22,6 @@ tags:
 - Learn
 - Java
 youtube: "v1ftJCnDDjg"
-banner: "images/cloud-with-chris-banner.png"
+banner: "images/banner.jpg"
 ---
 Find out how you can leverage Azure Spring Cloud for running your Java spring boot applications on Azure. Chris is joined by Gitte Vermeiren as they talk through all things Azure Spring Cloud in this episode of Cloud With Chris!

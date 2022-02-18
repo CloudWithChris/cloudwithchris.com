@@ -20,6 +20,6 @@ tags:
 - Architecture
 - Cost
 youtube: XzBmJvu6gpQ
-banner: "images/cloud-with-chris-banner.png"
+banner: "images/banner.jpg"
 ---
 Have you deployed your application in a way that it needs compute dedicated for each instance? Perhaps you have an app which could be deployed as a Software as a Service/multi-tenanted app, but still have a deployment per tenant? Well, find out how the Compute Resource Consolidation Pattern could be saving you cost in this episode of Cloud With Chris. This is another episode in the series of Architecting for the Cloud, one pattern at a time.

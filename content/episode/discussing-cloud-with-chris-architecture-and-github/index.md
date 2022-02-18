@@ -20,6 +20,6 @@ tags:
 - Architecture
 - cloudwithchris.com
 youtube: okaSk5QxeJk
-banner: "images/cloud-with-chris-banner.png"
+banner: "images/banner.jpg"
 ---
 In this session, Chris is joined by Karl Cooke - Implementation Specialist at Action Point Technology Group, Blogger at [https://irishtechie.com](https://irishtechie.com). Chris and Karl talk all about the CloudWithChris.com architecture and the decisions surrounding the GitHub setup that drive the deployment and management of CloudWithChris.com.

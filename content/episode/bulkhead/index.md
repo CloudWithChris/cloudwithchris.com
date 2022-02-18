@@ -21,6 +21,6 @@ tags:
 - Cloud Design Patterns
 - Resilience
 youtube: xPJSKM2AsQo
-banner: "images/cloud-with-chris-banner.png"
+banner: "images/banner.jpg"
 ---
 Do you know what caused the Titanic to sink? Poorly designed bulkheads. How can you ensure resilience between components in your cloud application? Effectively designed bulkheads! In this session, join Chris as he explores how the bulkhead pattern can help you prevent excessive load or failures in one service impacting the consumers of that service!

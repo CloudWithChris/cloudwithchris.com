@@ -22,6 +22,6 @@ tags:
 - Architecture
 - Gaming
 youtube: GfOlIrflFq0
-banner: "images/cloud-with-chris-banner.png"
+banner: "images/banner.jpg"
 ---
 Ever thought about what it takes to host a game in the Cloud? Well, this is the series for you! On the first Wednesday of every month, we explore Cloud Concepts that impact your journey to a connected multiplayer gaming experience! In this session, Chris is joined by Dominic who has recently been through the process of building his own game, Sudoku Social! Take the classic puzzle game and adding a cross-platform social twist with the cloud. Sudoku Social has been a passion project to learn game development and bring players together to answer the ultimate question. Who is the fastest Sudoku player?

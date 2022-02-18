@@ -23,6 +23,6 @@ tags:
 - Cloud Adoption Framework
 - Migration
 youtube: "D_yM0XcYQ0Y"
-banner: "images/cloud-with-chris-banner.png"
+banner: "images/banner.jpg"
 ---
 In this episode, Chris is joined by Susanne Tedrick. Susanne is an Azure Infrastructure Specialist for Microsoft and the award-winning author of "Women of Color in Tech". They will discuss the basic technical and business considerations to be made when migrating applications and workloads to the cloud, based on the Cloud Adoption Framework.
