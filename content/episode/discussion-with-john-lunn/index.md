@@ -23,6 +23,6 @@ tags:
 - Community
 - People
 youtube: 4YOAaO4MCEI
-banner: "images/cloud-with-chris-banner.png"
+banner: "images/banner.jpg"
 ---
 In this episode, Chris is joined by John Lunn, aka jonnychipz! An organizer of the Welsh Azure User Group, Blogger and Vlogger, Chris and John talk around 100 days of Cloud, Learning Cloud and Exam Certifications, Cloud Adoption and getting involved in the community. Wanted to start learning cloud, or getting more involved in the community? Then this may be a talk to follow!

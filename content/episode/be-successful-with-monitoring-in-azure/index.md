@@ -20,6 +20,6 @@ tags:
 - Azure Monitor
 - Azure
 youtube: kejgiZ_tGFc
-banner: "images/cloud-with-chris-banner.png"
+banner: "images/banner.jpg"
 ---
 In this session, Chris is joined by Vanessa Bruwer - Senior Engineer on the FastTrack for Azure team. Vanessa talks how the FastTrack for Azure team deliver monitoring sessions; teaching customers to fish, taking them from knowing nothing about Azure Monitor to being able to configure monitoring for any service in a few focussed sessions. Ready to go from Zero to Hero on Azure Monitor? Then come along and join us!

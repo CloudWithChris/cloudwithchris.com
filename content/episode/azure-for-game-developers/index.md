@@ -25,6 +25,6 @@ tags:
 - Cloud
 - Azure
 youtube: 1_5LIFXBjqI
-banner: "images/cloud-with-chris-banner.png"
+banner: "images/banner.jpg"
 ---
 In this session, Chris is joined by LaBrina Loving who leads Developer Advocacy for Game Developers at Microsoft who will share her journey as a .Net Developer working in enterprise into the world of gaming. We will cover some of the key challenges that game developers of all sizes face and how cloud can help.

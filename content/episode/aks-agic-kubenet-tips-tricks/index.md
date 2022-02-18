@@ -24,6 +24,6 @@ tags:
 - Managed Identities
 - AKS
 youtube: G7Lp2iUVpv4
-banner: "images/cloud-with-chris-banner.png"
+banner: "images/banner.jpg"
 ---
 When using Azure Kubernetes Service (AKS), there's a chance that kubenet might be the only possible choice due to your requirements. If so, you may still want to use Application Gateway Ingress Controller (AGIC) to leverage Azure Application Gateway's Web Application Firewall (WAF) capabilities. In this session, we will make the journey together to have a working AGIC in an AKS cluster with kubenet and managed identities.

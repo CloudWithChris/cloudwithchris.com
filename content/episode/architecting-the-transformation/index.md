@@ -23,7 +23,7 @@ tags:
 - Productivity
 - Agile
 youtube: TPPujJ7N8tM
-banner: "images/cloud-with-chris-banner.png"
+banner: "images/banner.jpg"
 ---
 Most organizations engaged in transformation today are moving from left to right in digitally-driven maturity models. The objectives are well known: increase agility, boost productivity, and provide seamless digital experiences for consumers.
 

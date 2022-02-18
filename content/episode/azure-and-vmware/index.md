@@ -23,6 +23,6 @@ tags:
 - Operations
 - DevOps
 youtube: _z2EpMyUrac
-banner: "images/cloud-with-chris-banner.png"
+banner: "images/banner.jpg"
 ---
 In this session, Chris is joined by Shannon Kuehn, a Senior Cloud Advocate at Microsoft. In this Livestream, they talk all about, Azure and VMWare and what this combination means for your cloud deployments!

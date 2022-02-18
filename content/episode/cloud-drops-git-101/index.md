@@ -20,7 +20,7 @@ tags:
 - Git
 - Command-Line
 youtube: 4140Gtfp4-A
-banner: "images/cloud-with-chris-banner.png"
+banner: "images/banner.jpg"
 ---
 Have you ever had a scenario where you need to maintain versions of a set of files? Or have you needed to collaborate on files with colleagues in some way? That's a common scenario for developers, infrastructure engineers or data scientists/developers. It's an increasingly common problem. Some people solve this using   file shares or FTP Servers with numerous files, v1, v2, v2-final, but that doesn't scale and is quite a messy approach. Surely there is a better way?
 

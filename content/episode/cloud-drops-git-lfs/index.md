@@ -20,6 +20,6 @@ tags:
 - Git
 - Command-Line
 youtube: 4WftZfn9L_I
-banner: "images/cloud-with-chris-banner.png"
+banner: "images/banner.jpg"
 ---
 Have you ever considered storing large binary files in your Git repositories?  There are times where you may want to do this, e.g. for my podcast cloudwithchris.com to store my podcast files. Git LFS is an extension to Git which replaces large files with text pointers inside Git. Listen in to find out why you should care, how it works and what it is!
