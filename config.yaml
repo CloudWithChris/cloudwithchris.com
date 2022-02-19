@@ -292,9 +292,12 @@ params:
       media_prefix: "https://podcasts.cloudwithchris.com/" # Media_Prefix is used when referencing podcast audio files. The media files in individual episodes will be concatenated after the media_prefix above.
       ogimage: "/img/cloudwithchrislogo.png" # Used within RSS feeds.
     social:
+      discord: "9FJctHP9Zv"
       facebook: "CloudWithChris"
-      github: "chrisreddington/cloudwithchris.com"
-      twitter: "reddobowen"
+      github: "CloudWithChris"
+      linkedin: "chrisreddington"
+      tiktok: "cloudwithchris"
+      twitter: "CloudWithChris"
       twitter_domain: "cloudwithchris.com" # This domain shows in twitter cards as "View on `twitter_domain`"
       youtube: "CloudWithChris"
   # Parameters relating to site features and functionality
@@ -321,13 +324,8 @@ params:
         reactions_enabled: 1
         emit_metadata: 0
         theme: "light"
-    # Settings related to the Call To Action bar at top of site
-    cta:
-      subscribe_twitter: 
-        enabled: true
-      subscribe_youtube: 
-        enabled: true
-        channel: "UC6KrOsGhSVJBszv_AwbcMxA"
+    # Settings related to the Social bar at top of site
+    socialbox: true
   # Settings relating to site security. This mainly
   # comprises of Content Security Policies.
   security:
