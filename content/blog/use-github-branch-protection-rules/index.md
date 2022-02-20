@@ -14,7 +14,7 @@ tags:
 - DevSecOps
 - Cloud
 title: Shift Left and Increase your Code Quality with GitHub Branch Protection Rules
-banner: "images/cloud-with-chris-banner.png"
+banner: "images/banner.jpg"
 ---
 ## What are Branch Protection Rules?
 
