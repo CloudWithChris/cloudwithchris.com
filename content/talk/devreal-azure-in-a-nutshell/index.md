@@ -18,6 +18,7 @@ tags:
 - Learn Cloud
 - Getting started with Azure
 youtube: n0aIx4Lbt-0
+banner: "images/banner.png"
 ---
 Cloud skills are getting increasingly important among developers, engineers but also among people working on the business side of IT projects. As more Azure datacenters are coming to the Nordics and more IT projects include Azure services, more IT professionals that understand Azure are needed.
 

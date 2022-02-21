@@ -22,6 +22,7 @@ tags:
 - GitHub Codespaces
 - Visual Studio Code
 youtube: dqNFdUycrkc
+banner: "images/banner.png"
 ---
 We often hear about Kubernetes, App Services, VMs and more. What about static sites? The Static Content Hosting pattern can be cost-effective, and when combined with a CDN can be incredibly performant!
 We will get hands-on, showing how these resources come together into a Cloud Architecture.
