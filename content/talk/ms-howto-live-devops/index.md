@@ -4,17 +4,26 @@ Description: "Chris joins Mert Yeter on the MSHowTo show talking all things DevO
 PublishDate: "2021-01-01T15:30:00Z"
 Title: "DevOps in a Cloud World"
 image: images/mshowto.jpg
-hosts:
+speakers:
 - chrisreddington
 images:
 - images/mshowto.jpg
 - img/cloudwithchris.png
-talkType: "Podcast"
-eventName: "MSHowTo Live"
-externalLink: "https://www.youtube.com/watch?v=7u9V62ja6tk"
 tags:
 - DevOps
 - GitHub
 banner: "images/banner.png"
+# Content-specific properties
+event:
+  attendanceType: ""  # physical, virtual, hybrid
+  organizerName: "MSHowTo Live"   # Name of the organising group / event (e.g. Name of the conference)
+  organizerUrl: "https://www.mshowto.org/"    # URL of the organising group
+  eventUrl: "https://www.mshowto.org/mert-yeter-ve-chris-reddington-ile-bulut-dunyasinda-devops.html"        # URL of the specific event, if applicable (e.g. a meetup talk, rather than the meetup group)
+  type: "Podcast"            # Type of event (e.g. Meetup, Conference, etc.)
+  location: ""        # Required for physical and hybrid events.
+  cost: ""            # Cost to attend the event
+  costCurrency: ""    # Cost currency for the event. Use a standard format - http://en.wikipedia.org/wiki/ISO_4217
+  available: "" # Whether registration/ticket purchases/etc. are still available (true/false). Defaults to false when event is in past.
+youtube: 7u9V62ja6tk
 ---
 Chris joins Mert Yeter on the MSHowTo show talking all things DevOps, including CI/CD tools, Azure DevOps and GitHub, Azure Development related tooling, and the importance of monitoring as part of a DevOps approach!
