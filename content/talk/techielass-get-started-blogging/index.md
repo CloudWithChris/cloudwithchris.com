@@ -17,5 +17,6 @@ tags:
 - Content Creation
 - Podcasting
 youtube: J5q_DZJRpYM
+banner: "images/banner.png"
 ---
 Chatting to some colleagues about blogging and sharing our success stories and failures!
