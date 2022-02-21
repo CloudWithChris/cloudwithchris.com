@@ -20,5 +20,6 @@ tags:
 - GitHub Codespaces
 - Visual Studio Code
 externalLink: https://www.meetup.com/en-AU/LeedsAzure/events/277175642/
+banner: "images/cloud-with-chris-banner.png"
 ---
 Chris is a Senior FastTrack for Azure engineer at Microsoft and is the producer and host of his podcast CloudWithChris.com. He uses GitHub to version control the site's source code, GitHub Actions to build and deploy the site to Azure and other clouds, and GitHub Issues/Boards to plan the episode backlog. In this session, we'll explore how GitHub can be used to deploy your own Podcast/Blog site using Static Site Generators such as Hugo onto Azure.

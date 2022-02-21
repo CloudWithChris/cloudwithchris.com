@@ -15,5 +15,6 @@ externalLink: "https://www.youtube.com/watch?v=7u9V62ja6tk"
 tags:
 - DevOps
 - GitHub
+banner: "images/banner.png"
 ---
 Chris joins Mert Yeter on the MSHowTo show talking all things DevOps, including CI/CD tools, Azure DevOps and GitHub, Azure Development related tooling, and the importance of monitoring as part of a DevOps approach!

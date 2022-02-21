@@ -17,6 +17,7 @@ tags:
 - Application Insights
 - Monitoring
 youtube: he2x6QgbVSk
+banner: "images/banner.png"
 ---
 Join Chris Reddington, Senior FastTrack for Azure Engineer at Microsoft for this Azure Management Talk webinar. Chris will provide an overview of Application Insights and how it slots into the wider Azure Monitoring ecosystem. We will explore Alerts, Metrics, Queries, Dashboards, Workbooks and more, and how Application Insights can bring clarity to a distributed cloud deployment.
 

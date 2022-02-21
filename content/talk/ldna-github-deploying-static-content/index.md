@@ -18,5 +18,6 @@ tags:
 - GitHub Actions
 - Static Content
 youtube: to6j4ImHKJ8
+banner: "images/banner.png"
 ---
 Chris is a Senior Azure Engineer at Microsoft. He'll explore how GitHub Actions can be used to deploy your own static sites (or other apps!) to Azure.

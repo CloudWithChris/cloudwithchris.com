@@ -17,5 +17,6 @@ tags:
 - Architecture
 - Requirements
 - Cloud Design Patterns
+banner: "images/banner.png"
 ---
 In this session, Chris will discuss some of the fundamental concepts of the Cloud and Azure, and providing an introductory walkthrough of the Azure Portal.

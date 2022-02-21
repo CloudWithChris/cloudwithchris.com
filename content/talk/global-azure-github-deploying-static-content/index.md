@@ -18,5 +18,6 @@ tags:
 - GitHub Actions
 - Static Content
 youtube: mlgCqVcY4_Q
+banner: "images/banner.png"
 ---
 Chris is the producer and host of his podcast CloudWithChris.com. He uses GitHub to version control the site's source code, GitHub Actions to build and deploy the site to Azure and other clouds, and GitHub Issues/Boards to plan the episode backlog. In this session, we'll explore how GitHub can be used to deploy your own workloads to Azure.
