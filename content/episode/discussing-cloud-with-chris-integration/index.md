@@ -23,5 +23,6 @@ tags:
 - Architecture
 - cloudwithchris.com
 youtube: dNjG8ohgavs
+banner: "images/banner.jpg"
 ---
 In this session, Chris is joined by Karl Cooke, Blogger at [https://irishtechie.com](https://irishtechie.com). Chris and Karl talk all about the CloudWithChris.com integration platform, and the numerous automation/integration activities that Chris has in place to save time and focus on building content!

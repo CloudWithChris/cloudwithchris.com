@@ -25,5 +25,6 @@ tags:
 - Authentication
 - OAuth
 youtube: 4OSSVk0IzCk
+banner: "images/cloud-with-chris-banner.png"
 ---
 Planning to build a cloud application, but not so sure on the latest Identity Patterns? Not sure on your AAD compared with your AAD B2B or AAD B2C? Then check out this episode, where Chris Reddington is joined by Christos Matskas.

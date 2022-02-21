@@ -24,5 +24,6 @@ tags:
 - Data
 - How To
 youtube: clX44yqWKLo
+banner: "images/banner.jpg"
 ---
 There are so many types of data stores out there these days. You have relational, non-relational, documents, blob, tables, files and more. There's also a growing awareness of 'Polyglot Persistence' where you use different data stores depending on the task. But how do you know which is the 'right' one? Chris is joined once again by Steph Martin as we talk through some of these types of datastores, and the factors that may help you in your decision!

@@ -25,6 +25,7 @@ tags:
 - Startup
 - People
 youtube: LnMZsNidlCM
+banner: "images/banner.jpg"
 ---
 Team diversity refers to differences between members of startup team. Those differences can include demographic differences (like age, race, sex, ethnicity), personality (extrovert, introvert, and differing Myers-Briggs types) and functional (as in skill sets, like engineering, design, copywriting, and marketing).
 

@@ -17,6 +17,7 @@ tags:
 series: 
 - "Using Azure Arc for Apps"
 title: Using Azure Arc for Apps - Part 4 - Deploying Logic Apps into your App Services Kubernetes Environment
+banner: "images/cloud-with-chris-banner.png"
 ---
 ## App Service Kubernetes Environment
 

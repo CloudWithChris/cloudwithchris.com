@@ -12,6 +12,7 @@ tags:
 - Depression
 - Anxiety
 title: I'm back. Let's talk.
+banner: "images/cloud-with-chris-banner.png"
 ---
 You will have noticed that there haven't been any updates on Cloud With Chris for some time. I've also been quiet on social media. For any of my colleagues, you may have seen by my out of office messages that I've had time away from work. In this blog post, I want to open up about my recent challenges and have an honest discussion. Whether you've experienced mental health challenges before, are currently going through tough times, or haven't experienced it and don't quite understand (which is completely ok!) - I hope that me sharing this helps. We're going to be talking about mental health.
 

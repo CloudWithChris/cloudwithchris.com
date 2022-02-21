@@ -14,6 +14,7 @@ tags:
 - Security
 - How To
 title: Using GPG Keys to sign Git Commits - Part 1
+banner: "images/cloud-with-chris-banner.png"
 ---
 For a while now, I've been using GPG Keys to sign my Git Commits to prove that my commits on GitHub are genuine and from me. Over the last few weeks, I've been inspired by a couple of colleagues (Kudos to Adrian and Julie if you're reading this) to dig out my YubiKey and use these for my key signing activities. While there are several blog posts/samples (e.g. [here](https://disjoint.ca/til/2017/10/05/a-guide-to-setting-up--managing-gpg-keys-on-a-yubikey-4/), [here](https://www.hanselman.com/blog/how-to-setup-signed-git-commits-with-a-yubikey-neo-and-gpg-and-keybase-on-windows) and [here](https://gist.github.com/chrisroos/1205934)) on the topic already, I encountered a number of roadblocks along the way.
 
@@ -81,7 +82,7 @@ git add myfile.php
 git commit -m "Adjust to Hello Contoso"
 ```
 
-Now, "Alice" or "Bob" can go ahead and use git pull to ensure they have the latest version of the repository (or any other user with appropriate access). If they use the ``git log`` command, they will see that there are changes made by two users. Alice, and Bob. Again, it __appears__ as though the changes have been made by two users. Again, bear in mind that we haven't had to prove that we are either Alice, or Bob.
+Now, "Alice" or "Bob" can go ahead and use git pull to ensure they have the latest version of the repository (or any other user with appropriate access). If they use the ``git log`` command, they will see that there are changes made by two users. Alice, and Bob. Again, it **appears** as though the changes have been made by two users. Again, bear in mind that we haven't had to prove that we are either Alice, or Bob.
 
 ![Git log showing Alice and Bob's commits](images/gpg-git-part-1/git-status-4.jpg "Git log showing Alice and Bob's commits")
 

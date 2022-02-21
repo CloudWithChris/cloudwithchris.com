@@ -22,5 +22,6 @@ tags:
 - Architecture
 - Gaming
 youtube: A2DEBT8HL6k
+banner: "images/banner.jpg"
 ---
 Ever thought about what it takes to host a game in the Cloud? Well, this is the series for you! On the first Wednesday of every month, we explore Cloud Concepts that impact your journey to a connected multiplayer gaming experience! In this second session, we'll play some Halo and talk about matchmaking services and how ensuring a resilient service is crucial to an end gamer's experience.

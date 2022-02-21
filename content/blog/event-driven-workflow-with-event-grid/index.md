@@ -13,6 +13,7 @@ tags:
 - Azure
 - Event-Driven Architecture
 title: Building an Event-Driven workflow with Event Grid
+banner: "images/cloud-with-chris-banner.png"
 ---
 You may have heard of Event-Driven Architectures before, but haven't had the chance to get hands-on and build one as yet. That's exactly what we'll be working through in this blog post! Before we dive into any practical detail though, let's go ahead and recap some of the benefits of this architectural approach. The [Azure Architecture Center](https://docs.microsoft.com/en-us/azure/architecture/guide/architecture-styles/event-driven) covers these very well. But as a brief recap -
 

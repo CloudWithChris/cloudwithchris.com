@@ -22,5 +22,6 @@ tags:
 - DDOS
 - Requirements
 youtube: MkbG0fQ7r5o
+banner: "images/cloud-with-chris-banner.png"
 ---
 Let's introduce Episode #2! This was a suggestion from the community, so a big thank you to Garth Niblock for this one! Last time we talked about requirements, and cost is one dimension of that - but a very important one. When we move into a cloud world, the technology will change, but the way way that we think about cost changes as well. So this episode will be called ''Cost Control''. Let''s listen in...

@@ -26,5 +26,6 @@ tags:
 - OAuth
 - Requirements
 youtube: zE0g2VycIDU
+banner: "images/cloud-with-chris-banner.png"
 ---
 Let's introduce the next episode -We have another guest! We're starting to bring a few of those previous topics together in this episode. We touch upon requirements, DevOps, and building applications - or rather APIs - in the cloud. In this episode, I talk with a colleague and friend, Peter Piper, on factors that relate and impact API design. So, without further ado... here we go!

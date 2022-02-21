@@ -25,5 +25,6 @@ tags:
 - Visual Studio Code
 - Containers
 youtube: H6134ad2x4Q
+banner: "images/banner.jpg"
 ---
 Imagine the scenario. You're a developer and you need to go and build some code. You need to install a number of dependencies, a code editor and perhaps a number of frameworks, only to find the code still doesn't compile on your machine. Probably because you're missing some frameworks or libraries. We've all been there. But perhaps, we don't have to be there. Stick around in this episode as we talk about Visual Studio Code, The Remote Containers Extension and GitHub Codespaces and how all of these can help solve that challenge.

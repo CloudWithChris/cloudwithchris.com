@@ -24,6 +24,7 @@ tags:
 - Azure
 - PowerShell
 youtube: 97Nrh_eETEY
+banner: "images/banner.jpg"
 ---
 Serverless computing is a cloud computing code execution model in which the cloud provider fully manages the infrastructure needed to serve requests. In this session, we will explain why and how we should use Azure Functions and PowerShell together, and we will show you how to deploy a PowerShell based Function.
 

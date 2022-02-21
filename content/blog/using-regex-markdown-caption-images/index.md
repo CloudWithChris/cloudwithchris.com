@@ -24,6 +24,7 @@ externalLink: ""            # Full URL to override listing links to an external 
 # Content-specific properties
 authors:
 -  "chrisreddington"                       # An array of authors of the post (filenames in person).
+banner: "images/cloud-with-chris-banner.png"
 ---
 If there's an easy way to achieve something, then I'm all for it! You may have noticed that I've been putting a lot of effort into refactoring my site and open sourcing the original Cloud With Chris theme. I've now released that as the [Hugo Creator theme](https://github.com/cloudwithchris/hugo-creator) for [Hugo](https://gohugo.io/). As part of the refactoring process into a reusable theme, I had to make several breaking changes. This meant that I'd need to update the contents of my site. I want to share a quick tip that I discovered to add captions to my images in Markdown.
 

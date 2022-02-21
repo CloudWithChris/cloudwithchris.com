@@ -25,5 +25,6 @@ tags:
 - Azure Architecture Center
 - Security
 youtube: 6-pQKhIYbEU
+banner: "images/banner.jpg"
 ---
 Have a need to update a legacy application to use cloud concepts such as retry, circuit breaker or other features? Then the ambassador or sidecar patterns may be for you! Join Peter and Chris as they continue their journey exploring Cloud Design Patterns. In this session, they discuss the Sidecar and Ambassador Patterns.

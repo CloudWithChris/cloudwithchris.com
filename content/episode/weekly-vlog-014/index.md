@@ -24,5 +24,6 @@ tags:
 - GitHub
 - Community
 youtube: YcXLYIzlE50
+banner: "images/banner.jpg"
 ---
 In this livestream, Chris covers the latest and greatest in the Azure, Azure DevOps & GitHub world, as well as the latest and upcoming content releases on Cloud with Chris!

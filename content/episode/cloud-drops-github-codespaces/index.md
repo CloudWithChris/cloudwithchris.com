@@ -22,5 +22,6 @@ tags:
 - Containers
 - Visual Studio Code
 youtube: -tQ2nxjqP6o
+banner: "images/banner.jpg"
 ---
 Have you ever had to setup a development environment from scratch? You have to install a ton of dependencies, probably a few tools along the way as well. It's not fun, it takes a lot of time and it prevents you from being productive. This is where GitHub Codespaces comes in.

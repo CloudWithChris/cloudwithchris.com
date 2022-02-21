@@ -21,5 +21,6 @@ tags:
 - Cloud Design Patterns
 - Azure Architecture Center
 youtube: 0HoTGgb5oFg
+banner: "images/cloud-with-chris-banner.png"
 ---
 How are you thinking about handling load on your application, scaling out perhaps? But what about if you're building a multi-tenant service and worried about safeguarding resources on a per tenant basis? What happens if there's a temporary blip, and there are issues that impact the stability of the application? Then tune in to this episode where Chris is joined by John Downs, talking about the Throttling, Retry and Circuit Breaker Patterns. This is another episode in the series of Architecting for the Cloud, one pattern at a time.

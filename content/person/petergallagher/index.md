@@ -10,6 +10,7 @@ Title: Peter Gallagher
 Twitter: pete_codes
 Website: "https://www.petecodes.co.uk/"
 YouTube: ""
+Description: "Pete Gallagher is a Freelance IT Consultant, Microsoft Certified Trainer and Azure MVP, Pluralsight Author and owner of PJG Creations Ltd. He has been creating software for decades and is happy programming in just about any language."
 ---
 Pete Gallagher is a Freelance IT Consultant, Microsoft Certified Trainer and Azure MVP, Pluralsight Author and owner of PJG Creations Ltd. He has been creating software for decades and is happy programming in just about any language.
 

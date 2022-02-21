@@ -12,6 +12,7 @@ tags:
 - Development
 - Web Development
 title: Using schema.org for SEO optimisation
+banner: "images/cloud-with-chris-banner.png"
 ---
 One of my recent tasks for Cloud with Chris was to investigate some additional areas for SEO improvements. If you're unaware, SEO stands for Search Engine Optimization; a set of practices to improve your ranking in search engines such as Google, Bing and others when they crawl and index your site. I was already in a good position, but there were some things that were frustrating me, we'll explore those in this blog post.
 

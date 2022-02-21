@@ -24,5 +24,6 @@ tags:
 - Developer Relations
 - GitHub
 youtube: "3KNm612ZQXM"
+banner: "images/banner.jpg"
 ---
 In this session, Chris is joined by Martin Woodward - Director of Developer Relations at GitHub to talk about building communities, building experience talking and leading communities and then of Developer Relations, what it means and how to get into that role as your job.

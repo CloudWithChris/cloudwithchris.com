@@ -24,6 +24,7 @@ tags:
 - Monitoring
 - Cloud Architecture
 youtube: SrJMqU_vHhA
+banner: "images/banner.jpg"
 ---
 The number of microservices running in enterprises increases daily. As a result, service composition, governance, security, and observability are becoming a challenge to implement and incorporate. A "cell-based" architecture is an approach that can be applied to current or desired development and technologies to address these issues. This technology-neutral approach helps cloud-native dev teams become more efficient, act in a more self-organized manner, and speed overall release times.
 

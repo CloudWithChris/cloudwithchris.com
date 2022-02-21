@@ -21,5 +21,6 @@ tags:
 - Cloud Design Patterns
 - Requirements
 youtube: YW08iPBTBCI
+banner: "images/cloud-with-chris-banner.png"
 ---
 This is the first episode! We'll be talking about all things requirements. Why is that? Well, that's the place any kind of project should start - What are you aiming for, what are you trying to achieve and what is the context?

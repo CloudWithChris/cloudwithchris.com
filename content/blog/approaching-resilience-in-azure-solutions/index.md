@@ -13,6 +13,7 @@ tags:
 - Resilience
 - Requirements
 title: Approaching Resilience in Azure Solutions
+banner: "images/cloud-with-chris-banner.png"
 ---
 I mentioned in [Building Solutions in the Cloud](https://www.christianreddington.co.uk/building-solutions-in-the-cloud/) that I would be writing a series of blog posts on the areas of risk that I have seen since I have been providing guidance around Azure. In this post, I will provide some thoughts on how you can consider resilience within the context of your own solution or application.
 
@@ -22,6 +23,7 @@ Q: Why is it that important?\
 A: Your solution is entirely dependent upon another vendor. Therefore, you need to be clear about the purpose and requirements of your system, so that you can design it a way that will function as you expect, in the domain of the vendor's services.
 
 Context is key. Remember your non-functional requirements
+banner: "images/cloud-with-chris-banner.png"
 ----------------------------------------------------------
 
 How comfortable are you with your non-functional requirements? When I say comfortable, I mean could you explain them to me?
@@ -61,6 +63,7 @@ You have a few options;
 Once we have our requirements and a candidate architecture, we can head to our second stage...
 
 Analyse the dependencies across your solution; cloud, on-premises and third party
+banner: "images/cloud-with-chris-banner.png"
 ----------------------------------------------------------------------------------
 
 By this stage, you would have some form of architecture diagram, or a strong understanding of how your solution ties together.

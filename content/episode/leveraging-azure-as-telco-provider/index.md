@@ -23,5 +23,6 @@ tags:
 - Azure
 - Telco
 youtube: "dmVfw4PPE0s"
+banner: "images/banner.jpg"
 ---
 In this session Chris is joined by Ivo who will explain how Telco providers are leveraging Azure to offer services to their customers. He will explain how they transform and what the future will be. He will also cover the benefits and struggles that they faced on the way.

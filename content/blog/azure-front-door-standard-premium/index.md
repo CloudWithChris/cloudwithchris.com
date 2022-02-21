@@ -13,6 +13,7 @@ tags:
 - Azure
 - Resilience
 title: Why you should care about Azure Front Door Standard and Premium
+banner: "images/banner.jpg"
 ---
 Azure Front Door - It's an Azure Service that has been generally available for quite some time. It went [Generally Available (GA) in April of 2019](https://azure.microsoft.com/en-us/updates/azure-front-door-service-is-now-available/) after being in [Public Preview since September 2018](https://azure.microsoft.com/en-us/updates/azure-front-door-service-in-public-preview/). It's had several updates since, including a slew of Web Application Firewall enhancements, Rules Engine support and much more. But did you know Microsoft released the Azure Front Door Standard and Premium SKUs in preview in Feburary of 2021? So, what are they? How do they compare to the aforementioned Azure Front Door offering? And when would you want to think about using Azure Front Door compared with Azure CDN? We'll be covering all of those points in this post.
 

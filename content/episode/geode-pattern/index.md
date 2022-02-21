@@ -24,6 +24,7 @@ tags:
 - Cloud Design Patterns
 - Azure Architecture Center
 youtube: TE4pif__A8c
+banner: "images/banner.jpg"
 ---
 You may have heard of patterns like the retry pattern, circuit breaker, CQRS or bulkhead. But have you heard about the Geode pattern? Join Chris and Will Eastbury in this session as they talk through how this pattern can help improve latency and increase availability for your application.
 

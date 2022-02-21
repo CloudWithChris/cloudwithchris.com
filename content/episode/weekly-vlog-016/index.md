@@ -24,5 +24,6 @@ tags:
 - Community
 - cloudwithchris.com
 youtube: WIdign_rUYE
+banner: "images/banner.jpg"
 ---
 In this video, Chris provides another update (Update #16!) on Cloud with Chris, updates on what's coming soon and Azure, Azure DevOps and GitHub related news!

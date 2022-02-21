@@ -10,6 +10,7 @@ images:
 tags:
 - Blogging
 title: System.out.println('Hello World');
+banner: "images/cloud-with-chris-banner.png"
 ---
 
 Surely, a "Hello World" post is a right of passage for technical bloggers?

@@ -26,5 +26,6 @@ tags:
 - Containers
 - Developer
 youtube: E1ZEW8LDa_0
+banner: "images/banner.jpg"
 ---
 Welcome to weekly Vlog #21! We'll be covering all of the latest from Microsoft Build!

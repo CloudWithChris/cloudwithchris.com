@@ -24,5 +24,6 @@ tags:
 - Community
 - Blogging
 youtube: ZopxDbztw2M
+banner: "images/cloud-with-chris-banner.png"
 ---
 In this video, chris provides another update on Cloud with Chris, updates on what's coming soon and Azure related news!

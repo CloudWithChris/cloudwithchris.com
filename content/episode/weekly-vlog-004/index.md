@@ -23,5 +23,6 @@ tags:
 - Azure
 - Community
 youtube: RXqa83gxYMM
+banner: "images/banner.jpg"
 ---
 In this video, Chris updates on Cloud With Chris from the last week, and how you can keep up to date with all the upcoming content (Spoiler: It's growing, including the talks outside of the channel!). Are you in the Thames Valley area, or even further afield? Then you may want to tune in to find out more about Azure Thames Valley and our upcoming sessions. And just for good measure, we do some Azure, Azure DevOps and GitHub updates as well!

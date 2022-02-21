@@ -23,5 +23,6 @@ tags:
 - APIs
 - Cloud Foundations
 youtube: HLgljLsK79E
+banner: "images/banner.jpg"
 ---
 Heard about something called a Landing Zone, and think you need a helicopter ready to use it? Not quite! In this session, Chris is joined by Karim Fahmy as they discuss an introduction to Azure Landing Zones and how they underpin some of the core cloud foundations (e.g. governance, networking, core infrastructure and more) to enable a successful cloud deployment.

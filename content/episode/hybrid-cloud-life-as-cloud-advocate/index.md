@@ -26,5 +26,6 @@ tags:
 - Cloud Advocate
 - Developer Relations
 youtube: 7-UUQcc91Oc
+banner: "images/banner.jpg"
 ---
 In this session, Chris is joined by Senior Cloud Advocate Sarah Lean. Chris and Sarah will talk about the latest and greatest in the world of Hybrid Cloud, and explore the day-to-day experience of being a Cloud Advocate, working in the DevRel space.

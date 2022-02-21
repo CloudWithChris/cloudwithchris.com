@@ -25,5 +25,6 @@ tags:
 - cloudwithchris.com
 - Hugo
 youtube: wSG42tWDjq0
+banner: "images/banner.jpg"
 ---
 Welcome to weekly Vlog #17! We'll be covering the latest from Azure, Azure DevOps, GitHub and Cloud with Chris! Chris also covers a new pet project he's been working on, the Hugo CrossPoster!

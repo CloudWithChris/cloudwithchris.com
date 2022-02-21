@@ -10,6 +10,7 @@ Title: Sarah Lean
 Twitter: TechieLass
 Website: https://www.techielass.com/
 YouTube: "_techielass"
+Description: "Sarah has worked in IT for over 14 years working for service providers, manufacturing, Scotch Whisky and local authority organisations. She's served her time as a SysAdmin resetting passwords and triaging support calls, maintaining platforms, building infrastructure, migrating end of life systems and migrating data centers."
 ---
 Sarah has worked in IT for over 14 years working for service providers, manufacturing, Scotch Whisky and local authority organisations. She's served her time as a SysAdmin resetting passwords and triaging support calls, maintaining platforms, building infrastructure, migrating end of life systems and migrating data centers. She's been a subject matter expert in various solutions through my career including Microsoft Exchange, System Center Configuration Manager and Patch Management, to name a few.
 

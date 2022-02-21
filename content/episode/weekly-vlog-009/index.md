@@ -27,5 +27,6 @@ tags:
 - Azure
 - Community
 youtube: 4tXhWaRZw6Q
+banner: "images/banner.jpg"
 ---
 In this video, Chris recaps over the last week, including The GitHub & GPG Keys blog series, his webinar with SquaredUp on Application Observability in a distributed world and the Introduction to Landing Zones, where he was joined by Karim Fahmy. This week, it's Microsoft Ignite, so keep a watch out for any news/updates! In addition, on Wednesday - the second episode of Cloud Gaming notes will be released, as well as the second in The GitHub & GPG Keys blog series. On Friday, there will be another episode with Peter Piper, as Chris and Peter explore the Ambassador and Sidecar Patterns. Finally, on Saturday - Chris will be presenting to Dotnet Limerick Azure User Group on using GitHub to deploy a Podcast Site/Blog to Azure using Static Content... And if that wasn't enough, Chris also rounds up some of the latest Azure Blog posts, and a series of retirement notices from the Azure Updates page.

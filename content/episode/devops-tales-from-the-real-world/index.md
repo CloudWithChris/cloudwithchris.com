@@ -23,5 +23,6 @@ tags:
 - Cloud
 - Azure
 youtube: "k_tLu06TUqM"
+banner: "images/banner.jpg"
 ---
 Listen in to this session as Chris is joined by Thomas Thornton, as they talk about DevOps in real-world scenarios.

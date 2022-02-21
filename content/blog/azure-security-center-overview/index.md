@@ -14,6 +14,7 @@ tags:
 - Monitoring
 - Cloud Governance
 title: Why you should be using Azure Security Center
+banner: "images/cloud-with-chris-banner.png"
 ---
 Whether you're brand new to Azure or have been using it for some time, you have likely either heard of - or come across - Azure Security Center. It's a service which can prove extremely valuable in baselining, measuring and improving your security posture. But, did you know there is additional functionality beyond the free tier? You may have previously known this as the standard tier, or now know this as Azure Defender, where you can opt in for those Azure Services that you particularly want to protect.
 

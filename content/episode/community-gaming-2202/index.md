@@ -5,6 +5,8 @@ PublishDate: "2022-02-02T19:00:00Z"
 Title: "Community Gaming - Halo Infinite"
 episode: CG2202
 image: images/community-gaming-2202.jpg
+banner: images/banner.jpg
+featured: 1
 explicit: "no"
 guests: []
 hosts:

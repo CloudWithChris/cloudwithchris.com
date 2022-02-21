@@ -14,6 +14,7 @@ tags:
 title: How to use Managed Identity and APIM to call Azure Services from an APIM policy directly
 series: 
 - "A series on API Management"
+banner: "images/banner.jpg"
 ---
 Back in June, I wrote a blog post on [API Management and how you can use API Management policies to enforce access restriction policies](/blog/api-management-and-policies/). I was going to write a follow up post on how to use API Management policies in further scenarios, though it's one of those scenarios where great minds think alike!
 

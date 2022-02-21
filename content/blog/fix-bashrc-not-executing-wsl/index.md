@@ -13,6 +13,7 @@ tags:
 - Windows Terminal
 - Command-Line
 title: Fix for .bashrc not executing on startup in Ubuntu on Windows Subsystem for Linux
+banner: "images/cloud-with-chris-banner.png"
 ---
 In case you haven't heard, I'm planning to do some livestreams in the near future which are focused on live development / building in the cloud. I'm working on a few ideas, but if you have any suggestions - please throw them my way! To prepare for this, I've recently spent some time making sure my local development environment is in order. Windows Terminal and Windows Subsystem for Linux (WSL) are a couple of the key tools in my local development environment. Windows Subsystem for Linux is the focus for this post.
 

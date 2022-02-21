@@ -14,6 +14,7 @@ tags:
 title: 'Using API Management Policies to enforce access restriction policies'
 series: 
 - "A series on API Management"
+banner: "images/cloud-with-chris-banner.png"
 ---
 We [recently introduced you to API Management, how it maps to architectural principals and why you may consider using it as a producer or consumer of APIs](/blog/introduction-to-api-management). In this post, we'll be continuing on the story - focusing mostly on the API Management policies functionality.
 

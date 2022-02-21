@@ -20,5 +20,6 @@ tags:
 - Command-Line
 - Azure
 youtube: lCbK2DT5Lvc
+banner: "images/banner.jpg"
 ---
 Want to get started with the Azure CLI in Azure Cloud Shell or on Containers, Linux, macOS or Windows? Then check out this bite-sized video from the Cloud With Chris Cloud Drops series on Installing, Upgrading and Auto-Upgrading the Azure CLI.

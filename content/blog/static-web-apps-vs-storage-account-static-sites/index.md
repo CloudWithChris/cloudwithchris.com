@@ -12,6 +12,7 @@ tags:
 - Hugo
 - Static Content
 title: Choosing between Azure Static Web Apps and Static sites on Azure Storage
+banner: "images/banner.jpg"
 ---
 If you've seen any of my [community talks](/talk), then you'll be aware that Static sites and the Static Content Hosting Pattern is a passion area of mine. In Azure, there are a couple of great services that stand out when building towards this approach. These are Azure Static Web Apps and the Static sites functionality in Azure Blob Storage. But, which one is right for your scenario? Read on to find out more.
 

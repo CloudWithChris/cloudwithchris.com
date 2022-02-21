@@ -13,6 +13,7 @@ tags:
 - Podcasting
 - Setup
 title: The Past Four Years
+banner: "images/cloud-with-chris-banner.png"
 ---
 For the past four years, I've been part of a team at Microsoft called [FastTrack for Azure (FTA)](https://azure.microsoft.com/en-gb/programs/azure-fasttrack/). FastTrack for Azure is part of Azure Engineering's Customer Experience Team, focused on successfully on boarding customers on a project-by-project basis as they bring production workloads online.
 

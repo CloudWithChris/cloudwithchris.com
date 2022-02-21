@@ -15,6 +15,7 @@ tags:
 - Azure Storage
 - Static Content
 title: Optimise your site - Addressing recommendations from securityheaders.com
+banner: "images/cloud-with-chris-banner.png"
 ---
 ## Introduction
 

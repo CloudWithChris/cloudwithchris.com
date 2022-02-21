@@ -10,6 +10,7 @@ images:
 tags:
 - Blogging
 title: Cloud With Chris - Moving Forwards
+banner: "images/cloud-with-chris-banner.png"
 ---
 
 You may have noticed there are some posts preceding this one. I've had a few attempts at putting my own personal blog together, but over time, my posts dwindle... Well, given the recent success with my Cloud with Chris podcast, I'm beginning to consolidate... Starting with my blog! Here's an update on what you have to look forward to!

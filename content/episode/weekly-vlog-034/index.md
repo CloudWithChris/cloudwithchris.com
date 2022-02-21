@@ -25,5 +25,6 @@ tags:
 - GitHub
 - Sea Of Thieves
 youtube: ETfUmpepr0Q
+banner: "images/banner.jpg"
 ---
 In this session, Chris provides a series of updates focused around Azure, DevOps, GitHub and Cloud With Chris, while gaming with the Cloud Family Community.

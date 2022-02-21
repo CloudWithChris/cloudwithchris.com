@@ -10,8 +10,6 @@ Title: David Frappart
 Twitter: Cloudgeekdavid
 Website: http://teknews.cloud/
 YouTube: ""
+Description: "David has been a cloud architect or the Devoteam for 7 years, and in IT for 16 years. He likes Infrastructure as Code with Hashicorp Terraform and the Azure Landscape. David has been an MVP since 2019."
 ---
-Cloud architect for Devoteam since 7 years.
-IT guys since 16 years.
-Likes IaC with Hashicorp Terraform and all the Azure landscape
-MVP Azure since 2019
+David has been a cloud architect or the Devoteam for 7 years, and in IT for 16 years. He likes Infrastructure as Code with Hashicorp Terraform and the Azure Landscape. David has been an MVP since 2019.

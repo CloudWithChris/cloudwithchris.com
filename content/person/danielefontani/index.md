@@ -10,6 +10,7 @@ Title: Daniele Fontani
 Twitter: zeppaman
 Website: "https://www.sintraconsulting.it/"
 YouTube: ""
+Description: "Daniele is CTO @Sintraconsulting and I worked as Senior Developer, Team Leader and architect in a very large set of enterprise projects. He has a master's degree in Robotic science and another master's degree in project management."
 ---
 I'm CTO @Sintraconsulting and I worked as Senior Developer, Team Leader and architect in a very large set of enterprise projects. I had a master's degree in Robotic science and another master's degree in project management. My experience in technology extends on many technologies (java, PHP, .net) and platforms (Sharepoint, Liferay, Pimcore) other than techniques (Agile, DevOps, ALM). I’m also interested in Agile techniques, project management, and product development.
 

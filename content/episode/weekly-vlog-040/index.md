@@ -25,5 +25,6 @@ tags:
 - GitHub
 - Among Us
 youtube: BtVX9s5wvRo
+banner: "images/cloud-with-chris-banner.png"
 ---
 In this session, Chris provides a series of updates focused around Azure, DevOps, GitHub and Cloud With Chris.

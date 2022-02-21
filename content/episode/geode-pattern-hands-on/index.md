@@ -24,5 +24,6 @@ tags:
 - Cloud Design Patterns
 - Azure Architecture Center
 youtube: LzyasPgevHc
+banner: "images/cloud-with-chris-banner.png"
 ---
 We've previously covered the theory of the Geode pattern in episode 11. Now it's time to see it unfold live and in action! Tune in to see Will demonstrate the concept of the Geode pattern and how it adds value to a globally distributed application.

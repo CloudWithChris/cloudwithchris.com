@@ -24,5 +24,6 @@ tags:
 - Azure AD
 - Azure AD B2C
 youtube: 1PWCMEJQ5pk
+banner: "images/banner.jpg"
 ---
 Due to COVID-19, vOpen.Tech had to move so quickly from being a physical event to a virtual one. That meant that collecting registrations and user info as well as registering users had to be done online. Azure AD B2C was the silver bullet that allowed us to overcome and succeed, with almost no code and in less that 15 days! In this session we will see how easy, fast and cheap we can have a production-ready, fully scalable, robust and secure IAM PaaS system with Azure AD B2C.

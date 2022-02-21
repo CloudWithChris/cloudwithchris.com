@@ -11,5 +11,6 @@ Twitter: ""
 Type: "guest"
 Website: ""
 YouTube: ""
+Description: "Monitoring is part of Vanessa's basic DNA, having worked in the monitoring space for nearly 20 years."
 ---
 Monitoring is part of my basic DNA, having worked in the monitoring space for nearly 20 years.

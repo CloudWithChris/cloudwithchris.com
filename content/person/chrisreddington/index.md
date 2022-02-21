@@ -2,7 +2,7 @@
 Date: "2020-02-18T23:27:38Z"
 GitHub: chrisreddington
 Linkedin: christianreddington
-ShortBio: Welsh Tech Geek, Cloud Advocate, Musical Theatre Enthusiast and Improving
+Description: Welsh Tech Geek, Cloud Advocate, Musical Theatre Enthusiast and Improving
   Improviser! Chris is a Cloud Solution Architect at Microsoft UK, working with customers in the Manufacturing & Resources industry.
 image: images/chrisreddington.jpg
 Title: Chris Reddington

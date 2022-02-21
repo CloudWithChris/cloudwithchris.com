@@ -17,6 +17,7 @@ tags:
 - Microservices
 - Serverless
 title: Deploying a multi-region Serverless API Layer (Part 1)
+banner: "images/cloud-with-chris-banner.png"
 ---
 
 In my spare time, I work on a pet project called [Theatreers](https://www.github.com/theatreers). The aim of this is a microservice based platform focused on Theatre / Musical Theatre (bringing a few of my passion areas together).

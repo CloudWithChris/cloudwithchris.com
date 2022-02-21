@@ -15,6 +15,7 @@ tags:
 - DevOps
 - DevSecOps
 title: 'Introduction to Project Bicep - The evolution of ARM Templates'
+banner: "images/cloud-with-chris-banner.png"
 ---
 You may have heard about ARM Templates. You may have heard about Project Bicep. What are they, how do they differ? Why would I use one over the other? That's exactly what we'll be exploring throughout this blog post!
 

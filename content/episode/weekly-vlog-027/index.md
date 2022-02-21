@@ -24,5 +24,6 @@ tags:
 - Community
 - Blogging
 youtube: "v27_V-LKzx8"
+banner: "images/banner.jpg"
 ---
 In this session, Chris provides a series of updates focused around Azure, DevOps, GitHub and Cloud With Chris. He also explores GitHub Copilot using Ruby and Python, looking into the potential that it has!

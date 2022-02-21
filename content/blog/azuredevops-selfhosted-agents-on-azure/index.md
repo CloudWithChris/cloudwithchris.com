@@ -13,6 +13,7 @@ tags:
 - Azure
 - DevOps
 title: Using Azure DevOps and Azure Virtual Machine Scale Set Agents to deploy your private workloads
+banner: "images/banner.jpg"
 ---
 A little while ago, I  wrote a blog post on [Using the GitHub self-hosted runner and Azure Virtual Machines to login with a System Assigned Managed Identity](/blog/github-selfhosted-runner-on-azure), which seems to get a good amount of views week on week. Reflecting on some questions that have popped up this week (and regularly received over my time in the DevOps space), I thought that it makes sense to write a post on how to use Azure DevOps self-hosted agents to deploy to private resources. So, that's what we'll be covering in this post!
 

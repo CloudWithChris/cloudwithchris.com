@@ -12,6 +12,7 @@ tags:
 - DevOps
 - Automation
 title: Using Azure DevOps REST APIs to automatically create Team Iterations
+banner: "images/cloud-with-chris-banner.png"
 ---
 
 Consider this scenario. You are managing a software project using Azure DevOps, and you have multiple teams working towards a common cadence. Perhaps that cadence is managed by a central team. To gain the most value from your sprint planning, you would need to associate the iterations from the project level with each individual team.
