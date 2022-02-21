@@ -20,6 +20,7 @@ tags:
 - Hugo
 - Azure Static Web Apps
 externalLink: https://www.southcoastsummit.com/speakers/
+banner: "images/banner.png"
 ---
 Did you know that Static Sites can help you build performant sites that easily scale globally? Better yet, they can be incredibly cost-effective!
 

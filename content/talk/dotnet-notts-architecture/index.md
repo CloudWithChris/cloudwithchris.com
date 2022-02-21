@@ -16,5 +16,6 @@ tags:
 - Architecture
 - Requirements
 - Cloud Design Patterns
+banner: "images/banner.png"
 ---
 In this session, we'll navigate through a typical real-world architecture of a solution and consider the decisions that we may wish to make at various stages. Alongside that, we'll factor in how requirements and design patterns can help influence our overall design, based on learnings from Chris' 5+ year journey taking customers to production on Azure.

@@ -33,6 +33,6 @@ tags:
 - DevOps
 youtube: Fvo3bidC76Q
 upcoming: true
-banner: "images/cloud-with-chris-banner.png"
+banner: "images/banner.jpg"
 ---
 ToolUp Tuesday is all about showing the thought process and decisions made when creating an application. Join Chris and Matt as they build a new application from the ground up, including development processes, tooling, service choices and architectural decisions!

@@ -18,5 +18,6 @@ tags:
 - GitHub Actions
 - Static Content
 youtube: QiTMd9fh2qQ
+banner: "images/banner.png"
 ---
 In this session, we’ll navigate through a typical journey when designing the architecture of a cloud solution and consider the decisions that we may wish to make at various stages. Alongside that, we’ll factor in how requirements and design patterns can help influence our overall design.
