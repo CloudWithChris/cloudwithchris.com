@@ -107,6 +107,8 @@ jobs:
     environment:
       name: staging.azure
     steps:
+      - name: Checkout Code (Bring variables in for LHCI)
+        uses: actions/checkout@v2
       - name: 'Download Website Artifact'
         uses: actions/download-artifact@v1
         with:
