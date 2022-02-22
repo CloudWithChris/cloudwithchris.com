@@ -6,8 +6,8 @@ publishDate: "2022-02-22T07:00:00Z"             # TODO: Differentiate between da
 date: "2022-02-22T07:00:00Z"                    # TODO: Differentiate between PublishDate
 
 # Site-wide [required properties]
-image: "images/cloud-with-chris-banner.png"                   # Displayed when referenced in listing pages
-banner: "images/cloud-with-chris-banner.png"                   # Displayed when referenced in listing pages
+image: "images/banner.png"                   # Displayed when referenced in listing pages
+banner: "images/banner.png"                   # Displayed when referenced in listing pages
 images:                     # An array of images used in Social Sharing
 - "images/banner.jpg"
 tags:                       # Used for SEO optimisation and browsing across the site.
