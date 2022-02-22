@@ -40,6 +40,7 @@ on:
 env:
   HUGO_VERSION: '0.92.2'
   SWA_NAME: 'cwc-static'
+  AZURE_CLI_VERSION: '2.33.0'
 
 jobs:
   # A set of steps used to compress the images, making sure that images are compressed ahead of publishing to the site.
@@ -121,16 +122,16 @@ jobs:
           client-id: ${{ secrets.AZURE_CLIENT_ID }}
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-      - name: "Get SWA Token"
+      - name: "Add a mask to the SWA Token"
         uses: azure/CLI@v1
         with:
-          azcliversion: 2.33.0
+          azcliversion: ${{ env.AZURE_CLI_VERSION }}
           inlineScript: |
             echo "::add-mask::$(az staticwebapp secrets list -n ${{ env.SWA_NAME }} | jq -r '.properties.apiKey')"
       - name: "Get SWA Token"
         uses: azure/CLI@v1
         with:
-          azcliversion: 2.33.0
+          azcliversion: ${{ env.AZURE_CLI_VERSION }}
           inlineScript: |
             echo "SWA_TOKEN=$(az staticwebapp secrets list -n ${{ env.SWA_NAME }} | jq -r '.properties.apiKey')" >> $GITHUB_ENV
       - name: Build And Deploy
