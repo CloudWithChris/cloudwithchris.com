@@ -30,14 +30,14 @@ But first though, a warning.
 
 > **Warning:** There are some potential gotchas in this example. I'll outline them as we go through, but it's important to make that sure you understand the challenges that can occur. Particularly around the token used with Azure Static Web Apps and protecting that. More on that later though.
 
-## What is OpenID Connect? 
+## What is OpenID Connect?
 
 To level set, let's first discuss Open ID Connect. OpenID Connect is a protocol that allows you to authenticate with a third party, such as Microsoft Azure, and then use that authentication to gain access to your account.
 
 From the OpenID Foundation themselves -
 
 > OpenID Connect 1.0 is a simple identity layer on top of the OAuth 2.0 protocol. It allows Clients to verify the identity of the End-User based on the authentication performed by an Authorization Server, as well as to obtain basic profile information about the End-User in an interoperable and REST-like manner.
-> 
+>
 > OpenID Connect allows clients of all types, including Web-based, mobile, and JavaScript clients, to request and receive information about authenticated sessions and end-users. The specification suite is extensible, allowing participants to use optional features such as encryption of identity data, discovery of OpenID Providers, and session management, when it makes sense for them.
 
 So, we have established that OpenID connect is a standard for authentication. As it builds upon OAuth 2.0, it uses the same concepts such as a JSON Web Token (JWT). OpenID connect can be integrated into many scenarios, so will make it easier to integrate with multiple provider (e.g. authenticating to various cloud providers, or platforms). Great!
@@ -112,7 +112,7 @@ Navigate to the resource that you want to grant access to. In my case, I'm grant
 
 From there, click on **Add** > **Role Assignment** and follow the role assignment process as you would for any resource.
 
-> **Note:** The exact permissions that you wish to configure will depend on what you are trying to automate. As a reminder, follow the principal of least privilege - Give just enough permissions (and scope) to get the job done. Don't provide too much access. For the purposes of this blog post - I have assigned contributor access. 
+> **Note:** The exact permissions that you wish to configure will depend on what you are trying to automate. As a reminder, follow the principal of least privilege - Give just enough permissions (and scope) to get the job done. Don't provide too much access. For the purposes of this blog post - I have assigned contributor access.
 >
 > In a production environment, I would work to tighten this up further if possible.
 
@@ -371,6 +371,6 @@ Instead, we have to perform an additional 'hop' (i.e. pulling the token dynamica
 
 In my opinion, at this time - the default Azure Static Web Apps experience feels safer, as the masking works very well at the GitHub Action level. There is a risk of not getting the masking correctly configured and leaking a token (or a smaller risk of the token changing between those two steps, as outlined above). However, there is a trade-off from an operational perspective (e.g. remembering to update the token in the GitHub repository if you changed it on the Azure Static Web App).
 
-Like all aspects, there are tradeoffs in these scenarios. However, this OpenID Connect scenario could work extremely well for those resources that can be managed based on the Azure CLI and built-in RBAC permissions. For example, uploading of my Podcast MP3 files to Azure Storage. 
+Like all aspects, there are tradeoffs in these scenarios. However, this OpenID Connect scenario could work extremely well for those resources that can be managed based on the Azure CLI and built-in RBAC permissions. For example, uploading of my Podcast MP3 files to Azure Storage.
 
 I'd love to know what you think! How are you planning on using OpenID Connect, GitHub Actions and the Azure/login GitHub Action to deploy securely to your Azure resources? Let me know in the comments below, and whether you're already using this approach!
