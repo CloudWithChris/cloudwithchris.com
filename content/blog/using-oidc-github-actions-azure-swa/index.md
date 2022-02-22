@@ -153,7 +153,7 @@ deploy_preview:
   ...
 ```
 
-These permissions are required to request the OIDC JWT id token. Further details can be found about this on the [GitHub docs](https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-azure#adding-permissions-settings).
+These permissions are required to request the OIDC JWT ID token. Further details can be found about this on the [GitHub docs](https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-azure#adding-permissions-settings).
 
 > **Tip:** For my particular scenario, I will be deploying to the same subscription across all of my environments. That subscription implies that the same Tenant ID would be used as well.
 >
