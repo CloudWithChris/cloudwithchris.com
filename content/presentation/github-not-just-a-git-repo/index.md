@@ -15,7 +15,10 @@ In this session, Chris explores how GitHub is more than just a Git repository, a
 publishDate: ""     # TODO: Differentiate between date
 date: ""            # TODO: Differentiate between PublishDate
 
+
+
 # Site-wide [required properties]
+banner: "images/banner.png"
 image: ""           # Displayed when referenced in listing pages
 images:             # An array of images used in Social Sharing
 - ""
