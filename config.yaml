@@ -45,9 +45,18 @@ menu: # Main Menu
     - name: "Blog"
       weight: 4
       url: "/Blog"
-    - name: "Talks"
+    - name: "Speaking"
+      identifier: "speaking"
       weight: 5
+      url: "#"
+    - name: "Talks"
       url: "/talk"
+      weight: 1
+      parent: "speaking"
+    - name: "Presentations"
+      url: "/presentation"
+      weight: 2
+      parent: "speaking"
     - name: "People"
       weight: 6
       url: "/person"
