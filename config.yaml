@@ -96,6 +96,8 @@ module:
       target: "static/webfonts"
     - source: "assets"
       target: "assets"
+    - source: "static"
+      target: "static"
 
 # This enables the search functionality
 # to work, as it searches over the json file.
