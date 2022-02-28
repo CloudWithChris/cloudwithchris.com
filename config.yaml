@@ -94,24 +94,8 @@ module:
       target: "assets/sass/fontawesome"
     - source: "./node_modules/@fortawesome/fontawesome-free/webfonts"
       target: "static/webfonts"
-    - source: content
-      target: content
-    - source: static
-      target: static
-    - source: layouts
-      target: layouts
-    - source: data
-      target: data
-    - source: assets
-      target: assets
-    - source: assets/images
-      target: assets/images
-    - source: assets/js
-      target: assets/js
-    - source: i18n
-      target: i18n
-    - source: archetypes
-      target: archetypes
+    - source: "assets"
+      target: "assets"
 
 # This enables the search functionality
 # to work, as it searches over the json file.
