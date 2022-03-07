@@ -1,14 +1,14 @@
 ---
 Date: "2022-03-22T07:30:00Z"
-Description: "Did you know that static content can help you build performant websites that easily scale globally? Better yet, they can be incredibly cost-effective!
+Description: "Did you know that static content can help you build performant sites that easily scale globally? Better yet, they can be incredibly cost-effective!
 
 Join Chris, as he talks through -
 * The JAMstack (not related to Paddington bear - I promise!) and why you should care about it
 * Static Site Generators such as Hugo
 * Azure Hosting Options - Azure Storage vs Azure Static Web Apps
-* Combining Static Websites with Serverless APIs"
+* Combining Static sites with Serverless APIs"
 PublishDate: "2022-03-22T07:30:00Z"
-Title: "Deploying Static Websites to Azure the cheap and performant way"
+Title: "Deploying Static sites to Azure the cheap and performant way"
 image: images/waug.jpg
 speakers:
 - chrisreddington
@@ -38,10 +38,10 @@ event:
   costCurrency: ""    # Cost currency for the event. Use a standard format - http://en.wikipedia.org/wiki/ISO_4217
   available: "" # Whether registration/ticket purchases/etc. are still available (true/false). Defaults to false when event is in past.
 ---
-Did you know that static content can help you build performant websites that easily scale globally? Better yet, they can be incredibly cost-effective!
+Did you know that static content can help you build performant sites that easily scale globally? Better yet, they can be incredibly cost-effective!
 
 Join Chris, as he talks through -
 * The JAMstack (not related to Paddington bear - I promise!) and why you should care about it
 * Static Site Generators such as Hugo
 * Azure Hosting Options - Azure Storage vs Azure Static Web Apps
-* Combining Static Websites with Serverless APIs
+* Combining Static sites with Serverless APIs
