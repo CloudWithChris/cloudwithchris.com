@@ -5,6 +5,8 @@ description: "Back in November, GitHub announced its OpenID Connect capability f
 publishDate: "2022-02-22T07:00:00Z"             # TODO: Differentiate between date
 date: "2022-02-22T07:00:00Z"                    # TODO: Differentiate between PublishDate
 
+featured: 3
+
 # Site-wide [required properties]
 image: "images/banner.png"                   # Displayed when referenced in listing pages
 banner: "images/banner.png"                   # Displayed when referenced in listing pages
