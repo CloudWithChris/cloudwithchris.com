@@ -28,7 +28,6 @@ tags:
 - Azure
 youtube: 8CGN_qyTKu8
 banner: images/banner.jpg
-upcoming: true
 ---
 You've probably heard about quantum computing, but it still remains a mystery? In this session, Chris is joined by Johnny Hooybergs who will explain important concepts like qubits, superposition and entanglement and how quantum computing can hopefully help us to solve exponentially large problems.
 
