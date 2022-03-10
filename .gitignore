@@ -1,3 +1,6 @@
+# Ignore popular.json so it can be pulled in at build time
+popular.json
+
 # Hugo default output directory
 /public
 
