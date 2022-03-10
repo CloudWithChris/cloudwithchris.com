@@ -19,7 +19,7 @@ on:
     paths-ignore:
       - 'podcast_audio/**'
   schedule:
-    - cron: '0 0 * * 0 
+    - cron: '0 0 * * 0'
 
 # The workflow has several phases. Phases 1, 2 and 3 run on a push, or if the pull request activity
 # type is not 'closed'.
