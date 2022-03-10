@@ -93,7 +93,7 @@ jobs:
     - name: 'Pull popular posts from Google Analytics'
       run: |
         mkdir -p data
-        curl --header "Ocp-Apim-Subscription-Key: ${CWC_API_KEY}" -o data/popular.json https://api.cloudwithchris.com/cwc-ga/GetGoogleAnalyticsData
+        curl --header "Ocp-Apim-Subscription-Key: ${{ secrets.CWC_API_KEY}}" -o data/popular.json https://api.cloudwithchris.com/cwc-ga/GetGoogleAnalyticsData
     - name: 'Build and Minify Hugo Contents'
       run: hugo --minify --baseURL 'https://www.cloudwithchris.com'
       if: ${{ github.ref == 'refs/heads/main' }}
