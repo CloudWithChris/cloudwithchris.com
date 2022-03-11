@@ -40,9 +40,9 @@ on:
 
 # Environment variables used for consistency across the workflow.
 env:
-  HUGO_VERSION: '0.92.2'
+  HUGO_VERSION: '0.94.0'
   SWA_NAME: 'cwc-static'
-  AZURE_CLI_VERSION: '2.33.0'
+  AZURE_CLI_VERSION: '2.34.1'
 
 jobs:
   # A set of steps used to compress the images, making sure that images are compressed ahead of publishing to the site.
@@ -150,7 +150,7 @@ jobs:
           app_location: 'website'
           skip_app_build: true
   deploy_prod:  
-    if: github.event_name == 'push'
+    if: github.event_name == 'push' || github.event_name == 'schedule'
     runs-on: ubuntu-latest
     needs: [lint, build]
     name: Deploy (Prod)
@@ -174,13 +174,13 @@ jobs:
       - name: "Get SWA Token"
         uses: azure/CLI@v1
         with:
-          azcliversion: 2.33.0
+          azcliversion: ${{ env.AZURE_CLI_VERSION }}
           inlineScript: |
             echo "::add-mask::$(az staticwebapp secrets list -n ${{ env.SWA_NAME }} | jq -r '.properties.apiKey')"
       - name: "Get SWA Token"
         uses: azure/CLI@v1
         with:
-          azcliversion: 2.33.0
+          azcliversion: ${{ env.AZURE_CLI_VERSION }}
           inlineScript: |
             echo "SWA_TOKEN=$(az staticwebapp secrets list -n ${{ env.SWA_NAME }} | jq -r '.properties.apiKey')" >> $GITHUB_ENV
       - name: Build And Deploy
