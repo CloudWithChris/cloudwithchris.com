@@ -33,6 +33,8 @@ authors:
 ---
 In this post, I show how I use GitHub Actions to call an Azure Function (through Azure API Management) that interacts with Google Analytics as part of the build process. The end result is that top posts are pulled into the Static Site Generation process, rather than calling an API through JavaScript at runtime.
 
+![Example of the Cloud With Chris Landing page showing the top posts populated through the Google Analytics API](images/example-website-ui.png "Example of the Cloud With Chris Landing page showing the top posts populated through the Google Analytics API")
+
 You may be thinking - "That's a lot of technologies in one sentence. What's the point?". That's a great question, let's take a step back and look at the problem we're trying to solve.
 
 ## What's the problem?
@@ -50,7 +52,7 @@ Right, so we have established that the first two are trivial, but the third is a
 
 Yes and no. There are drawbacks to this approach -
 
-* The Google Analytics API has a limit of 50,000 requests per day. If you're calling the API more than 50,000 times per day, you'll be throttled.
+* The [Google Analytics API has a limit](https://developers.google.com/analytics/devguides/reporting/core/v4/limits-quotas#general_quota_limits) of 50,000 requests per day. If you're calling the API more than 50,000 times per day, you'll be throttled.
   * This isn't a problem for me at the moment, but hopefully it will be in the future!
 * Calling an external API is not an instant operation. It can take up to a few seconds to return the results. There are ways to handle this, for example using a cache or loading icons. However, given that this is the first content that a user sees, it's important that the content is available as quickly as possible.
 * Hugo cannot be used directly within JavaScript. This means that you wouldn't have the ability to reference pages in the site, and there associated properties. Instead, you' have to maintain a list of pages, the required content and then use JavaScript to parse that (e.g. an external JSON file).
@@ -64,7 +66,7 @@ Being the lazy developer that I am, I begun to think about the easiest route tha
 * I didn't want to trigger a call to the Google Analytics API as part of the build process. I wanted it to be its own independent API.
 * I didn't want to commit the updated JSON file to the git repository. Instead, just bring it in and use it at deployment time as part of a build process.
 
-Those requirements led me to the initial iteration of the concept. I re-used Janne's code (thank you again for the excellent blog post), but re-factored it into a [Python-based Azure Function](https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-python). The latest copy of the code [can be found on GitHub](https://github.com/CloudWithChris/AzureFunctionGoogleAnalyticsAPI). I'll walk through the key points to note next.
+Those requirements led me to the initial iteration of the concept. I re-used Janne's example code snippets (thank you again for the excellent blog post), but re-factored it into a [Python-based Azure Function](https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-python). The latest copy of the code [can be found on GitHub](https://github.com/CloudWithChris/AzureFunctionGoogleAnalyticsAPI). I'll walk through the key points to note next.
 
 1. I don't have a particularly strong Python background, so this was a great learning exercise for me as well. After generating a new Python Azure Function through Visual Studio Code, I populated the ``requirements.txt`` file. It took a few times to realise that the name of the package and the name of the reference are slightly different:
 
@@ -173,7 +175,11 @@ The rest of the script remains the same as Janne's original implementation. I'd 
 
 ## Bringing Azure API Management into the picture
 
-At this point, you should be able to deploy your Azure Function to Azure. For the purposes of my example, I used the Azure Functions extension in Visual Studio Code to deploy to an existing Python Azure Function resource that I had available. I plan to add a GitHub action that pulls in a GitHub repository secret to achieve the same (until I can use something like an OIDC flow as noted earlier), but I'll leave that as a separate exercise for you to work on!
+At this point, you should be able to deploy your Azure Function to Azure. For the purposes of my example, I used the Azure Functions extension in Visual Studio Code to deploy to an existing Python Azure Function resource that I had available. 
+
+![Screenshot showing the Azure Function deployed in the Azure Portal](images/azure-function.png "Screenshot showing the Azure Function deployed in the Azure Portal")
+
+I plan to add a GitHub action that pulls in a GitHub repository secret to achieve the same (until I can use something like an OIDC flow as noted earlier), but I'll leave that as a separate exercise for you to work on!
 
 I wasn't happy though. In the back of my mind, I had the nagging feeling of the limit on API Calls to Google Analytics. What if someone had come along (enthusiastically or maliciously), and called the API over 50,000 times in a day? If I needed to build the site once again, it would fail as the JSON file would not be available when the site is built (more on that build step later though).
 
@@ -185,6 +191,8 @@ This is where Azure API Management comes in. As this is all for personal/communi
 
 I then [imported my Azure Function into API Management](https://docs.microsoft.com/en-us/azure/api-management/import-function-app-as-api), so that I could begin building out this Façade concept and apply additional security policies on that set of APIs.
 
+![Screenshot showing the Azure Function being imported into the API Management instance](images/apim-import-function.png "Screenshot showing the Azure Function being imported into the API Management instance")
+
 Once complete, I then begun thinking about how to protect the backend API from any external calls. There were two considerations here -
 
 * Identity-based protection (i.e. making sure that the caller has some form of JSON Web Token) to verify they have the appropriate claims to perform the desired action.
@@ -192,9 +200,15 @@ Once complete, I then begun thinking about how to protect the backend API from a
 
 First, I configured the [built-in authentication and authorization capabilities of Azure Function (Easy Auth)](https://docs.microsoft.com/en-us/azure/app-service/overview-authentication-authorization).
 
+![Screenshot showing the Azure Function with an identity provider configured](images/azure-function-easyauth.png "Screenshot showing the Azure Function with an identity provider configured")
+
 With that complete, once trying to call the Azure Function directly - I receive an error. This is because we haven't associated the appropriate credentials (e.g. Authorization Header and Bearer token) to the request, so the request is considered invalid.
 
-Next up, I updated the inbound policy of All Operations under my Google Analytics API. I added the ``authentication-managed-identity`` to send a JSON Web Token (based upon the API Management resource's System Assigned Managed Identity) to the backend Azure Function (i.e. add an Authorization header and bearer token when sending a request to the Azure Function).
+Next up, I updated the inbound policy of All Operations under my Google Analytics API.
+
+![Screenshot showing the policy editor for the Google Analytics API (applies to all operations under that). It has the authentication-managed-identity policy configured against a Client ID that represents the Client ID of the backend application (in this case, an App Registration for the backend Azure Function)](images/apim-auth-policy.png "Screenshot showing the policy editor for the Google Analytics API (applies to all operations under that). It has the authentication-managed-identity policy configured against a Client ID that represents the Client ID of the backend application (in this case, an App Registration for the backend Azure Function)")
+
+I added the ``authentication-managed-identity`` to send a JSON Web Token (based upon the API Management resource's System Assigned Managed Identity) to the backend Azure Function (i.e. add an Authorization header and bearer token when sending a request to the Azure Function).
 
 ```xml
 <authentication-managed-identity resource="ClientIDOfServicePrincipalForBackendApp" />
