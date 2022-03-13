@@ -2,8 +2,8 @@
 # Default hugo properties
 title: "Using GitHub Actions, Azure Functions, Azure API Management and Google Analytics to display top posts on a Hugo Static Site"                   # Name of the blog
 description: "In this post, I show how I use GitHub Actions to call an Azure Function (through Azure API Management) that interacts with Google Analytics as part of the build process. The end result is that top posts are pulled into the Static Site Generation process, rather than calling an API through JavaScript at runtime."             # Used for SEO optimisation
-PublishDate: "2022-03-11T19:00:00Z"
-Date: "2022-03-11T19:00:00Z"
+PublishDate: "2022-03-13T19:00:00Z"
+Date: "2022-03-13T19:00:00Z"
 
 # Site-wide [required properties]
 image: "img/cloudwithchrislogo.png"                   # Displayed when referenced in listing pages
@@ -30,6 +30,8 @@ externalLink: ""            # Full URL to override listing links to an external 
 # Content-specific properties
 authors:
 -  "chrisreddington"                       # An array of authors of the post (filenames in person).
+
+banner: "images/banner.png"
 ---
 In this post, I show how I use GitHub Actions to call an Azure Function (through Azure API Management) that interacts with Google Analytics as part of the build process. The end result is that top posts are pulled into the Static Site Generation process, rather than calling an API through JavaScript at runtime.
 
@@ -208,24 +210,40 @@ Next up, I updated the inbound policy of All Operations under my Google Analytic
 
 ![Screenshot showing the policy editor for the Google Analytics API (applies to all operations under that). It has the authentication-managed-identity policy configured against a Client ID that represents the Client ID of the backend application (in this case, an App Registration for the backend Azure Function)](images/apim-auth-policy.png "Screenshot showing the policy editor for the Google Analytics API (applies to all operations under that). It has the authentication-managed-identity policy configured against a Client ID that represents the Client ID of the backend application (in this case, an App Registration for the backend Azure Function)")
 
-I added the ``authentication-managed-identity`` to send a JSON Web Token (based upon the API Management resource's System Assigned Managed Identity) to the backend Azure Function (i.e. add an Authorization header and bearer token when sending a request to the Azure Function).
+I added the ``authentication-managed-identity`` policy to send a JSON Web Token (based upon the API Management resource's System Assigned Managed Identity) to the backend Azure Function (i.e. add an Authorization header and bearer token when sending a request to the Azure Function).
 
 ```xml
 <authentication-managed-identity resource="ClientIDOfServicePrincipalForBackendApp" />
 ```
-Now you should be able to use the ``Test`` capability of API Management, and obtain a successful call from your backend Azure Function. Doing the same through your browser without any Bearer token should once again result in an error.
+Now you should be able to use the ``Test`` capability of API Management, and obtain a successful call from your backend Azure Function. 
 
-Arguably, the identity protection 'is enough' for my requirements. However, given that I'm on a consumption-based plan, I want to restrict the endpoints that can call the backend function, to protect against DDOS attacks and consider this as a cost control measure (more than a direct security measure in my scenario).
+![Screenshot showing the Test Tab in Azure API Management successfully called the backend API, with a 200 HTTP Status code and a JSON object returned in the result.](images/apim-test-response.png "Screenshot showing the Test Tab in Azure API Management successfully called the backend API, with a 200 HTTP Status code and a JSON object returned in the result.")
+
+Doing the same through your browser directly to the Azure Function without any Bearer token should either result in an error or an HTTP redirect to login, depending on how Easy Auth was configured.
+
+![Screenshot showing a direct call to the Azure Function without any Authorization headers resulting in an HTTP 401 status code.](images/azure-function-401.png "Screenshot showing a direct call to the Azure Function without any Authorization headers resulting in an HTTP 401 status code.")
+
+Arguably, the identity protection is 'enough' for my requirements. However, given that I'm on a consumption-based plan, I want to restrict the endpoints that can call the backend function, to protect against DDOS attacks and consider this as a cost control measure (more than a direct security measure in my scenario).
+
+![Screenshot showing the networking tab of Azure Functions with the Access Restriction option enabled.](images/azure-function-networking.png "Screenshot showing the networking tab of Azure Functions with the Access Restriction option enabled.")
 
 On the Azure Function App, I navigated to the 'Access Restriction' item in the Inbound Traffic area of the blade. From there, I set a rule on the ``azurewebsites.net`` tab (rather than ``scm.azurewebsites.net`` which is used for the kudu management portal) to restrict traffic.
+
+![Screenshot showing an Access Restriction configured with an allow rule for the AzureCloud.westeurope Service Tag](images/azure-function-networking-2.png "Screenshot showing an Access Restriction configured with an allow rule for the AzureCloud.westeurope Service Tag.")
 
 > **Note:** I have used Service Tags to restrict the allowed traffic into the Azure Function. I have used the AzureCloud.westeurope service tag, which will allow all traffic from West Europe (not just my subscription). There is a tag for ApiManagement.WestEurope, but that will unfortunately not work. This is because the tag is only used in outbound scenarios, [as documented here](https://docs.microsoft.com/en-us/azure/virtual-network/service-tags-overview#available-service-tags). As the API Management Consumption SKU cannot be VNet injected / deployed into a VNet, this is as granular as possible for the time being.
 
 Once you apply the above rule and attempt to call the Azure Function (at the root address, rather than the Function URL - so that you can distinguish the difference between the identity error vs the networking error), you should see an **Error 403 Forbidden** message - ``The web app you have attempted to reach has blocked your access.``
 
-A little earlier on, I mentioned that I wanted to restrict traffic to flow only from the API Management instance. Additionally, I wanted to protect against scenarios like DDOS / high requests, so that I can protect the backend Azure Function (from a cost-control perspective), but also the limit of calls that I have to the Google Analytics API (50,000/day as highlighted towards the beginning of this post).
+![Screenshot showing the resulting Error 403 - Forbidden screen that is seen once the access restriction rules have been configured.](images/azure-function-forbidden.png "Screenshot showing the resulting Error 403 - Forbidden screen that is seen once the access restriction rules have been configured.")
+
+A little earlier on, I mentioned that I wanted to restrict traffic to flow only from the API Management instance. Additionally, I wanted to protect against scenarios like DDOS / high requests, so that I can protect the backend Azure Function (from a cost-control perspective), but also the limit of calls that I have to the Google Analytics API (50,000 requests/day as highlighted towards the beginning of this post).
 
 To add a final layer of protection, I also [added rate limiting](https://docs.microsoft.com/en-us/azure/api-management/api-management-access-restriction-policies#LimitCallRate) to the inbound policy of my Google Analytics API in the API Management instance.
+
+![Screenshot showing the policy editor for the Google Analytics API (applies to all operations under that). It has the authentication-managed-identity policy configured against a Client ID that represents the Client ID of the backend application, as well as a rate-limit policy configured to allow 5 calls across 90 seconds.](images/apim-auth-rate-policy.png "Screenshot showing the policy editor for the Google Analytics API (applies to all operations under that). It has the authentication-managed-identity policy configured against a Client ID that represents the Client ID of the backend application, as well as a rate-limit policy configured to allow 5 calls across 90 seconds.")
+
+This is achieved by using the ``rate-limit`` policy, as demonstrated in the below snippet:
 
 ```xml
 <rate-limit calls="5" renewal-period="90" remaining-calls-variable-name="remainingCallsPerSubscription" />
