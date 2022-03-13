@@ -43,7 +43,7 @@ You may be thinking - "That's a lot of technologies in one sentence. What's the 
 
 I have been wanting to make the initial view as actionable as possible once the pageload is completed. As a user, you should be able to see featured posts, upcoming content and the content which is most popular. The first two are fairly trivial, but the third is a bit more tricky.
 
-Why is that? Let's walk through each scenario.
+Why is that? Let's walkthrough each scenario.
 
 * I built a featured posts capability into my Hugo theme by using a ``featured`` property in the YAML front matter of each piece of content. Posts that should be featured in the landing page's carousel must have the ``featured`` property set with a numeric value. The numeric value defines the order in which the post should appear in the carousel.
 * The upcoming content is is determined by an ``upcoming`` flag in the YAML front matter of each post.  This value is set to ``true`` if the post should be displayed in the upcoming content section, and ``false`` (or unset) if it is in the past.
@@ -70,7 +70,7 @@ Being the lazy developer that I am, I started to think about the easiest route p
 * I didn't want to trigger a call to the Google Analytics API as part of the build process. Instead, I wanted to implement it as it's own independent API, so it has its own lifecycle.
 * I didn't want to commit the updated JSON file to the Git repository. Instead, I wanted to bring the needed data in at build/deployment time, so that it can be used within the Hugo build process.
 
-Those requirements led me to an initial iteration of the concept in this blog post. I re-used Janne's example code snippets (thank you again for the excellent blog post), but re-factored them into a [Python-based Azure Function](https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-python). If you're looking for the 'finished produt, you can find the latest copy of the code [can be found on GitHub](https://github.com/CloudWithChris/AzureFunctionGoogleAnalyticsAPI). 
+Those requirements led me to an initial iteration of the concept in this blog post. I re-used Janne's example code snippets (thank you again for the excellent blog post), but re-factored them into a [Python-based Azure Function](https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-python). If you're looking for the 'finished produt, you can find the latest copy of the code [can be found on GitHub](https://github.com/CloudWithChris/AzureFunctionGoogleAnalyticsAPI).
 
 Let's explore the key points to note -
 
@@ -159,7 +159,7 @@ if __name__ == "__main__":
 
 > **Note:** If you plan to replicate this implementation, make sure to add ``service_account.json`` to your ``.gitignore`` file. This is **not** something that you want committed to your Git repository, as it contains the credentials for your service account. I've spent some time looking into alternative approaches that do not use the file. From my initial research - it looks like the google.oauth2.service_account module only has authentication options based on files. I'm new to this SDK and particular module, so if I'm wrong - please do correct me! I plan to do a more thorough review on this later, as I'd like to explore using something like Open ID Connect (in a similar way to how I [authenticate my GitHub Actions to Azure](/blog/using-oidc-github-actions-azure-swa/)) to authenticate.
 
-We need to reconsider how the original implementation handled the file path of the ``service_account.json`` file. The context in which the script is executed will be different due to the Azure Functions runtime, so we need to make sure to pass in the appropriate path to the JSON file. Another thank you - this time to Anthony Chu - for [answering this question](https://docs.microsoft.com/en-us/answers/questions/516509/azure-function-not-able-to-read-my-json-file-from.html) which helped solve this one. 
+We need to reconsider how the original implementation handled the file path of the ``service_account.json`` file. The context in which the script is executed will be different due to the Azure Functions runtime, so we need to make sure to pass in the appropriate path to the JSON file. Another thank you - this time to Anthony Chu - for [answering this question](https://docs.microsoft.com/en-us/answers/questions/516509/azure-function-not-able-to-read-my-json-file-from.html) which helped solve this one.
 
 I'll draw your attention to this particular segment of the script -
 
@@ -181,7 +181,7 @@ The rest of the script remains the same as Janne's original implementation. I'd 
 
 ## Bringing Azure API Management into the picture
 
-At this point, you should be able to deploy your Azure Function to Azure. For the purposes of my example, I used the [Visual Studio Code Azure Functions extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) to deploy to a function in Azure with Python. 
+At this point, you should be able to deploy your Azure Function to Azure. For the purposes of my example, I used the [Visual Studio Code Azure Functions extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) to deploy to a function in Azure with Python.
 
 ![Screenshot showing the Azure Function deployed in the Azure Portal](images/azure-function.png "Screenshot showing the Azure Function deployed in the Azure Portal")
 
@@ -262,11 +262,11 @@ With all of that now in place, we have a callable API and therefore re-usable fo
 
 ## Calling the API in our GitHub Action to use the JSON data in Hugo's build process
 
-Now to bring all of this together. I already had an extensive GitHub Action Workflow to build [cloudwithchris.com](https://www.cloudwithchris.com). It contains steps to lint the markdown files, optimize static assets by compressing images and minifying the hugo build contents for deployment to Azure Static Web Apps.
+Now to bring all of this together. I already had an extensive GitHub Action Workflow to build [cloudwithchris.com](https://www.cloudwithchris.com). It contains steps to lint the Markdown files, optimize static assets by compressing images and minifying the hugo build contents for deployment to Azure Static Web Apps.
 
-I'm displaying the top posts in a slightly different way to Janne's implementation. This means the logic I'm using in my Hugo partial may look a little different. The data is only being used on the homepage of [cloudwithchris.com](https://www.cloudwithchris.com), so I don't need to filter out based upon the current page's context. 
+I'm displaying the top posts in a slightly different way to Janne's implementation. This means the logic I'm using in my Hugo partial may look a little different. The data is only being used on the homepage of [cloudwithchris.com](https://www.cloudwithchris.com), so I don't need to filter out based upon the current page's context.
 
-In case you were unaware, Hugo has a [built-in concept of a Data Template](https://gohugo.io/templates/data-templates/). It means that I don't need to convert the original JSON output from the API into a markdown file, but can instead reference data from the ``data`` subdirectory of our site, by using the ``$.Site.Data.<filename>`` syntax.
+In case you were unaware, Hugo has a [built-in concept of a Data Template](https://gohugo.io/templates/data-templates/). It means that I don't need to convert the original JSON output from the API into a Markdown file, but can instead reference data from the ``data`` subdirectory of our site, by using the ``$.Site.Data.<filename>`` syntax.
 
 I use the following snippet to display the most popular 3 posts on the homepage:
 
@@ -504,4 +504,4 @@ That is how I have used GitHub Actions, Azure Functions, Azure API Management an
 
 This also gives me scope to expand the APIs that I use for [cloudwithchris.com](https://www.cloudwithchris.com) over time, setting up a platform for future endeavours.
 
-So, what do you think? Are you building static websites and adopting a similar pattern (bringing dynamic data into your build process ahead of time)? Or, are you handling API calls through JavaScript and dynamically populating the contents of your page? I'd love to hear more, so let's continue the discussion in the comments below!
+So, what do you think? Are you building static sites and adopting a similar pattern (bringing dynamic data into your build process ahead of time)? Or, are you handling API calls through JavaScript and dynamically populating the contents of your page? I'd love to hear more, so let's continue the discussion in the comments below!
