@@ -1,5 +1,5 @@
 ---
-Date: "2022-03-22T07:30:00Z"
+Date: "2022-04-02T11:00:00Z"
 Description: "Did you know that static content can help you build performant sites that easily scale globally? Better yet, they can be incredibly cost-effective!
 
 Join Chris, as he talks through -
@@ -7,7 +7,7 @@ Join Chris, as he talks through -
 * Static Site Generators such as Hugo
 * Azure Hosting Options - Azure Storage vs Azure Static Web Apps
 * Combining Static sites with Serverless APIs"
-PublishDate: "2022-03-22T07:30:00Z"
+PublishDate: "2022-04-02T11:00:00Z"
 Title: "Deploying Static sites to Azure the cheap and performant way"
 image: images/waug.jpg
 speakers:

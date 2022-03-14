@@ -26,7 +26,6 @@ tags:
 - GitHub Codespaces
 - Visual Studio Code
 banner: "images/banner.jpg"
-upcoming: true
 # youtube: rwJ62UqA4oQ
 # Content-specific properties
 event:

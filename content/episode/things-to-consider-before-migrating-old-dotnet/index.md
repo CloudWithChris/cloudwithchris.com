@@ -23,7 +23,7 @@ tags:
 - Developer
 - Azure
 upcoming: true
-youtube: 8CGN_qyTKu8
+youtube: fYavIVA7QxM
 banner: images/banner.png
 ---
 Jonah Andersson shares her past experience and important lessons learned about migrating and developing old .NET applications to the Azure cloud. Find out how that project turn into a fiasco not because of Azure but of other factors. Never make the same mistakes.
