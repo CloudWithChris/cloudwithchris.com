@@ -102,11 +102,14 @@ jobs:
     - name: 'Build and Minify Hugo Contents'
       run: hugo --minify 
       if: github.ref != 'refs/heads/main'
+    - name: 'Zip the artifact'
+      run: |
+        zip -r ${{ github.workspace }}/website.zip ${{ github.workspace }}/public
     - name: 'Upload Generated Static Content as Website Artifact'
       uses: actions/upload-artifact@v1
       with:
-        name: website
-        path: ${{ github.workspace }}/public
+        name: website_zip
+        path: ${{ github.workspace }}/website.zip
   deploy_preview:  
     if: (github.event.pull_request.head.repo.full_name == github.repository && github.event.action != 'closed')
     runs-on: ubuntu-latest
@@ -121,7 +124,10 @@ jobs:
       - name: 'Download Website Artifact'
         uses: actions/download-artifact@v1
         with:
-          name: website
+          name: website_zip
+      - name: 'Unzip File'
+        run: |
+          unzip website_zip/website.zip -d website
       - name: 'Az CLI Login via OIDC'
         uses: azure/login@v1
         with:
