@@ -135,7 +135,7 @@ jobs:
           client-id: ${{ secrets.AZURE_CLIENT_ID }}
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-      - name: "Add a mask to the SWA Token"
+      - name: "Mask SWA Token"
         uses: azure/CLI@v1
         with:
           azcliversion: ${{ env.AZURE_CLI_VERSION }}
@@ -154,7 +154,7 @@ jobs:
           azure_static_web_apps_api_token: ${{ env.SWA_TOKEN }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: 'upload'
-          app_location: 'website'
+          app_location: '${{ github.workspace }}/website/public'
           skip_app_build: true
   deploy_prod:  
     if: github.event_name == 'push' || github.event_name == 'schedule'
@@ -181,7 +181,7 @@ jobs:
           client-id: ${{ secrets.AZURE_CLIENT_ID }}
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-      - name: "Get SWA Token"
+      - name: "Mask SWA Token"
         uses: azure/CLI@v1
         with:
           azcliversion: ${{ env.AZURE_CLI_VERSION }}
@@ -200,7 +200,7 @@ jobs:
           azure_static_web_apps_api_token: ${{ env.SWA_TOKEN }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: 'upload'
-          app_location: '${{ github.workspace }}/website'
+          app_location: '${{ github.workspace }}/website/public'
           skip_app_build: true
   # A set of steps used to close old staging sites that are no longer needed, as the PR has now been merged.
   close_pull_request_job:
