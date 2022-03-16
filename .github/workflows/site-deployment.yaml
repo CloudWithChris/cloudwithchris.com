@@ -104,9 +104,10 @@ jobs:
       if: github.ref != 'refs/heads/main'
     - name: 'Zip the artifact'
       run: |
-        zip -r ${{ github.workspace }}/website.zip ${{ github.workspace }}/public
+        cd "${{ github.workspace }}"
+        zip -r website.zip public
     - name: 'Upload Generated Static Content as Website Artifact'
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v3.0.0
       with:
         name: website_zip
         path: ${{ github.workspace }}/website.zip
@@ -122,7 +123,7 @@ jobs:
           contents: read
     steps:
       - name: 'Download Website Artifact'
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v3.0.0
         with:
           name: website_zip
       - name: 'Unzip File'
