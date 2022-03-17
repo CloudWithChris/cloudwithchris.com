@@ -4,6 +4,8 @@
 
 # Cloud with Chris
 
+This is my quick fix.
+
 Exploring Cloud concepts with [Chris Reddington](https://www.cloudwithchris.com/) (Welsh Tech Geek, Cloud Advocate, Musical Theatre Enthusiast and Improving Improviser!). We will regularly invite guests to talk about their experiences with the cloud and hear about some of the lessons learned around their cloud journey.
 
 There are several series for you to tune in and watch/listen in for -
