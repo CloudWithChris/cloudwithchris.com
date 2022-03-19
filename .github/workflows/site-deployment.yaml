@@ -21,6 +21,7 @@ on:
       - 'podcast_audio/**'
   schedule:
     - cron: '0 0 * * 0'
+  workflow_dispatch:
 
 # The workflow has several phases. Phases 1, 2 and 3 run on a push, or if the pull request activity
 # type is not 'closed'.
@@ -41,7 +42,7 @@ on:
 
 # Environment variables used for consistency across the workflow.
 env:
-  HUGO_VERSION: '0.94.0'
+  HUGO_VERSION: '0.95.0'
   SWA_NAME: 'cwc-static'
   AZURE_CLI_VERSION: '2.34.1'
 
@@ -94,8 +95,8 @@ jobs:
         extended: true
     - name: 'Pull popular posts from Google Analytics'
       run: |
-        mkdir -p data
-        curl --header "Ocp-Apim-Subscription-Key: ${{ secrets.CWC_API_KEY}}" -o data/popular.json https://api.cloudwithchris.com/cwc-ga/GetGoogleAnalyticsData
+        mkdir -p ${GITHUB_WORKSPACE}/data
+        curl --header "Ocp-Apim-Subscription-Key: ${{ secrets.CWC_API_KEY}}" -o ${GITHUB_WORKSPACE}/data/popular.json https://api.cloudwithchris.com/cwc-ga/GetGoogleAnalyticsData
     - name: 'Build and Minify Hugo Contents'
       run: hugo --minify --baseURL 'https://www.cloudwithchris.com'
       if: github.ref == 'refs/heads/main' || github.event_name == 'schedule'
