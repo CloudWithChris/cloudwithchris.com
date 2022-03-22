@@ -1,7 +1,7 @@
 ---
-Date: "2022-05-17T19:30:00Z"
+Date: "2022-05-31T19:30:00Z"
 Description: "ToolUp Tuesday is all about showing the thought process and decisions made when creating an application. Join Chris and Matt as they build a new application from the ground up, including development processes, tooling, service choices and architectural decisions!"
-PublishDate: "2022-05-17T19:30:00Z"
+PublishDate: "2022-05-31T19:30:00Z"
 Title: "ToolUp Tuesday - #8"
 episode: TT008
 image: images/toolup-tuesday.jpg
@@ -31,7 +31,7 @@ tags:
 - Architecture
 - Developer Tools
 - DevOps
-youtube: zRDKxpD9xLY
+youtube: Fvo3bidC76Q
 upcoming: true
 banner: "images/banner.jpg"
 ---

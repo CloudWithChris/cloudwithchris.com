@@ -127,9 +127,10 @@ jobs:
         uses: actions/download-artifact@v3.0.0
         with:
           name: website_zip
+          path: website_zip
       - name: 'Unzip File'
         run: |
-          unzip website_zip/website.zip -d website
+          unzip ${{ github.workspace }}/website_zip/website.zip -d website
       - name: 'Az CLI Login via OIDC'
         uses: azure/login@v1
         with:
@@ -170,12 +171,13 @@ jobs:
           contents: read
     steps:
       - name: 'Download Website Artifact'
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v3.0.0
         with:
           name: website_zip
+          path: website_zip
       - name: 'Unzip File'
         run: |
-          unzip website_zip/website.zip -d website
+          unzip ${{ github.workspace }}/website_zip/website.zip -d website
       - name: 'Az CLI Login via OIDC'
         uses: azure/login@v1
         with:
