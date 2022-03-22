@@ -24,7 +24,6 @@ tags:
 - Static Content
 - Azure Static Web Apps
 banner: "images/banner.jpg"
-upcoming: true
 # youtube: rwJ62UqA4oQ
 # Content-specific properties
 event:
