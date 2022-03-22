@@ -129,7 +129,7 @@ jobs:
           name: website_zip
       - name: 'Unzip File'
         run: |
-          unzip website_zip/website.zip -d website
+          unzip ${{ github.workspace }}/website_zip/website.zip -d website
       - name: 'Az CLI Login via OIDC'
         uses: azure/login@v1
         with:
@@ -175,7 +175,7 @@ jobs:
           name: website_zip
       - name: 'Unzip File'
         run: |
-          unzip website_zip/website.zip -d website
+          unzip ${{ github.workspace }}/website_zip/website.zip -d website
       - name: 'Az CLI Login via OIDC'
         uses: azure/login@v1
         with:
