@@ -22,7 +22,6 @@ tags:
 - Dotnet
 - Developer
 - Azure
-upcoming: true
 youtube: fYavIVA7QxM
 banner: images/banner.png
 ---
