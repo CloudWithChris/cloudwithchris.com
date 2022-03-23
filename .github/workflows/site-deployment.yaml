@@ -112,11 +112,27 @@ jobs:
       with:
         name: website_zip
         path: ${{ github.workspace }}/website.zip
+  deploy_preview_new:
+    if: (github.event.pull_request.head.repo.full_name == github.repository && github.event.action != 'closed')
+    needs: [compressor, lint, build]
+    permissions:
+      id-token: write
+      contents: read
+    uses: ./.github/workflows/reusable-swa-deploy.yaml
+    with:
+      environments: Prod
+    secrets:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      CWC_API_KEY: ${{ secrets.CWC_API_KEY }}
+      AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+      AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+      AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
   deploy_preview:  
     if: (github.event.pull_request.head.repo.full_name == github.repository && github.event.action != 'closed')
     runs-on: ubuntu-latest
     needs: [compressor, lint, build]
-    name: Deploy (Preview)
+    name: Deploy (Preview Classic)
     environment:
       name: staging.azure
     permissions:
