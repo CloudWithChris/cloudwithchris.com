@@ -122,7 +122,6 @@ jobs:
     with:
       environments: Prod
     secrets:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       CWC_API_KEY: ${{ secrets.CWC_API_KEY }}
       AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
       AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
