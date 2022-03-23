@@ -1,7 +1,10 @@
 on:
   workflow_call:
     inputs:
-      environment:
+      friendly_environment:
+        required: true
+        type: string
+      github_environment:
         required: true
         type: string
     secrets:
@@ -18,12 +21,14 @@ env:
   artifact_zip_name: website.zip
   artifact_container_name: website_zip
 jobs:
-  deploy_prod:
-    name: Deploy (${{ inputs.environment }})
+  deploy:
+    name: Deploy (${{ inputs.friendly_environment }})
     runs-on: ubuntu-latest
     permissions:
       id-token: write
       contents: read
+    environment:
+      name: ${{ inputs.github_environment }}
     steps:
       - name: 'Download ${{ env.artifact_name }} Artifact'
         uses: actions/download-artifact@v3.0.0
