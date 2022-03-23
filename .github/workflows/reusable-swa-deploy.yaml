@@ -15,8 +15,8 @@ on:
         required: true
 env:
   artifact_name: website
-  artifact_zip_name: ${{ env.artifact_name }}.zip
-  artifact_container_name: ${{ env.artifact_name }}_zip
+  artifact_zip_name: website.zip
+  artifact_container_name: website_zip
 jobs:
   deploy_prod:
     name: Deploy (${{ inputs.environment }})
