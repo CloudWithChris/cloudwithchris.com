@@ -120,7 +120,7 @@ jobs:
       contents: read
     uses: ./.github/workflows/reusable-swa-deploy.yaml
     with:
-      environments: Prod
+      environment: Prod
     secrets:
       CWC_API_KEY: ${{ secrets.CWC_API_KEY }}
       AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
