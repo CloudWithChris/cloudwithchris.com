@@ -120,6 +120,7 @@ jobs:
       contents: read
     uses: ./.github/workflows/reusable-swa-deploy.yaml
     with:
+      AZURE_CLI_VERSION: ${{ env.AZURE_CLI_VERSION }}
       friendly_environment: Preview
       github_environment: preview.azure
     secrets:
@@ -135,6 +136,7 @@ jobs:
       contents: read
     uses: ./.github/workflows/reusable-swa-deploy.yaml
     with:
+      AZURE_CLI_VERSION: ${{ env.AZURE_CLI_VERSION }}
       friendly_environment: Prod
       github_environment: production.azure
     secrets:
