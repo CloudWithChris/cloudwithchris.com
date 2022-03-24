@@ -7,6 +7,9 @@ on:
       github_environment:
         required: true
         type: string
+      swa_name:
+        required: true
+        type: string
     secrets:
       CWC_API_KEY:
         required: true
@@ -50,13 +53,13 @@ jobs:
         with:
           azcliversion: ${{ env.azure_cli_version }}
           inlineScript: |
-            echo "::add-mask::$(az staticwebapp secrets list -n ${{ env.SWA_NAME }} | jq -r '.properties.apiKey')"
+            echo "::add-mask::$(az staticwebapp secrets list -n ${{ inputs.swa_name }} | jq -r '.properties.apiKey')"
       - name: "Get SWA Token"
         uses: azure/CLI@v1
         with:
           azcliversion: ${{ env.azure_cli_version }}
           inlineScript: |
-            echo "SWA_TOKEN=$(az staticwebapp secrets list -n ${{ env.SWA_NAME }} | jq -r '.properties.apiKey')" >> $GITHUB_ENV
+            echo "SWA_TOKEN=$(az staticwebapp secrets list -n ${{ inputs.swa_name }} | jq -r '.properties.apiKey')" >> $GITHUB_ENV
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1

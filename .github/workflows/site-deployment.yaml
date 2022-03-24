@@ -43,7 +43,6 @@ on:
 # Environment variables used for consistency across the workflow.
 env:
   HUGO_VERSION: '0.95.0'
-  SWA_NAME: 'cwc-static'
 
 jobs:
   # A set of steps used to compress the images, making sure that images are compressed ahead of publishing to the site.
@@ -121,6 +120,7 @@ jobs:
     with:
       friendly_environment: Preview
       github_environment: preview.azure
+      swa_name: cwc-static
     secrets:
       CWC_API_KEY: ${{ secrets.CWC_API_KEY }}
       AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
@@ -136,6 +136,7 @@ jobs:
     with:
       friendly_environment: Prod
       github_environment: production.azure
+      swa_name: cwc-static
     secrets:
       CWC_API_KEY: ${{ secrets.CWC_API_KEY }}
       AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
