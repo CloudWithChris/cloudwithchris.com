@@ -44,7 +44,6 @@ on:
 env:
   HUGO_VERSION: '0.95.0'
   SWA_NAME: 'cwc-static'
-  AZURE_CLI_VERSION: '2.34.1'
 
 jobs:
   # A set of steps used to compress the images, making sure that images are compressed ahead of publishing to the site.
@@ -112,7 +111,7 @@ jobs:
       with:
         name: website_zip
         path: ${{ github.workspace }}/website.zip
-  deploy_preview_new:
+  preview:
     if: (github.event.pull_request.head.repo.full_name == github.repository && github.event.action != 'closed')
     needs: [compressor, lint, build]
     permissions:
@@ -120,7 +119,6 @@ jobs:
       contents: read
     uses: ./.github/workflows/reusable-swa-deploy.yaml
     with:
-      AZURE_CLI_VERSION: ${{ env.AZURE_CLI_VERSION }}
       friendly_environment: Preview
       github_environment: preview.azure
     secrets:
@@ -128,7 +126,7 @@ jobs:
       AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
       AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
       AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-  deploy_prod_new:
+  prod:
     if: github.event_name == 'push' || github.event_name == 'schedule'
     needs: [lint, build]
     permissions:
@@ -136,7 +134,6 @@ jobs:
       contents: read
     uses: ./.github/workflows/reusable-swa-deploy.yaml
     with:
-      AZURE_CLI_VERSION: ${{ env.AZURE_CLI_VERSION }}
       friendly_environment: Prod
       github_environment: production.azure
     secrets:

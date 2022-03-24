@@ -1,9 +1,6 @@
 on:
   workflow_call:
     inputs:
-      AZURE_CLI_VERSION:
-        required: true
-        type: string
       friendly_environment:
         required: true
         type: string
@@ -23,6 +20,7 @@ env:
   artifact_name: website
   artifact_zip_name: website.zip
   artifact_container_name: website_zip
+  azure_cli_version: '2.34.1'
 jobs:
   deploy:
     name: Deploy (${{ inputs.friendly_environment }})
@@ -50,13 +48,13 @@ jobs:
       - name: "Mask SWA Token"
         uses: azure/CLI@v1
         with:
-          azcliversion: ${{ inputs.AZURE_CLI_VERSION }}
+          azcliversion: ${{ env.azure_cli_version }}
           inlineScript: |
             echo "::add-mask::$(az staticwebapp secrets list -n ${{ env.SWA_NAME }} | jq -r '.properties.apiKey')"
       - name: "Get SWA Token"
         uses: azure/CLI@v1
         with:
-          azcliversion: ${{ inputs.AZURE_CLI_VERSION }}
+          azcliversion: ${{ env.azure_cli_version }}
           inlineScript: |
             echo "SWA_TOKEN=$(az staticwebapp secrets list -n ${{ env.SWA_NAME }} | jq -r '.properties.apiKey')" >> $GITHUB_ENV
       - name: Build And Deploy
