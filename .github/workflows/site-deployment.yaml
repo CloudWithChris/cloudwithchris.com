@@ -81,7 +81,7 @@ jobs:
           VALIDATE_JSCPD: false
   # A set of steps used to render the website from the markdown, theme and assets into the HTML, CSS, JS and images that are delivered to a user.
   build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:            
     - uses: actions/checkout@v3
       with:
