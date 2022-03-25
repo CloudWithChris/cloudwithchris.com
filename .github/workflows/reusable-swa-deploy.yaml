@@ -27,7 +27,7 @@ env:
 jobs:
   deploy:
     name: Deploy (${{ inputs.friendly_environment }})
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     permissions:
       id-token: write
       contents: read
