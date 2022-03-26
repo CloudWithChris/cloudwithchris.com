@@ -121,7 +121,7 @@ jobs:
     uses: ./.github/workflows/reusable-swa-deploy.yaml
     with:
       friendly_environment: Preview
-      github_environment: preview.azure
+      github_environment: staging.azure
       swa_name: cwc-static
     secrets:
       CWC_API_KEY: ${{ secrets.CWC_API_KEY }}
