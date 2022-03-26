@@ -1,6 +1,6 @@
 name: Add PR to project
 on:
-  pull_request:
+  pull_request_target:
     types:
       - opened
 jobs:
@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Get project data
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_PROJECT_ACCESS }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ORGANIZATION: CloudWithChris
           PROJECT_NUMBER: 1
         run: |
@@ -33,7 +33,7 @@ jobs:
           
       - name: Add PR to project
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_PROJECT_ACCESS }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_ID: ${{ github.event.pull_request.node_id }}
         run: |
           item_id="$( gh api graphql -f query='
