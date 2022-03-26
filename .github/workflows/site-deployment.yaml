@@ -149,6 +149,11 @@ jobs:
       githubtoken: ${{ secrets.GITHUB_TOKEN }}
   close_pull_request_job:
     if: github.event.pull_request.head.repo.full_name == github.repository && github.event.action == 'closed'
+    environment:
+      name: staging.azure
+    permissions:
+      id-token: write
+      contents: read
     runs-on: ubuntu-latest
     name: Close Pull Request Job
     steps:
