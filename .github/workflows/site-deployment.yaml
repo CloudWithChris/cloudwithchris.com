@@ -80,6 +80,7 @@ jobs:
           VALIDATE_JSCPD: false
   # A set of steps used to render the website from the markdown, theme and assets into the HTML, CSS, JS and images that are delivered to a user.
   build:
+    if: github.event_name == 'push' || (github.event.pull_request.head.repo.full_name == github.repository && github.event.action != 'closed')
     runs-on: ubuntu-latest
     steps:            
     - uses: actions/checkout@v3
