@@ -128,6 +128,7 @@ jobs:
       AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
       AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
       AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      githubtoken: ${{ secrets.GITHUB_TOKEN }}
   prod:
     if: github.event_name == 'push' || github.event_name == 'schedule'
     needs: [lint, build]
@@ -144,6 +145,7 @@ jobs:
       AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
       AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
       AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      githubtoken: ${{ secrets.GITHUB_TOKEN }}
   close_pull_request_job:
     if: github.event.pull_request.head.repo.full_name == github.repository && github.event.action == 'closed'
     runs-on: ubuntu-latest
