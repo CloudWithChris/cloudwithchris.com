@@ -1,4 +1,3 @@
-# Dummy change
 name: Azure Static Web Apps CI/CD
 
 # This GitHub Action workflow triggers in two scenarios - 
@@ -81,6 +80,7 @@ jobs:
           VALIDATE_JSCPD: false
   # A set of steps used to render the website from the markdown, theme and assets into the HTML, CSS, JS and images that are delivered to a user.
   build:
+    if: github.event_name == 'push' || (github.event.pull_request.head.repo.full_name == github.repository && github.event.action != 'closed')
     runs-on: ubuntu-latest
     steps:            
     - uses: actions/checkout@v3
@@ -118,6 +118,7 @@ jobs:
     permissions:
       id-token: write
       contents: read
+      pull-requests: write
     uses: ./.github/workflows/reusable-swa-deploy.yaml
     with:
       friendly_environment: Preview
