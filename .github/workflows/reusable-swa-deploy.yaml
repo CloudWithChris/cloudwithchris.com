@@ -30,9 +30,6 @@ jobs:
   deploy:
     name: Deploy (${{ inputs.friendly_environment }})
     runs-on: ubuntu-latest
-    permissions:
-      id-token: write
-      contents: read
     environment:
       name: ${{ inputs.github_environment }}
     steps:
