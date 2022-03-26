@@ -1,16 +1,15 @@
 name: Add PR to project
 on:
-  pull_request_target:
+  pull_request:
     types:
       - opened
 jobs:
   track_pr:
-    permissions: write-all
     runs-on: ubuntu-latest
     steps:
       - name: Get project data
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_PROJECT_ACCESS }}
           ORGANIZATION: CloudWithChris
           PROJECT_NUMBER: 1
         run: |
@@ -34,7 +33,7 @@ jobs:
           
       - name: Add PR to project
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_PROJECT_ACCESS }}
           PR_ID: ${{ github.event.pull_request.node_id }}
         run: |
           item_id="$( gh api graphql -f query='
