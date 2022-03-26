@@ -17,8 +17,6 @@ images:
 podcast_bytes: "44470272"
 podcast_duration: "46:14.000"
 podcast_file: Lessons Learned from Cultivating Open Source Projects and Communities.mp3
-series:
-- Tales from the real world
 tags:
 - Community
 - Open Source

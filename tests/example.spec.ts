@@ -1,52 +1,40 @@
 import { test, expect, Page } from '@playwright/test';
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
 
-let baseURL = 'https://www.cloudwithchris.com';
+const baseURL = new URL('https://www.cloudwithchris.com');
+let records = [];
 
-// Annotate entire file as serial.
-test.describe.configure({ mode: 'parallel' });
+function getFiles(dir, filelist) {
+  let files = fs.readdirSync(dir);
 
-let page: Page;
+  files.forEach(file => {
+    if (fs.statSync(dir + file).isDirectory()) {
+      filelist = getFiles(dir + file + '/', filelist);
+    } else if (path.extname(file) == '.md'){
+      const object = Object.fromEntries(
+        Object.entries(matter(fs.readFileSync(dir + file, 'utf8')).data).map(([k, v]) => [k.toLowerCase(), v])
+      );
+      filelist.push(
+        {
+          filename: dir.replace('content/',''),
+          title: object.title
+        }
+      );
+    }
+  });
 
-test.beforeAll(async ({ browser }) => {
-  page = await browser.newPage();
-});
+  return filelist;
+}
 
-test.afterAll(async () => {
-  await page.close();
-});
+records = getFiles('content/episode/', records);
 
-
-test('runs in parallel 1', async ({ page }) => {
-  await page.goto(baseURL);
-  const title = page.locator('#navbarSupportedContent > .navbar-nav > li');
-  await expect(title).toHaveCount(7);
-});
-
-/*
-
-test('runs first', async () => {
-  await page.goto('https://playwright.dev/');
-});
-
-test('runs second', async () => {
-  await page.click('text=Get Started');
-});
-
-test.beforeEach(async ({ page }) => {
-  await page.goto('https://www.cloudwithchris.com');
-});
-
-test('Navigation Check', async ({ page }) => {
-  const title = page.locator('#navbarSupportedContent > .navbar-nav > li');
-  await expect(title).toHaveCount(7);
-});
-
-test('Social button Check', async ({ page }) => {
-  const title = page.locator('.social-box > div > div > div');
-  await expect(title).toHaveCount(6);
-});
-
-test('Number of items on homepage', async ({ page }) => {
-  const title = page.locator('.bg-main > div > div > div > .col-md-6');
-  await expect(title).toHaveCount(10);
-});*/
+for (const record of records) {
+  test(`Check title is correct: ${record.filename}`, async ({ page }) => {
+    let directURL = new URL(record.filename, baseURL);
+    await page.goto(directURL.href);
+    const title = page.locator('h1');
+    await expect(title).toHaveText(record.title);
+  });
+}

@@ -1,6 +1,10 @@
 import type { PlaywrightTestConfig } from '@playwright/test';
 import { devices } from '@playwright/test';
 
+import path from 'path';
+const { resolve } = require('path');
+const { readdir } = require('fs').promises;
+
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -10,8 +14,8 @@ import { devices } from '@playwright/test';
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
+
 const config: PlaywrightTestConfig = {
-  globalSetup: require.resolve('./global-setup'),
   testDir: './tests',
   /* Maximum time one test can run for. */
   timeout: 30 * 1000,
