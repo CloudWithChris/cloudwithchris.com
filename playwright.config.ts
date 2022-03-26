@@ -11,6 +11,7 @@ import { devices } from '@playwright/test';
  * See https://playwright.dev/docs/test-configuration.
  */
 const config: PlaywrightTestConfig = {
+  globalSetup: require.resolve('./global-setup'),
   testDir: './tests',
   /* Maximum time one test can run for. */
   timeout: 30 * 1000,
