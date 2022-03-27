@@ -43,17 +43,29 @@ function getFiles(dir, filelist) {
   return filelist;
 }
 
-// Get the content directory and parse the markdown files
-records = getFiles('content/episode/', records);
+async function runTests(records){
 
-// Iterate through the records and run several tests per record
-for (const record of records) {
+  const promises = [];
 
+  // Iterate through the records and run several tests per record
+  for (const record of records) {
+    promises.push(testTitle(record));
+  }
+  
+  Promise.all(promises);
+}
+
+function testTitle(record){
   // Check that the appropriate title is displayed
   test(`Check title is correct: ${record.filename}`, async ({ page }) => {
     let directURL = new URL(record.filename, baseURL);
     await page.goto(directURL.href);
     const title = page.locator('h1');
     await expect(title).toHaveText(record.title);
-  });
+  })
 }
+
+// Get the content directory and parse the markdown files
+runTests(
+  getFiles('content/episode/', records)
+);
