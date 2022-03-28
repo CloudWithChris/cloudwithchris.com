@@ -5,6 +5,9 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
+// Configure the tests as parallel
+test.describe.configure({ mode: 'parallel' });
+
 // Initialise the base URL and the array of content
 const baseURL = new URL('https://www.cloudwithchris.com');
 let records = [];
