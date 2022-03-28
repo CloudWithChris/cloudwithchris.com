@@ -6,10 +6,10 @@ import path from 'path';
 import matter from 'gray-matter';
 
 // Configure the tests as parallel
-test.describe.configure({ mode: 'parallel' });
+// test.describe.configure({ mode: 'parallel' });
 
 // Initialise the base URL and the array of content
-const baseURL = new URL('https://www.cloudwithchris.com');
+const baseURL = new URL('http://localhost:1313');
 let records = [];
 
 // Read the content directory and parse the markdown files
@@ -46,18 +46,6 @@ function getFiles(dir, filelist) {
   return filelist;
 }
 
-async function runTests(records){
-
-  const promises = [];
-
-  // Iterate through the records and run several tests per record
-  for (const record of records) {
-    promises.push(testTitle(record));
-  }
-  
-  Promise.all(promises);
-}
-
 function testTitle(record){
   // Check that the appropriate title is displayed
   test(`Check title is correct: ${record.filename}`, async ({ page }) => {
@@ -68,7 +56,7 @@ function testTitle(record){
   })
 }
 
-// Get the content directory and parse the markdown files
-runTests(
-  getFiles('content/episode/', records)
-);
+// Iterate through the records and run several tests per record
+for (const record of getFiles('content/episode/', records)) {
+  testTitle(record);
+}
