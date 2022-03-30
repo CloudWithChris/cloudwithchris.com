@@ -126,7 +126,6 @@ jobs:
       github_environment: staging.azure
       swa_name: cwc-static
     secrets:
-      CWC_API_KEY: ${{ secrets.CWC_API_KEY }}
       AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
       AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
       AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
@@ -143,7 +142,6 @@ jobs:
       github_environment: production.azure
       swa_name: cwc-static
     secrets:
-      CWC_API_KEY: ${{ secrets.CWC_API_KEY }}
       AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
       AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
       AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
