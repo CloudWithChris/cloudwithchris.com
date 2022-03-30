@@ -99,7 +99,7 @@ So going back to the point, why was that workflow naïve? Every time that the wo
 
 At this point, what does any good technologist do? Consult others for guidance and learn from their experiences! I posted about this on Twitter, but didn't get much of a response back. I thought this was intriguing, which encouraged me to look into the problem even further.
 
-{{< tweet 1368959935636267008 >}}
+{{< tweet user="reddobowen" id="1368959935636267008" >}}
 
 After digging into the [checkout action from GitHub](https://github.com/actions/checkout), it seemed that there weren't a set of properties that I could change to do exactly what I wanted. Fortunately, GitHub Actions allows you to use a set of composite run steps (a fancy way of saying run several steps from the command-line). I then broke the problem down into a series of steps, a bit like pseudocode.
 
