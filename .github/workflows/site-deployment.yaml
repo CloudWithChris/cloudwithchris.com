@@ -120,7 +120,7 @@ jobs:
       id-token: write
       contents: read
       pull-requests: write
-    uses: ./.github/workflows/reusable-swa-deploy.yaml
+    uses: CloudWithChris/Reusable-Workflows/.github/workflows/azure-staticwebapp-deploy.yaml@main
     with:
       friendly_environment: Preview
       github_environment: staging.azure
@@ -137,7 +137,7 @@ jobs:
     permissions:
       id-token: write
       contents: read
-    uses: ./.github/workflows/reusable-swa-deploy.yaml
+    uses: CloudWithChris/Reusable-Workflows/.github/workflows/azure-staticwebapp-deploy.yaml@main
     with:
       friendly_environment: Prod
       github_environment: production.azure
