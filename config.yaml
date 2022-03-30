@@ -157,6 +157,15 @@ params:
       # These are concatenated with tags from pages.
       #
       keywords:
+        - Azure Blog
+        - Azure Developer BLog
+        - Azure Updates
+        - Cloud Blog
+        - Cloud News
+        - GitHub Blog
+        - Azure DevOps BLog
+        - Hugo Blog
+        - Hugo Examples
         - cloud
         - azure
         - gcp
