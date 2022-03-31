@@ -61,7 +61,7 @@ jobs:
   # These standards are configured in the /.github/linters folder of the repository.
   lint:
     if: github.event_name == 'push' || (github.event.pull_request.head.repo.full_name == github.repository && github.event.action != 'closed')
-    uses: CloudWithChris/Reusable-Workflows/.github/workflows/lint-static-content.yamll@main
+    uses: CloudWithChris/Reusable-Workflows/.github/workflows/lint-static-content.yaml@main
     with:
       friendly_environment: Linter
     secrets:
