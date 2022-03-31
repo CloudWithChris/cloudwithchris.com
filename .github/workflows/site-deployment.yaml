@@ -140,7 +140,7 @@ jobs:
     permissions:
       id-token: write
       contents: read
-    uses: CloudWithChris/Reusable-Workflows/.github/workflows/azure-staticwebapp-close-pr.yamll@main
+    uses: CloudWithChris/Reusable-Workflows/.github/workflows/azure-staticwebapp-close-pr.yaml@main
     with:
       friendly_environment: Preview
       github_environment: production.azure
