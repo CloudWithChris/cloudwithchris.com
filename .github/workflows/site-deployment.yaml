@@ -141,7 +141,7 @@ jobs:
     uses: CloudWithChris/Reusable-Workflows/.github/workflows/azure-staticwebapp-close-pr.yaml@main
     with:
       friendly_environment: Preview
-      github_environment: production.azure
+      github_environment: preview.azure
       swa_name: cwc-static
     secrets:
       AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
