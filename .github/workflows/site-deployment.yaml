@@ -53,7 +53,7 @@ jobs:
     if: github.event_name == 'pull_request' && github.event.action != 'closed'
     uses: CloudWithChris/Reusable-Workflows/.github/workflows/compress-images.yaml@main
     with:
-      friendly_environment: Build
+      friendly_environment: Compress
     secrets:
       githubtoken: ${{ secrets.GITHUB_TOKEN }}
   # A set of steps used to lint the markdown files used to generate the content.
