@@ -24,8 +24,7 @@ tags:
 - Static Content
 - Azure Static Web Apps
 banner: "images/banner.jpg"
-upcoming: true
-# youtube: rwJ62UqA4oQ
+youtube: nChpuaigLUs
 # Content-specific properties
 event:
   attendanceType: "virtual"  # physical, virtual, hybrid
