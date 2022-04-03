@@ -9,7 +9,7 @@ import matter from 'gray-matter';
 // test.describe.configure({ mode: 'parallel' });
 
 // Initialise the base URL and the array of content
-const baseURL = new URL('http://www.cloudwithchris.com');
+// const baseURL = new URL('http://www.cloudwithchris.com');
 let records = [];
 
 // Read the content directory and parse the markdown files
@@ -50,16 +50,16 @@ function getFiles(dir, filelist) {
 function testTitle(record){
   // Check that the appropriate title is displayed
   test(`Check heading is correct: ${record.filename}`, async ({ page }) => {
-    let directURL = new URL(record.filename, baseURL);
-    await page.goto(directURL.href);
+    //let directURL = new URL(record.filename, baseURL);
+    await page.goto(record.filename);
     const title = page.locator('h1');
     await expect(title).toHaveText(record.title);
   })
 
   test(`Check page title is correct: ${record.filename}`, async ({ page }) => {
-    let directURL = new URL(record.filename, baseURL);
+    //let directURL = new URL(record.filename, baseURL);
     let expectedTitle = record.title.concat(' | Cloud With Chris');
-    await page.goto(directURL.href);
+    await page.goto(record.filename);
     const title = page.locator('title');
     await expect(title).toHaveText(expectedTitle);
     const twittertitle = page.locator('meta[name="twitter:title"]');
@@ -69,8 +69,8 @@ function testTitle(record){
   })
 
   test(`Check page has description metadata: ${record.filename}`, async ({ page }) => {
-    let directURL = new URL(record.filename, baseURL);
-    await page.goto(directURL.href);
+    //let directURL = new URL(record.filename, baseURL);
+    await page.goto(record.filename);
     const description = page.locator('meta[name="description"]');
     await expect(description).toHaveAttribute("content", record.description);
     const twitterdescription = page.locator('meta[name="twitter:description"]');
