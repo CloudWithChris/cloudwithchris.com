@@ -9,7 +9,7 @@ import matter from 'gray-matter';
 // test.describe.configure({ mode: 'parallel' });
 
 // Initialise the base URL and the array of content
-const baseURL = new URL('http://localhost:1313');
+const baseURL = new URL('http://www.cloudwithchris.com');
 let records = [];
 
 // Read the content directory and parse the markdown files
@@ -36,7 +36,8 @@ function getFiles(dir, filelist) {
       filelist.push(
         {
           filename: dir.replace('content/',''),
-          title: object.title
+          title: object.title,
+          description: object.description
         }
       );
     }
@@ -48,11 +49,34 @@ function getFiles(dir, filelist) {
 
 function testTitle(record){
   // Check that the appropriate title is displayed
-  test(`Check title is correct: ${record.filename}`, async ({ page }) => {
+  test(`Check heading is correct: ${record.filename}`, async ({ page }) => {
     let directURL = new URL(record.filename, baseURL);
     await page.goto(directURL.href);
     const title = page.locator('h1');
     await expect(title).toHaveText(record.title);
+  })
+
+  test(`Check page title is correct: ${record.filename}`, async ({ page }) => {
+    let directURL = new URL(record.filename, baseURL);
+    let expectedTitle = record.title.concat(' | Cloud With Chris');
+    await page.goto(directURL.href);
+    const title = page.locator('title');
+    await expect(title).toHaveText(expectedTitle);
+    const twittertitle = page.locator('meta[name="twitter:title"]');
+    await expect(twittertitle).toHaveAttribute("content", expectedTitle);
+    const ogtitle = page.locator('meta[property="og:title"]');
+    await expect(ogtitle).toHaveAttribute("content", expectedTitle);
+  })
+
+  test(`Check page has description metadata: ${record.filename}`, async ({ page }) => {
+    let directURL = new URL(record.filename, baseURL);
+    await page.goto(directURL.href);
+    const description = page.locator('meta[name="description"]');
+    await expect(description).toHaveAttribute("content", record.description);
+    const twitterdescription = page.locator('meta[name="twitter:description"]');
+    await expect(twitterdescription).toHaveAttribute("content", record.description);
+    const ogdescription = page.locator('meta[property="og:description"]');
+    await expect(ogdescription).toHaveAttribute("content", record.description);
   })
 }
 
