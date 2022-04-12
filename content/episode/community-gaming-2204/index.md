@@ -1,7 +1,7 @@
 ---
-Date: "2022-04-06T19:00:00Z"
+Date: "2022-04-13T19:00:00Z"
 Description: "Join members of the cloud community as they talk through what's top of mind, the latest trends, and have a bit of fun in a game or two! This takes place on the first Wednesday of each month"
-PublishDate: "2022-04-06T19:00:00Z"
+PublishDate: "2022-04-13T19:00:00Z"
 Title: "Community Gaming - Sea of Thieves"
 episode: CG2204
 image: images/sea-of-thieves.jpg
@@ -21,7 +21,7 @@ tags:
 - Gaming
 - Community
 - Sea of Thieves
-youtube: Fa06RRQn9m8
+youtube: yPGglhHHVnU
 upcoming: true
 banner: "images/banner.jpg"
 ---
