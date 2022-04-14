@@ -120,7 +120,7 @@ jobs:
       AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
       githubtoken: ${{ secrets.GITHUB_TOKEN }}
   staging:
-    if: (github.event_name == 'push' && github.ref == refs/heads/main') || github.event_name == 'schedule'
+    if: (github.event_name == 'push' && github.ref == 'refs/heads/main') || github.event_name == 'schedule'
     needs: [lint, build]
     permissions:
       id-token: write
