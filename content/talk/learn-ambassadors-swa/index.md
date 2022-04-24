@@ -32,7 +32,7 @@ event:
 ---
 Join Microsoft for an introduction to WebApp creation and hear employability advice from Microsoft employees! This day will be given in 4 virtual informative and lab sessions:
 
-* Session 1: Introduction to GitHUb
+* Session 1: Introduction to GitHub
 * Session 2: Introduction to Hugo
 * Session 3: Introduction to Azure Static Web Apps
 * Session 4: Career Talks / Employability Tips

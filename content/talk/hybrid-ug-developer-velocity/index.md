@@ -1,6 +1,6 @@
 ---
 Date: "2022-05-04T19:00:00Z"
-Description: "Have you heard about the term Developer Velocity, and wondered why it even matters for you? Join Steph and Chris as they run through Microsoft's transformation from shipping boxed products to always-on online services. Developer Velocity is a critical part of that journey to ensure the teams can keep delivering value to their end-users at scale. In this session, you will learn about some of the tips & tricks that Microsoft used along the way."
+Description: "Have you heard about the term Developer Velocity, and wondered why it even matters for you? Join Steph and Chris as they run through Microsoft's transformation from shipping boxed products to always-on online services. Developer Velocity is a critical part of that journey to ensure the teams can keep delivering value to their end users at scale. In this session, you will learn about some of the tips & tricks that Microsoft used along the way."
 PublishDate: "2022-05-04T19:00:00Z"
 Title: "Why even care about Developer Velocity?"
 image: images/southcoastsummit.jpg
@@ -30,4 +30,4 @@ event:
   available: "" # Whether registration/ticket purchases/etc. are still available (true/false). Defaults to false when event is in past.
 upcoming: true
 ---
-Have you heard about the term Developer Velocity, and wondered why it even matters for you? Join Steph and Chris as they run through Microsoft's transformation from shipping boxed products to always-on online services. Developer Velocity is a critical part of that journey to ensure the teams can keep delivering value to their end-users at scale. In this session, you will learn about some of the tips & tricks that Microsoft used along the way.
+Have you heard about the term Developer Velocity, and wondered why it even matters for you? Join Steph and Chris as they run through Microsoft's transformation from shipping boxed products to always-on online services. Developer Velocity is a critical part of that journey to ensure the teams can keep delivering value to their end users at scale. In this session, you will learn about some of the tips & tricks that Microsoft used along the way.
