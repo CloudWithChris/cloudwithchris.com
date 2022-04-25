@@ -87,6 +87,10 @@ jobs:
       run: |
         mkdir -p ${{ github.workspace }}/data
         curl --header "Ocp-Apim-Subscription-Key: ${{ secrets.CWC_API_KEY}}" -o ${{ github.workspace }}/data/popular.json https://api.cloudwithchris.com/cwc-ga/GetGoogleAnalyticsData
+    - name: 'Update cache version for Service Worker'
+      working-directory: 'static'
+      run: |
+        sed -i "s/GITHUB_TOKEN_FOR_SW_CACHE_VERSION/$GITHUB_SHA/" sw.js
     - name: 'Build and Minify Hugo Contents'
       run: hugo --minify --baseURL 'https://www.cloudwithchris.com'
       if: github.ref == 'refs/heads/main' || github.event_name == 'schedule'
