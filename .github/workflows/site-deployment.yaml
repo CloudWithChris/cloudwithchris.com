@@ -90,7 +90,7 @@ jobs:
     - name: 'Update cache version for Service Worker'
       working-directory: 'static'
       run: |
-        sed -i 's/GITHUB_TOKEN_FOR_SW_CACHE_VERSION/$GITHUB_SHA/' sw.js
+        sed -i "s/GITHUB_TOKEN_FOR_SW_CACHE_VERSION/$GITHUB_SHA/" sw.js
     - name: 'Build and Minify Hugo Contents'
       run: hugo --minify --baseURL 'https://www.cloudwithchris.com'
       if: github.ref == 'refs/heads/main' || github.event_name == 'schedule'
