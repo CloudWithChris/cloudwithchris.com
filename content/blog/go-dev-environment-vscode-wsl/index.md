@@ -1,7 +1,7 @@
 ---
 Authors: 
 - chrisreddington
-Description: "Over the past few weeks, I have been working on a new set of pet projects. I've wanted to learn Go for a while, so I thought this could be a great opportunity to get hands on and try it out. It's fair to say that my development environment was 'functional', but I wanted to revisit it to make sure that I could get the best out of it. In this blog post, I'm going to walk through the process of setting up Go on my machine, and then the experience of using Visual Studio Code and Windows Subsystem for Linux (WSL) with Ubuntu."
+Description: "Over the past few weeks, I have been working on a new set of pet projects. I've wanted to learn Go for a while, so I thought this could be a great opportunity to get hands on and try it out. It's fair to say that my development environment was 'functional', but I wanted to revisit it to make sure that I could get the best out of it. In this blog post, I'm going to walkthrough the process of setting up Go on my machine, and then the experience of using Visual Studio Code and Windows Subsystem for Linux (WSL) with Ubuntu."
 PublishDate: "2022-04-26T13:00:00Z"
 image: img/cloudwithchrislogo.png
 PublishDate: "2022-04-26T13:00:00Z"
@@ -16,11 +16,11 @@ tags:
 banner: "images/banner.png"
 title: Set up your Go development environment with Visual Studio Code and Windows Subsystem for Linux (WSL)
 ---
-Over the past few weeks, I have been working on a new set of pet projects. I've wanted to learn Go for a while, so I thought this could be a great opportunity to get hands on and try it out. It's fair to say that my development environment was 'functional', but I wanted to revisit it to make sure that I could get the best out of it. In this blog post, I'm going to walk through the process of setting up Go on my machine, and then the experience of using Visual Studio Code and Windows Subsystem for Linux (WSL) with Ubuntu.
+Over the past few weeks, I have been working on a new set of pet projects. I've wanted to learn Go for a while, so I thought this could be a great opportunity to get hands on and try it out. It's fair to say that my development environment was 'functional', but I wanted to revisit it to make sure that I could get the best out of it. In this blog post, I'm going to walkthrough the process of setting up Go on my machine, and then the experience of using Visual Studio Code and Windows Subsystem for Linux (WSL) with Ubuntu.
 
 ## A quick introduction to Go
 
-Go (commonly referred to as goland) is a statically typed, compiled programming language. It is a great language for building web applications, but it's also great for building command line applications. From a language design perspective, it is very familiar to working in C. However, there are a few additional language functions (particularly around memory safety and garbage collection).
+Go (commonly referred to as goland) is a statically typed, compiled programming language. It is a great language for building web applications, but it's also great for building command-line applications. From a language design perspective, it is very familiar to working in C. However, there are a few additional language functions (particularly around memory safety and garbage collection).
 
 Go was originally developed by Google in 2007, and is now maintained by the Go team. You'll be familiar with several of the projects that it powers, including Hugo, Docker, Terraform, Kubernetes and more. It's in the top 15 most popular languages from the [2021 Stack Overflow Developer Survey](https://insights.stackoverflow.com/survey/2021#technology-most-popular-technologies).
 
@@ -171,7 +171,7 @@ func TestOutput(t *testing.T) {
 
 Testing is another package available from the Go standard library. It's a simple way to validate that your code is working as expected. You'll notice that ther e
 
-Now, we can run our test using ``go test main.go``. This will run the test, and you should see an output of ``PASS``, and ok against the file (assuming you matched the inputs correctly!)
+Now, we can run our test using ``go test main.go``. This will run the test, and you should see an output of ``PASS``, and OK against the file (assuming you matched the inputs correctly!)
 
 ## Let's GO further with modules
 
