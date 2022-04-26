@@ -100,7 +100,7 @@ Once Visual Studio Code loads up, take a look at the bottom left hand corner of 
 
 ## Setting up the Go Visual Studio Code Extension
 
-Perfect! Now we can start editing our Go code. Well, almost. There's one additional trick that I'd recommend before we start creating. 
+Perfect! Now we can start editing our Go code. Well, almost. There's one additional trick that I'd recommend before we start creating.
 
 Let's install the [Go extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=golang.go) which has been made by the Go Team at Google. I have to say, I'm very impressed with the extension. It's a great way to help you use additional tools to as part of your development workflow.
 
@@ -112,7 +112,7 @@ Overall, there are plenty of quality of life features in the extension that make
 
 I'll write up a separate blog post on how I've used Visual Studio Code to debug my Go projects that rely on dapr (additional dependencies running along side). I'm a big fan of Visual Studio Code, and the fact it can be so simple - yet so powerful.
 
-## It's time to Go!
+## It's time to Go
 
 Go on now, Go... Yes, go on now. :) We all love a good pun here.
 
@@ -142,7 +142,7 @@ func messageOutput(s string) string {
 
 As with any new language, it is right of passage to create a Hello World program. There are a few observations to call out about the structure of this program.
 
-1. The package name is ``main``. The ``main`` package tells the Go compiler that this code should be packaged as an executable, and is not a shared library. In general, packages are the primary way to organize code in Go as shared libraries. 
+1. The package name is ``main``. The ``main`` package tells the Go compiler that this code should be packaged as an executable, and is not a shared library. In general, packages are the primary way to organize code in Go as shared libraries.
 2. We import the ``fmt`` package. This is the package that is used to print text to the console. This is part of the standard library. It's possible to impact packages elsewhere. For example, in the project I'm working on, I'm referencing several packages that are of the format ``github.com/user/repo``. More on those in another blog post though!
 3. The function name is ``main``. This is the entry point of our executable. In this function, I initialise a string. I then pass that string as a parameter of the ``messageOutput`` function, and then output the result.
 4. There is a separate ``messageOutput`` function defined. This is a function that takes a string as an argument, and returns that string.
@@ -162,10 +162,10 @@ package main
 import "testing"
 
 func TestOutput(t *testing.T) {
-	expected := "Hello World!"
-	if actual := messageOutput("Hello World!"); actual != expected {
-		t.Errorf("The main function provided an actual of %q but %q was expected.", actual, expected)
-	}
+  expected := "Hello World!"
+  if actual := messageOutput("Hello World!"); actual != expected {
+    t.Errorf("The main function provided an actual of %q but %q was expected.", actual, expected)
+  }
 }
 ```
 
@@ -200,7 +200,7 @@ Now, you can use ``go run .`` to execute the module. This will execute the main.
 
 Imagine that you have tests across the entire project, and you want to run them all (e.g. tests for your various service implementations, data access layer implementations, etc.). You can do this with ``go test ./...``. This will run all the tests in the project.
 
-## Time's pushing on... Let's git out of here.
+## Time's pushing on... Let's git out of here
 
 I'm feeling particularly creative with my section titles today. I hope you appreciate them, as much as the fun I had giggling while making them!
 
@@ -220,7 +220,7 @@ You will first need to add a remote origin to your repository. This is done by r
 
 > **Tip:** Often, when you create a new repository on these hosting providers - They will provide you with a snippet on what is needed to push existing code to the newly created remote repository.
 
-## And we're done!
+## And we're done
 
 That's it for this blog post! Let's recap what we've learned:
 
@@ -231,6 +231,6 @@ That's it for this blog post! Let's recap what we've learned:
 * We added a test file, and validated that our main.go file was working as expected. Is it really hello world?
 * We then initialised our Git repository, committed our changes and pushed them to the remote repository.
 
-I'll be adding more blog posts as I continue to learn and expand my knowledge of Go. For now, I wanted to cover off some of the fundamentals so that you can begin experimenting with Go. 
+I'll be adding more blog posts as I continue to learn and expand my knowledge of Go. For now, I wanted to cover off some of the fundamentals so that you can begin experimenting with Go.
 
 Have you already started learning Go? What do you think? Drop a message in the comments below! I hope you have enjoyed the content!  If you have any questions resulting from this post, please let me know in the comments. Until the next one, bye for now!
