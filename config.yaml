@@ -324,7 +324,7 @@ params:
         someconfig: "tbc"
     # Settings related to analytics
     analytics:
-      googleAnalytics4: "G-313211443"       # Google Analytics ID
+      googleAnalytics4: "G-VNMF44KVC4"       # Google Analytics ID
       microsoftClarity: "a32lpsz3a1"
     # Settings related to the comments section
     # embedded within the site.
