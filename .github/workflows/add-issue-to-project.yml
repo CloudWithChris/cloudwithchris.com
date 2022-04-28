@@ -11,7 +11,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_PROJECT_ACCESS }}
           ORGANIZATION: CloudWithChris
-          PROJECT_NUMBER: 1
+          PROJECT_NUMBER: 5
         run: |
           gh api graphql -f query='
             query($org: String!, $number: Int!) {
