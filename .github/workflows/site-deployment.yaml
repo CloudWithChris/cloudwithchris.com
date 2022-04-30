@@ -77,6 +77,7 @@ jobs:
       with:
         submodules: 'true'
     - name: 'Dependency Review'
+      if: github.event_name == 'pull_request' && github.event.action != 'closed'
       uses: actions/dependency-review-action@v1
     - name: 'Install Node Dependencies'
       run: npm ci    
