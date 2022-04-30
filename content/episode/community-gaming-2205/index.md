@@ -1,7 +1,7 @@
 ---
-Date: "2022-05-04T19:00:00Z"
+Date: "2022-05-05T19:30:00Z"
 Description: "Join members of the cloud community as they talk through what's top of mind, the latest trends, and have a bit of fun in a game or two! This takes place on the first Wednesday of each month"
-PublishDate: "2022-05-04T19:00:00Z"
+PublishDate: "2022-05-05T19:30:00Z"
 Title: "Community Gaming - Halo Infinite"
 episode: CG2205
 image: images/halo.jpg
@@ -21,7 +21,7 @@ tags:
 - Gaming
 - Community
 - Halo Infinite
-youtube: nr43HQH6ngU
+youtube: XhVoK--MHKM
 upcoming: true
 banner: "images/banner.jpg"
 ---
