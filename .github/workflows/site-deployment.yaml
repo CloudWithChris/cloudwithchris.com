@@ -44,7 +44,7 @@ on:
 
 # Environment variables used for consistency across the workflow.
 env:
-  HUGO_VERSION: '0.96.0'
+  HUGO_VERSION: '0.98.0'
   AZURE_CLI_VERSION: '2.34.1'
   SWA_NAME: cwc-static
 
@@ -76,6 +76,9 @@ jobs:
     - uses: actions/checkout@v3
       with:
         submodules: 'true'
+    - name: 'Dependency Review'
+      if: github.event_name == 'pull_request' && github.event.action != 'closed'
+      uses: actions/dependency-review-action@v1
     - name: 'Install Node Dependencies'
       run: npm ci    
     - name: 'Setup Hugo on Runner'
@@ -163,7 +166,7 @@ jobs:
     uses: CloudWithChris/Reusable-Workflows/.github/workflows/azure-staticwebapp-close-pr.yaml@main
     with:
       friendly_environment: Preview
-      github_environment: preview.azure
+      github_environment: staging.azure
       swa_name: cwc-static
     secrets:
       AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}

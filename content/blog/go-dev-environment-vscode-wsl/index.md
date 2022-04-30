@@ -20,7 +20,7 @@ Over the past few weeks, I have been working on a new set of pet projects. I've 
 
 ## A quick introduction to Go
 
-Go (commonly referred to as goland) is a statically typed, compiled programming language. It is a great language for building web applications, but it's also great for building command-line applications. From a language design perspective, it is very familiar to working in C. However, there are a few additional language functions (particularly around memory safety and garbage collection).
+Go (commonly referred to as golang) is a statically typed, compiled programming language. It is a great language for building web applications, but it's also great for building command-line applications. From a language design perspective, it is very familiar to working in C. However, there are a few additional language functions (particularly around memory safety and garbage collection).
 
 Go was originally developed by Google in 2007, and is now maintained by the Go team. You'll be familiar with several of the projects that it powers, including Hugo, Docker, Terraform, Kubernetes and more. It's in the top 15 most popular languages from the [2021 Stack Overflow Developer Survey](https://insights.stackoverflow.com/survey/2021#technology-most-popular-technologies).
 
