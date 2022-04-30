@@ -326,7 +326,7 @@ params:
     analytics:
       googleAnalytics: ""       # Google Analytics ID
       googleTagManager: "GTM-WN3N424"
-      microsoftClarity: "a32lpsz3a1"
+      microsoftClarity: ""
     # Settings related to the comments section
     # embedded within the site.
     comments:
