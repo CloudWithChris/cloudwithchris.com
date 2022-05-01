@@ -1,5 +1,6 @@
 ---
-Author: chrisreddington
+Authors:
+- chrisreddington
 Description: "In a previous blog post, I provided an overview of the Distributed Application Runtime (dapr) and explained how it is a useful framework when building microservices. In this blog post, I will show you how to use dapr to enqueue and dequeue messages locally with Azure Service Bus and Azure Storage Queues."
 PublishDate: "2022-04-26T22:00:00Z"
 image: img/cloudwithchrislogo.png
