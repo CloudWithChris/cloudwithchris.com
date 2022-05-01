@@ -74,20 +74,20 @@ package main
 import "fmt"
 
 func main() {
-	// Initialise and set a string s
-	// to 'Hello World'
-	s := "Hello"
+  // Initialise and set a string s
+  // to 'Hello World'
+  s := "Hello"
 
-	// Write out the string to the console
-	// Return the string for our later step.
-	fmt.Println("Function Output: " + *messageOutput(&s))
-	fmt.Println("Value of s in main function: " + s)
+  // Write out the string to the console
+  // Return the string for our later step.
+  fmt.Println("Function Output: " + *messageOutput(&s))
+  fmt.Println("Value of s in main function: " + s)
 }
 
 // Concatenate the input string with 'World'
 func messageOutput(s *string) *string {
-	*s += " World"
-	return s
+  *s += " World"
+  return s
 }
 ```
 
@@ -124,7 +124,7 @@ Ultimately, dereference means **get the value of the pointer**.
 
 On the flip side, the ``&`` operator is used to get the address of a pointer. This is useful when you want to pass a pointer to a function.
 
-Notice the line ``fmt.Println("Function Output: " + *messageOutput(&s))``? 
+Notice the line ``fmt.Println("Function Output: " + *messageOutput(&s))``?
 
 We know that messageOutput takes a pointer as an argument. We can use the ``&`` operator to get the address of the string (therefore our pointer, i.e. where the value lives), which we pass into the function.
 
