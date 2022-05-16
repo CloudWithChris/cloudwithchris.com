@@ -28,6 +28,5 @@ event:
   cost: ""            # Cost to attend the event
   costCurrency: ""    # Cost currency for the event. Use a standard format - http://en.wikipedia.org/wiki/ISO_4217
   available: "" # Whether registration/ticket purchases/etc. are still available (true/false). Defaults to false when event is in past.
-upcoming: true
 ---
 Have you heard about the term Developer Velocity, and wondered why it even matters for you? Join Steph and Chris as they run through Microsoft's transformation from shipping boxed products to always-on online services. Developer Velocity is a critical part of that journey to ensure the teams can keep delivering value to their end users at scale. In this session, you will learn about some of the tips & tricks that Microsoft used along the way.
