@@ -112,7 +112,7 @@ In the second example's function signature, we have a pointer to a string, i.e. 
 
 We are able to return s in the function, as s is already a pointer. We do not need to dereference it (e.g. ``*s``), as then it would be a value of type ``**string``.
 
-## Using the * to dereference a pointer
+### Using the * to dereference a pointer
 
 Dereference sounds like a fancy term, and I think that's the part which typically causes my confusion. It's a fancy way of saying you're taking the value of the pointer and returning it.
 
@@ -120,7 +120,7 @@ Take a look at the messageOutput method of the second example. We have ``*s += "
 
 Ultimately, dereference means **get the value of the pointer**.
 
-## Using the & to get the address of a pointer
+### Using the & to get the address of a pointer
 
 On the flip side, the ``&`` operator is used to get the address of a pointer. This is useful when you want to pass a pointer to a function.
 
