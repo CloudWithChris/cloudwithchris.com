@@ -1,10 +1,10 @@
 ---
 Authors: 
 - chrisreddington
-Description: "GitHub recently posted about a new GitHub Action that can be used to summarise your test results. The action is called `test-summary/action`, available at github.com/test-summary/action. There are several examples on how to use the action at github.com/test-summary/examples. However, there were no examples on how to use this with Go. I contributed a pull request which showed how to achieve this. In this post, I will show how to use the action with Go."
-PublishDate: "2022-05-15T13:00:00Z"
+Description: "GitHub recently posted about a new GitHub Action that can be used to summarise your test results. The action is called test-summary/action, available at github.com/test-summary/action. There are several examples on how to use the action at github.com/test-summary/examples. However, there were no examples on how to use this with Go. I contributed a pull request which showed how to achieve this. In this post, I will show how to use the action with Go."
+PublishDate: "2022-05-16T08:00:00Z"
 image: img/cloudwithchrislogo.png
-PublishDate: "2022-05-15T13:00:00Z"
+PublishDate: "2022-05-16T08:00:00Z"
 images:
 - img/cloudwithchrislogo.png
 tags:
@@ -16,34 +16,35 @@ tags:
 - Golang
 - Developers
 - App Development
+- Testing
 banner: "images/banner.png"
-title: Using GitHub Actions to test your Go code
+title: Using GitHub Actions to summarise your Go tests
 ---
 GitHub recently posted about a new GitHub Action that can be used to summarise your test results. The action is called `test-summary/action`, available at [github.com/test-summary/action](https://github.com/test-summary/action). There are several examples on how to use the action at [github.com/test-summary/examples](https://github.com/test-summary/examples). However, there were no examples on how to use this with Go. I [contributed a pull request](https://github.com/test-summary/examples/pull/1) which showed how to achieve this. In this post, I will show how to use the action with Go.
 
 ## Introducing the test-summary/action GitHub action
 
-I recently spotted the [upcoming job summaries capability](https://github.blog/changelog/2022-05-09-github-actions-enhance-your-actions-with-job-summaries/) announced on the GitHub changelog. I've been eagerly waiting for this to come to fruition.
+I recently spotted the [upcoming job summaries capability](https://github.blog/changelog/2022-05-09-github-actions-enhance-your-actions-with-job-summaries/) announced on the GitHub changelog. I've been eagerly waiting for this capability to come to the platform.
 
-Fast forward a couple of weeks, and I spotted [another post from GitHub](https://www.linkedin.com/posts/github_github-test-summaryaction-show-a-helpful-activity-6931315954572292096-LYht) on LinkedIn. This post was about a new GitHub Action called `test-summary/action`, which appears to be made by Edward Thomson. It's a simple action that can be used to summarise your test results. It looks as though this action uses the job summary capability that I mentioned from the changelog.
+Fast forward a couple of weeks, and I spotted [another post from GitHub](https://www.linkedin.com/posts/github_github-test-summaryaction-show-a-helpful-activity-6931315954572292096-LYht) on LinkedIn. This post was about a new GitHub Action called `test-summary/action`, which appears to be made by [Edward Thomson](https://twitter.com/ethomson). It's a simple action that can be used to summarise your test results. It looks as though this action uses the job summary capability that was announced in the GitHub changelog.
 
-I thought it would be a good idea to try it out with Go. After exploring the [examples repository](https://github.com/test-summary/examples) for the GitHub action, I found that an example didn't yet exist for Go. I decided to create one.
+Given my recent journey into Go, I thought it would be a good idea to try it out with the Go language. After exploring the [examples repository](https://github.com/test-summary/examples) for the ``test-summary/action`` GitHub action, I found that an example didn't yet exist for Go. I decided to create one.
 
-The ``test-summary/action`` action is currently able to build summarised based on JUnit XML or the TAP test output.
+The ``test-summary/action`` action can summarised test results based on the JUnit XML or the TAP test output. This immediately got me thinking, is it even possible to use the action with Go?
 
-This immediately got me thinking, is it possible to use the action with Go?
+Spoiler alert, the answer is yes - Though we need to convert to one of the other formats first. Let's first explore the options.
 
 ## Options to output Go tests to alternate formats
 
-Typically, Go tests are executed by using the ``go test`` command. As far as I'm aware, this command is typically coupled with additional bash commands to output to a file.
+Typically, Go tests are executed by using the ``go test`` command. As far as I'm aware, this command is typically coupled with additional bash commands to output the contents to a file.
 
-There is no capability to output in the JUnit XML or TAP test output format from the default testing package. This then started me on a trail of research. What are the options to convert the test output to a format that can be used with the action?
+There is no capability to output the test results directly to JUnit XML or TAP test output format from the default testing package. This then started a trail of research. What are the options to convert the test output to a format that can be used with the action?
 
-For the TAP test output - I stumbled upon [this GitHub repository](https://github.com/mndrix/tap-go), though it looks like the GitHub repository is archived / read only. Unfortunately, I couldn't find any alternate shims / examples to convert from the default test format into TAP.
+For the TAP test output - I stumbled upon [this GitHub repository](https://github.com/mndrix/tap-go), though it looks like the project is archived / read only. Unfortunately, I couldn't find any alternative shims / examples which convert from the default Go test format into TAP.
 
-However, the JUnit XML format proved to be a little more successful. I quickly found the [go-junit-report GitHub repository](https://github.com/jstemmer/go-junit-report), which is a simple library that can be used to convert the Go test output format into the JUnit XML output (making it usable with the action).
+However, the JUnit XML format proved to be more promising. I quickly found the [go-junit-report GitHub repository](https://github.com/jstemmer/go-junit-report). This is a library that can be used to convert the Go test output format into the JUnit XML output (making it usable with the action).
 
-### Using the go-junit-report 
+### Using the go-junit-report
 
 To use the go-junit-report library, you first need to install it. This is done by running the following command (which will be very familiar if you've installed any other Go tools).
 
@@ -51,17 +52,17 @@ To use the go-junit-report library, you first need to install it. This is done b
 go install github.com/jstemmer/go-junit-report@latest
 ```
 
-Great, you now have the go-junit-report library installed. Next up, you'll need to pipe the output of your ``go test`` command into the ``go-junit-report`` library.
+Great, you now have the go-junit-report library installed. Next up, you'll need to pipe the output of the ``go test`` command into the ``go-junit-report`` library.
 
 ```bash
 go test -v 2>&1 ./... | go-junit-report -set-exit-code > report.xml
 ```
 
-Let's break that line down a little further. Let's first look at the ``go test -v 2>&1 ./...``.
+Let's break that line down a little further. Let's first look at the ``go test -v 2>&1 ./...`` portion of the command.
 
 First up, we're running the ``go test`` command. This will run all of the tests in the current directory. The ``-v`` flag will output the test output in a verbose format.
 
-The 2>&1 is a redirection operator. This is used to redirect the standard error to the standard output. This is typically useful when you want to capture the output of a command and then redirect it to a file.
+The 2>&1 is a redirection operator. This is used to redirect the standard error to the standard output. The redirection operator is useful when you want to capture the output of a command and then redirect it to a file, or some other output.
 
 Finally, the ./... is a wildcard. This is used to indicate that you want to run all of the tests in the current directory.
 
@@ -69,19 +70,19 @@ Now let's look into the ``go-junit-report -set-exit-code > report.xml`` part.
 
 Firstly, the ``go-junit-report`` library is used to convert the test output from the Go test output into the JUnit XML format.
 
-The ``-set-exit-code`` flag is used to set the exit code to 1 if any tests failed. This is used to show that the job failed, and is particularly useful in the context of GitHub actions (i.e. this step in the job failed)
+The ``-set-exit-code`` flag is used to set the exit code to 1 if any tests failed (as per the [README file from the repository](https://github.com/jstemmer/go-junit-report)). This is used to show that the job failed. This is critical in the context of GitHub actions (i.e. ensuring that this step in the job fails, to prevent progressing any further steps).
 
 Finally, the ``> report.xml`` part is used to redirect the output of the ``go-junit-report`` library to the ``report.xml`` file.
 
-At this point, you may be seeing the direction we're heading. We need to take the steps used above, and use those directly within a GitHub Action workflow.
+At this point, you likely see the direction we're heading. We need to take the above steps and use them directly within a GitHub Action workflow.
 
 ## Using the go-junit-report library within a GitHub Action
 
-I've been working on a private GitHub repository, where I've been building a multi-tenant SaaS application. I'm using Azure Container Apps, Dapr, KEDA and Go as my primary toolset. I've built the individual microservice using a Hexagonal Architecture, which lends itself well for testing.
+I've recently been working on a project in private GitHub repository. I'm building a multi-tenant SaaS application. To achieve this, i'm using Azure Container Apps, Dapr, KEDA and Go as my primary toolset. I am building the individual microservice using a Hexagonal Architecture, which lends itself well for testing.
 
-I already wrote a test suite for each of the microservices. The tests were already being executed in a GitHub Action workflow, to determine whether the code was working as expected. 
+Fortunately, I had already written a test suite for each of the microservices. Better yet, the tests were already being executed in a GitHub Action workflow. This was part of my development lifecycle, to determine whether the code was working as expected before building a new version of the docker image.
 
-Given I already had the testing framework set up, I thought that this could be an easy project to convert and test my logic.
+As I already had the testing framework set up, I thought this could be an easy project to tweak, so that I can summarise the test results back into the GitHub Action workflow run.
 
 Below, you can see the resulting GitHub Action workflow that I created -
 
@@ -199,7 +200,7 @@ jobs:
           az containerapp update -n ${{ env.CONTAINERAPP_NAME }} -g ${{ env.CONTAINERAPP_RG }} --image ${{ env.AZURE_ACR_ENDPOINT }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
 ```
 
-In the above workflow, you will see that I have a tests job, which will run the tests. Let's focus in on that section.
+There's quite a lot going on there. In the above workflow, you will see that I have a ``tests`` job, which tests the code before a container image is built or released. Let's focus in on that section.
 
 ```yaml
 jobs:
@@ -229,23 +230,21 @@ jobs:
         if: always()
 ```
 
-Overall, this job performs the following steps -
+This job performs the following steps -
 
-* Pull down a copy of the code from GitHub
-* Generate the mock code using ``mockgen`` which will be used within the tests
-* Run the tests, an convert the output to a JUnit report which will be used to generate a test report
-* Generate a test summary, which will be displayed as a job summary in the GitHub UI
+* Performs a checkout of the code from GitHub
+* Generates the needed mocks using ``mockgen`` which are used within the tests (based on annotations within my codebase)
+* Runs the tests, and converts the output to a JUnit report which is used to generate a test report
+* Generate a test summary, which is displayed as a job summary in the GitHub UI
 
-And, it really is as simple as that - as you can see from the screenshot below!
+And, it really is as simple as that, as you can see from the screenshot below!
 
 ![Screenshot showing that the test summary is displayed in the GitHub UI, with all tests passing](images/test-summary.png "Screenshot showing that the test summary is displayed in the GitHub UI, with all tests passing")
 
 ## Conclusion
 
-It was fun to play around with the GitHub Actions workflow, and ultimately lead to a contribution back into the community. I'm continuing my own Go learning journey, and I hope that this will be a useful contribution and can be used to build a better experience for developers.
+It was fun to play around with my existing GitHub Actions workflow, to identify an approach to summarise my Go test results. I'm thrilled that this ultimately lead to a contribution back into the community. I continue to progress along my own Go learning journey, but I hope that this will be a useful contribution and can be used to build a better experience for developers.
 
-Are you building your Go code using GitHub Actions? Do you think this could work in your workflow? Why not give it a go, and drop a comment below to let me know how you get on?
-
-And finally, it goes without saying - A big thank you once again to Edward Thomson for making this brilliant GitHub action.
+Are you building your Go code using GitHub Actions? Do you think that this might be beneficial in your own workflow? Why not give it a go, and drop a comment below to let me know how you get on? Finally - it goes without saying - A big thank you to Edward Thomson for making this brilliant GitHub action.
 
 Until the next one, thanks for reading and bye for now!
