@@ -1,10 +1,10 @@
 ---
 Authors: 
 - chrisreddington
-Description: ""
-PublishDate: "2022-05-15T13:00:00Z"
+Description: "In this post, I'll be talking about how to use interfaces in Go. This is a continuation of my learning using the Go language. I'll use interfaces to create an  application that interacts with several types of bank accounts."
+PublishDate: "2022-05-16T08:00:00Z"
 image: img/cloudwithchrislogo.png
-PublishDate: "2022-05-15T13:00:00Z"
+PublishDate: "2022-05-16T08:00:00Z"
 images:
 - img/cloudwithchrislogo.png
 tags:
@@ -30,9 +30,9 @@ In essence, this is a contract that a concrete type must implement. This can be 
 
 That sounds a bit confusing, so let's break it down into a tangible example.
 
-Let's say we have a type called `Account`. This type has two methods, `Deposit` and `Withdraw`. 
+Let's say we have a type called `Account`. This type has two methods, `Deposit` and `Withdraw`.
 
-Our fictitious bank might have different types of accounts. For example, we might offer a current account, a savings account, and a stock account for our customers. Each of these accounts have the same basic characteristics (e.g. they have a balance, and they can deposit and withdraw money), but they will have different concrete behaviours (i.e. what happens when you deposit or withdraw money in each of those scenarios might be different).
+Our fictitious bank might have different types of accounts. For example, we might offer a current account, a savings account, and an Individual Savings Account (ISA) for our customers. Each of these accounts have the same basic characteristics (e.g. they have a balance, and they can deposit and withdraw money), but they will have different concrete behaviours (i.e. what happens when you deposit or withdraw money in each of those scenarios might be different).
 
 So, why would we want to create a generic type (or interface)? It allows us to program against something 'universal' (i.e. a contract), instead of the concrete type. This aids in re-usability, and gives us flexibility to make adjustments in the future, such as completely new implementations. What if we decided to offer an account for Crypto currencies? We could create a new type of account, and then implement the interface for that type.
 
@@ -44,12 +44,12 @@ The concept of an interface in Go isn't particularly different from other langua
 
 ```go
 type IAccount interface {
-	Deposit(amount float64) error
-	GetAccountNumber() string
-	GetBalance() float64
-	OpenAccount() IAccount
-	Transfer(receiverAccount string, amount float64) error
-	Withdraw(amount float64) error
+  Deposit(amount float64) error
+  GetAccountNumber() string
+  GetBalance() float64
+  OpenAccount() IAccount
+  Transfer(receiverAccount string, amount float64) error
+  Withdraw(amount float64) error
 }
 ```
 
@@ -90,39 +90,39 @@ This is different to Go. In Go, we create a type that implements the interface. 
 
 ```go
 type CurrentAccount struct {
-	accountNumber string
-	balance       float64
+  accountNumber string
+  balance       float64
 }
 
 func (account CurrentAccount) OpenAccount() IAccount {
-	return &CurrentAccount{
-		accountNumber: "C-" + RandomString(8),
-		balance:       0.00,
-	}
+  return &CurrentAccount{
+    accountNumber: "C-" + RandomString(8),
+    balance:       0.00,
+  }
 }
 
 func (account *CurrentAccount) Deposit(amount float64) error {
-	account.balance += amount
-	return nil
+  account.balance += amount
+  return nil
 }
 
 func (account *CurrentAccount) GetAccountNumber() string {
-	return account.accountNumber
+  return account.accountNumber
 }
 
 func (account *CurrentAccount) GetBalance() float64 {
-	return account.balance
+  return account.balance
 }
 
 func (account *CurrentAccount) Transfer(receiverAccount string, amount float64) error {
-	account.balance -= amount
-	// TODO: Transfer to receiver account
-	return nil
+  account.balance -= amount
+  // TODO: Transfer to receiver account
+  return nil
 }
 
 func (account *CurrentAccount) Withdraw(amount float64) error {
-	account.balance -= amount
-	return nil
+  account.balance -= amount
+  return nil
 }
 ```
 
@@ -144,98 +144,98 @@ We can then implement additional types against the IAccount interface. For examp
 
 ```go
 type SavingsAccount struct {
-	accountNumber string
-	created       time.Time
-	savings       float64
+  accountNumber string
+  created       time.Time
+  savings       float64
 }
 
 func (account SavingsAccount) OpenAccount() IAccount {
-	return &SavingsAccount{
-		accountNumber: "S-" + RandomString(8),
-		savings:       0.00,
-		created:       time.Now(),
-	}
+  return &SavingsAccount{
+    accountNumber: "S-" + RandomString(8),
+    savings:       0.00,
+    created:       time.Now(),
+  }
 }
 
 func (account *SavingsAccount) Deposit(amount float64) error {
-	account.savings += amount
-	return nil
+  account.savings += amount
+  return nil
 }
 
 func (account *SavingsAccount) GetAccountNumber() string {
-	return account.accountNumber
+  return account.accountNumber
 }
 
 func (account *SavingsAccount) GetBalance() float64 {
-	return account.savings
+  return account.savings
 }
 
 func (account SavingsAccount) Transfer(receiverAccount string, amount float64) error {
-	return errors.New("You cannot transfer from your savings account")
+  return errors.New("You cannot transfer from your savings account")
 }
 
 func (account *SavingsAccount) Withdraw(amount float64) error {
 
-	if time.Now().Before(account.created.AddDate(0, 0, 90)) {
-		return errors.New("You cannot withdraw from your savings account until 90 days after opening")
-	}
+  if time.Now().Before(account.created.AddDate(0, 0, 90)) {
+    return errors.New("You cannot withdraw from your savings account until 90 days after opening")
+  }
 
-	account.savings -= amount
-	return nil
+  account.savings -= amount
+  return nil
 }
 ```
 
-And finally, we could create an 'Investment Savings Account' (or ISA), as they are known in the UK.
+And finally, we could create an 'Individual Savings Account' (or ISA), as they are known in the UK.
 
 ```go
 type ISAAccount struct {
-	accountNumber      string
-	balance            float64
-	remainingAllowance float64
+  accountNumber      string
+  balance            float64
+  remainingAllowance float64
 }
 
 func (account ISAAccount) OpenAccount() IAccount {
-	return &ISAAccount{
-		accountNumber:      "I-" + RandomString(8),
-		balance:            0.00,
-		remainingAllowance: 400.00,
-	}
+  return &ISAAccount{
+    accountNumber:      "I-" + RandomString(8),
+    balance:            0.00,
+    remainingAllowance: 400.00,
+  }
 }
 
 func (account *ISAAccount) Deposit(amount float64) error {
 
-	if (account.remainingAllowance - amount) > 0 {
-		account.balance += amount
-		account.remainingAllowance -= amount
-		return nil
-	}
+  if (account.remainingAllowance - amount) > 0 {
+    account.balance += amount
+    account.remainingAllowance -= amount
+    return nil
+  }
 
-	return errors.New("You cannot deposit more than your remaining allowance")
+  return errors.New("You cannot deposit more than your remaining allowance")
 }
 
 func (account *ISAAccount) GetAccountNumber() string {
-	return account.accountNumber
+  return account.accountNumber
 }
 
 func (account *ISAAccount) GetBalance() float64 {
-	return account.balance
+  return account.balance
 }
 
 func (account *ISAAccount) Transfer(receiverAccount string, amount float64) error {
-	return errors.New("You cannot transfer from your ISA account")
+  return errors.New("You cannot transfer from your ISA account")
 }
 
 func (account *ISAAccount) Withdraw(amount float64) error {
 
-	newBalance := account.balance - (amount + 5.00)
+  newBalance := account.balance - (amount + 5.00)
 
-	if newBalance < 0 {
-		return errors.New("You cannot withdraw more than your remaining allowance. Make sure to factor in the £5 fee")
-	}
+  if newBalance < 0 {
+    return errors.New("You cannot withdraw more than your remaining allowance. Make sure to factor in the £5 fee")
+  }
 
-	// Take a fee of 5.00 of the currency
-	account.balance = newBalance
-	return nil
+  // Take a fee of 5.00 of the currency
+  account.balance = newBalance
+  return nil
 }
 ```
 
@@ -245,32 +245,32 @@ To put this all into context, I'm going to define a main function that uses the 
 
 ```go
 var list []accounts.IAccount = []accounts.IAccount{
-	&accounts.CurrentAccount{},
-	&accounts.SavingsAccount{},
-	&accounts.ISAAccount{},
+  &accounts.CurrentAccount{},
+  &accounts.SavingsAccount{},
+  &accounts.ISAAccount{},
 }
 
 func main() {
-	for _, account := range list {
-		account := account.OpenAccount()
+  for _, account := range list {
+    account := account.OpenAccount()
 
-		err := account.Deposit(500.00)
-		if err != nil {
-			fmt.Println(err)
-		}
+    err := account.Deposit(500.00)
+    if err != nil {
+      fmt.Println(err)
+    }
 
-		err = account.Withdraw(50.00)
-		if err != nil {
-			fmt.Println(err)
-		}
+    err = account.Withdraw(50.00)
+    if err != nil {
+      fmt.Println(err)
+    }
 
-		err = account.Transfer("X-123456", 100.00)
-		if err != nil {
-			fmt.Println(err)
-		}
+    err = account.Transfer("X-123456", 100.00)
+    if err != nil {
+      fmt.Println(err)
+    }
 
-		fmt.Println(account.GetAccountNumber() + ": " + strconv.FormatFloat(account.GetBalance(), 'f', 2, 64))
-	}
+    fmt.Println(account.GetAccountNumber() + ": " + strconv.FormatFloat(account.GetBalance(), 'f', 2, 64))
+  }
 }
 ```
 
