@@ -1,3 +1,4 @@
+# Another dummy
 name: Azure Static Web Apps CI/CD
 
 # This GitHub Action workflow triggers in two scenarios - 
@@ -10,12 +11,14 @@ on:
   push:
     branches:
       - main
+      - staging
     paths-ignore:
       - 'podcast_audio/**'
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
       - main
+      - staging
     paths-ignore:
       - 'podcast_audio/**'
   schedule:
@@ -41,7 +44,7 @@ on:
 
 # Environment variables used for consistency across the workflow.
 env:
-  HUGO_VERSION: '0.95.0'
+  HUGO_VERSION: '0.98.0'
   AZURE_CLI_VERSION: '2.34.1'
   SWA_NAME: cwc-static
 
@@ -50,34 +53,21 @@ jobs:
   # This is done to make sure that the browsing experience remains speedy.
   compressor:
     if: github.event_name == 'pull_request' && github.event.action != 'closed'
-    name: Compress Images
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v3
-      - name: Compress Images
-        id: calibre
-        uses: calibreapp/image-actions@main
-        with:
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
+    uses: CloudWithChris/Reusable-Workflows/.github/workflows/compress-images.yaml@main
+    with:
+      friendly_environment: Compress
+    secrets:
+      githubtoken: ${{ secrets.GITHUB_TOKEN }}
   # A set of steps used to lint the markdown files used to generate the content.
   # This is done to make sure there are consistent standards being adopted when writing the material.
   # These standards are configured in the /.github/linters folder of the repository.
   lint:
     if: github.event_name == 'push' || (github.event.pull_request.head.repo.full_name == github.repository && github.event.action != 'closed')
-    name: Lint Code Base
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-      - name: Lint Code Base
-        uses: github/super-linter/slim@v4
-        env:
-          VALIDATE_ALL_CODEBASE: false
-          FILTER_REGEX_INCLUDE: .*content/.*
-          DEFAULT_BRANCH: main
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VALIDATE_JSCPD: false
+    uses: CloudWithChris/Reusable-Workflows/.github/workflows/lint-static-content.yaml@main
+    with:
+      friendly_environment: Linter
+    secrets:
+      githubtoken: ${{ secrets.GITHUB_TOKEN }}
   # A set of steps used to render the website from the markdown, theme and assets into the HTML, CSS, JS and images that are delivered to a user.
   build:
     if: github.event_name == 'push' || (github.event.pull_request.head.repo.full_name == github.repository && github.event.action != 'closed')
@@ -86,6 +76,9 @@ jobs:
     - uses: actions/checkout@v3
       with:
         submodules: 'true'
+    - name: 'Dependency Review'
+      if: github.event_name == 'pull_request' && github.event.action != 'closed'
+      uses: actions/dependency-review-action@v1
     - name: 'Install Node Dependencies'
       run: npm ci    
     - name: 'Setup Hugo on Runner'
@@ -97,6 +90,10 @@ jobs:
       run: |
         mkdir -p ${{ github.workspace }}/data
         curl --header "Ocp-Apim-Subscription-Key: ${{ secrets.CWC_API_KEY}}" -o ${{ github.workspace }}/data/popular.json https://api.cloudwithchris.com/cwc-ga/GetGoogleAnalyticsData
+    - name: 'Update cache version for Service Worker'
+      working-directory: 'static'
+      run: |
+        sed -i "s/GITHUB_TOKEN_FOR_SW_CACHE_VERSION/$GITHUB_SHA/" sw.js
     - name: 'Build and Minify Hugo Contents'
       run: hugo --minify --baseURL 'https://www.cloudwithchris.com'
       if: github.ref == 'refs/heads/main' || github.event_name == 'schedule'
@@ -108,7 +105,7 @@ jobs:
         cd "${{ github.workspace }}"
         zip -r website.zip public
     - name: 'Upload Generated Static Content as Website Artifact'
-      uses: actions/upload-artifact@v3.0.0
+      uses: actions/upload-artifact@v3.1.0
       with:
         name: website_zip
         path: ${{ github.workspace }}/website.zip
@@ -119,60 +116,59 @@ jobs:
       id-token: write
       contents: read
       pull-requests: write
-    uses: ./.github/workflows/reusable-swa-deploy.yaml
+    uses: CloudWithChris/Reusable-Workflows/.github/workflows/azure-staticwebapp-deploy.yaml@main
     with:
       friendly_environment: Preview
       github_environment: staging.azure
       swa_name: cwc-static
     secrets:
-      CWC_API_KEY: ${{ secrets.CWC_API_KEY }}
+      AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+      AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+      AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      githubtoken: ${{ secrets.GITHUB_TOKEN }}
+  staging:
+    if: (github.event_name == 'push' && github.event.ref == 'refs/heads/staging')
+    needs: [lint, build]
+    permissions:
+      id-token: write
+      contents: read
+    uses: CloudWithChris/Reusable-Workflows/.github/workflows/azure-staticwebapp-deploy.yaml@main
+    with:
+      friendly_environment: Staging
+      github_environment: staging.azure
+      swa_name: cwc-static
+    secrets:
       AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
       AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
       AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
       githubtoken: ${{ secrets.GITHUB_TOKEN }}
   prod:
-    if: github.event_name == 'push' || github.event_name == 'schedule'
+    if: (github.event_name == 'push' && github.event.ref == 'refs/heads/main') || github.event_name == 'schedule'
     needs: [lint, build]
     permissions:
       id-token: write
       contents: read
-    uses: ./.github/workflows/reusable-swa-deploy.yaml
+    uses: CloudWithChris/Reusable-Workflows/.github/workflows/azure-staticwebapp-deploy.yaml@main
     with:
       friendly_environment: Prod
       github_environment: production.azure
       swa_name: cwc-static
     secrets:
-      CWC_API_KEY: ${{ secrets.CWC_API_KEY }}
       AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
       AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
       AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
       githubtoken: ${{ secrets.GITHUB_TOKEN }}
   close_pull_request_job:
     if: github.event.pull_request.head.repo.full_name == github.repository && github.event.action == 'closed'
-    runs-on: ubuntu-latest
-    name: Close Pull Request Job
-    steps:
-      - name: 'Az CLI Login via OIDC'
-        uses: azure/login@v1
-        with:
-          client-id: ${{ secrets.AZURE_CLIENT_ID }}
-          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-      - name: "Mask SWA Token"
-        uses: azure/CLI@v1
-        with:
-          azcliversion: ${{ env.AZURE_CLI_VERSION }}
-          inlineScript: |
-            echo "::add-mask::$(az staticwebapp secrets list -n ${{ env.SWA_NAME }} | jq -r '.properties.apiKey')"
-      - name: "Get SWA Token"
-        uses: azure/CLI@v1
-        with:
-          azcliversion: ${{ env.AZURE_CLI_VERSION }}
-          inlineScript: |
-            echo "SWA_TOKEN=$(az staticwebapp secrets list -n ${{ env.SWA_NAME }} | jq -r '.properties.apiKey')" >> $GITHUB_ENV
-      - name: Close Pull Request
-        id: closepullrequest
-        uses: Azure/static-web-apps-deploy@v1
-        with:
-          azure_static_web_apps_api_token: ${{ env.SWA_TOKEN }}
-          action: 'close'
+    permissions:
+      id-token: write
+      contents: read
+    uses: CloudWithChris/Reusable-Workflows/.github/workflows/azure-staticwebapp-close-pr.yaml@main
+    with:
+      friendly_environment: Preview
+      github_environment: staging.azure
+      swa_name: cwc-static
+    secrets:
+      AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+      AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+      AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}

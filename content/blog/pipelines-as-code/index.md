@@ -17,7 +17,7 @@ banner: "images/cloud-with-chris-banner.png"
 ---
 Recently [on Twitter](https://twitter.com/thegraycat/status/1388873685587668992), I was asked by @thegraycat on whether I knew of any resources to manage pipelines in version control. I sent across several top of mind thoughts over Twitter, but it got me thinking that there may be others with the same question and it could make a good blog post. So here we are, as I talk through some of my considerations for pipelines as code.
 
-{{< tweet 1388873685587668992 >}}
+{{< tweet user="thegraycat" id="1388873685587668992" >}}
 
 Coincidentally, I'll also be releasing a Cloud Drop tomorrow on the topic as well.
 

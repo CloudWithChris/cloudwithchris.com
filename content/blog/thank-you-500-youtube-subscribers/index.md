@@ -16,7 +16,7 @@ banner: "images/cloud-with-chris-banner.png"
 ---
 I'm sat writing this blog post about 4 months after writing my [2021 kick off blog post](/blog/cloud-with-chris-moving-forwards/). My aim for 2021 was to focus on one goal - contributing back into the technical community.
 
-{{< tweet 1345748585443454978 >}}
+{{< tweet user="reddobowen" id="1345748585443454978" >}}
 
 I set out 2021 to achieve 500 subscribers by the end of the year, and had ideas of creating brand new types of content. When I created Cloud with Chris back in March 2020, I started it off as a podcast. Later in 2020, I decided to add the video content to the mix. Then, as we entered 2021, I brought my old blog posts from my personal site onto Cloud with Chris, and started off a weekly blog.
 

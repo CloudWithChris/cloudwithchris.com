@@ -157,6 +157,15 @@ params:
       # These are concatenated with tags from pages.
       #
       keywords:
+        - Azure Blog
+        - Azure Developer BLog
+        - Azure Updates
+        - Cloud Blog
+        - Cloud News
+        - GitHub Blog
+        - Azure DevOps BLog
+        - Hugo Blog
+        - Hugo Examples
         - cloud
         - azure
         - gcp
@@ -301,8 +310,8 @@ params:
       facebook: "CloudWithChris"
       github: "CloudWithChris"
       linkedin: "chrisreddington"
-      tiktok: "cloudwithchris"
-      twitter: "CloudWithChris"
+      tiktok: "chrisreddington"
+      twitter: "reddobowen"
       twitter_domain: "cloudwithchris.com" # This domain shows in twitter cards as "View on `twitter_domain`"
       youtube: "CloudWithChris"
   # Parameters relating to site features and functionality
@@ -315,8 +324,9 @@ params:
         someconfig: "tbc"
     # Settings related to analytics
     analytics:
-      googleAnalytics: "UA-185951371-1"       # Google Analytics ID
-      microsoftClarity: "a32lpsz3a1"
+      googleAnalytics: ""       # Google Analytics ID
+      googleTagManager: "GTM-WN3N424"
+      microsoftClarity: ""
     # Settings related to the comments section
     # embedded within the site.
     comments:
