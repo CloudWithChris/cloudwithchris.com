@@ -56,26 +56,6 @@ function getFiles(dir, filelist) {
 }
 
 function testTitle(record){
-  // Check that the appropriate title is displayed
-  // test(`Check heading is correct: ${record.filename}`, async ({ page }) => {
-  //   //let directURL = new URL(record.filename, baseURL);
-  //   await page.goto(record.filename);
-  //   const title = page.locator('h1');
-  //   await expect(title).toHaveText(record.title);
-  // })
-
-  // test(`Check page title is correct: ${record.filename}`, async ({ page }) => {
-  //   //let directURL = new URL(record.filename, baseURL);
-  //   let expectedTitle = record.title.concat(' | Cloud With Chris');
-  //   await page.goto(record.filename);
-  //   const title = page.locator('title');
-  //   await expect(title).toHaveText(expectedTitle);
-  //   const twittertitle = page.locator('meta[name="twitter:title"]');
-  //   await expect(twittertitle).toHaveAttribute("content", expectedTitle);
-  //   const ogtitle = page.locator('meta[property="og:title"]');
-  //   await expect(ogtitle).toHaveAttribute("content", expectedTitle);
-  // })
-
 
   // test(`Check organization metadata is correct: ${record.filename}`, async ({ page }) => {
 
@@ -91,7 +71,7 @@ function testTitle(record){
   //   await page.goto(record.filename);
   //   const actual = page.locator('id=meta-organisation');
 
-  //   // Assertq
+  //   // Assert
   //   expect(await actual.evaluate(node => JSON.parse(node.innerHTML))).toBe(expectedObject);
   // })
 
@@ -155,17 +135,9 @@ function testTitle(record){
 
   if (record.filename.substr(0, record.filename.indexOf('/')) == 'episode'){
     test(`Check episode metadata is correct: ${record.filename}`, async ({ page }) => {
-
-      const expectedObject = {
-        "@context":"http://schema.org",
-        "@type":"PodcastEpisode",
-        "name":"Things to Consider Before Migrating Old .NET Applications to Cloud",
-        "image":"https://www.cloudwithchris.com/episode/things-to-consider-before-migrating-old-dotnet/images/banner.png",
-        "author":[
-          {"@type":"Person","name":"Chris Reddington","image":"https://www.cloudwithchris.com/person/chrisreddington/images/chrisreddington.jpg","url":"https://www.cloudwithchris.com/person/chrisreddington/"},{"@type":"Person","name":"Jonah Andersson","image":"https://www.cloudwithchris.com/person/jonahandersson/images/jonahandersson.png","url":"https://www.cloudwithchris.com/person/jonahandersson/"}],"url":"https://www.cloudwithchris.com/episode/things-to-consider-before-migrating-old-dotnet/","description":"Jonah Andersson shares her past experience and important lessons learned about migrating and developing old .NET applications to the Azure cloud. Find out how that project turn into a fiasco not because of Azure but of other factors. Never make the same mistakes.","associatedMedia":[{"@type":"VideoObject","contentUrl":"https://youtu.be/fYavIVA7QxM","name":"Things to Consider Before Migrating Old .NET Applications to Cloud","thumbnailUrl":"https://www.cloudwithchris.com/images/thumbnail.jpg","description":"Jonah Andersson shares her past experience and important lessons learned about migrating and developing old .NET applications to the Azure cloud. Find out how that project turn into a fiasco not because of Azure but of other factors. Never make the same mistakes.","uploadDate":"2022-03-17"}]}
-
-
-      // Arrange - N/A
+      
+      // Arrange
+      // N/A
 
       // Act
       await page.goto(record.filename);
