@@ -17,15 +17,13 @@ tags:
 - Visual Studio
 - Coding
 - Development
-upcoming: true
-externalLink: 
 banner: "images/banner.png"
 # Content-specific properties
 event:
   attendanceType: ""  # physical, virtual, hybrid
   organizerName: "Microsoft Build 2022"   # Name of the organising group / event (e.g. Name of the conference)
-  organizerUrl: "https://mybuild.microsoft.com"    # URL of the organising group
-  eventUrl: "https://mybuild.microsoft.com/en-US/home"        # URL of the specific event, if applicable (e.g. a meetup talk, rather than the meetup group)
+  organizerUrl: "https://mybuild.microsoft.com/en-US/home/uk"    # URL of the organising group
+  eventUrl: "https://mybuild.microsoft.com/en-US/home/uk"        # URL of the specific event, if applicable (e.g. a meetup talk, rather than the meetup group)
   type: "Conference"            # Type of event (e.g. Meetup, Conference, etc.)
   location: ""        # Required for physical and hybrid events.
   cost: ""            # Cost to attend the event

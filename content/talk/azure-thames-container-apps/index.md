@@ -22,7 +22,6 @@ tags:
 - Dapr
 banner: "images/banner.png"
 # Content-specific properties
-upcoming: true
 event:
   attendanceType: ""  # physical, virtual, hybrid
   organizerName: "Azure Thames Valley"   # Name of the organising group / event (e.g. Name of the conference)
