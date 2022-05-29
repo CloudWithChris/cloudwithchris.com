@@ -1,182 +1,129 @@
-// Import the test framework, file system, path and 
-// frontmatter processing modules.
-import { test, expect } from '@playwright/test';
+// Import the required dependencies
 import fs from 'fs';
-import path from 'path';
 import matter from 'gray-matter';
+import fetch from 'node-fetch';
+import { test, expect } from '@playwright/test';
 
-// Configure the tests as parallel
-// test.describe.configure({ mode: 'parallel' });
+const {XMLParser} = require('fast-xml-parser');
 
-// Initialise the base URL and the array of content
-// const baseURL = new URL('http://www.cloudwithchris.com');
-let records = [];
+// Configure the parser options to ignore attributes
+const options = {
+  ignoreAttributes : false
+};
 
-// Read the content directory and parse the markdown files
-function getFiles(dir, filelist) {
+// Per https://github.com/microsoft/playwright/issues/13102
+test.describe.configure({ mode: 'parallel' });
 
-  // Read the directory
-  let files = fs.readdirSync(dir);
+// Declare a function to get the results of the sitemap
+// and return an array of strings, filtered to only include
+// the URLs that are from a given archetype.
+async function GetSitemapResults(): Promise<Array<string>>{
 
-  // Foreach file in the directory
-  files.forEach(file => {
+  // Return a promise that resolves to an array of strings
+  return new Promise((resolve, reject) => {
 
-    // Check if the file is a directory
-    if (fs.statSync(dir + file).isDirectory()) {
-      // If it is a directory, recurse into it
-      filelist = getFiles(dir + file + '/', filelist);
-    // If it is a file, check if it is a markdown file
-    } else if (path.extname(file) == '.md'){
-      // If it is a markdown file, parse the frontmatter,
-      // convert the property to lower for consistency
-      // and add the resulting object to an array
+    // Instantiate the parser
+    const parser = new XMLParser(options);
+    let sitemapResults = [];
+
+    // Call the sitemap endpoint    
+    fetch('http://localhost:1313/sitemap.xml')
+    .then(function(response) {
+      response.text().then(function(text) {
+        // Parse the XML, and generate a list of
+        // URLs that are from the given archetype.
+        // Strip the base URL from the URL
+        sitemapResults = parser.parse(text);
+        resolve(sitemapResults.urlset.url.filter(obj => /\/episode\/[\w]+/g.test(obj.loc)).map(e => e.loc.replace('//localhost:1313/', '')));
+      });
+    })
+    .catch(function(error) {
+      reject(error);
+    });
+  });
+}
+
+// Generate the test data by reading the frontmatter from
+// the markdown files, and generating an array of objects
+// that can be used to execute the tests.
+async function GenerateTestData(sitemap: Array<string>): Promise<Array<Object>>{
+
+  // Instantiate the test data array
+  let testData = [];
+
+  // Return a promise that resolves to an array of objects
+  return new Promise(async (resolve, reject) => {
+
+    // Read all files from the sitemap object asynchronously
+    await Promise.all(sitemap.map(async (record) => {
+      // Create a new object to store the test data
+      // This object is generated using the matter library,
+      // which parses the frontmatter from the markdown file.
       const object = Object.fromEntries(
-        Object.entries(matter(fs.readFileSync(dir + file, 'utf8')).data).map(([k, v]) => [k.toLowerCase(), v])
+        Object.entries(
+          matter(
+            fs.readFileSync('content/'+ record+'index.md', 'utf8')
+          ).data
+        ).map(
+          (
+            [k, v]
+          ) => [k.toLowerCase(), v]
+        )
       );
-
-      var pathWithoutContent = dir.replace('content/','');
-      var contentURL = new URL(pathWithoutContent, 'https://www.cloudwithchris.com').toString();
-
-      filelist.push(
+    
+      // Create a new object, and add it to the array of testData.
+      testData.push(
         {
-          filename: pathWithoutContent,
-          url: contentURL,
+          filename: record,
+          url: "http://localhost:1313/" + record,
           title: object.title,
           description: object.description,
-          banner: new URL(object.banner, contentURL).toString(),
-          image: new URL(object.image, contentURL).toString(),
+          banner: object.banner,
+          image: object.image,
           youtube: object.youtube
         }
-      );
-    }
+      )
+    }));
+
+    // Resolve the promise with the array of testData
+    resolve(testData);
   });
-
-  // Return the array of objects for testing
-  return filelist;
 }
 
-function testTitle(record){
+// Execute an episode test against a given record
+function executeEpisodeTest(record: Object){
+  test(`${record.filename} - Episode Metadata Check`, async ({ page }) => {
+    // Arrange
+    // N/A
 
-  // test(`Check organization metadata is correct: ${record.filename}`, async ({ page }) => {
+    // Act
+    await page.goto(record.url);
+    const actual = page.locator('id=meta-episode');
+    const actualObject = await actual.evaluate(node => JSON.parse(node.innerHTML));
 
-  //   // Arrange
-  //   const expectedObject = {
-  //     "@context":"https://schema.org",
-  //     "@type":"Organization",
-  //     "url":"https://www.cloudwithchris.com/",
-  //     "logo":"https://www.cloudwithchris.com/img/cloudwithchrislogo.png"
-  //   }
+    // Assert
+    expect(actualObject["@context"]).toBe("http://schema.org");
+    expect(actualObject["@type"]).toBe("PodcastEpisode");
+    expect(actualObject["name"]).toBe(record.title);
+    expect(actualObject["url"]).toBe(record.url);
+    expect(actualObject["description"]).toBe(record.description);
+  });
+}
 
-  //   // Act
-  //   await page.goto(record.filename);
-  //   const actual = page.locator('id=meta-organisation');
-
-  //   // Assert
-  //   expect(await actual.evaluate(node => JSON.parse(node.innerHTML))).toBe(expectedObject);
-  // })
-
-  // test(`Check website metadata is correct: ${record.filename}`, async ({ page }) => {
-
-  //   // Arrange
-  //   const expectedObject = {
-  //     "@context":"http://schema.org",
-  //     "@type":"WebSite",
-  //     "url":"https://www.cloudwithchris.com/",
-  //     "sameAs": [
-  //       "https://twitter.com/CloudWithChris",
-  //       "https://github.com/CloudWithChris"
-  //     ],
-  //     "name":"Cloud With Chris",
-  //     "logo":"https://www.cloudwithchris.com/favicon.ico",
-  //     "potentialAction": {
-  //       "@type":"SearchAction",
-  //       "target": {
-  //         "@type":"EntryPoint",
-  //         "urlTemplate":"https://www.cloudwithchris.com/search/?s={search_term_string}"
-  //       },
-  //       "query-input":"required name=search_term_string"
-  //     }
-  //   }    
-
-  //   // Act
-  //   await page.goto(record.filename);
-  //   const actual = page.locator('id=meta-website');
-
-  //   // Assert
-  //   expect(await actual.evaluate(node => JSON.parse(node.innerHTML))).toBe(expectedObject);
-  // })
-
-
-  // test(`Check Breadcrumbs metadata is correct: ${record.filename}`, async ({ page }) => {
-
-  //   // Arrange - N/A
-
-  //   // Act
-  //   await page.goto(record.filename);
-  //   const actual = page.locator('id=meta-breadcrumbs');
-  //   const actualObject = await actual.evaluate(node => JSON.parse(node.innerHTML));
-
-
-  //   // Assert
-  //   expect(actualObject.itemListElement.length).toBeGreaterThanOrEqual(2);
-  //   expect(actualObject.itemListElement[actualObject.itemListElement.length - 1].name).toBe(record.title);
-  // })
-
-  // test(`Check page has description metadata: ${record.filename}`, async ({ page }) => {
-  //   //let directURL = new URL(record.filename, baseURL);
-  //   await page.goto(record.filename);
-  //   const description = page.locator('meta[name="description"]');
-  //   await expect(description).toHaveAttribute("content", record.description);
-  //   const twitterdescription = page.locator('meta[name="twitter:description"]');
-  //   await expect(twitterdescription).toHaveAttribute("content", record.description);
-  //   const ogdescription = page.locator('meta[property="og:description"]');
-  //   await expect(ogdescription).toHaveAttribute("content", record.description);
-  // })
-
-  if (record.filename.substr(0, record.filename.indexOf('/')) == 'episode'){
-    test(`Check episode metadata is correct: ${record.filename}`, async ({ page }) => {
-      
-      // Arrange
-      // N/A
-
-      // Act
-      await page.goto(record.filename);
-      const actual = page.locator('id=meta-episode');
-      const actualObject = await actual.evaluate(node => JSON.parse(node.innerHTML));
-
-
-      // Assert
-      expect(actualObject["@context"]).toBe("http://schema.org");
-      expect(actualObject["@type"]).toBe("PodcastEpisode");
-      expect(actualObject["name"]).toBe(record.title);
-      expect(actualObject["url"]).toBe(record.url);
-      expect(actualObject["description"]).toBe(record.description);
-
-      if (record.banner)
-      {
-        if (record.banner == "images/cloud-with-chris-banner.png"){
-          expect(actualObject.image).toBe("https://www.cloudwithchris.com/images/cloud-with-chris-banner.png");
-        } else {
-          expect(actualObject.image).toBe(record.banner);
+let executeTests = async () => {
+  // Get the resulting list from the sitemap
+  GetSitemapResults().then(async sitemap => {
+    // With that information, generate the test data
+    GenerateTestData(sitemap).then(testData => {
+      fs.writeFile('tests/episode-tests.json', JSON.stringify(testData), err => {
+        if (err) {
+          console.error(err);
         }
-      } else {
-        expect(actualObject.image).toBe(record.image);
-      }
+      });
+    });
+  });
+};
 
-      var videoObject = actualObject.associatedMedia.filter(obj => {
-        return obj["@type"] === "VideoObject";
-      })
+executeTests();
 
-      if (videoObject)
-      {
-        expect(videoObject.contentUrl).toBe(new URL(record.youtube, "https://youtu.be").toString());
-      }
-    })
-  }
-
-}
-
-// Iterate through the records and run several tests per record
-for (const record of getFiles('content/episode/', records)) {
-  testTitle(record);
-}
+export { executeTests }
