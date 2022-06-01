@@ -71,7 +71,7 @@ async function GenerateTestData(sitemap){
       testData.push(
         {
           filename: record,
-          url: "http://localhost:1313/" + record,
+          url: "//localhost:1313/" + record,
           title: object.title,
           description: object.description,
           banner: object.banner,
