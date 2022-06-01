@@ -2,11 +2,10 @@
 import fs from 'fs';
 import matter from 'gray-matter';
 import fetch from 'node-fetch';
-
-const {XMLParser} = require('fast-xml-parser');
+import {XMLParser} from 'fast-xml-parser';
 
 // Configure the parser options to ignore attributes
-const options = {
+export const options = {
   ignoreAttributes : false
 };
 
@@ -14,7 +13,7 @@ const options = {
 // Declare a function to get the results of the sitemap
 // and return an array of strings, filtered to only include
 // the URLs that are from a given archetype.
-async function GetSitemapResults(): Promise<Array<string>>{
+async function GetSitemapResults() {
 
   // Return a promise that resolves to an array of strings
   return new Promise((resolve, reject) => {
@@ -43,7 +42,7 @@ async function GetSitemapResults(): Promise<Array<string>>{
 // Generate the test data by reading the frontmatter from
 // the markdown files, and generating an array of objects
 // that can be used to execute the tests.
-async function GenerateTestData(sitemap: Array<string>): Promise<Array<Object>>{
+async function GenerateTestData(sitemap){
 
   // Instantiate the test data array
   let testData = [];
