@@ -9,19 +9,41 @@ jobs:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+          
+    - uses: actions/checkout@v3
+      with:
+        submodules: 'true'
+    - name: 'Dependency Review'
+      if: github.event_name == 'pull_request' && github.event.action != 'closed'
+      uses: actions/dependency-review-action@v1
     - uses: actions/setup-node@v2
       with:
         node-version: '14.x'
     - name: Install dependencies
       run: npm ci
+    - name: 'Setup Hugo on Runner'
+      uses: peaceiris/actions-hugo@v2
+      with:
+        hugo-version: ${{ env.HUGO_VERSION }}
+        extended: true
+    - name: 'Pull popular posts from Google Analytics'
+      run: |
+        mkdir -p ${{ github.workspace }}/data
+        curl --header "Ocp-Apim-Subscription-Key: ${{ secrets.CWC_API_KEY}}" -o ${{ github.workspace }}/data/popular.json https://api.cloudwithchris.com/cwc-ga/GetGoogleAnalyticsData
     - name: Install Playwright
       run: npx playwright install --with-deps
+    - name: Setup generator dependencies
+      working-directory: tests/generator
+      run: npm install
+    - name: Run Hugo Server
+      run: hugo serve &
+    - name: Generate test data
+      run: node tests/generator/episode-generator.js
     - name: Run Playwright tests
-      run: PLAYWRIGHT_JUNIT_OUTPUT_NAME=results.xml npx playwright test --reporter=junit
+      run: PLAYWRIGHT_JUNIT_OUTPUT_NAME=results.xml npx playwright test
     - name: Test Summary
       if: always()
       uses: test-summary/action@v1
       with:
         paths: |
-          results.xml
+          tests/results.xml

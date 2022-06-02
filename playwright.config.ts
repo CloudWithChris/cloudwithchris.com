@@ -28,13 +28,13 @@ const config: PlaywrightTestConfig = {
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
-  workers: 5,
+  workers: 1,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [ 
     [
       'junit',
       {
-        outputFile: 'results.xml'
+        outputFile: 'tests/results.xml'
       }
     ]
   ],
@@ -56,7 +56,7 @@ const config: PlaywrightTestConfig = {
       use: {
         ...devices['Desktop Chrome'],
       },
-    },
+    }/*,
     {
       name: 'firefox',
       use: {
@@ -68,17 +68,17 @@ const config: PlaywrightTestConfig = {
       use: {
         ...devices['Desktop Safari'],
       },
-    }
+    }*/
   ],
 
   /* Folder for test artifacts such as screenshots, videos, traces, etc. */
   outputDir: 'test-results/',
 
   /* Run your local dev server before starting the tests */
-  webServer: {
+  /*webServer: {
     command: 'hugo serve',
     port: 1313,
-  },
+  },*/
 };
 
 export default config;
