@@ -9,6 +9,8 @@ export const options = {
   ignoreAttributes : false
 };
 
+export const args = process.argv.slice(2);
+export const contentType = args[0];
 
 // Declare a function to get the results of the sitemap
 // and return an array of strings, filtered to only include
@@ -29,8 +31,18 @@ async function GetSitemapResults() {
         // Parse the XML, and generate a list of
         // URLs that are from the given archetype.
         // Strip the base URL from the URL
+
+        // Generate the string ahead of time
+        //let regexPattern = `\/episode\/[\w]+`;
+        //let regexPattern = \/talk\/[\w]+;
+
+        // Set regex string to match the archetype
+        var regex = new RegExp( "\/" + args[0] + "\/[\\w]+", "g" );
+
+        console.log(regex);
+
         sitemapResults = parser.parse(text);
-        resolve(sitemapResults.urlset.url.filter(obj => /\/episode\/[\w]+/g.test(obj.loc)).map(e => e.loc.replace('//localhost:1313/', '')));
+        resolve(sitemapResults.urlset.url.filter(obj => regex.test(obj.loc)).map(e => e.loc.replace('//localhost:1313/', '')));
       });
     })
     .catch(function(error) {
@@ -91,7 +103,7 @@ let executeTests = async () => {
   GetSitemapResults().then(async sitemap => {
     // With that information, generate the test data
     GenerateTestData(sitemap).then(testData => {
-      fs.writeFile('tests/episode-tests.json', JSON.stringify(testData), err => {
+      fs.writeFile(`tests/${contentType}-tests.json`, JSON.stringify(testData), err => {
         if (err) {
           console.error(err);
         }
