@@ -137,3 +137,6 @@ test-results/
 playwright-report/
 test-results/
 playwright-report/
+
+tests/*.json
+tests/results.xml
