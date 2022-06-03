@@ -38,7 +38,11 @@ jobs:
     - name: Run Hugo Server
       run: hugo serve &
     - name: Generate test data
-      run: node tests/generator/data-generator.js episode
+      run: |
+        node tests/generator/data-generator.js blog
+        node tests/generator/data-generator.js episode
+        node tests/generator/data-generator.js person
+        node tests/generator/data-generator.js talk
     - name: Run Playwright tests
       run: PLAYWRIGHT_JUNIT_OUTPUT_NAME=results.xml npx playwright test
     - name: Test Summary
