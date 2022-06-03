@@ -30,7 +30,7 @@ for (const record of testData) {
     const breadcrumbsObject = await breadcrumbsMetadata.evaluate(node => JSON.parse(node.innerHTML));
 
     // Assert
-    /* Episode */
+    /* Blog */
     expect(blogObject["@context"]).toBe("http://schema.org");
     expect(blogObject["@type"]).toBe("BlogPosting");
     expect(blogObject["name"]).toBe(record.title);
@@ -56,7 +56,7 @@ for (const record of testData) {
     expect(breadcrumbsObject["@type"]).toBe("BreadcrumbList");
     expect(breadcrumbsObject["itemListElement"][0]["item"]).toBe(baseUrl);
     expect(breadcrumbsObject["itemListElement"][0]["item"]).toBe(baseUrl);
-    expect(breadcrumbsObject["itemListElement"][1]["name"]).toBe("Episodes");
+    expect(breadcrumbsObject["itemListElement"][1]["name"]).toBe("Blogs");
     expect(breadcrumbsObject["itemListElement"][2]["name"]).toBe(record.title);
   });
 }

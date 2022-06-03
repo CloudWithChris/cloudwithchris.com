@@ -2,7 +2,7 @@
 Authors: 
 - chrisreddington
 Description: "Over the past few weeks, I have been working on a new set of pet projects. I've wanted to learn Go for a while, so I thought this could be a great opportunity to get hands on and try it out. It's fair to say that my development environment was 'functional', but I wanted to revisit it to make sure that I could get the best out of it. In this blog post, I'm going to walkthrough the process of setting up Go on my machine, and then the experience of using Visual Studio Code and Windows Subsystem for Linux (WSL) with Ubuntu."
-PublishDate: "2022-04-26T13:00:00Z"
+Date: "2022-04-26T13:00:00Z"
 image: img/cloudwithchrislogo.png
 PublishDate: "2022-04-26T13:00:00Z"
 images:
