@@ -2,7 +2,7 @@
 Authors: 
 - chrisreddington
 Description: "In this post, I'll be talking about how to use interfaces in Go. This is a continuation of my learning using the Go language. I'll use interfaces to create an  application that interacts with several types of bank accounts."
-PublishDate: "2022-05-16T08:00:00Z"
+Date: "2022-05-16T08:00:00Z"
 image: img/cloudwithchrislogo.png
 PublishDate: "2022-05-16T08:00:00Z"
 images:

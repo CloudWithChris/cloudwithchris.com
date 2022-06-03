@@ -1,8 +1,7 @@
 ---
 Authors: 
 - chrisreddington
-Description: "For the past four years, I've been part of a team at Microsoft called FastTrack for Azure. FastTrack for Azure is part of Azure Engineering's Customer Experience Team, focused on successfully on boarding customers on a project-by-project basis as they bring production workloads online. 
-There is never a perfect time to say goodbye, but for me - now is the time. From Monday, I'll be taking on a new role within Microsoft as a Senior Cloud Solution Architect within Microsoft UK's Customer Success Unit, focusing on the Manufacturing & Resources Industries. Career changes can be big moments of change, and a good opportunity to reflect."
+Description: "For the past four years, I've been part of a team at Microsoft called FastTrack for Azure. FastTrack for Azure is part of Azure Engineering's Customer Experience Team, focused on successfully on boarding customers on a project-by-project basis as they bring production workloads online. There is never a perfect time to say goodbye, but for me - now is the time. From Monday, I'll be taking on a new role within Microsoft as a Senior Cloud Solution Architect within Microsoft UK's Customer Success Unit, focusing on the Manufacturing & Resources Industries. Career changes can be big moments of change, and a good opportunity to reflect."
 PublishDate: "2021-02-19T09:00:00Z"
 image: img/cloudwithchrislogo.png
 date: "2021-02-19T09:00:00Z"

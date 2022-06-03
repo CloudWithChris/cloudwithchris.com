@@ -133,3 +133,10 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+test-results/
+playwright-report/
+test-results/
+playwright-report/
+
+tests/*.json
+tests/results.xml
