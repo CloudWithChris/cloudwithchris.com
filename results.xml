@@ -1,0 +1,1964 @@
+<testsuites id="" name="" tests="489" failures="0" skipped="489" errors="0" time="0.007">
+<testsuite name="episode.spec.ts" timestamp="1654099546669" hostname="" tests="163" failures="0" skipped="163" time="0" errors="0">
+<testcase name="episode/tech-roundup-2212/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/tech-roundup-2212/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/tech-roundup-2211/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/tech-roundup-2211/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/tech-roundup-2210/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/tech-roundup-2210/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/tech-roundup-2209/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/tech-roundup-2209/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/tech-roundup-2208/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/tech-roundup-2208/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/tech-roundup-2207/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/tech-roundup-2207/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/toolup-tuesday-11/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/toolup-tuesday-11/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/toolup-tuesday-10/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/toolup-tuesday-10/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/tech-roundup-2206/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/tech-roundup-2206/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/toolup-tuesday-9/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/toolup-tuesday-9/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/toolup-tuesday-8/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/toolup-tuesday-8/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/tech-roundup-2205/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/tech-roundup-2205/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/toolup-tuesday-7/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/toolup-tuesday-7/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/toolup-tuesday-6/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/toolup-tuesday-6/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/tech-roundup-2204/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/tech-roundup-2204/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/toolup-tuesday-5/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/toolup-tuesday-5/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/toolup-tuesday-4/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/toolup-tuesday-4/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/tech-roundup-2203/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/tech-roundup-2203/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/things-to-consider-before-migrating-old-dotnet/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/things-to-consider-before-migrating-old-dotnet/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/toolup-tuesday-3/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/toolup-tuesday-3/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/azure-quantum-microsoft-q-sharp/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/azure-quantum-microsoft-q-sharp/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/tech-roundup-2202/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/tech-roundup-2202/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/toolup-tuesday-2/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/toolup-tuesday-2/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/feature-flags-art-of-if-and-deployment/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/feature-flags-art-of-if-and-deployment/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/toolup-tuesday-1/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/toolup-tuesday-1/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/community-gaming-2202/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/community-gaming-2202/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/tech-roundup-2201/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/tech-roundup-2201/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-041/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/weekly-vlog-041/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/azure-for-game-developers/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/azure-for-game-developers/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-040/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/weekly-vlog-040/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/shift-left-performance-tests/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/shift-left-performance-tests/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-039/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/weekly-vlog-039/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/devops-trends/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/devops-trends/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/devops-tales-from-the-real-world/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/devops-tales-from-the-real-world/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-037/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/weekly-vlog-037/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/architecting-the-transformation/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/architecting-the-transformation/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/migrating-to-the-cloud/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/migrating-to-the-cloud/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-036/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/weekly-vlog-036/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/leveraging-azure-as-telco-provider/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/leveraging-azure-as-telco-provider/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/game-streaming/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/game-streaming/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-035/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/weekly-vlog-035/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/tales-from-real-world-get-into-devrel/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/tales-from-real-world-get-into-devrel/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/closed-captions-make-a-difference/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/closed-captions-make-a-difference/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-034/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/weekly-vlog-034/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/decentralised-reference-architecture-cloud-native/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/decentralised-reference-architecture-cloud-native/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/discussing-cloud-with-chris-integration/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/discussing-cloud-with-chris-integration/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/find-vulns-in-your-code/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/find-vulns-in-your-code/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-033/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/weekly-vlog-033/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/aks-agic-kubenet-tips-tricks/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/aks-agic-kubenet-tips-tricks/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-032/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/weekly-vlog-032/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/adb2c-a-real-silver-bullet/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/adb2c-a-real-silver-bullet/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/be-successful-with-monitoring-in-azure/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/be-successful-with-monitoring-in-azure/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-031/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/weekly-vlog-031/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/helping-veterans-transition-into-it-and-learn-azure/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/helping-veterans-transition-into-it-and-learn-azure/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-030/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/weekly-vlog-030/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/lessons-learned-cultivating-open-source/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/lessons-learned-cultivating-open-source/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/cloud-drops-what-is-continuous-integration/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/cloud-drops-what-is-continuous-integration/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-029/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/weekly-vlog-029/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/iot-simulation-azure-iot-and-real-world-learnings/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/iot-simulation-azure-iot-and-real-world-learnings/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-028/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/weekly-vlog-028/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/choosing-the-right-datastore/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/choosing-the-right-datastore/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/game-streaming-and-entertainment/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/game-streaming-and-entertainment/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/diverse-team-crucial-to-startup-success/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/diverse-team-crucial-to-startup-success/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-027/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/weekly-vlog-027/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/devops-on-azure/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/devops-on-azure/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/top-new-cncf-projects/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/top-new-cncf-projects/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-026/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/weekly-vlog-026/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/agile-from-the-trenches/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/agile-from-the-trenches/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-025/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/weekly-vlog-025/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/discussion-with-john-lunn/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/discussion-with-john-lunn/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/azure-and-vmware/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/azure-and-vmware/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-024/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/weekly-vlog-024/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/geode-pattern-hands-on/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/geode-pattern-hands-on/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/hybrid-cloud-life-as-cloud-advocate/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/hybrid-cloud-life-as-cloud-advocate/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/discussing-cloud-with-chris-github-action-usage/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/discussing-cloud-with-chris-github-action-usage/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-023/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/weekly-vlog-023/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/your-career-and-your-mental-health/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/your-career-and-your-mental-health/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/building-a-game-remotely/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/building-a-game-remotely/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-022/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/weekly-vlog-022/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/tales-from-real-world-matthew-bradley/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/tales-from-real-world-matthew-bradley/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-021/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/weekly-vlog-021/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/application-insights-the-tool-you-never-knew-you-needed/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/application-insights-the-tool-you-never-knew-you-needed/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-020/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/weekly-vlog-020/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/cloud-drops-event-grid/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/cloud-drops-event-grid/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/tales-from-real-world-social-opinion/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/tales-from-real-world-social-opinion/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/a-livestream-on-mental-health/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/a-livestream-on-mental-health/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/cloud-drops-pipelines-as-code/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/cloud-drops-pipelines-as-code/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-019/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/weekly-vlog-019/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/github-actions-multiple-environments/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/github-actions-multiple-environments/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/cloud-drops-powershell-azure-functions/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/cloud-drops-powershell-azure-functions/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/sudoku-social/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/sudoku-social/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-018/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/weekly-vlog-018/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-017/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/weekly-vlog-017/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/azure-spring-cloud/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/azure-spring-cloud/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/discussing-cloud-with-chris-architecture-and-github/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/discussing-cloud-with-chris-architecture-and-github/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-016/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/weekly-vlog-016/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-015/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/weekly-vlog-015/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/bulkhead/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/bulkhead/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/inventory-and-economy/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/inventory-and-economy/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/cloud-drops-microsoft-learn-azure/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/cloud-drops-microsoft-learn-azure/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-014/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/weekly-vlog-014/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/cloud-drops-windows-terminal-productive-azure/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/cloud-drops-windows-terminal-productive-azure/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/external-config-and-claim-check/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/external-config-and-claim-check/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/cloud-drops-git-101/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/cloud-drops-git-101/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-013/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/weekly-vlog-013/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/accelerate-dotnet-to-azure-with-github-actions/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/accelerate-dotnet-to-azure-with-github-actions/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/cloud-drops-git-behind-scenes/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/cloud-drops-git-behind-scenes/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/cloud-drops-git-lfs/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/cloud-drops-git-lfs/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-012/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/weekly-vlog-012/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/deploy-using-terraform-cloud/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/deploy-using-terraform-cloud/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/cloud-drops-github-codespaces/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/cloud-drops-github-codespaces/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-011/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/weekly-vlog-011/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/cache-aside/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/cache-aside/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/cloud-drops-azure-cli/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/cloud-drops-azure-cli/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-010/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/weekly-vlog-010/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/sidecar-and-ambassador/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/sidecar-and-ambassador/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/matchmaking-services/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/matchmaking-services/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-009/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/weekly-vlog-009/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/intro-to-landing-zones/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/intro-to-landing-zones/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-008/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/weekly-vlog-008/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/compute-resource-consolidation/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/compute-resource-consolidation/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-007/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/weekly-vlog-007/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/priority-queues-pipes-filters/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/priority-queues-pipes-filters/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/a-conversation-on-mental-health/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/a-conversation-on-mental-health/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-006/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/weekly-vlog-006/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/hosted-game-servers/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/hosted-game-servers/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-005/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/weekly-vlog-005/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/health-endpoint-monitoring-pattern/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/health-endpoint-monitoring-pattern/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-004/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/weekly-vlog-004/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/gatekeeper-and-valet-key/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/gatekeeper-and-valet-key/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-003/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/weekly-vlog-003/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/static-content-hosting-pattern/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/static-content-hosting-pattern/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-002/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/weekly-vlog-002/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/github-codespaces-and-vscode-remote-containers/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/github-codespaces-and-vscode-remote-containers/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-001/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/weekly-vlog-001/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/queue-based-load-levelling-and-competing-consumers/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/queue-based-load-levelling-and-competing-consumers/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/anti-corruption-layer-and-gateway-patterns/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/anti-corruption-layer-and-gateway-patterns/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/event-sourcing-and-materialized-view/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/event-sourcing-and-materialized-view/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/geode-pattern/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/geode-pattern/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/defying-gravity/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/defying-gravity/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/github-issues-github-discussions/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/github-issues-github-discussions/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/github-universe-roundup/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/github-universe-roundup/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/throttling-and-retry-pattern/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/throttling-and-retry-pattern/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/github-actions-deploy-to-appservice/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/github-actions-deploy-to-appservice/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/github-actions-deploying-infrastructure/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/github-actions-deploying-infrastructure/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/github-actions-getting-started/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/github-actions-getting-started/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/github-actions-git/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/github-actions-git/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/backends-for-frontends-and-strangler/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/backends-for-frontends-and-strangler/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/sharding-and-index-table/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/sharding-and-index-table/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/deployment-stamps/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/deployment-stamps/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/defying-ddos/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/defying-ddos/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/modern-identity-patterns/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/modern-identity-patterns/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/azure-github-actions/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/azure-github-actions/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/building-smart-integration-solutions/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/building-smart-integration-solutions/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/azure-security/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/azure-security/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/creating-cloud-with-chris/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/creating-cloud-with-chris/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/hybrid-cloud/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/hybrid-cloud/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/api-economy/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/api-economy/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/hackathons/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/hackathons/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/devops-in-cloud/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/devops-in-cloud/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/cost-control/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/cost-control/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/requirements-in-context/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/requirements-in-context/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/teaser/ - Episode Metadata Check" classname="[chromium] › episode.spec.ts:9:3 › episode/teaser/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="episode.spec.ts" timestamp="1654099546669" hostname="" tests="163" failures="0" skipped="163" time="0" errors="0">
+<testcase name="episode/tech-roundup-2212/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/tech-roundup-2212/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/tech-roundup-2211/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/tech-roundup-2211/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/tech-roundup-2210/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/tech-roundup-2210/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/tech-roundup-2209/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/tech-roundup-2209/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/tech-roundup-2208/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/tech-roundup-2208/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/tech-roundup-2207/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/tech-roundup-2207/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/toolup-tuesday-11/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/toolup-tuesday-11/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/toolup-tuesday-10/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/toolup-tuesday-10/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/tech-roundup-2206/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/tech-roundup-2206/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/toolup-tuesday-9/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/toolup-tuesday-9/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/toolup-tuesday-8/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/toolup-tuesday-8/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/tech-roundup-2205/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/tech-roundup-2205/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/toolup-tuesday-7/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/toolup-tuesday-7/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/toolup-tuesday-6/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/toolup-tuesday-6/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/tech-roundup-2204/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/tech-roundup-2204/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/toolup-tuesday-5/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/toolup-tuesday-5/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/toolup-tuesday-4/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/toolup-tuesday-4/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/tech-roundup-2203/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/tech-roundup-2203/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/things-to-consider-before-migrating-old-dotnet/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/things-to-consider-before-migrating-old-dotnet/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/toolup-tuesday-3/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/toolup-tuesday-3/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/azure-quantum-microsoft-q-sharp/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/azure-quantum-microsoft-q-sharp/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/tech-roundup-2202/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/tech-roundup-2202/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/toolup-tuesday-2/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/toolup-tuesday-2/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/feature-flags-art-of-if-and-deployment/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/feature-flags-art-of-if-and-deployment/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/toolup-tuesday-1/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/toolup-tuesday-1/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/community-gaming-2202/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/community-gaming-2202/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/tech-roundup-2201/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/tech-roundup-2201/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-041/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/weekly-vlog-041/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/azure-for-game-developers/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/azure-for-game-developers/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-040/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/weekly-vlog-040/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/shift-left-performance-tests/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/shift-left-performance-tests/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-039/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/weekly-vlog-039/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/devops-trends/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/devops-trends/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/devops-tales-from-the-real-world/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/devops-tales-from-the-real-world/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-037/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/weekly-vlog-037/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/architecting-the-transformation/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/architecting-the-transformation/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/migrating-to-the-cloud/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/migrating-to-the-cloud/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-036/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/weekly-vlog-036/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/leveraging-azure-as-telco-provider/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/leveraging-azure-as-telco-provider/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/game-streaming/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/game-streaming/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-035/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/weekly-vlog-035/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/tales-from-real-world-get-into-devrel/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/tales-from-real-world-get-into-devrel/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/closed-captions-make-a-difference/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/closed-captions-make-a-difference/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-034/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/weekly-vlog-034/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/decentralised-reference-architecture-cloud-native/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/decentralised-reference-architecture-cloud-native/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/discussing-cloud-with-chris-integration/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/discussing-cloud-with-chris-integration/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/find-vulns-in-your-code/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/find-vulns-in-your-code/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-033/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/weekly-vlog-033/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/aks-agic-kubenet-tips-tricks/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/aks-agic-kubenet-tips-tricks/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-032/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/weekly-vlog-032/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/adb2c-a-real-silver-bullet/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/adb2c-a-real-silver-bullet/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/be-successful-with-monitoring-in-azure/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/be-successful-with-monitoring-in-azure/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-031/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/weekly-vlog-031/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/helping-veterans-transition-into-it-and-learn-azure/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/helping-veterans-transition-into-it-and-learn-azure/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-030/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/weekly-vlog-030/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/lessons-learned-cultivating-open-source/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/lessons-learned-cultivating-open-source/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/cloud-drops-what-is-continuous-integration/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/cloud-drops-what-is-continuous-integration/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-029/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/weekly-vlog-029/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/iot-simulation-azure-iot-and-real-world-learnings/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/iot-simulation-azure-iot-and-real-world-learnings/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-028/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/weekly-vlog-028/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/choosing-the-right-datastore/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/choosing-the-right-datastore/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/game-streaming-and-entertainment/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/game-streaming-and-entertainment/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/diverse-team-crucial-to-startup-success/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/diverse-team-crucial-to-startup-success/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-027/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/weekly-vlog-027/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/devops-on-azure/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/devops-on-azure/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/top-new-cncf-projects/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/top-new-cncf-projects/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-026/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/weekly-vlog-026/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/agile-from-the-trenches/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/agile-from-the-trenches/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-025/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/weekly-vlog-025/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/discussion-with-john-lunn/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/discussion-with-john-lunn/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/azure-and-vmware/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/azure-and-vmware/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-024/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/weekly-vlog-024/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/geode-pattern-hands-on/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/geode-pattern-hands-on/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/hybrid-cloud-life-as-cloud-advocate/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/hybrid-cloud-life-as-cloud-advocate/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/discussing-cloud-with-chris-github-action-usage/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/discussing-cloud-with-chris-github-action-usage/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-023/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/weekly-vlog-023/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/your-career-and-your-mental-health/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/your-career-and-your-mental-health/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/building-a-game-remotely/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/building-a-game-remotely/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-022/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/weekly-vlog-022/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/tales-from-real-world-matthew-bradley/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/tales-from-real-world-matthew-bradley/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-021/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/weekly-vlog-021/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/application-insights-the-tool-you-never-knew-you-needed/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/application-insights-the-tool-you-never-knew-you-needed/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-020/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/weekly-vlog-020/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/cloud-drops-event-grid/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/cloud-drops-event-grid/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/tales-from-real-world-social-opinion/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/tales-from-real-world-social-opinion/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/a-livestream-on-mental-health/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/a-livestream-on-mental-health/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/cloud-drops-pipelines-as-code/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/cloud-drops-pipelines-as-code/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-019/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/weekly-vlog-019/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/github-actions-multiple-environments/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/github-actions-multiple-environments/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/cloud-drops-powershell-azure-functions/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/cloud-drops-powershell-azure-functions/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/sudoku-social/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/sudoku-social/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-018/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/weekly-vlog-018/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-017/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/weekly-vlog-017/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/azure-spring-cloud/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/azure-spring-cloud/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/discussing-cloud-with-chris-architecture-and-github/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/discussing-cloud-with-chris-architecture-and-github/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-016/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/weekly-vlog-016/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-015/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/weekly-vlog-015/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/bulkhead/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/bulkhead/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/inventory-and-economy/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/inventory-and-economy/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/cloud-drops-microsoft-learn-azure/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/cloud-drops-microsoft-learn-azure/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-014/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/weekly-vlog-014/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/cloud-drops-windows-terminal-productive-azure/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/cloud-drops-windows-terminal-productive-azure/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/external-config-and-claim-check/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/external-config-and-claim-check/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/cloud-drops-git-101/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/cloud-drops-git-101/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-013/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/weekly-vlog-013/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/accelerate-dotnet-to-azure-with-github-actions/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/accelerate-dotnet-to-azure-with-github-actions/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/cloud-drops-git-behind-scenes/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/cloud-drops-git-behind-scenes/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/cloud-drops-git-lfs/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/cloud-drops-git-lfs/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-012/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/weekly-vlog-012/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/deploy-using-terraform-cloud/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/deploy-using-terraform-cloud/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/cloud-drops-github-codespaces/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/cloud-drops-github-codespaces/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-011/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/weekly-vlog-011/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/cache-aside/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/cache-aside/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/cloud-drops-azure-cli/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/cloud-drops-azure-cli/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-010/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/weekly-vlog-010/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/sidecar-and-ambassador/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/sidecar-and-ambassador/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/matchmaking-services/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/matchmaking-services/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-009/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/weekly-vlog-009/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/intro-to-landing-zones/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/intro-to-landing-zones/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-008/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/weekly-vlog-008/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/compute-resource-consolidation/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/compute-resource-consolidation/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-007/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/weekly-vlog-007/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/priority-queues-pipes-filters/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/priority-queues-pipes-filters/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/a-conversation-on-mental-health/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/a-conversation-on-mental-health/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-006/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/weekly-vlog-006/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/hosted-game-servers/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/hosted-game-servers/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-005/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/weekly-vlog-005/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/health-endpoint-monitoring-pattern/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/health-endpoint-monitoring-pattern/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-004/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/weekly-vlog-004/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/gatekeeper-and-valet-key/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/gatekeeper-and-valet-key/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-003/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/weekly-vlog-003/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/static-content-hosting-pattern/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/static-content-hosting-pattern/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-002/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/weekly-vlog-002/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/github-codespaces-and-vscode-remote-containers/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/github-codespaces-and-vscode-remote-containers/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-001/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/weekly-vlog-001/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/queue-based-load-levelling-and-competing-consumers/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/queue-based-load-levelling-and-competing-consumers/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/anti-corruption-layer-and-gateway-patterns/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/anti-corruption-layer-and-gateway-patterns/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/event-sourcing-and-materialized-view/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/event-sourcing-and-materialized-view/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/geode-pattern/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/geode-pattern/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/defying-gravity/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/defying-gravity/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/github-issues-github-discussions/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/github-issues-github-discussions/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/github-universe-roundup/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/github-universe-roundup/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/throttling-and-retry-pattern/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/throttling-and-retry-pattern/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/github-actions-deploy-to-appservice/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/github-actions-deploy-to-appservice/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/github-actions-deploying-infrastructure/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/github-actions-deploying-infrastructure/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/github-actions-getting-started/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/github-actions-getting-started/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/github-actions-git/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/github-actions-git/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/backends-for-frontends-and-strangler/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/backends-for-frontends-and-strangler/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/sharding-and-index-table/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/sharding-and-index-table/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/deployment-stamps/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/deployment-stamps/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/defying-ddos/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/defying-ddos/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/modern-identity-patterns/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/modern-identity-patterns/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/azure-github-actions/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/azure-github-actions/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/building-smart-integration-solutions/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/building-smart-integration-solutions/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/azure-security/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/azure-security/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/creating-cloud-with-chris/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/creating-cloud-with-chris/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/hybrid-cloud/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/hybrid-cloud/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/api-economy/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/api-economy/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/hackathons/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/hackathons/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/devops-in-cloud/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/devops-in-cloud/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/cost-control/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/cost-control/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/requirements-in-context/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/requirements-in-context/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/teaser/ - Episode Metadata Check" classname="[firefox] › episode.spec.ts:9:3 › episode/teaser/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="episode.spec.ts" timestamp="1654099546669" hostname="" tests="163" failures="0" skipped="163" time="0" errors="0">
+<testcase name="episode/tech-roundup-2212/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/tech-roundup-2212/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/tech-roundup-2211/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/tech-roundup-2211/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/tech-roundup-2210/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/tech-roundup-2210/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/tech-roundup-2209/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/tech-roundup-2209/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/tech-roundup-2208/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/tech-roundup-2208/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/tech-roundup-2207/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/tech-roundup-2207/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/toolup-tuesday-11/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/toolup-tuesday-11/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/toolup-tuesday-10/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/toolup-tuesday-10/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/tech-roundup-2206/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/tech-roundup-2206/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/toolup-tuesday-9/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/toolup-tuesday-9/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/toolup-tuesday-8/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/toolup-tuesday-8/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/tech-roundup-2205/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/tech-roundup-2205/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/toolup-tuesday-7/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/toolup-tuesday-7/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/toolup-tuesday-6/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/toolup-tuesday-6/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/tech-roundup-2204/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/tech-roundup-2204/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/toolup-tuesday-5/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/toolup-tuesday-5/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/toolup-tuesday-4/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/toolup-tuesday-4/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/tech-roundup-2203/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/tech-roundup-2203/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/things-to-consider-before-migrating-old-dotnet/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/things-to-consider-before-migrating-old-dotnet/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/toolup-tuesday-3/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/toolup-tuesday-3/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/azure-quantum-microsoft-q-sharp/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/azure-quantum-microsoft-q-sharp/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/tech-roundup-2202/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/tech-roundup-2202/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/toolup-tuesday-2/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/toolup-tuesday-2/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/feature-flags-art-of-if-and-deployment/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/feature-flags-art-of-if-and-deployment/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/toolup-tuesday-1/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/toolup-tuesday-1/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/community-gaming-2202/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/community-gaming-2202/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/tech-roundup-2201/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/tech-roundup-2201/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-041/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/weekly-vlog-041/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/azure-for-game-developers/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/azure-for-game-developers/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-040/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/weekly-vlog-040/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/shift-left-performance-tests/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/shift-left-performance-tests/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-039/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/weekly-vlog-039/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/devops-trends/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/devops-trends/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/devops-tales-from-the-real-world/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/devops-tales-from-the-real-world/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-037/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/weekly-vlog-037/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/architecting-the-transformation/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/architecting-the-transformation/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/migrating-to-the-cloud/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/migrating-to-the-cloud/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-036/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/weekly-vlog-036/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/leveraging-azure-as-telco-provider/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/leveraging-azure-as-telco-provider/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/game-streaming/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/game-streaming/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-035/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/weekly-vlog-035/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/tales-from-real-world-get-into-devrel/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/tales-from-real-world-get-into-devrel/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/closed-captions-make-a-difference/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/closed-captions-make-a-difference/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-034/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/weekly-vlog-034/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/decentralised-reference-architecture-cloud-native/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/decentralised-reference-architecture-cloud-native/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/discussing-cloud-with-chris-integration/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/discussing-cloud-with-chris-integration/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/find-vulns-in-your-code/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/find-vulns-in-your-code/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-033/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/weekly-vlog-033/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/aks-agic-kubenet-tips-tricks/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/aks-agic-kubenet-tips-tricks/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-032/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/weekly-vlog-032/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/adb2c-a-real-silver-bullet/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/adb2c-a-real-silver-bullet/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/be-successful-with-monitoring-in-azure/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/be-successful-with-monitoring-in-azure/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-031/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/weekly-vlog-031/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/helping-veterans-transition-into-it-and-learn-azure/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/helping-veterans-transition-into-it-and-learn-azure/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-030/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/weekly-vlog-030/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/lessons-learned-cultivating-open-source/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/lessons-learned-cultivating-open-source/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/cloud-drops-what-is-continuous-integration/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/cloud-drops-what-is-continuous-integration/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-029/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/weekly-vlog-029/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/iot-simulation-azure-iot-and-real-world-learnings/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/iot-simulation-azure-iot-and-real-world-learnings/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-028/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/weekly-vlog-028/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/choosing-the-right-datastore/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/choosing-the-right-datastore/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/game-streaming-and-entertainment/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/game-streaming-and-entertainment/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/diverse-team-crucial-to-startup-success/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/diverse-team-crucial-to-startup-success/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-027/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/weekly-vlog-027/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/devops-on-azure/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/devops-on-azure/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/top-new-cncf-projects/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/top-new-cncf-projects/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-026/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/weekly-vlog-026/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/agile-from-the-trenches/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/agile-from-the-trenches/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-025/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/weekly-vlog-025/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/discussion-with-john-lunn/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/discussion-with-john-lunn/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/azure-and-vmware/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/azure-and-vmware/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-024/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/weekly-vlog-024/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/geode-pattern-hands-on/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/geode-pattern-hands-on/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/hybrid-cloud-life-as-cloud-advocate/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/hybrid-cloud-life-as-cloud-advocate/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/discussing-cloud-with-chris-github-action-usage/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/discussing-cloud-with-chris-github-action-usage/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-023/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/weekly-vlog-023/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/your-career-and-your-mental-health/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/your-career-and-your-mental-health/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/building-a-game-remotely/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/building-a-game-remotely/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-022/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/weekly-vlog-022/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/tales-from-real-world-matthew-bradley/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/tales-from-real-world-matthew-bradley/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-021/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/weekly-vlog-021/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/application-insights-the-tool-you-never-knew-you-needed/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/application-insights-the-tool-you-never-knew-you-needed/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-020/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/weekly-vlog-020/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/cloud-drops-event-grid/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/cloud-drops-event-grid/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/tales-from-real-world-social-opinion/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/tales-from-real-world-social-opinion/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/a-livestream-on-mental-health/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/a-livestream-on-mental-health/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/cloud-drops-pipelines-as-code/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/cloud-drops-pipelines-as-code/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-019/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/weekly-vlog-019/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/github-actions-multiple-environments/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/github-actions-multiple-environments/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/cloud-drops-powershell-azure-functions/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/cloud-drops-powershell-azure-functions/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/sudoku-social/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/sudoku-social/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-018/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/weekly-vlog-018/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-017/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/weekly-vlog-017/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/azure-spring-cloud/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/azure-spring-cloud/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/discussing-cloud-with-chris-architecture-and-github/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/discussing-cloud-with-chris-architecture-and-github/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-016/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/weekly-vlog-016/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-015/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/weekly-vlog-015/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/bulkhead/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/bulkhead/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/inventory-and-economy/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/inventory-and-economy/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/cloud-drops-microsoft-learn-azure/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/cloud-drops-microsoft-learn-azure/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-014/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/weekly-vlog-014/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/cloud-drops-windows-terminal-productive-azure/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/cloud-drops-windows-terminal-productive-azure/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/external-config-and-claim-check/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/external-config-and-claim-check/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/cloud-drops-git-101/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/cloud-drops-git-101/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-013/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/weekly-vlog-013/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/accelerate-dotnet-to-azure-with-github-actions/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/accelerate-dotnet-to-azure-with-github-actions/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/cloud-drops-git-behind-scenes/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/cloud-drops-git-behind-scenes/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/cloud-drops-git-lfs/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/cloud-drops-git-lfs/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-012/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/weekly-vlog-012/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/deploy-using-terraform-cloud/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/deploy-using-terraform-cloud/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/cloud-drops-github-codespaces/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/cloud-drops-github-codespaces/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-011/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/weekly-vlog-011/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/cache-aside/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/cache-aside/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/cloud-drops-azure-cli/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/cloud-drops-azure-cli/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-010/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/weekly-vlog-010/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/sidecar-and-ambassador/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/sidecar-and-ambassador/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/matchmaking-services/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/matchmaking-services/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-009/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/weekly-vlog-009/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/intro-to-landing-zones/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/intro-to-landing-zones/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-008/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/weekly-vlog-008/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/compute-resource-consolidation/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/compute-resource-consolidation/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-007/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/weekly-vlog-007/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/priority-queues-pipes-filters/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/priority-queues-pipes-filters/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/a-conversation-on-mental-health/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/a-conversation-on-mental-health/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-006/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/weekly-vlog-006/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/hosted-game-servers/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/hosted-game-servers/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-005/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/weekly-vlog-005/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/health-endpoint-monitoring-pattern/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/health-endpoint-monitoring-pattern/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-004/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/weekly-vlog-004/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/gatekeeper-and-valet-key/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/gatekeeper-and-valet-key/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-003/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/weekly-vlog-003/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/static-content-hosting-pattern/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/static-content-hosting-pattern/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-002/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/weekly-vlog-002/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/github-codespaces-and-vscode-remote-containers/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/github-codespaces-and-vscode-remote-containers/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/weekly-vlog-001/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/weekly-vlog-001/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/queue-based-load-levelling-and-competing-consumers/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/queue-based-load-levelling-and-competing-consumers/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/anti-corruption-layer-and-gateway-patterns/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/anti-corruption-layer-and-gateway-patterns/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/event-sourcing-and-materialized-view/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/event-sourcing-and-materialized-view/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/geode-pattern/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/geode-pattern/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/defying-gravity/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/defying-gravity/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/github-issues-github-discussions/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/github-issues-github-discussions/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/github-universe-roundup/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/github-universe-roundup/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/throttling-and-retry-pattern/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/throttling-and-retry-pattern/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/github-actions-deploy-to-appservice/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/github-actions-deploy-to-appservice/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/github-actions-deploying-infrastructure/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/github-actions-deploying-infrastructure/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/github-actions-getting-started/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/github-actions-getting-started/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/github-actions-git/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/github-actions-git/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/backends-for-frontends-and-strangler/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/backends-for-frontends-and-strangler/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/sharding-and-index-table/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/sharding-and-index-table/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/deployment-stamps/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/deployment-stamps/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/defying-ddos/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/defying-ddos/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/modern-identity-patterns/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/modern-identity-patterns/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/azure-github-actions/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/azure-github-actions/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/building-smart-integration-solutions/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/building-smart-integration-solutions/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/azure-security/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/azure-security/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/creating-cloud-with-chris/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/creating-cloud-with-chris/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/hybrid-cloud/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/hybrid-cloud/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/api-economy/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/api-economy/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/hackathons/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/hackathons/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/devops-in-cloud/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/devops-in-cloud/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/cost-control/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/cost-control/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/requirements-in-context/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/requirements-in-context/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="episode/teaser/ - Episode Metadata Check" classname="[webkit] › episode.spec.ts:9:3 › episode/teaser/ - Episode Metadata Check" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+</testsuites>

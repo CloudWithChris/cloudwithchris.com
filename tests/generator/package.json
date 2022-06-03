@@ -1,0 +1,17 @@
+{
+  "name": "cloudwithchris-tests-generator",
+  "version": "1.0.0",
+  "description": "Package to generate tests for Cloud With Chris",
+  "main": "episode-generator.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "author": "Chris Reddington",
+  "license": "ISC",
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "node-fetch": "^3.0.0",
+    "fast-xml-parser": "^4.0.8"
+  }
+}

@@ -2,7 +2,7 @@
 Authors: 
 - chrisreddington
 Description: "I'll be transparent. The purpose of this post is to help with my own understanding of the Go & and * operators. It's going to be a very short post, and I'm going to try to explain the concepts in a way that I can understand. I've used these operators in C previously, but whenever I'm using them - I always end up having to remember the syntax / which operator is which / what they do. For whatever reason, it doesn't always come intuitively to me."
-PublishDate: "2022-05-01T13:00:00Z"
+Date: "2022-05-01T13:00:00Z"
 image: img/cloudwithchrislogo.png
 PublishDate: "2022-05-01T13:00:00Z"
 images:
