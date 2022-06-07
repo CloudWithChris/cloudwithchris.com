@@ -1,4 +1,4 @@
-FROM golang:1.13
+FROM golang:1.18
 
 # VARIANT can be either 'hugo' for the standard version or 'hugo_extended' for the extended version.
 ARG VARIANT=hugo_extended
@@ -27,4 +27,5 @@ EXPOSE 1313
 # [Optional] Uncomment this section to install additional OS packages you may want.
 
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends npm
+    && apt-get -y install --no-install-recommends npm \
+    && apt-get upgrade -y
