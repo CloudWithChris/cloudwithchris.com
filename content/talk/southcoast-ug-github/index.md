@@ -37,7 +37,6 @@ event:
   cost: ""            # Cost to attend the event
   costCurrency: ""    # Cost currency for the event. Use a standard format - http://en.wikipedia.org/wiki/ISO_4217
   available: "" # Whether registration/ticket purchases/etc. are still available (true/false). Defaults to false when event is in past.
-upcoming: true
 ---
 Chris is the blogger, podcaster, host and producer of his content platform CloudWithChris.com.
 He uses GitHub to manage, develop, build and deploy it.
