@@ -11,21 +11,32 @@
 			// Example versions: latest, 0.73.0, 0,71.1
 			// Rebuild the container if it already exists to update.
 			"VERSION": "latest",
+			// Update NODE_VERSION to pick the Node.js version: 12, 14
+			"NODE_VERSION": "14"
 		}
 	},
-	// Set *default* container specific settings.json values on container create.
-	"settings": {
-		"terminal.integrated.shell.linux": "/bin/zsh"
+	// Configure tool-specific properties.
+	"customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {
+			// Set *default* container specific settings.json values on container create.
+			"settings": { 
+				"html.format.templating": true
+			},
+			
+			// Add the IDs of extensions you want installed when the container is created.
+			"extensions": [
+				"bungcip.better-toml",
+				"davidanson.vscode-markdownlint"
+			]
+		}
 	},
-	// Add the IDs of extensions you want installed when the container is created.
-	"extensions": [
-		"bungcip.better-toml",
-		"davidanson.vscode-markdownlint"
-	],
+		
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [
 		1313
 	],
+		
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "npm ci",
 	// Uncomment to use Docker from inside the container. See https://aka.ms/vscode-remote/samples/docker-from-docker.
