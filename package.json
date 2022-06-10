@@ -9,7 +9,7 @@
     "fuse.js": "^6.6.2",
     "gray-matter": "^4.0.3",
     "jquery": "^3.6.0",
-    "node-fetch": "^3.2.5"
+    "node-fetch": "^3.2.6"
   },
   "devDependencies": {
     "@playwright/test": "^1.22.2"
