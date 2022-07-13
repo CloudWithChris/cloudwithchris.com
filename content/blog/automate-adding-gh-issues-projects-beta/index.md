@@ -71,7 +71,7 @@ You may be aware that at the start of a workflow, GitHub Actions automatically c
 
 You can set an environment variable at the workflow level, job level, or step level.
 
-At this stage, we've laid the foundation to run the GitHub CLI. We'll bbe using the ``gh api graphql`` command to query the GitHub API.
+At this stage, we've laid the foundation to run the GitHub CLI. We'll be using the ``gh api graphql`` command to query the GitHub API.
 
 ```bash
 gh api graphql -f query='
