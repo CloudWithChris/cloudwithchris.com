@@ -1,7 +1,7 @@
 ---
-Date: "2022-07-12T19:30:00Z"
+Date: "2022-07-26T19:30:00Z"
 Description: "ToolUp Tuesday is all about showing the thought process and decisions made when creating an application. Join Chris and Matt as they build a new application from the ground up, including development processes, tooling, service choices and architectural decisions!"
-PublishDate: "2022-07-12T19:30:00Z"
+PublishDate: "2022-07-26T19:30:00Z"
 Title: "ToolUp Tuesday #10"
 episode: TT010
 image: images/toolup-tuesday.jpg
