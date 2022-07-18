@@ -12,7 +12,7 @@
     "node-fetch": "^3.2.8"
   },
   "devDependencies": {
-    "@playwright/test": "^1.23.3"
+    "@playwright/test": "^1.23.4"
   },
   "scripts": {}
 }
