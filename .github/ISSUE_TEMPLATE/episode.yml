@@ -18,8 +18,8 @@ body:
   - type: input
     id: title
     attributes:
-      label: Title
-      description: ">>Episode Name:<<"
+      label: '>>Title<<'
+      description: "Episode Name"
       placeholder: "Episode title here"
     validations:
       required: true
