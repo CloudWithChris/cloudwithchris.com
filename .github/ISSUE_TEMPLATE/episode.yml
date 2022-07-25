@@ -43,12 +43,11 @@ body:
       value: "GitHub Actions Overview for those with an operations background."
     validations:
       required: true
-  - type: textarea
+  - type: checkboxes
     id: audience
     attributes:
       label: ">>Target Audience<<"
       description: Who should the video be aimed at? (e.g. developers, IT Pros, Architects, Execs, etc.)
-      multiple: true
       options:
         - Developer
         - Architect
