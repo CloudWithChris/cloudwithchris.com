@@ -56,7 +56,7 @@ body:
         - Operations
         - Executive
         - End-User
-- type: input
+  - type: input
     id: recording-date
     attributes:
       label: '>>Recording Date<<'
