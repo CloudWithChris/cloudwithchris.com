@@ -50,7 +50,7 @@ body:
       description: Who should the video be aimed at? (e.g. developers, IT Pros, Architects, Execs, etc.)
       options:
         - label: Developer
-        - label: rchitect
+        - label: Architect
         - label: Data Professional
         - label: Operations
         - label: Executive
