@@ -75,6 +75,6 @@ body:
   - type: textarea
     id: additional
     attributes:
-      label: '>>Additional Information
+      label: '>>Additional Information<<'
       description: Any other useful information (e.g. link to the sessionize submission)
   
