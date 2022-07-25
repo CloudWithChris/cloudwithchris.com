@@ -19,14 +19,14 @@ body:
     id: title
     attributes:
       label: Title
-      description: "What is the name of this episode?"
+      description: ">>Episode Name:<<"
       placeholder: "Episode title here"
     validations:
       required: true
   - type: dropdown
     id: category
     attributes:
-      label: Which series does this belong to??
+      label: ">>Series<<"
       multiple: false
       options:
         - Architecting for the Cloud One Pattern at a Time
@@ -37,7 +37,7 @@ body:
   - type: textarea
     id: summary
     attributes:
-      label: Video Summary
+      label: ">>Description<<"
       description: What should the video be about?
       placeholder: GitHub Actions Overview for those with an operations background.
       value: "GitHub Actions Overview for those with an operations background."
@@ -46,12 +46,20 @@ body:
   - type: textarea
     id: audience
     attributes:
-      label: Target Audience
+      label: ">>Target Audience<<"
       description: Who should the video be aimed at? (e.g. developers, IT Pros, Architects, Execs, etc.)
-  - type: input
+      multiple: true
+      options:
+        - Developer
+        - Architect
+        - Data Professional
+        - Operations
+        - Executive
+        - End-User
+- type: input
     id: recording-date
     attributes:
-      label: Recording Date
+      label: '>>Recording Date<<'
       description: "When is the session due to be filmed/livestreamed?"
       placeholder: "Enter date in dd/mm/yyyy format."
     validations:
@@ -59,7 +67,7 @@ body:
   - type: input
     id: release-date
     attributes:
-      label: Release Date
+      label: '>>Release Date<<'
       description: "When is the session due to be released?"
       placeholder: "Enter date in dd/mm/yyyy format."
     validations:
@@ -67,6 +75,6 @@ body:
   - type: textarea
     id: additional
     attributes:
-      label: Additional Information
+      label: '>>Additional Information
       description: Any other useful information (e.g. link to the sessionize submission)
   
