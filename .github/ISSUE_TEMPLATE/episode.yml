@@ -55,6 +55,16 @@ body:
         - label: Operations
         - label: Executive
         - label: End-User
+  - type: dropdown
+    id: level
+    attributes:
+      label: ">>Level<<"
+      multiple: false
+      options:
+        - 100
+        - 200
+        - 300
+        - 400
   - type: input
     id: recording-date
     attributes:
