@@ -40,3 +40,19 @@ body:
     attributes:
       label: Target Audience
       description: Who should the video be aimed at? (e.g. developers, IT Pros, Architects, Execs, etc.)
+  - type: input
+    id: recording-date
+    attributes:
+      label: Recording Date
+      description: "When is the session due to be filmed/livestreamed?"
+      placeholder: "Enter date in dd/mm/yyyy format."
+    validations:
+      required: true
+  - type: input
+    id: release-date
+    attributes:
+      label: Release Date
+      description: "When is the session due to be released?"
+      placeholder: "Enter date in dd/mm/yyyy format."
+    validations:
+      required: true
