@@ -49,12 +49,12 @@ body:
       label: ">>Target Audience<<"
       description: Who should the video be aimed at? (e.g. developers, IT Pros, Architects, Execs, etc.)
       options:
-        - Developer
-        - Architect
-        - Data Professional
-        - Operations
-        - Executive
-        - End-User
+        - label: Developer
+        - label: rchitect
+        - label: Data Professional
+        - label: Operations
+        - label: Executive
+        - label: End-User
   - type: input
     id: recording-date
     attributes:
