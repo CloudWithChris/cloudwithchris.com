@@ -31,6 +31,7 @@ tags:
 - Architecture
 - Developer Tools
 - DevOps
+youtube: "X9mhRyVB3zc"
 upcoming: true
 banner: "images/banner.jpg"
 ---
