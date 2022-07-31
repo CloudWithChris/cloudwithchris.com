@@ -27,9 +27,9 @@ Let's start by defining DevOps. [Donovan Brown once said](https://devblogs.micro
 
 I'm sure that if you asked several people for their own definition of DevOps, you'd get a lot of different answers. However, I think that Donovan's definition incorporates the core aspects nicely.
 
-DevOps is not a tool. It combines a set of practices, removes tools, removes silos and builds upon effective processes. While you can keep improving in each of these aspects, you need to keep yourself grounded. 
+DevOps is not a tool. It combines a set of practices, removes tools, removes silos and builds upon effective processes. While you can keep improving in each of these aspects, you need to keep yourself grounded.
 
-But, grounded in what? Your guiding focus should be making sure that you are delivering what your end users want. For me, this is the core of DevOps. 
+But, grounded in what? Your guiding focus should be making sure that you are delivering what your end users want. For me, this is the core of DevOps.
 
 * What if you are delivering a product that is not what your end users want?
 * What if you automate your end-to-end processes, but don't check for quality and deliver several production-breaking issues?
@@ -41,7 +41,7 @@ All of these examples indicate that you are not delivering what your end users w
 
 This is where GitHub comes in. GitHub is commonly used in the Open Source community. It was initially created to help developers collaborate on code, using the Git version control system (don't worry - we'll explore that in a future blog post).
 
-GitHub is a platform that allows you to share code with the world. But, you're not limited to committing code in the open. You can also create private repositories, which are only visible to you or those you've explicitly granted access. 
+GitHub is a platform that allows you to share code with the world. But, you're not limited to committing code in the open. You can also create private repositories, which are only visible to you or those you've explicitly granted access.
 
 GitHub is much more than a place to store code. It has several capabilities, including:
 
@@ -63,7 +63,7 @@ In terms of getting started, I'd recommend taking a look at the [GitHub Skills](
 * Hello GitHub Actions
 * Continuous Integration
 
-I'll make sure to link relevant resources as I create those future blog posts. 
+I'll make sure to link relevant resources as I create those future blog posts.
 
 For the time being, get in touch if there's anything you'd like to see added to this series. I have some of my personal thoughts on the topic, and ideas for content. I particularly want to hear from you if you're not from a development background, so I can help make these concepts easier to learn.
 
