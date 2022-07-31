@@ -2,9 +2,9 @@
 title: About
 ---
 
-Exploring Cloud concepts with Chris Reddington (Welsh Tech Geek, Cloud Advocate, Musical Theatre Enthusiast and Improving Improviser!). We will regularly invite guests to talk about their experiences with the cloud and hear about some of the lessons learned around their cloud journey. Cloud with Chris is a community-driven personal podcast. Content from episodes do not represent the views of any company or organisation.
+Exploring Cloud concepts with Chris Reddington (Welsh Tech Geek, Cloud and DevOps Advocate, Musical Theatre Enthusiast and Improving Improviser!). He regularly invites guests to talk about their experiences with the cloud and hear about lessons learned in their cloud journey. Cloud with Chris is a community-driven personal podcast. Content from episodes do not represent the views of any company or organisation.
 
-Chris is a Cloud Solution Architect at Microsoft UK, working with customers in the Manufacturing & Resources industry.
+Chris is a Senior Enterprise Advocate at GitHub.
 
 <div class="row">
   <div class="column">
@@ -12,7 +12,7 @@ Chris is a Cloud Solution Architect at Microsoft UK, working with customers in t
   </div>
 </div>
 
-By day, he works with stakeholders in start-ups and enterprises from developers and system admins through to Heads of Division and CTOs on accelerating their journey to the cloud, while actively listening and working with the Azure Engineering teams to further improve the Azure Platform. His primary technical areas of focus are Cloud Architecture, Cloud Native Solutions (including Kubernetes) and DevOps tooling and principals.
+By day, he works with stakeholders in start-ups and enterprises from developers and system admins through to Heads of Division and CTOs, helping them ❤️ GitHub, while actively listening and working with the GitHub Engineering teams to further improve the Platform.
 
 Chris has presented at several internal and external events including Microsoft Tech Ready, Microsoft Ignite and several Microsoft Tech Summit events.
 
