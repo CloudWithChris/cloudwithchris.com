@@ -6,8 +6,6 @@ on:
 jobs:
   track_pr:
     runs-on: ubuntu-latest
-    permissions:
-      project: write
     steps:
       - name: Get project data
         env:

@@ -6,8 +6,6 @@ on:
 jobs:
   track_issue:
     runs-on: ubuntu-latest
-    permissions:
-      project: write
     steps:
       - name: Get project data
         env:
