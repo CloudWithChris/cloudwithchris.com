@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Get project data
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_PROJECT_ACCESS }
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_PROJECT_ACCESS }}
           ORGANIZATION: CloudWithChris
           PROJECT_NUMBER: 5
         run: |
