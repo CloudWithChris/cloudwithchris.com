@@ -6,10 +6,11 @@ on:
 jobs:
   track_issue:
     runs-on: ubuntu-latest
+    permissions:
+      projects: write
     steps:
       - name: Get project data
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_PROJECT_ACCESS }}
           ORGANIZATION: CloudWithChris
           PROJECT_NUMBER: 5
         run: |
@@ -33,7 +34,6 @@ jobs:
           
       - name: Add issue to project
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_PROJECT_ACCESS }}
           ISSUE_ID: ${{ github.event.issue.node_id }}
         run: |
           item_id="$( gh api graphql -f query='
