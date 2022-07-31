@@ -1,6 +1,6 @@
 ---
 # Default hugo properties
-title: "GitHub Projects is now GA! Automation Upodates"                   # Name of the blog
+title: "GitHub Projects is now GA! Automation Updates"                   # Name of the blog
 description: "In a couple of previous blog posts, I provided a writeup on the GitHub Projects Beta. I wrote two posts on automation within GitHub Projects (Adding Issues to GitHub Projects with GitHub Actions for a user profile and Adding Issues to GitHub Projects with GitHub Actions for an Organization profile). I'm pleased to say that the capabilities went Generally Available last week! As a result of the GA announcement and resulting changes, I need to post updates to my older samples."             # Used for SEO optimisation
 publishDate: "2022-07-31T20:00:00Z"             # TODO: Differentiate between date
 date: "2022-07-31T20:00:00Z"                            # TODO: Differentiate between PublishDate
