@@ -27,6 +27,8 @@ authors:
 -  "chrisreddington"                       # An array of authors of the post (filenames in person).
 banner: "images/banner.jpg"
 ---
+**Update: This information is now outdated. Please see my post since [GitHub Projects Went Generally Available](/blog/github-projects-ga-automation-updates), as there are some APIs used in this example which [will be deprecated in October 2022](https://github.blog/changelog/2022-06-23-the-new-github-issues-june-23rd-update/#%F0%9F%A4%96-graphql-api-improvements).**
+
 I recently [wrote a blog post](/blog/automate-adding-gh-issues-projects-beta) on using GitHub Actions to automatically add a GitHub Issue to a [GitHub Projects (beta)](https://github.com/features/issues) when an issue is opened. I received a question from my colleague and maintainer of the [promitor](https://promitor.io/) and [KEDA](https://keda.sh/) Open Source (OSS) Projects, [Tom Kerkhove](https://twitter.com/TomKerkhove) on using the sample with a user-owned GitHub repository, rather than an organisation-owned one.
 
 Fortunately, there were relatively few tweaks needed to adjust the sample from the previous blog post to meet this requirement. I'm pleased on the response to the blog post so far. Particularly as I [indirectly helped on a contribution to the KEDA project](https://github.com/kedacore/keda/pull/2622#pullrequestreview-878828492). KEDA is a project that I'm very fond of, and will have to write a post as part of the [CNCF Projects series](/series/cncf-projects/). I'm looking forward to using KEDA as a part of Azure Container Apps in the future.
