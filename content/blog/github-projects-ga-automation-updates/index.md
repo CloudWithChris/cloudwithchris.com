@@ -40,11 +40,11 @@ The team have had [an incredible cadence of releases](https://github.blog/change
 
 It's because of that last point that I'm writing this particular blog post. When looking over the samples in the prior blog posts, you'll notice that it used the  ``ProjectNext`` object. However, the [GitHub Projects Team announced that the ProjectNext object will be deprecated in favour of the ProjectV2 object](https://github.blog/changelog/2022-06-23-the-new-github-issues-june-23rd-update/). As such, my previous GitHub Action workflows will need to be updated. But, fear not - as I've included them for you below!
 
-The example below shows how to add a GitHub Issue to an existing project. 
+The example below shows how to add a GitHub Issue to an existing project.
 
 * The example uses the **ProjectV2** object
 * Due to the new schema, the nodes property needs to be updated. Notice that it is now split into ``... on ProjectV2Field`` and ``... on ProjectV2SingleSelectField`` (compared with the simple flat nodes object in the previous blog posts).
-* The example still passes in a ``GITHUB_TOKEN``. I have set this at my CloudWithChris organisation level, so it can be used across all repositories in the organisation. 
+* The example still passes in a ``GITHUB_TOKEN``. I have set this at my CloudWithChris organisation level, so it can be used across all repositories in the organisation.
   * I generated a Personal Access Token (PAT) which has the ``project`` OAuth2 scope. This was also newly introduced as part of the recent GitHub projects updates ([as seen in the team's June update](https://github.blog/changelog/2022-06-23-the-new-github-issues-june-23rd-update/)). This means we can generate a token which either has read, or write access to Projects.
   * Ideally, I would have used the ``permissions`` property in GitHub Actions to leverage the [Automatic Token Authentication capabilities](https://docs.github.com/en/actions/security-guides/automatic-token-authentication#permissions-for-the-github_token), eliminating the need for Personal Access Tokens altogether. Unfortunately, it doesn't look like there are permissions for GitHub Projects v2 at the moment.
 
