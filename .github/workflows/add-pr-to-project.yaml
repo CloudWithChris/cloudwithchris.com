@@ -20,9 +20,18 @@ jobs:
                   id
                   fields(first:20) {
                     nodes {
-                      id
-                      name
-                      settings
+                      ... on ProjectV2Field {
+                        id
+                        name
+                      }
+                      ... on ProjectV2SingleSelectField {
+                        id
+                        name
+                        options {
+                          id
+                          name
+                        }
+                      }
                     }
                   }
                 }
@@ -38,7 +47,7 @@ jobs:
           item_id="$( gh api graphql -f query='
             mutation($project:ID!, $pr:ID!) {
               addProjectV2ItemById(input: {projectId: $project, contentId: $pr}) {
-                projectV2Item {
+                item {
                   id
                 }
               }
