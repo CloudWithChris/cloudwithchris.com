@@ -13,7 +13,7 @@ tags:
 - DevSecOps
 - GitHub
 title: GitHub for All - Overview
-banner: "img/cloudwithchrislogo.png"
+banner: "images/cloud-with-chris-banner.png"
 ---
 GitHub is one of my passion areas. You may have realised that already, with the amount of content that I've written about it. That's only going to continue, because I've recently been hired there as an Enterprise Advocate.
 
