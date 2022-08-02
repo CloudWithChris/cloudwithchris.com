@@ -19,6 +19,7 @@ tags:
 - Security
 - Software
 youtube: ""
+upcoming: true
 banner: "images/cloud-with-chris-banner.png"
 ---
 A new phenomenon stand out in recent years: security must pervade the entire software development lifecycle. Except it isn't. Current generation of processes and tools is lacking crucial features to properly manage modern security risks.
