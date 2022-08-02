@@ -5,7 +5,7 @@ GitHub: ""
 Instagram: ""
 Linkedin: "dianna-keen"
 Pinterest: ""
-image: images/diannakeen.png
+image: images/diannakeen.jpg
 Title: Dianna Keen
 Twitter: ""
 Website: ""
