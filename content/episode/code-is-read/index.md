@@ -21,6 +21,7 @@ tags:
 - Software
 youtube: Q0b3tOFeJlI
 banner: "images/cloud-with-chris-banner.png"
+upcoming: true
 ---
 What separates the highly-skilled developer from the one fresh out of college? Why is it that some developer's code is far easier to maintain and others are nearly impossible to decipher? Both boil down fundamentally to whether you can easily understand the ideas and intent conveyed in their code. So what makes for easily understood code?
 
