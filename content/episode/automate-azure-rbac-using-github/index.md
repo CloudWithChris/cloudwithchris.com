@@ -18,7 +18,7 @@ tags:
 - RBAC
 - DevOps
 youtube: Li9lSbZJCzo
-banner: "images/cloud-with-chris-banner.png"
 upcoming: true
+banner: "images/cloud-with-chris-banner.png"
 ---
 Technical discussion on how to automate and maintain custom RBAC role definitions in Azure using GitHub actions.
