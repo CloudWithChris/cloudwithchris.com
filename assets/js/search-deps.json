@@ -1,7 +1,0 @@
-{
-  "scripts" : [
-    "js/jquery.min.js",
-    "js/fuse.basic.min.js",
-    "js/search.js"
-  ]
-}
