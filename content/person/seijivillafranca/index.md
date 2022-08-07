@@ -14,4 +14,4 @@ Description: "Graduated Cum Laude with a degree of Bachelor of Science In Comput
 ---
 Graduated Cum Laude with a degree of Bachelor of Science In Computer Science at University of Santo Tomas.
 
-Currently a Senior React and .NET Developer at CoDev, Auth0 Ambassador, one of the Microsoft MVPs in the Philippines and also one of the Community Leaders of Angular PH who is involved organizing tech meetups, mentorships, and has written tutorials in his own website seijivillafranca.com , he has also been a speaker in several events and conferences in the Philippines and abroad.
+Currently a Senior React and .NET Developer at CoDev, Auth0 Ambassador, one of the Microsoft MVPs in the Philippines and also one of the Community Leaders of Angular PH who is involved organizing tech meetups, mentorships, and has written tutorials in his own site [seijivillafranca.com](https://seijivillafranca.com), he has also been a speaker in several events and conferences in the Philippines and abroad.
