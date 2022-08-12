@@ -19,7 +19,6 @@ tags:
 - Developer
 - Development
 - Software
-upcoming: true
 youtube: "kZuxZ8TENoQ"
 banner: "images/cloud-with-chris-banner.png"
 ---

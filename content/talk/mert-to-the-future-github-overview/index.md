@@ -1,13 +1,13 @@
 ---
 Date: "2022-08-11T18:00:00Z"
-Description: "Chris joins Mert Yeter on Mert to the future show demonstrating how GitHub has some amazing capabilities beyond repositories! GitHub Copilot, GitHub Codespaces, GitHub Actions and more! Tune in to find out!"
+Description: "Chris joins Mert Yeter on Mert to the future show demonstrating how GitHub has some amazing capabilities beyond repositories! GitHub Projects, GitHub Copilot, GitHub Codespaces, GitHub Actions and more! Tune in to find out!"
 PublishDate: "2022-08-11T18:00:00Z"
 Title: "DevOps in a Cloud World"
 image: images/mshowto.jpg
 speakers:
 - chrisreddington
 images:
-- images/mshowto.jpg
+- images/banner.png
 - img/cloudwithchris.png
 tags:
 - DevOps
@@ -24,6 +24,6 @@ event:
   cost: ""            # Cost to attend the event
   costCurrency: ""    # Cost currency for the event. Use a standard format - http://en.wikipedia.org/wiki/ISO_4217
   available: "" # Whether registration/ticket purchases/etc. are still available (true/false). Defaults to false when event is in past.
-youtube: ""
+youtube: "eU71H-cl_kQ"
 ---
-Chris joins Mert Yeter on Mert to the future show demonstrating how GitHub has some amazing capabilities beyond repositories! GitHub Copilot, GitHub Codespaces, GitHub Actions and more! Tune in to find out!
+Chris joins Mert Yeter on Mert to the future show demonstrating how GitHub has some amazing capabilities beyond repositories! GitHub Projects, GitHub Copilot, GitHub Codespaces, GitHub Actions and more! Tune in to find out!
