@@ -1,25 +1,27 @@
 ---
-Date: "2022-10-13T19:00:00Z"
-Description: "Improve application resilience with chaos testing by deliberately introducing faults that simulate real-world outages. Azure Chaos Studio Preview / AWS Fault Injection Simulator is a fully managed chaos engineering experimentation platform for accelerating discovery of hard-to-find problems, from late-stage development through production. Disrupt your apps intentionally to identify gaps and plan mitigations before your customers are impacted by a problem."
-PublishDate: "2022-10-13T19:00:00Z"
-Title: Chaos Engineering for Cloud native Apps
+Date: "2022-09-01T19:30:00Z"
+Description: "Communication between entities has been a long lasting topic in Software engineering. IPC, Message brokers, Queues are only few of the main actors in this drama. In this episode, Chris is joined by Francesco who will cover a couple of Microservices communication patterns and give a deep dive into the Saga pattern to resolve multi-step transaction flows.
+"
+PublishDate: "2022-09-01T19:30:00Z"
+Title: Microservices have communication issues, especially when they fail
 episode: ""
-image: images/cloud-with-chris-banner.png
+image: images/banner.png
 explicit: "no"
 hosts:
 - chrisreddington
 guests:
-- ashishbhalgat
+- francescoborrelli
 images:
-- images/cloud-with-chris-banner.png
+- images/banner.png
 tags:
+- Cloud
 - Architecture
 - Microservices
-- SaaS
-- Software as a Service
-- Cloud
-- Developer Experience
+- Resilience
 upcoming: true
-banner: "images/cloud-with-chris-banner.png"
+youtube: "QtQmL8BhDIk"
+banner: "images/banner.png"
 ---
-Improve application resilience with chaos testing by deliberately introducing faults that simulate real-world outages. Azure Chaos Studio Preview / AWS Fault Injection Simulator is a fully managed chaos engineering experimentation platform for accelerating discovery of hard-to-find problems, from late-stage development through production. Disrupt your apps intentionally to identify gaps and plan mitigations before your customers are impacted by a problem.
+Communication between entities has been a long lasting topic in Software engineering. IPC, Message brokers, Queues are only few of the main actors in this drama.
+
+In this episode, Chris is joined by Francesco who will cover a couple of Microservices communication patterns and give a deep dive into the Saga pattern to resolve multi-step transaction flows.
