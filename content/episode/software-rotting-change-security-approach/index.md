@@ -4,21 +4,21 @@ Description: "A new phenomenon stand out in recent years: security must pervade 
 PublishDate: "2022-08-18T19:30:00Z"
 Title: Software rotting and why you need to change your approach to security
 episode: ""
-image: images/cloud-with-chris-banner.png
+image: images/banner.jpg
 explicit: "no"
 hosts:
 - chrisreddington
 guests:
 - giuliovian
 images:
-- images/cloud-with-chris-banner.png
+- images/banner.jpg
 tags:
 - Developer
 - DevSecOps
 - DevOps
 - Security
 - Software
-banner: "images/cloud-with-chris-banner.png"
+banner: "images/banner.jpg"
 ---
 A new phenomenon stand out in recent years: security must pervade the entire software development lifecycle. Except it isn't. Current generation of processes and tools is lacking crucial features to properly manage modern security risks.
 

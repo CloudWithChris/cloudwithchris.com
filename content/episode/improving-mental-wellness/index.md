@@ -1,26 +1,25 @@
 ---
-Date: "2022-09-01T19:30:00Z"
-Description: "Communication between entities has been a long lasting topic in Software engineering. IPC, Message brokers, Queues are only few of the main actors in this drama. In this episode, Chris is joined by Francesco who will cover a couple of Microservices communication patterns and give a deep dive into the Saga pattern to resolve multi-step transaction flows.
-"
-PublishDate: "2022-09-01T19:30:00Z"
-Title: Microservices have communication issues, especially when they fail
+Date: "2022-10-20T19:30:00Z"
+Description: "Professionals in Technology often push themselves to a breaking point with the pace at which we work. Given the stress of the workplace in all times, but especially in the current state, it's crucial to maintain a healthy mind as it's our most important resource.
+Let's discuss ways we can begin to engage and talk more about mental wellness, learn strategies as leaders, and identify resources both for ourselves and our teams."
+PublishDate: "2022-10-20T19:30:00Z"
+Title: Mental Health in Tech - Improving Mental Wellness
 episode: ""
 image: images/cloud-with-chris-banner.png
 explicit: "no"
 hosts:
 - chrisreddington
 guests:
-- francescoborrelli
+- diannakeen
 images:
 - images/cloud-with-chris-banner.png
 tags:
-- Cloud
-- Architecture
-- Microservices
-- Resilience
+- Mental Health
+- Burnout
+- Wellness
+- Mental Wellness
 upcoming: true
 banner: "images/cloud-with-chris-banner.png"
 ---
-Communication between entities has been a long lasting topic in Software engineering. IPC, Message brokers, Queues are only few of the main actors in this drama.
-
-In this episode, Chris is joined by Francesco who will cover a couple of Microservices communication patterns and give a deep dive into the Saga pattern to resolve multi-step transaction flows.
+Professionals in Technology often push themselves to a breaking point with the pace at which we work. Given the stress of the workplace in all times, but especially in the current state, it's crucial to maintain a healthy mind as it's our most important resource.
+Let's discuss ways we can begin to engage and talk more about mental wellness, learn strategies as leaders, and identify resources both for ourselves and our teams.
