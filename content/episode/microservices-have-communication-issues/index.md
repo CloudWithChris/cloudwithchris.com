@@ -18,7 +18,6 @@ tags:
 - Architecture
 - Microservices
 - Resilience
-upcoming: true
 youtube: "QtQmL8BhDIk"
 banner: "images/banner.png"
 ---
