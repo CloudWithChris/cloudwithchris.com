@@ -15,10 +15,18 @@ body:
         * **Cloud Gaming Notes**  - Many of us have grown up with gaming in one form of another. But have you ever thought about what it takes to host a game in the #Cloud​? Well, this is the series for you! On the first Wednesday of every month, we explore Cloud Concepts that impact your journey to a connected multiplayer #gaming​ experience!
         * **Main Podcast Series** - This is where Cloud with Chris originated, content without any particular theme or agenda! If you can't find a series that fits with what you want to talk about - That's okay! Submit it in this series, and we can work it out from there!
         * **Tales from the Real World** - Technology is great, but sometimes when we apply it to real world scenarios there can be challenges. There might be people/process challenges, or issues trying to bring different types of technology together. We also need to make considerations around security and many other cross-cutting concerns. This is less about the theory, and the technology - focusing more on the stories 
+  - type: input
+    id: title
+    attributes:
+      label: '>>Title<<'
+      description: "Episode Name"
+      placeholder: "Episode title here"
+    validations:
+      required: true
   - type: dropdown
     id: category
     attributes:
-      label: Which episode are you suggesting?
+      label: ">>Series<<"
       multiple: false
       options:
         - Architecting for the Cloud One Pattern at a Time
@@ -29,14 +37,53 @@ body:
   - type: textarea
     id: summary
     attributes:
-      label: Video Summary
+      label: ">>Description<<"
       description: What should the video be about?
       placeholder: GitHub Actions Overview for those with an operations background.
       value: "GitHub Actions Overview for those with an operations background."
     validations:
       required: true
-  - type: textarea
+  - type: checkboxes
     id: audience
     attributes:
-      label: Target Audience
+      label: ">>Target Audience<<"
       description: Who should the video be aimed at? (e.g. developers, IT Pros, Architects, Execs, etc.)
+      options:
+        - label: Developer
+        - label: Architect
+        - label: Data Professional
+        - label: Operations
+        - label: Executive
+        - label: End-User
+  - type: dropdown
+    id: level
+    attributes:
+      label: ">>Level<<"
+      multiple: false
+      options:
+        - 100
+        - 200
+        - 300
+        - 400
+  - type: input
+    id: recording-date
+    attributes:
+      label: '>>Recording Date<<'
+      description: "When is the session due to be filmed/livestreamed?"
+      placeholder: "Enter date in dd/mm/yyyy format."
+    validations:
+      required: true
+  - type: input
+    id: release-date
+    attributes:
+      label: '>>Release Date<<'
+      description: "When is the session due to be released?"
+      placeholder: "Enter date in dd/mm/yyyy format."
+    validations:
+      required: true
+  - type: textarea
+    id: additional
+    attributes:
+      label: '>>Additional Information<<'
+      description: Any other useful information (e.g. link to the sessionize submission)
+  

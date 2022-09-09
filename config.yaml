@@ -80,9 +80,7 @@ menu: # Main Menu
 
 module:
   mounts:
-    - source: "node_modules/bootstrap/js/dist"
-      target: "assets/js"
-    - source: "node_modules/@popperjs/core/dist/umd"
+    - source: "node_modules/bootstrap/dist/js"
       target: "assets/js"
     - source: "node_modules/jquery/dist"
       target: "assets/js"

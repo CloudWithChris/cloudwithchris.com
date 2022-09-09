@@ -15,8 +15,8 @@ jobs:
         submodules: 'true'
     - name: 'Dependency Review'
       if: github.event_name == 'pull_request' && github.event.action != 'closed'
-      uses: actions/dependency-review-action@v1
-    - uses: actions/setup-node@v2
+      uses: actions/dependency-review-action@v2
+    - uses: actions/setup-node@v3
       with:
         node-version: '14.x'
     - name: Install dependencies

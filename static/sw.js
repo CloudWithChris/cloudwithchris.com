@@ -360,6 +360,7 @@ self.addEventListener(
 self.addEventListener('message', (event) => {
 
     if(
+        event.origin === 'https://www.cloudwithchris.com' &&
         typeof event.data === 'object' &&
         typeof event.data.action === 'string'
     ) {
