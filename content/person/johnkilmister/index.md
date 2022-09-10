@@ -5,8 +5,8 @@ GitHub: ""
 Instagram: ""
 Linkedin: "johnkilmister"
 Pinterest: ""
-image: images/johnkilminster.jpg
-Title: John Kilminster
+image: images/johnkilmister.jpg
+Title: John Kilmister
 Twitter: "johnkilmister"
 Website: ""
 YouTube: ""
