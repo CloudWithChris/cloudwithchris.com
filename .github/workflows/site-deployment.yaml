@@ -1,4 +1,3 @@
-# Another dummy
 name: Azure Static Web Apps CI/CD
 
 # This GitHub Action workflow triggers in two scenarios - 
@@ -44,8 +43,8 @@ on:
 
 # Environment variables used for consistency across the workflow.
 env:
-  HUGO_VERSION: '0.101.0'
-  AZURE_CLI_VERSION: '2.37.0'
+  HUGO_VERSION: '0.102.3'
+  AZURE_CLI_VERSION: '2.40.0'
   SWA_NAME: cwc-static
 
 jobs:
