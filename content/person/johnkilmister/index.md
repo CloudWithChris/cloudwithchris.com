@@ -6,7 +6,7 @@ Instagram: ""
 Linkedin: "johnkilmister"
 Pinterest: ""
 image: images/johnkilmister.jpg
-Title: John Kilminster
+Title: John Kilmister
 Twitter: "johnkilmister"
 Website: ""
 YouTube: ""
