@@ -5,7 +5,7 @@ GitHub: ""
 Instagram: ""
 Linkedin: "johnkilmister"
 Pinterest: ""
-image: images/johnkilminster.jpg
+image: images/johnkilmister.jpg
 Title: John Kilminster
 Twitter: "johnkilmister"
 Website: ""
