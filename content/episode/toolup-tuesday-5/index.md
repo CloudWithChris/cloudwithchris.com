@@ -4,7 +4,7 @@ Description: "ToolUp Tuesday is all about showing the thought process and decisi
 PublishDate: "2022-04-21T19:30:00Z"
 Title: "ToolUp Tuesday - #5"
 episode: TT005
-image: images/toolup-tuesday.jpg
+image: images/banner.png
 explicit: "no"
 guests: []
 hosts:
@@ -12,6 +12,7 @@ hosts:
 - mattfortunka
 images:
 - img/default-social.png
+- images/banner.png
 # - images/v002.jpg
 # podcast_bytes: "15103520"
 # podcast_duration: "14:19.000"
@@ -32,7 +33,6 @@ tags:
 - Developer Tools
 - DevOps
 youtube: 3r7pz-68WjQ
-banner: "images/banner.jpg"
-featured: 2
+banner: "images/banner.png"
 ---
 ToolUp Tuesday is all about showing the thought process and decisions made when creating an application. Join Chris and Matt as they build a new application from the ground up, including development processes, tooling, service choices and architectural decisions!

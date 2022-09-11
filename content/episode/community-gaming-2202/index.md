@@ -6,7 +6,6 @@ Title: "Community Gaming - Halo Infinite"
 episode: CG2202
 image: images/community-gaming-2202.jpg
 banner: images/banner.jpg
-featured: 1
 explicit: "no"
 guests: []
 hosts:

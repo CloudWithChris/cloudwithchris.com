@@ -4,7 +4,7 @@ Description: "ToolUp Tuesday is all about showing the thought process and decisi
 PublishDate: "2022-03-08T19:30:00Z"
 Title: "ToolUp Tuesday - #3"
 episode: TT003
-image: images/toolup-tuesday.jpg
+image: images/banner.png
 explicit: "no"
 guests: []
 hosts:
@@ -12,6 +12,7 @@ hosts:
 - mattfortunka
 images:
 - img/default-social.png
+- images/banner.png
 # - images/v002.jpg
 # podcast_bytes: "15103520"
 # podcast_duration: "14:19.000"

@@ -19,6 +19,7 @@ tags:
 - Testing
 banner: "images/banner.png"
 title: Using GitHub Actions to summarise your Go tests
+featured: 1
 ---
 GitHub recently posted about a new GitHub Action that can be used to summarise your test results. The action is called `test-summary/action`, available at [github.com/test-summary/action](https://github.com/test-summary/action). There are several examples on how to use the action at [github.com/test-summary/examples](https://github.com/test-summary/examples). However, there were no examples on how to use this with Go. I [contributed a pull request](https://github.com/test-summary/examples/pull/1) which showed how to achieve this. In this post, I will show how to use the action with Go.
 
