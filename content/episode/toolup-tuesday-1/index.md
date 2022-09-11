@@ -4,15 +4,16 @@ Description: "ToolUp Tuesday is all about showing the thought process and decisi
 PublishDate: "2022-02-08T19:30:00Z"
 Title: "ToolUp Tuesday - #1"
 episode: TT001
-image: "images/toolup-tuesday.jpg"
+image: "images/banner.png"
 explicit: "no"
 guests: []
 hosts:
 - chrisreddington
 - mattfortunka
-banner: "images/banner.jpg"
+banner: "images/banner.png"
 images:
 - img/default-social.png
+- images/banner.png
 # - images/v002.jpg
 # podcast_bytes: "15103520"
 # podcast_duration: "14:19.000"
