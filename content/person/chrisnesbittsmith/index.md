@@ -9,7 +9,7 @@ image: "images/chrisnesbittsmith.png"
 Title: "Chris Nesbitt-Smith"
 Twitter: "chrisns"
 Type: "guest"
-Website: "https://cns.me.uk//"
+Website: "https://cns.me.uk/"
 YouTube: ""
 Description: "A developer at heart with a passion for testing, while still active in the open source community. Chris been using and abusing Kubernetes since 0.4 in production, in government, for citizen facing services; he's worked extensively in critical national infrastructure where "matters of life or death" is not just a flippant throwaway comment."
 ---
