@@ -18,7 +18,6 @@ tags:
 - Architecture
 - Software
 - Cloud
-upcoming: true
 banner: "images/banner.jpg"
 youtube: uvGJSqSFCqg
 ---
