@@ -1,7 +1,7 @@
 ---
-Date: "2022-10-04T19:30:00Z"
+Date: "2022-10-07T19:30:00Z"
 Description: "ToolUp Days is all about showing the thought process and decisions made when creating an application. Join Chris and Matt as they build a new application from the ground up, including development processes, tooling, service choices and architectural decisions!"
-PublishDate: "2022-10-04T19:30:00Z"
+PublishDate: "2022-10-07T19:30:00Z"
 Title: "ToolUp Days #14"
 episode: TT014
 image: images/banner.png
