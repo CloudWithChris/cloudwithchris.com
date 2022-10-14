@@ -47,7 +47,7 @@ jobs:
       run: PLAYWRIGHT_JUNIT_OUTPUT_NAME=results.xml npx playwright test
     - name: Test Summary
       if: always()
-      uses: test-summary/action@v1
+      uses: test-summary/action@v2
       with:
         paths: |
           tests/results.xml
