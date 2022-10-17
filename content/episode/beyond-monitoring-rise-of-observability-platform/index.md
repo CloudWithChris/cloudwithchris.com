@@ -4,22 +4,23 @@ Description: "System availability and performance are not stand-alone goals henc
 PublishDate: "2022-10-10T19:00:00Z"
 Title: "Beyond Monitoring: The Rise of Observability Platform"
 episode: ""
-image: images/cloud-with-chris-banner.png
+image: images/thumbnail.jpg
 explicit: "no"
 hosts:
 - chrisreddington
 guests:
 - sameerparadkar
 images:
-- images/cloud-with-chris-banner.png
+- images/thumbnail.jpg
 tags:
 - Monitoring
 - Observability
 - Architecture
 - Software
 - Cloud
+youtube: Sd1_jOfn05U
 upcoming: true
-banner: "images/cloud-with-chris-banner.png"
+banner: "images/thumbnail.jpg"
 ---
 System availability and performance are not stand-alone goals hence non-availability and under-performance of applications and systems in IT landscape will negatively affect user experience and customer satisfaction causing revenue losses for organizations.
 
