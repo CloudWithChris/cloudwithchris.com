@@ -88,7 +88,7 @@ jobs:
     - name: 'Pull popular posts from Google Analytics'
       run: |
         mkdir -p ${{ github.workspace }}/data
-        curl --header "Ocp-Apim-Subscription-Key: ${{ secrets.CWC_API_KEY}}" -o ${{ github.workspace }}/data/popular.json https://api.cloudwithchris.com/cwc-ga/GetGoogleAnalyticsData
+        curl --header "Ocp-Apim-Subscription-Key: ${{ secrets.CWC_API_KEY}}" -o ${{ github.workspace }}/data/popular.json https://cwc-ga.kindmushroom-024772ae.westeurope.azurecontainerapps.io/GetGoogleAnalyticsData
     - name: 'Update cache version for Service Worker'
       working-directory: 'static'
       run: |
