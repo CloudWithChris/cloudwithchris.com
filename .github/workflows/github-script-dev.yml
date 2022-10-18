@@ -81,7 +81,7 @@ jobs:
                 orderBys: [
                   {
                     metric: {
-                      name: 'activeUsers',
+                      metricName: 'activeUsers',
                     },
                     order: 'DESCENDING',
                   },
