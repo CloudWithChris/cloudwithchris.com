@@ -82,14 +82,6 @@ jobs:
                     ],
                   },
                 },
-                orderBys: [
-                  {
-                    metric: {
-                      metricName: 'activeUsers',
-                    },
-                    order: 'DESCENDING',
-                  },
-                ],
                 limit: 10,
               };
 
