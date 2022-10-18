@@ -61,21 +61,23 @@ jobs:
                     Expressions: [
                       {
                         Filter: {
-                          dimensionName: 'pagePath',
+                          FieldName: "pagePath",
                           StringFilter: {
-                            matchType: 'CONTAINS',
-                            value: '/blog/',
-                          },
-                        },
+                            MatchType: "CONTAINS",
+                            Value:     "/blog/",
+                          }
+                        }
+                      },
+                      {
                         Filter: {
-                          dimensionName: 'pagePath',
+                          FieldName: "pagePath",
                           StringFilter: {
-                            matchType: 'CONTAINS',
-                            value: '/episode/',
-                          },
-                        },
-                      }
-                    ],
+                            MatchType: "CONTAINS",
+                            Value:     "/episode/",
+                          }
+                        }
+                      },
+                    ]
                   }
                 },
                 orderBys: [
