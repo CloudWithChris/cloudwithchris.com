@@ -11,7 +11,7 @@ jobs:
         name: 'Authenticate to Google Cloud'
         uses: 'google-github-actions/auth@v0'
         with:
-          workload_identity_provider: '${{ secrets.GITHUB_GOOGLE_WORKLOAD_IDENTITY_PROVIDER }}'
+          workload_identity_provider: '${{ secrets.GH_GOOGLE_FED_PROVIDER }}'
           service_account: '${{ secrets.GA_API_SERVICE_ACC_EMAIL}}'
       - run: |
           npm install analytics
