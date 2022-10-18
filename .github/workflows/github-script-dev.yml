@@ -96,7 +96,7 @@ jobs:
               console.log(response);
 
               // Create a flat array of the dimension values
-              let dimensionValues = response.rows.map(row => row.dimensionValues[0].value);
+              let dimensionValues = response[0].rows.map(row => row.dimensionValues[0].value);
               
               // Output the dimension values
               console.log(dimensionValues);
