@@ -17,7 +17,7 @@ jobs:
           npm install analytics
           npm install @analytics/google-analytics
           npm install moment
-      - uses: github/github-script@v3
+      - uses: github/github-script@v6
         env:
           GA_TRACKING_ID: ${{ secrets.GA_TRACKING_ID }}
         with:
