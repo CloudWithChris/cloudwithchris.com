@@ -7,6 +7,9 @@ jobs:
       id-token: 'write'
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
       - id: 'auth'
         name: 'Authenticate to Google Cloud'
         uses: 'google-github-actions/auth@v0'
@@ -14,7 +17,6 @@ jobs:
           workload_identity_provider: '${{ secrets.GH_GOOGLE_FED_PROVIDER }}'
           service_account: '${{ secrets.GA_API_SERVICE_ACC_EMAIL}}'
       - run: |
-          npm install analytics
           npm install @google-analytics/data
       - uses: actions/github-script@v6
         env:
