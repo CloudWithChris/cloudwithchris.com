@@ -17,3 +17,69 @@ jobs:
           npm install analytics
           npm install @analytics/google-analytics
           npm install moment
+      - uses: github/github-script@v3
+        env:
+          GA_TRACKING_ID: ${{ secrets.GA_TRACKING_ID }}
+        with:
+          script: |
+            // Use the @google-analytics/data  SDK to get the top 10
+            // most visited pages from the /blog/ or /episode/ directory over the
+            // last 28 days.
+
+            // Import the Analytics Data API client library.
+            const {BetaAnalyticsDataClient} = require('@google-analytics/data');
+
+            // Using a default constructor instructs the client to use the credentials
+            // specified in GOOGLE_APPLICATION_CREDENTIALS environment variable.
+            const analyticsDataClient = new BetaAnalyticsDataClient();
+
+            // Set the Google Analytics 4 property ID in a variable.
+            const propertyId = process.env.GA_TRACKING_ID;
+
+            async function runReport() {
+              try {
+                const request = {
+                  property: `properties/${propertyId}`,
+                  dateRanges: [
+                    {
+                      startDate: '28daysAgo',
+                      endDate: 'today',
+                    },
+                  ],
+                  dimensions: [
+                    {
+                      name: 'pagePath',
+                    },
+                  ],
+                  metrics: [
+                    {
+                      name: 'activeUsers',
+                    },
+                  ],
+                  dimensionFilter: {
+                    dimensionName: 'pagePath',
+                    operator: 'BEGINS_WITH',
+                    expressions: ['/blog/', '/episode/'],
+                  },
+                  orderBys: [
+                    {
+                      metric: {
+                        name: 'activeUsers',
+                      },
+                      order: 'DESCENDING',
+                    },
+                  ],
+                  limit: 10,
+                };
+
+                const [response] = await analyticsDataClient.runReport(request);
+
+                // Create a flat array of the dimension values
+                const dimensionValues = response.rows.map(row => row.dimensionValues[0].value);
+                
+                // Output the dimension values
+                console.log(dimensionValues);
+              } catch (err) {
+                core.setFailed(`Error fetching from Google Analytics API: ${err}`);
+              }
+            }
