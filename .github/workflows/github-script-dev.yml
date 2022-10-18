@@ -57,9 +57,26 @@ jobs:
                   },
                 ],
                 dimensionFilter: {
-                  dimensionName: 'pagePath',
-                  operator: 'BEGINS_WITH',
-                  expressions: ['/blog/', '/episode/'],
+                  orGroup: {
+                    Expressions: [
+                      {
+                        Filter: {
+                          dimensionName: 'pagePath',
+                          StringFilter: {
+                            matchType: 'CONTAINS',
+                            value: '/blog/',
+                          },
+                        },
+                        Filter: {
+                          dimensionName: 'pagePath',
+                          StringFilter: {
+                            matchType: 'CONTAINS',
+                            value: '/episode/',
+                          },
+                        },
+                      }
+                    ],
+                  }
                 },
                 orderBys: [
                   {
