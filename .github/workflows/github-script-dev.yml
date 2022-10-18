@@ -73,10 +73,12 @@ jobs:
                   limit: 10,
                 };
 
-                const [response] = await analyticsDataClient.runReport(request);
+                let response = await analyticsDataClient.runReport(request);
+
+                console.log(response);
 
                 // Create a flat array of the dimension values
-                const dimensionValues = response.rows.map(row => row.dimensionValues[0].value);
+                let dimensionValues = response.rows.map(row => row.dimensionValues[0].value);
                 
                 // Output the dimension values
                 console.log(dimensionValues);
