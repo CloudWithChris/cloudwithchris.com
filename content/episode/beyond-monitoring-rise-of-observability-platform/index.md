@@ -1,7 +1,7 @@
 ---
-Date: "2022-10-10T19:00:00Z"
+Date: "2022-10-18T19:00:00Z"
 Description: "System availability and performance are not stand-alone goals hence non-availability and under-performance of applications and systems in IT landscape will negatively affect user experience and customer satisfaction causing revenue losses for organizations."
-PublishDate: "2022-10-10T19:00:00Z"
+PublishDate: "2022-10-18T19:00:00Z"
 Title: "Beyond Monitoring: The Rise of Observability Platform"
 episode: ""
 image: images/thumbnail.jpg
@@ -19,7 +19,6 @@ tags:
 - Software
 - Cloud
 youtube: Sd1_jOfn05U
-upcoming: true
 banner: "images/thumbnail.jpg"
 ---
 System availability and performance are not stand-alone goals hence non-availability and under-performance of applications and systems in IT landscape will negatively affect user experience and customer satisfaction causing revenue losses for organizations.
