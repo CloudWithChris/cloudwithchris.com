@@ -97,22 +97,22 @@ jobs:
 
               // Create a flat array of the dimension values
               let dimensionValues = response[0].rows.map(row => row.dimensionValues[0].value);
+              
+              // Output the top 10 most visited pages from the /blog/ or /episode/ directory over the
+              // last 28 days.
+              console.log(dimensionValues);
 
               // Check if the data folder exists.
               if (!fs.existsSync('./data')) {
                 fs.mkdirSync('./data');
               }
 
-              // Write dimensionsValue as a JSON array to data/popular.json, even if it does not
-              // exist yet.
-              fs.writeFile('data/popular.json', JSON.stringify(dimensionValues), { flag: 'wx' }, function (err) {
-                if (err) {
-                  core.setFailed(`Could not write file: ${err}`);
-                }
-              });
+              // Write the data to the data/popular.json file. If data already exists, then
+              // replace it with the new data.
+              fs.writeFileSync('./data/popular.json', JSON.stringify(dimensionValues, null, 2));
 
               // Read the contents of the file.
-              let data = fs.readFileSync('data/popular.json');
+              let data = fs.readFileSync('./data/popular.json');
               console.log(`The file data is ${data}`);
             } catch (err) {
               core.setFailed(`Error fetching from Google Analytics API: ${err}`);
