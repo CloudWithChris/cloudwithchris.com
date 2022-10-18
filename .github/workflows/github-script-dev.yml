@@ -110,6 +110,10 @@ jobs:
                   core.setFailed(`Could not write file: ${err}`);
                 }
               });
+
+              // Read the contents of the file.
+              let data = fs.readFileSync('data/popular.json');
+              console.log(`The file data is ${data}`);
             } catch (err) {
               core.setFailed(`Error fetching from Google Analytics API: ${err}`);
             }
