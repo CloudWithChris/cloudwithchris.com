@@ -28,6 +28,7 @@ jobs:
             // last 28 days.
 
             // Import the Analytics Data API client library.
+            const fs = require('fs');
             const {BetaAnalyticsDataClient} = require('@google-analytics/data');
 
             // Using a default constructor instructs the client to use the credentials
@@ -93,13 +94,11 @@ jobs:
 
               let response = await analyticsDataClient.runReport(request);
 
-              console.log(response);
-
               // Create a flat array of the dimension values
               let dimensionValues = response[0].rows.map(row => row.dimensionValues[0].value);
               
-              // Output the dimension values
-              console.log(dimensionValues);
+              // Write the dimension values to a file for the duration of the workflow
+              fs.writeFileSync('data/popular.json', dimensionValues);
             } catch (err) {
               core.setFailed(`Error fetching from Google Analytics API: ${err}`);
             }
