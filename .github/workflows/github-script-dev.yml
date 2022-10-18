@@ -1,0 +1,19 @@
+on:
+  workflow_dispatch:
+jobs:
+  run_google_analytics:
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+    runs-on: ubuntu-latest
+    steps:
+      - id: 'auth'
+        name: 'Authenticate to Google Cloud'
+        uses: 'google-github-actions/auth@v0'
+        with:
+          workload_identity_provider: ${{ secrets.GITHUB_GOOGLE_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ secrets.GA_API_SERVICE_ACC_EMAIL}}
+      - run: |
+          npm install analytics
+          npm install @analytics/google-analytics
+          npm install moment
