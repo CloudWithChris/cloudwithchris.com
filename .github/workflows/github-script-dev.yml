@@ -37,52 +37,50 @@ jobs:
             // Set the Google Analytics 4 property ID in a variable.
             const propertyId = process.env.GA_TRACKING_ID;
 
-            async function runReport() {
-              try {
-                const request = {
-                  property: `properties/${propertyId}`,
-                  dateRanges: [
-                    {
-                      startDate: '28daysAgo',
-                      endDate: 'today',
-                    },
-                  ],
-                  dimensions: [
-                    {
-                      name: 'pagePath',
-                    },
-                  ],
-                  metrics: [
-                    {
+            try {
+              const request = {
+                property: `properties/${propertyId}`,
+                dateRanges: [
+                  {
+                    startDate: '28daysAgo',
+                    endDate: 'today',
+                  },
+                ],
+                dimensions: [
+                  {
+                    name: 'pagePath',
+                  },
+                ],
+                metrics: [
+                  {
+                    name: 'activeUsers',
+                  },
+                ],
+                dimensionFilter: {
+                  dimensionName: 'pagePath',
+                  operator: 'BEGINS_WITH',
+                  expressions: ['/blog/', '/episode/'],
+                },
+                orderBys: [
+                  {
+                    metric: {
                       name: 'activeUsers',
                     },
-                  ],
-                  dimensionFilter: {
-                    dimensionName: 'pagePath',
-                    operator: 'BEGINS_WITH',
-                    expressions: ['/blog/', '/episode/'],
+                    order: 'DESCENDING',
                   },
-                  orderBys: [
-                    {
-                      metric: {
-                        name: 'activeUsers',
-                      },
-                      order: 'DESCENDING',
-                    },
-                  ],
-                  limit: 10,
-                };
+                ],
+                limit: 10,
+              };
 
-                let response = await analyticsDataClient.runReport(request);
+              let response = await analyticsDataClient.runReport(request);
 
-                console.log(response);
+              console.log(response);
 
-                // Create a flat array of the dimension values
-                let dimensionValues = response.rows.map(row => row.dimensionValues[0].value);
-                
-                // Output the dimension values
-                console.log(dimensionValues);
-              } catch (err) {
-                core.setFailed(`Error fetching from Google Analytics API: ${err}`);
-              }
+              // Create a flat array of the dimension values
+              let dimensionValues = response.rows.map(row => row.dimensionValues[0].value);
+              
+              // Output the dimension values
+              console.log(dimensionValues);
+            } catch (err) {
+              core.setFailed(`Error fetching from Google Analytics API: ${err}`);
             }
