@@ -3,26 +3,12 @@ on:
 jobs:
   run_google_analytics:
     permissions:
-      contents: 'read'
-      id-token: 'write'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: 16
-      - id: 'auth'
-        name: 'Authenticate to Google Cloud'
-        uses: 'google-github-actions/auth@v0'
-        with:
-          workload_identity_provider: '${{ secrets.GH_GOOGLE_FED_PROVIDER }}'
-          service_account: '${{ secrets.GA_API_SERVICE_ACC_EMAIL}}'
-      - run: |
-          npm install @google-analytics/data
-      - uses: actions/github-script@v6
-        env:
-          GA_TRACKING_ID: ${{ secrets.GA_TRACKING_ID }}
-        with:
-          script: |
-            const script = require('.github/workflows/scripts/google-analytics.js')
-            await script({github, context, core})
+      id-token: write
+      contents: read
+    uses: CloudWithChris/Reusable-Workflows/.github/workflows/google-analytics-top-pages.yaml@main
+    with:
+      script_path: ".github/workflows/scripts/google-analytics.js"
+    secrets:
+      GH_GOOGLE_FED_PROVIDER: ${{ secrets.GH_GOOGLE_FED_PROVIDER }}
+      GA_API_SERVICE_ACC_EMAIL: ${{ secrets.GA_API_SERVICE_ACC_EMAIL }}
+      GA_TRACKING_ID: ${{ secrets.GA_TRACKING_ID }}
