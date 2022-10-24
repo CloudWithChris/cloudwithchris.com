@@ -15,7 +15,6 @@ body:
       label: Post Summary
       description: What should the post be about?
       placeholder: GitHub Actions Overview for those with an operations background.
-      value: "GitHub Actions Overview for those with an operations background."
     validations:
       required: true
   - type: textarea
