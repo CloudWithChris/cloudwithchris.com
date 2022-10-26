@@ -4,26 +4,31 @@ Description: "The delta between Kubernetes and a developer friendly PaaS is wher
 PublishDate: "2022-10-27T19:30:00Z"
 Title: ClickOps over GitOps
 episode: ""
-image: "images/cloud-with-chris-banner.png"
+image: "images/banner.jpg"
 explicit: "no"
 hosts:
 - chrisreddington
 guests:
 - laszlofogas
 images:
-- images/cloud-with-chris-banner.png
+- images/banner.jpg
 - img/cloudwithchris.png
 # podcast_bytes: "49778688"
 # podcast_duration: "51:45.000"
 # podcast_file: Find vulns before they find you.mp3
 tags:
 - Developer
-- Dependencies
+- Git
+- GitHub
+- GitOps
+- Kubernetes
+- Infrastructure as Code
+- DevOps
 - DevSecOps
-- Security
-upcoming: true
-youtube: ""
-banner: "images/cloud-with-chris-banner.png"
+- ClickOps
+- Cloud Native
+youtube: "ejlulm5YUdg"
+banner: "images/banner.jpg"
 ---
 The delta between Kubernetes and a developer friendly PaaS is where the next layer of value is being created today. Many products are racing to fill the void that is called Kubernetes developer experience. This is also the place where things get opinionated, a requirement for reliable end to end workflows.
 
