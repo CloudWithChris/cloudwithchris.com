@@ -71,6 +71,9 @@ jobs:
   build:
     if: github.event_name == 'push' || (github.event.pull_request.head.repo.full_name == github.repository && github.event.action != 'closed')
     runs-on: ubuntu-latest
+    permissions:
+      contents: 'read'
+      id-token: 'write'
     steps:            
     - uses: actions/checkout@v3
       with:
@@ -85,10 +88,21 @@ jobs:
       with:
         hugo-version: ${{ env.HUGO_VERSION }}
         extended: true
-    - name: 'Pull popular posts from Google Analytics'
-      run: |
-        mkdir -p ${{ github.workspace }}/data
-        curl --header "Ocp-Apim-Subscription-Key: ${{ secrets.CWC_API_KEY}}" -o ${{ github.workspace }}/data/popular.json https://api.cloudwithchris.com/cwc-ga/GetGoogleAnalyticsData
+    - id: 'auth'
+      name: 'Authenticate to Google Cloud'
+      uses: 'google-github-actions/auth@v0'
+      with:
+        workload_identity_provider: '${{ secrets.GH_GOOGLE_FED_PROVIDER }}'
+        service_account: '${{ secrets.GA_API_SERVICE_ACC_EMAIL}}'
+    - run: |
+        npm install @google-analytics/data
+    - uses: actions/github-script@v6
+      env:
+        GA_TRACKING_ID: ${{ secrets.GA_TRACKING_ID }}
+      with:
+        script: |
+          const script = require('.github/workflows/scripts/google-analytics.js')
+          await script({github, context, core})
     - name: 'Update cache version for Service Worker'
       working-directory: 'static'
       run: |
