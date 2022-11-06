@@ -21,7 +21,7 @@ tags:
 - Dependencies
 - DevSecOps
 - Security
-youtube: ""
+youtube: "aojOuMK_3d4"
 upcoming: true
 series:
 - Tales from the real world

@@ -4,22 +4,23 @@ Description: "Rapid Prototyping is an approach to software development that emph
 PublishDate: "2022-11-17T19:00:00Z"
 Title: Rapid Prototyping as a way to validate your idea
 episode: ""
-image: images/cloud-with-chris-banner.png
+image: images/banner.jpg
 explicit: "no"
 hosts:
 - chrisreddington
 guests:
 - andrewgreenstein
 images:
-- images/cloud-with-chris-banner.png
+- images/banner.jpg
 tags:
 - Software Development
 - Development Practices
 - Agile
 - Developer
 - Developer Experience
+youtube: "_RZ6Mn7RXf4"
 upcoming: true
-banner: "images/cloud-with-chris-banner.png"
+banner: "images/banner.jpg"
 ---
 Rapid Prototyping is an approach to software development that emphasizes quick, iterative development cycles and minimal feature sets. The goal in rapid prototyping is not to develop a product. The goal is to, as quickly as possible, build something that utilizes a technology or platform to the point that you can understand the strengths and weaknesses of that technology or platform.
 
