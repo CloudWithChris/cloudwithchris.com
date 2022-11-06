@@ -43,8 +43,8 @@ on:
 
 # Environment variables used for consistency across the workflow.
 env:
-  HUGO_VERSION: '0.102.3'
-  AZURE_CLI_VERSION: '2.40.0'
+  HUGO_VERSION: '0.105.0'
+  AZURE_CLI_VERSION: '2.42.0'
   SWA_NAME: cwc-static
 
 jobs:
