@@ -22,7 +22,6 @@ tags:
 - DevSecOps
 - Security
 youtube: "aojOuMK_3d4"
-upcoming: true
 series:
 - Tales from the real world
 banner: "images/banner.jpg"
