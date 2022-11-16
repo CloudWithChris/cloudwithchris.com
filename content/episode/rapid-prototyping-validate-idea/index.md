@@ -19,7 +19,6 @@ tags:
 - Developer
 - Developer Experience
 youtube: "_RZ6Mn7RXf4"
-upcoming: true
 banner: "images/banner.jpg"
 ---
 Rapid Prototyping is an approach to software development that emphasizes quick, iterative development cycles and minimal feature sets. The goal in rapid prototyping is not to develop a product. The goal is to, as quickly as possible, build something that utilizes a technology or platform to the point that you can understand the strengths and weaknesses of that technology or platform.
