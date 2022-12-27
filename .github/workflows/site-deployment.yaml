@@ -44,8 +44,6 @@ on:
 # Environment variables used for consistency across the workflow.
 env:
   HUGO_VERSION: '0.105.0'
-  AZURE_CLI_VERSION: '2.42.0'
-  SWA_NAME: cwc-static
 
 jobs:
   # A set of steps used to compress the images, making sure that images are compressed ahead of publishing to the site.
@@ -119,6 +117,11 @@ jobs:
 
   # Deployment job
   deploy:
+    if: github.ref != 'refs/heads/main'
+    permissions:   
+      contents: read
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
