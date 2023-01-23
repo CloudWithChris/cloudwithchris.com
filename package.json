@@ -5,7 +5,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.2.0",
     "bootstrap": "^5.2.2",
-    "fast-xml-parser": "^4.0.11",
+    "fast-xml-parser": "^4.0.14",
     "fuse.js": "^6.6.2",
     "gray-matter": "^4.0.3",
     "jquery": "^3.6.1",
