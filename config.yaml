@@ -44,7 +44,7 @@ menu: # Main Menu
       parent: "episodes"
     - name: "Blog"
       weight: 4
-      url: "/Blog"
+      url: "/blog"
     - name: "Speaking"
       identifier: "speaking"
       weight: 5
