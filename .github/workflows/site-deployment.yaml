@@ -1,4 +1,4 @@
-name: Azure Static Web Apps CI/CD
+name: "GitHub Pages Deployment"
 
 # This GitHub Action workflow triggers in two scenarios - 
 # 1. When a push is made to the main branch
@@ -43,7 +43,7 @@ on:
 
 # Environment variables used for consistency across the workflow.
 env:
-  HUGO_VERSION: '0.112.2'
+  HUGO_VERSION: '0.122.0'
 
 jobs:
   # A set of steps used to compress the images, making sure that images are compressed ahead of publishing to the site.
