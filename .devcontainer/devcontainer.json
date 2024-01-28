@@ -19,7 +19,7 @@
 	],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "cd exampleSite && npm ci",
+	"postCreateCommand": "npm ci && git submodule update --init --recursive",
 
 
 	// Configure tool-specific properties.
