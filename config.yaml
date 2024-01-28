@@ -314,29 +314,6 @@ params:
       youtube: "CloudWithChris"
   # Parameters relating to site features and functionality
   features:
-    # Settings relating to audio players embedded 
-    # within the site.
-    audio_player:
-      use: "default"  # The options are default or podscribe
-      podscribe:
-        someconfig: "tbc"
-    # Settings related to analytics
-    analytics:
-      googleAnalytics: ""       # Google Analytics ID
-      googleTagManager: "GTM-WN3N424"
-      microsoftClarity: ""
-    # Settings related to the comments section
-    # embedded within the site.
-    comments:
-      giscus:
-        repository: "CloudWithChris/cloudwithchris.com"
-        repository_id: "MDEwOlJlcG9zaXRvcnkyNDE0OTQ5NTY"
-        category: "Content Discussion"
-        category_id: "DIC_kwDODmTrrM4B-kuQ"
-        mapping: "pathname"
-        reactions_enabled: 1
-        emit_metadata: 0
-        theme: "light"
     # Settings related to the Social bar at top of site
     socialbox: true
   # Settings relating to site security. This mainly
@@ -351,15 +328,6 @@ params:
       connectsrc: ""
       framesrc: ""
       objectsrc: ""
-# Privacy options built in to hugo. The hugo docs explain how to configure this to align with GDPR, so please make sure to ensure this is configured as appropriate for your deployment.
-# -
-# https://gohugo.io/about/hugo-and-gdpr/
-privacy:
-  googleAnalytics:
-    anonymizeIP: true
-    disable: false
-    respectDoNotTrack: true
-    useSessionStorage: false
 # Taxonomies in hugo are used to easily identify content that belongs
 # to a given piece of metadata. This is particularly useful for tags,
 # or pieces of content that appear in a series. All taxonomies used within
