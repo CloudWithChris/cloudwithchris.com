@@ -8,7 +8,7 @@
     "bootstrap": "^5.3.3",
     "fuse.js": "^6.6.2",
     "gray-matter": "^4.0.3",
-    "jquery": "^3.7.0",
+    "jquery": "^3.7.1",
     "node-fetch": "^3.3.2"
   },
   "devDependencies": {
