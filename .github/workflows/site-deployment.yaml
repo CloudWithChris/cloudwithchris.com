@@ -91,7 +91,7 @@ jobs:
       uses: actions/configure-pages@v3
     - id: 'auth'
       name: 'Authenticate to Google Cloud'
-      uses: 'google-github-actions/auth@v1'
+      uses: 'google-github-actions/auth@v2'
       with:
         workload_identity_provider: '${{ secrets.GH_GOOGLE_FED_PROVIDER }}'
         service_account: '${{ secrets.GA_API_SERVICE_ACC_EMAIL}}'
