@@ -97,7 +97,7 @@ jobs:
         service_account: '${{ secrets.GA_API_SERVICE_ACC_EMAIL}}'
     - run: |
         npm install @google-analytics/data
-    - uses: actions/github-script@v6
+    - uses: actions/github-script@v7
       env:
         GA_TRACKING_ID: ${{ secrets.GA_TRACKING_ID }}
       with:
