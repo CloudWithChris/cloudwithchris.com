@@ -73,7 +73,7 @@ jobs:
       contents: 'read'
       id-token: 'write'
     steps:            
-    - uses: actions/checkout@v5
+    - uses: actions/checkout@v6
       with:
         submodules: 'true'
     - name: 'Dependency Review'
