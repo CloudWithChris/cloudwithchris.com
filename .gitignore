@@ -140,3 +140,5 @@ playwright-report/
 
 tests/*.json
 tests/results.xml
+# Local Netlify folder
+.netlify
